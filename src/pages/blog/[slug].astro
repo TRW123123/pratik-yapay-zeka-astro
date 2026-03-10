@@ -1,0 +1,140 @@
+---
+/**
+ * Blog Post Detail Page — SSR (not prerendered)
+ * Dynamic route: /blog/[slug]/
+ * Fetches single post by slug from Supabase, renders markdown content.
+ * Includes Article Schema.org for rich search results.
+ */
+export const prerender = false;
+
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { supabase } from '../../lib/supabase';
+import type { BlogPost } from '../../lib/supabase';
+import { marked } from 'marked';
+
+const { slug } = Astro.params;
+
+if (!slug) {
+  return Astro.redirect('/blog/');
+}
+
+const { data, error } = await supabase
+  .from('blog_posts')
+  .select('*')
+  .eq('slug', slug)
+  .eq('language', 'tr')
+  .eq('status', 'published')
+  .maybeSingle();
+
+if (error || !data) {
+  return Astro.redirect('/404');
+}
+
+const post = data as BlogPost;
+const htmlContent = await marked(post.content);
+const formattedDate = new Date(post.published_at || post.created_at || '').toLocaleDateString('tr-TR', { year: 'numeric', month: 'long', day: 'numeric' });
+
+const articleSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: post.title,
+  description: post.excerpt,
+  datePublished: post.published_at || post.created_at,
+  dateModified: post.published_at || post.created_at,
+  author: {
+    '@type': 'Person',
+    name: post.author,
+    ...(post.author_bio && { description: post.author_bio }),
+  },
+  publisher: {
+    '@type': 'Organization',
+    name: 'Pratik Yapay Zeka',
+    url: 'https://yapayzekapratik.com',
+    logo: {
+      '@type': 'ImageObject',
+      url: 'https://yapayzekapratik.com/logo.png',
+    },
+  },
+  mainEntityOfPage: {
+    '@type': 'WebPage',
+    '@id': `https://yapayzekapratik.com/blog/${post.slug}/`,
+  },
+  image: post.cover_image_url || 'https://yapayzekapratik.com/placeholder.svg',
+  articleBody: post.content.substring(0, 500),
+  keywords: (post.tags || []).join(', '),
+  articleSection: post.category,
+  inLanguage: 'tr-TR',
+};
+
+const breadcrumbs = [
+  { name: 'Ana Sayfa', url: '/' },
+  { name: 'Blog', url: '/blog/' },
+  { name: post.title, url: `/blog/${post.slug}/` },
+];
+---
+
+<BaseLayout
+  title={post.meta_title || `${post.title} | Pratik Yapay Zeka`}
+  description={post.meta_description || post.excerpt}
+  ogImage={post.og_image_url || post.cover_image_url || '/og-homepage.jpg'}
+  ogType="article"
+  breadcrumbs={breadcrumbs}
+>
+  <article class="py-24">
+    <div class="container mx-auto px-4 max-w-3xl">
+      <a href="/blog/" class="text-sm text-[var(--color-text-muted)] hover:text-[var(--color-primary-light)] transition-colors mb-8 inline-block">
+        ← Tüm Blog Yazıları
+      </a>
+
+      {post.cover_image_url && (
+        <img
+          src={post.cover_image_url}
+          alt={post.cover_image_alt || post.title}
+          class="w-full h-auto rounded-2xl mb-8"
+        />
+      )}
+
+      <h1 class="text-3xl md:text-4xl font-bold mb-4">{post.title}</h1>
+
+      <div class="flex items-center gap-4 mb-6 text-[var(--color-text-muted)]">
+        <span>{post.author}</span>
+        <span>•</span>
+        <span>{formattedDate}</span>
+        <span>•</span>
+        <span>{post.read_time || 5} dk</span>
+      </div>
+
+      {(post.tags || []).length > 0 && (
+        <div class="flex flex-wrap gap-2 mb-8">
+          {(post.tags || []).map((tag) => (
+            <span class="px-3 py-1 rounded-full text-sm text-[var(--color-primary-light)] border border-[var(--color-primary)]/30">
+              #{tag}
+            </span>
+          ))}
+        </div>
+      )}
+
+      <div class="prose prose-invert prose-lg max-w-none
+        prose-headings:text-white prose-headings:font-semibold
+        prose-p:text-[var(--color-text-muted)]
+        prose-a:text-[var(--color-primary-light)] prose-a:no-underline hover:prose-a:underline
+        prose-strong:text-white
+        prose-code:text-[var(--color-primary-light)] prose-code:bg-[var(--color-surface-light)] prose-code:px-1.5 prose-code:py-0.5 prose-code:rounded
+        prose-pre:bg-[var(--color-surface-light)] prose-pre:border prose-pre:border-[var(--color-border)] prose-pre:rounded-xl
+        prose-blockquote:border-[var(--color-primary)] prose-blockquote:text-[var(--color-text-muted)]
+        prose-li:text-[var(--color-text-muted)]
+        prose-img:rounded-xl"
+        set:html={htmlContent}
+      />
+
+      {post.author_bio && (
+        <div class="mt-12 p-6 bg-[var(--color-surface-light)] border border-[var(--color-border)] rounded-2xl">
+          <h3 class="text-lg font-semibold mb-2">Yazar Hakkında</h3>
+          <p class="text-[var(--color-text-muted)]">{post.author_bio}</p>
+        </div>
+      )}
+    </div>
+  </article>
+
+  <script type="application/ld+json" set:html={JSON.stringify(articleSchema)} />
+</BaseLayout>

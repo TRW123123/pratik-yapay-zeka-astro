@@ -1,17 +1,119 @@
 ---
+/**
+ * Blog Listing Page — SSR (not prerendered)
+ * Fetches published posts from Supabase blog_posts table.
+ * Paginated: 12 posts per page via ?page= query param.
+ */
+export const prerender = false;
+
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import BlogCard from '../../components/BlogCard.astro';
+import { supabase } from '../../lib/supabase';
+import type { BlogPost } from '../../lib/supabase';
+
+const pageSize = 12;
+const url = new URL(Astro.request.url);
+const currentPage = Math.max(1, Number(url.searchParams.get('page') ?? 1));
+const start = (currentPage - 1) * pageSize;
+
+// Get total count
+const { count } = await supabase
+  .from('blog_posts')
+  .select('*', { count: 'exact', head: true })
+  .eq('language', 'tr')
+  .eq('status', 'published');
+
+const total = count || 0;
+const totalPages = Math.max(1, Math.ceil(total / pageSize));
+
+// Get paginated posts
+const { data: posts, error } = await supabase
+  .from('blog_posts')
+  .select('*')
+  .eq('language', 'tr')
+  .eq('status', 'published')
+  .order('published_at', { ascending: false })
+  .range(start, start + pageSize - 1);
+
+if (error) {
+  console.error('Error fetching blog posts:', error);
+}
+
+const blogPosts = (posts || []) as BlogPost[];
 ---
 
-<BaseLayout title="Blog - Pratik Yapay Zeka" description="Yapay zeka, otomasyon ve dijital dönüşüm hakkında pratik rehberler ve vaka çalışmaları.">
+<BaseLayout
+  title="Blog – Pratik Yapay Zeka"
+  description="Yapay zeka, otomasyon ve dijital dönüşüm hakkında pratik rehberler ve vaka çalışmaları."
+  breadcrumbs={[
+    { name: 'Ana Sayfa', url: '/' },
+    { name: 'Blog', url: '/blog/' },
+  ]}
+>
   <section class="py-24">
-    <div class="container mx-auto px-4 max-w-4xl text-center">
-      <h1 class="text-3xl md:text-5xl font-bold mb-4">Blog</h1>
-      <p class="text-lg text-[var(--color-text-muted)]">Pratik yapay zeka destekli büyüme için içgörüler ve vaka çalışmaları.</p>
-    </div>
-  </section>
-  <section class="pb-24">
-    <div class="container mx-auto px-4 max-w-4xl">
-      <p class="text-center text-[var(--color-text-muted)]">Blog yazıları yakında burada yayınlanacak.</p>
+    <div class="container mx-auto px-4 max-w-6xl">
+      <div class="text-center mb-16">
+        <h1 class="text-3xl md:text-5xl font-bold mb-4">Blog</h1>
+        <p class="text-lg text-[var(--color-text-muted)] max-w-2xl mx-auto">
+          Pratik yapay zeka destekli büyüme için içgörüler ve vaka çalışmaları.
+        </p>
+      </div>
+
+      {blogPosts.length === 0 ? (
+        <p class="text-center text-[var(--color-text-muted)]">
+          Henüz blog yazısı yok.
+        </p>
+      ) : (
+        <>
+          <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 xl:grid-cols-3">
+            {blogPosts.map((post) => (
+              <BlogCard
+                slug={post.slug}
+                title={post.title}
+                excerpt={post.excerpt}
+                coverImage={post.cover_image_url || '/placeholder.svg'}
+                date={new Date(post.published_at || post.created_at || '').toLocaleDateString('tr-TR', { year: 'numeric', month: 'long', day: 'numeric' })}
+                readTime={`${post.read_time || 5} dk`}
+                author={post.author}
+                tags={post.tags || []}
+              />
+            ))}
+          </div>
+
+          {totalPages > 1 && (
+            <nav class="mt-12 flex justify-center gap-2" aria-label="Pagination">
+              {currentPage > 1 && (
+                <a
+                  href={`/blog/?page=${currentPage - 1}`}
+                  class="px-4 py-2 border border-[var(--color-border)] rounded-lg text-sm hover:border-[var(--color-primary)]/50 transition-colors"
+                >
+                  ← Önceki
+                </a>
+              )}
+              {Array.from({ length: totalPages }, (_, i) => i + 1).map((page) => (
+                <a
+                  href={`/blog/?page=${page}`}
+                  class={`px-4 py-2 rounded-lg text-sm transition-colors ${
+                    page === currentPage
+                      ? 'bg-[var(--color-primary)] text-white'
+                      : 'border border-[var(--color-border)] hover:border-[var(--color-primary)]/50'
+                  }`}
+                >
+                  {page}
+                </a>
+              ))}
+              {currentPage < totalPages && (
+                <a
+                  href={`/blog/?page=${currentPage + 1}`}
+                  class="px-4 py-2 border border-[var(--color-border)] rounded-lg text-sm hover:border-[var(--color-primary)]/50 transition-colors"
+                >
+                  Sonraki →
+                </a>
+              )}
+            </nav>
+          )}
+        </>
+      )}
     </div>
   </section>
 </BaseLayout>

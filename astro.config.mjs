@@ -3,6 +3,7 @@ import { defineConfig } from 'astro/config';
 import tailwindcss from '@tailwindcss/vite';
 import sitemap from '@astrojs/sitemap';
 import react from '@astrojs/react';
+import netlify from '@astrojs/netlify';
 
 // https://astro.build/config
 export default defineConfig({
@@ -12,8 +13,12 @@ export default defineConfig({
   // PITFALL #4 FIX: Trailing slash consistency — Astro generates /page/index.html
   trailingSlash: 'always',
 
-  // PITFALL #2 FIX: Static output — full HTML per page, no SPA shell
+  // ASTRO v6: 'static' is the default. Pages with `export const prerender = false`
+  // are server-rendered. Netlify adapter handles SSR for those pages.
   output: 'static',
+
+  // Netlify adapter for SSR pages (blog listing + blog detail)
+  adapter: netlify(),
 
   // Performance: Prefetch links on hover for instant navigation
   prefetch: true,

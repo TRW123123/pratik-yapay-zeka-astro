@@ -1,0 +1,58 @@
+---
+/**
+ * BlogCard.astro — Card component for blog listing page.
+ * Matches original Lovable design: dark theme, cover image, tags, metadata.
+ */
+interface Props {
+  slug: string;
+  title: string;
+  excerpt: string;
+  coverImage: string;
+  date: string;
+  readTime: string;
+  author: string;
+  tags: string[];
+}
+
+const { slug, title, excerpt, coverImage, date, readTime, author, tags } = Astro.props;
+---
+
+<article class="group relative">
+  <a
+    href={`/blog/${slug}/`}
+    class="relative block overflow-hidden rounded-xl border border-[var(--color-border)] bg-[var(--color-surface-light)] transition duration-300 hover:-translate-y-0.5 hover:border-[var(--color-primary)]/30"
+  >
+    <div class="relative aspect-[16/9] w-full overflow-hidden">
+      <img
+        src={coverImage}
+        alt={title}
+        class="w-full h-full object-cover transition duration-300 group-hover:scale-[1.02]"
+        loading="lazy"
+      />
+    </div>
+    <div class="p-4 md:p-5">
+      <div class="mb-2 flex flex-wrap items-center gap-2 text-xs text-[var(--color-text-muted)]">
+        <span>{date}</span>
+        <span>•</span>
+        <span>{readTime}</span>
+        <span>•</span>
+        <span>{author}</span>
+      </div>
+      <h3 class="line-clamp-2 text-lg md:text-xl font-semibold tracking-tight">
+        {title}
+      </h3>
+      <p class="mt-2 line-clamp-3 text-sm text-[var(--color-text-muted)]">
+        {excerpt}
+      </p>
+      {tags.length > 0 && (
+        <div class="mt-3 flex flex-wrap gap-2">
+          {tags.map((tag) => (
+            <span class="rounded-full px-2.5 py-0.5 text-xs font-medium text-[var(--color-primary-light)] border border-[var(--color-primary)]/30">
+              #{tag}
+            </span>
+          ))}
+        </div>
+      )}
+    </div>
+  </a>
+</article>
