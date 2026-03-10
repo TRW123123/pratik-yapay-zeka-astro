@@ -9,6 +9,7 @@ interface Metric {
 interface Props {
   title: string;
   description: string;
+  ogImage?: string;
   companyName: string;
   industry: string;
   challenge: string;
@@ -19,7 +20,7 @@ interface Props {
   quoteAuthor?: string;
 }
 
-const { title, description, companyName, industry, challenge, solution, results, metrics, quote, quoteAuthor } = Astro.props;
+const { title, description, ogImage, companyName, industry, challenge, solution, results, metrics, quote, quoteAuthor } = Astro.props;
 
 const breadcrumbs = [
   { name: 'Ana Sayfa', url: '/' },
@@ -28,7 +29,7 @@ const breadcrumbs = [
 ];
 ---
 
-<BaseLayout title={title} description={description} breadcrumbs={breadcrumbs}>
+<BaseLayout title={title} description={description} ogImage={ogImage} breadcrumbs={breadcrumbs}>
   <section class="py-24">
     <div class="container mx-auto px-4 max-w-4xl">
       <a href="/vaka-calismalari/" class="text-sm text-[var(--color-text-muted)] hover:text-[var(--color-primary-light)] transition-colors mb-8 inline-block">← Tüm Vaka Çalışmaları</a>
