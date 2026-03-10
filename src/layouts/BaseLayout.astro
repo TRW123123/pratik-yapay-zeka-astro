@@ -10,12 +10,19 @@
  * #12 (CSP): Strict headers in public/_headers
  */
 
+interface BreadcrumbItem {
+  name: string;
+  url: string;
+}
+
 interface Props {
   title: string;
   description: string;
   ogImage?: string;
   ogType?: string;
   noindex?: boolean;
+  breadcrumbs?: BreadcrumbItem[];
+  schemaType?: 'WebPage' | 'AboutPage' | 'ContactPage' | 'FAQPage' | 'CollectionPage';
 }
 
 const {
@@ -24,11 +31,73 @@ const {
   ogImage = '/og-homepage.jpg',
   ogType = 'website',
   noindex = false,
+  breadcrumbs = [],
+  schemaType = 'WebPage',
 } = Astro.props;
 
 // PITFALL #1 FIX: Dynamic canonical per page
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 const ogImageURL = new URL(ogImage, Astro.site);
+
+// Schema.org: LocalBusiness (global, appears on all pages)
+const localBusinessSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'LocalBusiness',
+  name: 'Pratik Yapay Zeka',
+  alternateName: 'ST-Automatisierung',
+  url: Astro.site?.toString() || 'https://pratik-yapayzeka.com',
+  logo: new URL('/logo.png', Astro.site).href,
+  description: 'Yapay zeka ve otomasyon danışmanlığı. Lead generation, satış, pazarlama ve müşteri hizmeti otomasyonu.',
+  address: {
+    '@type': 'PostalAddress',
+    streetAddress: 'Heidestraße 2',
+    addressLocality: 'Schwerte',
+    postalCode: '58239',
+    addressCountry: 'DE',
+  },
+  email: 's.tepecik@pratik-yapayzeka.com',
+  sameAs: [
+    'https://www.youtube.com/@yapayzekapratik',
+    'https://www.tiktok.com/@yapayzekapratik',
+    'https://www.instagram.com/yapayzekapratik',
+  ],
+  areaServed: ['TR', 'DE'],
+  priceRange: '$$',
+};
+
+// Schema.org: WebSite (for sitelinks search box)
+const webSiteSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'WebSite',
+  name: 'Pratik Yapay Zeka',
+  url: Astro.site?.toString() || 'https://pratik-yapayzeka.com',
+};
+
+// Schema.org: BreadcrumbList (if breadcrumbs provided)
+const breadcrumbSchema = breadcrumbs.length > 0 ? {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: breadcrumbs.map((bc, i) => ({
+    '@type': 'ListItem',
+    position: i + 1,
+    name: bc.name,
+    item: new URL(bc.url, Astro.site).href,
+  })),
+} : null;
+
+// Schema.org: Current WebPage
+const webPageSchema = {
+  '@context': 'https://schema.org',
+  '@type': schemaType,
+  name: title,
+  description: description,
+  url: canonicalURL.href,
+  isPartOf: {
+    '@type': 'WebSite',
+    name: 'Pratik Yapay Zeka',
+    url: Astro.site?.toString() || 'https://pratik-yapayzeka.com',
+  },
+};
 
 import '../styles/global.css';
 import Navigation from '../components/Navigation.astro';
@@ -79,6 +148,14 @@ import CookieConsent from '../components/CookieConsent.astro';
 
     <!-- PITFALL #5 FIX: NO <link> to fonts.googleapis.com here! -->
     <!-- Poppins is loaded locally via @fontsource in global.css -->
+
+    <!-- Schema.org Structured Data -->
+    <script type="application/ld+json" set:html={JSON.stringify(localBusinessSchema)} />
+    <script type="application/ld+json" set:html={JSON.stringify(webSiteSchema)} />
+    <script type="application/ld+json" set:html={JSON.stringify(webPageSchema)} />
+    {breadcrumbSchema && (
+      <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+    )}
   </head>
 
   <body>

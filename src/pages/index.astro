@@ -1,10 +1,30 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+
+const faqItems = [
+  { question: 'Kurulum ne kadar sürer?', answer: 'Genellikle 2 gün. Basit entegrasyonlar aynı gün, karmaşık sistemler 1 hafta sürebilir.' },
+  { question: 'Veri güvenliği nasıl sağlanır?', answer: 'Müşteri verileri tamamen gizli tutulur, erişimler sınırlıdır. GDPR uyumlu çalışıyoruz.' },
+  { question: 'Teknik bilgi gerekli mi?', answer: 'Hayır. Tüm süreci biz yönetiyoruz. Sadece iş süreçlerinizi anlamamız yeterli.' },
+];
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faqItems.map(faq => ({
+    '@type': 'Question',
+    name: faq.question,
+    acceptedAnswer: {
+      '@type': 'Answer',
+      text: faq.answer,
+    },
+  })),
+};
 ---
 
 <BaseLayout
   title="Pratik Yapay Zeka – Satış ve Pazarlama Otomasyonu"
   description="Lead'den meeting'e tam otomatik yapay zeka. Outbound & Inbound, içerik ve sosyal medya otomasyonu ile satışlarınızı artırın."
+  schemaType="FAQPage"
 >
   <!-- Hero Section -->
   <section class="relative min-h-screen flex items-center justify-center overflow-hidden">
@@ -122,4 +142,6 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       </a>
     </div>
   </section>
+  <!-- FAQ Schema.org JSON-LD for rich results -->
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
 </BaseLayout>

@@ -20,9 +20,15 @@ interface Props {
 }
 
 const { title, description, companyName, industry, challenge, solution, results, metrics, quote, quoteAuthor } = Astro.props;
+
+const breadcrumbs = [
+  { name: 'Ana Sayfa', url: '/' },
+  { name: 'Vaka Çalışmaları', url: '/vaka-calismalari/' },
+  { name: companyName, url: Astro.url.pathname },
+];
 ---
 
-<BaseLayout title={title} description={description}>
+<BaseLayout title={title} description={description} breadcrumbs={breadcrumbs}>
   <section class="py-24">
     <div class="container mx-auto px-4 max-w-4xl">
       <a href="/vaka-calismalari/" class="text-sm text-[var(--color-text-muted)] hover:text-[var(--color-primary-light)] transition-colors mb-8 inline-block">← Tüm Vaka Çalışmaları</a>

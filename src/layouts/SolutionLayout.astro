@@ -48,9 +48,16 @@ const {
   finalCtaTitle,
   finalCtaSubtitle,
 } = Astro.props;
+const pathname = Astro.url.pathname;
+const pageSlug = pathname.replace('/cozumler/', '').replace(/\/$/, '');
+const breadcrumbs = [
+  { name: 'Ana Sayfa', url: '/' },
+  { name: 'Çözümler', url: '/cozumler/' },
+  { name: heroTitle.split(' – ')[0], url: pathname },
+];
 ---
 
-<BaseLayout title={title} description={description}>
+<BaseLayout title={title} description={description} breadcrumbs={breadcrumbs}>
   <!-- Hero -->
   <section class="py-24 bg-gradient-to-br from-[var(--color-surface)] to-[var(--color-primary-dark)]/10">
     <div class="container mx-auto px-4 max-w-4xl text-center">
