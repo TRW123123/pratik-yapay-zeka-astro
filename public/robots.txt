@@ -1,0 +1,8 @@
+# Crawlers
+User-agent: *
+Allow: /
+Disallow: /api/
+Disallow: /admin/
+
+# PITFALL #9 FIX: Astro generates sitemap-index.xml, NOT sitemap.xml
+Sitemap: https://yapayzekapratik.com/sitemap-index.xml

@@ -1,0 +1,16 @@
+[build]
+  command = "npm run build"
+  publish = "dist"
+
+[build.environment]
+  NODE_VERSION = "22"
+
+# PITFALL #4 FIX: Disable Netlify's URL manipulation
+# Edge Function handles ALL URL normalization
+[build.processing.html]
+  pretty_urls = false
+
+# Edge Function for URL normalization (trailing slash, lowercase, .html stripping)
+[[edge_functions]]
+  path = "/*"
+  function = "url-normalize"

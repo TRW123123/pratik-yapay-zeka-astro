@@ -1,0 +1,16 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="404 – Sayfa Bulunamadı | Yapay Zeka Pratik" description="Aradığınız sayfa bulunamadı." noindex={true}>
+  <section class="min-h-screen flex items-center justify-center">
+    <div class="text-center max-w-md mx-auto px-4">
+      <p class="text-8xl font-bold bg-gradient-to-r from-[var(--color-primary)] to-[var(--color-accent)] bg-clip-text text-transparent mb-4">404</p>
+      <h1 class="text-2xl font-bold mb-4">Sayfa Bulunamadı</h1>
+      <p class="text-[var(--color-text-muted)] mb-8">Aradığınız sayfa taşınmış veya silinmiş olabilir.</p>
+      <a href="/" class="inline-flex items-center gap-2 bg-[var(--color-primary)] hover:bg-[var(--color-primary-dark)] text-white font-semibold px-6 py-3 rounded-xl transition-all duration-300">
+        Ana Sayfaya Dön
+      </a>
+    </div>
+  </section>
+</BaseLayout>

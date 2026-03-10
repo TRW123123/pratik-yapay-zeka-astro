@@ -1,0 +1,44 @@
+/* PITFALL #5 FIX: Local fonts — NO Google Fonts CDN (DSGVO) */
+@import '@fontsource/poppins/300.css';
+@import '@fontsource/poppins/400.css';
+@import '@fontsource/poppins/500.css';
+@import '@fontsource/poppins/600.css';
+@import '@fontsource/poppins/700.css';
+@import '@fontsource/poppins/800.css';
+
+@import 'tailwindcss';
+
+/* Design tokens from the Lovable project */
+@theme {
+  --font-sans: 'Poppins', ui-sans-serif, system-ui, sans-serif;
+  --color-primary: #6C3CE1;
+  --color-primary-light: #8B5CF6;
+  --color-primary-dark: #5B21B6;
+  --color-accent: #06B6D4;
+  --color-surface: #0F0F23;
+  --color-surface-light: #1A1A2E;
+  --color-surface-lighter: #16213E;
+  --color-text: #E2E8F0;
+  --color-text-muted: #94A3B8;
+  --color-border: #2D2D4A;
+}
+
+/* Global styles */
+html {
+  scroll-behavior: smooth;
+  font-family: var(--font-sans);
+}
+
+body {
+  background-color: var(--color-surface);
+  color: var(--color-text);
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Selection style */
+::selection {
+  background-color: var(--color-primary);
+  color: white;
+}

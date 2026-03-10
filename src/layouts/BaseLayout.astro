@@ -1,0 +1,107 @@
+---
+/*
+ * BaseLayout.astro — Base layout for ALL pages
+ *
+ * PITFALL MITIGATIONS APPLIED:
+ * #1 (Canonical Suicide): Dynamic canonical per page
+ * #2 (SPA Shell): Full static HTML, no <div id="root">
+ * #5 (Google Fonts): Local @fontsource/poppins, NO external <link>
+ * #7 (Cookie/Analytics): Vanilla JS in public/, loaded via is:inline
+ * #12 (CSP): Strict headers in public/_headers
+ */
+
+interface Props {
+  title: string;
+  description: string;
+  ogImage?: string;
+  ogType?: string;
+  noindex?: boolean;
+}
+
+const {
+  title,
+  description,
+  ogImage = '/og-homepage.jpg',
+  ogType = 'website',
+  noindex = false,
+} = Astro.props;
+
+// PITFALL #1 FIX: Dynamic canonical per page
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+const ogImageURL = new URL(ogImage, Astro.site);
+
+import '../styles/global.css';
+---
+
+<!DOCTYPE html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- PITFALL #1 FIX: Unique title + description per page -->
+    <title>{title}</title>
+    <meta name="description" content={description} />
+
+    <!-- PITFALL #1 FIX: Dynamic canonical per page -->
+    <link rel="canonical" href={canonicalURL.href} />
+
+    <!-- Favicons -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="apple-touch-icon" sizes="192x192" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+
+    <!-- SEO: Robots -->
+    {noindex ? (
+      <meta name="robots" content="noindex, nofollow" />
+    ) : (
+      <meta name="robots" content="index, follow" />
+    )}
+
+    <!-- Open Graph -->
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content={ogType} />
+    <meta property="og:url" content={canonicalURL.href} />
+    <meta property="og:image" content={ogImageURL.href} />
+    <meta property="og:locale" content="tr_TR" />
+    <meta property="og:site_name" content="Yapay Zeka Pratik" />
+
+    <!-- Twitter Cards -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImageURL.href} />
+
+    <!-- PITFALL #5 FIX: NO <link> to fonts.googleapis.com here! -->
+    <!-- Poppins is loaded locally via @fontsource in global.css -->
+  </head>
+
+  <body>
+    <slot />
+
+    <!--
+      PITFALL #7 FIX: Analytics loaded via Vanilla JS, NOT React hooks.
+      Cookie consent gate MUST wrap GA4 loading.
+      This script runs only in the browser, never on the server.
+    -->
+    <script is:inline>
+      // GA4 — deferred load, gated by consent (to be implemented)
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){window.dataLayer.push(arguments);}
+
+      // Defer GTM script loading to improve LCP
+      window.addEventListener('load', function() {
+        setTimeout(function() {
+          var script = document.createElement('script');
+          script.src = 'https://www.googletagmanager.com/gtag/js?id=G-XYNQMB280W';
+          script.async = true;
+          document.head.appendChild(script);
+          gtag('js', new Date());
+          gtag('config', 'G-XYNQMB280W');
+        }, 2000);
+      });
+    </script>
+  </body>
+</html>

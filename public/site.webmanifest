@@ -1,0 +1,23 @@
+{
+  "name": "Pratik Yapay Zeka",
+  "short_name": "PratikYZ",
+  "description": "AI Otomasyon & Satış Çözümleri",
+  "icons": [
+    {
+      "src": "/favicon-32x32.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    },
+    {
+      "src": "/apple-touch-icon.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "theme_color": "#10b981",
+  "background_color": "#0F172A",
+  "display": "standalone",
+  "start_url": "/",
+  "scope": "/"
+}

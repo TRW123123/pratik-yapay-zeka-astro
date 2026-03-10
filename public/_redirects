@@ -1,0 +1,14 @@
+# HTTPS enforcement
+http://yapayzekapratik.com/* https://yapayzekapratik.com/:splat 301!
+http://www.yapayzekapratik.com/* https://yapayzekapratik.com/:splat 301!
+
+# PITFALL #8 FIX: www → non-www consolidation
+https://www.yapayzekapratik.com/* https://yapayzekapratik.com/:splat 301!
+
+# PITFALL #3 FIX: Legacy Lovable URL redirects
+# All old SPA routes that were indexed by Google MUST redirect to the new Astro pages
+/tr/* /:splat 301!
+/tr / 301!
+/functions/v1/sitemap /sitemap-index.xml 301!
+
+# NOTE: NO SPA fallback (/* /index.html 200) — this is static Astro, not an SPA!
