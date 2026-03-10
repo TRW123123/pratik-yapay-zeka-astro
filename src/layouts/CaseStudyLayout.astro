@@ -1,0 +1,75 @@
+---
+import BaseLayout from './BaseLayout.astro';
+
+interface Metric {
+  value: string;
+  label: string;
+}
+
+interface Props {
+  title: string;
+  description: string;
+  companyName: string;
+  industry: string;
+  challenge: string;
+  solution: string;
+  results: string[];
+  metrics: Metric[];
+  quote?: string;
+  quoteAuthor?: string;
+}
+
+const { title, description, companyName, industry, challenge, solution, results, metrics, quote, quoteAuthor } = Astro.props;
+---
+
+<BaseLayout title={title} description={description}>
+  <section class="py-24">
+    <div class="container mx-auto px-4 max-w-4xl">
+      <a href="/vaka-calismalari/" class="text-sm text-[var(--color-text-muted)] hover:text-[var(--color-primary-light)] transition-colors mb-8 inline-block">← Tüm Vaka Çalışmaları</a>
+      <h1 class="text-3xl md:text-5xl font-bold mb-4">{companyName}</h1>
+      <p class="text-[var(--color-primary-light)] font-medium mb-8">{industry}</p>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-4 mb-12">
+        {metrics.map((m) => (
+          <div class="bg-[var(--color-surface-light)] border border-[var(--color-border)] rounded-xl p-4 text-center">
+            <p class="text-2xl font-bold text-[var(--color-primary)]">{m.value}</p>
+            <p class="text-xs text-[var(--color-text-muted)]">{m.label}</p>
+          </div>
+        ))}
+      </div>
+
+      <div class="space-y-8">
+        <div class="bg-[var(--color-surface-light)] border border-[var(--color-border)] rounded-2xl p-6">
+          <h2 class="text-xl font-semibold mb-3">Zorluk</h2>
+          <p class="text-[var(--color-text-muted)]">{challenge}</p>
+        </div>
+        <div class="bg-[var(--color-surface-light)] border border-[var(--color-border)] rounded-2xl p-6">
+          <h2 class="text-xl font-semibold mb-3">Çözüm</h2>
+          <p class="text-[var(--color-text-muted)]">{solution}</p>
+        </div>
+        <div class="bg-[var(--color-surface-light)] border border-[var(--color-border)] rounded-2xl p-6">
+          <h2 class="text-xl font-semibold mb-3">Sonuçlar</h2>
+          <ul class="space-y-2">
+            {results.map((r) => (
+              <li class="flex items-start gap-2">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-green-400 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
+                <span class="text-[var(--color-text-muted)]">{r}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+
+      {quote && (
+        <blockquote class="mt-12 border-l-4 border-[var(--color-primary)] pl-6 py-4 bg-[var(--color-surface-light)] rounded-r-xl">
+          <p class="text-lg italic mb-2">"{quote}"</p>
+          {quoteAuthor && <cite class="text-sm text-[var(--color-text-muted)]">— {quoteAuthor}</cite>}
+        </blockquote>
+      )}
+
+      <div class="mt-12 text-center">
+        <a href="/cozumler/" class="bg-[var(--color-primary)] hover:bg-[var(--color-primary-dark)] text-white font-semibold px-8 py-3 rounded-xl transition-all duration-300">Ücretsiz Analiz Talep Et</a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

@@ -33,6 +33,7 @@ const ogImageURL = new URL(ogImage, Astro.site);
 import '../styles/global.css';
 import Navigation from '../components/Navigation.astro';
 import Footer from '../components/Footer.astro';
+import CookieConsent from '../components/CookieConsent.astro';
 ---
 
 <!DOCTYPE html>
@@ -87,27 +88,7 @@ import Footer from '../components/Footer.astro';
     </main>
     <Footer />
 
-    <!--
-      PITFALL #7 FIX: Analytics loaded via Vanilla JS, NOT React hooks.
-      Cookie consent gate MUST wrap GA4 loading.
-      This script runs only in the browser, never on the server.
-    -->
-    <script is:inline>
-      // GA4 — deferred load, gated by consent (to be implemented)
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){window.dataLayer.push(arguments);}
-
-      // Defer GTM script loading to improve LCP
-      window.addEventListener('load', function() {
-        setTimeout(function() {
-          var script = document.createElement('script');
-          script.src = 'https://www.googletagmanager.com/gtag/js?id=G-XYNQMB280W';
-          script.async = true;
-          document.head.appendChild(script);
-          gtag('js', new Date());
-          gtag('config', 'G-XYNQMB280W');
-        }, 2000);
-      });
-    </script>
+    <!-- PITFALL #7 FIX: Cookie consent banner — GA4 only loads after explicit acceptance -->
+    <CookieConsent />
   </body>
 </html>

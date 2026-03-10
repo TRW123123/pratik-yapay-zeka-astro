@@ -1,0 +1,81 @@
+---
+/**
+ * CookieConsent.astro — DSGVO/KVKK compliant cookie consent banner.
+ * Pitfall #7 FIX: No analytics loaded until user gives explicit consent.
+ * Uses localStorage to remember choice. Zero React dependencies.
+ */
+---
+
+<div id="cookie-consent" class="fixed bottom-0 left-0 right-0 z-[100] p-4 hidden" role="dialog" aria-label="Cookie Consent">
+  <div class="container mx-auto max-w-4xl">
+    <div class="bg-[var(--color-surface-light)] border border-[var(--color-border)] rounded-2xl p-6 shadow-2xl backdrop-blur-md">
+      <div class="flex flex-col md:flex-row items-start md:items-center gap-4">
+        <div class="flex-1">
+          <p class="text-sm font-medium mb-1">🍪 Çerez Politikası</p>
+          <p class="text-xs text-[var(--color-text-muted)]">
+            Web sitemizde deneyiminizi geliştirmek için çerezler kullanıyoruz. Analitik çerezler yalnızca onayınızla etkinleştirilir.
+            <a href="/gizlilik/" class="text-[var(--color-primary-light)] hover:underline">Gizlilik Politikası</a>
+          </p>
+        </div>
+        <div class="flex gap-2 flex-shrink-0">
+          <button id="cookie-reject" class="px-4 py-2 text-xs border border-[var(--color-border)] rounded-lg hover:bg-[var(--color-surface)]/50 transition-colors">
+            Sadece Gerekli
+          </button>
+          <button id="cookie-accept" class="px-4 py-2 text-xs bg-[var(--color-primary)] hover:bg-[var(--color-primary-dark)] text-white rounded-lg transition-colors font-medium">
+            Tümünü Kabul Et
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script is:inline>
+  (function() {
+    var consent = localStorage.getItem('cookie-consent');
+    var banner = document.getElementById('cookie-consent');
+    
+    if (!consent && banner) {
+      banner.classList.remove('hidden');
+    }
+
+    // If user previously accepted, load analytics
+    if (consent === 'accepted') {
+      loadAnalytics();
+    }
+
+    var acceptBtn = document.getElementById('cookie-accept');
+    var rejectBtn = document.getElementById('cookie-reject');
+    
+    if (acceptBtn) {
+      acceptBtn.addEventListener('click', function() {
+        localStorage.setItem('cookie-consent', 'accepted');
+        if (banner) banner.classList.add('hidden');
+        loadAnalytics();
+      });
+    }
+    
+    if (rejectBtn) {
+      rejectBtn.addEventListener('click', function() {
+        localStorage.setItem('cookie-consent', 'rejected');
+        if (banner) banner.classList.add('hidden');
+      });
+    }
+
+    function loadAnalytics() {
+      // GA4 — loads ONLY after explicit consent
+      var GA_ID = 'G-XXXXXXXXXX'; // Replace with actual GA ID
+      if (GA_ID === 'G-XXXXXXXXXX') return; // Skip if not configured
+
+      var s = document.createElement('script');
+      s.async = true;
+      s.src = 'https://www.googletagmanager.com/gtag/js?id=' + GA_ID;
+      document.head.appendChild(s);
+      
+      window.dataLayer = window.dataLayer || [];
+      function gtag() { window.dataLayer.push(arguments); }
+      gtag('js', new Date());
+      gtag('config', GA_ID, { anonymize_ip: true });
+    }
+  })();
+</script>
