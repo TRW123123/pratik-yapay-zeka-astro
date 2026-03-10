@@ -12,9 +12,9 @@
 /* Design tokens from the Lovable project */
 @theme {
   --font-sans: 'Poppins', ui-sans-serif, system-ui, sans-serif;
-  --color-primary: #6C3CE1;
-  --color-primary-light: #8B5CF6;
-  --color-primary-dark: #5B21B6;
+  --color-primary: #10B981;
+  --color-primary-light: #34D399;
+  --color-primary-dark: #059669;
   --color-accent: #06B6D4;
   --color-surface: #0F0F23;
   --color-surface-light: #1A1A2E;
