@@ -31,6 +31,8 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 const ogImageURL = new URL(ogImage, Astro.site);
 
 import '../styles/global.css';
+import Navigation from '../components/Navigation.astro';
+import Footer from '../components/Footer.astro';
 ---
 
 <!DOCTYPE html>
@@ -79,7 +81,11 @@ import '../styles/global.css';
   </head>
 
   <body>
-    <slot />
+    <Navigation />
+    <main class="flex-1">
+      <slot />
+    </main>
+    <Footer />
 
     <!--
       PITFALL #7 FIX: Analytics loaded via Vanilla JS, NOT React hooks.

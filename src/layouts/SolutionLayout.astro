@@ -1,0 +1,147 @@
+---
+/**
+ * SolutionLayout.astro — Reusable layout for all 5 solution pages.
+ * Prevents code duplication across lead-gen, sales, marketing, CRM, customer service pages.
+ */
+import BaseLayout from './BaseLayout.astro';
+
+interface ProcessStep {
+  title: string;
+  description: string;
+}
+
+interface Feature {
+  title: string;
+  description: string;
+}
+
+interface Props {
+  title: string;
+  description: string;
+  heroTitle: string;
+  heroSubtitle: string;
+  problems: string[];
+  processTitle: string;
+  processSteps: ProcessStep[];
+  featuresTitle: string;
+  features: Feature[];
+  benefitsTitle: string;
+  benefits: string[];
+  caseStudyDescription: string;
+  finalCtaTitle: string;
+  finalCtaSubtitle: string;
+}
+
+const {
+  title,
+  description,
+  heroTitle,
+  heroSubtitle,
+  problems,
+  processTitle,
+  processSteps,
+  featuresTitle,
+  features,
+  benefitsTitle,
+  benefits,
+  caseStudyDescription,
+  finalCtaTitle,
+  finalCtaSubtitle,
+} = Astro.props;
+---
+
+<BaseLayout title={title} description={description}>
+  <!-- Hero -->
+  <section class="py-24 bg-gradient-to-br from-[var(--color-surface)] to-[var(--color-primary-dark)]/10">
+    <div class="container mx-auto px-4 max-w-4xl text-center">
+      <h1 class="text-3xl md:text-5xl font-bold mb-6 leading-tight">{heroTitle}</h1>
+      <p class="text-lg text-[var(--color-text-muted)] mb-8 max-w-2xl mx-auto">{heroSubtitle}</p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="/cozumler/" class="bg-[var(--color-primary)] hover:bg-[var(--color-primary-dark)] text-white font-semibold px-8 py-3 rounded-xl transition-all duration-300">Ücretsiz Danışmanlık</a>
+        <a href="/vaka-calismalari/" class="border border-[var(--color-border)] hover:border-[var(--color-primary)]/50 text-[var(--color-text)] font-medium px-8 py-3 rounded-xl transition-all duration-300">Vaka Çalışmalarını Görüntüle</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Problems -->
+  <section class="py-20">
+    <div class="container mx-auto px-4 max-w-3xl">
+      <h2 class="text-2xl md:text-3xl font-bold mb-8 text-center">Bu Zorlukları Tanıyor musunuz?</h2>
+      <div class="space-y-4">
+        {problems.map((problem) => (
+          <div class="flex items-start gap-3 bg-[var(--color-surface-light)] border border-[var(--color-border)] rounded-xl p-4">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-red-400 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4c-.77-.833-1.964-.833-2.732 0L3.34 16.5c-.77.833.192 2.5 1.732 2.5z" /></svg>
+            <p class="text-[var(--color-text-muted)]">{problem}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Process Steps -->
+  <section class="py-20 bg-[var(--color-surface-light)]">
+    <div class="container mx-auto px-4 max-w-4xl">
+      <h2 class="text-2xl md:text-3xl font-bold mb-12 text-center">{processTitle}</h2>
+      <div class="grid md:grid-cols-4 gap-6">
+        {processSteps.map((step, i) => (
+          <div class="text-center">
+            <div class="w-12 h-12 rounded-full bg-[var(--color-primary)]/10 text-[var(--color-primary)] font-bold text-lg flex items-center justify-center mx-auto mb-4">{i + 1}</div>
+            <h3 class="font-semibold mb-2">{step.title}</h3>
+            <p class="text-sm text-[var(--color-text-muted)]">{step.description}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Features -->
+  <section class="py-20">
+    <div class="container mx-auto px-4 max-w-5xl">
+      <h2 class="text-2xl md:text-3xl font-bold mb-12 text-center">{featuresTitle}</h2>
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {features.map((feature) => (
+          <div class="bg-[var(--color-surface-light)] border border-[var(--color-border)] rounded-2xl p-6 hover:border-[var(--color-primary)]/30 transition-all duration-300">
+            <h3 class="font-semibold mb-2">{feature.title}</h3>
+            <p class="text-sm text-[var(--color-text-muted)]">{feature.description}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Benefits -->
+  <section class="py-20 bg-[var(--color-surface-light)]">
+    <div class="container mx-auto px-4 max-w-3xl">
+      <h2 class="text-2xl md:text-3xl font-bold mb-8 text-center">{benefitsTitle}</h2>
+      <div class="space-y-3">
+        {benefits.map((benefit) => (
+          <div class="flex items-center gap-3">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-green-400 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
+            <p>{benefit}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Case Study Reference -->
+  <section class="py-16">
+    <div class="container mx-auto px-4 max-w-3xl">
+      <div class="bg-gradient-to-br from-[var(--color-primary)]/5 to-[var(--color-accent)]/5 border border-[var(--color-border)] rounded-2xl p-8 text-center">
+        <p class="text-[var(--color-text-muted)] mb-6">{caseStudyDescription}</p>
+        <a href="/vaka-calismalari/" class="text-[var(--color-primary-light)] font-medium hover:underline">Tüm Vaka Çalışmalarını Görüntüle →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Final CTA -->
+  <section class="py-20 bg-gradient-to-br from-[var(--color-primary)]/10 to-[var(--color-accent)]/5">
+    <div class="container mx-auto px-4 text-center max-w-2xl">
+      <h2 class="text-2xl md:text-3xl font-bold mb-4">{finalCtaTitle}</h2>
+      <p class="text-[var(--color-text-muted)] mb-8">{finalCtaSubtitle}</p>
+      <a href="/cozumler/" class="inline-flex items-center gap-2 bg-[var(--color-primary)] hover:bg-[var(--color-primary-dark)] text-white font-semibold px-8 py-4 rounded-xl transition-all duration-300 text-lg">
+        Ücretsiz Danışmanlık
+      </a>
+    </div>
+  </section>
+</BaseLayout>
