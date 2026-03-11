@@ -1,0 +1,83 @@
+---
+// CTAExecutive.astro
+---
+
+<section id="cta-executive" class="py-32 bg-[#0a0d14] relative overflow-hidden">
+  <!-- Subtle Central Ambient Glow -->
+  <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-5xl h-[600px] bg-[var(--color-primary)]/5 blur-[120px] rounded-full pointer-events-none mix-blend-screen"></div>
+  
+  <!-- Top Border separator -->
+  <div class="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/10 to-transparent"></div>
+  
+  <div class="container mx-auto px-4 text-center max-w-4xl relative z-10">
+    <div class="gs-cta-text">
+      <h2 class="text-4xl md:text-6xl font-extrabold mb-8 text-white tracking-tight leading-tight">
+        İşletmenizi <span class="bg-gradient-to-r from-[var(--color-primary)] to-[#06B6D4] bg-clip-text text-transparent">Dönüştürmeye</span> Hazır mısınız?
+      </h2>
+      <p class="text-xl md:text-2xl text-[#8e95a3] mb-12 font-light leading-relaxed max-w-2xl mx-auto">
+        Yapay zeka ve otomasyon ile satış ve pazarlama süreçlerinizi optimize edin. C-Level strateji görüşmesi için yerinizi ayırtın.
+      </p>
+    </div>
+    
+    <!-- Solid Lime Green CTA Button -->
+    <div class="gs-cta-button relative inline-block group">
+      <a
+        href="https://cal.com/tim-weber-ykyh61/30min"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="relative flex items-center gap-3 bg-[var(--color-primary)] text-[#0a0d14] font-bold px-10 py-5 rounded-full hover:bg-[var(--color-primary-dark)] transition-all duration-300 transform group-hover:-translate-y-1 shadow-[0_4px_20px_rgba(163,230,53,0.3)] text-lg overflow-hidden"
+      >
+        <span class="relative z-10 flex items-center gap-3">
+          Ücretsiz Danışmanlık Alın
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-[#0a0d14] transition-transform duration-300 group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+          </svg>
+        </span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<script>
+  import { gsap } from "gsap";
+  import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+  gsap.registerPlugin(ScrollTrigger);
+
+  const initCTAAnimations = () => {
+    // Text entrance
+    gsap.fromTo(".gs-cta-text",
+      { y: 50, opacity: 0, scale: 0.95 },
+      {
+        y: 0,
+        opacity: 1,
+        scale: 1,
+        duration: 1.2,
+        ease: "power3.out",
+        scrollTrigger: {
+          trigger: "#cta-executive",
+          start: "top 75%",
+        }
+      }
+    );
+
+    // Button pop-in with a bounce
+    gsap.fromTo(".gs-cta-button",
+      { y: 30, opacity: 0, scale: 0.9 },
+      {
+        y: 0,
+        opacity: 1,
+        scale: 1,
+        duration: 1,
+        ease: "elastic.out(1, 0.7)",
+        scrollTrigger: {
+          trigger: "#cta-executive",
+          start: "top 70%",
+        }
+      }
+    );
+  };
+
+  initCTAAnimations();
+  document.addEventListener('astro:after-swap', initCTAAnimations);
+</script>

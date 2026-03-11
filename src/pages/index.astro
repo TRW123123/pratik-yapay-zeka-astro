@@ -1,11 +1,15 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import HeroExecutive from '../components/HeroExecutive.astro';
+import FeaturesExecutive from '../components/FeaturesExecutive.astro';
+import FAQExecutive from '../components/FAQExecutive.astro';
+import CTAExecutive from '../components/CTAExecutive.astro';
 
+// FAQ Content for Schema (reused here for JSON-LD SEO, visually rendered in FAQExecutive.astro)
 const faqItems = [
   { question: 'Kurulum ne kadar sürer?', answer: 'Genellikle 2 gün. Basit entegrasyonlar aynı gün, karmaşık sistemler 1 hafta sürebilir.' },
-  { question: 'Veri güvenliği nasıl sağlanır?', answer: 'Müşteri verileri tamamen gizli tutulur, erişimler sınırlıdır. GDPR uyumlu çalışıyoruz.' },
-  { question: 'Teknik bilgi gerekli mi?', answer: 'Hayır. Tüm süreci biz yönetiyoruz. Sadece iş süreçlerinizi anlamamız yeterli.' },
+  { question: 'Veri güvenliği nasıl sağlanır?', answer: 'Müşteri verileri tamamen gizli tutulur, erişimler sınırlıdır. Tüm altyapımız GDPR uyumlu olarak kurgulanmıştır.' },
+  { question: 'Teknik bilgi gerekli mi?', answer: 'Hayır. Tüm süreci biz yönetiyoruz. Sizin sadece hedeflerinizi ve iş süreçlerinizi bizimle paylaşmanız yeterli.' },
 ];
 
 const faqSchema = {
@@ -31,114 +35,16 @@ const faqSchema = {
   <!-- New Executive High-Tech Hero Section -->
   <HeroExecutive />
 
-  <!-- Features Section - Updated to match Executive Glassmorphism -->
-  <section id="features" class="py-24 bg-[#0a0d14] relative">
-    <div class="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/10 to-transparent"></div>
-    <div class="container mx-auto px-4 z-10 relative">
-      <div class="text-center max-w-2xl mx-auto mb-20">
-        <h2 class="text-3xl md:text-4xl font-bold mb-4 tracking-tight text-white">Yapay Zeka Destekli İş Çözümleri</h2>
-        <p class="text-[#a1a1aa] text-lg">İşletmenizin karlılığını ve hızını artıran endüstriyel otomasyon araçları.</p>
-      </div>
-      
-      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-        <!-- Feature 1 -->
-        <div class="group bg-[#0f121df0] backdrop-blur-md border border-white/5 rounded-2xl p-8 hover:border-[var(--color-primary)]/30 transition-all duration-500 hover:-translate-y-1 hover:shadow-[0_8px_30px_rgb(0,0,0,0.5)]">
-          <div class="w-14 h-14 rounded-xl bg-gradient-to-br from-white/5 to-transparent border border-white/10 flex items-center justify-center mb-6 group-hover:border-[#06B6D4]/30 transition-colors">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-[#06B6D4]" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" /></svg>
-          </div>
-          <h3 class="text-xl font-bold mb-3 text-white">Outbound Satış Otomasyonu</h3>
-          <p class="text-[0.95rem] text-[#a1a1aa] mb-6 leading-relaxed">Kişiselleştirilmiş e-postalar ve akıllı takip.</p>
-          <div class="pt-4 border-t border-white/5 flex items-center justify-between">
-            <span class="text-xs text-[#06B6D4] font-semibold tracking-wide uppercase">Günde 500+ Mesaj</span>
-          </div>
-        </div>
-        
-        <!-- Feature 2 -->
-        <div class="group bg-[#0f121df0] backdrop-blur-md border border-white/5 rounded-2xl p-8 hover:border-[var(--color-primary)]/30 transition-all duration-500 hover:-translate-y-1 hover:shadow-[0_8px_30px_rgb(0,0,0,0.5)]">
-          <div class="w-14 h-14 rounded-xl bg-gradient-to-br from-white/5 to-transparent border border-white/10 flex items-center justify-center mb-6 group-hover:border-[var(--color-primary)]/30 transition-colors">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-[var(--color-primary)]" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>
-          </div>
-          <h3 class="text-xl font-bold mb-3 text-white">Pazarlama Otomasyonu</h3>
-          <p class="text-[0.95rem] text-[#a1a1aa] mb-6 leading-relaxed">Otomatik içerik, SEO ve reklam optimizasyonu.</p>
-          <div class="pt-4 border-t border-white/5 flex items-center justify-between">
-            <span class="text-xs text-[var(--color-primary)] font-semibold tracking-wide uppercase">SEO'da +%85 Artış</span>
-          </div>
-        </div>
-        
-        <!-- Feature 3 -->
-        <div class="group bg-[#0f121df0] backdrop-blur-md border border-white/5 rounded-2xl p-8 hover:border-[var(--color-primary)]/30 transition-all duration-500 hover:-translate-y-1 hover:shadow-[0_8px_30px_rgb(0,0,0,0.5)]">
-          <div class="w-14 h-14 rounded-xl bg-gradient-to-br from-white/5 to-transparent border border-white/10 flex items-center justify-center mb-6 group-hover:border-[#06B6D4]/30 transition-colors">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-[#06B6D4]" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" /></svg>
-          </div>
-          <h3 class="text-xl font-bold mb-3 text-white">Müşteri İletişimi</h3>
-          <p class="text-[0.95rem] text-[#a1a1aa] mb-6 leading-relaxed">7/24 kişiselleştirilmiş AI Chatbot yanıtları.</p>
-          <div class="pt-4 border-t border-white/5 flex items-center justify-between">
-            <span class="text-xs text-[#06B6D4] font-semibold tracking-wide uppercase">+%40 Memnuniyet</span>
-          </div>
-        </div>
-        
-        <!-- Feature 4 -->
-        <div class="group bg-[#0f121df0] backdrop-blur-md border border-white/5 rounded-2xl p-8 hover:border-[var(--color-primary)]/30 transition-all duration-500 hover:-translate-y-1 hover:shadow-[0_8px_30px_rgb(0,0,0,0.5)]">
-          <div class="w-14 h-14 rounded-xl bg-gradient-to-br from-white/5 to-transparent border border-white/10 flex items-center justify-center mb-6 group-hover:border-[var(--color-primary)]/30 transition-colors">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-[var(--color-primary)]" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" /></svg>
-          </div>
-          <h3 class="text-xl font-bold mb-3 text-white">Veri Analizi</h3>
-          <p class="text-[0.95rem] text-[#a1a1aa] mb-6 leading-relaxed">Gerçek zamanlı içgörüler, daha iyi kararlar.</p>
-          <div class="pt-4 border-t border-white/5 flex items-center justify-between">
-            <span class="text-xs text-[var(--color-primary)] font-semibold tracking-wide uppercase">60% Hızlı Karar</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+  <!-- Features Component (GSAP ScrollTrigger + Emerald Glassmorphism) -->
+  <FeaturesExecutive />
 
-  <!-- FAQ Section - Refined for Executive Look -->
-  <section class="py-24 bg-[#070913] relative">
-    <div class="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/5 to-transparent"></div>
-    <div class="container mx-auto px-4 max-w-3xl">
-      <div class="text-center mb-16">
-        <h2 class="text-3xl md:text-4xl font-bold mb-4 text-white">Sıkça Sorulan Sorular</h2>
-        <p class="text-[#a1a1aa]">Yapay zeka otomasyon altyapımız hakkında bilmeniz gereken her şey</p>
-      </div>
-      <div class="space-y-4">
-        {faqItems.map((faq) => (
-          <details class="group bg-[#0f121df0] border border-white/5 rounded-xl [&_summary::-webkit-details-marker]:hidden">
-            <summary class="flex items-center justify-between p-6 cursor-pointer font-medium text-white/90 hover:text-white transition-colors">
-              {faq.question}
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-white/50 transition-transform duration-300 group-open:-rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
-            </summary>
-            <div class="px-6 pb-6 text-[#a1a1aa] border-t border-white/5 pt-4 mt-2">
-              {faq.answer}
-            </div>
-          </details>
-        ))}
-      </div>
-    </div>
-  </section>
+  <!-- FAQ Component (GSAP Accordion) -->
+  <FAQExecutive />
 
-  <!-- CTA Section - Elevated Executive Look -->
-  <section class="py-32 bg-[#0a0d14] relative overflow-hidden">
-    <!-- Ambient glow for CTA -->
-    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-4xl h-full bg-gradient-to-r from-[#06B6D4]/5 to-[var(--color-primary)]/5 blur-[120px] rounded-full pointer-events-none"></div>
-    <div class="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/10 to-transparent"></div>
-    
-    <div class="container mx-auto px-4 text-center max-w-3xl relative z-10">
-      <h2 class="text-4xl md:text-5xl font-bold mb-6 text-white tracking-tight">İşletmenizi Dönüştürmeye Hazır mısınız?</h2>
-      <p class="text-xl text-[#a1a1aa] mb-12 font-light">Yapay zeka ve otomasyon ile satış ve pazarlama süreçlerinizi optimize edin. C-Level strateji görüşmesi için yerinizi ayırtın.</p>
-      
-      <!-- Liquid Metal CTA Base Button Style -->
-      <a
-        href="https://cal.com/tim-weber-ykyh61/30min"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="inline-flex items-center gap-3 bg-white text-black font-semibold px-10 py-5 rounded-full hover:bg-white/90 transition-all duration-300 hover:scale-105 shadow-[0_0_40px_rgba(255,255,255,0.1)] text-lg"
-      >
-        Ücretsiz Danışmanlık Alın
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" /></svg>
-      </a>
-    </div>
-  </section>
+  <!-- Liquid Emerald Call To Action Component -->
+  <CTAExecutive />
   
   <!-- FAQ Schema.org JSON-LD for rich results -->
   <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+</BaseLayout>
 </BaseLayout>

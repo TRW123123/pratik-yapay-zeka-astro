@@ -1,0 +1,127 @@
+---
+// FeaturesExecutive.astro
+
+const features = [
+  {
+    id: "outbound",
+    title: "Outbound Satış Otomasyonu",
+    desc: "Kişiselleştirilmiş e-postalar ve akıllı takip.",
+    metric: "Günde 500+ Mesaj",
+    icon: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />`
+  },
+  {
+    id: "marketing",
+    title: "Pazarlama Otomasyonu",
+    desc: "Otomatik içerik, SEO ve reklam optimizasyonu.",
+    metric: "SEO'da +%85 Artış",
+    icon: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />`
+  },
+  {
+    id: "support",
+    title: "Müşteri İletişimi",
+    desc: "7/24 kişiselleştirilmiş AI Chatbot yanıtları.",
+    metric: "+%40 Memnuniyet",
+    icon: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />`
+  },
+  {
+    id: "analytics",
+    title: "Veri Analizi",
+    desc: "Gerçek zamanlı içgörüler, daha iyi kararlar.",
+    metric: "60% Hızlı Karar",
+    icon: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />`
+  }
+];
+---
+
+<section id="features-executive" class="py-32 bg-[#0a0d14] relative overflow-hidden">
+  <!-- Subtle Background Grid/Glow -->
+  <div class="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/10 to-transparent"></div>
+  <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-[var(--color-primary)]/5 blur-[120px] rounded-full pointer-events-none mix-blend-screen"></div>
+
+  <div class="container mx-auto px-4 z-10 relative">
+    <div class="text-center max-w-2xl mx-auto mb-24 gs-feature-header">
+      <h2 class="text-3xl md:text-5xl font-bold mb-6 tracking-tight text-white">
+        Yapay Zeka Destekli <span class="bg-gradient-to-r from-[var(--color-primary)] to-[#06B6D4] bg-clip-text text-transparent">İş Çözümleri</span>
+      </h2>
+      <p class="text-[#a1a1aa] text-lg font-light leading-relaxed">İşletmenizin karlılığını ve hızını artıran endüstriyel otomasyon araçları.</p>
+    </div>
+    
+    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 gs-feature-stagger">
+      {features.map((feature, index) => (
+        <div class="gs-feature-card group bg-[#0f121d]/80 backdrop-blur-xl border border-white/5 rounded-2xl p-8 hover:border-[var(--color-primary)]/40 transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_8px_40px_rgba(16,185,129,0.15)] relative overflow-hidden">
+          <!-- Hover Liquid Gradient -->
+          <div class="absolute inset-0 bg-gradient-to-br from-[var(--color-primary)]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl pointer-events-none"></div>
+          
+          <div class="w-14 h-14 rounded-xl bg-gradient-to-br from-white/5 to-transparent border border-white/10 flex items-center justify-center mb-8 group-hover:border-[var(--color-primary)]/40 transition-colors relative z-10 group-hover:scale-110 duration-500">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-[var(--color-primary)] group-hover:text-[#06B6D4] transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor" set:html={feature.icon} />
+          </div>
+          
+          <h3 class="text-xl font-bold mb-4 text-white relative z-10 group-hover:text-white transition-colors">{feature.title}</h3>
+          <p class="text-[0.95rem] text-[#8e95a3] mb-8 leading-relaxed relative z-10">{feature.desc}</p>
+          
+          <div class="pt-4 border-t border-white/5 flex items-center justify-between relative z-10">
+            <span class="text-xs text-[var(--color-primary)] group-hover:text-[#06B6D4] font-bold tracking-widest uppercase transition-colors">{feature.metric}</span>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<script>
+  import { gsap } from "gsap";
+  import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+  gsap.registerPlugin(ScrollTrigger);
+
+  // Scroll Animations
+  const initFeaturesAnimations = () => {
+    const isDesktop = window.matchMedia("(min-width: 768px)").matches;
+    
+    if (isDesktop) {
+      // Header Animation
+      gsap.fromTo(".gs-feature-header",
+        { y: 50, opacity: 0 },
+        {
+          y: 0,
+          opacity: 1,
+          duration: 1,
+          ease: "power3.out",
+          scrollTrigger: {
+            trigger: "#features-executive",
+            start: "top 80%",
+          }
+        }
+      );
+
+      // Staggered Cards Animation
+      gsap.fromTo(".gs-feature-card",
+        { y: 60, opacity: 0, scale: 0.95 },
+        {
+          y: 0,
+          opacity: 1,
+          scale: 1,
+          duration: 0.8,
+          stagger: 0.15,
+          ease: "back.out(1.2)",
+          scrollTrigger: {
+            trigger: ".gs-feature-stagger",
+            start: "top 85%",
+          }
+        }
+      );
+    } else {
+        // Mobile fallback - simpler fade in
+        gsap.utils.toArray(".gs-feature-card").forEach((card: any) => {
+            gsap.fromTo(card, 
+                { opacity: 0, y: 30 },
+                { opacity: 1, y: 0, duration: 0.6, ease: "power2.out", scrollTrigger: { trigger: card, start: "top 90%" } }
+            );
+        });
+    }
+  };
+
+  // Run on load and after view transitions
+  initFeaturesAnimations();
+  document.addEventListener('astro:after-swap', initFeaturesAnimations);
+</script>
