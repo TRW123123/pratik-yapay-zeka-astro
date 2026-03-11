@@ -12,3 +12,14 @@ https://www.yapayzekapratik.com/* https://yapayzekapratik.com/:splat 301!
 /functions/v1/sitemap /sitemap-index.xml 301!
 
 # NOTE: NO SPA fallback (/* /index.html 200) — this is static Astro, not an SPA!
+
+# Legacy Wix/Lovable Redirects to Home (Consolidation)
+/de/*            /      301!
+/en/*            /      301!
+/book-online*    /      301!
+/hakkimda        /      301!
+/danismanlik     /      301!
+/about-4         /hakkimizda/ 301!
+
+# Legacy Wix Blog Redirects (Map old /post to new /blog)
+/post/*          /blog/:splat 301!
