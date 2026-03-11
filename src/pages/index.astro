@@ -1,15 +1,18 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import HeroExecutive from '../components/HeroExecutive.astro';
-import FeaturesExecutive from '../components/FeaturesExecutive.astro';
-import FAQExecutive from '../components/FAQExecutive.astro';
-import CTAExecutive from '../components/CTAExecutive.astro';
+import Hero from '../components/Hero.astro';
+import Agitate from '../components/Agitate.astro';
+import WhyUs from '../components/WhyUs.astro';
+import Timeline from '../components/Timeline.astro';
+import MiniCases from '../components/MiniCases.astro';
 
-// FAQ Content for Schema (reused here for JSON-LD SEO, visually rendered in FAQExecutive.astro)
+// FAQ Content for Schema (SEO JSON-LD)
 const faqItems = [
   { question: 'Kurulum ne kadar sürer?', answer: 'Genellikle 2 gün. Basit entegrasyonlar aynı gün, karmaşık sistemler 1 hafta sürebilir.' },
-  { question: 'Veri güvenliği nasıl sağlanır?', answer: 'Müşteri verileri tamamen gizli tutulur, erişimler sınırlıdır. Tüm altyapımız GDPR uyumlu olarak kurgulanmıştır.' },
-  { question: 'Teknik bilgi gerekli mi?', answer: 'Hayır. Tüm süreci biz yönetiyoruz. Sizin sadece hedeflerinizi ve iş süreçlerinizi bizimle paylaşmanız yeterli.' },
+  { question: 'Veri güvenliği nasıl sağlanır?', answer: 'Müşteri verileri tamamen gizli tutulur, erişimler sınırlıdır. GDPR uyumlu çalışıyoruz.' },
+  { question: 'İçeriğin sahipliği kime ait?', answer: 'Üretilen tüm içerikler size aittir. Telif hakkı sorunu yaşamazsınız.' },
+  { question: 'Fiyat nasıl belirlenir?', answer: 'İhtiyaç ve entegrasyonlara göre özel paketler sunuyoruz. Ücretsiz analiz sonrası net fiyat alırsınız.' },
+  { question: 'Teknik bilgi gerekli mi?', answer: 'Hayır. Tüm süreci biz yönetiyoruz. Sadece iş süreçlerinizi anlamamız yeterli.' },
 ];
 
 const faqSchema = {
@@ -32,19 +35,21 @@ const faqSchema = {
   ogImage="/og/og-homepage.png"
   schemaType="FAQPage"
 >
-  <!-- New Executive High-Tech Hero Section -->
-  <HeroExecutive />
+  <!-- 1. Hero Section (original copy) -->
+  <Hero />
 
-  <!-- Features Component (GSAP ScrollTrigger + Emerald Glassmorphism) -->
-  <FeaturesExecutive />
+  <!-- 2. Agitate Section (3-tab "why not DIY/inhouse/wait") -->
+  <Agitate />
 
-  <!-- FAQ Component (GSAP Accordion) -->
-  <FAQExecutive />
+  <!-- 3. Why Us Section (4 GlowCards) -->
+  <WhyUs />
 
-  <!-- Liquid Emerald Call To Action Component -->
-  <CTAExecutive />
+  <!-- 4. Timeline Section (5-step end-to-end automation) -->
+  <Timeline />
+
+  <!-- 5. Mini Cases Section (6 case study cards) -->
+  <MiniCases />
   
   <!-- FAQ Schema.org JSON-LD for rich results -->
   <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
-</BaseLayout>
 </BaseLayout>

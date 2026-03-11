@@ -1,0 +1,155 @@
+---
+/**
+ * Agitate.astro — 1:1 faithful port of lovable-original AgitateDemo.tsx
+ * "Yapay zekayı doğru şekilde şirketinize nasıl entegre edebilirsiniz?"
+ * 3 tabbed features with images. CSS-only tab switching for Astro.
+ */
+import diyImage from '../assets/agitate-diy.webp';
+import inhouseImage from '../assets/agitate-inhouse.webp';
+import agencyImage from '../assets/agitate-agency.webp';
+---
+
+<section class="relative py-16 md:py-24 bg-[hsl(215,28%,10%,0.3)]">
+  <div class="container mx-auto px-4">
+    <div class="mx-auto max-w-4xl text-center mb-12">
+      <h2 class="headline text-3xl md:text-4xl tracking-tight text-[hsl(210,10%,90%)] mb-4">
+        Yapay zekayı doğru şekilde şirketinize nasıl entegre edebilirsiniz?
+      </h2>
+      <p class="text-lg md:text-xl text-[hsl(215,16%,58%)] leading-relaxed">
+        Farklı yöntemler var… ama çoğu ayakkabınızın içindeki taş gibi: her adımda rahatsız eder.
+      </p>
+    </div>
+
+    <!-- Tab Navigation -->
+    <div class="mt-16 max-w-5xl mx-auto">
+      <div class="flex flex-col md:flex-row gap-4 md:gap-2 mb-8 justify-center" id="agitate-tabs">
+        <button class="agitate-tab active" data-tab="0">
+          <svg class="w-5 h-5 mr-2 inline-block" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.066 2.573c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.573 1.066c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.066-2.573c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" /><path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" /></svg>
+          Kendiniz yapın
+        </button>
+        <button class="agitate-tab" data-tab="1">
+          <svg class="w-5 h-5 mr-2 inline-block" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" /></svg>
+          İçeriden ekip kurun veya yeni eleman alın
+        </button>
+        <button class="agitate-tab" data-tab="2">
+          <svg class="w-5 h-5 mr-2 inline-block" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" /></svg>
+          Gelecek ayda, gelecek dönemde, gelecek yılda başlayın
+        </button>
+      </div>
+
+      <!-- Tab Content Panels -->
+      <div class="agitate-panels">
+        <!-- Panel 0: DIY -->
+        <div class="agitate-panel active" data-panel="0">
+          <div class="grid md:grid-cols-2 gap-8 items-center">
+            <div>
+              <p class="text-[hsl(215,16%,58%)] leading-relaxed text-base">
+                Bu, insanlığın şimdiye kadar geliştirdiği en büyük teknoloji. Onu şirketinize doğru şekilde entegre etmek için aylarca odak ve ciddi zaman gerekir. Kendi yoğunluğunuz içinde buna vakit ayırabilir misiniz?
+              </p>
+            </div>
+            <div class="rounded-xl overflow-hidden">
+              <img src={diyImage.src} alt="DIY Yapay Zeka Otomasyonu - Kendi başınıza AI kurulum ve entegrasyon süreci" class="w-full h-auto rounded-xl" loading="lazy" decoding="async" />
+            </div>
+          </div>
+        </div>
+
+        <!-- Panel 1: Inhouse -->
+        <div class="agitate-panel" data-panel="1">
+          <div class="grid md:grid-cols-2 gap-8 items-center">
+            <div class="space-y-4">
+              <p class="text-[hsl(215,16%,58%)] leading-relaxed text-base">
+                İçeriden birini görevlendirmek: Zaten dolu masasına bir dosya daha. Şirketinizi dönüştürecek teknolojiyi yan iş olarak mı önem vermek istiyorsunuz?
+              </p>
+              <p class="text-[hsl(215,16%,58%)] leading-relaxed text-base">
+                Yeni eleman almak: Bu teknoloji çok yeni, çoğu kişi daha yolun başında. Tecrübeli uzmanlar çok pahalı.
+              </p>
+              <p class="text-[hsl(215,16%,58%)] leading-relaxed text-base">
+                İşe alım süreci bitmeyen kuyruk gibi: Hep beklersiniz, bir türlü ilerlemez.
+              </p>
+            </div>
+            <div class="rounded-xl overflow-hidden">
+              <img src={inhouseImage.src} alt="İç Ekip ile AI Entegrasyonu - Yapay zeka uzmanı işe alım ve takım kurma süreci" class="w-full h-auto rounded-xl" loading="lazy" decoding="async" />
+            </div>
+          </div>
+        </div>
+
+        <!-- Panel 2: Wait -->
+        <div class="agitate-panel" data-panel="2">
+          <div class="grid md:grid-cols-2 gap-8 items-center">
+            <div class="space-y-4">
+              <p class="text-[hsl(215,16%,58%)] leading-relaxed text-base">
+                Seneye bütçe ayarlanır, o zaman yaparız. Ama her geçen ay kaybolan fırsatlar ve kaçan müşteriler demek.
+              </p>
+              <p class="text-[hsl(215,16%,58%)] leading-relaxed text-base">
+                Gerçek şu: 3 yıl önce dev yazılım şirketi DocuSign, bugün yapay zeka ile 2 günde kopyalanabiliyor.
+              </p>
+              <p class="text-[hsl(215,16%,58%)] leading-relaxed text-base">
+                Peki sizin iş modelinizin kopyalanması ne kadar sürer?
+              </p>
+            </div>
+            <div class="rounded-xl overflow-hidden">
+              <img src={agencyImage.src} alt="Yapay Zeka Erteleme Riski - AI dönüşümünü geciktirmenin iş maliyeti" class="w-full h-auto rounded-xl" loading="lazy" decoding="async" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .agitate-tab {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.75rem 1.25rem;
+    border-radius: 0.75rem;
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: hsl(215 16% 58%);
+    background: hsl(220 13% 9%);
+    border: 1px solid hsl(220 13% 18%);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+  }
+  .agitate-tab:hover {
+    border-color: rgba(163, 230, 53, 0.3);
+    color: hsl(210 10% 90%);
+  }
+  .agitate-tab.active {
+    background: rgba(163, 230, 53, 0.1);
+    border-color: #A3E635;
+    color: #A3E635;
+  }
+  .agitate-panel {
+    display: none;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+  .agitate-panel.active {
+    display: block;
+    opacity: 1;
+  }
+</style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const tabs = document.querySelectorAll('.agitate-tab');
+    const panels = document.querySelectorAll('.agitate-panel');
+    
+    tabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        const index = tab.getAttribute('data-tab');
+        
+        // Deactivate all
+        tabs.forEach(t => t.classList.remove('active'));
+        panels.forEach(p => p.classList.remove('active'));
+        
+        // Activate selected
+        tab.classList.add('active');
+        const panel = document.querySelector(`.agitate-panel[data-panel="${index}"]`);
+        if (panel) panel.classList.add('active');
+      });
+    });
+  });
+</script>

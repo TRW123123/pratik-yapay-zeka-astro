@@ -1,0 +1,59 @@
+---
+/**
+ * Hero.astro — 1:1 faithful port of lovable-original Hero.tsx
+ * Exact same copy, exact same layout. No creative changes.
+ */
+---
+
+<section class="hero-section relative min-h-screen flex items-center justify-center" aria-label="Hero section">
+  <!-- Background Effects (matching original) -->
+  <div class="absolute inset-0 bg-gradient-to-br from-[hsl(203,23%,8%)] via-[hsl(215,28%,10%,0.2)] to-[hsl(203,23%,8%)]" aria-hidden="true"></div>
+  <div class="absolute inset-0 bg-grid-pattern opacity-30" aria-hidden="true"></div>
+  
+  <!-- Content -->
+  <div class="relative z-10 container mx-auto px-6 text-center">
+    <div class="max-w-5xl mx-auto space-y-8">
+      <!-- Main Headlines -->
+      <div class="space-y-4">
+        <h1 class="headline text-4xl md:text-6xl lg:text-7xl text-[hsl(210,10%,90%)] leading-[1.25] md:leading-[1.2]">
+          <span class="block">Siz şirketi yönetin.</span>
+          <span class="block text-[#A3E635] pb-1 relative hero-underline">
+            Biz sizin için 7/24 çalışan yapay zeka işçileri kuruyoruz.
+          </span>
+        </h1>
+      </div>
+      
+      <!-- CTA Button -->
+      <div class="pt-8">
+        <a
+          href="/cozumler/"
+          class="inline-flex items-center justify-center bg-[#A3E635] text-[hsl(203,23%,8%)] hover:bg-[#A3E635]/90 px-12 py-4 text-lg font-semibold rounded-xl transition-colors duration-200 min-h-[48px]"
+        >
+          Şimdi ücretsiz başlayın
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .hero-underline {
+    position: relative;
+  }
+  .hero-underline::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: #A3E635;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 1s ease-out;
+  }
+  .hero-section:hover .hero-underline::after {
+    transform: scaleX(1);
+    transform-origin: left;
+  }
+</style>
