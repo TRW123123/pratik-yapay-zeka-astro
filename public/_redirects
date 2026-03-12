@@ -22,4 +22,4 @@ https://www.yapayzekapratik.com/* https://yapayzekapratik.com/:splat 301!
 /about-4         /hakkimizda/ 301!
 
 # Legacy Wix Blog Redirects (Map old /post to new /blog)
-/post/*          /blog/:splat 301!
+/post/*          /blog/ 301!
