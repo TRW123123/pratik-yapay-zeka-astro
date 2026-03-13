@@ -50,11 +50,13 @@ const blogPosts = (posts || []) as BlogPost[];
     { name: 'Blog', url: '/blog/' },
   ]}
 >
-  <section class="py-24">
-    <div class="container mx-auto px-4 max-w-6xl">
+  <section class="py-32 lg:py-48 relative overflow-hidden bg-[#0B0F14]">
+    <div class="absolute inset-0 bg-[url('/noise.png')] opacity-20 mix-blend-overlay pointer-events-none"></div>
+    <div class="absolute top-1/4 left-1/2 -translate-x-1/2 w-[800px] h-[800px] bg-[var(--color-primary)]/10 rounded-full blur-[150px] pointer-events-none opacity-60"></div>
+    <div class="container mx-auto px-4 max-w-6xl relative z-10">
       <div class="text-center mb-16">
-        <h1 class="text-3xl md:text-5xl font-bold mb-4">Blog</h1>
-        <p class="text-lg text-[var(--color-text-muted)] max-w-2xl mx-auto">
+        <h1 class="text-4xl md:text-6xl font-extrabold mb-6 tracking-tight text-[#FFFFFF] drop-shadow-lg">Blog</h1>
+        <p class="text-xl text-[var(--color-text-muted)] max-w-2xl mx-auto leading-relaxed">
           Pratik yapay zeka destekli büyüme için içgörüler ve vaka çalışmaları.
         </p>
       </div>
@@ -116,4 +118,5 @@ const blogPosts = (posts || []) as BlogPost[];
       )}
     </div>
   </section>
+  <!-- Background transition to next section could go here if needed -->
 </BaseLayout>

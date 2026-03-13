@@ -3,16 +3,30 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 ---
 
 <BaseLayout title="Hakkımızda – KOBİ'lerin yapay zeka ile büyümesine yardımcı oluyoruz" description="Pratik Yapay Zeka, Almanya ve Türkiye'deki küçük ve orta ölçekli işletmelerin yapay zeka ve otomasyon ile potansiyellerini gerçekleştirmesine yardımcı olur.">
-  <section class="py-24">
-    <div class="container mx-auto px-4 max-w-3xl">
-      <h1 class="text-3xl md:text-5xl font-bold mb-8 text-center">Hakkımızda</h1>
-      <div class="prose prose-invert mx-auto space-y-6 text-[var(--color-text-muted)]">
-        <p>Pratik Yapay Zeka, Almanya ve Türkiye'deki KOBİ'lerin yapay zeka ve otomasyon ile büyümesine yardımcı olan bir danışmanlık firmasıdır.</p>
-        <p>Misyonumuz, küçük ve orta ölçekli işletmelerin dijital dönüşüm süreçlerini hızlandırmak ve büyük kurumsal firmaların sahip olduğu yapay zeka avantajlarını herkes için erişilebilir kılmaktır.</p>
-        <div class="bg-[var(--color-surface-light)] border border-[var(--color-border)] rounded-2xl p-8 mt-8">
-          <h2 class="text-xl font-bold text-[var(--color-text)] mb-4">Şafak Tepecik</h2>
-          <p>8 yıllık Almanya ve Avrupa B2B satış tecrübesi. Son 2 yıldaki yapay zeka uygulamalarıyla birleşiyor.</p>
-          <p class="mt-4"><strong>ST-Automatisierung</strong><br/>Heidestraße 2, 58239 Schwerte, Deutschland</p>
+  <section class="py-32 lg:py-48 relative overflow-hidden bg-[#0B0F14]">
+    <div class="absolute inset-0 bg-[url('/noise.png')] opacity-20 mix-blend-overlay pointer-events-none"></div>
+    <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[800px] bg-[var(--color-primary)]/5 rounded-full blur-[150px] pointer-events-none opacity-50"></div>
+    <div class="container mx-auto px-4 max-w-4xl relative z-10">
+      <div class="text-center mb-16">
+        <h1 class="text-4xl md:text-6xl font-extrabold mb-6 tracking-tight text-[#FFFFFF] drop-shadow-lg">Hakkımızda</h1>
+      </div>
+      <div class="neon-bleed-border bg-[var(--color-surface-light)]/40 backdrop-blur-md rounded-3xl p-8 md:p-12 lg:p-16 shadow-2xl">
+        <div class="prose prose-lg prose-invert max-w-none text-[var(--color-text-muted)] prose-headings:text-[var(--color-text)] prose-a:text-[var(--color-primary)] hover:prose-a:text-[var(--color-primary-light)]">
+          <p class="lead text-xl text-[var(--color-text)]">Pratik Yapay Zeka, Almanya ve Türkiye'deki KOBİ'lerin yapay zeka ve otomasyon ile büyümesine yardımcı olan butik bir teknoloji danışmanlığı firmasıdır.</p>
+          <p>Misyonumuz, küçük ve orta ölçekli işletmelerin dijital dönüşüm süreçlerini hızlandırmak ve büyük kurumsal firmaların sahip olduğu üst düzey yapay zeka avantajlarını çevik bir şekilde herkes için erişilebilir kılmaktır.</p>
+          <hr class="border-[var(--color-border)] my-10" />
+          <div class="bg-[var(--color-surface)] border border-[var(--color-primary)]/20 shadow-[0_0_30px_rgba(163,230,53,0.05)] rounded-2xl p-8 relative overflow-hidden">
+            <div class="absolute top-0 right-0 w-32 h-32 bg-[var(--color-primary)]/10 blur-[50px] pointer-events-none"></div>
+            <h2 class="text-2xl font-extrabold text-[#FFFFFF] mb-2 relative z-10 mt-0">Şafak Tepecik</h2>
+            <p class="text-[var(--color-primary)] font-semibold mb-6 relative z-10">Kurucu & Yapay Zeka Stratejisti</p>
+            <p class="relative z-10">8 yıllık yoğun Almanya ve Avrupa B2B satış tecrübesi. Bu derin pazar bilgisi, son teknoloji yapay zeka ve otomasyon uygulamalarıyla birleşerek sahada gerçek sonuçlar veren sistemlere dönüşüyor.</p>
+            <div class="pt-6 mt-6 border-t border-[var(--color-border)] relative z-10">
+              <p class="m-0 text-sm">
+                <strong class="text-[var(--color-text)]">ST-Automatisierung</strong><br/>
+                Heidestraße 2, 58239 Schwerte, Deutschland
+              </p>
+            </div>
+          </div>
         </div>
       </div>
     </div>

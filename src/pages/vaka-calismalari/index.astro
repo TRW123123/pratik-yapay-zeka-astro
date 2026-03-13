@@ -3,51 +3,65 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 ---
 
 <BaseLayout title="Vaka Çalışmaları – Başarı Hikayeleri | Pratik Yapay Zeka" description="Yapay zeka otomasyonu ile büyüyen şirketlerden gerçek vaka çalışmaları ve başarı hikayeleri.">
-  <section class="py-24">
-    <div class="container mx-auto px-4 max-w-4xl text-center">
-      <h1 class="text-3xl md:text-5xl font-bold mb-4">Başarı Hikayeleri</h1>
-      <p class="text-lg text-[var(--color-text-muted)]">Yapay zeka otomasyonu ile büyüyen şirketlerden gerçek sonuçlar</p>
+  <section class="py-32 lg:py-48 relative overflow-hidden bg-[#0B0F14]">
+    <div class="absolute inset-0 bg-[url('/noise.png')] opacity-20 mix-blend-overlay pointer-events-none"></div>
+    <div class="absolute top-1/4 left-1/2 -translate-x-1/2 w-[800px] h-[800px] bg-[var(--color-primary)]/10 rounded-full blur-[150px] pointer-events-none opacity-60"></div>
+    <div class="container mx-auto px-4 max-w-4xl text-center relative z-10">
+      <h1 class="text-4xl md:text-6xl font-extrabold mb-6 tracking-tight text-[#FFFFFF] drop-shadow-lg">Başarı Hikayeleri</h1>
+      <p class="text-xl text-[var(--color-text-muted)] max-w-2xl mx-auto leading-relaxed">Yapay zeka otomasyonu ile büyüyen şirketlerden gerçek sonuçlar</p>
     </div>
   </section>
-  <section class="pb-24">
-    <div class="container mx-auto px-4 max-w-5xl grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-      <a href="/vaka-calismalari/acilsatis/" class="bg-[var(--color-surface-light)] border border-[var(--color-border)] rounded-2xl p-6 hover:border-[var(--color-primary)]/30 transition-all duration-300 block">
-        <h2 class="text-lg font-semibold mb-2">Acilsatis</h2>
-        <p class="text-sm text-[var(--color-text-muted)] mb-3">Hızlı bilinirlik, istikrarlı trafik.</p>
-        <span class="text-xs text-[var(--color-primary)] font-medium">+%45 görünürlük</span>
+  <section class="pb-32 relative z-10">
+    <div class="container mx-auto px-4 max-w-5xl grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <a href="/vaka-calismalari/acilsatis/" class="neon-bleed-border bg-[var(--color-surface-light)]/40 backdrop-blur-sm p-8 hover:bg-[var(--color-surface-light)]/60 transition-all duration-500 group block relative rounded-2xl overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-br from-[var(--color-primary)]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
+        <h2 class="text-xl font-bold mb-3 text-[var(--color-text)] relative z-10 group-hover:text-[var(--color-primary)] transition-colors">Acilsatis</h2>
+        <p class="text-[var(--color-text-muted)] mb-6 leading-relaxed relative z-10">Hızlı bilinirlik, istikrarlı trafik.</p>
+        <span class="inline-flex items-center px-3 py-1.5 rounded-full text-xs font-semibold bg-[var(--color-primary)]/10 text-[var(--color-primary)] border border-[var(--color-primary)]/20 relative z-10">+%45 görünürlük</span>
       </a>
-      <a href="/vaka-calismalari/car-studio-ai/" class="bg-[var(--color-surface-light)] border border-[var(--color-border)] rounded-2xl p-6 hover:border-[var(--color-primary)]/30 transition-all duration-300 block">
-        <h2 class="text-lg font-semibold mb-2">Car Studio AI</h2>
-        <p class="text-sm text-[var(--color-text-muted)] mb-3">Ekip büyütmeden yeni pazarlara açılma.</p>
-        <span class="text-xs text-[var(--color-primary)] font-medium">3x pazar genişlemesi</span>
+      <a href="/vaka-calismalari/car-studio-ai/" class="neon-bleed-border bg-[var(--color-surface-light)]/40 backdrop-blur-sm p-8 hover:bg-[var(--color-surface-light)]/60 transition-all duration-500 group block relative rounded-2xl overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-br from-[var(--color-primary)]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
+        <h2 class="text-xl font-bold mb-3 text-[var(--color-text)] relative z-10 group-hover:text-[var(--color-primary)] transition-colors">Car Studio AI</h2>
+        <p class="text-[var(--color-text-muted)] mb-6 leading-relaxed relative z-10">Ekip büyütmeden yeni pazarlara açılma.</p>
+        <span class="inline-flex items-center px-3 py-1.5 rounded-full text-xs font-semibold bg-[var(--color-primary)]/10 text-[var(--color-primary)] border border-[var(--color-primary)]/20 relative z-10">3x pazar genişlemesi</span>
       </a>
-      <a href="/vaka-calismalari/salevium/" class="bg-[var(--color-surface-light)] border border-[var(--color-border)] rounded-2xl p-6 hover:border-[var(--color-primary)]/30 transition-all duration-300 block">
-        <h2 class="text-lg font-semibold mb-2">Salevium</h2>
-        <p class="text-sm text-[var(--color-text-muted)] mb-3">İçerik üretimi: saatlerden dakikalara.</p>
-        <span class="text-xs text-[var(--color-primary)] font-medium">%90 zaman tasarrufu</span>
+      <a href="/vaka-calismalari/salevium/" class="neon-bleed-border bg-[var(--color-surface-light)]/40 backdrop-blur-sm p-8 hover:bg-[var(--color-surface-light)]/60 transition-all duration-500 group block relative rounded-2xl overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-br from-[var(--color-primary)]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
+        <h2 class="text-xl font-bold mb-3 text-[var(--color-text)] relative z-10 group-hover:text-[var(--color-primary)] transition-colors">Salevium</h2>
+        <p class="text-[var(--color-text-muted)] mb-6 leading-relaxed relative z-10">İçerik üretimi: saatlerden dakikalara.</p>
+        <span class="inline-flex items-center px-3 py-1.5 rounded-full text-xs font-semibold bg-[var(--color-primary)]/10 text-[var(--color-primary)] border border-[var(--color-primary)]/20 relative z-10">%90 zaman tasarrufu</span>
       </a>
-      <a href="/vaka-calismalari/erpa-teknoloji/" class="bg-[var(--color-surface-light)] border border-[var(--color-border)] rounded-2xl p-6 hover:border-[var(--color-primary)]/30 transition-all duration-300 block">
-        <h2 class="text-lg font-semibold mb-2">ERPA Teknoloji</h2>
-        <p class="text-sm text-[var(--color-text-muted)] mb-3">Yapay zeka destekli stratejik Avrupa pazarı girişi.</p>
-        <span class="text-xs text-[var(--color-primary)] font-medium">İlk ayda meetingler</span>
+      <a href="/vaka-calismalari/erpa-teknoloji/" class="neon-bleed-border bg-[var(--color-surface-light)]/40 backdrop-blur-sm p-8 hover:bg-[var(--color-surface-light)]/60 transition-all duration-500 group block relative rounded-2xl overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-br from-[var(--color-primary)]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
+        <h2 class="text-xl font-bold mb-3 text-[var(--color-text)] relative z-10 group-hover:text-[var(--color-primary)] transition-colors">ERPA Teknoloji</h2>
+        <p class="text-[var(--color-text-muted)] mb-6 leading-relaxed relative z-10">Yapay zeka destekli stratejik Avrupa pazarı girişi.</p>
+        <span class="inline-flex items-center px-3 py-1.5 rounded-full text-xs font-semibold bg-[var(--color-primary)]/10 text-[var(--color-primary)] border border-[var(--color-primary)]/20 relative z-10">İlk ayda meetingler</span>
       </a>
-      <a href="/vaka-calismalari/cemkimsan/" class="bg-[var(--color-surface-light)] border border-[var(--color-border)] rounded-2xl p-6 hover:border-[var(--color-primary)]/30 transition-all duration-300 block">
-        <h2 class="text-lg font-semibold mb-2">Cemkimsan</h2>
-        <p class="text-sm text-[var(--color-text-muted)] mb-3">20+ ülkede satış ve pazarlama kampanyaları.</p>
-        <span class="text-xs text-[var(--color-primary)] font-medium">6 yeni fırsat</span>
+      <a href="/vaka-calismalari/cemkimsan/" class="neon-bleed-border bg-[var(--color-surface-light)]/40 backdrop-blur-sm p-8 hover:bg-[var(--color-surface-light)]/60 transition-all duration-500 group block relative rounded-2xl overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-br from-[var(--color-primary)]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
+        <h2 class="text-xl font-bold mb-3 text-[var(--color-text)] relative z-10 group-hover:text-[var(--color-primary)] transition-colors">Cemkimsan</h2>
+        <p class="text-[var(--color-text-muted)] mb-6 leading-relaxed relative z-10">20+ ülkede satış ve pazarlama kampanyaları.</p>
+        <span class="inline-flex items-center px-3 py-1.5 rounded-full text-xs font-semibold bg-[var(--color-primary)]/10 text-[var(--color-primary)] border border-[var(--color-primary)]/20 relative z-10">6 yeni fırsat</span>
       </a>
-      <a href="/vaka-calismalari/dkm-coach-bilge/" class="bg-[var(--color-surface-light)] border border-[var(--color-border)] rounded-2xl p-6 hover:border-[var(--color-primary)]/30 transition-all duration-300 block">
-        <h2 class="text-lg font-semibold mb-2">DKM Coach Bilge</h2>
-        <p class="text-sm text-[var(--color-text-muted)] mb-3">Oyun formatında Lead Funnel ile yüzlerce ek Lead.</p>
-        <span class="text-xs text-[var(--color-primary)] font-medium">+300 Lead</span>
+      <a href="/vaka-calismalari/dkm-coach-bilge/" class="neon-bleed-border bg-[var(--color-surface-light)]/40 backdrop-blur-sm p-8 hover:bg-[var(--color-surface-light)]/60 transition-all duration-500 group block relative rounded-2xl overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-br from-[var(--color-primary)]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
+        <h2 class="text-xl font-bold mb-3 text-[var(--color-text)] relative z-10 group-hover:text-[var(--color-primary)] transition-colors">DKM Coach Bilge</h2>
+        <p class="text-[var(--color-text-muted)] mb-6 leading-relaxed relative z-10">Oyun formatında Lead Funnel ile yüzlerce ek Lead.</p>
+        <span class="inline-flex items-center px-3 py-1.5 rounded-full text-xs font-semibold bg-[var(--color-primary)]/10 text-[var(--color-primary)] border border-[var(--color-primary)]/20 relative z-10">+300 Lead</span>
       </a>
     </div>
   </section>
-  <section class="py-20 bg-gradient-to-br from-[var(--color-primary)]/10 to-[var(--color-accent)]/5">
-    <div class="container mx-auto px-4 text-center max-w-2xl">
-      <h2 class="text-2xl md:text-3xl font-bold mb-4">İşletmenizi Dönüştürmeye Hazır mısınız?</h2>
-      <p class="text-[var(--color-text-muted)] mb-8">Yapay zeka ve otomasyon ile satış ve pazarlama süreçlerinizi optimize edin.</p>
-      <a href="/cozumler/" class="bg-[var(--color-primary)] hover:bg-[var(--color-primary-dark)] text-white font-semibold px-8 py-4 rounded-xl transition-all duration-300 text-lg">Ücretsiz Analiz Talep Et</a>
+  <section class="py-24 relative overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-b from-transparent via-[var(--color-primary)]/5 to-transparent pointer-events-none"></div>
+    <div class="container mx-auto px-4 max-w-4xl relative z-10">
+      <div class="neon-bleed-border bg-[#0B0F14]/80 backdrop-blur-md rounded-3xl p-12 lg:p-16 text-center shadow-2xl">
+        <h2 class="text-3xl md:text-4xl font-extrabold mb-6 tracking-tight text-[var(--color-text)]">İşletmenizi Dönüştürmeye Hazır mısınız?</h2>
+        <p class="text-xl text-[var(--color-text-muted)] mb-10 leading-relaxed max-w-2xl mx-auto">Yapay zeka ve otomasyon ile satış ve pazarlama süreçlerinizi optimize edin.</p>
+        <a href="/cozumler/" class="magnetic-glow-btn bg-[var(--color-primary)] hover:bg-[var(--color-primary-dark)] text-[#0B0F14] font-bold px-8 py-4 rounded-xl transition-all duration-300 text-lg inline-flex items-center gap-2">
+          Ücretsiz Analiz Talep Et
+        </a>
+      </div>
     </div>
   </section>
 </BaseLayout>
+

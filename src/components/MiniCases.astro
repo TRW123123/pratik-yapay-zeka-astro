@@ -50,17 +50,19 @@ const cases = [
 ];
 ---
 
-<section class="py-20 bg-[hsl(203,23%,8%)]">
+<section class="py-32 lg:py-48 relative">
   <div class="container mx-auto px-4">
     <div class="mx-auto mb-16 max-w-2xl text-center">
-      <h2 class="mb-4 text-3xl font-bold text-[hsl(210,10%,90%)]">Başarı Hikayeleri</h2>
-      <p class="text-[hsl(215,16%,58%)]">
-        <a href="/vaka-calismalari/" class="text-[#A3E635] hover:underline">Detaylı vaka çalışmalarımızı</a> inceleyin ve başarı hikayelerini keşfedin.
+      <h2 class="mb-4 text-3xl md:text-4xl tracking-tight font-bold text-[hsl(210,10%,90%)]">Başarı Hikayeleri</h2>
+      <p class="text-[hsl(215,16%,58%)] text-lg">
+        <a href="/vaka-calismalari/" class="text-[var(--color-primary)] hover:text-[var(--color-accent)] hover:underline transition-colors">Detaylı vaka çalışmalarımızı</a> inceleyin ve başarı hikayelerini keşfedin.
       </p>
     </div>
     <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6">
       {cases.map((item) => (
-        <div class="case-card rounded-xl p-6 space-y-4 transition-all duration-300">
+        <div class="neon-bleed-border rounded-2xl p-6 relative group overflow-hidden">
+          <div class="absolute inset-0 bg-gradient-to-br from-[var(--color-primary)]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
+          <div class="relative z-10 space-y-4">
           <div class="h-12 w-full rounded-lg flex items-center justify-center p-3">
             <img 
               src={item.logo} 
@@ -77,12 +79,13 @@ const cases = [
           <h3 class="text-lg font-semibold text-[hsl(210,10%,90%)] text-center">{item.company}</h3>
           <p class="text-sm text-[hsl(215,16%,58%)]">{item.result}</p>
           <div class="flex items-center justify-between">
-            <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-[rgba(163,230,53,0.1)] text-[#A3E635]">
+            <span class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-semibold bg-[var(--color-primary)]/10 text-[var(--color-primary)] border border-[var(--color-primary)]/20">
               {item.metric}
             </span>
-            <a href={`/vaka-calismalari/${item.slug}/`} class="text-sm text-[#A3E635] hover:underline">
+            <a href={`/vaka-calismalari/${item.slug}/`} class="text-sm font-medium text-[var(--color-primary)] hover:text-[var(--color-accent)] transition-colors hover:underline">
               Detaylar
             </a>
+          </div>
           </div>
         </div>
       ))}
@@ -90,13 +93,4 @@ const cases = [
   </div>
 </section>
 
-<style>
-  .case-card {
-    background: hsl(220 13% 9%);
-    border: 1px solid hsl(220 13% 18%);
-    box-shadow: 0 8px 32px rgba(0,0,0,0.25);
-  }
-  .case-card:hover {
-    border-color: rgba(163, 230, 53, 0.3);
-  }
-</style>
+

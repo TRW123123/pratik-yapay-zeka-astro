@@ -61,13 +61,15 @@ const breadcrumbs = [
 
 <BaseLayout title={title} description={description} ogImage={ogImage} breadcrumbs={breadcrumbs}>
   <!-- Hero -->
-  <section class="py-24 bg-gradient-to-br from-[var(--color-surface)] to-[var(--color-primary-dark)]/10">
-    <div class="container mx-auto px-4 max-w-4xl text-center">
-      <h1 class="text-3xl md:text-5xl font-bold mb-6 leading-tight">{heroTitle}</h1>
-      <p class="text-lg text-[var(--color-text-muted)] mb-8 max-w-2xl mx-auto">{heroSubtitle}</p>
-      <div class="flex flex-col sm:flex-row gap-4 justify-center">
-        <a href="/cozumler/" class="bg-[var(--color-primary)] hover:bg-[var(--color-primary-dark)] text-white font-semibold px-8 py-3 rounded-xl transition-all duration-300">Ücretsiz Danışmanlık</a>
-        <a href="/vaka-calismalari/" class="border border-[var(--color-border)] hover:border-[var(--color-primary)]/50 text-[var(--color-text)] font-medium px-8 py-3 rounded-xl transition-all duration-300">Vaka Çalışmalarını Görüntüle</a>
+  <section class="py-32 lg:py-48 relative overflow-hidden bg-[#0B0F14]">
+    <div class="absolute inset-0 bg-[url('/noise.png')] opacity-20 mix-blend-overlay pointer-events-none"></div>
+    <div class="absolute top-1/4 left-1/2 -translate-x-1/2 w-[800px] h-[800px] bg-[var(--color-primary)]/10 rounded-full blur-[150px] pointer-events-none opacity-60"></div>
+    <div class="container mx-auto px-4 max-w-4xl text-center relative z-10">
+      <h1 class="text-4xl md:text-6xl font-extrabold mb-6 leading-tight tracking-tight text-[#FFFFFF] drop-shadow-lg">{heroTitle}</h1>
+      <p class="text-xl text-[var(--color-text-muted)] mb-10 max-w-2xl mx-auto leading-relaxed">{heroSubtitle}</p>
+      <div class="flex flex-col sm:flex-row gap-6 justify-center">
+        <a href="/cozumler/" class="magnetic-glow-btn bg-[var(--color-primary)] hover:bg-[var(--color-primary-dark)] text-[#0B0F14] font-bold px-8 py-4 rounded-xl transition-all duration-300 text-lg">Ücretsiz Danışmanlık</a>
+        <a href="/vaka-calismalari/" class="neon-bleed-border bg-white/5 backdrop-blur-sm text-[var(--color-text)] font-semibold px-8 py-4 rounded-xl transition-all duration-300 text-lg">Vaka Çalışmaları</a>
       </div>
     </div>
   </section>
@@ -78,9 +80,12 @@ const breadcrumbs = [
       <h2 class="text-2xl md:text-3xl font-bold mb-8 text-center">Bu Zorlukları Tanıyor musunuz?</h2>
       <div class="space-y-4">
         {problems.map((problem) => (
-          <div class="flex items-start gap-3 bg-[var(--color-surface-light)] border border-[var(--color-border)] rounded-xl p-4">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-red-400 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4c-.77-.833-1.964-.833-2.732 0L3.34 16.5c-.77.833.192 2.5 1.732 2.5z" /></svg>
-            <p class="text-[var(--color-text-muted)]">{problem}</p>
+          <div class="neon-bleed-border flex items-start gap-4 bg-[var(--color-surface-light)]/40 backdrop-blur-sm rounded-2xl p-6 group relative overflow-hidden transition-all duration-300 hover:bg-[var(--color-surface-light)]/60">
+            <div class="absolute inset-0 bg-gradient-to-r from-red-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
+            <div class="bg-red-500/10 p-2 rounded-lg shrink-0">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-red-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4c-.77-.833-1.964-.833-2.732 0L3.34 16.5c-.77.833.192 2.5 1.732 2.5z" /></svg>
+            </div>
+            <p class="text-[var(--color-text-muted)] text-lg leading-relaxed pt-1 relative z-10">{problem}</p>
           </div>
         ))}
       </div>
@@ -88,15 +93,16 @@ const breadcrumbs = [
   </section>
 
   <!-- Process Steps -->
-  <section class="py-20 bg-[var(--color-surface-light)]">
-    <div class="container mx-auto px-4 max-w-4xl">
-      <h2 class="text-2xl md:text-3xl font-bold mb-12 text-center">{processTitle}</h2>
-      <div class="grid md:grid-cols-4 gap-6">
+  <section class="py-32 bg-[#0B0F14] relative">
+    <div class="absolute inset-0 bg-gradient-to-b from-[var(--color-surface-light)]/10 to-transparent pointer-events-none"></div>
+    <div class="container mx-auto px-4 max-w-5xl relative z-10">
+      <h2 class="text-3xl md:text-4xl font-extrabold mb-16 text-center tracking-tight">{processTitle}</h2>
+      <div class="grid md:grid-cols-4 gap-8">
         {processSteps.map((step, i) => (
-          <div class="text-center">
-            <div class="w-12 h-12 rounded-full bg-[var(--color-primary)]/10 text-[var(--color-primary)] font-bold text-lg flex items-center justify-center mx-auto mb-4">{i + 1}</div>
-            <h3 class="font-semibold mb-2">{step.title}</h3>
-            <p class="text-sm text-[var(--color-text-muted)]">{step.description}</p>
+          <div class="text-center group">
+            <div class="w-16 h-16 rounded-full bg-gradient-to-br from-[var(--color-primary)]/20 to-transparent border border-[var(--color-primary)]/30 text-[var(--color-primary)] font-bold text-xl flex items-center justify-center mx-auto mb-6 shadow-[0_0_20px_rgba(163,230,53,0.15)] group-hover:shadow-[0_0_30px_rgba(163,230,53,0.3)] transition-all duration-500">{i + 1}</div>
+            <h3 class="font-bold text-lg mb-3 text-[var(--color-text)]">{step.title}</h3>
+            <p class="text-[var(--color-text-muted)] leading-relaxed">{step.description}</p>
           </div>
         ))}
       </div>
@@ -104,14 +110,15 @@ const breadcrumbs = [
   </section>
 
   <!-- Features -->
-  <section class="py-20">
+  <section class="py-32">
     <div class="container mx-auto px-4 max-w-5xl">
-      <h2 class="text-2xl md:text-3xl font-bold mb-12 text-center">{featuresTitle}</h2>
-      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <h2 class="text-3xl md:text-4xl font-extrabold mb-16 text-center tracking-tight">{featuresTitle}</h2>
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
         {features.map((feature) => (
-          <div class="bg-[var(--color-surface-light)] border border-[var(--color-border)] rounded-2xl p-6 hover:border-[var(--color-primary)]/30 transition-all duration-300">
-            <h3 class="font-semibold mb-2">{feature.title}</h3>
-            <p class="text-sm text-[var(--color-text-muted)]">{feature.description}</p>
+          <div class="neon-bleed-border bg-[var(--color-surface-light)]/40 backdrop-blur-sm rounded-2xl p-8 relative overflow-hidden group">
+            <div class="absolute inset-0 bg-gradient-to-br from-[var(--color-primary)]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
+            <h3 class="text-xl font-bold mb-4 text-[var(--color-text)] relative z-10">{feature.title}</h3>
+            <p class="text-[var(--color-text-muted)] leading-relaxed relative z-10">{feature.description}</p>
           </div>
         ))}
       </div>
@@ -134,11 +141,15 @@ const breadcrumbs = [
   </section>
 
   <!-- Case Study Reference -->
-  <section class="py-16">
-    <div class="container mx-auto px-4 max-w-3xl">
-      <div class="bg-gradient-to-br from-[var(--color-primary)]/5 to-[var(--color-accent)]/5 border border-[var(--color-border)] rounded-2xl p-8 text-center">
-        <p class="text-[var(--color-text-muted)] mb-6">{caseStudyDescription}</p>
-        <a href="/vaka-calismalari/" class="text-[var(--color-primary-light)] font-medium hover:underline">Tüm Vaka Çalışmalarını Görüntüle →</a>
+  <section class="py-24 relative overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-b from-transparent via-[var(--color-primary)]/5 to-transparent pointer-events-none"></div>
+    <div class="container mx-auto px-4 max-w-4xl relative z-10">
+      <div class="neon-bleed-border bg-[#0B0F14]/80 backdrop-blur-md rounded-3xl p-12 lg:p-16 text-center shadow-2xl">
+        <p class="text-xl text-[var(--color-text)] mb-8 leading-relaxed max-w-2xl mx-auto">{caseStudyDescription}</p>
+        <a href="/vaka-calismalari/" class="inline-flex items-center gap-2 text-[var(--color-primary)] font-bold hover:text-[var(--color-accent)] transition-colors text-lg group">
+          Tüm Vaka Çalışmalarını Görüntüle 
+          <span class="group-hover:translate-x-1 transition-transform">→</span>
+        </a>
       </div>
     </div>
   </section>
