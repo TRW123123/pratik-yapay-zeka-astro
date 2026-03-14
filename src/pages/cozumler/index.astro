@@ -1,14 +1,15 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 
-const solutions = [
-  { href: '/cozumler/lead-generation/', title: 'Yapay Zeka Lead Üretimi', description: 'Otomatik araştırma, kişiselleştirilmiş iletişim, akıllı takip.', metric: 'Ayda +30 randevu' },
-  { href: '/cozumler/satis-otomasyonu/', title: 'Satış Otomasyonu', description: 'Outbound, takipler ve ilk nitelendirmeyi yapay zeka ile otomatikleştirin.', metric: '%50 daha fazla zaman' },
-  { href: '/cozumler/pazarlama-otomasyonu/', title: 'Pazarlama Otomasyonu', description: 'İçerik oluşturma, sosyal medya ve reklam optimizasyonu.', metric: '5x içerik' },
-  { href: '/cozumler/crm-otomasyonu/', title: 'CRM Otomasyonu', description: 'CRM, veri işleme ve tekrarlayan süreçleri otomatikleştirin.', metric: '%90 temiz veri' },
-  { href: '/cozumler/musteri-hizmeti-otomasyonu/', title: 'Müşteri Hizmeti Otomasyonu', description: 'Chatbot ve voicebot ile 7/24 destek.', metric: '7/24 erişim' },
-  { href: '/cozumler/almanya-ihracat/', title: '🇩🇪 Almanya\'ya İhracat', description: 'Almanya pazarına giriş için dijital altyapı ve satış sistemi.', metric: 'Alman Kimliği' },
-];
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import pseoData from '../../data/pseo_data_tr.json';
+
+const solutions = pseoData.map(data => ({
+  href: `/cozumler/${data.slug_branche}/${data.slug_problem}/`,
+  title: data.branche,
+  description: data.seo_description,
+  metric: data.hard_metrics.conversion_rate.split(' ').slice(0, 4).join(' ') + '...' // Quick metric preview
+}));
 ---
 
 <BaseLayout title="Çözümler - Pratik Yapay Zeka" description="Lead generation, pazarlama, satış ve müşteri başarısı için yapay zeka destekli otomasyon çözümleri.">

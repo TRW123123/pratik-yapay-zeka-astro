@@ -1,0 +1,162 @@
+[
+  {
+    "id": "emlak",
+    "branche": "Emlak",
+    "slug_branche": "emlak",
+    "slug_problem": "yapay-zeka-ile-musteri-bulma",
+    "seo_title": "Emlak Sektörü İçin Yapay Zeka ile Otomatik Müşteri Bulma | Pratik Yapay Zeka",
+    "seo_description": "Emlak ofisleri ve gayrimenkul danışmanları için yapay zeka destekli lead generation ve satış otomasyonu. Daha fazla portföy ve müşteri bağlayın.",
+    "keywords": [
+      "emlak sektörü için yapay zeka otomasyonu",
+      "emlakçı müşteri bulma",
+      "gayrimenkul yapay zeka entegrasyonu",
+      "emlak satış otomasyonu"
+    ],
+    "schmerzpunkte": [
+      "Mesai saatleri dışında (akşam/gece) gelen müşteri taleplerinin %40'ının kaçırılması",
+      "Alıcıların %78'inin ilk yanıt veren danışmanla çalışması fakat ortalama yanıt süresinin 4.2 saat olması",
+      "Gelen taleplerde gerçek alıcılar ile sadece fiyat soranlar arasında eleme yaparken yaşanan zaman kaybı"
+    ],
+    "hard_metrics": {
+      "lead_cost": "Yapay zeka sesli asistanlarla %1737'ye varan ROI ve sıfır kaçırılan çağrı",
+      "time_saved": "İlk 5 dakikada (Speed-to-Lead) anında yanıt ile sıcak müşteriye dönüşümde 9x artış",
+      "conversion_rate": "Diyalog bazlı AI ile potansiyel müşteri etkileşiminde %10'dan %47'ye yükseliş"
+    },
+    "loesung_titel": "Emlak Ofisleri İçin Yapay Zeka Destekli Büyüme Sistemi",
+    "loesung_features": [
+      "7/24 Otonom Sesli Asistan (Lead Kalifikasyonu ve Anında Randevu Alma)",
+      "Sıcak müşteri adayları geldiğinde anında CRM ve WhatsApp bildirim otomasyonu",
+      "Sosyal medya ve portallardan gelen talepleri saniyeler içinde analiz edip puanlayan algoritmalar"
+    ],
+    "faqs": [
+      {
+        "question": "Emlak sektörü için yapay zeka çözümlerini ne kadar sürede entegre ediyorsunuz?",
+        "answer": "Süreç analizi sonrası ortalama 2-3 hafta içinde mevcut CRM veya WhatsApp iş akışlarınıza yapay zeka iletişim botlarını ve otomasyon senaryolarını entegre ediyoruz."
+      },
+      {
+        "question": "Müşteri adaylarını nasıl nitelendiriyor?",
+        "answer": "Gelen talepleri analiz edip bütçe, bölge ve aciliyet durumuna göre anında puanlıyor. Siz sadece sıcak ve doğru alıcılarla görüşüyorsunuz."
+      }
+    ]
+  },
+  {
+    "id": "hukuk",
+    "branche": "Hukuk Büroları",
+    "slug_branche": "hukuk",
+    "slug_problem": "hukuk-burosu-otomasyonu",
+    "seo_title": "Hukuk Büroları İçin Yapay Zeka Otomasyonu ve Müvekkil Kazanımı",
+    "seo_description": "Avukatlar ve hukuk büroları için KVKK uyumlu yapay zeka iletişim sistemleri ve müvekkil kazanım otomasyonları. Süreçlerinizi hızlandırın.",
+    "keywords": [
+      "hukuk bürosu için yapay zeka otomasyonu",
+      "avukat müvekkil bulma",
+      "hukuk yapay zeka çözümleri",
+      "KVKK uyumlu yerel yapay zeka"
+    ],
+    "schmerzpunkte": [
+      "Avukatların zamanının %48'inin faturalandırılmayan idari işlere (intake) harcanması",
+      "Hukuk bürolarının %50'sinin e-posta ve formlardan gelen talepleri yanıtlamada gecikmesi",
+      "Nitelikli olmayan danışan görüşmelerinin (ücretsiz danışma) değerli mesai saatlerini tüketmesi"
+    ],
+    "hard_metrics": {
+      "lead_cost": "Kalifiye olmayan (düşük potansiyelli) danışan buluşmalarında %60'a varan azalma",
+      "time_saved": "Müvekkil Kabul (Client Intake) süresinde 90 dakikadan 40 dakikaya inen (%56) devasa zaman tasarrufu",
+      "conversion_rate": "7/24 Yapay Zeka yanıt sistemi ile potansiyel müvekkil dönüşüm oranında +%250 artış (%10'dan %35'e)"
+    },
+    "loesung_titel": "Avukatlar İçin Gizlilik Odaklı İletişim Otomasyonları",
+    "loesung_features": [
+      "KVKK Uyumlu Yerel LLM (On-Premise) Veri İşleme (Privacy as Prestige Garantisi)",
+      "Otomatik Dava Ön Değerlendirme ve Potansiyel Skorlama Sistemi",
+      "Müvekkil adayları web sitenize geldiğinde ilgilerine göre anında takvime randevu işleme"
+    ],
+    "faqs": [
+      {
+        "question": "Yapay zeka sistemleri avukat-müvekkil gizliliğini nasıl koruyor?",
+        "answer": "Bulut tabanlı, genel yapay zeka (ChatGPT vb.) araçları yerine büronuzun kendi sunucularında veya izole sistemlerde çalışan, %100 KVKK uyumlu 'Zero Data Retention' (Sıfır Veri Tutma) modelleri kuruyoruz."
+      },
+      {
+        "question": "Mevcut vaka yönetim (Case Management) sistemlerimizle uyumlu mu?",
+        "answer": "Arka planda döküman ve talep formlarına dayalı otomatik bilgi besleme süreçleri kurarak, UYAP uyumlu veya yerel CRM yazılımlarınıza API üzerinden doğrudan veri aktarıyoruz."
+      }
+    ]
+  },
+  {
+    "id": "muhasebe",
+    "branche": "Muhasebe ve Mali Müşavirlik",
+    "slug_branche": "muhasebe",
+    "slug_problem": "otomatik-mukellef-kazanimi",
+    "seo_title": "Muhasebe Firmaları Yapay Zeka Otomasyonu ve Mükellef Kazanımı",
+    "seo_description": "Mali müşavirler için B2B Büyüme Asistanı ve Otonom Evrak İşleme (IDP) ile operasyonel yükü azaltıp kurumsal mükellefleri bağlayın.",
+    "keywords": [
+      "mali müşavir müşteri bulma",
+      "muhasebe evrak işleme yapay zeka",
+      "B2B satış otomasyonu muhasebe",
+      "OECD Pillar Two yapay zeka"
+    ],
+    "schmerzpunkte": [
+      "E-Defter geçişleri ve OECD Pillar Two uyum süreçlerindeki sonu gelmez veri giriş yükü",
+      "Manuel fatura ve evrak işlemede müşteri başına %40 zaman kaybı ve insan hatası",
+      "Uluslararası/Kurumsal mükellefleri bulmak için modern satış (Outbound) kanallarının kullanılamaması"
+    ],
+    "hard_metrics": {
+      "lead_cost": "Sinyal bazlı AI Outreach (Soğuk E-posta) ile %3'lük sektörel yanıt oranını %15-25'e çıkarma",
+      "time_saved": "Akıllı Doküman İşleme (IDP) ile evrak giriş sürelerinde %75 azalma (15 dakikalık iş 10 saniyeye iniyor)",
+      "conversion_rate": "Manuel veri giriş hatalarında %90 düşüş ve %99.6 veri doğruluğu ile operasyonel ROI'de %400+ artış"
+    },
+    "loesung_titel": "Mali Müşavirler İçin Otonom Büyüme ve Evrak Asistanı",
+    "loesung_features": [
+      "Sinyal Tabanlı B2B Outreach: Kurumsal şirketleri (Yatırım almış vb.) tespit edip otomatik mail atan sistem",
+      "Çoklu Dil ve Format Destekli Otonom Evrak İşleme (IDP) Pipeline'ı",
+      "ERP Sistemlerinize (Örn: Zirve, Logo, Luca) sıfır insan müdahalesi ile %99.6 doğrulukla veri aktarımı"
+    ],
+    "faqs": [
+      {
+        "question": "E-Dönüşüm (E-Fatura, E-Defter) süreçlerindeki evrak yoğunluğunu hafifletebilir mi?",
+        "answer": "Kesinlikle. Intelligent Document Processing (IDP) mimarimiz, gelen faturaları ve karışık K-1 benzeri tabloları saniyeler içinde okuyup kategorize ederek muhasebe yazılımınıza işler."
+      },
+      {
+        "question": "Yurtdışı bağlantılı kurumsal mükelleflere ulaşmamı nasıl sağlar?",
+        "answer": "Yapay zeka destekli araştırma botlarımız (Clay, n8n) ile yabancı firmaların Türkiye operasyonlarını tespit edip onlara tam zamanında kişiselleştirilmiş (Pillar Two vergi uyumluluğu gibi) outreach kampanyaları düzenliyoruz."
+      }
+    ]
+  },
+  {
+    "id": "eticaret",
+    "branche": "E-Ticaret ve Perakende",
+    "slug_branche": "e-ticaret",
+    "slug_problem": "satis-otomasyonu",
+    "seo_title": "E-Ticaret İçin Yapay Zeka Satış Otomasyonu ve VIP Destek",
+    "seo_description": "E-ticaret markaları için WhatsApp sepet kurtarma, otomatik upsell ve 7/24 müşteri hizmetleri yapay zeka otomasyonu.",
+    "keywords": [
+      "e-ticaret için yapay zeka satış otomasyonu",
+      "whatsapp sepet kurtarma botu",
+      "e-ticaret chatbot",
+      "yapay zeka upsell otomasyonu"
+    ],
+    "schmerzpunkte": [
+      "E-ticaret sitelerindeki ortalama %70.19'luk terkedilmiş sepet oranı ile sızan global ciro",
+      "Kargo nerede, iade nasıl yapılır gibi standart taleplerin operasyon ekibini kilitlemesi",
+      "Geleneksel e-posta sepet kurtarma hatırlatıcılarının sadece %15 oranında kalması"
+    ],
+    "hard_metrics": {
+      "lead_cost": "WhatsApp üzerinden yapılan sepet kurtarma mesajlarında %98 açılma ve %20-60 net ciroya dönüş",
+      "time_saved": "Müşteri hizmetleri taleplerinin (SSS, Kargo takibi) %70'inin tamamen otonom çözülmesi",
+      "conversion_rate": "VIP Segmentasyonlu AI Upsell ve Çapraz Satış ile müşteri yaşam boyu değerinde (LTV) %345 artış"
+    },
+    "loesung_titel": "E-Ticaret Ciro Kurtarma ve Ölçekleme Zekası",
+    "loesung_features": [
+      "WhatsApp Business API ve Instagram DM üzerinden Anında Sepet Kurtarma Senaryoları",
+      "Satın alma geçmişine ve VIP müşteri hareketlerine göre Dinamik Ürün Önerme (Upsell)",
+      "B2B Toptan E-Ticaret için yapay zeka ile distribütör/influencer kazıma ve outreach botu"
+    ],
+    "faqs": [
+      {
+        "question": "E-ticaret altyapımla (Shopify, Ticimax, IdeaSoft vb.) yüzde yüz uyumlu mu?",
+        "answer": "Evet, sistemlerimiz API destekleyen tüm majör e-ticaret altyapılarıyla sorunsuz şekilde iletişim kurarak iptal edilen sepetler için anında WhatsApp botunu devreye sokar."
+      },
+      {
+        "question": "Müşteriler bot ile konuştuklarını anlarsa kaçmazlar mı?",
+        "answer": "Tam tersine! Yeni nesil botlar, 'Sepetinizde ürün kalmış, yardıma ihtiyacınız var mı?' diyerek destek odaklı yaklaşır ve kargo statüsünü saniyeler içinde verdiği için müşteri memnuniyetini katlar."
+      }
+    ]
+  }
+]

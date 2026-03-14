@@ -1,0 +1,60 @@
+﻿
+> pratik-yapay-zeka-astro@0.0.1 build
+> astro build
+
+[2m12:25:12[22m [34m[@astrojs/netlify][39m Enabling sessions with Netlify Blobs
+[2m12:25:12[22m [34m[vite][39m Re-optimizing dependencies because vite config has changed
+[2m12:25:12[22m [34m[types][39m Generated [2m481ms[22m
+[2m12:25:12[22m [34m[build][39m output: [34m"static"[39m
+[2m12:25:12[22m [34m[build][39m mode: [34m"server"[39m
+[2m12:25:12[22m [34m[build][39m directory: [34mC:\Users\User\Projects\Pratik Yapay Zeka\pratik-yapay-zeka-astro\dist\[39m
+[2m12:25:12[22m [34m[build][39m adapter: [32m@astrojs/netlify[39m
+[2m12:25:12[22m [34m[build][39m Collecting build info...
+[2m12:25:12[22m [34m[build][39m [32mÔ£ô Completed in 523ms.[39m
+[2m12:25:12[22m [34m[build][39m Building server entrypoints...
+[33m[1m12:25:13[22m [WARN] [vite][39m 
+/noise.png referenced in /noise.png didn't resolve at build time, it will remain unchanged to be resolved at runtime
+[2m12:25:14[22m [34m[vite][39m [32mÔ£ô built in 1.35s[39m
+node.exe : [31m[1m12:25:14[22m [ERROR] 
+[vite][39m [31mÔ£ù[39m Build failed in 354ms
+In Zeile:1 Zeichen:1
++ & "C:\Program Files\nodejs/node.exe" 
+"C:\Program Files\nodejs/node_mo ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (  
+  [31m[1m12:25:...failed in 354ms:String) [    
+], RemoteException
+    + FullyQualifiedErrorId : NativeCommandErr  
+  or
+ 
+[vite]: Rollup failed to resolve import 
+"astro-icon/components" from 
+"C:/Users/User/Projects/Pratik Yapay Zeka/pratik
+-yapay-zeka-astro/src/layouts/SolutionLayout.ast
+ro".
+This is most likely unintended because it can 
+break your application at runtime.
+If you do want to externalize this module 
+explicitly add it to
+`build.rollupOptions.external`
+  [1mStack trace:[22m
+[2m    at viteLog (file:///C:/Users/User/Projec
+ts/Pratik%20Yapay%20Zeka/pratik-yapay-zeka-astro
+/node_modules/vite/dist/node/chunks/config.js:33
+635:57)
+    at onwarn (file:///C:/Users/User/Projects/Pr
+atik%20Yapay%20Zeka/pratik-yapay-zeka-astro/node
+_modules/@vitejs/plugin-react/dist/index.js:76:7
+)
+    at onRollupLog (file:///C:/Users/User/Projec
+ts/Pratik%20Yapay%20Zeka/pratik-yapay-zeka-astro
+/node_modules/vite/dist/node/chunks/config.js:33
+664:63)
+    at file:///C:/Users/User/Projects/Pratik%20Y
+apay%20Zeka/pratik-yapay-zeka-astro/node_modules
+/rollup/dist/es/shared/node-entry.js:20981:32
+    at ModuleLoader.handleInvalidResolvedId (fil
+e:///C:/Users/User/Projects/Pratik%20Yapay%20Zek
+a/pratik-yapay-zeka-astro/node_modules/rollup/di
+st/es/shared/node-entry.js:21712:26)[22m
