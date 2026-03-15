@@ -21,11 +21,13 @@ TEMPLATE_FILE = "src/layouts/SolutionLayout.astro"
 # pSEO SPECIALIST CONFIG (From pseo-autoresearch-loop)
 # =====================================================================
 PSEO_BLACKLIST = [
-    "Zusammenfassend lässt sich sagen", "Im heutigen digitalen Zeitalter",
-    "Entfessle das Potenzial", "Tauchen wir ein", "Es ist wichtig zu beachten",
-    "In der heutigen schnelllebigen Welt", "Ein Game-Changer", "Nahtlose Integration",
-    "Heben Sie sich von der Masse ab", "Revolutionieren Sie Ihre",
-    "Nutzen Sie die Kraft von", "Es lohnt sich zu erwähnen"
+    "Sonuç olarak şunu söyleyebiliriz ki", "Günümüz dijital çağında",
+    "Potansiyeli ortaya çıkarın", "Hadi derinlemesine inceleyelim", "Belirtmekte fayda var",
+    "Günümüzün hızla değişen dünyasında", "Oyun değiştirici", "Kusursuz entegrasyon",
+    "Kalabalıktan sıyrılın", "Devrim yaratın",
+    "Gücünden yararlanın", "Bahsetmeye değer",
+    "Bu bağlamda", "Şüphesiz ki", "Yapay zeka sayesinde",
+    "Hiç şüphe yok ki", "Değişen paradigma"
 ]
 
 PSEO_DETERMINISTIC_CHECKS = {
@@ -35,10 +37,10 @@ PSEO_DETERMINISTIC_CHECKS = {
 }
 
 PSEO_TEMPLATE_REQUIREMENTS = [
-    "FAQ-Sektion",
-    "Metriken / KPI-Bereich",
-    "Call-to-Action",
-    "Process Timeline / How it works"
+    "SSS Bölümü",
+    "Metrikler / KPI Alanı",
+    "Harekete Geçirme Çağrısı (CTA)",
+    "Süreç Zaman Çizelgesi / Nasıl Çalışır"
 ]
 
 # =====================================================================

@@ -23,3 +23,16 @@ https://www.yapayzekapratik.com/* https://yapayzekapratik.com/:splat 301!
 
 # Legacy Wix Blog Redirects (Map old /post to new /blog)
 /post/*          /blog/ 301!
+
+# SPRINT 1 FIX: Legacy hardcoded solution pages → dynamic /cozumler/ hub
+/cozumler/lead-generation/              /cozumler/ 301!
+/cozumler/satis-otomasyonu/             /cozumler/ 301!
+/cozumler/pazarlama-otomasyonu/         /cozumler/ 301!
+/cozumler/crm-otomasyonu/               /cozumler/ 301!
+/cozumler/musteri-hizmeti-otomasyonu/   /cozumler/ 301!
+/cozumler/almanya-ihracat/              /cozumler/ 301!
+
+# SPRINT 1 FIX: Legacy root-level service hub pages → /cozumler/ hub
+/marketing-otomasyonu/                  /cozumler/ 301!
+/satis-otomasyonu/                      /cozumler/ 301!
+/yapay-zeka-otomasyonu/                 /cozumler/ 301!

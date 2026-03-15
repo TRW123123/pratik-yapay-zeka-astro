@@ -8,13 +8,12 @@ const navItems = [
 ];
 
 const solutionItems = [
-  { href: '/cozumler/lead-generation/', label: 'Yapay Zeka Lead Üretimi' },
-  { href: '/cozumler/pazarlama-otomasyonu/', label: 'Pazarlama Otomasyonu' },
-  { href: '/cozumler/satis-otomasyonu/', label: 'Satış Otomasyonu' },
-  { href: '/cozumler/crm-otomasyonu/', label: 'CRM Otomasyonu' },
-  { href: '/cozumler/musteri-hizmeti-otomasyonu/', label: 'Müşteri Hizmeti Otomasyonu' },
-  { href: '/yapay-zeka-otomasyonu/', label: 'Yapay Zeka Otomasyonu' },
-  { href: '/cozumler/almanya-ihracat/', label: '🇩🇪 Almanya\'ya İhracat' },
+  { href: '/cozumler/e-ticaret/musteri-iliskileri/', label: 'E-Ticaret Otomasyonu' },
+  { href: '/cozumler/insaat/maliyet-kontrolu/', label: 'İnşaat Otomasyonu' },
+  { href: '/cozumler/hukuk/musteri-iliskileri/', label: 'Hukuk Otomasyonu' },
+  { href: '/cozumler/emlak/musteri-iliskileri/', label: 'Emlak Otomasyonu' },
+  { href: '/cozumler/saglik/musteri-iliskileri/', label: 'Sağlık Otomasyonu' },
+  { href: '/cozumler/lojistik/maliyet-kontrolu/', label: 'Lojistik Otomasyonu' },
 ];
 
 function isActive(href: string): boolean {
@@ -50,6 +49,10 @@ function isActive(href: string): boolean {
         <!-- Solutions Dropdown -->
         <div class="relative group">
           <button
+            id="solutions-dropdown-btn"
+            aria-expanded="false"
+            aria-haspopup="true"
+            aria-controls="solutions-dropdown-panel"
             class:list={[
               'text-sm font-medium transition-colors inline-flex items-center gap-1',
               pathname.includes('/cozumler') ? 'text-[var(--color-primary-light)]' : 'text-[var(--color-text)] hover:text-[var(--color-primary-light)]'
@@ -58,10 +61,10 @@ function isActive(href: string): boolean {
             Çözümler
             <svg xmlns="http://www.w3.org/2000/svg" class="w-3 h-3 transition-transform group-hover:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
           </button>
-          <div class="absolute top-full left-0 mt-2 w-64 bg-[var(--color-surface-light)] border border-[var(--color-border)] rounded-xl shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-[60]">
+          <div id="solutions-dropdown-panel" role="menu" class="absolute top-full left-0 mt-2 w-64 bg-[var(--color-surface-light)] border border-[var(--color-border)] rounded-xl shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-[60]">
             <div class="py-2">
               {solutionItems.map((item) => (
-                <a href={item.href} class="block px-4 py-2.5 text-sm text-[var(--color-text-muted)] hover:text-[var(--color-primary-light)] hover:bg-[var(--color-surface)]/50 transition-colors">
+                <a href={item.href} role="menuitem" class="block px-4 py-2.5 text-sm text-[var(--color-text-muted)] hover:text-[var(--color-primary-light)] hover:bg-[var(--color-surface)]/50 transition-colors">
                   {item.label}
                 </a>
               ))}
@@ -76,7 +79,7 @@ function isActive(href: string): boolean {
       </div>
 
       <!-- Mobile Menu Button -->
-      <button id="mobile-menu-btn" class="md:hidden p-2 text-[var(--color-text)]" aria-label="Toggle menu">
+      <button id="mobile-menu-btn" class="md:hidden p-2 text-[var(--color-text)]" aria-label="Menüyü aç/kapat" aria-expanded="false" aria-controls="mobile-menu">
         <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" /></svg>
       </button>
     </div>
@@ -103,7 +106,47 @@ function isActive(href: string): boolean {
 </nav>
 
 <script>
+  // Mobile menu toggle with aria
   const btn = document.getElementById('mobile-menu-btn');
   const menu = document.getElementById('mobile-menu');
-  btn?.addEventListener('click', () => menu?.classList.toggle('hidden'));
+  btn?.addEventListener('click', () => {
+    const isHidden = menu?.classList.toggle('hidden');
+    btn?.setAttribute('aria-expanded', String(!isHidden));
+  });
+
+  // Desktop dropdown keyboard support
+  const dropBtn = document.getElementById('solutions-dropdown-btn');
+  const dropPanel = document.getElementById('solutions-dropdown-panel');
+
+  function openDropdown() {
+    dropPanel?.classList.remove('invisible', 'opacity-0');
+    dropPanel?.classList.add('visible', 'opacity-100');
+    dropBtn?.setAttribute('aria-expanded', 'true');
+  }
+
+  function closeDropdown() {
+    dropPanel?.classList.add('invisible', 'opacity-0');
+    dropPanel?.classList.remove('visible', 'opacity-100');
+    dropBtn?.setAttribute('aria-expanded', 'false');
+  }
+
+  dropBtn?.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault();
+      const isExpanded = dropBtn.getAttribute('aria-expanded') === 'true';
+      isExpanded ? closeDropdown() : openDropdown();
+    }
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') closeDropdown();
+  });
+
+  // Close dropdown when clicking outside
+  document.addEventListener('click', (e) => {
+    if (!dropBtn?.contains(e.target as Node) && !dropPanel?.contains(e.target as Node)) {
+      closeDropdown();
+    }
+  });
 </script>
+

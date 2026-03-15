@@ -4,7 +4,7 @@
     "branche": "Emlak",
     "slug_branche": "emlak",
     "slug_problem": "yapay-zeka-ile-musteri-bulma",
-    "seo_title": "Emlak Sektörü İçin Yapay Zeka ile Otomatik Müşteri Bulma | Pratik Yapay Zeka",
+    "seo_title": "Emlak İçin Yapay Zeka ile Müşteri Bulma | Pratik Yapay Zeka",
     "seo_description": "Emlak ofisleri ve gayrimenkul danışmanları için yapay zeka destekli lead generation ve satış otomasyonu. Daha fazla portföy ve müşteri bağlayın.",
     "keywords": [
       "emlak sektörü için yapay zeka otomasyonu",
@@ -24,9 +24,9 @@
     },
     "loesung_titel": "Emlak Ofisleri İçin Yapay Zeka Destekli Büyüme Sistemi",
     "loesung_features": [
-      "7/24 Otonom Sesli Asistan (Lead Kalifikasyonu ve Anında Randevu Alma)",
-      "Sıcak müşteri adayları geldiğinde anında CRM ve WhatsApp bildirim otomasyonu",
-      "Sosyal medya ve portallardan gelen talepleri saniyeler içinde analiz edip puanlayan algoritmalar"
+      "7/24 Otonom Sesli Asistan: Lead Kalifikasyonu ve anında takvime randevu alma, mesai dışında sıfır kayıp",
+      "Anlık CRM Bildirim Otomasyonu: Sıcak müşteri adayları geldiğinde CRM ve WhatsApp üzerinden anında bildirim",
+      "Akıllı Lead Puanlama: Sosyal medya ve portallardan gelen talepleri saniyeler içinde analiz edip puanlayan algoritmalar"
     ],
     "faqs": [
       {
@@ -64,9 +64,9 @@
     },
     "loesung_titel": "Avukatlar İçin Gizlilik Odaklı İletişim Otomasyonları",
     "loesung_features": [
-      "KVKK Uyumlu Yerel LLM (On-Premise) Veri İşleme (Privacy as Prestige Garantisi)",
-      "Otomatik Dava Ön Değerlendirme ve Potansiyel Skorlama Sistemi",
-      "Müvekkil adayları web sitenize geldiğinde ilgilerine göre anında takvime randevu işleme"
+      "KVKK Uyumlu Yerel LLM: On-Premise veri işleme ile Privacy as Prestige garantisi, sıfır dış veri sızıntısı",
+      "Dava Ön Değerlendirme Sistemi: Otomatik potansiyel skorlama ve müvekkil nitelendirme",
+      "Akıllı Randevu Motoru: Müvekkil adayları web sitenize geldiğinde ilgilerine göre anında takvime randevu işleme"
     ],
     "faqs": [
       {
@@ -104,9 +104,9 @@
     },
     "loesung_titel": "Mali Müşavirler İçin Otonom Büyüme ve Evrak Asistanı",
     "loesung_features": [
-      "Sinyal Tabanlı B2B Outreach: Kurumsal şirketleri (Yatırım almış vb.) tespit edip otomatik mail atan sistem",
-      "Çoklu Dil ve Format Destekli Otonom Evrak İşleme (IDP) Pipeline'ı",
-      "ERP Sistemlerinize (Örn: Zirve, Logo, Luca) sıfır insan müdahalesi ile %99.6 doğrulukla veri aktarımı"
+      "Sinyal Tabanlı Outreach: Kurumsal şirketleri (yatırım almış vb.) tespit edip otomatik kişiselleştirilmiş mail atan sistem",
+      "Otonom Evrak İşleme (IDP): Çoklu dil ve format destekli akıllı doküman tanıma pipeline'ı",
+      "Sıfır Hata ERP Aktarımı: Zirve, Logo, Luca gibi ERP sistemlerine %99.6 doğrulukla otomatik veri aktarımı"
     ],
     "faqs": [
       {
@@ -144,9 +144,9 @@
     },
     "loesung_titel": "E-Ticaret Ciro Kurtarma ve Ölçekleme Zekası",
     "loesung_features": [
-      "WhatsApp Business API ve Instagram DM üzerinden Anında Sepet Kurtarma Senaryoları",
-      "Satın alma geçmişine ve VIP müşteri hareketlerine göre Dinamik Ürün Önerme (Upsell)",
-      "B2B Toptan E-Ticaret için yapay zeka ile distribütör/influencer kazıma ve outreach botu"
+      "Sepet Kurtarma Otomasyonu: WhatsApp Business API ve Instagram DM üzerinden anında terk edilmiş sepet recovery senaryoları",
+      "Dinamik Upsell Motoru: Satın alma geçmişine ve VIP müşteri hareketlerine göre kişiselleştirilmiş ürün önerme",
+      "B2B Toptan Outreach Botu: Yapay zeka ile distribütör ve influencer kazıma ve otomatik outreach kampanyaları"
     ],
     "faqs": [
       {

@@ -7,6 +7,7 @@
 import diyImage from '../assets/agitate-diy.webp';
 import inhouseImage from '../assets/agitate-inhouse.webp';
 import agencyImage from '../assets/agitate-agency.webp';
+import { Image } from 'astro:assets';
 ---
 
 <section class="relative py-32 lg:py-48">
@@ -51,7 +52,7 @@ import agencyImage from '../assets/agitate-agency.webp';
             </div>
             <div class="neon-bleed-border rounded-[24px] p-2 md:p-3 relative group overflow-hidden">
               <div class="absolute inset-0 bg-gradient-to-tr from-[var(--color-primary)]/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none z-10"></div>
-              <img src={diyImage.src} alt="DIY Yapay Zeka Otomasyonu - Kendi başınıza AI kurulum ve entegrasyon süreci" class="w-full h-auto rounded-xl relative z-0" loading="lazy" decoding="async" />
+              <Image src={diyImage} alt="DIY Yapay Zeka Otomasyonu - Kendi başınıza AI kurulum ve entegrasyon süreci" class="w-full h-auto rounded-xl relative z-0" loading="lazy" decoding="async" />
             </div>
           </div>
         </div>
@@ -72,7 +73,7 @@ import agencyImage from '../assets/agitate-agency.webp';
             </div>
             <div class="neon-bleed-border rounded-[24px] p-2 md:p-3 relative group overflow-hidden">
               <div class="absolute inset-0 bg-gradient-to-tr from-[var(--color-primary)]/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none z-10"></div>
-              <img src={inhouseImage.src} alt="İç Ekip ile AI Entegrasyonu - Yapay zeka uzmanı işe alım ve takım kurma süreci" class="w-full h-auto rounded-xl relative z-0" loading="lazy" decoding="async" />
+              <Image src={inhouseImage} alt="İç Ekip ile AI Entegrasyonu - Yapay zeka uzmanı işe alım ve takım kurma süreci" class="w-full h-auto rounded-xl relative z-0" loading="lazy" decoding="async" />
             </div>
           </div>
         </div>
@@ -93,7 +94,7 @@ import agencyImage from '../assets/agitate-agency.webp';
             </div>
             <div class="neon-bleed-border rounded-[24px] p-2 md:p-3 relative group overflow-hidden">
               <div class="absolute inset-0 bg-gradient-to-tr from-[var(--color-primary)]/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none z-10"></div>
-              <img src={agencyImage.src} alt="Yapay Zeka Erteleme Riski - AI dönüşümünü geciktirmenin iş maliyeti" class="w-full h-auto rounded-xl relative z-0" loading="lazy" decoding="async" />
+              <Image src={agencyImage} alt="Yapay Zeka Erteleme Riski - AI dönüşümünü geciktirmenin iş maliyeti" class="w-full h-auto rounded-xl relative z-0" loading="lazy" decoding="async" />
             </div>
           </div>
         </div>

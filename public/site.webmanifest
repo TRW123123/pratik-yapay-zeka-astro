@@ -5,19 +5,24 @@
   "icons": [
     {
       "src": "/favicon-32x32.png",
-      "sizes": "512x512",
+      "sizes": "32x32",
       "type": "image/png"
     },
     {
       "src": "/apple-touch-icon.png",
-      "sizes": "512x512",
-      "type": "image/png",
-      "purpose": "any maskable"
+      "sizes": "180x180",
+      "type": "image/png"
+    },
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
     }
   ],
-  "theme_color": "#10b981",
-  "background_color": "#0F172A",
+  "theme_color": "#A3E635",
+  "background_color": "#0B0F14",
   "display": "standalone",
   "start_url": "/",
-  "scope": "/"
+  "scope": "/",
+  "lang": "tr"
 }

@@ -1,10 +1,8 @@
 /* PITFALL #5 FIX: Local fonts — NO Google Fonts CDN (DSGVO) */
-@import '@fontsource/poppins/300.css';
+/* Reduced from 6 weights to 3 essential: 400 (body), 600 (semi-bold), 700 (bold) */
 @import '@fontsource/poppins/400.css';
-@import '@fontsource/poppins/500.css';
 @import '@fontsource/poppins/600.css';
 @import '@fontsource/poppins/700.css';
-@import '@fontsource/poppins/800.css';
 
 @import 'tailwindcss';
 @plugin '@tailwindcss/typography';

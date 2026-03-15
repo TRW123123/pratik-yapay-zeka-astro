@@ -45,7 +45,7 @@ const localBusinessSchema = {
   '@type': 'LocalBusiness',
   name: 'Pratik Yapay Zeka',
   alternateName: 'ST-Automatisierung',
-  url: Astro.site?.toString() || 'https://pratik-yapayzeka.com',
+  url: Astro.site?.toString() || 'https://yapayzekapratik.com',
   logo: new URL('/logo.png', Astro.site).href,
   description: 'Yapay zeka ve otomasyon danışmanlığı. Lead generation, satış, pazarlama ve müşteri hizmeti otomasyonu.',
   address: {
@@ -70,7 +70,7 @@ const webSiteSchema = {
   '@context': 'https://schema.org',
   '@type': 'WebSite',
   name: 'Pratik Yapay Zeka',
-  url: Astro.site?.toString() || 'https://pratik-yapayzeka.com',
+  url: Astro.site?.toString() || 'https://yapayzekapratik.com',
 };
 
 // Schema.org: BreadcrumbList (if breadcrumbs provided)
@@ -95,7 +95,7 @@ const webPageSchema = {
   isPartOf: {
     '@type': 'WebSite',
     name: 'Pratik Yapay Zeka',
-    url: Astro.site?.toString() || 'https://pratik-yapayzeka.com',
+    url: Astro.site?.toString() || 'https://yapayzekapratik.com',
   },
 };
 
@@ -118,6 +118,10 @@ import CookieConsent from '../components/CookieConsent.astro';
     <!-- PITFALL #1 FIX: Dynamic canonical per page -->
     <link rel="canonical" href={canonicalURL.href} />
 
+    <!-- hreflang: Turkish primary + x-default (Fix 4.6) -->
+    <link rel="alternate" hreflang="tr" href={canonicalURL.href} />
+    <link rel="alternate" hreflang="x-default" href={canonicalURL.href} />
+
     <!-- Favicons -->
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
@@ -138,7 +142,7 @@ import CookieConsent from '../components/CookieConsent.astro';
     <meta property="og:url" content={canonicalURL.href} />
     <meta property="og:image" content={ogImageURL.href} />
     <meta property="og:locale" content="tr_TR" />
-    <meta property="og:site_name" content="Yapay Zeka Pratik" />
+    <meta property="og:site_name" content="Pratik Yapay Zeka" />
 
     <!-- Twitter Cards -->
     <meta name="twitter:card" content="summary_large_image" />

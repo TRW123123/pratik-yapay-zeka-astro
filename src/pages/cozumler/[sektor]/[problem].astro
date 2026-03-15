@@ -1,8 +1,11 @@
 ---
 import SolutionLayout from '../../../layouts/SolutionLayout.astro';
-import pseoData from '../../../data/pseo_data_tr.json';
+import rawPseoData from '../../../data/pseo_data_tr.json';
+import { PseoDataSchema } from '../../../data/pseo-schema';
 
 export async function getStaticPaths() {
+  // Build-time Zod validation — fail fast if JSON is malformed
+  const pseoData = PseoDataSchema.parse(rawPseoData);
   return pseoData.map((data) => ({
     params: {
       sektor: data.slug_branche,
@@ -56,6 +59,8 @@ const benefitsList = [
   benefitsTitle="Ölçülebilir Dönüşüm (Hard Metrics)"
   benefits={benefitsList}
   sectorTheme={data.slug_branche}
+  sectorName={data.branche}
+  faqs={data.faqs}
   caseStudyDescription={`${data.branche} sektöründe yapay zeka ile kurduğumuz büyüme sistemlerinin operasyonel detayları ve vaka çalışmaları için teknik ekibimizle görüşün.`}
   finalCtaTitle="Sisteminizi Hemen Ölçeklendirin"
   finalCtaSubtitle={`${data.branche} alanında manuel operasyonlarla zaman kaybetmeyi bırakın.`}
