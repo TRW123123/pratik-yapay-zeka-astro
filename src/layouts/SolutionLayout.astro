@@ -60,13 +60,9 @@ const breadcrumbs = [
   { name: heroTitle.split(' – ')[0], url: pathname },
 ];
 
-// Map sectors to gradient/glow colors for deep customization
+// All sectors use the unified brand lime green
 const themeColors: Record<string, { primary: string, accent: string, glow: string }> = {
-  'emlak': { primary: '#F59E0B', accent: '#D97706', glow: 'rgba(245, 158, 11, 0.15)' }, // Amber
-  'hukuk': { primary: '#3B82F6', accent: '#2563EB', glow: 'rgba(59, 130, 246, 0.18)' }, // Blue
-  'muhasebe': { primary: '#10B981', accent: '#059669', glow: 'rgba(16, 185, 129, 0.15)' }, // Emerald
-  'e-ticaret': { primary: '#A855F7', accent: '#9333EA', glow: 'rgba(168, 85, 247, 0.15)' }, // Purple
-  'default': { primary: '#A3E635', accent: '#84CC16', glow: 'rgba(163, 230, 53, 0.15)' } // Base Lime
+  'default': { primary: '#A3E635', accent: '#84CC16', glow: 'rgba(163, 230, 53, 0.15)' }
 };
 
 const currentTheme = themeColors[sectorTheme] || themeColors['default'];
@@ -97,21 +93,21 @@ const currentTheme = themeColors[sectorTheme] || themeColors['default'];
       <div class="absolute top-1/4 left-1/2 -translate-x-1/2 w-[1000px] h-[1000px] rounded-full blur-[160px] pointer-events-none opacity-50 theme-glow-bg"></div>
       
       <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-5xl text-center relative z-10">
-        <div class="inline-flex items-center gap-3 px-5 py-2.5 rounded-full bg-white/5 border border-white/10 mb-8 backdrop-blur-md opacity-0" data-gsap="fade-up">
+        <div class="inline-flex items-center gap-3 px-5 py-2.5 rounded-full bg-white/5 border border-white/10 mb-8 backdrop-blur-md">
           <span class="w-2.5 h-2.5 rounded-full theme-bg animate-pulse shadow-[0_0_10px_var(--themePrimary)]"></span>
           <span class="text-sm font-bold tracking-widest text-[#E2E8F0] uppercase letter-spacing-[0.2em]">
             {sectorTheme !== 'default' ? `${sectorTheme.split('-').join(' ')} Çözümü` : 'Yapay Zeka Otomasyonu'}
           </span>
         </div>
         
-        <h1 class="text-3xl md:text-5xl lg:text-5xl xl:text-5xl font-black mb-8 leading-[1.1] tracking-tight text-transparent bg-clip-text bg-gradient-to-br from-white via-gray-200 to-gray-500 opacity-0" data-gsap="fade-up" data-delay="0.1">
+        <h1 class="text-3xl md:text-5xl lg:text-5xl xl:text-5xl font-black mb-8 leading-[1.1] tracking-tight text-transparent bg-clip-text bg-gradient-to-br from-white via-gray-200 to-gray-500">
           {heroTitle}
         </h1>
-        <p class="text-base md:text-lg lg:text-xl text-gray-400 mb-12 max-w-3xl mx-auto font-medium leading-relaxed opacity-0" data-gsap="fade-up" data-delay="0.2">
+        <p class="text-base md:text-lg lg:text-xl text-gray-400 mb-12 max-w-3xl mx-auto font-medium leading-relaxed">
           {heroSubtitle}
         </p>
         
-        <div class="flex flex-col sm:flex-row justify-center items-center gap-6 opacity-0" data-gsap="fade-up" data-delay="0.3">
+        <div class="flex flex-col sm:flex-row justify-center items-center gap-6">
           <a href="/iletisim/" class="group relative px-10 py-5 font-bold rounded-2xl transition-all duration-300 hover:-translate-y-1 overflow-hidden theme-bg" style="box-shadow: 0 0 25px var(--themeGlow);">
              <span class="relative z-10 text-black flex items-center justify-center gap-3 text-lg">
                 Sistemi Kurun 
@@ -136,9 +132,10 @@ const currentTheme = themeColors[sectorTheme] || themeColors['default'];
           {benefits.map((benefit, i) => {
              // Extract exactly the percentage/multiplier to make it massive
              // Added \d+\/\d+ to explicitly catch patterns like "7/24" without breaking them apart
-             const metricValueMatch = benefit.match(/(\d+\/\d+|\+?%\d+(?:\.\d+)?|\d+x|\d+\+? saat|\d+ dakika|\d+\+?)/i);
+             const safeBenefit = benefit ? benefit.toString() : "";
+             const metricValueMatch = safeBenefit.match(/(\d+\/\d+|\+?%\d+(?:\.\d+)?|\d+x|\d+\+? saat|\d+ dakika|\d+\+?)/i);
              const massiveMetric = metricValueMatch ? metricValueMatch[0] : "";
-             const remainingText = benefit.replace(massiveMetric, "").trim();
+             const remainingText = safeBenefit.replace(massiveMetric, "").trim();
 
              return (
               <div class="flex flex-col h-full group backdrop-blur-[24px] saturate-[150%] bg-[#FFFFFF]/[0.02] border border-white/[0.05] rounded-[2rem] p-8 lg:p-10 hover:bg-[#FFFFFF]/[0.04] transition-all duration-500 relative overflow-hidden hover:border-white/[0.1] hover:-translate-y-1">
@@ -158,7 +155,7 @@ const currentTheme = themeColors[sectorTheme] || themeColors['default'];
                       <p class="text-gray-300 leading-relaxed text-base lg:text-lg font-medium flex-grow">{remainingText}</p>
                     </>
                   ) : (
-                    <p class="text-gray-300 leading-relaxed text-base lg:text-lg font-medium flex-grow" set:html={benefit.replace(/(\d+\/\d+|\+?%\d+(?:'[a-z]+|\.\d+)?|\d+x|\d+\+? saat|\d+ dakika|\d+\+?|%[0-9.]+)/gi, '<strong class="theme-text text-3xl font-black block mb-2">$1</strong>')} />
+                    <p class="text-gray-300 leading-relaxed text-base lg:text-lg font-medium flex-grow" set:html={safeBenefit.replace(/(\d+\/\d+|\+?%\d+(?:'[a-z]+|\.\d+)?|\d+x|\d+\+? saat|\d+ dakika|\d+\+?|%[0-9.]+)/gi, '<strong class="theme-text text-3xl font-black block mb-2">$1</strong>')} />
                   )}
                 </div>
               </div>
@@ -244,7 +241,8 @@ const currentTheme = themeColors[sectorTheme] || themeColors['default'];
       </div>
     </section>
 
-    <!-- 5. FINAL CTA HOOK -->
+
+    <!-- 6. FINAL CTA HOOK -->
     <section class="py-32 relative overflow-hidden">
       <div class="absolute inset-0 theme-bg opacity-[0.02] pointer-events-none"></div>
       

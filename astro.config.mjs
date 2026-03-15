@@ -11,6 +11,7 @@ export default defineConfig({
   site: 'https://yapayzekapratik.com',
 
   // PITFALL #4 FIX: Trailing slash consistency — Astro generates /page/index.html
+  // PINECONE HARD RULE: Zwingend 'always' belassen, Netlify Pretty URLs übernehmen den Rest in Prod!
   trailingSlash: 'always',
 
   // ASTRO v6: 'static' is the default. Pages with `export const prerender = false`
