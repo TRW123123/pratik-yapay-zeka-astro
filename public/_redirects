@@ -32,7 +32,5 @@ https://www.yapayzekapratik.com/* https://yapayzekapratik.com/:splat 301!
 /cozumler/musteri-hizmeti-otomasyonu/   /cozumler/ 301!
 /cozumler/almanya-ihracat/              /cozumler/ 301!
 
-# SPRINT 1 FIX: Legacy root-level service hub pages → /cozumler/ hub
-/marketing-otomasyonu/                  /cozumler/ 301!
-/satis-otomasyonu/                      /cozumler/ 301!
+# SPRINT 1 FIX: Legacy root-level service hub pages -> specific pages now exist
 /yapay-zeka-otomasyonu/                 /cozumler/ 301!
