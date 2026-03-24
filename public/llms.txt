@@ -1,0 +1,34 @@
+# Pratik Yapay Zeka
+> Yapay zeka ve otomasyon danışmanlığı. Türkiye ve Almanya'daki KOBİ'lerin satış, pazarlama ve müşteri hizmetlerini yapay zeka ile otomatikleştiriyoruz.
+
+## Ana Sayfalar
+- [Ana Sayfa](https://yapayzekapratik.com/): Pratik Yapay Zeka – Satış ve Pazarlama Otomasyonu
+- [Hakkımızda](https://yapayzekapratik.com/hakkimizda/): Şafak Tepecik tarafından kurulan butik yapay zeka danışmanlığı
+- [Çözümler](https://yapayzekapratik.com/cozumler/): Sektöre özel yapay zeka otomasyon çözümleri
+
+## Hizmetler
+- [B2B Müşteri Bulma](https://yapayzekapratik.com/b2b-musteri-bulma/): Yapay zeka ile karar vericilere otomatik ulaşma, Deep Research, kişiselleştirilmiş pitch yazımı
+- [Satış Otomasyonu](https://yapayzekapratik.com/satis-otomasyonu/): CRM otomasyonu, otomatik teklif oluşturma, lead takip sistemleri
+- [Pazarlama Otomasyonu](https://yapayzekapratik.com/marketing-otomasyonu/): İçerik üretimi, reklam optimizasyonu, omnichannel kampanya yönetimi
+- [ChatGPT Entegrasyonu](https://yapayzekapratik.com/chatgpt/): İşletmeler için özel ChatGPT çözümleri
+
+## Sektör Çözümleri
+- [E-Ticaret Otomasyonu](https://yapayzekapratik.com/cozumler/e-ticaret/satis-otomasyonu/): E-ticaret satış ve müşteri ilişkileri otomasyonu
+- [Hukuk Bürosu Otomasyonu](https://yapayzekapratik.com/cozumler/hukuk/hukuk-burosu-otomasyonu/): Avukatlar için yapay zeka ile süreç otomasyonu
+- [Muhasebe Otomasyonu](https://yapayzekapratik.com/cozumler/muhasebe/otomatik-mukellef-kazanimi/): Muhasebeciler için otomatik mükellef kazanımı
+- [Emlak Otomasyonu](https://yapayzekapratik.com/cozumler/emlak/yapay-zeka-ile-musteri-bulma/): Emlakçılar için yapay zeka destekli müşteri bulma
+
+## Vaka Çalışmaları
+- [AçılSatış](https://yapayzekapratik.com/vaka-calismalari/acilsatis/): B2B satış otomasyonu başarı hikayesi
+- [CemKimSan](https://yapayzekapratik.com/vaka-calismalari/cemkimsan/): Endüstriyel kimya sektöründe otomasyon
+- [Car Studio AI](https://yapayzekapratik.com/vaka-calismalari/car-studio-ai/): Otomotiv sektöründe yapay zeka
+- [Salevium](https://yapayzekapratik.com/vaka-calismalari/salevium/): SaaS satış otomasyonu
+- [ERPA Teknoloji](https://yapayzekapratik.com/vaka-calismalari/erpa-teknoloji/): Teknoloji şirketinde uçtan uca otomasyon
+- [DKM Coach Bilge](https://yapayzekapratik.com/vaka-calismalari/dkm-coach-bilge/): Koçluk sektöründe dijital dönüşüm
+
+## Temel Bilgiler
+- Kurucu: Şafak Tepecik (8 yıl Almanya B2B tecrübesi)
+- Şirket: ST-Automatisierung, Schwerte, Almanya
+- Hedef Pazar: Türkiye ve Almanya'daki KOBİ'ler
+- Uzmanlık: n8n, Make, Agentic AI, RAG, CRM Entegrasyonu
+- E-posta: s.tepecik@pratik-yapayzeka.com

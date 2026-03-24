@@ -57,12 +57,35 @@ const localBusinessSchema = {
   },
   email: 's.tepecik@pratik-yapayzeka.com',
   sameAs: [
+    'https://www.linkedin.com/in/safak-tepecik/',
     'https://www.youtube.com/@yapayzekapratik',
     'https://www.tiktok.com/@yapayzekapratik',
     'https://www.instagram.com/yapayzekapratik',
   ],
+  founder: {
+    '@type': 'Person',
+    name: 'Şafak Tepecik',
+  },
   areaServed: ['TR', 'DE'],
   priceRange: '$$',
+};
+
+// Schema.org: Person (GEO — founder authority signal)
+const personSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Person',
+  name: 'Şafak Tepecik',
+  jobTitle: 'Kurucu & Yapay Zeka Stratejisti',
+  worksFor: {
+    '@type': 'Organization',
+    name: 'Pratik Yapay Zeka',
+    url: 'https://yapayzekapratik.com',
+  },
+  sameAs: [
+    'https://www.linkedin.com/in/safak-tepecik/',
+    'https://www.youtube.com/@yapayzekapratik',
+  ],
+  knowsAbout: ['Yapay Zeka', 'B2B Satış Otomasyonu', 'CRM', 'n8n', 'Agentic AI'],
 };
 
 // Schema.org: WebSite (for sitelinks search box)
@@ -155,6 +178,7 @@ import CookieConsent from '../components/CookieConsent.astro';
 
     <!-- Schema.org Structured Data -->
     <script type="application/ld+json" set:html={JSON.stringify(localBusinessSchema)} />
+    <script type="application/ld+json" set:html={JSON.stringify(personSchema)} />
     <script type="application/ld+json" set:html={JSON.stringify(webSiteSchema)} />
     <script type="application/ld+json" set:html={JSON.stringify(webPageSchema)} />
     {breadcrumbSchema && (

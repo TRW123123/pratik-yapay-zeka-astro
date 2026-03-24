@@ -1,8 +1,25 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+
+const aboutPageSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'AboutPage',
+  name: 'Hakkımızda – Pratik Yapay Zeka',
+  datePublished: '2025-09-01',
+  dateModified: '2026-03-24',
+  author: {
+    '@type': 'Person',
+    name: 'Şafak Tepecik',
+    jobTitle: 'Kurucu & Yapay Zeka Stratejisti',
+    sameAs: [
+      'https://www.linkedin.com/in/safak-tepecik/',
+      'https://www.youtube.com/@yapayzekapratik',
+    ],
+  },
+};
 ---
 
-<BaseLayout title="Hakkımızda – KOBİ'lerin yapay zeka ile büyümesine yardımcı oluyoruz" description="Pratik Yapay Zeka, Almanya ve Türkiye'deki küçük ve orta ölçekli işletmelerin yapay zeka ve otomasyon ile potansiyellerini gerçekleştirmesine yardımcı olur.">
+<BaseLayout title="Hakkımızda – KOBİ'lerin yapay zeka ile büyümesine yardımcı oluyoruz" description="Pratik Yapay Zeka, Almanya ve Türkiye'deki küçük ve orta ölçekli işletmelerin yapay zeka ve otomasyon ile potansiyellerini gerçekleştirmesine yardımcı olur." schemaType="AboutPage">
   <section class="py-32 lg:py-48 relative overflow-hidden bg-[#0B0F14]">
     <div class="absolute inset-0 opacity-20 mix-blend-overlay pointer-events-none"></div>
     <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[800px] bg-[var(--color-primary)]/5 rounded-full blur-[150px] pointer-events-none opacity-50"></div>
@@ -31,4 +48,5 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       </div>
     </div>
   </section>
+  <script type="application/ld+json" set:html={JSON.stringify(aboutPageSchema)} />
 </BaseLayout>

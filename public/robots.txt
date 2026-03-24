@@ -1,4 +1,38 @@
-# Crawlers
+# === AI SEARCH CRAWLERS (GEO Optimization) ===
+# Allow AI search crawlers to index content for AI-powered search results
+User-agent: GPTBot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+# === BLOCK TRAINING-ONLY CRAWLERS ===
+# These crawlers scrape content for model training, not search results
+User-agent: CCBot
+Disallow: /
+
+User-agent: Bytespider
+Disallow: /
+
+User-agent: anthropic-ai
+Disallow: /
+
+User-agent: cohere-ai
+Disallow: /
+
+# === STANDARD CRAWLERS ===
 User-agent: *
 Allow: /
 Disallow: /api/
