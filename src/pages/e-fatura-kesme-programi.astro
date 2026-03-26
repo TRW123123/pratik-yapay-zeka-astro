@@ -1,0 +1,44 @@
+---
+import SolutionLayout from '../layouts/SolutionLayout.astro';
+---
+<SolutionLayout
+  title="E-Fatura Kesme Programı & Fatura Entegrasyonu | Sıfır Ceza"
+  description="GİB portaldaki bağlantı hataları veya biten entegratör kontörleriyle uğraşmayın. E-faturalarınızı ve e-arşiv faturalarınızı WhatsApp'tan komutla kesebilen otonom sistem."
+  heroTitle="Yapay Zeka Destekli E-Fatura Kesme Programı"
+  heroSubtitle="GİB portalındaki bağlantı (Web Socket) hatalarından ve entegratörlerin gizli kontör maliyetlerinden kurtulun. Sadece 'Fatura Kes' deyin veya siparişi onaylayın, yapay zeka saniyeler içinde hatasız e-faturanızı oluştursun."
+  problems={[
+    "GİB Portal Çöküşleri: Devletin ücretsiz portalının sürekli yavaşlaması, e-arşiv taslaklarının kaydolmaması ve acil durumlarda fatura kesememe krizi.",
+    "500 TL Özel Usulsüzlük Cezası: Manuel süreçler yüzünden faturanın yasal 7 gün içinde kesilmesinin unutulması ve her bir belge için kesilen ağır cezalar.",
+    "Gizli 'Kontör' Abzoc... Maliyetleri: Özel entegratörlerin sürekli biten ve gizlice zamlanan e-defter/e-fatura kontör paketleri."
+  ]}
+  processTitle="Otomatik E-Fatura Akışı Nasıl Çalışır?"
+  processSteps={[
+    { title: "Zero-Click Tetikleme", description: "Müşteri e-ticaret sitenizden alışveriş yaptığında veya siz CRM'de 'Satış Kapandı' dediğiniz an fatura süreci kullanıcı müdahalesi olmadan başlar." },
+    { title: "Hatasız Veri İşleme (TCKN/VKN)", description: "Müşterinin VKN veya TCKN numarası otomatik doğrulanır. Yanlış KDV oranları veya adres hataları %100 oranında engellenir." },
+    { title: "WhatsApp veya SMS ile Gönderim", description: "Oluşturulan yasal e-fatura veya e-arşiv belgesi, müşterinin direkt olarak WhatsApp numarasına veya e-postasına PDF/Link olarak iletilir." },
+    { title: "Muhasebe ve Mali Müşavir Senkronu", description: "Kesilen fatura eş zamanlı olarak ön muhasebe (Logo, Paraşüt, Mikro vb.) sistemine işlenir ve mali müşavire aylık raporlanır." }
+  ]}
+  featuresTitle="E-Fatura Sürecinizi Hızlandıran Güçlü Özellikler"
+  features={[
+    { title: "WhatsApp Kasa Asistanı", description: "Muhasebe programı açmanıza gerek yok. WhatsApp üzerinden asistanınıza 'Ali Yılmaz'a 15.000 TL danışmanlık faturası kes' yazın, o halletsin." },
+    { title: "Akıllı Ceza Kalkanı", description: "Sistem, faturalandırılmamış siparişleri veya ödemeleri tespit eder ve 7 günlük yasal süre dolmadan önce size uyarı göndererek cezaları önler." },
+    { title: "Minimum Entegratör Gideri", description: "Size kontör (kredi) satmıyoruz. Mevcut altyapınızı (veya GİB portalını) optimize ederek operasyonel maliyetinizi en aza indiriyoruz." },
+    { title: "Geçmiş Dönem Fatura Denetimi", description: "Yapay zeka, tedarikçilerinizden gelen e-faturaları otomatik okur (OCR) ve hatalı KDV oranlarına sahip olanları onaylamadan önce sizi uyarır." }
+  ]}
+  benefitsTitle="Bütçenize ve Zamanınıza Net Katkı"
+  benefits={[
+    "0 TL", "Unutulan faturalar yüzünden Vergi Usul Kanunu 353. Madde kapsamında ödeyeceğiniz usulsüzlük cezası.",
+    "%100", "Bireysel hataların önüne geçildiği için TCKN, vergi dairesi veya ürün kalemi yanlışlıklarının engellenme oranı.",
+    "2 Saniye", "Manuel girmek yerine tek bir onay butonuyla faturanın GİB belgelerine yansıması için geçen süre."
+  ]}
+  caseStudyDescription="Her gün 300+ parça e-ticaret faturası kesen müşterimiz, entegratör bağlantı hatalarında her akşam mesaiye kalıyordu. Yapay zeka modülümüzle tüm faturaları arka planda, otopilotta %100 başarıyla kesilmeye başlandı."
+  finalCtaTitle="Siz Siparişe Odaklanın, Faturayı Biz Keselim"
+  finalCtaSubtitle="Tahmin edilemez kontör maliyetlerini ve 500 TL'lik cezaları arkanızda bırakın. Ücretsiz danışmanlık alın."
+  sectorTheme="muhasebe"
+  faqs={[
+    { question: "Mevcut e-fatura entegratörümü değiştirmek zorunda mıyım?", answer: "Hayır. Sistemimiz mevcut entegratörünüzün API'si üzerine veya doğrudan GİB e-arşiv portalı üzerine bir 'Bot' katmanı olarak kurularak süreci otomatikleştirir." },
+    { question: "WhatsApp'tan fatura kesmek yasal olarak güvenli mi?", answer: "Kesinlikle. WhatsApp sadece komutu alır, asıl işlem GİB standartlarına ve vergi usul kanununa (VUK) %100 uygun olarak resmi altyapıda saniyeler içinde gerçekleştirilir." },
+    { question: "Yapay zeka KDV veya tevkifat hatası yapabilir mi?", answer: "Sistem, ürünün GTİP ve KDV sınıfını önceden öğrediği için maliyeye gitmeden önce %100 otomatik doğrulama yapar. İnsan hatasını ortadan kaldırır." }
+  ]}
+  sectorName="E-Fatura Kesme"
+/>

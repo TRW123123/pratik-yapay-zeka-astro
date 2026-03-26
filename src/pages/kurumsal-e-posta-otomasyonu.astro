@@ -1,0 +1,44 @@
+---
+import SolutionLayout from '../layouts/SolutionLayout.astro';
+---
+<SolutionLayout
+  title="Kurumsal E-Posta Otomasyonu | Spam ve Karmaşaya Son"
+  description="İnfo@ mail kutunuzdaki karmaşayı bitirin. Gelen B2B e-postaları okuyup niyetini anlayan, sınıflandıran ve asla spam klasörüne düşmeyen yapay zeka çözümü."
+  heroTitle="Gelen Kutusu Karmaşasını Bitiren Otonom B2B E-Posta Yönetimi"
+  heroSubtitle="Satış ve info@ adreslerinize gelen yüzlerce e-postanın içinde kaybolan değerli siparişleri kurtarın. E-postaları anlayan, ilgili birime yönlendiren ve SPF/DKIM/DMARC sorunlarınızı çözerek asla spama düşmeyen otomasyon."
+  problems={[
+    "Gelen Kutusu Çöplüğü (Inbox Clutter): Fatura, spam, CV'ler ve milyon liralık B2B satış maillerinin aynı info@ havuzuna düşerek kaos yaratması.",
+    "B2B İletişimde Spam'e Düşmek (Kara Liste): Kötü yapılandırılmış kurumsal e-posta altyapısı (Eksik SPF, DMARC) yüzünden atılan resmi tekliflerin müşterinin çöp kutusuna (Spam) düşmesi.",
+    "Manuel Ticket ve Yönlendirme Hamallığı: Her gelen e-postanın yönetici tarafından okunup 'Veli Bey şu talebe, Ayşe Hanım şu iadeye baksın' diyerek saatlerce Forward veya CC yapılması."
+  ]}
+  processTitle="Info@ Adresiniz Nasıl En Zeki Çalışanınız Olur?"
+  processSteps={[
+    { title: "E-Posta Analizi ve Niyet Sınıflandırma", description: "Yapay zeka tüm info@ postalarını okur. 'Fiyat', 'Şikayet', 'Fatura', 'İş Başvurusu' gibi niyetleri %99 kesinlikle etiketler." },
+    { title: "Akıllı Yönlendirme (Routing)", description: "Şikayet içerikli ise doğrudan teknik servise, teklif içerikli ise satış ekibindeki boş yetkiliye hiç zaman kaybetmeden yönlendirir." },
+    { title: "Yapay Zeka Destekli Otomatik Taslak (Auto-Draft)", description: "Maili yönlendirirken boş yollamaz. Şirket veritabanınıza (Wiki) dayanarak en profesyonel cevap metnini 'Taslaklar' klasörüne kaydeder." },
+    { title: "Gelişmiş Teknolojik Kimlik (DMARC/SPF)", description: "E-posta pazarlamanız (Marketing) ile kurumsal iletişiminiz (Transactional) ayrı sunuculara (IP) taşınarak spam repütasyonunuz temizlenir." }
+  ]}
+  featuresTitle="E-Posta Yönetimini CRM İle Birleştiren Araçlar"
+  features={[
+    { title: "Sese Çevirme ve Özetleme", description: "20 mailden oluşan uzun bir zinciri (Thread), satış temsilcisi yoldayken dinlesin diye 30 saniyelik net bir sese veya madde madde özete çevirir." },
+    { title: "VIP Müşteri Kalkanı", description: "Geçmiş cirosu yüksek bir kurumsal müşteriden mail geldiğinde, sistemi 'Acil' kırmızı kodla işaretleyip yöneticinin cep telefonuna SMS veya WhatsApp ile iletir." },
+    { title: "Satın Alma Niyeti (Scoring) Puanlama", description: "Gelen isteklerin dilinden 'Sadece fiyat araştırması mı yoksa ödeme yapmaya hazır sıcak müşteri mi?' ayrımını yaparak öncelik sıralaması oluşturur." },
+    { title: "Otomatik Ek (Attachment) İşleme", description: "Müşterilerden gelen ZIP veya PDF şeklindeki teknik şartnameleri indirir, okur ve kritik olan metinleri özetleyerek asıl mesajın içine yazar." }
+  ]}
+  benefitsTitle="Düzenli ve Güvenli İletişimin Kurumsal Çıktısı"
+  benefits={[
+    "%100", "Spam Koruması. Doğru SPF/DKIM mimarisi ile gönderilen şirket tekliflerinizin müşterilerin Spam klasörüne düşme oranı sıfırlanır.",
+    "0", "Kaybolan Lead'ler. Ortak bilgi kutusunda (info@) kimsenin üstlenmediği için cevapsız kalarak kaçan iş fırsatları tamamen biter.",
+    "Günde 2 Saat", "Sadece 'Gelip giden e-postaları sınıflandırmak ve ilgili kişilere Forwad etmek' için harcanan mesai tasarrufu."
+  ]}
+  caseStudyDescription="Günde 400 info e-postası alan büyük bir endüstriyel üretici müşterimiz, talepleri satış ekibine manuel paylaştırmak için saatler harcıyordu. LLM tabanlı e-posta otomasyonu ile bu süre sıfırlandı ve sadece taslağı okuyup 'Gönder' demeleri sağlandı."
+  finalCtaTitle="Gelen Kutunuzu Bir Çöplükten Satış Makinesine Dönüştürün"
+  finalCtaSubtitle="Müşterileriniz beklemez. Gelen tüm mailleri saniyeler içinde anlayan ve sınıflandıran otonom posta asistanı edinin."
+  sectorTheme="crm"
+  faqs={[
+    { question: "Mevcut e-posta altyapımız (Google Workspace, Microsoft 365, Yandex) değişmek zorunda mı?", answer: "Hayır. Sistemimiz API ile mevcut kurumsal e-posta sağlayıcınıza bağlanarak üstüne zeki bir 'Filtre ve Routing' katmanı ekler." },
+    { question: "DMARC veya SPF kayıtları neden bu kadar önemli?", answer: "Çünkü dünya devi posta sunucuları (Gmail, Outlook vb.) artık bu kimlik doğrulamalarına sahip olmayan b2b e-postaları doğrudan reddetme (Reject) kararı aldı. Biz teknik SEO tarafında bunu çözüyoruz." },
+    { question: "Kurumsal sırlarımız olan e-postalar güvenlik sorunu yaşar mı?", answer: "Veri güvenliği (Privacy-First) ana kuralımızdır. Modele beslenen şirket mailleriniz açık LLM modellerini (Public AI) eğitmek için asla kullanılmaz ve uçtan uca şifrelidir." }
+  ]}
+  sectorName="Kurumsal E-Posta"
+/>

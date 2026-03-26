@@ -1,0 +1,44 @@
+---
+import SolutionLayout from '../layouts/SolutionLayout.astro';
+---
+<SolutionLayout
+  title="Stok Takibi Programı | E-Ticaret ve ERP Entegrasyonu"
+  description="Eski nesil ERP danışmanlık faturalarından ve e-ticaret sitenizdeki 'stokta kalmadı' iptallerinden kurtulun. Yapay zeka destekli otonom ve gerçek zamanlı stok senkronizasyonu."
+  heroTitle="Eski Nesil Hantal Yazılımları Bırakın, Yapay Zekalı Stok Takibi ile Tanışın"
+  heroSubtitle="Sürekli 'İş Ortağına Başvurun' diyerek sizi masrafa sokan kapalı ERP sistemlerinden ve olmayan ürünü e-ticaret sitenizde sattıran Excel uyumsuzluklarından kurtulun. Gerçek zamanlı pazar yeri senkronizasyonu ve yapay zeka destekli otonom satın alma zekası."
+  problems={[
+    "E-Ticaret ve Excel Katliamı: Offline Excel tablolarıyla, aktif çalışan Trendyol/Hepsiburada pazar yerleri arasındaki uyuşmazlığın yarattığı 'Stokta yok (Out of Stock)' stornoları ve mağaza puanı düşüşü.",
+    "Ağır ERP Yazılımlarının Bütçe Emen Yapısı: Mevcut muhasebe (Logo, Mikro vb.) çözümlerinde çıkan her hatada çözüm üretmek yerine ücretli üçüncü parti iş ortaklarına yönlendirilme zorunluluğu.",
+    "Sayım (Envanter) Hataları: Depo elemanlarının fiziksel sayımlarda barkod okuyucu sorunları, adresleme hataları ve insan yorgunluğu yüzünden yaşadığı kaos ve maliyet zararı."
+  ]}
+  processTitle="Agnostik Otonom Stok Senkronizasyonu"
+  processSteps={[
+    { title: "Milisaniye Pazar Yeri Eşitlemesi (Omni-Channel)", description: "Fiziksel kasanızdan (POS) bir ürün satıldığı an, otonom yazılım bu değişimi Trendyol, kendi web siteniz ve ERP sisteminize 1 saniyenin altında bildirir ve kapatır." },
+    { title: "Tahmine Dayalı (Predictive) Tedarik", description: "Yapay zeka sadece geçmişi saymaz. Eğer bir sezonsal ürünün reklam kampanyası varsa ve stok kritik sınırın altındaysa, tedarikçinize otomatik satın alma (Taslak Mail) siparişi çeker." },
+    { title: "Mobil Kamera Destekli Hızlı Sayım", description: "Özel barkod makinelerine binlerce dolar harcamak yerine cep telefonu kamerasını Yapay Zeka (OCR ve Nesne Tanıma) destekli bir stok sayım terminaline dönüştürür." },
+    { title: "ERP Veritabanı Köprüsü", description: "Farklı bölümler (Logo Muhasebe, Woocommerce E-Ticaret, WhatsApp Sipariş Hattı) arasındaki iletişimsizliği yok eden tek ve merkezi bir veri köprüsü görevi görür." }
+  ]}
+  featuresTitle="Hantal Sistemleri Aşarak Kârlılığı Koruyan Yapı"
+  features={[
+    { title: "Aşırı Stok (Over-stocking) Uyarısı", description: "Sistem depoda 7 aydır hareket etmeyen ölü stoğu fark eder ve nakit akışınızı düzeltmek için bu ürünlere özel agresif 'E-Mail Kampanyası' yaratılmasını pazarlama asistanına iletir." },
+    { title: "Dinamik Depo Adreslemesi (Routing)", description: "Toplayıcı (Picker) personelin depoda gezinme süresini optimize etmek için yapay zeka tarafından hesaplanan en kısa rote algoritması (Örn: AVM veya Amazon depoları gibi)." },
+    { title: "Bozulan ve Son Kullanma Tarihi Yönetimi", description: "Gıda veya soğuk zincir lojistiğinde son tüketim tarihi yaklaşan partileri (Lot/Batch) anında tespit ederek fiyat düşürme otomasyonunu tetikler." },
+    { title: "Ters Lojistik (İade) Katmanı", description: "E-ticaretten dönen ürünlerin anında kargoda yoldayken bile tekrar satılabilir stoğa aktarılmasını (Sat-Bekle) sağlayan öngörü motoru." }
+  ]}
+  benefitsTitle="Excel Uyumsuzluklarını ve İptalleri Bitiren Finansal Etki"
+  benefits={[
+    "0", "E-Ticarette Yok Satma (Out-of-Stock) Cezası. Kusursuz entegrasyon sayesinde Hepsiburada/Trendyol mağaza puanı düşüşleri asla yaşanmaz.",
+    "%100", "Şeffaf Entegrasyon Maliyeti. Kapalı ERP'lerdeki (Her güncelleme ve destek için ek bütçe) modelinden kurtularak sıfır sürpriz maliyet felsefesi.",
+    "Aylar Yerine Saniyeler", "Satılmayan dead-stock malzemelerin rafta çürümeden nakde dönüştürülme hızı."
+  ]}
+  caseStudyDescription="Ulusal pazarlarda satan e-ticaret müşterimiz, deposundaki Excel dosyası ile 4 farklı e-pazaryeri hesaplarını senkronize edemediği için her gün ceza puanı alıyordu. Milisaniye senkronizasyon ağımızla Trendyol mağaza karneleri 2 haftada yeşile (Kusursuz) döndü."
+  finalCtaTitle="Gerçek Zamanlı Çevik Stoğa Geçin"
+  finalCtaSubtitle="Maddi zarar yazan depo sayımları ve 'açılmayan güncellemeler' tarih oldu. Hızlı, bulut tabanlı zekaya yatırım yapın."
+  sectorTheme="e-ticaret"
+  faqs={[
+    { question: "Mevcut ERP Sistemimizi (Logo Yazılım vb.) tamamen silip atmamız mı gerekiyor?", answer: "Hayır. Sistem Agnostiktir (Bağımsız). Sizi sert bir değişime zorlamadan, mevcut Logo/Mikro veritabanınızın üzerine bir köprü olarak kurulur ve esneklik katar." },
+    { question: "Satışın yoğun olduğu kampanya dönemlerinde (Efsane Cuma) senkronizasyon gecikmesi yaşanır mı?", answer: "Hayır. Cloud mimarimiz (Serverless Architecture) tam olarak bu anlık yükler için tasarlanmıştır. Yük bindiğinde sistem gücünü anında x10 artırır." },
+    { question: "Personelimizin kullanımı için eğitimler karmaşık mıdır?", answer: "Zero-UI konseptimiz sayesinde teknoloji geçmişi olmayan bir depo çalışanı dahi tabletinden (veya WhatSApp üzerinden) sadece 15 dakikalık alışma süresiyle tıkır tıkır işlem yapar." }
+  ]}
+  sectorName="Stok Takibi YZ"
+/>
