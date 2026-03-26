@@ -1,0 +1,128 @@
+---
+import CalculatorLayout from '../layouts/CalculatorLayout.astro';
+
+
+const title = "Kıdem Tazminatı Hesaplama & Otonom İK Asistanı | Pratik Yapay Zeka";
+const description = "Güncel SGK tavanına göre kıdem tazminatını sıfır hatayla hesaplayan, fesih ve ibraname evraklarını otonom hazırlayan yapay zeka destekli İK aracı.";
+const keywords = "kıdem tazminatı hesaplama, tazminat hesaplama robotu, kıdem tazminatı tavanı, fesih belgesi hazırlama";
+
+// FAQ Schema
+const faqData = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Sistem, kıdem tazminatı tavanı güncellendiğinde kendini yeniliyor mu?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Evet, Resmi Gazete'de yayımlanan güncel SGK ve Maliye Bakanlığı kıdem tazminatı tavan verileri sisteme anında otonom olarak entegre edilir."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Yan haklar (yemek, yol, prim) tazminata eklenebiliyor mu?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yapay zeka, 'giydirilmiş brüt ücreti' maksimize edecek şekilde değil, hukuki sınırlara uygun şekilde tespit etmek için personelin tüm düzenli ödemelerini analiz eder."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Sunduğunuz fesih belgeleri mahkemede geçerli mi?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ürettiğimiz taslaklar, güncel İş Hukuku standartlarına uygun hazırlanır. Ancak nihai hukuki bağlayıcılık için sistem çıktısını şirket avukatınızın sistem onayı yapması tavsiye edilir."
+      }
+    }
+  ]
+};
+---
+
+<CalculatorLayout
+  title={title}
+  description={description}
+  keywords={keywords}
+  schema={JSON.stringify(faqData)}
+>
+  <div class="space-y-12">
+    <!-- Hero Section -->
+    <section>
+      <div class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-primary text-primary mb-4">Legal HR Çözümleri</div>
+      <h1 class="text-4xl lg:text-5xl font-bold tracking-tight mb-6">Kıdem Tazminatı Hesaplamak Artık Risk Değil</h1>
+      <p class="text-xl text-muted-foreground leading-relaxed mb-8">
+        "Manuel tazminat hesaplamaları ve hatalı fesih belgeleri yüzünden açılan işe iade davalarından yoruldunuz mu? Yeni nesil yapay zeka sistemimiz, personelin SGK geçmişini analiz eder, tazminatı güncel tavan üzerinden hesaplar ve tüm hukuki belgeleri saniyeler içinde hazırlar.
+      </p>
+    </section>
+
+    <!-- The Pain Points -->
+    <section class="bg-muted/30 p-8 rounded-2xl border border-border">
+      <h2 class="text-2xl font-semibold mb-6">Tazminat Sürecindeki Hangi Hatalar Şirketinize Dava Açtırır?</h2>
+      <ul class="space-y-4">
+        <li class="flex items-start gap-3">
+          <svg class="w-6 h-6 text-destructive flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path></svg>
+          <p><strong>Giydirilmiş Ücret Hataları:</strong> Yan hakların (yemek, yol vb.) tazminata eksik yansıtılması, personelin direkt arabulucu veya mahkemeye başvurmasıyla sonuçlanır.</p>
+        </li>
+        <li class="flex items-start gap-3">
+          <svg class="w-6 h-6 text-destructive flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path></svg>
+          <p><strong>Kusurlu İbraname ve Belgeler:</strong> Hesaplama doğru olsa bile matbu evraklarla alınan ibralar mahkemeler tarafından sıkça geçersiz sayılmaktadır.</p>
+        </li>
+        <li class="flex items-start gap-3">
+          <svg class="w-6 h-6 text-destructive flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path></svg>
+          <p><strong>Uzayan Bürokratik Süreçler:</strong> İK departmanının her çıkış sürecinde avukatlar ve mali müşavirler arasında günlerce zaman kaybetmesi, operasyonu yavaşlatır.</p>
+        </li>
+      </ul>
+    </section>
+
+    <!-- The Solution -->
+    <section>
+      <h2 class="text-3xl font-bold mb-6">Sadece Hesaplamayan, Hukuki Bariyer Ören "Legal-HR" Asistanı</h2>
+      <p class="text-lg text-muted-foreground mb-8">
+        Kıdem tazminatı hesaplamak işin sadece %1'i. Asıl risk, yanlış belgeler yüzünden kaybedilen davalardır. Otonom asistanımız tüm bu süreci güvence altına alır.
+      </p>
+
+      <div class="grid md:grid-cols-3 gap-6">
+        <div class="bg-card p-6 rounded-xl border border-border">
+          <div class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4">
+            <span class="text-2xl">🧮</span>
+          </div>
+          <h3 class="text-xl font-semibold mb-2">Kusursuz Yasal Hesaplama</h3>
+          <p class="text-sm text-muted-foreground">Personelin brüt maaşı, yan hakları ve kıdemi girildiğinde sistem; güncel tavan üzerinden tazminatı kuruşu kuruşuna yapar.</p>
+        </div>
+        <div class="bg-card p-6 rounded-xl border border-border">
+          <div class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4">
+            <span class="text-2xl">📄</span>
+          </div>
+          <h3 class="text-xl font-semibold mb-2">Otonom Belge Üretimi</h3>
+          <p class="text-sm text-muted-foreground">"04 Koduyla Çıkış" seçildiğinde AI, anında fesih bildirimini, tahakkuk pusulasını ve ibranameyi (PDF) İş Kanunu'na uygun formatta oluşturur.</p>
+        </div>
+        <div class="bg-card p-6 rounded-xl border border-border">
+          <div class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4">
+            <span class="text-2xl">⚖️</span>
+          </div>
+          <h3 class="text-xl font-semibold mb-2">Dijital Arşiv & Arabulucu Hazırlığı</h3>
+          <p class="text-sm text-muted-foreground">Tüm dokümanlar şifrelenmiş olarak bulutta saklanır ve şirket avukatına veya arabulucuya anında bir özet rapor olarak iletilir.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="max-w-3xl">
+      <h2 class="text-2xl font-bold mb-6">Sıkça Sorulan Sorular</h2>
+      <div class="space-y-6">
+        <div>
+          <h3 class="text-lg font-semibold mb-2">Sistem, kıdem tazminatı tavanı güncellendiğinde kendini yeniliyor mu?</h3>
+          <p class="text-muted-foreground">Evet, Resmi Gazete'de yayımlanan güncel SGK ve Maliye Bakanlığı kıdem tazminatı tavan verileri sisteme anında otonom olarak entegre edilir.</p>
+        </div>
+        <div>
+          <h3 class="text-lg font-semibold mb-2">Yan haklar (yemek, yol, prim) tazminata eklenebiliyor mu?</h3>
+          <p class="text-muted-foreground">Yapay zeka, 'giydirilmiş brüt ücreti' maksimize edecek şekilde değil, hukuki sınırlara uygun şekilde tespit etmek için personelin tüm düzenli ödemelerini analiz eder.</p>
+        </div>
+        <div>
+          <h3 class="text-lg font-semibold mb-2">Sunduğunuz fesih belgeleri mahkemede geçerli mi?</h3>
+          <p class="text-muted-foreground">Ürettiğimiz taslaklar, güncel İş Hukuku standartlarına uygun hazırlanır. Ancak nihai hukuki bağlayıcılık için sistem çıktısını şirket avukatınızın sistem onayı yapması tavsiye edilir.</p>
+        </div>
+      </div>
+    </section>
+  </div>
+</CalculatorLayout>

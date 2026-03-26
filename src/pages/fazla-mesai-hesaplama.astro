@@ -1,0 +1,128 @@
+---
+import CalculatorLayout from '../layouts/CalculatorLayout.astro';
+
+
+const title = "Fazla Mesai Hesaplama & Otonom Puantaj Onay Botu | Pratik Yapay Zeka";
+const description = "WhatsApp üzerinden vardiya mesailerini toplayan, amir onayı alan ve bayram/hafta sonu zamlı mesai oranlarını bordroya hatasız işleyen AI asistanı.";
+const keywords = "fazla mesai hesaplama, mesai ücreti hesaplama, hafta sonu mesai hesaplama, puantaj otomasyonu, mesai robotu";
+
+// FAQ Schema
+const faqData = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Resmi tatil ve Pazar mesailerini ayırt edebiliyor mu?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Evet, takvim entegrasyonu sayesinde o günün ulusal bayram mı yoksa hafta tatili mi olduğunu analiz edip %50 veya %100 zamlı mesai ücreti hesaplamasını İş Kanunu'na göre otomatik yapar."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Parmak izi / Yüz tanıma PDKS sistemimiz var, entegre olur mu?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Kesinlikle. PDKS donanımınızdan gelen verileri 'beklenen mesai' ile karşılaştırır ve sadece belirlenen saati aşan sapmaları (fazla çalışmaları) yöneticinin cep telefonuna onay için düşürür."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Mavi yakalı personel bu botu kullanabilir mi?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Tamamen WhatsApp üzerinden, klavye bile kullanmadan \"Sesli Mesaj\" (Örn: 'Dün 2 saat fazla çalıştım') atarak çalışabilir. AI, sesi metne ve vardiya verisine dönüştürür."
+      }
+    }
+  ]
+};
+---
+
+<CalculatorLayout
+  title={title}
+  description={description}
+  keywords={keywords}
+  schema={JSON.stringify(faqData)}
+>
+  <div class="space-y-12">
+    <!-- Hero Section -->
+    <section>
+      <div class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-primary text-primary mb-4">Operasyon & Puantaj Yönetimi</div>
+      <h1 class="text-4xl lg:text-5xl font-bold tracking-tight mb-6">Fazla Mesai Hesaplamada Excel Kaosuna Son Verin</h1>
+      <p class="text-xl text-muted-foreground leading-relaxed mb-8">
+        Vardiya amirlerinden gelen eksik veya hatalı mesai listelerini ay sonu düzeltmekten yoruldunuz mu? Personelden mesai saatlerini WhatsApp ile toplayan, amirden onay alan ve bordro ERP'sine yatay işleyen İK Yapay Zekası ile süreçleri 5 günden 1 saate indirin.
+      </p>
+    </section>
+
+    <!-- The Pain Points -->
+    <section class="bg-muted/30 p-8 rounded-2xl border border-border">
+      <h2 class="text-2xl font-semibold mb-6">Fabrika ve Sahalardaki Gerçek Mesai Problemleri Nelerdir?</h2>
+      <ul class="space-y-4">
+        <li class="flex items-start gap-3">
+          <svg class="w-6 h-6 text-destructive flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path></svg>
+          <p><strong>Veri Toplama Zorluğu:</strong> Vardiya amirlerinin el yazısı notları veya WhatsApp gruplarına atılan dağınık fotoğraflı listelerin İK tarafından tek tek Excel'e geçirilmesi.</p>
+        </li>
+        <li class="flex items-start gap-3">
+          <svg class="w-6 h-6 text-destructive flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path></svg>
+          <p><strong>Hak Kaybı ve Şikayetler:</strong> İşçilerin maaş yattıktan sonra "Benim 4 saat mesaim eksik yatmış" itirazlarıyla ayın ilk haftası departmanı kilitlemesi ve güven kaybı.</p>
+        </li>
+        <li class="flex items-start gap-3">
+          <svg class="w-6 h-6 text-destructive flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path></svg>
+          <p><strong>Karmaşık Zamlı Oranlar:</strong> Resmi tatiller, hafta tatilleri veya arefe günü yarım gün mesailerinin (%100, %50 zamlı) manuel bordro aktarımlarında hata yapılması.</p>
+        </li>
+      </ul>
+    </section>
+
+    <!-- The Solution -->
+    <section>
+      <h2 class="text-3xl font-bold mb-6">Hesap Makinesini Atın: "Saha-Puantaj Otonomasyonu"</h2>
+      <p class="text-lg text-muted-foreground mb-8">
+        Mesai ücreti hesaplamak matematiktir (Saatlik Ücret x 1.5). Biz size bu basit matematiği sunmuyoruz; biz size sahada veriyi toplayıp muhasebeye takılmadan onaylayan otonom süreci sunuyoruz.
+      </p>
+
+      <div class="grid md:grid-cols-3 gap-6">
+        <div class="bg-card p-6 rounded-xl border border-border">
+          <div class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4">
+            <span class="text-2xl">🟢</span>
+          </div>
+          <h3 class="text-xl font-semibold mb-2">WhatsApp'tan Giriş</h3>
+          <p class="text-sm text-muted-foreground">Personel sadece WhatsApp'a "Bugün 2 saat kaldım" yazar. Bot, konumu veya onaylı PDKS verisini arka planda NLP ile teyit eder.</p>
+        </div>
+        <div class="bg-card p-6 rounded-xl border border-border">
+          <div class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4">
+            <span class="text-2xl">👍</span>
+          </div>
+          <h3 class="text-xl font-semibold mb-2">1-Tık Yönetici Onayı</h3>
+          <p class="text-sm text-muted-foreground">Sistem, ustabaşına anlık bildirim atar: "Ahmet XYZ makinesinde 2 saat fazla çalıştı. Onaylıyor musun?" Tüm süreç dijital onaylıdır.</p>
+        </div>
+        <div class="bg-card p-6 rounded-xl border border-border">
+          <div class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4">
+            <span class="text-2xl">⚙️</span>
+          </div>
+          <h3 class="text-xl font-semibold mb-2">Bordroya Otomatik Tahakkuk</h3>
+          <p class="text-sm text-muted-foreground">Ay sonu geldiğinde bot; resmi tatil/pazar mesaisi çarpanlarını otonom uygular. Fişi Logo veya Zirve programınıza hatasız aktarır.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="max-w-3xl">
+      <h2 class="text-2xl font-bold mb-6">Sıkça Sorulan Sorular</h2>
+      <div class="space-y-6">
+        <div>
+          <h3 class="text-lg font-semibold mb-2">Resmi tatil ve Pazar mesailerini ayırt edebiliyor mu?</h3>
+          <p class="text-muted-foreground">Evet, takvim entegrasyonu sayesinde o günün ulusal bayram mı yoksa hafta tatili mi olduğunu analiz edip %50 veya %100 zamlı mesai ücreti hesaplamasını İş Kanunu'na göre otomatik yapar.</p>
+        </div>
+        <div>
+          <h3 class="text-lg font-semibold mb-2">Parmak izi / Yüz tanıma PDKS sistemimiz var, entegre olur mu?</h3>
+          <p class="text-muted-foreground">Kesinlikle. PDKS donanımınızdan gelen verileri "beklenen mesai" ile karşılaştırır ve sadece belirlenen saati aşan sapmaları (fazla çalışmaları) yöneticinin cep telefonuna onay için düşürür.</p>
+        </div>
+        <div>
+          <h3 class="text-lg font-semibold mb-2">Mavi yakalı personel bu botu kullanabilir mi?</h3>
+          <p class="text-muted-foreground">Tamamen WhatsApp üzerinden, klavye bile kullanmadan "Sesli Mesaj" (Örn: 'Dün akşam 2 saat boyahanede fazla kaldım') atarak çalışabilir. AI, sesi metne ve vardiya verisine dönüştürür.</p>
+        </div>
+      </div>
+    </section>
+  </div>
+</CalculatorLayout>

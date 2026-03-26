@@ -1,0 +1,128 @@
+---
+import CalculatorLayout from '../layouts/CalculatorLayout.astro';
+
+
+const title = "Araç Değer Kaybı Hesaplama & Filo Hasar Asistanı | Pratik Yapay Zeka";
+const description = "Kazaya karışan şirket filonuzun değer kaybı hesaplamalarını, Tramer okumasını ve sigorta başvuru dilekçelerini uçtan uca yöneten otonom yapay zeka asistanı.";
+const keywords = "araç değer kaybı hesaplama, trafik kazası değer kaybı hesaplama, otonom filo hasar yönetimi, değer kaybı davası";
+
+// FAQ Schema
+const faqData = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Şasede veya direklerde işlem olmayan küçük hasarlarda da değer kaybı hesaplayabilir mi?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Evet, Yargıtay kriterlerine göre (plastik tampon boyası haricindeki) kaporta ebatlı hasarların değer kaybı matrisini güncel yasal Yargıtay formülüne göre uygular."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Kusur oranı %50 - %50 ise hesaplama nasıl değişiyor?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sistem Tramer raporundaki kusur oranını NLP (Doğal Dil İşleme) ile otomatik okur ve karşı sigortadan talep edilecek tutarı sizin kusur oranınız ölçüsünde indirgeyerek net tutarı sunar."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Aracı danışmanlık / hasar takip firmalarından ne farkınız var?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Komisyonla (%15-20) çalışan danışmanların aksine, sistemimiz direkt sizin kendi bilgisayarınızda (veya bulutunuzda) çalışan %100 otonom bir yazılımdır; şirketinize özel verileri dışarı sızdırmaz ve tahsilatın tamamı sizde kalır."
+      }
+    }
+  ]
+};
+---
+
+<CalculatorLayout
+  title={title}
+  description={description}
+  keywords={keywords}
+  schema={JSON.stringify(faqData)}
+>
+  <div class="space-y-12">
+    <!-- Hero Section -->
+    <section>
+      <div class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-primary text-primary mb-4">Operasyonel Filo Yönetimi</div>
+      <h1 class="text-4xl lg:text-5xl font-bold tracking-tight mb-6">Filo Araçlarınızın Değer Kaybını Excel'de Değil, Yapay Zeka ile Yönetin</h1>
+      <p class="text-xl text-muted-foreground leading-relaxed mb-8">
+        Şirket filonuzun kaza sonrası "değer kaybını" web sitelerinden manuel hesaplamak sorunun sadece küçük bir parçasıdır. Asıl mesele, yüzlerce aracın sigorta, hasar teyidi ve dilekçe süreçlerini avukatlık masraflarına boğulmadan otonom yürütmektir. "Filo Hasar Yapay Zekası" ile tanışın.
+      </p>
+    </section>
+
+    <!-- The Pain Points -->
+    <section class="bg-muted/30 p-8 rounded-2xl border border-border">
+      <h2 class="text-2xl font-semibold mb-6">Filo Hasar ve Değer Kaybı Sürecinde Şirketler Neden Kâr Edemez?</h2>
+      <ul class="space-y-4">
+        <li class="flex items-start gap-3">
+          <svg class="w-6 h-6 text-destructive flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path></svg>
+          <p><strong>Unutulan Başvuru Süreleri:</strong> Kazaya karışan şirket araçlarının değer kaybı başvuru sürelerinin (2 yıllık zaman aşımı süresi) klasörlerde veya Excel dosyalarında unutularak şirketin hak kaybına uğraması.</p>
+        </li>
+        <li class="flex items-start gap-3">
+          <svg class="w-6 h-6 text-destructive flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path></svg>
+          <p><strong>Hukuk ve Aracı Komisyonları:</strong> Her değer kaybı talebi için hukuk bürolarına veya aracı "hasar firmalarına" ödenen gizli %15-20'lik devasa vekalet/komisyon faturaları.</p>
+        </li>
+        <li class="flex items-start gap-3">
+          <svg class="w-6 h-6 text-destructive flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path></svg>
+          <p><strong>Karmaşık Yargıtay Formülleri:</strong> Aracın o günkü kilometresi, piyasa yaşı, değiştirilen parça listesi ve kusur oranını (Tramer) manuel harmanlamanın yarattığı matematiksel hatalar.</p>
+        </li>
+      </ul>
+    </section>
+
+    <!-- The Solution -->
+    <section>
+      <h2 class="text-3xl font-bold mb-6">Tramer Okuyan, Para Hesaplayan ve Dilekçe Yazan Asistan</h2>
+      <p class="text-lg text-muted-foreground mb-8">
+        Pratik AI, sadece bir form makinesi değil, pdf belgelerini okuyabilen görme yetenekli (Vision) bir sigorta hasar asistanıdır. Değer kaybınızı saniyeler içinde nakde giden yola sokar.
+      </p>
+
+      <div class="grid md:grid-cols-3 gap-6">
+        <div class="bg-card p-6 rounded-xl border border-border">
+          <div class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4">
+            <span class="text-2xl">👁️</span>
+          </div>
+          <h3 class="text-xl font-semibold mb-2">Tramer ve Rapor (NLP) Okuma</h3>
+          <p class="text-sm text-muted-foreground">Kaza tutanağını ve exper PDF raporunu sisteme yüklediğinizde AI; kusur oranını, parça değişimlerini ve aracın rayiç bedelini görsel olarak okur.</p>
+        </div>
+        <div class="bg-card p-6 rounded-xl border border-border">
+          <div class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4">
+            <span class="text-2xl">⚖️</span>
+          </div>
+          <h3 class="text-xl font-semibold mb-2">Güncel Yasal Formül ile Hesaplanma</h3>
+          <p class="text-sm text-muted-foreground">Sistem, kilometre ve hasar boyutunu baz alarak Anayasa Mahkemesi ve Yargıtay iptalleri sonrası oluşan en güncel formüle göre hesap yapar.</p>
+        </div>
+        <div class="bg-card p-6 rounded-xl border border-border">
+          <div class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4">
+            <span class="text-2xl">📑</span>
+          </div>
+          <h3 class="text-xl font-semibold mb-2">Otonom Sigorta & Tahkim Başvurusu</h3>
+          <p class="text-sm text-muted-foreground">Sigorta şirketine çekilecek Değer Kaybı İhtarını veya Sigorta Tahkim Komisyonu başvuru formlarını otomatik doldurarak zaman kaybını engeller.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="max-w-3xl">
+      <h2 class="text-2xl font-bold mb-6">Sıkça Sorulan Sorular</h2>
+      <div class="space-y-6">
+        <div>
+          <h3 class="text-lg font-semibold mb-2">Şasede veya direklerde işlem olmayan küçük hasarlarda da değer kaybı hesaplayabilir mi?</h3>
+          <p class="text-muted-foreground">Evet, Yargıtay kriterlerine göre (plastik tampon boyası haricindeki) kaporta ebatlı hasarların değer kaybı matrisini güncel yasal Yargıtay formülüne göre uygular.</p>
+        </div>
+        <div>
+          <h3 class="text-lg font-semibold mb-2">Kusur oranı %50 - %50 ise hesaplama nasıl değişiyor?</h3>
+          <p class="text-muted-foreground">Sistem Tramer raporundaki kusur oranını NLP (Doğal Dil İşleme) ile otomatik okur ve karşı sigortadan talep edilecek tutarı sizin kusur oranınız ölçüsünde indirgeyerek net tutarı sunar.</p>
+        </div>
+        <div>
+          <h3 class="text-lg font-semibold mb-2">Aracı danışmanlık / hasar takip firmalarından ne farkınız var?</h3>
+          <p class="text-muted-foreground">Komisyonla (%15-20) çalışan danışmanların aksine, sistemimiz direkt sizin kendi bilgisayarınızda (veya bulutunuzda) çalışan %100 otonom bir yazılımdır; şirketinize özel verileri dışarı sızdırmaz ve tahsilatın tamamı sizde kalır.</p>
+        </div>
+      </div>
+    </section>
+  </div>
+</CalculatorLayout>

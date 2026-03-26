@@ -1,0 +1,128 @@
+---
+import CalculatorLayout from '../layouts/CalculatorLayout.astro';
+
+
+const title = "Vergi İadesi Hesaplama & Otonom İade Algoritması | Pratik Yapay Zeka";
+const description = "İhracatçılar ve imalatçılar için devreden KDV raporlarını hazırlayan, yüklenilen KDV listelerini otonom oluşturan ve vergi iadesi sürecini hızlandıran yapay zeka iade asistanı.";
+const keywords = "vergi iadesi hesaplama, kdv iadesi hesaplama, yüklenilen kdv listesi, ihracat kdv iadesi, vergi iade otomasyonu, ymm botu";
+
+// FAQ Schema
+const faqData = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Yüklenilen KDV listesini tamamen otomatik mi hazırlıyor?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Evet. İhraç ettiğiniz ürüne (GÇB) bağlı olan hammadde, sarf malzemesi, genel gider ve ATİK alış faturalarınızı maliyet muhasebenizle eşleştirerek sistemdeki optimum algoritmayla eşleştirir."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Veri gizliliği nasıl sağlanıyor?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Tüm fatura ve finansal verileriniz uçtan uca şifrelenir. YMM'nize veya doğrudan GİB e-vergi dairesine formatlı bir dosya (Excel/XML) olarak verilir, verileriniz üçüncü şahıslara veya LLM açık eğitim setlerine sunulmaz."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "GEKAP veya ÖTV gibi özel vergi türlerinde hesaplama yapıyor mu?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Şu anki ana odak alanımız %90 oranında süreç yükü yaratan İhracat (Mal ve Hizmet) ve İndirimli Oran KDV İadeleridir. Ek sektörel vergiler için sistem kurumsal projelere özel modellenebilir."
+      }
+    }
+  ]
+};
+---
+
+<CalculatorLayout
+  title={title}
+  description={description}
+  keywords={keywords}
+  schema={JSON.stringify(faqData)}
+>
+  <div class="space-y-12">
+    <!-- Hero Section -->
+    <section>
+      <div class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-primary text-primary mb-4">KDV İade & Finansal Zeka</div>
+      <h1 class="text-4xl lg:text-5xl font-bold tracking-tight mb-6">İçeride Kalan Paranız İçin Aylarca Beklemeyin</h1>
+      <p class="text-xl text-muted-foreground leading-relaxed mb-8">
+        "Yüklenilen KDV" ve "Devreden KDV" listelerini manuel Excel'lerle hazırlamak tarih oldu. İhracat faturalarınızı GÇB ile eşleştiren, maliyet dağıtım anahtarlarını saniyeler içinde kuran ve nakit akışınızı aylar öncesinden hızlandıran İade Yapay Zekası.
+      </p>
+    </section>
+
+    <!-- The Pain Points -->
+    <section class="bg-muted/30 p-8 rounded-2xl border border-border">
+      <h2 class="text-2xl font-semibold mb-6">KDV İadesi Sürecinde Neden Nakit Darboğazı Yaşarsınız?</h2>
+      <ul class="space-y-4">
+        <li class="flex items-start gap-3">
+          <svg class="w-6 h-6 text-destructive flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path></svg>
+          <p><strong>Yüklenilen KDV Çıkmazı:</strong> İhraç edilen binlerce kalemin hammadde, enerji ve genel gider KDV'lerini (FIFO, Ağırlıklı Ortalama) manuel Excel makrolarıyla eşleştirmenin 3-4 haftalık bir zaman kaybı yaratması.</p>
+        </li>
+        <li class="flex items-start gap-3">
+          <svg class="w-6 h-6 text-destructive flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path></svg>
+          <p><strong>GİB Sistemi (GEKsis) Hataları:</strong> Vergi dairesine yüklenen hatalı listelerin GEKsis raporunda "uyumsuzluk" vermesi ve iade onay surecinin Vergi Dairesi memurunda aylarca beklemesi.</p>
+        </li>
+        <li class="flex items-start gap-3">
+          <svg class="w-6 h-6 text-destructive flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path></svg>
+          <p><strong>YMM İletişim Gecikmeleri:</strong> Şirket muhasebesi ile YMM (Yeminli Mali Müşavir) firması arasındaki veri transferlerinin, form düzenlemelerinin eksik fatura yüzünden sürekli başa sarması.</p>
+        </li>
+      </ul>
+    </section>
+
+    <!-- The Solution -->
+    <section>
+      <h2 class="text-3xl font-bold mb-6">Mali Müşavirinizin Hızına Yapay Zeka Desteği</h2>
+      <p class="text-lg text-muted-foreground mb-8">
+        Pratik AI, YMM'nin işini almaz; aksine ona hatasız, formata uygun ve eksiksiz analiz edilmiş veriyi saniyeler içinde sunar. Siz KDV iadenizi aylar öncesinden kasaya koyarken, muhasebeniz asıl finansal stratejilere odaklanır.
+      </p>
+
+      <div class="grid md:grid-cols-3 gap-6">
+        <div class="bg-card p-6 rounded-xl border border-border">
+          <div class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4">
+            <span class="text-2xl">🔗</span>
+          </div>
+          <h3 class="text-xl font-semibold mb-2">Otomatik GÇB & Fatura Eşleşmesi</h3>
+          <p class="text-sm text-muted-foreground">İhracat faturası, Gümrük Çıkış Beyannamesi (GÇB) ve e-defter kayıtlarını otomatik tarayarak kur farklarını, KDV teşvikli oranları tek bir potada kusursuz harmanlar.</p>
+        </div>
+        <div class="bg-card p-6 rounded-xl border border-border">
+          <div class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4">
+            <span class="text-2xl">🧠</span>
+          </div>
+          <h3 class="text-xl font-semibold mb-2">Akıllı Yüklenim Algoritması (ATİK & Gider)</h3>
+          <p class="text-sm text-muted-foreground">Genel giderlerden ihracata verilecek payı veya ATİK (Amortismana Tabi İktisadi Kıymet) üzerinden yüklenecek KDV'yi matematiksel analizle firmanız için max/optimum seviyede hesaplar.</p>
+        </div>
+        <div class="bg-card p-6 rounded-xl border border-border">
+          <div class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4">
+            <span class="text-2xl">✅</span>
+          </div>
+          <h3 class="text-xl font-semibold mb-2">GİB Şablonuna Sıfır Hata Aktarım</h3>
+          <p class="text-sm text-muted-foreground">Tüm analizler bittiğinde; İndirilecek KDV, Yüklenilen KDV ve İhracat Bildirim listelerini Vergi Dairesi portalına (İnternet Vergi Dairesi) direkt yüklenecek formatta saniyeler içinde çıktı verir.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="max-w-3xl">
+      <h2 class="text-2xl font-bold mb-6">Sıkça Sorulan Sorular</h2>
+      <div class="space-y-6">
+        <div>
+          <h3 class="text-lg font-semibold mb-2">Yüklenilen KDV listesini tamamen otomatik mi hazırlıyor?</h3>
+          <p class="text-muted-foreground">Evet. İhraç ettiğiniz ürüne (GÇB) bağlı olan hammadde, sarf malzemesi, genel gider ve ATİK alış faturalarınızı maliyet muhasebenizle eşleştirerek sistemdeki optimum algoritmayla eşleştirir.</p>
+        </div>
+        <div>
+          <h3 class="text-lg font-semibold mb-2">Veri gizliliği nasıl sağlanıyor?</h3>
+          <p class="text-muted-foreground">Tüm fatura ve finansal verileriniz uçtan uca şifrelenir. YMM'nize veya doğrudan GİB e-vergi dairesine formatlı bir dosya (Excel/XML) olarak verilir, verileriniz üçüncü şahıslara veya LLM açık eğitim setlerine sunulmaz.</p>
+        </div>
+        <div>
+          <h3 class="text-lg font-semibold mb-2">GEKAP veya ÖTV gibi özel vergi türlerinde hesaplama yapıyor mu?</h3>
+          <p class="text-muted-foreground">Şu anki ana odak alanımız %90 oranında süreç yükü yaratan İhracat (Mal ve Hizmet) ve İndirimli Oran KDV İadeleridir. Ek sektörel vergiler için sistem kurumsal projelere özel modellenebilir.</p>
+        </div>
+      </div>
+    </section>
+  </div>
+</CalculatorLayout>

@@ -1,0 +1,128 @@
+---
+import CalculatorLayout from '../layouts/CalculatorLayout.astro';
+
+
+const title = "İhbar Tazminatı Hesaplama & Otonom Offboarding Asistanı | Pratik Yapay Zeka";
+const description = "Personel ihbar süresi hesaplamalarını, tazminatlarını ve iş arama izni takibini uçtan uca yöneten yapay zeka destekli otonom çıkış asistanı.";
+const keywords = "ihbar tazminatı hesaplama, ihbar süresi hesaplama robotu, iş arama izni hesaplama, personel çıkış işlemleri";
+
+// FAQ Schema
+const faqData = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "İhbar tazminatı yerine ihbar süresi kullandırmak otomatik yönetilebilir mi?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Kesinlikle. Yapay zeka, ihbar süresi kullanılacaksa personelin çıkış tarihini ve günlük iş arama izinlerini bir takvim bağlantısı olarak oluşturur."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Kıdem ve ihbar tazminatını tek seferde hesaplayabiliyor mu?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Evet, 'Fesih Tahakkuk' modülünde personelin hak ettiği hem kıdem hem de ihbar tazminatı türü (ve varsa yıllık izin alacakları) tek bir otonom raporda birleştirilir."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Sistem sadece ihbar süresi hesaplayan bir web sayfası mıdır?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Hayır, piyasadaki standart hesaplama robotlarından farklı olarak Pratik Yapay Zeka, hesaplanan veriyi bir İK sürecine (workflow) dönüştürür ve dökümanları otomatik hazırlar."
+      }
+    }
+  ]
+};
+---
+
+<CalculatorLayout
+  title={title}
+  description={description}
+  keywords={keywords}
+  schema={JSON.stringify(faqData)}
+>
+  <div class="space-y-12">
+    <!-- Hero Section -->
+    <section>
+      <div class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-primary text-primary mb-4">HR Offboarding (Çıkış İşlemleri)</div>
+      <h1 class="text-4xl lg:text-5xl font-bold tracking-tight mb-6">İhbar Sürelerini Manuel Takip Etmektense, Offboarding Asistanına Bırakın</h1>
+      <p class="text-xl text-muted-foreground leading-relaxed mb-8">
+        "Kaç hafta ihbar süresi var?" diye araştırmak yerine, personellerin ihbar tazminatlarını hesaplayan, taraflara e-posta ile hatırlatmalar yapan ve "İş Arama İzni" dilekçelerini otomatik gönderen yeni nesil İK asistanına geçin.
+      </p>
+    </section>
+
+    <!-- The Pain Points -->
+    <section class="bg-muted/30 p-8 rounded-2xl border border-border">
+      <h2 class="text-2xl font-semibold mb-6">Çıkış Süreçlerinde Yaşadığınız En Büyük Operasyonel Krizler</h2>
+      <ul class="space-y-4">
+        <li class="flex items-start gap-3">
+          <svg class="w-6 h-6 text-destructive flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path></svg>
+          <p><strong>Unutulan İhbar Süreleri:</strong> 2, 4, 6 veya 8 haftalık yasal ihbar sürelerinin takibinin Excel'de veya masaüstü takvimlerde yapılması sonucu sürelerin kaçırılması.</p>
+        </li>
+        <li class="flex items-start gap-3">
+          <svg class="w-6 h-6 text-destructive flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path></svg>
+          <p><strong>İş Arama İzni Kaosu:</strong> Kanunca zorunlu olan "Günde 2 saat iş arama izni" hakkının toplu mu yoksa günlük mü kullanılacağının manuel ayarlanmasının şirket içinde mesai kaybı yaratması.</p>
+        </li>
+        <li class="flex items-start gap-3">
+          <svg class="w-6 h-6 text-destructive flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path></svg>
+          <p><strong>Eksik Yasal Kanıtlar:</strong> Süresi biten ihbar bildirimlerinin hukuki olarak yazılı kanıtlarının (imzalı tebliğlerin) zamanında dosyalanamaması ihtilaflara yol açar.</p>
+        </li>
+      </ul>
+    </section>
+
+    <!-- The Solution -->
+    <section>
+      <h2 class="text-3xl font-bold mb-6">Sadece İhbar Süresini Değil, Sürecin Tamamını Otonomlaştırın</h2>
+      <p class="text-lg text-muted-foreground mb-8">
+        İhbar süresini hesaplamak basittir; zor olan bu süreci personelle yasal ve stressiz bir şekilde yönetmektir. Otonom yapay zeka asistanımız işten ayrılış (offboarding) sürecini uçtan uca tasarlar.
+      </p>
+
+      <div class="grid md:grid-cols-3 gap-6">
+        <div class="bg-card p-6 rounded-xl border border-border">
+          <div class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4">
+            <span class="text-2xl">⚡</span>
+          </div>
+          <h3 class="text-xl font-semibold mb-2">İhbar Süresi Aktivasyonu</h3>
+          <p class="text-sm text-muted-foreground">İşten çıkış kararı veya istifa sisteme girildiğinde, AI personelin şirket kıdemine göre yasal süreyi (hafta/gün) hatasız hesaplar.</p>
+        </div>
+        <div class="bg-card p-6 rounded-xl border border-border">
+          <div class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4">
+            <span class="text-2xl">📝</span>
+          </div>
+          <h3 class="text-xl font-semibold mb-2">Form & Dilekçe Üretimi</h3>
+          <p class="text-sm text-muted-foreground">"İhbar Tazminatı ödenecektir" veya "İhbar süresi kullandırılacaktır" senaryosuna göre gereken yasal tebligatı saniyeler içinde Word/PDF olarak hazırlar.</p>
+        </div>
+        <div class="bg-card p-6 rounded-xl border border-border">
+          <div class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4">
+            <span class="text-2xl">📅</span>
+          </div>
+          <h3 class="text-xl font-semibold mb-2">İş Arama İzni ve Takvim Botu</h3>
+          <p class="text-sm text-muted-foreground">Personelin "İş arama iznimi toplu kullanmak istiyorum" talebini NLP okuyarak onay sürecine sunar ve fiili çıkış gününü yeni takvime işler.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="max-w-3xl">
+      <h2 class="text-2xl font-bold mb-6">Sıkça Sorulan Sorular</h2>
+      <div class="space-y-6">
+        <div>
+          <h3 class="text-lg font-semibold mb-2">İhbar tazminatı yerine ihbar süresi kullandırmak otomatik yönetilebilir mi?</h3>
+          <p class="text-muted-foreground">Kesinlikle. Yapay zeka, ihbar süresi kullanılacaksa personelin çıkış tarihini ve günlük iş arama izinlerini bir takvim bağlantısı olarak oluşturur.</p>
+        </div>
+        <div>
+          <h3 class="text-lg font-semibold mb-2">Kıdem ve ihbar tazminatını tek seferde hesaplayabiliyor mu?</h3>
+          <p class="text-muted-foreground">Evet, 'Fesih Tahakkuk' modülünde personelin hak ettiği hem kıdem hem de ihbar tazminatı türü (ve varsa yıllık izin alacakları) tek bir otonom raporda birleştirilir.</p>
+        </div>
+        <div>
+          <h3 class="text-lg font-semibold mb-2">Sistem sadece ihbar süresi hesaplayan bir web sayfası mıdır?</h3>
+          <p class="text-muted-foreground">Hayır, piyasadaki standart hesaplama robotlarından farklı olarak Pratik Yapay Zeka, hesaplanan veriyi bir İK sürecine (workflow) dönüştürür ve dökümanları otomatik hazırlar.</p>
+        </div>
+      </div>
+    </section>
+  </div>
+</CalculatorLayout>
