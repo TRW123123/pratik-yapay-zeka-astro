@@ -1,0 +1,44 @@
+---
+import SolutionLayout from '../layouts/SolutionLayout.astro';
+---
+<SolutionLayout
+  title="SGK Hizmet Dökümü Analizi ve HR Yapay Zeka | Pratik Yapay Zeka"
+  description="İK departmanlarının SGK hizmet dökümü okuma ve doğrulama sürecini otomatize eden yapay zeka tabanlı CV ve arka plan (background check) analiz sistemi."
+  heroTitle="Personel Geçmişini Manuel Kontrol Etmeyin. SGK Dökümlerini Yapay Zeka Okusun"
+  heroSubtitle="İşe alım veya risk değerlendirme süreçlerinde adayların SGK (4A) Hizmet Dökümlerini sayfa sayfa okuyup sadakatlerini veya geçmişlerini tahmin etmeye çalışmayın. Yapay zeka saniyeler içinde fraud kontrolü yapsın ve net bir profil özetlesin."
+  problems={[
+    "İşe alım uzmanlarının veya kredi tahsis ekiplerinin, uzun barkodlu SGK pdf'leri içinde adayların çalıştığı gün sayılarını manuel hesaplaması.",
+    "Adayların sunduğu özgeçmişteki (CV) çalışma süreleri ile GİB/SGK kayıtlarındaki gerçek tarihlerin insan gözüyle kıyaslanmasının zorluğu.",
+    "Evrakta sahtecilik veya photoshop ile değiştirilmiş SGK hizmet dökümlerinin çıplak gözle tespit edilememesi."
+  ]}
+  processTitle="Otonom Özgeçmiş ve Güven Doğrulama Asistanı"
+  processSteps={[
+    { title: "Döküman Yükleme", description: "Banka müşterisi veya iş başvurusu yapan aday, e-Devlet üzerinden aldığı SGK barkodlu PDF dökümünü sisteme yükler." },
+    { title: "Sahtecilik (Fraud) Kontrolü", description: "Yapay zeka, belgenin meta verilerini ve barkod yapısını milisaniyeler içinde inceleyerek dijital manipülasyonları tespit eder." },
+    { title: "Anlamsal Analiz", description: "Belge içindeki düzensiz giriş çıkışlar, sık iş değiştirme (Job hopping) oranları ve prime esas kazanç gelişimleri okunur." },
+    { title: "Risk ve Yetenek Profili", description: "İnsan kaynakları veya Kredi onay ekibinin önüne şeffaf bir rapor düşer: 'Aday CV'sinde belirttiği tarihlerde çalışmamış, risk yüksek.'" }
+  ]}
+  featuresTitle="Hızlı Karar Almanızı Sağlayan Analiz Araçları"
+  features={[
+    { title: "CV & SGK Eşleştirme Motoru (Cross-Check)", description: "Adayın kendi beyanı olan özgeçmişi pdf olarak okur, bunu resmi SGK belgesiyle harf harf eşleştirip tutarsızlıkları listeler." },
+    { title: "Turnover (İşten Ayrılma) Tahmini", description: "Önceki işyerlerindeki çalışma senelerine bakarak, adayın ortalama sadakat süresini yapay zeka standart sapmalarla hesaplar." },
+    { title: "Ücret Gelişimi Takibi", description: "Prime esas kazanç (PEK) tutarlarına bakarak adayın geçmiş işlerindeki gerçek maaş gelişim çizgisini görselleştirir." },
+    { title: "Uygulama İçi Barkod Doğrulama", description: "E-devlet üzerinden e-Doğrulama adımlarını insan müdahalesine gerek kalmadan arka planda API ile kendisi yapar." }
+  ]}
+  benefitsTitle="Manuel Okumayı Bırakın, Analize Odaklanın"
+  benefits={[
+    "90 Saniye", "Karar Süresi Hızı. Bir personelin veya müşterinin mali geçmişini okumak sayfalarca PDF'e rağmen saniyelere düşer.",
+    "Sıfır", "Kandırma İhtimali. Şişirilmiş unvanlar ve abartılı çalışma süreleri matematiksel olarak anında yakalanır.",
+    "İnsan", "Kaynağı Tasarrufu. CV eleme ekipleriniz belge kontrolcüsü olmaktan çıkar, gerçek mülakat kalitesine odaklanır."
+  ]}
+  caseStudyDescription="Her gün 300 başvuru alan kurumsal bir saha satış şirketi, adayların e-devlet belgelerini yapay zeka ile otomatik filtreleyerek yanlış CV beyanı yapan 120 adayı mülakata çağırmadan eledi ve haftada 40 İK saati kazandı."
+  finalCtaTitle="Geçmiş Verilerin Gücünü Yapay Zekayla Açığa Çıkarın"
+  finalCtaSubtitle="Kurumsal şirketler ve finans kuruluşları için özel SGK doğrulama (Background Check) botunuzu inşa edelim."
+  sectorTheme="finans"
+  faqs={[
+    { question: "KVKK (Kişisel Verilerin Korunması) açısından güvenli mi?", answer: "Yapay zeka sistemi, veriyi adayın açık rıza ile yüklediği sistemden okur ve verileri tutmadan doğrudan İK/Analiz raporuna çevirip ham belgeyi imha edebilir." },
+    { question: "Bu sistem kredi veren finansman firmaları için de uygun mu?", answer: "Evet, özellikle araç kiralama (filo) veya senetli satış yapan yerlerde müşterinin istikrarını (kaç aydır bordrolu çalıştığını) manuel belge okumadan doğrular." },
+    { question: "Sistem, GİB veya SGK altyapısıyla canlı mı çalışıyor?", answer: "Adayın sisteme PDF olarak yüklemesi yeterlidir. Fakat yapay zeka, belgedeki barkodu kullanarak e-Devletin resmi portalından canlı doğrulama yeteneğine sahiptir." }
+  ]}
+  sectorName="Akıllı İK ve Background Check"
+/>

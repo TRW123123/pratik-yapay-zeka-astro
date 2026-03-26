@@ -3,9 +3,9 @@
 
 <footer class="border-t border-[var(--color-border)] bg-[var(--color-surface-light)]">
   <div class="container mx-auto px-4 py-12 lg:px-6">
-    <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
+    <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-5">
       <!-- Logo + Description -->
-      <div class="space-y-4">
+      <div class="space-y-4 lg:col-span-1">
         <a href="/" class="flex items-center space-x-2">
           <div class="h-8 w-8 rounded-lg bg-[var(--color-surface)] border border-[var(--color-border)] flex items-center justify-center">
             <div class="w-4 h-4 bg-[var(--color-primary)] rounded-sm"></div>
@@ -17,7 +17,7 @@
       </div>
 
       <!-- Menu -->
-      <div class="space-y-4">
+      <div class="space-y-4 lg:col-span-1">
         <h3 class="text-sm font-semibold">Menu</h3>
         <ul class="space-y-2 text-sm">
           <li><a href="/" class="text-[var(--color-text-muted)] hover:text-[var(--color-primary-light)] transition-colors">Ana Sayfa</a></li>
@@ -28,23 +28,29 @@
       </div>
 
       <!-- Services -->
-      <div class="space-y-4">
-        <h3 class="text-sm font-semibold">Hizmetler</h3>
-        <ul class="space-y-2 text-sm">
-          <li><a href="/crm-programi/" class="text-[var(--color-text-muted)] hover:text-[var(--color-primary-light)] transition-colors">CRM ve Müşteri Takip</a></li>
-          <li><a href="/on-muhasebe-ve-fatura/" class="text-[var(--color-text-muted)] hover:text-[var(--color-primary-light)] transition-colors">Ön Muhasebe ve Fatura</a></li>
-          <li><a href="/e-ticaret-ve-pazaryeri-otomasyonu/" class="text-[var(--color-text-muted)] hover:text-[var(--color-primary-light)] transition-colors">E-Ticaret Otomasyonu</a></li>
-          <li><a href="/stok-takibi-programi/" class="text-[var(--color-text-muted)] hover:text-[var(--color-primary-light)] transition-colors">Stok Takibi Programı</a></li>
-          <li><a href="/teklif-hazirlama-programi/" class="text-[var(--color-text-muted)] hover:text-[var(--color-primary-light)] transition-colors">Teklif Hazırlama Programı</a></li>
-          <li><a href="/e-fatura-kesme-programi/" class="text-[var(--color-text-muted)] hover:text-[var(--color-primary-light)] transition-colors">E-Fatura Kesme Programı</a></li>
-          <li><a href="/yapay-zeka-chatbot/" class="text-[var(--color-text-muted)] hover:text-[var(--color-primary-light)] transition-colors">Yapay Zeka Chatbot</a></li>
-          <li><a href="/b2b-musteri-takip-ve-plasiyer/" class="text-[var(--color-text-muted)] hover:text-[var(--color-primary-light)] transition-colors">B2B Müşteri Takibi</a></li>
-          <li><a href="/kurumsal-e-posta-otomasyonu/" class="text-[var(--color-text-muted)] hover:text-[var(--color-primary-light)] transition-colors">Kurumsal E-Posta</a></li>
+      <div class="space-y-4 lg:col-span-2">
+        <h3 class="text-sm font-semibold">Çözümler & Otonom Asistanlar</h3>
+        <ul class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-sm">
+          <li><a href="/crm-programi/" class="text-[var(--color-text-muted)] hover:text-[var(--color-primary-light)] transition-colors">Eski Nesil CRM'e Son</a></li>
+          <li><a href="/on-muhasebe-ve-fatura/" class="text-[var(--color-text-muted)] hover:text-[var(--color-primary-light)] transition-colors">Ön Muhasebe Botu</a></li>
+          <li><a href="/stok-takibi-programi/" class="text-[var(--color-text-muted)] hover:text-[var(--color-primary-light)] transition-colors">Yapay Zeka Stok Takip</a></li>
+          <li><a href="/teklif-hazirlama-programi/" class="text-[var(--color-text-muted)] hover:text-[var(--color-primary-light)] transition-colors">Otomatik Teklif Hazırlama</a></li>
+          <li><a href="/e-fatura-kesme-programi/" class="text-[var(--color-text-muted)] hover:text-[var(--color-primary-light)] transition-colors">E-Fatura Otomasyonu</a></li>
+          <li><a href="/e-arsiv-portali/" class="text-[var(--color-text-muted)] hover:text-[var(--color-primary-light)] transition-colors">GİB E-Arşiv Asistanı</a></li>
+          <li><a href="/defter-beyan/" class="text-[var(--color-text-muted)] hover:text-[var(--color-primary-light)] transition-colors">Defter Beyan OCR Robotu</a></li>
+          <li><a href="/kdv-hesaplama/" class="text-[var(--color-text-muted)] hover:text-[var(--color-primary-light)] transition-colors">KDV Hesaplama & Fiyatlama</a></li>
+          <li><a href="/brutten-nete/" class="text-[var(--color-text-muted)] hover:text-[var(--color-primary-light)] transition-colors">İK ve Brütten Nete Asistanı</a></li>
+          <li><a href="/e-beyanname/" class="text-[var(--color-text-muted)] hover:text-[var(--color-primary-light)] transition-colors">e-Beyanname Süreçleri</a></li>
+          <li><a href="/ticaret-sicil-gazetesi/" class="text-[var(--color-text-muted)] hover:text-[var(--color-primary-light)] transition-colors">Ticaret Sicil B2B Radarı</a></li>
+          <li><a href="/sgk-hizmet-dokumu/" class="text-[var(--color-text-muted)] hover:text-[var(--color-primary-light)] transition-colors">SGK Doğrulama Botu</a></li>
+          <li><a href="/acik-fatura-kapali-fatura/" class="text-[var(--color-text-muted)] hover:text-[var(--color-primary-light)] transition-colors">Açık Fatura & Tahsilat Botu</a></li>
+          <li><a href="/cari-hesap-ekstresi/" class="text-[var(--color-text-muted)] hover:text-[var(--color-primary-light)] transition-colors">Cari WhatsApp Ekstre Botu</a></li>
+          <li><a href="/mutabakat-mektubu/" class="text-[var(--color-text-muted)] hover:text-[var(--color-primary-light)] transition-colors">e-Mutabakat Yapay Zeka</a></li>
         </ul>
       </div>
 
       <!-- Contact -->
-      <div class="space-y-4">
+      <div class="space-y-4 lg:col-span-1">
         <h3 class="text-sm font-semibold">İletişim</h3>
         <ul class="space-y-2 text-sm text-[var(--color-text-muted)]">
           <li class="font-medium text-[var(--color-text)]">ST-Automatisierung</li>
