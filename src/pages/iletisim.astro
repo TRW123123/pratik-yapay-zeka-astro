@@ -187,14 +187,20 @@ const breadcrumbs = [
   </section>
 
   <script is:inline>
-    const sourceInput = document.querySelector('[data-source-page]');
-    const packageInput = document.querySelector('[data-request-package]');
-    const ctaInput = document.querySelector('[data-cta-context]');
-    const referrerInput = document.querySelector('[data-referrer]');
-    const requestGoalSelect = document.querySelector('[data-request-goal]');
-    const interestAreaSelect = document.querySelector('select[name="interest_area"]');
-    const params = new URLSearchParams(window.location.search);
-    const packageGoalMap = {
+    /** Sanitize URL param: strip HTML tags and limit length */
+    function cleanParam(val) {
+      if (!val) return '';
+      return val.replace(/<[^>]*>/g, '').replace(/["'<>]/g, '').substring(0, 200);
+    }
+
+    var sourceInput = document.querySelector('[data-source-page]');
+    var packageInput = document.querySelector('[data-request-package]');
+    var ctaInput = document.querySelector('[data-cta-context]');
+    var referrerInput = document.querySelector('[data-referrer]');
+    var requestGoalSelect = document.querySelector('[data-request-goal]');
+    var interestAreaSelect = document.querySelector('select[name="interest_area"]');
+    var params = new URLSearchParams(window.location.search);
+    var packageGoalMap = {
       'lead-flow-audit': 'quick-win',
       'operasyon-haritasi': 'full-roadmap',
       'ik-surec-analizi': 'cost-reduction',
@@ -202,27 +208,27 @@ const breadcrumbs = [
     };
 
     if (sourceInput && params.get('kaynak')) {
-      sourceInput.value = params.get('kaynak');
+      sourceInput.value = cleanParam(params.get('kaynak'));
     }
 
     if (packageInput && params.get('paket')) {
-      packageInput.value = params.get('paket');
+      packageInput.value = cleanParam(params.get('paket'));
     }
 
     if (ctaInput && params.get('cta')) {
-      ctaInput.value = params.get('cta');
+      ctaInput.value = cleanParam(params.get('cta'));
     }
 
     if (interestAreaSelect && params.get('alan')) {
-      interestAreaSelect.value = params.get('alan');
+      interestAreaSelect.value = cleanParam(params.get('alan'));
     }
 
     if (requestGoalSelect && params.get('paket') && !requestGoalSelect.value) {
-      requestGoalSelect.value = packageGoalMap[params.get('paket')] || '';
+      requestGoalSelect.value = packageGoalMap[cleanParam(params.get('paket'))] || '';
     }
 
     if (referrerInput) {
-      referrerInput.value = document.referrer || '';
+      referrerInput.value = cleanParam(document.referrer || '');
     }
   </script>
 </BaseLayout>
