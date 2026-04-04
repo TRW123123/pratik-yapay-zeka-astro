@@ -2,43 +2,43 @@
 import SolutionLayout from '../layouts/SolutionLayout.astro';
 ---
 <SolutionLayout
-  title="BA-BS Mutabakat Mektubu Çilesi: Otonom Finans Ajanı | Pratik Yapay Zeka"
-  description="Ay sonlarında binlerce tedarikçi ve müşteri ile BA/BS mutabakat formunu manuel takip etmekten kurtulun. E-posta anlayan ve eşleştiren yapay zeka ile otomatik e-mutabakat."
-  heroTitle="Ay Sonu Mutabakat Çilesini Bitirin. Binlerce Faturayı Yapay Zeka Saniyeler İçinde Eşleştirsin."
-  heroSubtitle="Finans ekiplerinin en büyük kabusu olan aylık Mutabakat (BA/BS) telaşına son. Faks, e-posta veya telefon peşinde koşmadan; mutabakat metinlerini yazan, gönderen, tedarikçilerden gelen yanıtları anlayan ve uyuşmazlıkları ERP'de işaretleyen otonom mutabakat yöneticisi."
+  title="Mutabakat Mektubu Otomasyonu | BA-BS ve Bakiye Follow-Up Akisi"
+  description="Mutabakat mektubu surecinde asil problem mektubun PDF'i degil; gonderim, cevap toplama, takip ve uyumsuzluk yonetiminin dağinik kalmasidir."
+  heroTitle="Mutabakat Mektubunu Belge Olarak Degil, Takip Sureci Olarak Yonetin"
+  heroSubtitle="Bayi, musteri veya tedarikcilerle mutabakat almak icin tek tek e-posta kovalamak zorunda kalmayin. Biz mutabakat mektubu gonderimi, cevap takibi, follow-up ve uyumsuzluk yonetimini daha sistemli hale getiren finans akislari kuruyoruz."
   problems={[
-    "Ay sonlarında binlerce tedarikçiden bakiye onayı almak için personellerin saatlerini e-posta ve telefon başında harcaması.",
-    "Tedarikçilerin mutabakat portallarına giriş yapmayı reddedip serbest dilde (düz e-posta ile) '15.000 TL eksik görünüyor' diye mail atmasının klasik yazılımlar tarafından algılanamaması.",
-    "Formu onaylamayan taraflar yüzünden kapanamayan BA/BS bildirim süreçlerinin yarattığı stres ve zaman israfı."
+    "Mutabakat mektuplarinin toplu gonderildikten sonra kimin cevap verdigi, kimin vermedigi ve hangi firmada uyumsuzluk oldugunun daginik takip edilmesi.",
+    "E-postayla gelen serbest metinli yanitlarin ekip icinde elle yorumlanmasi ve ilgili cariyle eslestirilmesinin zaman almasi.",
+    "Ay sonu kapanisa yaklasirken follow-up ve hatirlatma surecinin kisi hafizasina bagli kalmasi."
   ]}
-  processTitle="Otonom (e-Mutabakat) Uzlaşma Botu Nasıl Çalışır?"
+  processTitle="Mutabakat Takip Akisi Nasil Sistemlestiriliyor?"
   processSteps={[
-    { title: "Toplu Gönderim Başlatma", description: "ERP sisteminizden alınan listeye göre (Aylık KDV işlemleri vb.) sistem tüm tedarikçilere kişiselleştirilmiş bir e-posta veya WhatsApp Mutabakat mektubu atar." },
-    { title: "LLM Destekli Gelen Kutu Okuması", description: "Klasik e-mutabakat sistemleri butona basılmasını ister. Yapay zekamız ise tedarikçinin yazdığı 'Fatura numaramız eşleşmiyor, kontrol edin' metnini insan gibi okur ve anlar." },
-    { title: "Otomatik Takip (Follow-Up)", description: "3 gün geçmesine rağmen cevap vermeyen tedarikçilere, belirlediğiniz formata göre otomatik tatlı/sert hatırlatma mailleri gönderir." },
-    { title: "Canlı Uzlaşma Dashboard'u", description: "Finans yöneticinize şeffaf bir tablo sunulur: '500 Müşterinin 480'i onayladı (mutabık), 20'si bakiye uyuşmazlığı yaşıyor (inceleme bekliyor)." }
+    { title: "Liste ve Gonderim Hazirligi", description: "Hangi cari gruplarina hangi formatla cikilacagi belirlenir; mutabakat cikti ve kanal mantigi standartlasir." },
+    { title: "Cevap ve Durum Takibi", description: "Gelen yanitlar ilgili cariyle eslestirilir; cevaplandi, cevap bekleniyor ve uyumsuzluk var gibi durumlar netlesir." },
+    { title: "Follow-Up Sekansi", description: "Yanitsiz kalan veya eksik donen firmalar icin otomatik hatirlatma akislari kurulur." },
+    { title: "Uyumsuzluk ve Kapanis Yonetimi", description: "Fark cikan hesaplar ayrı isaretlenir; ekip kapanisa giderken sadece sorunlu dosyalara odaklanir." }
   ]}
-  featuresTitle="Eski Nesil Mutabakat Yazılımlarından Farkı Ne?"
+  featuresTitle="Mutabakat Mektubunda Asil Deger Ureten Yapi"
   features={[
-    { title: "Portal Zorunluluğu Yok", description: "Tedarikçinize 'şuraya kayıt ol, tıkla' demek zorunda değilsiniz. Doğrudan mailine yanıt ('Reply') vermesi yapay zeka için yeterlidir." },
-    { title: "Çoklu Dil (International Mutabakat)", description: "Yurt dışındaki ithalat/ihracat yaptığınız partnerlerinize Çince, İngilizce veya İspanyolca mutabakat atar ve gelen cevaplarını size anında Türkçe özetler." },
-    { title: "Ek Excel ve PDF Okuma", description: "Tedarikçi 'Bizim kayıtlar böyle' diyerek bir Excel tablosu eklerse, sistem o tabloyu alır, sizin programınızdaki kayıtla satır satır çaprazlar (cross-check)." },
-    { title: "Güvenli Loglama ve Kayıt", description: "İleride oluşabilecek ticari anlaşmazlıklar için tedarikçinin 'Mutabıkız' onayları tarih ve benzersiz ID ile güvenle mühürlenir." }
+    { title: "Toplu Gonderim Disiplini", description: "Hangi cari grubuna ne zaman cikildigi ve ne döndugu tek akista izlenebilir hale gelir." },
+    { title: "Yanıt Siniflama", description: "Basit onay, fark bildirimi veya geri donus bekliyor gibi durumlar ekip icin daha görünür olur." },
+    { title: "Takip ve Hatirlatma", description: "Mutabakat sureci tek seferlik mail degil, planli bir follow-up akisina donusur." },
+    { title: "Finans Ekibi Odagi", description: "Ekip tum listeyi elle kovalamak yerine yalnizca fark cikan ve kapanis riski olan dosyalara odaklanir." }
   ]}
-  benefitsTitle="Değersiz Operasyona Son, Stratejiye Odanlanma"
+  benefitsTitle="Mutabakat Surecindeki Net Kazanc"
   benefits={[
-    "%95", "Otomasyon Oranı. Finans personeliniz sadece bakiye uyuşmazlığı ('Mutabık değiliz') durumlarına müdahale eder.",
-    "1 Gün", "İçinde Kapanış. Haftalar süren onay süreçleri proaktif hatırlatmalar sayesinde saatlere indirgenir.",
-    "Satıcı Puanı", "Ne kadar düzenli ve otonom bir finans ekibiniz olursa, piyasadaki kurumsal algınız o kadar yüksek olur."
+    "Daha Hızlı Kapanis", "Uyumsuz olmayan dosyalar daha erken temizlenir; ekip kapanisa daha kontrollu ilerler.",
+    "%100", "Durum görünürlüğü. Kim cevap verdi, kim bekliyor, kimde fark var daha net gorulur.",
+    "Daha Az Takip Yuku", "Finans ekibinin e-posta kovalamaya ayirdigi zaman belirgin bicimde azalir."
   ]}
-  caseStudyDescription="3.000 farklı hammadde tedarikçisiyle çalışan büyük bir gıda üreticisi, mutabakat işini AI Asistanımıza devrederek ay sonu kapanışlarını 1 hafta öne çekti."
-  finalCtaTitle="Mutabakat Süreçlerini Baştan Sona Yapay Zekaya Bırakın"
-  finalCtaSubtitle="Finans ekibinizi form peşinde koşmaktan kurtarın ve teknolojinin size kazandıracağı zamanı keşfedin."
-  sectorTheme="kurumsal"
+  caseStudyDescription="Aylik mutabakat listelerini manuel takip ettigi icin kapanis döneminde zorlanan bir ekip, gonderim ve follow-up akislarini sistemlestirdikten sonra hangi cari dosyalarina odaklanmasi gerektigini daha erken gormeye basladi."
+  finalCtaTitle="Mutabakat Surecinizi PDF Gonderiminden Ileri Tasiyalim"
+  finalCtaSubtitle="Mevcut mutabakat akisinizi birlikte cikaralim; gonderim, cevap toplama ve fark yonetiminde hangi adimlarin en cok zaman kaybettirdigini netlestirelim."
+  sectorTheme="muhasebe"
   faqs={[
-    { question: "Mevcut kullandığımız e-Fatura entegratörü içindeki mutabakattan farkı nedir?", answer: "Entegratör mutabakatları genellikle karşı tarafın sisteme girerek butona basmasını (portal temelli) zorunlu kılar. B2B dünyasında birçok firma bunu angarya görür. Bizim yapay zeka asistanımız ise serbest metinli e-postaları doğrudan anlayan bir 'insan finansör' gibi çalışır." },
-    { question: "Firmalar onaylamazsa ısrarla mail atmaya devam mı ediyor?", answer: "Senaryoyu siz belirlersiniz. Özelleştirilebilir sekans ile Örneğin: 1. gün mail, 3. gün tekrar mail, 5. gün WhatsApp atması için programlanabilir." },
-    { question: "Yanlış bir algılama sonucu 'mutabık değillerken' mutabık olarak sistemi kapatır mı?", answer: "Hayır. Doğal Dil İşleme (NLP) algoritmalarımız şüphe durumunda işlemi %99.9 güvenilirlik bariyeriyle 'insan onayı bekliyor' kutusuna taşır ve riski sıfırlar." }
+    { question: "Bu sayfa sadece BA-BS icin mi uygun?", answer: "Hayir. BA-BS en net orneklerden biri olsa da, bakiye ve hesap onayi gerektiren bircok cari mutabakat sureci icin ayni mantik kullanilabilir." },
+    { question: "Serbest e-posta cevaplari da surece dahil olabilir mi?", answer: "Evet. Ozellikle yanitlar standart portal akisi disinda geliyorsa bunlari siniflamak ve ilgili cariyle eslestirmek en degerli alanlardan biridir." },
+    { question: "Tum surec tamamen otomatik ilerlemek zorunda mi?", answer: "Hayir. Hedef, rutin gonderim ve takip yukunu azaltmak; farkli ve riskli dosyalari ise ekip kontrolunde tutmaktir." }
   ]}
-  sectorName="e-Mutabakat ve Mali Uzlaşma"
+  sectorName="Mutabakat ve Follow-Up"
 />

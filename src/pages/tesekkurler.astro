@@ -1,0 +1,66 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const submissionType = Astro.url.searchParams.get('tip') || '';
+const breadcrumbs = [
+  { name: 'Ana Sayfa', url: '/' },
+  { name: 'Iletisim', url: '/iletisim/' },
+  { name: 'Tesekkurler', url: '/tesekkurler/' },
+];
+
+const isResourceRequest = submissionType === 'resource';
+---
+
+<BaseLayout
+  title="Tesekkurler | Pratik Yapay Zeka"
+  description="Talebiniz bize ulasti. Ekibiniz icin en uygun otomasyon alanlarini geri donmek uzere inceleyecegiz."
+  breadcrumbs={breadcrumbs}
+  noindex={true}
+>
+  <section class="flex min-h-[70vh] items-center py-24">
+    <div class="container mx-auto max-w-3xl px-4 text-center">
+      <div class="rounded-[2rem] border border-[var(--color-border)] bg-[var(--color-surface-light)]/80 p-10 md:p-14 shadow-2xl">
+        <div class="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-[var(--color-primary)] text-black">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+          </svg>
+        </div>
+
+        <h1 class="mt-6 text-4xl font-black tracking-tight text-[var(--color-text)]">Talebiniz bize ulasti.</h1>
+        <p class="mt-4 text-lg leading-relaxed text-[var(--color-text-muted)]">
+          {isResourceRequest
+            ? 'Checklist talebiniz bize ulasti. Kaynagi ve sonraki yonlendirmeyi size en kisa surede paylasacagiz.'
+            : 'Gonderdiginiz bilgiler icin tesekkurler. Uygun otomasyon alanlarini ve en mantikli ilk adimi degerlendirip size geri donecegiz.'}
+        </p>
+
+        <div class="mt-8 grid gap-4 text-left md:grid-cols-2">
+          <div class="rounded-3xl border border-[var(--color-border)] bg-[var(--color-surface)]/80 p-6">
+            <h2 class="text-lg font-semibold text-[var(--color-text)]">{isResourceRequest ? 'Bu sirada ne oluyor?' : 'Bu sirada ne oluyor?'}</h2>
+            <p class="mt-3 text-sm leading-relaxed text-[var(--color-text-muted)]">
+              {isResourceRequest
+                ? 'Talebinizi kaydedip size checklisti ve isterseniz uygun sonraki adimi iletecek sekilde hazirliyoruz.'
+                : 'Talebinizi sayfa kaynagi ve ihtiyac alanina gore inceleyip size uygun bir sonraki adimi hazirliyoruz.'}
+            </p>
+          </div>
+          <div class="rounded-3xl border border-[var(--color-border)] bg-[var(--color-surface)]/80 p-6">
+            <h2 class="text-lg font-semibold text-[var(--color-text)]">Ne yapabilirsiniz?</h2>
+            <p class="mt-3 text-sm leading-relaxed text-[var(--color-text-muted)]">
+              {isResourceRequest
+                ? 'Bu arada cozum sayfalarimizi veya vaka calismalarimizi inceleyerek hangi alana daha yakin oldugunuzu gorebilirsiniz.'
+                : 'Bu arada vaka calismalarimizi inceleyebilir veya bize dogrudan e-posta gonderebilirsiniz.'}
+            </p>
+          </div>
+        </div>
+
+        <div class="mt-10 flex flex-col justify-center gap-4 sm:flex-row">
+          <a href={isResourceRequest ? '/cozumler/' : '/vaka-calismalari/'} class="inline-flex items-center justify-center rounded-2xl border border-[var(--color-border)] px-6 py-3 font-semibold text-[var(--color-text)] transition hover:border-[var(--color-primary)] hover:text-[var(--color-primary-light)]">
+            {isResourceRequest ? 'Cozum sayfalarini incele' : 'Vaka calismalarini incele'}
+          </a>
+          <a href="mailto:s.tepecik@pratik-yapayzeka.com" class="inline-flex items-center justify-center rounded-2xl bg-[var(--color-primary)] px-6 py-3 font-semibold text-black transition hover:bg-[var(--color-primary-light)]">
+            E-posta gonder
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

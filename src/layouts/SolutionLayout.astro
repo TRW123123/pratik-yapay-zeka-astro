@@ -1,10 +1,8 @@
 ---
-/**
- * SolutionLayout.astro — Reusable layout for all 5 solution pages.
- * Prevents code duplication across lead-gen, sales, marketing, CRM, customer service pages.
- */
 import BaseLayout from './BaseLayout.astro';
 import ROICalculator from '../components/ROICalculator';
+import LeadPathways from '../components/LeadPathways.astro';
+import { buildContactHref } from '../lib/contactHref';
 
 interface ProcessStep {
   title: string;
@@ -47,6 +45,7 @@ interface Props {
 const {
   title,
   description,
+  schema,
   ogImage,
   heroTitle,
   heroSubtitle,
@@ -68,44 +67,175 @@ const {
 const pathname = Astro.url.pathname;
 const breadcrumbs = [
   { name: 'Ana Sayfa', url: '/' },
-  { name: 'Çözümler', url: '/cozumler/' },
-  { name: heroTitle.split(' – ')[0], url: pathname },
+  { name: 'Cozumler', url: '/cozumler/' },
+  { name: heroTitle, url: pathname },
 ];
 
-// All sectors use the unified brand lime green
-const themeColors: Record<string, { primary: string, accent: string, glow: string }> = {
-  'default': { primary: '#A3E635', accent: '#84CC16', glow: 'rgba(163, 230, 53, 0.15)' }
+const themeColors: Record<string, { primary: string; accent: string; glow: string }> = {
+  default: { primary: '#A3E635', accent: '#84CC16', glow: 'rgba(163, 230, 53, 0.15)' },
 };
 
-const currentTheme = themeColors[sectorTheme] || themeColors['default'];
+const currentTheme = themeColors[sectorTheme] || themeColors.default;
+const growthContactHref = (cta: string) => buildContactHref({ source: pathname, packageName: 'lead-flow-audit', area: 'marketing-leads', cta });
+const operationsContactHref = (cta: string) => buildContactHref({ source: pathname, packageName: 'operasyon-haritasi', area: 'finance-accounting', cta });
 
-// Build FAQPage JSON-LD schema (Fix 3.1)
-const faqSchema = faqs.length > 0 ? {
-  '@context': 'https://schema.org',
-  '@type': 'FAQPage',
-  mainEntity: faqs.map(faq => ({
-    '@type': 'Question',
-    name: faq.question,
-    acceptedAnswer: {
-      '@type': 'Answer',
-      text: faq.answer,
+const proofCaseMap = {
+  growth: [
+    {
+      href: '/vaka-calismalari/acilsatis/',
+      title: 'Acilsatis vaka calismasi',
+      description: 'Operasyon ve gorunurluk tarafinda otomasyonla daha hizli ivme kazanilan akisi inceleyin.',
+      badge: 'Lead akis',
     },
-  })),
-} : null;
+    {
+      href: '/vaka-calismalari/dkm-coach-bilge/',
+      title: 'DKM / Coach Bilge vaka calismasi',
+      description: 'Lead funnel tarafinda oyunlastirilmis kurgunun nasil sonuca donustugunu gorun.',
+      badge: 'Funnel',
+    },
+    {
+      href: '/vaka-calismalari/salevium/',
+      title: 'Salevium vaka calismasi',
+      description: 'Icerik ve dagitim otomasyonunun zaman kazancini nasil carpana cevirdigine bakin.',
+      badge: 'Icerik',
+    },
+  ],
+  operations: [
+    {
+      href: '/vaka-calismalari/cemkimsan/',
+      title: 'Cemkimsan vaka calismasi',
+      description: 'Cok ulkeli satis ve pazarlama operasyonunda otomasyonun nasil olceklendigini inceleyin.',
+      badge: 'Operasyon',
+    },
+    {
+      href: '/vaka-calismalari/erpa-teknoloji/',
+      title: 'ERPA Teknoloji vaka calismasi',
+      description: 'B2B arastirma ve Avrupa odakli lead generation tarafinda proof ariyorsaniz iyi bir referans.',
+      badge: 'B2B',
+    },
+    {
+      href: '/vaka-calismalari/car-studio-ai/',
+      title: 'Car Studio AI vaka calismasi',
+      description: 'Kucuk ekiple daha fazla pazar ve daha hizli akis kurmanin mantigini gorun.',
+      badge: 'Olcek',
+    },
+  ],
+};
 
-// Build Service JSON-LD schema (Fix 3.3)
+const nextStepMap = {
+  growth: [
+    {
+      href: '/crm-programi/',
+      title: 'CRM ve musteri takibini guclendirin',
+      description: 'Talep, mesaj ve gorusmeleri manuel veri girisi olmadan toplayan temel ticari yapi.',
+      badge: 'Commercial',
+    },
+    {
+      href: '/marketing-otomasyonu/',
+      title: 'Lead akislarini hizlandirin',
+      description: 'Form, reklam ve inbound trafigi gecikmeden otomasyon akislariyla karsilayin.',
+      badge: 'Demand',
+    },
+    {
+      href: '/whatsapp-ve-siparis-botlari/',
+      title: 'WhatsApp uzerinden donusumu artirin',
+      description: 'Mesajlasma tabanli satis veya destek akislarinda daha hizli cevap yapisi kurun.',
+      badge: 'Conversation',
+    },
+  ],
+  operations: [
+    {
+      href: '/on-muhasebe-ve-fatura/',
+      title: 'Muhasebe ve fatura akislarini otomatiklestirin',
+      description: 'Belge okuma, kayit ve aktarim tarafindaki manuel yukleri azaltan merkez sayfa.',
+      badge: 'Finance',
+    },
+    {
+      href: '/teklif-hazirlama-programi/',
+      title: 'Teklif surecini hizlandirin',
+      description: 'Excel tabanli teklif ve fiyatlama sureclerini daha kontrollu hale getirin.',
+      badge: 'Quoting',
+    },
+    {
+      href: '/e-ticaret-ve-pazaryeri-otomasyonu/',
+      title: 'E-ticaret operasyonunu toparlayin',
+      description: 'Siparis, fatura, kargo ve kanal akisini tek sistem mantigiyla ele alin.',
+      badge: 'Commerce',
+    },
+  ],
+};
+
+const growthSignals = [
+  '/crm-programi/',
+  '/marketing-otomasyonu/',
+  '/whatsapp-ve-siparis-botlari/',
+  '/yapay-zeka-chatbot/',
+  '/b2b-musteri-bulma/',
+  '/kurumsal-e-posta-otomasyonu/',
+  '/cozumler/emlak/',
+  '/cozumler/hukuk/',
+  '/cozumler/e-ticaret/',
+];
+
+const selectedTrack = growthSignals.some((signal) => pathname.startsWith(signal)) ? 'growth' : 'operations';
+const proofCases = proofCaseMap[selectedTrack];
+const nextSteps = nextStepMap[selectedTrack];
+const contactHref = (cta: string) => selectedTrack === 'growth' ? growthContactHref(cta) : operationsContactHref(cta);
+
+const offerMap = {
+  growth: {
+    badge: 'Lead audit',
+    title: 'Ilk gorusmede ne alirsiniz?',
+    description: 'Talep akisinin nerede koptugunu, hangi kanalin gercekten is urettigini ve hangi otomasyon adiminin en hizli geri donus saglayacagini cikaririz.',
+    bullets: [
+      'Lead kaynagi ve ilk temas hizi analizi',
+      'CRM, form, WhatsApp ve takip akisinda kopus noktalarinin tespiti',
+      'Size uygun ilk otomasyon senaryosu',
+    ],
+    cta: 'Lead akis analizini iste',
+  },
+  operations: {
+    badge: 'Operasyon analizi',
+    title: 'Ilk gorusmede ne alirsiniz?',
+    description: 'Manuel veri girisinin, onay beklemelerinin ve ekipler arasi tekrar isin nerede olustugunu netlestirir; ilk otomasyon dugumunu birlikte seceriz.',
+    bullets: [
+      'Surec haritasi ve darboagaz tespiti',
+      'Belge, onay ve takip akisinda tekrar eden adimlarin ayrimi',
+      'En hizli geri donus verecek ilk kurulum onerisi',
+    ],
+    cta: 'Operasyon analizini iste',
+  },
+};
+
+const currentOffer = offerMap[selectedTrack];
+
+const faqSchema = faqs.length > 0
+  ? {
+      '@context': 'https://schema.org',
+      '@type': 'FAQPage',
+      mainEntity: faqs.map((faq) => ({
+        '@type': 'Question',
+        name: faq.question,
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: faq.answer,
+        },
+      })),
+    }
+  : null;
+
 const serviceSchema = {
   '@context': 'https://schema.org',
   '@type': 'Service',
   name: heroTitle,
-  description: description,
+  description,
   provider: {
     '@type': 'LocalBusiness',
     name: 'Pratik Yapay Zeka',
     url: Astro.site?.toString() || 'https://yapayzekapratik.com',
   },
   areaServed: [
-    { '@type': 'Country', name: 'Türkiye' },
+    { '@type': 'Country', name: 'Turkiye' },
     { '@type': 'Country', name: 'Deutschland' },
   ],
   serviceType: `${sectorName} Yapay Zeka Otomasyonu`,
@@ -113,7 +243,6 @@ const serviceSchema = {
 ---
 
 <BaseLayout title={title} description={description} ogImage={ogImage} breadcrumbs={breadcrumbs}>
-  <!-- Inject dynamic CSS vars into main tag for 100% reliable scoping in Astro -->
   <style is:inline>
     .theme-text { color: var(--themePrimary); }
     .theme-border { border-color: var(--themePrimary); }
@@ -121,224 +250,245 @@ const serviceSchema = {
     .theme-glow-bg { background: radial-gradient(circle, var(--themeGlow) 0%, transparent 70%); }
     .theme-btn { background-color: var(--themePrimary); color: #0B0F14; }
     .theme-btn:hover { background-color: var(--themeAccent); box-shadow: 0 0 25px var(--themeGlow); }
-    
+
     body {
-        -webkit-font-smoothing: antialiased;
-        -moz-osx-font-smoothing: grayscale;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
     }
   </style>
 
-  <main class="bg-[#0B0F14] text-white overflow-hidden relative selection:bg-[var(--themePrimary)] selection:text-black" style={`--themePrimary: ${currentTheme.primary}; --themeAccent: ${currentTheme.accent}; --themeGlow: ${currentTheme.glow}; --color-primary: ${currentTheme.primary}; --color-primary-dark: ${currentTheme.accent};`}>
-  <article>
-    
-    <!-- Hero Section -->
-    <section class="py-32 lg:py-48 relative overflow-hidden">
-      <!-- Ambient Background Architecture -->
-      <div class="absolute top-1/4 left-1/2 -translate-x-1/2 w-[1000px] h-[1000px] rounded-full blur-[160px] pointer-events-none opacity-50 theme-glow-bg"></div>
-      
-      <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-5xl text-center relative z-10">
-        <div class="inline-flex items-center gap-3 px-5 py-2.5 rounded-full bg-white/5 border border-white/10 mb-8 backdrop-blur-md">
-          <span class="w-2.5 h-2.5 rounded-full theme-bg animate-pulse shadow-[0_0_10px_var(--themePrimary)]"></span>
-          <span class="text-sm font-bold tracking-widest text-[#E2E8F0] uppercase letter-spacing-[0.2em]">
-            {sectorTheme !== 'default' ? `${sectorTheme.split('-').join(' ')} Çözümü` : 'Yapay Zeka Otomasyonu'}
-          </span>
-        </div>
-        
-        <h1 class="text-3xl md:text-5xl lg:text-5xl xl:text-5xl font-black mb-8 leading-[1.1] tracking-tight text-transparent bg-clip-text bg-gradient-to-br from-white via-gray-200 to-gray-500">
-          {heroTitle}
-        </h1>
-        <p class="text-base md:text-lg lg:text-xl text-gray-400 mb-12 max-w-3xl mx-auto font-medium leading-relaxed">
-          {heroSubtitle}
-        </p>
-        
-        <div class="flex flex-col sm:flex-row justify-center items-center gap-6">
-          <a href="/iletisim/" class="group relative px-10 py-5 font-bold rounded-2xl transition-all duration-300 hover:-translate-y-1 overflow-hidden theme-bg" style="box-shadow: 0 0 25px var(--themeGlow);">
-             <span class="relative z-10 text-black flex items-center justify-center gap-3 text-lg">
-                Sistemi Kurun 
-                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+  <main
+    class="relative overflow-hidden bg-[#0B0F14] text-white selection:bg-[var(--themePrimary)] selection:text-black"
+    style={`--themePrimary: ${currentTheme.primary}; --themeAccent: ${currentTheme.accent}; --themeGlow: ${currentTheme.glow}; --color-primary: ${currentTheme.primary}; --color-primary-dark: ${currentTheme.accent};`}
+  >
+    <article>
+      <section class="relative overflow-hidden py-32 lg:py-48">
+        <div class="theme-glow-bg pointer-events-none absolute left-1/2 top-1/4 h-[1000px] w-[1000px] -translate-x-1/2 rounded-full blur-[160px] opacity-50"></div>
+
+        <div class="container relative z-10 mx-auto max-w-5xl px-4 text-center sm:px-6 lg:px-8">
+          <div class="mb-8 inline-flex items-center gap-3 rounded-full border border-white/10 bg-white/5 px-5 py-2.5 backdrop-blur-md">
+            <span class="theme-bg h-2.5 w-2.5 animate-pulse rounded-full shadow-[0_0_10px_var(--themePrimary)]"></span>
+            <span class="text-sm font-bold uppercase tracking-[0.2em] text-[#E2E8F0]">
+              {sectorTheme !== 'default' ? `${sectorTheme.split('-').join(' ')} cozumu` : 'Yapay Zeka Otomasyonu'}
+            </span>
+          </div>
+
+          <h1 class="mb-8 bg-gradient-to-br from-white via-gray-200 to-gray-500 bg-clip-text text-3xl font-black leading-[1.1] tracking-tight text-transparent md:text-5xl lg:text-5xl xl:text-5xl">
+            {heroTitle}
+          </h1>
+          <p class="mx-auto mb-12 max-w-3xl text-base font-medium leading-relaxed text-gray-400 md:text-lg lg:text-xl">
+            {heroSubtitle}
+          </p>
+
+          <div class="flex flex-col items-center justify-center gap-6 sm:flex-row">
+            <a href={contactHref('solution-hero-cta')} class="theme-bg group relative overflow-hidden rounded-2xl px-10 py-5 font-bold transition-all duration-300 hover:-translate-y-1" style="box-shadow: 0 0 25px var(--themeGlow);">
+              <span class="relative z-10 flex items-center justify-center gap-3 text-lg text-black">
+                Sistemi kurun
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                   <path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
                 </svg>
-             </span>
-          </a>
+              </span>
+            </a>
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <!-- 1. BENTO BOX: RESILIENT HARD METRICS -->
-    <section class="py-24 relative z-10">
-      <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
-        <div class="flex flex-col mb-16 items-center text-center">
-          <h2 class="text-3xl md:text-5xl font-black tracking-tight mb-4 text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-400">{benefitsTitle || "Ölçülebilir Operasyonel Kazanımlar"}</h2>
-          <p class="text-gray-400 max-w-2xl text-lg font-medium">B2B süreçlerinize entegre edilen yapay zekanın gerçek dünya sonuçları.</p>
-        </div>
-        
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 auto-rows-fr">
-          {benefits.map((benefit, i) => {
-             // Extract exactly the percentage/multiplier to make it massive
-             // Added \d+\/\d+ to explicitly catch patterns like "7/24" without breaking them apart
-             const safeBenefit = benefit ? benefit.toString() : "";
-             const metricValueMatch = safeBenefit.match(/(\d+\/\d+|\+?%\d+(?:\.\d+)?|\d+x|\d+\+? saat|\d+ dakika|\d+\+?)/i);
-             const massiveMetric = metricValueMatch ? metricValueMatch[0] : "";
-             const remainingText = safeBenefit.replace(massiveMetric, "").trim();
+      <section class="relative z-10 py-24">
+        <div class="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div class="mb-16 flex flex-col items-center text-center">
+            <h2 class="mb-4 bg-gradient-to-r from-white to-gray-400 bg-clip-text text-3xl font-black tracking-tight text-transparent md:text-5xl">
+              {benefitsTitle || 'Olculebilir operasyonel kazanimlar'}
+            </h2>
+            <p class="max-w-2xl text-lg font-medium text-gray-400">
+              B2B sureclerinize entegre edilen yapay zekanin gercek dunya sonuclari.
+            </p>
+          </div>
 
-             return (
-              <div class="flex flex-col h-full group backdrop-blur-[24px] saturate-[150%] bg-[#FFFFFF]/[0.02] border border-white/[0.05] rounded-[2rem] p-8 lg:p-10 hover:bg-[#FFFFFF]/[0.04] transition-all duration-500 relative overflow-hidden hover:border-white/[0.1] hover:-translate-y-1">
-                <!-- Theme Glow Bloom Follower effect -->
-                <div class="absolute -inset-px opacity-0 group-hover:opacity-100 transition-opacity duration-1000 pointer-events-none blur-2xl" style="background: radial-gradient(circle at top right, var(--themeGlow) 0%, transparent 60%);"></div>
-                
-                <div class="relative z-10 flex flex-col h-full">
-                  <div class="w-14 h-14 rounded-2xl flex items-center justify-center mb-6 border border-white/10 bg-black/50 shadow-lg relative theme-text">
-                    {i % 3 === 0 && <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" /></svg>}
-                    {i % 3 === 1 && <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>}
-                    {i % 3 === 2 && <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" /></svg>}
+          <div class="grid auto-rows-fr grid-cols-1 gap-6 md:grid-cols-3">
+            {benefits.map((benefit, i) => {
+              const safeBenefit = benefit ? benefit.toString() : '';
+              const metricValueMatch = safeBenefit.match(/(\d+\/\d+|\+?%\d+(?:\.\d+)?|\d+x|\d+\+? saat|\d+ dakika|\d+\+?)/i);
+              const massiveMetric = metricValueMatch ? metricValueMatch[0] : '';
+              const remainingText = safeBenefit.replace(massiveMetric, '').trim();
+
+              return (
+                <div class="group relative flex h-full flex-col overflow-hidden rounded-[2rem] border border-white/[0.05] bg-[#FFFFFF]/[0.02] p-8 backdrop-blur-[24px] saturate-[150%] transition-all duration-500 hover:-translate-y-1 hover:border-white/[0.1] hover:bg-[#FFFFFF]/[0.04] lg:p-10">
+                  <div class="pointer-events-none absolute -inset-px opacity-0 blur-2xl transition-opacity duration-1000 group-hover:opacity-100" style="background: radial-gradient(circle at top right, var(--themeGlow) 0%, transparent 60%);"></div>
+
+                  <div class="relative z-10 flex h-full flex-col">
+                    <div class="theme-text relative mb-6 flex h-14 w-14 items-center justify-center rounded-2xl border border-white/10 bg-black/50 shadow-lg">
+                      {i % 3 === 0 && <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" /></svg>}
+                      {i % 3 === 1 && <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>}
+                      {i % 3 === 2 && <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" /></svg>}
+                    </div>
+
+                    {massiveMetric ? (
+                      <>
+                        <div class="theme-text mb-4 text-4xl font-black tracking-tighter md:text-5xl lg:text-6xl">{massiveMetric}</div>
+                        <p class="flex-grow text-base font-medium leading-relaxed text-gray-300 lg:text-lg">{remainingText}</p>
+                      </>
+                    ) : (
+                      <p class="flex-grow text-base font-medium leading-relaxed text-gray-300 lg:text-lg" set:html={safeBenefit.replace(/(\d+\/\d+|\+?%\d+(?:'[a-z]+|\.\d+)?|\d+x|\d+\+? saat|\d+ dakika|\d+\+?|%[0-9.]+)/gi, '<strong class="theme-text text-3xl font-black block mb-2">$1</strong>')} />
+                    )}
                   </div>
-                  
-                  {massiveMetric ? (
-                    <>
-                      <div class="text-4xl md:text-5xl lg:text-6xl font-black mb-4 tracking-tighter theme-text">{massiveMetric}</div>
-                      <p class="text-gray-300 leading-relaxed text-base lg:text-lg font-medium flex-grow">{remainingText}</p>
-                    </>
-                  ) : (
-                    <p class="text-gray-300 leading-relaxed text-base lg:text-lg font-medium flex-grow" set:html={safeBenefit.replace(/(\d+\/\d+|\+?%\d+(?:'[a-z]+|\.\d+)?|\d+x|\d+\+? saat|\d+ dakika|\d+\+?|%[0-9.]+)/gi, '<strong class="theme-text text-3xl font-black block mb-2">$1</strong>')} />
-                  )}
                 </div>
-              </div>
-            )
-          })}
+              );
+            })}
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <!-- 2. RESILIENT PAIN POINTS (Abstract Warning Cards) -->
-    <section class="py-24 bg-[#0F151B]/50 border-y border-white/5 relative z-10">
-      <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
-        <h2 class="text-3xl md:text-5xl font-black mb-16 text-center tracking-tight text-white">Mevcut Sistemdeki Kanama Noktaları</h2>
-        
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 auto-rows-fr">
-          {problems.map((problem) => (
-            <div class="flex items-start gap-4 flex-col justify-start bg-[#170505]/60 backdrop-blur-md rounded-2xl p-8 border border-red-900/30 relative overflow-hidden group hover:border-red-800/50 transition-colors">
-              <div class="absolute top-0 right-0 p-6 opacity-[0.05] group-hover:opacity-10 transition-opacity text-red-500">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" class="w-32 h-32" fill="currentColor"><path d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm0,192a88,88,0,1,1,88-88A88.1,88.1,0,0,1,128,216Zm-8-80V80a8,8,0,0,1,16,0v56a8,8,0,0,1-16,0Zm20,36a12,12,0,1,1-12-12A12,12,0,0,1,140,172Z"></path></svg>
-              </div>
-              
-              <div class="bg-red-500/10 p-3 rounded-xl shrink-0 text-red-500 border border-red-500/20 relative z-10 flex items-center justify-center">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" /></svg>
-              </div>
-              <p class="text-gray-300 text-lg leading-relaxed font-medium relative z-10">{problem}</p>
-            </div>
-          ))}
-        </div>
-      </div>
-    </section>
+      <section class="relative z-10 border-y border-white/5 bg-[#0F151B]/50 py-24">
+        <div class="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <h2 class="mb-16 text-center text-3xl font-black tracking-tight text-white md:text-5xl">Mevcut sistemdeki kanama noktalari</h2>
 
-    <!-- 3. PROCESS STEPS (Abstract Timeline Layout) -->
-    <section class="py-32 relative z-10">
-      <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl relative z-10">
-        <div class="text-center mb-20">
-           <h2 class="text-3xl md:text-5xl font-black tracking-tight mb-4 text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-400">{processTitle}</h2>
-           <p class="text-gray-400 max-w-2xl mx-auto text-lg font-medium">Tahmine dayalı değil, veriye dayalı mimari kurulum süreci.</p>
-        </div>
-        
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-4 relative">
-          <!-- Desktop connecting line -->
-          <div class="hidden lg:block absolute top-[28px] left-[12%] right-[12%] h-[2px] bg-gradient-to-r from-transparent via-white/10 to-transparent"></div>
-          
-          {processSteps.map((step, i) => (
-            <div class="relative pt-8 lg:pt-0 pl-8 lg:pl-0 border-l-2 border-white/5 lg:border-l-0 group flex flex-col items-start lg:items-center text-left lg:text-center h-full">
-               
-               <div class="absolute left-[-2px] lg:left-auto lg:top-[-4px] lg:relative lg:mb-8 z-10">
-                 <!-- The glowing node -->
-                 <div class="w-14 h-14 rounded-full bg-[#0B0F14] border-2 border-white/10 flex items-center justify-center font-black text-xl text-white shadow-lg transition-all duration-500 group-hover:border-[var(--themePrimary)] group-hover:shadow-[0_0_20px_var(--themeGlow)] group-hover:-translate-y-1 relative overflow-hidden">
-                    <div class="absolute inset-0 opacity-0 group-hover:opacity-20 transition-opacity" style="background-color: var(--themePrimary);"></div>
-                    <span class="relative z-10">{i + 1}</span>
-                 </div>
-               </div>
-               
-               <h3 class="font-black text-2xl mb-3 text-white">{step.title}</h3>
-               <p class="text-gray-400 font-medium leading-relaxed">{step.description}</p>
-            </div>
-          ))}
-        </div>
-      </div>
-    </section>
-
-    <!-- 4. FEATURES (Asymmetrical Bento) -->
-    <section class="py-24 relative z-10 bg-[#0F151B]/30 border-t border-white/5">
-      <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
-        <h2 class="text-3xl md:text-5xl font-black mb-16 text-center tracking-tight text-white drop-shadow-md">{featuresTitle}</h2>
-        
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 auto-rows-fr">
-          {features.map((feature, index) => (
-            <div class={`flex flex-col h-full bg-[#FFFFFF]/[0.02] backdrop-blur-md border border-white/5 rounded-[2rem] p-8 lg:p-10 relative overflow-hidden group transition-all duration-500 hover:border-white/10 ${index === 0 ? 'md:col-span-2' : ''} ${index === 3 && features.length > 3 ? 'md:col-span-2 lg:col-span-1' : ''}`}>
-              <!-- Hover slide effect line -->
-              <div class="absolute top-0 left-0 w-full h-1 opacity-0 group-hover:opacity-100 transition-opacity" style="background-color: var(--themePrimary);"></div>
-              
-              <div class="w-12 h-12 rounded-xl flex items-center justify-center mb-6 bg-white/5 border border-white/5 group-hover:bg-white/10 transition-colors" style="color: var(--themePrimary);">
-                  <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="currentColor" viewBox="0 0 256 256"><path d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm45.66,85.66-56,56a8,8,0,0,1-11.32,0l-24-24a8,8,0,0,1,11.32-11.32L112,148.69l50.34-50.35a8,8,0,0,1,11.32,11.32Z"></path></svg>
-              </div>
-              
-              <h3 class="text-2xl font-black mb-4 text-white">{feature.title}</h3>
-              <p class="text-gray-400 leading-relaxed text-lg font-medium">{feature.description}</p>
-            </div>
-          ))}
-        </div>
-      </div>
-    </section>
-
-    {/* 5. FAQ SECTION (visible rendering + FAQPage schema) */}
-    {faqs.length > 0 && (
-      <section class="py-24 relative z-10 bg-[#0F151B]/30 border-t border-white/5">
-        <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
-          <h2 class="text-3xl md:text-5xl font-black mb-16 text-center tracking-tight text-white">Sıkça Sorulan Sorular</h2>
-          <div class="space-y-4">
-            {faqs.map((faq) => (
-              <details class="group bg-[#FFFFFF]/[0.02] backdrop-blur-md border border-white/5 rounded-2xl overflow-hidden hover:border-white/10 transition-colors">
-                <summary class="flex items-center justify-between p-6 cursor-pointer text-lg font-bold text-white group-open:text-[var(--themePrimary)] transition-colors">
-                  {faq.question}
-                  <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 shrink-0 ml-4 transition-transform group-open:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" /></svg>
-                </summary>
-                <div class="px-6 pb-6 text-gray-400 leading-relaxed text-base">
-                  {faq.answer}
+          <div class="grid auto-rows-fr grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
+            {problems.map((problem) => (
+              <div class="group relative flex flex-col items-start justify-start gap-4 overflow-hidden rounded-2xl border border-red-900/30 bg-[#170505]/60 p-8 backdrop-blur-md transition-colors hover:border-red-800/50">
+                <div class="absolute right-0 top-0 p-6 text-red-500 opacity-[0.05] transition-opacity group-hover:opacity-10">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" class="h-32 w-32" fill="currentColor"><path d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm0,192a88,88,0,1,1,88-88A88.1,88.1,0,0,1,128,216Zm-8-80V80a8,8,0,0,1,16,0v56a8,8,0,0,1-16,0Zm20,36a12,12,0,1,1-12-12A12,12,0,0,1,140,172Z"></path></svg>
                 </div>
-              </details>
+
+                <div class="relative z-10 flex shrink-0 items-center justify-center rounded-xl border border-red-500/20 bg-red-500/10 p-3 text-red-500">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" /></svg>
+                </div>
+                <p class="relative z-10 text-lg font-medium leading-relaxed text-gray-300">{problem}</p>
+              </div>
             ))}
           </div>
         </div>
       </section>
-    )}
 
-    {/* 5b. ROI CALCULATOR ISLAND (client:visible for lazy hydration) */}
-    <ROICalculator client:visible sectorName={sectorName} />
+      <section class="relative z-10 py-32">
+        <div class="container relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div class="mb-20 text-center">
+            <h2 class="mb-4 bg-gradient-to-r from-white to-gray-400 bg-clip-text text-3xl font-black tracking-tight text-transparent md:text-5xl">{processTitle}</h2>
+            <p class="mx-auto max-w-2xl text-lg font-medium text-gray-400">Tahmine degil, veriye dayali mimari kurulum sureci.</p>
+          </div>
 
+          <div class="relative grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4 lg:gap-4">
+            <div class="absolute left-[12%] right-[12%] top-[28px] hidden h-[2px] bg-gradient-to-r from-transparent via-white/10 to-transparent lg:block"></div>
 
-    <!-- 6. FINAL CTA HOOK -->
-    <section class="py-32 relative overflow-hidden">
-      <div class="absolute inset-0 theme-bg opacity-[0.02] pointer-events-none"></div>
-      
-      <div class="container mx-auto px-4 text-center max-w-5xl relative z-10">
-        <div class="bg-[#FFFFFF]/[0.02] backdrop-blur-2xl rounded-[3rem] p-12 lg:p-24 shadow-2xl border border-white/10 relative overflow-hidden group">
-          <div class="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-1000 pointer-events-none blur-3xl" style="background: radial-gradient(circle at center, var(--themeGlow) 0%, transparent 70%);"></div>
-          
-          <h2 class="text-3xl md:text-4xl lg:text-5xl font-black mb-8 text-white tracking-tight leading-[1.1] relative z-10">{finalCtaTitle}</h2>
-          <p class="text-lg md:text-xl text-gray-400 mb-12 max-w-3xl mx-auto font-medium leading-relaxed relative z-10">{finalCtaSubtitle}</p>
-          
-          <div class="flex flex-col sm:flex-row items-center justify-center gap-6 relative z-10">
-            <a href="/iletisim/" class="group relative px-12 py-6 font-black rounded-2xl transition-all duration-500 text-xl inline-flex items-center gap-3 text-black hover:-translate-y-1 theme-bg" style="box-shadow: 0 0 30px var(--themeGlow);">
-              Projeyi Başlat
-              <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M13 5l7 7-7 7M5 5l7 7-7 7" />
-              </svg>
-            </a>
+            {processSteps.map((step, i) => (
+              <div class="group relative flex h-full flex-col items-start border-l-2 border-white/5 pl-8 pt-8 text-left lg:items-center lg:border-l-0 lg:pl-0 lg:pt-0 lg:text-center">
+                <div class="absolute left-[-2px] z-10 lg:relative lg:left-auto lg:top-[-4px] lg:mb-8">
+                  <div class="relative flex h-14 w-14 items-center justify-center overflow-hidden rounded-full border-2 border-white/10 bg-[#0B0F14] text-xl font-black text-white shadow-lg transition-all duration-500 group-hover:-translate-y-1 group-hover:border-[var(--themePrimary)] group-hover:shadow-[0_0_20px_var(--themeGlow)]">
+                    <div class="absolute inset-0 opacity-0 transition-opacity group-hover:opacity-20" style="background-color: var(--themePrimary);"></div>
+                    <span class="relative z-10">{i + 1}</span>
+                  </div>
+                </div>
+
+                <h3 class="mb-3 text-2xl font-black text-white">{step.title}</h3>
+                <p class="font-medium leading-relaxed text-gray-400">{step.description}</p>
+              </div>
+            ))}
           </div>
         </div>
-      </div>
-    </section>
-  </article>
+      </section>
 
-  {/* Structured Data: FAQPage JSON-LD */}
-  {faqSchema && <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />}
+      <section class="relative z-10 border-t border-white/5 bg-[#0F151B]/30 py-24">
+        <div class="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <h2 class="mb-16 text-center text-3xl font-black tracking-tight text-white drop-shadow-md md:text-5xl">{featuresTitle}</h2>
 
-  {/* Structured Data: Service JSON-LD */}
-  <script type="application/ld+json" set:html={JSON.stringify(serviceSchema)} />
+          <div class="grid auto-rows-fr grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
+            {features.map((feature, index) => (
+              <div class={`group relative flex h-full flex-col overflow-hidden rounded-[2rem] border border-white/5 bg-[#FFFFFF]/[0.02] p-8 backdrop-blur-md transition-all duration-500 hover:border-white/10 lg:p-10 ${index === 0 ? 'md:col-span-2' : ''} ${index === 3 && features.length > 3 ? 'md:col-span-2 lg:col-span-1' : ''}`}>
+                <div class="absolute left-0 top-0 h-1 w-full opacity-0 transition-opacity group-hover:opacity-100" style="background-color: var(--themePrimary);"></div>
+
+                <div class="mb-6 flex h-12 w-12 items-center justify-center rounded-xl border border-white/5 bg-white/5 transition-colors group-hover:bg-white/10" style="color: var(--themePrimary);">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="currentColor" viewBox="0 0 256 256"><path d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm45.66,85.66-56,56a8,8,0,0,1-11.32,0l-24-24a8,8,0,0,1,11.32-11.32L112,148.69l50.34-50.35a8,8,0,0,1,11.32,11.32Z"></path></svg>
+                </div>
+
+                <h3 class="mb-4 text-2xl font-black text-white">{feature.title}</h3>
+                <p class="text-lg font-medium leading-relaxed text-gray-400">{feature.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {faqs.length > 0 && (
+        <section class="relative z-10 border-t border-white/5 bg-[#0F151B]/30 py-24">
+          <div class="container mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
+            <h2 class="mb-16 text-center text-3xl font-black tracking-tight text-white md:text-5xl">Sikca sorulan sorular</h2>
+            <div class="space-y-4">
+              {faqs.map((faq) => (
+                <details class="group overflow-hidden rounded-2xl border border-white/5 bg-[#FFFFFF]/[0.02] backdrop-blur-md transition-colors hover:border-white/10">
+                  <summary class="flex cursor-pointer items-center justify-between p-6 text-lg font-bold text-white transition-colors group-open:text-[var(--themePrimary)]">
+                    {faq.question}
+                    <svg xmlns="http://www.w3.org/2000/svg" class="ml-4 h-5 w-5 shrink-0 transition-transform group-open:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" /></svg>
+                  </summary>
+                  <div class="px-6 pb-6 text-base leading-relaxed text-gray-400">{faq.answer}</div>
+                </details>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
+      <ROICalculator client:visible sectorName={sectorName} />
+
+      <LeadPathways
+        title="Bu sayfadan sonra ziyaretciyi kaybetmeyin"
+        description="Sorunu anlayan biri genelde iki seye bakar: buna dair gercek proof var mi ve bir sonraki mantikli sayfa hangisi. Bu blok o gecisi kolaylastirir."
+        caseStudies={proofCases}
+        nextSteps={nextSteps}
+        contactHref={contactHref('solution-lead-pathways')}
+      />
+
+      <section class="relative z-10 py-16 lg:py-20">
+        <div class="container mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+          <div class="rounded-[2rem] border border-white/10 bg-white/[0.02] p-8 backdrop-blur-xl lg:p-10">
+            <div class="flex flex-col gap-8 lg:flex-row lg:items-start lg:justify-between">
+              <div class="max-w-2xl">
+                <div class="inline-flex rounded-full border border-[var(--themePrimary)]/20 bg-[var(--themePrimary)]/10 px-3 py-1 text-xs font-semibold uppercase tracking-[0.16em] text-[var(--themePrimary)]">
+                  {currentOffer.badge}
+                </div>
+                <h2 class="mt-5 text-3xl font-black tracking-tight text-white">{currentOffer.title}</h2>
+                <p class="mt-4 text-base leading-relaxed text-gray-400">{currentOffer.description}</p>
+              </div>
+
+              <a href={contactHref('solution-offer-panel')} class="inline-flex items-center justify-center rounded-2xl bg-[var(--themePrimary)] px-6 py-4 text-center text-base font-black text-black transition hover:-translate-y-0.5 hover:bg-[var(--themeAccent)]">
+                {currentOffer.cta}
+              </a>
+            </div>
+
+            <div class="mt-8 grid gap-4 md:grid-cols-3">
+              {currentOffer.bullets.map((item) => (
+                <div class="rounded-2xl border border-white/8 bg-black/20 p-5 text-sm leading-relaxed text-gray-300">
+                  {item}
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="relative overflow-hidden py-32">
+        <div class="theme-bg pointer-events-none absolute inset-0 opacity-[0.02]"></div>
+
+        <div class="container relative z-10 mx-auto max-w-5xl px-4 text-center">
+          <div class="group relative overflow-hidden rounded-[3rem] border border-white/10 bg-[#FFFFFF]/[0.02] p-12 shadow-2xl backdrop-blur-2xl lg:p-24">
+            <div class="pointer-events-none absolute inset-0 opacity-0 blur-3xl transition-opacity duration-1000 group-hover:opacity-100" style="background: radial-gradient(circle at center, var(--themeGlow) 0%, transparent 70%);"></div>
+
+            <h2 class="relative z-10 mb-8 text-3xl font-black leading-[1.1] tracking-tight text-white md:text-4xl lg:text-5xl">{finalCtaTitle}</h2>
+            <p class="relative z-10 mx-auto mb-12 max-w-3xl text-lg font-medium leading-relaxed text-gray-400 md:text-xl">{finalCtaSubtitle}</p>
+
+            <div class="relative z-10 flex flex-col items-center justify-center gap-6 sm:flex-row">
+              <a href={contactHref('solution-final-cta')} class="theme-bg group relative inline-flex items-center gap-3 rounded-2xl px-12 py-6 text-xl font-black text-black transition-all duration-500 hover:-translate-y-1" style="box-shadow: 0 0 30px var(--themeGlow);">
+                Projeyi baslat
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 transition-transform group-hover:-translate-y-1 group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M13 5l7 7-7 7M5 5l7 7-7 7" />
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </article>
+
+    {faqSchema && <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />}
+    <script type="application/ld+json" set:html={JSON.stringify(serviceSchema)} />
+    {schema && <script type="application/ld+json" set:html={schema} />}
   </main>
 </BaseLayout>

@@ -1,16 +1,18 @@
 ---
-/**
- * Blog Post Detail Page — SSR (not prerendered)
- * Dynamic route: /blog/[slug]/
- * Fetches single post by slug from Supabase, renders markdown content.
- * Includes Article Schema.org for rich search results.
- */
 export const prerender = false;
 
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import { supabase } from '../../lib/supabase';
+import { sanitizeHtml } from '../../lib/sanitizeHtml';
 import type { BlogPost } from '../../lib/supabase';
 import { marked } from 'marked';
+
+interface LinkCard {
+  href: string;
+  title: string;
+  description: string;
+  badge?: string;
+}
 
 const { slug } = Astro.params;
 
@@ -31,8 +33,89 @@ if (error || !data) {
 }
 
 const post = data as BlogPost;
-const htmlContent = await marked(post.content);
-const formattedDate = new Date(post.published_at || post.created_at || '').toLocaleDateString('tr-TR', { year: 'numeric', month: 'long', day: 'numeric' });
+const rawHtmlContent = await marked(post.content);
+const htmlContent = sanitizeHtml(rawHtmlContent);
+const formattedDate = new Date(post.published_at || post.created_at || '').toLocaleDateString('tr-TR', {
+  year: 'numeric',
+  month: 'long',
+  day: 'numeric',
+});
+
+const topicalText = [post.title, post.excerpt, post.category, ...(post.tags || [])]
+  .filter(Boolean)
+  .join(' ')
+  .toLowerCase();
+
+const isGrowth = /(lead|marketing|pazarlama|linkedin|outbound|email|crm|satis|musteri)/.test(topicalText);
+const isFinance = /(muhasebe|fatura|tahsilat|finans|beyan|kdv|vergi|mutabakat|cari)/.test(topicalText);
+const isHr = /(ik|insan kaynak|bordro|maas|sgk|izin|mesai|tazminat)/.test(topicalText);
+
+const relatedSolutions: LinkCard[] = isFinance
+  ? [
+      {
+        href: '/on-muhasebe-ve-fatura/',
+        title: 'On muhasebe ve fatura otomasyonu',
+        description: 'Belge, veri girisi ve kontrol akislarini daha sistemli hale getirin.',
+        badge: 'Finance',
+      },
+      {
+        href: '/mutabakat-mektubu/',
+        title: 'Mutabakat ve takip akislarini kurun',
+        description: 'Ay sonu kapanis ve takip yukunu azaltan daha operasyonel sayfa.',
+        badge: 'Follow-up',
+      },
+      {
+        href: '/e-beyanname/',
+        title: 'Uyum ve beyan akislarini guclendirin',
+        description: 'Beyan, kontrol ve dokuman sureclerinde tekrar isi azaltin.',
+        badge: 'Compliance',
+      },
+    ]
+  : isHr
+    ? [
+        {
+          href: '/maas-hesaplama-motoru/',
+          title: 'IK ve bordro akislarini toparlayin',
+          description: 'Tekil hesaplardan ekip ici surec otomasyonuna gecis icin ana giris sayfasi.',
+          badge: 'HR',
+        },
+        {
+          href: '/bordro-hesaplama/',
+          title: 'Bordro destek akislarini sadeletin',
+          description: 'Tekrarlayan maas, puantaj ve personel taleplerini duzenli yonetin.',
+          badge: 'Payroll',
+        },
+        {
+          href: '/sgk-hizmet-dokumu/',
+          title: 'Belge ve personel dogrulama akislarini iyilestirin',
+          description: 'IK ekiplerinde belge tabanli tekrar isi azaltmak icin.',
+          badge: 'Ops',
+        },
+      ]
+    : [
+        {
+          href: '/marketing-otomasyonu/',
+          title: 'Marketing otomasyonu',
+          description: 'Form, icerik, outbound ve lead takip akislarini tek sistem mantiginda ele alin.',
+          badge: 'Growth',
+        },
+        {
+          href: '/crm-programi/',
+          title: 'CRM programi',
+          description: 'Gorusme, takip ve pipeline kayiplarini azaltan merkez sayfa.',
+          badge: 'CRM',
+        },
+        {
+          href: '/b2b-musteri-bulma/',
+          title: 'B2B musteri bulma',
+          description: 'Arastirma, hedef hesap secimi ve nitelikli outbound tarafini guclendirin.',
+          badge: 'Outbound',
+        },
+      ];
+
+const contactPackage = isFinance ? 'finans-operasyon-analizi' : isHr ? 'ik-surec-analizi' : 'lead-flow-audit';
+const contactArea = isFinance ? 'finance-accounting' : isHr ? 'other' : 'marketing-leads';
+const contactHref = `/iletisim/?kaynak=${encodeURIComponent(`/blog/${post.slug}/`)}&paket=${contactPackage}&alan=${contactArea}`;
 
 const articleSchema = {
   '@context': 'https://schema.org',
@@ -52,14 +135,14 @@ const articleSchema = {
     url: 'https://yapayzekapratik.com',
     logo: {
       '@type': 'ImageObject',
-      url: 'https://yapayzekapratik.com/logo.png',
+      url: 'https://yapayzekapratik.com/apple-touch-icon.png',
     },
   },
   mainEntityOfPage: {
     '@type': 'WebPage',
     '@id': `https://yapayzekapratik.com/blog/${post.slug}/`,
   },
-  image: post.cover_image_url || 'https://yapayzekapratik.com/placeholder.svg',
+  image: post.og_image_url || post.cover_image_url || 'https://yapayzekapratik.com/og-homepage.jpg',
   articleBody: post.content.substring(0, 500),
   keywords: (post.tags || []).join(', '),
   articleSection: post.category,
@@ -80,23 +163,23 @@ const breadcrumbs = [
   ogType="article"
   breadcrumbs={breadcrumbs}
 >
-  <article class="py-24">
-    <div class="container mx-auto px-4 max-w-3xl">
-      <a href="/blog/" class="text-sm text-[var(--color-text-muted)] hover:text-[var(--color-primary-light)] transition-colors mb-8 inline-block">
-        ← Tüm Blog Yazıları
+  <article class="bg-[#0B0F14] py-24">
+    <div class="container mx-auto max-w-3xl px-4">
+      <a href="/blog/" class="mb-8 inline-block text-sm text-[var(--color-text-muted)] transition-colors hover:text-[var(--color-primary-light)]">
+        Tum blog yazilari
       </a>
 
       {post.cover_image_url && (
         <img
           src={post.cover_image_url}
           alt={post.cover_image_alt || post.title}
-          class="w-full h-auto rounded-2xl mb-8"
+          class="mb-8 h-auto w-full rounded-2xl"
         />
       )}
 
-      <h1 class="text-3xl md:text-4xl font-bold mb-4">{post.title}</h1>
+      <h1 class="mb-4 text-3xl font-bold md:text-4xl text-white">{post.title}</h1>
 
-      <div class="flex items-center gap-4 mb-6 text-[var(--color-text-muted)]">
+      <div class="mb-6 flex items-center gap-4 text-[var(--color-text-muted)]">
         <span>{post.author}</span>
         <span>•</span>
         <span>{formattedDate}</span>
@@ -105,34 +188,65 @@ const breadcrumbs = [
       </div>
 
       {(post.tags || []).length > 0 && (
-        <div class="flex flex-wrap gap-2 mb-8">
+        <div class="mb-8 flex flex-wrap gap-2">
           {(post.tags || []).map((tag) => (
-            <span class="px-3 py-1 rounded-full text-sm text-[var(--color-primary-light)] border border-[var(--color-primary)]/30">
+            <span class="rounded-full border border-[var(--color-primary)]/30 px-3 py-1 text-sm text-[var(--color-primary-light)]">
               #{tag}
             </span>
           ))}
         </div>
       )}
 
-      <div class="prose prose-invert prose-lg max-w-none
-        prose-headings:text-white prose-headings:font-semibold
-        prose-p:text-[var(--color-text-muted)]
-        prose-a:text-[var(--color-primary-light)] prose-a:no-underline hover:prose-a:underline
-        prose-strong:text-white
-        prose-code:text-[var(--color-primary-light)] prose-code:bg-[var(--color-surface-light)] prose-code:px-1.5 prose-code:py-0.5 prose-code:rounded
-        prose-pre:bg-[var(--color-surface-light)] prose-pre:border prose-pre:border-[var(--color-border)] prose-pre:rounded-xl
-        prose-blockquote:border-[var(--color-primary)] prose-blockquote:text-[var(--color-text-muted)]
-        prose-li:text-[var(--color-text-muted)]
-        prose-img:rounded-xl"
+      <div
+        class="prose prose-invert prose-lg max-w-none prose-headings:text-white prose-headings:font-semibold prose-p:text-[var(--color-text-muted)] prose-a:text-[var(--color-primary-light)] prose-a:no-underline hover:prose-a:underline prose-strong:text-white prose-code:rounded prose-code:bg-[var(--color-surface-light)] prose-code:px-1.5 prose-code:py-0.5 prose-code:text-[var(--color-primary-light)] prose-pre:rounded-xl prose-pre:border prose-pre:border-[var(--color-border)] prose-pre:bg-[var(--color-surface-light)] prose-blockquote:border-[var(--color-primary)] prose-blockquote:text-[var(--color-text-muted)] prose-li:text-[var(--color-text-muted)] prose-img:rounded-xl"
         set:html={htmlContent}
       />
 
       {post.author_bio && (
-        <div class="mt-12 p-6 bg-[var(--color-surface-light)] border border-[var(--color-border)] rounded-2xl">
-          <h3 class="text-lg font-semibold mb-2">Yazar Hakkında</h3>
+        <div class="mt-12 rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface-light)] p-6">
+          <h2 class="mb-2 text-lg font-semibold text-white">Yazar hakkinda</h2>
           <p class="text-[var(--color-text-muted)]">{post.author_bio}</p>
         </div>
       )}
+
+      <div class="mt-16 grid gap-8 lg:grid-cols-[1.05fr_0.95fr]">
+        <div class="rounded-[2rem] border border-[var(--color-border)] bg-[var(--color-surface-light)]/60 p-8">
+          <h2 class="text-2xl font-semibold text-white">Ilgili sonraki sayfalar</h2>
+          <div class="mt-6 space-y-4">
+            {relatedSolutions.map((item) => (
+              <a href={item.href} class="block rounded-2xl border border-[var(--color-border)] bg-black/10 p-5 transition hover:-translate-y-0.5 hover:border-[var(--color-primary)]/40">
+                {item.badge && (
+                  <div class="mb-3 inline-flex rounded-full border border-[var(--color-primary)]/20 bg-[var(--color-primary)]/10 px-3 py-1 text-xs font-semibold uppercase tracking-[0.16em] text-[var(--color-primary)]">
+                    {item.badge}
+                  </div>
+                )}
+                <h3 class="text-lg font-semibold text-white">{item.title}</h3>
+                <p class="mt-2 text-sm leading-relaxed text-[var(--color-text-muted)]">{item.description}</p>
+              </a>
+            ))}
+          </div>
+        </div>
+
+        <div class="rounded-[2rem] border border-[var(--color-primary)]/20 bg-[var(--color-primary)]/8 p-8">
+          <div class="inline-flex rounded-full border border-[var(--color-primary)]/25 bg-[var(--color-primary)]/10 px-3 py-1 text-xs font-semibold uppercase tracking-[0.16em] text-[var(--color-primary)]">
+            Donusum
+          </div>
+          <h2 class="mt-5 text-3xl font-black tracking-tight text-white">Bu konuyu kendi surecinize uygulamak ister misiniz?</h2>
+          <p class="mt-4 text-sm leading-relaxed text-[var(--color-text-muted)]">
+            Kisa bir analiz ile bu yazidaki fikrin sizin ekipte nerede en hizli geri donus uretecegini birlikte belirleyelim.
+          </p>
+
+          <ul class="mt-6 space-y-3 text-sm text-[var(--color-text-muted)]">
+            <li>Sayfaya gore kaynak takibi</li>
+            <li>Konuya uygun analiz paketi</li>
+            <li>Somut sonraki adim onerisi</li>
+          </ul>
+
+          <a href={contactHref} class="mt-8 inline-flex w-full items-center justify-center rounded-2xl bg-[var(--color-primary)] px-5 py-4 text-center text-base font-black text-black transition hover:-translate-y-0.5 hover:bg-[var(--color-primary-light)]">
+            Ucretsiz analizi talep et
+          </a>
+        </div>
+      </div>
     </div>
   </article>
 

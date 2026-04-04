@@ -1,41 +1,39 @@
 ---
 import CalculatorLayout from '../layouts/CalculatorLayout.astro';
 
+const title = 'Gecikme Zammi Hesaplama | Acik Alacak ve Tahsilat Takip Akisi';
+const description = 'Gecikme zammi ihtiyaci cogu durumda tek faiz hesabi degil; acik alacaklari gormek, takip etmek ve tahsilat iletisimini duzenli yonetmektir.';
+const keywords = 'gecikme zammi hesaplama, acik alacak, tahsilat takibi, vadesi gecmis fatura, borc hatirlatma';
 
-const title = "Gecikme Zammı Hesaplama & Otonom Tahsilat Robotu | Pratik Yapay Zeka";
-const description = "Vadesi geçmiş faturaları otomatik tespit eden, ticari temerrüt faizini hesaplayan ve müşterilere WhatsApp'tan nazik tahsilat hatırlatmaları yapan yapay zeka.";
-const keywords = "gecikme zammı hesaplama, yasal faiz hesaplama, fatura gecikme bedeli, tahsilat otomasyonu, otomatik borç hatırlatma";
-
-// FAQ Schema
 const faqData = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
     {
-      "@type": "Question",
-      "name": "Borç hatırlatmaları bizim adımıza kimden gidiyor?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Firmanızın resmi WhatsApp API hattından veya muhasebe@firmaniz.com adresinden, şirketinize özel belirlenmiş bir dil ve tonla (Örn: yasal, kurumsal veya samimi) gönderilir."
-      }
+      '@type': 'Question',
+      name: 'Bu sayfa resmi faiz hesap makinesi mi?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Hayir. Bu sayfa, gecikme zammi ihtiyacinin neden acik alacak ve tahsilat takibi problemine donustugunu anlatir.',
+      },
     },
     {
-      "@type": "Question",
-      "name": "Müşteri bota cevap verirse ne olur?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Örneğin müşteri 'Cuma günü ödeyeceğim' derse, yapay zeka NLP ile bunu algılar, CRM'e not düşer ve hatırlatmayı Cuma gününe kadar durdurur. Cuma günü ödeme gelmezse mesai bitiminde tekrar devreye girer."
-      }
+      '@type': 'Question',
+      name: 'Asil darboğaz nerede cikar?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Asil darboğaz cogu zaman faizi formulle bulmakta degil; hangi faturanin hangi durumda oldugunu gormek ve tahsilat iletisimini planli yurutmektedir.',
+      },
     },
     {
-      "@type": "Question",
-      "name": "Gecikme zammını hesaplarken hangi faiz oranını kullanıyor?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "TCMB tarafından ilan edilen güncel ticari temerrüt faiz oranlarını veya şirketinizin sözleşmelerindeki özel gecikme faizi oranlarını (veritabanınızdan okuyarak) otonom olarak kullanır."
-      }
-    }
-  ]
+      '@type': 'Question',
+      name: 'Kimler icin daha kritiktir?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Vadeli calisan, tekrarlayan tahsilat takibi yapan ve acik hesap trafigi yuksek olan B2B yapilar icin daha kritiktir.',
+      },
+    },
+  ],
 };
 ---
 
@@ -46,81 +44,82 @@ const faqData = {
   schema={JSON.stringify(faqData)}
 >
   <div class="space-y-12">
-    <!-- Hero Section -->
     <section>
-      <div class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-primary text-primary mb-4">Tahsilat & Nakit Akışı Operasyonları</div>
-      <h1 class="text-4xl lg:text-5xl font-bold tracking-tight mb-6">Gecikmiş Faturalar İçin Sadece Hesaplama Yapmayın, Tahsilat Yapın</h1>
-      <p class="text-xl text-muted-foreground leading-relaxed mb-8">
-        Müşterilerinizden ödeme istemek stresli mi? Vadeli alacaklarınızı ERP'nizden okuyan, yasal gecikme zammını hesaplayan ve müşterilerinize WhatsApp veya e-posta üzerinden profesyonel hatırlatmalar yapan yapay zeka tahsilat asistanı ile tanışın.
+      <div class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold border-primary text-primary mb-4">Tahsilat ve Acik Alacak Takibi</div>
+      <h1 class="text-4xl lg:text-5xl font-bold tracking-tight mb-6">Gecikme Zammini Tek Rakam Olarak Degil, Tahsilat Surecinin Parcasi Olarak Ele Alin</h1>
+      <p class="text-xl text-muted-foreground leading-relaxed max-w-4xl">
+        Gecikme zammi sorusu tek basina nadiren yeterlidir. Gercekte ekiplerin ihtiyaci, hangi faturanin vadesi gectigini gormek, hangi musteride hangi asamada olundugunu bilmek ve tahsilat iletisimini kisilere bagli kalmadan yurutmektir.
       </p>
     </section>
 
-    <!-- The Pain Points -->
+    <section class="grid gap-6 lg:grid-cols-3">
+      <div class="rounded-2xl border border-border bg-card p-6">
+        <h2 class="text-xl font-semibold mb-3">Acik Alacak Gorunurlugu</h2>
+        <p class="text-muted-foreground">Hangi faturanin hangi tarihte geciktigi net gorunmuyorsa faiz hesabi da gec kalir.</p>
+      </div>
+      <div class="rounded-2xl border border-border bg-card p-6">
+        <h2 class="text-xl font-semibold mb-3">Iletisim Sekansi</h2>
+        <p class="text-muted-foreground">Hatirlatma, takip ve geri donuslerin plansiz yurutulmesi tahsilati zayiflatir.</p>
+      </div>
+      <div class="rounded-2xl border border-border bg-card p-6">
+        <h2 class="text-xl font-semibold mb-3">Kapanis</h2>
+        <p class="text-muted-foreground">Odeme geldikten sonra dosyanin kapanmasi ve gereksiz takibin bitmesi de ayni derecede onemlidir.</p>
+      </div>
+    </section>
+
     <section class="bg-muted/30 p-8 rounded-2xl border border-border">
-      <h2 class="text-2xl font-semibold mb-6">Tahsilat Sürecinde Neden Para ve Müşteri Kaybediyorsunuz?</h2>
+      <h2 class="text-2xl font-semibold mb-6">Gecikme Zammi Konusunun Buyudugu Tipik Noktalar</h2>
       <ul class="space-y-4">
         <li class="flex items-start gap-3">
-          <svg class="w-6 h-6 text-destructive flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path></svg>
-          <p><strong>Yıpranan Ticari İlişkiler:</strong> Firma sahipleri veya satış personelinin kendi müşterisini borç için "darlamak" zorunda kalmasının yarattığı ticari gerginlik.</p>
+          <span class="mt-1 h-2.5 w-2.5 rounded-full bg-primary"></span>
+          <p><strong>Vadeli satis yapan yapilarda:</strong> Farkli vade tarihleri ve cari gruplari takip yukunu arttirir.</p>
         </li>
         <li class="flex items-start gap-3">
-          <svg class="w-6 h-6 text-destructive flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path></svg>
-          <p><strong>Manuel Takip Körlüğü:</strong> 30, 60 veya 90 gün vadesi geçmiş onlarca faturanın Excel veya düzensiz açık hesap (Cari) listelerinde gözden kaçması.</p>
+          <span class="mt-1 h-2.5 w-2.5 rounded-full bg-primary"></span>
+          <p><strong>Tahsilat kisiye bagliysa:</strong> Kim hangi musteriyi aradi, ne cevap alindi bilgisi dagilir.</p>
         </li>
         <li class="flex items-start gap-3">
-          <svg class="w-6 h-6 text-destructive flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path></svg>
-          <p><strong>Riskli Faiz Hesaplamaları:</strong> Yasal ticari temerrüt faiz oranlarının sürekli değişmesi nedeniyle müşteriye sunulan hatalı gecikme zammı faturaları.</p>
+          <span class="mt-1 h-2.5 w-2.5 rounded-full bg-primary"></span>
+          <p><strong>Acik hesap yogunsa:</strong> Geciken dosyalar gozden kacmaya baslar ve tahsilat ritmi bozulur.</p>
         </li>
       </ul>
     </section>
 
-    <!-- The Solution -->
     <section>
-      <h2 class="text-3xl font-bold mb-6">Maaş İstemeyen Tahsilat Uzmanınız: Pratik AI</h2>
+      <h2 class="text-3xl font-bold mb-6">Bu Sayfanin Isaret Ettigi Asil Cozum</h2>
       <p class="text-lg text-muted-foreground mb-8">
-        Faturanızın gecikme faizini web üzerinden hesaplamak tahsilatı sağlamaz. Tahsilatı sağlayan şey, müşterinizle olan iletişimi yıpratmadan, akıllı, ısrarcı ve tutarlı bir iletişim stratejisi (follow-up) kurmaktır.
+        Gecikme zammi konusu bizim icin bir faiz formulu degil, tahsilat takip sistemidir. Deger, acik alacaklari net gormekte, hatirlatma akislarini planlamakta ve dosyanin tahsilatla kapanisina kadar sureci izlenebilir kilmakta ortaya cikar.
       </p>
-
       <div class="grid md:grid-cols-3 gap-6">
         <div class="bg-card p-6 rounded-xl border border-border">
-          <div class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4">
-            <span class="text-2xl">🔍</span>
-          </div>
-          <h3 class="text-xl font-semibold mb-2">Açık Fatura Radarı</h3>
-          <p class="text-sm text-muted-foreground">Yapay zeka asistanı, Logo, Zirve veya Mikro gibi programlarınızdaki "Açık Hesap (Cari Hesap)" listesini her sabah otonom tarar ve vadesi dolanları belirler.</p>
+          <h3 class="text-xl font-semibold mb-2">Acil Dosya Gorunurlugu</h3>
+          <p class="text-sm text-muted-foreground">Vadesi gecmis dosyalar daha erken ve daha net ayrisir.</p>
         </div>
         <div class="bg-card p-6 rounded-xl border border-border">
-          <div class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4">
-            <span class="text-2xl">💬</span>
-          </div>
-          <h3 class="text-xl font-semibold mb-2">Akıllı ve İnsani Hatırlatma</h3>
-          <p class="text-sm text-muted-foreground">Gecikmenin 1. gününde nazik bir e-posta, 7. gününde "Gözünüzden kaçmış olabilir" diyen bir WhatsApp mesajı atar. Mesajın sonuna online ödeme linki (Sanal POS) ekler.</p>
+          <h3 class="text-xl font-semibold mb-2">Takip Disiplini</h3>
+          <p class="text-sm text-muted-foreground">Hatirlatma ve cevap akisi kisilere degil surece baglanir.</p>
         </div>
         <div class="bg-card p-6 rounded-xl border border-border">
-          <div class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4">
-            <span class="text-2xl">💰</span>
-          </div>
-          <h3 class="text-xl font-semibold mb-2">Gecikme Zammı Provizyonu</h3>
-          <p class="text-sm text-muted-foreground">Müşteriniz "Geciktirdim, faiziyle birlikte ödemek istiyorum" dediğinde, sistem TCMB oranlarına göre faizi anında hesaplayıp tahsilatı kapatır.</p>
+          <h3 class="text-xl font-semibold mb-2">Tahsilat Kapanisi</h3>
+          <p class="text-sm text-muted-foreground">Odeme sonrasi dosya ve cari durumu daha temiz sekilde kapanir.</p>
         </div>
       </div>
     </section>
 
-    <!-- FAQ -->
     <section class="max-w-3xl">
-      <h2 class="text-2xl font-bold mb-6">Sıkça Sorulan Sorular</h2>
+      <h2 class="text-2xl font-bold mb-6">Sikca Sorulan Sorular</h2>
       <div class="space-y-6">
         <div>
-          <h3 class="text-lg font-semibold mb-2">Borç hatırlatmaları bizim adımıza kimden gidiyor?</h3>
-          <p class="text-muted-foreground">Firmanızın resmi WhatsApp API hattından veya muhasebe@firmaniz.com adresinden, şirketinize özel belirlenmiş bir dil ve tonla (Örn: yasal, kurumsal veya samimi) gönderilir.</p>
+          <h3 class="text-lg font-semibold mb-2">Bu sayfa resmi faiz hesap makinesi mi?</h3>
+          <p class="text-muted-foreground">Hayir. Bu sayfa, gecikme zammi ihtiyacinin neden acik alacak ve tahsilat takibi problemine donustugunu anlatir.</p>
         </div>
         <div>
-          <h3 class="text-lg font-semibold mb-2">Müşteri bota cevap verirse ne olur?</h3>
-          <p class="text-muted-foreground">Örneğin müşteri 'Cuma günü ödeyeceğim' derse, yapay zeka NLP ile bunu algılar, CRM'e not düşer ve hatırlatmayı Cuma gününe kadar durdurur. Cuma günü ödeme gelmezse mesai bitiminde tekrar devreye girer.</p>
+          <h3 class="text-lg font-semibold mb-2">Asil darboğaz nerede cikar?</h3>
+          <p class="text-muted-foreground">Asil darboğaz cogu zaman formulle hesaplamakta degil; hangi faturanin hangi durumda oldugunu gormek ve takip sekansini duzenli yurutmektedir.</p>
         </div>
         <div>
-          <h3 class="text-lg font-semibold mb-2">Gecikme zammını hesaplarken hangi faiz oranını kullanıyor?</h3>
-          <p class="text-muted-foreground">TCMB tarafından ilan edilen güncel ticari temerrüt faiz oranlarını veya şirketinizin sözleşmelerindeki özel gecikme faizi oranlarını (veritabanınızdan okuyarak) otonom olarak kullanır.</p>
+          <h3 class="text-lg font-semibold mb-2">Kimler icin daha kritiktir?</h3>
+          <p class="text-muted-foreground">Vadeli calisan ve tekrarlayan tahsilat takibi yapan B2B yapilar icin daha kritiktir.</p>
         </div>
       </div>
     </section>

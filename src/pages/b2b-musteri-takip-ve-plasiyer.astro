@@ -2,43 +2,43 @@
 import SolutionLayout from '../layouts/SolutionLayout.astro';
 ---
 <SolutionLayout
-  title="B2B Müşteri Takip Programı ve Plasiyer Yönetimi | Yapay Zeka"
-  description="Plasiyerlerinizi veri girmekten kurtarın! WhatsApp'tan alınan toptan siparişleri doğrudan stok ve faturaya işleyen akıllı B2B CRM otomasyonu."
-  heroTitle="Geleneksel Plasiyer Modelini Bırakın, Yapay Zeka ile B2B'yi Otopilota Alın"
-  heroSubtitle="Sahadan gelen WhatsApp siparişlerindeki hatalara, veri girmekten nefret eden satışçılara ve alımı düşen 'uyuyan' carilere son. Plasiyerlerinizi raporlamadan kurtaran ve B2B toptan sipariş döngüsünü otopilota bağlayan akıllı takip sistemi."
+  title="B2B Musteri Takip ve Plasiyer Akisi | Saha Satis Otomasyonu"
+  description="B2B musteri takip ve plasiyer konusu CRM ekranindan cok, saha bilgisini siparis, tahsilat ve musteri durumuyla duzenli baglama problemidir."
+  heroTitle="Plasiyer Operasyonunu Rapor Yazma Isinden Cikarip Saha Akisina Dondurun"
+  heroSubtitle="B2B saha satisinda asil sorun cogu zaman uygulama eksikligi degil; ziyaret notlarinin, siparislerin, tahsilat bilgisinin ve uyuyan carilerin farkli yerlerde dağinik kalmasidir. Biz bu akisi tek bir saha-satis mantiginda toparlayan sistemler kuruyoruz."
   problems={[
-    "Plasiyer CRM İsyanı (Data Entry): Sahada çalışan satış temsilcilerinin, ziyaret sonrasında CRM veya muhasebe sistemine manuel not ve sipariş girmekten nefret etmesi.",
-    "WhatsApp Siparişlerindeki İnsan Hatası: Müşterinin WhatsApp'tan yazdığı toplu (toptan) siparişlerin merkeze iletilirken hatalı ürün kodu veya yanlış fiyatla (iskonto kayması) girilmesi.",
-    "Uyuyan Bayilerin Gözden Kaçması: Großhändler (toptancı) sistemlerinde bir bayinin veya müşterinin satın alma periyodunun yavaşladığının excel tabloları yüzünden ancak aylar sonra fark edilmesi."
+    "Plasiyerlerin ziyaret, siparis ve musteri notlarini duzenli girmemesi nedeniyle CRM verisinin eksik kalmasi.",
+    "Sahadan gelen siparis bilgisinin operasyon ve muhasebe tarafina eksik veya gec aktarilmasi.",
+    "Uzun suredir siparis vermeyen veya tahsilat riski tasiyan bayilerin gec fark edilmesi."
   ]}
-  processTitle="Otonom B2B Takibi Nasıl Çalışır?"
+  processTitle="B2B Saha Takip Akisi Nasil Sistemlesir?"
   processSteps={[
-    { title: "Sesli Komutla CRM Güncelleme (Zero-UI)", description: "Plasiyer bayiden çıkınca sadece WhatsApp'a sesli mesaj atar: 'X firmasıyla görüştüm, 50 karton malzeme istediler, %5 iskonto verdim.' Yapay zeka sesi metne okur ve verileri otomatik işler." },
-    { title: "WhatsApp Siparişi -> Stok ve Fatura", description: "B2B müşterinizin WhatsApp'tan attığı yazılı veya fotoğraflı sipariş listesi, yapay zeka tarafından saniyede ayrıştırılarak Mikro/Logo altyapısından düşer ve onaya yollanır." },
-    { title: "Churn (Kayıp Müşteri) Tahmini", description: "Algoritmalar B2B müşterilerinin satın alma döngülerini inceler. 'Y firması genelde ayda 2 kez sipariş verirdi, 3 haftadır sessiz' uyarısını plasiyerin cep telefonuna bildirir." },
-    { title: "7/24 B2B Self-Service Portal", description: "Plasiyere ihtiyaç duymadan, kurumsal müşterilerinizin kendi güncel bakiyelerini görebildiği, geçmiş faturaları alabildiği size özel otonom portal." }
+    { title: "Saha Bilgisini Toplama", description: "Ziyaret notu, siparis sinyali, tahsilat durumu ve musteri geri bildirimi tek mantikta ele alinir." },
+    { title: "Siparis ve Cari Baglantisi", description: "Sahadaki bilgi yalnizca not olarak kalmaz; siparis, bakiye ve musteri durumuyla baglanir." },
+    { title: "Onceliklendirme", description: "Uyuyan cari, aktif firsat, riskli bakiye veya yeniden ziyaret gerektiren hesaplar ayrisir." },
+    { title: "Saha ve Merkez Uyum", description: "Plasiyer, satis yonetimi ve operasyon ayni dosyaya daha guncel gozle bakar." }
   ]}
-  featuresTitle="Satış Ekibinizi Veri Memuru Olmaktan Çıkaran Teknolojiler"
+  featuresTitle="Plasiyer ve B2B Takipte Asil Deger Ureten Katman"
   features={[
-    { title: "Dinamik İskonto Kontrolü", description: "Plasiyer WhatsApp üzerinden bir indirim teklifi girdiğinde, yapay zeka o müşterinin yıllık tonajını/cirosunu kontrol edip iskonto onayını anında muhasebeden geçirir." },
-    { title: "Görsel (Fotoğraf) Sipariş Analizi", description: "Özellikle tekstil veya hırdavat gibi alanlarda elle yazılan sipariş fişi fotoğraflarını (OCR) %100 doğrulukla dijital emre dönüştürür." },
-    { title: "Akıllı Rota ve Randevu Optimizasyonu", description: "Yapay zeka, trafiği ve müşterilerin son sipariş potansiyellerini hesaplayarak plasiyere 'Bugün şu 5 firmayı ziyaret etmelisin' bildirisini sabah çıkarır." },
-    { title: "Tahsilat ve Vade Robotu", description: "Plasiyer müşterinin yanına gitmeden önce, sistem plasiyere 'Bu firmanın 45 gün gecikmiş 21.000 TL borcu var, sıcak satış yapma tahsilat iste' uyarısını gizlice iletir." }
+    { title: "Saha Verisini Hafifletme", description: "Satis temsilcisi uzun rapor yazmak yerine daha hizli girdi ve daha net takip yapisiyla ilerler." },
+    { title: "Siparis ve Tahsilat Gorunurlugu", description: "Musteri takibi yalnizca ziyaret notundan ibaret kalmaz; ticari durumla baglanir." },
+    { title: "Uyuyan Cari Sinyalleri", description: "Alim ritmi dusen veya ilgisi azalan hesaplar daha erken gorunur olur." },
+    { title: "Saha-Merkez Baglantisi", description: "Plasiyer bilgisi, operasyon ve finans tarafindan daha kullanilabilir hale gelir." }
   ]}
-  benefitsTitle="B2B Operasyonunuzdaki Sızıntıları Durduran Matematik"
+  benefitsTitle="B2B Saha Operasyonundaki Net Kazanc"
   benefits={[
-    "%90", "CRM Veri Giriş (Data Entry) Mesaisinde Düşüş. Plasiyer rapor yazmaz, sadece konuşur.",
-    "0", "Telefonla söylenen toptan siparişlerde yaşanan miktar ve ürün kodu anlaşmazlığı kaynaklı iadeler.",
-    "%35", "Düşen Müşteri (Churn) Kurtarma Oranı. Tahmine dayalı uyarılarla kaybolan ciroyu rakiplere gitmeden engeller."
+    "Daha Az Veri Direnci", "Plasiyer icin takip işi daha hafif ve daha kullanılabilir hale gelir.",
+    "%100", "Daha görünür musteri durumu. Ziyaret, siparis ve cari sinyalleri ayni baglamda görülür.",
+    "Daha Erken Aksiyon", "Uyuyan veya riskli hesaplarda gec degil, daha zamaninda hareket edilir."
   ]}
-  caseStudyDescription="Ulusal çapta dağıtım yapan toptan gıda firmamız, 40 plasiyerinin telefon/WhatsApp ile aldığı siparişleri merkeze geçirirken her siparişte ortalama 4 dakika kaybediyordu. Sesli AI CRM yapısıyla her sipariş saniye bazlı olarak Logo sistemine fatura olarak düşmeye başladı."
-  finalCtaTitle="Sahayı Bırakıp Excel'e Dönmeyin"
-  finalCtaSubtitle="B2B müşteri takibinde insan kusurunu silin ve satış potansiyelinizi otonom sisteme teslim edin."
+  caseStudyDescription="Saha ekibiyle merkez ekip arasinda musteri bilgisini duzenli akitamayan bir B2B yapisi, ziyaret-siparis-cari akislarini birlikte ele almaya basladiginda hem takip kalitesini hem de aksiyon hizini artirdi."
+  finalCtaTitle="Plasiyer Takibini Not Toplamaktan Cikaralim"
+  finalCtaSubtitle="Saha satis akisinizde bilgi nerede dagiliyor birlikte cikaralim; ziyaret, siparis ve cari durumunu tek akista nasil birlestirebilecegimizi netlestirelim."
   sectorTheme="b2b"
   faqs={[
-    { question: "B2B sipariş sistemi mevcut muhasebe (Logo Yazılım, Mikro vb.) ile uyumlu mu?", answer: "Kesinlikle. Yapay zeka asistanımız API ile mevcut muhasebe altyapınızı çift yönlü asenktron besler. Siparişi yaratır, stoğu çeker, geçmiş bakiyeyi okur." },
-    { question: "Müşteriler veya plasiyerler yeni bir uygulama (App) indirmek zorunda mı?", answer: "Hayır. Sistemimizin en büyük avantajı %100 WhatsApp veya mevcut kanallar üzerinden (Zero-UI) çalışmasıdır. Kimse yeni bir uygulama öğrenmekle veya indirmekle uğraşmaz." },
-    { question: "Sesli gönderilen 'Şundan 10 tane, bundan 5 koli' gibi karmaşık mesajları doğru anlayabilir mi?", answer: "Sistem NLP (Doğal Dil İşleme) modelimizle sadece metin değil, bağlamı da analiz eder. Koli, palet, düzine gibi sektörünüzün tüm birimlerini sizin kataloğunuza göre algılar." }
+    { question: "Bu sayfa klasik bir plasiyer uygulamasi mi anlatiyor?", answer: "Hayir. Odak bir mobil uygulama satmaktan cok, saha bilgisini siparis ve musteri durumuyla birlikte isleyen operasyon akisidir." },
+    { question: "En cok hangi firmalarda anlamli olur?", answer: "Bayi agi olan, saha satisi yapan ve CRM verisi ile gercek operasyon verisi arasinda kopukluk yasayan firmalarda daha anlamlidir." },
+    { question: "Plasiyer yine veri girmek zorunda kalir mi?", answer: "Belli duzeyde girdi her zaman gerekir; amac bu yukü azaltmak ve daha kullanisli hale getirmektir." }
   ]}
-  sectorName="B2B Müşteri Takibi"
+  sectorName="B2B Saha Satis ve Plasiyer Takibi"
 />

@@ -2,43 +2,43 @@
 import SolutionLayout from '../layouts/SolutionLayout.astro';
 ---
 <SolutionLayout
-  title="Teklif Hazırlama Programı | Excel Kur Riskine Son"
-  description="Hatalı VLOOKUP formüllerini ve kur riski taşıyan Excel şablonlarını bırakın. Gelen talepleri anlayan ve Merkez Bankası canlı kuruyla kusursuz PDF teklifler oluşturan otonom sistem."
-  heroTitle="Hatalı Excel Şablonlarını Bırakın, Kusursuz Teklifler Hazırlayın"
-  heroSubtitle="Satış ekibinizin döviz kurlarını yanlış hesaplama (Kur Riski) ve hatalı Excel (VLOOKUP) kullanımına son. Gelen Müşteri e-postalarını okuyup saniyeler içinde hatasız, kurumsal PDF tekliflere çeviren otonom yazılım."
+  title="Teklif Hazırlama Programı | Teklif, Fiyat ve Onay Akışı Otomasyonu"
+  description="Teklif hazırlama programı arıyorsanız sadece PDF oluşturan bir araç değil; fiyat, kur, onay ve follow-up akışını düzenleyen bir sistem kurmak gerekir."
+  heroTitle="Teklif Hazırlamayı Excel Dosyası Değil, Satış Süreci Gibi Yönetin"
+  heroSubtitle="Talep e-postası geldiğinde fiyatı manuel toplamak, eski şablon açmak, döviz kurunu kontrol etmek ve PDF hazırlamak zorunda kalmayın. Teklif üretimi, onay ve takip sürecini daha sistemli hale getiren yapay zeka destekli akışlar kuruyoruz."
   problems={[
-    "Kur Riski ve Yanlış Fiyatlama: Teklif beklerken değişen döviz kurlarının statik Excel şablonlarında güncellenmemesi sonucu satışı zararla kapatma riski.",
-    "Hantal Yerli Yazılımlar: On binlerce lira ödenen ancak firmanızın özel iş yapış şekline uyarlanamayan, sürekli 'Proxy veya Sunucu Hatası' veren kapalı teklif programları.",
-    "Takipsizlik ve Karanlık Kutu Etkisi: Gönderilen PDF teklifin müşteri tarafından okunup okunmadığının, ne kadar süre incelendiğinin bilinmemesi ve kaçan 'Follow-up' fırsatları."
+    "Tekliflerin Excel, eski şablonlar ve kişisel dosyalar üzerinden hazırlanması nedeniyle fiyat, kur ve sürüm hatalarının oluşması.",
+    "Teklif hazırlama sürecinin satış ekibi için zaman emen bir operasyon haline gelmesi ve cevap süresinin uzaması.",
+    "Teklif gönderildikten sonra okunup okunmadığının, ne zaman takip edilmesi gerektiğinin ve hangi aşamada kaldığının net olmaması."
   ]}
-  processTitle="Otonom Teklif Döngüsü Nasıl İşler?"
+  processTitle="Teklif Süreci Nasıl Sistemleştiriliyor?"
   processSteps={[
-    { title: "Niyet Okuma ve Fiyat İsteği Algılama", description: "Sisteme düşen 'Bize 50 adet X ve 20 adet Y için fiyat çalışabilir misiniz?' şeklindeki düz metin e-postayı veya WhatsApp mesajını okur ve anlar." },
-    { title: "Dinamik Canlı Kur Entegrasyonu", description: "Merkez Bankası (TCMB) veya banka API'nizden o saniyenin güncel Dolar/Euro kurunu çekerek, CRM'deki kâr marjınızla anında Türk Lirasına çevirir." },
-    { title: "Kurumsal PDF Taslağı (Zero-Touch)", description: "Şirket logonuz, T&C (Şartlar) ve görsellerinizle kusursuz bir tasarım oluşturup onayınıza sunar. Satışçının sadece 'Gönder' butonuna basması yeterlidir." },
-    { title: "Canlı Okunma (Read) Bildirimi", description: "Müşteri teklif PDF'ini açtığı tam o saniyede, yapay zeka satış temsilcisinin telefonuna 'Müşteri Y şu an teklifi inceliyor, aramaya hazırlan' pingu atar." }
+    { title: "Talep ve Fiyat Girdilerini Toplama", description: "Gelen müşteri talebini, ilgili ürün veya hizmet bilgilerini ve fiyat kaynaklarını tek akışta topluyoruz." },
+    { title: "Taslak Teklif Oluşturma", description: "Şirket yapınıza göre teklif taslağını, fiyat mantığını ve gerekli alanları daha hızlı hazırlanır hale getiriyoruz." },
+    { title: "Onay ve Gönderim Akışı", description: "Kimin kontrol edeceği, ne zaman gönderileceği ve hangi durumda revizyona döneceği net bir akış haline geliyor." },
+    { title: "Takip ve Satışa Dönüş", description: "Gönderilen tekliflerin takibi, geri dönüş ve follow-up mantığı satış sürecine bağlanıyor." }
   ]}
-  featuresTitle="Satış Ekibinizi Hızlandıran Güçlü Asistanlar"
+  featuresTitle="Teklif Üretimini Çalışan Bir Satış Katmanına Dönüştüren Yapı"
   features={[
-    { title: "Müşteriye Özel Segment İskontosu", description: "Yapay zeka, teklif isteyen firmanın geçmiş cirosunu tarar ve sistemin izin verdiği maksimum % iskonto oranını otomatik olarak PDF'e ekler." },
-    { title: "Alternatif Ürün (Upsel/Cross-sell) Önerimi", description: "Hazırlanan ana teklifin yanına, 'Diğer müşterilerimiz X ürünü ile birlikte Y ürününü de alıyor' şeklinde akıllı bir ek teklif sayfası iliştirir." },
-    { title: "Elektronik İmza (e-Sign) Desteği", description: "Gönderilen tekliflerin yazdırılıp taranmasına gerek kalmaz. Müşteri tarayıcı üzerinden saniyeler içinde yasal geçerli e-imza ile teklifi onaylayabilir." },
-    { title: "ERP Veritabanı ile Senkronizasyon", description: "Logo, SAP veya Mikro'dan ürün fiyat ve speklerini anlık olarak alarak asla güncelliğini yetirmiş bir ürünün satılmamasını sağlar." }
+    { title: "Merkezi Şablon ve Fiyat Mantığı", description: "Her temsilcinin farklı dosyayla çalışması yerine teklif yapısı ortak mantıkla ilerler." },
+    { title: "Kur ve Fiyat Kontrol Katmanı", description: "Dövizli veya değişken fiyatlı işlerde yanlış sürüm ve eski veri riski azaltılır." },
+    { title: "Onay ve Revizyon Akışı", description: "Teklifin taslak, onay ve gönderim adımları görünür olur; süreç kişisel hatırlatmaya kalmaz." },
+    { title: "Teklif Sonrası Follow-up", description: "Teklif üretimi satıştan kopmaz; hangi teklifin takip beklediği daha net görünür." }
   ]}
-  benefitsTitle="Excel Hamallığını Bırakanların Kazanç Tablosu"
+  benefitsTitle="Teklif Sürecindeki Net Kazanç"
   benefits={[
-    "%100", "Kur Riski Koruması. Yanlış kur veya eski fiyattan çıkılan tekliflerden kaynaklanan net kâr erimesi sıfırlanır.",
-    "15 Saniye", "Müşteri talebinin geldiği an ile kusursuz kurumsal PDF teklifin hazırlandığı an arasındaki süre.",
-    "%60", "Dönüşüm (Conversion) Artışı. Canlı okunma bildirimleri sayesinde müşteri en sıcak olduğu an aranır."
+    "Daha Hızlı Dönüş", "Müşteri talebine cevap süresi kısalır; ekip hazırlık yerine satış konuşmasına daha fazla zaman ayırır.",
+    "%100", "Teklif sürümü ve akış görünürlüğü. Hangi teklifin son hali olduğu daha net hale gelir.",
+    "Daha Az Hata", "Eski dosya, yanlış kur ve unutulan takip kaynaklı satış sürtünmesi azalır."
   ]}
-  caseStudyDescription="Endüstriyel yedek parça üreten Dinosoft kaynaklı lokal bir yazılımdan kurtulan B2B müşterimiz, Excel'de 45 dakika süren ithal malzeme tekliflerini Live-Kur otonomisi ile 1 dakikanın altına indirdi."
-  finalCtaTitle="Teklif Sürecinizi Excel'den Kurtarın"
-  finalCtaSubtitle="Hatalı formüllere ve unutulan döviz kurlarına veda edin. Kusursuz tekliflerle satışları artırın."
+  caseStudyDescription="Tekliflerini dağınık Excel ve dosya şablonlarıyla hazırlayan bir ekip, süreci sistemleştirince hem dönüş hızını artırdı hem de fiyatlama ve takip tarafında daha kontrollü çalışmaya başladı."
+  finalCtaTitle="Teklif Sürecinizi Kişisel Dosyalardan Kurtarın"
+  finalCtaSubtitle="Mevcut fiyatlama ve teklif akışınızı inceleyelim; hangi noktaların otomasyona en uygun olduğunu ve satış ekibini nerede hızlandırabileceğimizi birlikte çıkaralım."
   sectorTheme="crm"
   faqs={[
-    { question: "Teklif formları ve şablonlar bizim kurumsal kimliğimize (Logo/Renk) uyarlanabilir mi?", answer: "Sistem %100 white-label yapıdadır. Antetli kağıdınız, logo, font, ve yasal uyarı (şartname) metinlerinizin tamamı PDF nesnesine gömülür." },
-    { question: "Satışçı onayı olmadan müşteriye otomatik fiyat gidebilir mi?", answer: "Hayır. Sistem 'Human-in-the-Loop' prensibiyle çalışır. Zeka her şeyi hazırlar (Taslak), ancak son inceleme ve 'Gönder' butonu satış temsilcisinin elindedir." },
-    { question: "Piyasada kullanılan 'Hazır Yazılımlardan' (SaaS) farkı nedir?", answer: "Hazır teklif programları sizi kendi hantal standartlarına uymaya zorlar. Bizim sistemimiz API öncelikli çalıştığı için, Whatsapp, E-Posta veya CRM'iniz (Zendesk vb.) içinden görünmez olarak çalışır." }
+    { question: "Bu sistem sadece teklif PDF'i üretmek için mi?", answer: "Hayır. Asıl değer teklifin hazırlanma, onaylanma, gönderilme ve takip edilme sürecinin birlikte ele alınmasıdır." },
+    { question: "Kur ve fiyat değişimlerinin yoğun olduğu işlerde faydalı olur mu?", answer: "Evet. Özellikle döviz, ürün varyasyonu veya sık fiyat güncellemesi olan yapılarda teklif sürecini daha kontrollü hale getirmek için uygundur." },
+    { question: "Teklif süreci CRM ile birlikte çalışabilir mi?", answer: "Evet. Bu sayfanın en güçlü kullanımı CRM ve satış takibiyle bağlantılı çalıştığı senaryolardır; teklif üretimi böylece satış akışından kopmaz." }
   ]}
   sectorName="Teklif Hazırlama"
 />

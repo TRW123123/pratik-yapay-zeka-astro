@@ -6,19 +6,18 @@ import WhyUs from '../components/WhyUs.astro';
 import Timeline from '../components/Timeline.astro';
 import MiniCases from '../components/MiniCases.astro';
 
-// FAQ Content for Schema (SEO JSON-LD)
 const faqItems = [
-  { question: 'Kurulum ne kadar sürer?', answer: 'Genellikle 2 gün. Basit entegrasyonlar aynı gün, karmaşık sistemler 1 hafta sürebilir.' },
-  { question: 'Veri güvenliği nasıl sağlanır?', answer: 'Müşteri verileri tamamen gizli tutulur, erişimler sınırlıdır. GDPR uyumlu çalışıyoruz.' },
-  { question: 'İçeriğin sahipliği kime ait?', answer: 'Üretilen tüm içerikler size aittir. Telif hakkı sorunu yaşamazsınız.' },
-  { question: 'Fiyat nasıl belirlenir?', answer: 'İhtiyaç ve entegrasyonlara göre özel paketler sunuyoruz. Ücretsiz analiz sonrası net fiyat alırsınız.' },
-  { question: 'Teknik bilgi gerekli mi?', answer: 'Hayır. Tüm süreci biz yönetiyoruz. Sadece iş süreçlerinizi anlamamız yeterli.' },
+  { question: 'Kurulum ne kadar surer?', answer: 'Genellikle birkac gun ile birkac hafta arasinda degisir. Basit akislari hizli, cok sistemli kurulumlari daha asamali ilerletiyoruz.' },
+  { question: 'Veri guvenligi nasil saglanir?', answer: 'Musteri verileri yalnizca gerekli akislar icin kullanilir. Yetki, erisim ve veri akisi proje yapisina gore sinirlandirilir.' },
+  { question: 'Teknik ekip gerekiyor mu?', answer: 'Hayir. Teknik koordinasyonu biz ustlenebiliriz. Sizden asil gereken, surecin nasil isledigini ve nerede tikandigini gostermenizdir.' },
+  { question: 'Sadece satis ve pazarlama mi yapiyorsunuz?', answer: 'Hayir. Satis ve pazarlama guclu alanlarimizdan biri olsa da CRM, finans, belge akisi, destek, IK ve operasyon sureclerinde de calisiyoruz.' },
+  { question: 'Fiyat nasil belirlenir?', answer: 'Fiyat, sorunun buyuklugune, temas edilen sistem sayisina ve ne kadar ozel akisa ihtiyac olduguna gore belirlenir.' },
 ];
 
 const faqSchema = {
   '@context': 'https://schema.org',
   '@type': 'FAQPage',
-  mainEntity: faqItems.map(faq => ({
+  mainEntity: faqItems.map((faq) => ({
     '@type': 'Question',
     name: faq.question,
     acceptedAnswer: {
@@ -30,48 +29,38 @@ const faqSchema = {
 ---
 
 <BaseLayout
-  title="Pratik Yapay Zeka – Satış ve Pazarlama Otomasyonu"
-  description="Lead'den meeting'e tam otomatik yapay zeka. Outbound & Inbound, içerik ve sosyal medya otomasyonu ile satışlarınızı artırın."
-  ogImage="/og/og-homepage.png"
+  title="Pratik Yapay Zeka - Is Otomasyonu ve Yapay Zeka Sistemleri"
+  description="Satis, pazarlama, CRM, finans ve operasyon sureclerini yapay zeka destekli akislara donusturen otomasyon sistemleri kuruyoruz."
+  ogImage="/og-homepage.jpg"
 >
-  <!-- 1. Hero Section (original copy) -->
   <Hero />
 
-  <!-- GEO: Citability Definition Block (134-167 word self-contained answer block) -->
-  <section class="py-16 relative z-10 border-b border-[var(--color-border)]">
-    <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
-      <h2 class="text-2xl md:text-3xl font-extrabold mb-6 text-[var(--color-text)] tracking-tight">Yapay Zeka ile Satış ve Pazarlama Otomasyonu Nedir?</h2>
-      <div class="text-base md:text-lg text-[var(--color-text-muted)] leading-relaxed space-y-4">
-        <p>Yapay zeka ile satış ve pazarlama otomasyonu, işletmelerin müşteri kazanımından satış kapanışına kadar olan tüm süreçleri akıllı sistemlerle otomatikleştirmesidir. Bu sistemler; potansiyel müşteri araştırması (lead generation), kişiselleştirilmiş e-posta ve LinkedIn mesajları, CRM yönetimi, teklif oluşturma ve reklam optimizasyonu gibi görevleri insan müdahalesi olmadan yürütür.</p>
-        <p>Pratik Yapay Zeka olarak, Türkiye ve Almanya'daki KOBİ'lere n8n, Make ve özel yapay zeka ajanları (Agentic AI) ile uçtan uca otomasyon çözümleri sunuyoruz. Sistemlerimiz ortalama <strong>günde 4 saat</strong> zaman tasarrufu sağlar ve soğuk satış dönüşüm oranlarını <strong>%400'e kadar</strong> artırır. Kurucu Şafak Tepecik'in 8 yıllık Avrupa B2B satış deneyimi, her otomasyona saha bilgisi katar.</p>
+  <section class="relative z-10 border-b border-[var(--color-border)] py-16">
+    <div class="container mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
+      <h2 class="mb-6 text-2xl font-extrabold tracking-tight text-[var(--color-text)] md:text-3xl">Yapay Zeka ile Is Otomasyonu Nedir?</h2>
+      <div class="space-y-4 text-base leading-relaxed text-[var(--color-text-muted)] md:text-lg">
+        <p>Yapay zeka ile is otomasyonu, isletmelerin satis, pazarlama, CRM, finans, destek ve operasyon sureclerindeki tekrar eden adimlari daha akilli sistemlerle yurutmesidir. Bu sistemler; lead arastirmasi, teklif ve takip akislari, belge okuma, fatura ve mutabakat surecleri, personel destek sorulari ve sohbet tabanli operasyon gibi alanlarda insan uzerindeki tekrar yukunu azaltir.</p>
+        <p>Pratik Yapay Zeka olarak, Turkiye ve Almanya'daki KOBI'lere n8n, Make ve ozel yapay zeka ajanlari ile uctan uca otomasyon sistemleri kuruyoruz. Odagimiz tek bir kanal degil; hangi surecin tekrarli, daginik ve kisilere bagli kaldigini bulup onu daha gorunur, daha hizli ve daha olceklenebilir hale getirmektir.</p>
       </div>
     </div>
   </section>
 
-  <!-- 2. Agitate Section (3-tab "why not DIY/inhouse/wait") -->
   <Agitate />
-
-  <!-- 3. Why Us Section (4 GlowCards) -->
   <WhyUs />
-
-  <!-- 4. Timeline Section (5-step end-to-end automation) -->
   <Timeline />
-
-  <!-- 5. Mini Cases Section (6 case study cards) -->
   <MiniCases />
 
-  <!-- 6. FAQ Section (visible rendering — DOM Parity Fix 3.2) -->
-  <section class="py-24 relative z-10 bg-[#0F151B]/30 border-t border-[var(--color-border)]">
-    <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
-      <h2 class="text-3xl md:text-5xl font-extrabold mb-16 text-center tracking-tight text-[var(--color-text)]">Sıkça Sorulan Sorular</h2>
+  <section class="relative z-10 border-t border-[var(--color-border)] bg-[#0F151B]/30 py-24">
+    <div class="container mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
+      <h2 class="mb-16 text-center text-3xl font-extrabold tracking-tight text-[var(--color-text)] md:text-5xl">Sikca Sorulan Sorular</h2>
       <div class="space-y-4">
         {faqItems.map((faq) => (
-          <details class="group bg-[var(--color-surface-light)]/40 backdrop-blur-md border border-[var(--color-border)] rounded-2xl overflow-hidden hover:border-[var(--color-primary)]/30 transition-colors">
-            <summary class="flex items-center justify-between p-6 cursor-pointer text-lg font-bold text-[var(--color-text)] group-open:text-[var(--color-primary-light)] transition-colors">
+          <details class="group overflow-hidden rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface-light)]/40 backdrop-blur-md transition-colors hover:border-[var(--color-primary)]/30">
+            <summary class="flex cursor-pointer items-center justify-between p-6 text-lg font-bold text-[var(--color-text)] transition-colors group-open:text-[var(--color-primary-light)]">
               {faq.question}
-              <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 shrink-0 ml-4 transition-transform group-open:rotate-180 text-[var(--color-text-muted)]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" /></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" class="ml-4 h-5 w-5 shrink-0 text-[var(--color-text-muted)] transition-transform group-open:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" /></svg>
             </summary>
-            <div class="px-6 pb-6 text-[var(--color-text-muted)] leading-relaxed text-base">
+            <div class="px-6 pb-6 text-base leading-relaxed text-[var(--color-text-muted)]">
               {faq.answer}
             </div>
           </details>
@@ -79,7 +68,6 @@ const faqSchema = {
       </div>
     </div>
   </section>
-  
-  <!-- FAQ Schema.org JSON-LD for rich results -->
+
   <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
 </BaseLayout>

@@ -2,43 +2,43 @@
 import SolutionLayout from '../layouts/SolutionLayout.astro';
 ---
 <SolutionLayout
-  title="E-Ticaret Sitesi ve Altyapı Otomasyonu | Pazaryeri Entegrasyonu"
-  description="Trendyol, Hepsiburada ve e-ticaret sitenizi (Shopify, Ticimax) birbirine bağlayan, kargo ve faturayı otopilotta yöneten yapay zeka."
-  heroTitle="E-Ticaretinizi Değil, Operasyonunuzu Otomatikleştirin"
-  heroSubtitle="Trendyol, Hepsiburada ve kendi web siteniz (Shopify, Ticimax, IdeaSoft) arasında yaşanan entegrasyon krizlerini, hatalı kargo gönderimlerini ve stok karmaşasını bitirin. Siparişten faturaya, kargodan müşteri bildirimine kadar e-ticaret operasyonlarınızı otopilota bağlayan yapay zeka motoru."
+  title="E-Ticaret ve Pazaryeri Otomasyonu | Sipariş, Kargo ve Fatura Akışları"
+  description="E-ticaret ve pazaryeri otomasyonu, sadece entegrasyon kurmak değil; sipariş, kargo, stok, fatura ve müşteri akışını tek operasyon mantığında birleştirmektir."
+  heroTitle="E-Ticaretinizi Değil, Siparişten Teslimata Kadar Olan Operasyonu Sistemleştirin"
+  heroSubtitle="Trendyol, Hepsiburada, Shopify, Ticimax veya kendi satış yapınız arasında siparişler, kargo, fatura ve müşteri mesajları kopuyorsa sorun platform sayısı değil operasyon tasarımıdır. Biz bu akışları tek bir sistem mantığında birleştiren otomasyon yapıları kuruyoruz."
   problems={[
-    "Kopuk Sistemler (Entegrasyon Sorunları): Trendyol'da satılan ürünün kendi sitenizden stok düşmemesi ve oluşan 'Yok Satma' (Out-of-Stock) cezaları.",
-    "Manuel Kargo Zilleti: Yüzlerce siparişi Yurtiçi veya Aras Kargo'nun panellerine manuel girmek, hatalı adres yazmak ve geciken teslimatlar.",
-    "Bölünmüş Müşteri İletişimi: Instagram'dan gelen müşteriyi web sitesine yönlendirdiğinizde yaşanan kayıp (dönüşüm hunisindeki kırılma)."
+    "Siparişlerin farklı kanallardan gelmesi ama stok, kargo ve fatura akışının tek merkezden yönetilememesi.",
+    "Pazaryeri, site ve operasyon ekipleri arasında kopukluk olduğu için gönderim hataları, gecikmeler ve müşteri memnuniyetsizliği yaşanması.",
+    "E-ticaret büyüdükçe ekibin daha fazla panele ve daha fazla manuel adıma mahkûm hale gelmesi."
   ]}
-  processTitle="Yapay Zeka E-Ticaret Akışını Nasıl Yönetir?"
+  processTitle="E-Ticaret Operasyon Katmanı Nasıl Kuruluyor?"
   processSteps={[
-    { title: "360° Senkronizasyon", description: "Ticimax, T-Soft, Shopify ve tüm pazaryerleri (Trendyol, N11) arasında kurulan yapay zeka köprüleriyle stoklar ve siparişler milisaniyede eşitlenir." },
-    { title: "Sıfır Tıklama: Kargo ve Fatura", description: "Bir platformdan sipariş düştüğü an, yapay zeka ilgili e-faturayı (Paraşüt vb.) keser ve kargo barkodunu yazıcıya gönderir." },
-    { title: "Kargo Takip Bildirimi", description: "Kargo barkodu oluştuğunda müşteriye 'Siparişiniz Yola Çıktı' mesajı, kargo takip linki ile birlikte WhatsApp üzerinden otomatik atılır." },
-    { title: "AI Satış Danışmanı (Instagram -> Checkout)", description: "Instagram'dan yazan müşteriyi dinleyen, 'Bana kırmızı M beden lazım' dediğinde doğrudan sepete atılmış ödeme linki gönderen akıllı bot." }
+    { title: "Kanalları ve İş Akışını Haritalama", description: "Siparişin nereden geldiğini, nasıl işlendiğini, kargoya nasıl çıktığını ve fatura ile bilgilendirmenin nasıl yürüdüğünü çıkarıyoruz." },
+    { title: "Sipariş ve Operasyon Senaryoları", description: "Yeni sipariş, stok güncelleme, kargo barkodu, müşteri bildirimi ve iade gibi akışları sistematik hale getiriyoruz." },
+    { title: "Entegrasyon Katmanı", description: "Pazaryeri, site, muhasebe, kargo ve gerekiyorsa CRM veya WhatsApp akışlarını birbirine bağlıyoruz." },
+    { title: "Görünürlük ve İstisna Yönetimi", description: "Her şey otomatik gitmek zorunda değildir; sorun çıkan siparişleri ve insan müdahalesi gereken noktaları görünür kılıyoruz." }
   ]}
-  featuresTitle="Hantallığı Bırakıp Büyümeye Odaklanacağınız Özellikler"
+  featuresTitle="Büyüyen E-Ticaret İçin Operasyonel Omurga"
   features={[
-    { title: "Sınırsız Entegrasyon Kanalı", description: "Geleneksel entegratörlerin aksine kapalı kutu değiliz. Açık API ile özel muhasebe ve depo sistemlerinizi bile bağlayabiliriz." },
-    { title: "Sıfır İnsan Hatalı Paketleme", description: "Barkod eşleştirmeleri sayesinde yanlış ürünü yanlış adrese gönderme oranı sıfıra iner. İade operasyonlarınız azalır." },
-    { title: "Gece Gündüz Çalışan Operasyon", description: "Pazar gece 3'te gelen siparişin faturası da saniyesinde kesilir. Sabah depoya sadece paketi kargoya vermek kalır." },
-    { title: "7/24 Müşteri Destek Asistanı", description: "'Kargom nerede?', 'İade nasıl yaparım?' gibi sorulara saniyesinde kargo API'sinden veri çekerek cevap veren bot." }
+    { title: "Siparişten Faturaya Akış", description: "Siparişin sisteme girişi ile finansal kayıt ve operasyon adımları arasındaki kopukluğu azaltıyoruz." },
+    { title: "Kargo ve Bildirim Mantığı", description: "Gönderim bilgisi, müşteri bilgilendirmesi ve takip akışları daha tutarlı hale gelir." },
+    { title: "Pazaryeri ve Site Uyum Katmanı", description: "Kanal farkları ekip için ek kaos üretmek yerine tek operasyon akışında ele alınır." },
+    { title: "İade ve İstisna Yönetimi", description: "Sorunsuz sipariş kadar, takılan siparişlerin de görünür olması için istisna mantığı kuruyoruz." }
   ]}
-  benefitsTitle="Operasyonda Ciddi Tasarruf ve Sıfır Ceza"
+  benefitsTitle="E-Ticaret Operasyonundaki Somut Etki"
   benefits={[
-    "%95", "Operasyonel Hızlanma. Kargo paketi hazırlama ve fatura kesme süreci tamamen otonom hale gelir.",
-    "%100", "Stok Senkronizasyonu. 'Yok satan' ürün yüzünden alınan pazar yeri iade cezaları tamamen biter.",
-    "0", "Kargo adresi ve fatura bilgilerinde kopyala-yapıştır kaynaklı insan hatası sayısı."
+    "%100", "Sipariş akışı görünürlüğü. Hangi siparişin nerede kaldığı daha net görünür.",
+    "Daha Az Panel Geçişi", "Ekip aynı işi farklı ekranlarda tekrar tekrar yapmaz.",
+    "Daha Hızlı İşleme", "Siparişten kargoya ve müşteri bilgilendirmesine giden süre daha düzenli hale gelir."
   ]}
-  caseStudyDescription="Günde 300+ paket çıkaran tekstil firmamız, sadece kargo barkodu ve fatura entegrasyonumuz sayesinde depo ekibini küçültmeden kapasitesini 3 katına (günde 900 paket) çıkarttı."
-  finalCtaTitle="Pazaryeri ve Sipariş Kaosunu Bitirin"
-  finalCtaSubtitle="E-ticaretinizi büyütmeye odaklanın, e-fatura ve kargo panelinde boğulmayın. Ücretsiz analizi başlatın."
+  caseStudyDescription="Kanal sayısı arttıkça operasyonu ağırlaşan bir ekip, sipariş, kargo ve finans akışını aynı sistem mantığında topladıktan sonra daha az karışıklıkla daha yüksek işlem hacmi yönetmeye başladı."
+  finalCtaTitle="Pazaryeri ve Site Operasyonunu Ayrı Dünyalar Gibi Yönetmeyin"
+  finalCtaSubtitle="Mevcut e-ticaret akışınızı birlikte inceleyelim; siparişten kargoya kadar hangi adımların otomasyonla sadeleşeceğini ve ekibinizi nerede rahatlatacağımızı netleştirelim."
   sectorTheme="eticaret"
   faqs={[
-    { question: "Hangi e-ticaret altyapıları (Shopify, Ticimax, IdeaSoft) ile entegre çalışıyorsunuz?", answer: "Sistemimiz API desteği sunan tüm modern ve yerel e-ticaret altyapıları (Shopify, Ticimax, IdeaSoft, T-Soft, WooCommerce vb.) ile sorunsuz, gerçek zamanlı entegre olur." },
-    { question: "Kargo firmaları (Aras, Yurtiçi vb.) ile entegrasyon sürecinde ne değişecek?", answer: "Manuel veri girişi ve adres kopyalama tarihe karışacak. Yapay zeka, sipariş düştüğü an yetkili kargo modülüne veriyi gönderir, barkodu otomatik oluşturur ve takip numarasını müşteriye WhatsApp'tan atar." },
-    { question: "Pazaryeri (Trendyol, Hepsiburada) satışları da bu otomasyona dahil mi?", answer: "Kesinlikle. Omnichannel yapımız sayesinde sitenizden ve Trendyol'dan gelen tüm satışlar, tek bir stoku günceller ve her iki kanalda da faturayı otomatik keser." }
+    { question: "Bu sayfa stok entegrasyonu ile aynı şey mi?", answer: "Hayır. Stok önemli bir alt parçadır ama bu sayfa daha geniştir; sipariş, kargo, fatura, müşteri bilgilendirme ve istisna yönetimini birlikte ele alır." },
+    { question: "Hangi kanallarla çalışmak için uygundur?", answer: "Pazaryeri, kendi e-ticaret sitesi, kargo, muhasebe ve gerektiğinde CRM veya mesajlaşma akışı olan yapılarda en fazla değeri üretir." },
+    { question: "Her şeyi tam otomatik yapmak şart mı?", answer: "Hayır. Amaç ekipten işi tamamen almak değil, tekrar eden ve görünmez hale gelen operasyon yükünü azaltmak ve kritik noktaları görünür kılmaktır." }
   ]}
   sectorName="E-Ticaret Otomasyonu"
 />

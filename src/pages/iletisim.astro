@@ -1,0 +1,228 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const sourcePage = Astro.url.searchParams.get('kaynak') || '';
+const packageParam = Astro.url.searchParams.get('paket') || '';
+const areaParam = Astro.url.searchParams.get('alan') || '';
+const ctaParam = Astro.url.searchParams.get('cta') || '';
+
+const packageLabels: Record<string, string> = {
+  'lead-flow-audit': 'Lead akisi analizi',
+  'operasyon-haritasi': 'Operasyon haritasi',
+  'ik-surec-analizi': 'IK surec analizi',
+  'finans-operasyon-analizi': 'Finans operasyon analizi',
+};
+
+const selectedPackage = packageLabels[packageParam] || '';
+const defaultGoalByPackage: Record<string, string> = {
+  'lead-flow-audit': 'quick-win',
+  'operasyon-haritasi': 'full-roadmap',
+  'ik-surec-analizi': 'cost-reduction',
+  'finans-operasyon-analizi': 'cost-reduction',
+};
+
+const selectedGoal = defaultGoalByPackage[packageParam] || '';
+
+const breadcrumbs = [
+  { name: 'Ana Sayfa', url: '/' },
+  { name: 'Iletisim', url: '/iletisim/' },
+];
+---
+
+<BaseLayout
+  title="Ucretsiz AI Otomasyon Analizi | Pratik Yapay Zeka"
+  description="Isletmenizde hangi sureclerin yapay zeka ile otomatiklesebilecegini birlikte cikaralim. Kisa formu doldurun, size uygun otomasyon senaryolarini geri donelim."
+  breadcrumbs={breadcrumbs}
+  schemaType="ContactPage"
+>
+  <section class="pt-32 pb-20 lg:pt-40 lg:pb-28">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl">
+      <div class="grid gap-10 lg:grid-cols-[1.1fr_0.9fr]">
+        <div class="space-y-8">
+          <div class="inline-flex items-center rounded-full border border-[var(--color-primary)]/25 bg-[var(--color-surface-light)]/60 px-4 py-2 text-sm text-[var(--color-primary-light)]">
+            Ucretsiz on analiz
+          </div>
+
+          <div class="space-y-5">
+            <h1 class="text-4xl md:text-6xl font-black tracking-tight leading-[1.05] text-[var(--color-text)]">
+              Isletmenize ozel yapay zeka otomasyonunu birlikte cikaralim.
+            </h1>
+            <p class="max-w-2xl text-lg md:text-xl text-[var(--color-text-muted)] leading-relaxed">
+              Satis, pazarlama, muhasebe, WhatsApp, CRM veya operasyon tarafinda size en hizli geri donus getirecek otomasyon alanlarini belirleyelim. Formu doldurun, size uygun senaryolari net bir sekilde geri donelim.
+            </p>
+          </div>
+
+          {selectedPackage && (
+            <div class="rounded-3xl border border-[var(--color-primary)]/20 bg-[var(--color-primary)]/10 px-5 py-4 max-w-xl">
+              <p class="text-xs uppercase tracking-[0.2em] text-[var(--color-primary-light)]">Secilen analiz</p>
+              <p class="mt-2 text-lg font-semibold text-[var(--color-text)]">{selectedPackage}</p>
+            </div>
+          )}
+
+          <div class="grid gap-4 md:grid-cols-3">
+            <div class="rounded-3xl border border-[var(--color-border)] bg-[var(--color-surface-light)]/70 p-6">
+              <p class="text-sm uppercase tracking-[0.2em] text-[var(--color-primary-light)]">1</p>
+              <h2 class="mt-3 text-xl font-semibold">Sureci anlariz</h2>
+              <p class="mt-3 text-sm leading-relaxed text-[var(--color-text-muted)]">
+                Darbogaz yaratan adimi, manuel isleri ve kacirilan firsatlari netlestiririz.
+              </p>
+            </div>
+            <div class="rounded-3xl border border-[var(--color-border)] bg-[var(--color-surface-light)]/70 p-6">
+              <p class="text-sm uppercase tracking-[0.2em] text-[var(--color-primary-light)]">2</p>
+              <h2 class="mt-3 text-xl font-semibold">Uygun senaryo kurariz</h2>
+              <p class="mt-3 text-sm leading-relaxed text-[var(--color-text-muted)]">
+                Hangi entegrasyonun, botun veya agent yapisinin size uydugunu belirleriz.
+              </p>
+            </div>
+            <div class="rounded-3xl border border-[var(--color-border)] bg-[var(--color-surface-light)]/70 p-6">
+              <p class="text-sm uppercase tracking-[0.2em] text-[var(--color-primary-light)]">3</p>
+              <h2 class="mt-3 text-xl font-semibold">Net sonraki adim veririz</h2>
+              <p class="mt-3 text-sm leading-relaxed text-[var(--color-text-muted)]">
+                Soyut fikir degil, uygulanabilir bir yol haritasi ve ilk kurulum onerisi alirsiniz.
+              </p>
+            </div>
+          </div>
+
+          <div class="rounded-3xl border border-[var(--color-border)] bg-[var(--color-surface-light)]/60 p-8">
+            <h2 class="text-2xl font-semibold text-[var(--color-text)]">Bu analiz kimler icin ideal?</h2>
+            <ul class="mt-5 space-y-3 text-[var(--color-text-muted)]">
+              <li>WhatsApp, e-posta veya formlardan gelen talepleri hizli yonetemeyen ekipler</li>
+              <li>CRM, teklif, muhasebe veya satis operasyonunda manuel veri girisi yasayan sirketler</li>
+              <li>Organik ya da reklam trafigini lead'e cevirmekte zorlanan ekipler</li>
+              <li>E-ticaret, finans, muhasebe, HR veya B2B operasyonlarini otomatiklestirmek isteyenler</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="rounded-[2rem] border border-[var(--color-border)] bg-[var(--color-surface-light)]/80 p-8 shadow-2xl">
+          <div class="mb-6">
+            <p class="text-sm uppercase tracking-[0.2em] text-[var(--color-primary-light)]">Lead formu</p>
+            <h2 class="mt-3 text-3xl font-black tracking-tight">Kisa bilgileri birakin</h2>
+            <p class="mt-3 text-[var(--color-text-muted)] leading-relaxed">
+              Genelde ilk geri donusu 1 is gunu icinde yapiyoruz. Ne kadar somut yazarsaniz, donusumuz o kadar faydali olur.
+            </p>
+          </div>
+
+          <form
+            name="lead-discovery"
+            method="POST"
+            action="/tesekkurler/"
+            data-netlify="true"
+            netlify-honeypot="bot-field"
+            class="space-y-5"
+          >
+            <input type="hidden" name="form-name" value="lead-discovery" />
+            <input type="hidden" name="source_page" value={sourcePage} data-source-page />
+            <input type="hidden" name="request_package" value={packageParam} data-request-package />
+            <input type="hidden" name="cta_context" value={ctaParam} data-cta-context />
+            <input type="hidden" name="referrer" value="" data-referrer />
+            <p class="hidden">
+              <label>Bu alani doldurmayin: <input name="bot-field" /></label>
+            </p>
+
+            <div class="grid gap-5 sm:grid-cols-2">
+              <label class="space-y-2">
+                <span class="text-sm font-medium text-[var(--color-text)]">Ad Soyad</span>
+                <input class="w-full rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface)] px-4 py-3 text-[var(--color-text)] outline-none transition focus:border-[var(--color-primary)]" type="text" name="name" autocomplete="name" required />
+              </label>
+
+              <label class="space-y-2">
+                <span class="text-sm font-medium text-[var(--color-text)]">E-posta</span>
+                <input class="w-full rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface)] px-4 py-3 text-[var(--color-text)] outline-none transition focus:border-[var(--color-primary)]" type="email" name="email" autocomplete="email" required />
+              </label>
+            </div>
+
+            <div class="grid gap-5 sm:grid-cols-2">
+              <label class="space-y-2">
+                <span class="text-sm font-medium text-[var(--color-text)]">Sirket</span>
+                <input class="w-full rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface)] px-4 py-3 text-[var(--color-text)] outline-none transition focus:border-[var(--color-primary)]" type="text" name="company" autocomplete="organization" required />
+              </label>
+
+              <label class="space-y-2">
+                <span class="text-sm font-medium text-[var(--color-text)]">Telefon / WhatsApp</span>
+                <input class="w-full rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface)] px-4 py-3 text-[var(--color-text)] outline-none transition focus:border-[var(--color-primary)]" type="tel" name="phone" autocomplete="tel" />
+              </label>
+            </div>
+
+            <label class="space-y-2">
+              <span class="text-sm font-medium text-[var(--color-text)]">En cok ilgilendiginiz alan</span>
+              <select class="w-full rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface)] px-4 py-3 text-[var(--color-text)] outline-none transition focus:border-[var(--color-primary)]" name="interest_area" required>
+                <option value="" selected={!areaParam}>Bir alan secin</option>
+                <option value="crm-sales" selected={areaParam === 'crm-sales'}>CRM ve satis otomasyonu</option>
+                <option value="marketing-leads" selected={areaParam === 'marketing-leads'}>Pazarlama ve lead yonetimi</option>
+                <option value="finance-accounting" selected={areaParam === 'finance-accounting'}>Muhasebe ve finans operasyonu</option>
+                <option value="whatsapp-chatbot" selected={areaParam === 'whatsapp-chatbot'}>WhatsApp / chatbot otomasyonu</option>
+                <option value="ecommerce-ops" selected={areaParam === 'ecommerce-ops'}>E-ticaret ve operasyon</option>
+                <option value="other" selected={areaParam === 'other'}>Diger</option>
+              </select>
+            </label>
+
+            <label class="space-y-2">
+              <span class="text-sm font-medium text-[var(--color-text)]">Bu gorusmeden ne bekliyorsunuz?</span>
+              <select class="w-full rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface)] px-4 py-3 text-[var(--color-text)] outline-none transition focus:border-[var(--color-primary)]" name="request_goal" data-request-goal>
+                <option value="" selected={!selectedGoal}>Bir hedef secin</option>
+                <option value="quick-win" selected={selectedGoal === 'quick-win'}>En hizli geri donus verecek ilk otomasyon</option>
+                <option value="full-roadmap" selected={selectedGoal === 'full-roadmap'}>Tam surec haritasi ve yol haritasi</option>
+                <option value="tool-selection" selected={selectedGoal === 'tool-selection'}>Hangi arac veya entegrasyon uygundur</option>
+                <option value="cost-reduction" selected={selectedGoal === 'cost-reduction'}>Manuel is ve maliyet azaltma</option>
+              </select>
+            </label>
+
+            <label class="space-y-2">
+              <span class="text-sm font-medium text-[var(--color-text)]">Hangi sureci otomatiklestirmek istiyorsunuz?</span>
+              <textarea class="min-h-40 w-full rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface)] px-4 py-3 text-[var(--color-text)] outline-none transition focus:border-[var(--color-primary)]" name="message" placeholder="Ornek: WhatsApp'tan gelen talepleri CRM'e dusurmek, teklif olusturmayi hizlandirmak, muhasebede veri girisini azaltmak..." required></textarea>
+            </label>
+
+            <button type="submit" class="inline-flex w-full items-center justify-center rounded-2xl bg-[var(--color-primary)] px-6 py-4 text-lg font-black text-black transition hover:-translate-y-0.5 hover:bg-[var(--color-primary-light)]">
+              Ucretsiz analizi talep et
+            </button>
+
+            <p class="text-sm leading-relaxed text-[var(--color-text-muted)]">
+              Formu gondererek sizinle e-posta veya telefon uzerinden iletisime gecmemizi kabul etmis olursunuz. Verileriniz yalnizca talebinizi degerlendirmek icin kullanilir.
+            </p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script is:inline>
+    const sourceInput = document.querySelector('[data-source-page]');
+    const packageInput = document.querySelector('[data-request-package]');
+    const ctaInput = document.querySelector('[data-cta-context]');
+    const referrerInput = document.querySelector('[data-referrer]');
+    const requestGoalSelect = document.querySelector('[data-request-goal]');
+    const interestAreaSelect = document.querySelector('select[name="interest_area"]');
+    const params = new URLSearchParams(window.location.search);
+    const packageGoalMap = {
+      'lead-flow-audit': 'quick-win',
+      'operasyon-haritasi': 'full-roadmap',
+      'ik-surec-analizi': 'cost-reduction',
+      'finans-operasyon-analizi': 'cost-reduction',
+    };
+
+    if (sourceInput && params.get('kaynak')) {
+      sourceInput.value = params.get('kaynak');
+    }
+
+    if (packageInput && params.get('paket')) {
+      packageInput.value = params.get('paket');
+    }
+
+    if (ctaInput && params.get('cta')) {
+      ctaInput.value = params.get('cta');
+    }
+
+    if (interestAreaSelect && params.get('alan')) {
+      interestAreaSelect.value = params.get('alan');
+    }
+
+    if (requestGoalSelect && params.get('paket') && !requestGoalSelect.value) {
+      requestGoalSelect.value = packageGoalMap[params.get('paket')] || '';
+    }
+
+    if (referrerInput) {
+      referrerInput.value = document.referrer || '';
+    }
+  </script>
+</BaseLayout>

@@ -1,41 +1,39 @@
 ---
 import CalculatorLayout from '../layouts/CalculatorLayout.astro';
 
+const title = 'Isverene Maliyet Hesaplama | Personel Butce ve Senaryo Plani';
+const description = 'Isverene maliyet hesaplama arayan ekipler icin asil ihtiyac tek bir rakam degil; ise alim, zam ve ekip buyume kararlarinin toplam butce etkisini hizli gormektir.';
+const keywords = 'isverene maliyet hesaplama, personel maliyeti, brut maas maliyeti, ik butce plani, ise alim senaryosu';
 
-const title = "İşverene Maliyet Hesaplama & Otonom İK Finans Botu | Pratik Yapay Zeka";
-const description = "Net ve brüt maaş üzerinden güncel SGK teşviklerini analiz eden, asgari ücret istisnası ile işverene maliyeti kuruşu kuruşuna hesaplayan yapay zeka.";
-const keywords = "işverene maliyet hesaplama, asgari ücret işverene maliyeti, personel maliyeti hesaplama, sgk teşvik hesaplama, brüt maaş maliyeti";
-
-// FAQ Schema
 const faqData = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
     {
-      "@type": "Question",
-      "name": "Sistem sadece asgari ücret mi hesaplıyor?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Hayır, belirlediğiniz herhangi bir net veya brüt maaş üzerinden, asgari ücret istisnası dahil edilerek kuruşu kuruşuna tüm vergi dilimlerini hesaplar."
-      }
+      '@type': 'Question',
+      name: 'Isverene maliyet neden tekil hesapla bitmez?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Cunku yeni ise alim, zam, ekip buyume, yan hak ve farkli personel gruplari birlikte degerlendirilir. Karar etkisi tek kisilik hesabin otesine gecer.',
+      },
     },
     {
-      "@type": "Question",
-      "name": "SGK teşviklerini nasıl buluyor ve düşüyor?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "SGK'nın güncel teşvik kanunlarını (Örn: 5510, 6111) referans alarak personelin yaşına, cinsiyetine ve mezuniyet durumuna göre algoritma taraması yapar ve işveren maliyetini minimize eder."
-      }
+      '@type': 'Question',
+      name: 'Bu sayfa hangi ihtiyaci hedefler?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'IK, finans ve yonetim ekiplerinin personel kararlarini daha hizli butce senaryosuna donusturme ihtiyacini hedefler.',
+      },
     },
     {
-      "@type": "Question",
-      "name": "Piyasadaki diğer işverene maliyet robotlarından farkı nedir?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Sabit bir web makinesi değil, sizin ERP verinize bağlanıp şirketinizin tam fotoğrafını çeken ve WhatsApp üzerinden canlı maaş simülasyonları yapabilen otonom bir 'Finansal Karar' asistanıdır."
-      }
-    }
-  ]
+      '@type': 'Question',
+      name: 'En cok hangi yapilarda kritik hale gelir?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Aktif ise alim yapan, ekibini buyuten ya da duzenli zam ve teklif karari veren sirketlerde daha kritik hale gelir.',
+      },
+    },
+  ],
 };
 ---
 
@@ -46,81 +44,88 @@ const faqData = {
   schema={JSON.stringify(faqData)}
 >
   <div class="space-y-12">
-    <!-- Hero Section -->
     <section>
-      <div class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-primary text-primary mb-4">Finansal Karar Destek Sistemleri</div>
-      <h1 class="text-4xl lg:text-5xl font-bold tracking-tight mb-6">Personel Maliyetini Değil, Şirketinizin Geleceğini Hesaplayın</h1>
-      <p class="text-xl text-muted-foreground leading-relaxed mb-8">
-        "Brüt maaş + SGK işveren payı = X TL" şeklindeki yüzeysel matematik devri bitti. İşe alım, prim hesaplama, vergi dilimleri ve gizli SGK teşviklerini saniyeler içinde simüle edebilen Yapay Zeka destekli Finans ve İK Asistanı ile tanışın.
+      <div class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold border-primary text-primary mb-4">IK, Finans ve Butce Plani</div>
+      <h1 class="text-4xl lg:text-5xl font-bold tracking-tight mb-6">Isverene Maliyet Hesabini Yalnizca Formul Olarak Degil, Karar Araci Olarak Ele Alin</h1>
+      <p class="text-xl text-muted-foreground leading-relaxed max-w-4xl">
+        Bir personelin maliyetini bilmek tek basina yeterli olmaz. Asil ihtiyac, ise alim, zam, ekip buyume ve departman bazli degisikliklerin toplam butce etkisini hizla gorebilmektir. Bu sayfa o ihtiyaci teknik olarak nereye baglamak gerektigini aciklar.
       </p>
     </section>
 
-    <!-- The Pain Points -->
+    <section class="grid gap-6 lg:grid-cols-3">
+      <div class="rounded-2xl border border-border bg-card p-6">
+        <h2 class="text-xl font-semibold mb-3">Ise Alim Karari</h2>
+        <p class="text-muted-foreground">
+          Adaya teklif verirken yalnizca net ucret degil, toplam isveren etkisi ve butceye yansimasi gorulmek istenir.
+        </p>
+      </div>
+      <div class="rounded-2xl border border-border bg-card p-6">
+        <h2 class="text-xl font-semibold mb-3">Zam Senaryosu</h2>
+        <p class="text-muted-foreground">
+          Tek bir zam karari bile ekip geneline yayildiginda toplam maliyeti hizli gorebilmek gerekir.
+        </p>
+      </div>
+      <div class="rounded-2xl border border-border bg-card p-6">
+        <h2 class="text-xl font-semibold mb-3">Ekip Buyume Plani</h2>
+        <p class="text-muted-foreground">
+          Yonetim yeni rol, yeni lokasyon veya farkli unvan gruplari icin toplam maliyet projeksiyonu ister.
+        </p>
+      </div>
+    </section>
+
     <section class="bg-muted/30 p-8 rounded-2xl border border-border">
-      <h2 class="text-2xl font-semibold mb-6">Excel Tablolarındaki Gizli Maliyet Tuzağı</h2>
+      <h2 class="text-2xl font-semibold mb-6">Isverene Maliyet Hesabi Ne Zaman Excel Sorununa Donusur?</h2>
       <ul class="space-y-4">
         <li class="flex items-start gap-3">
-          <svg class="w-6 h-6 text-destructive flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path></svg>
-          <p><strong>Bütçe Sapmaları:</strong> Gelişen ekiplerde "Önümüzdeki yılın net personel bütçesi ne olacak?" sorusuna vergi dilimi artışlarını hesaba katmadan verilen cevaplar.</p>
+          <span class="mt-1 h-2.5 w-2.5 rounded-full bg-primary"></span>
+          <p><strong>Teklif ve ise alim surecinde:</strong> Ayni rolde birden fazla aday ve farkli teklif senaryosu ayni anda degerlendirilir.</p>
         </li>
         <li class="flex items-start gap-3">
-          <svg class="w-6 h-6 text-destructive flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path></svg>
-          <p><strong>Kaçırılan Teşvikler:</strong> Yeni işe alımlarda 6111 veya 27103 gibi kanun numaralı genç/kadın istihdamı SGK teşviklerinin manuel hesaplamalarda gözden kaçıp devlete fazla prim ödenmesi.</p>
+          <span class="mt-1 h-2.5 w-2.5 rounded-full bg-primary"></span>
+          <p><strong>Butce toplantilarinda:</strong> Yonetim tek bir rakam degil, ekip ve departman seviyesinde etkileri gormek ister.</p>
         </li>
         <li class="flex items-start gap-3">
-          <svg class="w-6 h-6 text-destructive flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path></svg>
-          <p><strong>Anlık Karar Verememe:</strong> İş görüşmesi sırasında CEO'nun "Şu an x TL net maaşlı birini alırsak Kasım ayındaki maliyetimiz ne olur?" sorusuna İK'nın anında yanıt verememesi.</p>
+          <span class="mt-1 h-2.5 w-2.5 rounded-full bg-primary"></span>
+          <p><strong>Zam ve terfi donemlerinde:</strong> Hesaplar farkli dosyalarda tekrar uretildigi icin hiz ve tutarlilik kaybolur.</p>
         </li>
       </ul>
     </section>
 
-    <!-- The Solution -->
     <section>
-      <h2 class="text-3xl font-bold mb-6">Maliyeti Minimize Eden Otonom Bütçe Simülatörü</h2>
+      <h2 class="text-3xl font-bold mb-6">Bu Ihtiyac Hangi Sisteme Aciliyor?</h2>
       <p class="text-lg text-muted-foreground mb-8">
-        Pratik Yapay Zeka asistanı, statik bir web robotu değil, şirketinize özel vergi ve SGK algoritmasını çalıştıran zeki bir işe alım maliyet simülatörüdür.
+        Isverene maliyet hesaplama sayfasini bizim icin degerli yapan sey, personel butce kararlarini daha hizli ve daha gorunur hale getirmesidir. Bu nedenle sayfanin arkasindaki asil fikir, IK, finans ve yonetim ekipleri icin ortak bir senaryo ve karar destek katmani kurmaktir.
       </p>
-
       <div class="grid md:grid-cols-3 gap-6">
         <div class="bg-card p-6 rounded-xl border border-border">
-          <div class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4">
-            <span class="text-2xl">📱</span>
-          </div>
-          <h3 class="text-xl font-semibold mb-2">Canlı Bütçe Asistanı</h3>
-          <p class="text-sm text-muted-foreground">"10 yeni mühendis alıyoruz, 50.000 TL net maaşla. Kasım'da cebimizden ne çıkacak?" sorusunu WhatsApp'tan sorun, anında rapor alın.</p>
+          <h3 class="text-xl font-semibold mb-2">Senaryo Katmani</h3>
+          <p class="text-sm text-muted-foreground">Ise alim, zam ve ekip buyume kararlarini tek bir karar akisi gibi gormeyi saglar.</p>
         </div>
         <div class="bg-card p-6 rounded-xl border border-border">
-          <div class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4">
-            <span class="text-2xl">🔍</span>
-          </div>
-          <h3 class="text-xl font-semibold mb-2">SGK Teşvik Radarı</h3>
-          <p class="text-sm text-muted-foreground">Sistem, personel listenizi ve yeni adayları tarar. Faydalanmanız gereken SGK kanununu bularak "Aylık X Bin TL kâr edebilirsiniz" kriz uyarısı verir.</p>
+          <h3 class="text-xl font-semibold mb-2">Butce Gorunurlugu</h3>
+          <p class="text-sm text-muted-foreground">Departman, rol ve zaman bazli etkiler daha erken gorulmeye baslar.</p>
         </div>
         <div class="bg-card p-6 rounded-xl border border-border">
-          <div class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4">
-            <span class="text-2xl">🔗</span>
-          </div>
-          <h3 class="text-xl font-semibold mb-2">ERP Entegrasyonu</h3>
-          <p class="text-sm text-muted-foreground">Logo, Mikro, Zirve gibi bordro programlarınızla kancalanarak çalışır; yıllık maliyet artışlarını canlı grafiklerle CFO ekranınıza çeker.</p>
+          <h3 class="text-xl font-semibold mb-2">IK-Finans Uyumu</h3>
+          <p class="text-sm text-muted-foreground">Karar sureci farkli dosyalarda degil, ayni mantik ve ayni dil uzerinden ilerler.</p>
         </div>
       </div>
     </section>
 
-    <!-- FAQ -->
     <section class="max-w-3xl">
-      <h2 class="text-2xl font-bold mb-6">Sıkça Sorulan Sorular</h2>
+      <h2 class="text-2xl font-bold mb-6">Sikca Sorulan Sorular</h2>
       <div class="space-y-6">
         <div>
-          <h3 class="text-lg font-semibold mb-2">Sistem sadece asgari ücret mi hesaplıyor?</h3>
-          <p class="text-muted-foreground">Hayır, belirlediğiniz herhangi bir net veya brüt maaş üzerinden, asgari ücret istisnası dahil edilerek kuruşu kuruşuna tüm vergi dilimlerini hesaplar.</p>
+          <h3 class="text-lg font-semibold mb-2">Isverene maliyet neden tekil hesapla bitmez?</h3>
+          <p class="text-muted-foreground">Cunku yeni ise alim, zam, ekip buyume, yan hak ve farkli personel gruplari birlikte degerlendirilir. Karar etkisi tek kisilik hesabin otesine gecer.</p>
         </div>
         <div>
-          <h3 class="text-lg font-semibold mb-2">SGK teşviklerini nasıl buluyor ve düşüyor?</h3>
-          <p class="text-muted-foreground">SGK'nın güncel teşvik kanunlarını (Örn: 5510, 6111) referans alarak personelin yaşına, cinsiyetine ve mezuniyet durumuna göre algoritma taraması yapar ve işveren maliyetini minimize eder.</p>
+          <h3 class="text-lg font-semibold mb-2">Bu sayfa hangi ihtiyaci hedefler?</h3>
+          <p class="text-muted-foreground">IK, finans ve yonetim ekiplerinin personel kararlarini daha hizli butce senaryosuna donusturme ihtiyacini hedefler.</p>
         </div>
         <div>
-          <h3 class="text-lg font-semibold mb-2">Piyasadaki diğer işverene maliyet robotlarından farkı nedir?</h3>
-          <p class="text-muted-foreground">Sabit bir web makinesi değil, sizin ERP verinize bağlanıp şirketinizin tam fotoğrafını çeken ve WhatsApp üzerinden canlı maaş simülasyonları yapabilen otonom bir "Finansal Karar" asistanıdır.</p>
+          <h3 class="text-lg font-semibold mb-2">En cok hangi yapilarda kritik hale gelir?</h3>
+          <p class="text-muted-foreground">Aktif ise alim yapan, ekibini buyuten ya da duzenli zam ve teklif karari veren sirketlerde daha kritik hale gelir.</p>
         </div>
       </div>
     </section>

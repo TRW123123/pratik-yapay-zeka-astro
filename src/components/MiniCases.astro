@@ -1,96 +1,90 @@
 ---
-/**
- * MiniCases.astro — 1:1 faithful port of the Mini Cases section from Index.tsx
- * "Başarı Hikayeleri" — 6 case study cards with logos and metrics
- */
-
 const cases = [
   {
-    company: 'Acılsatış',
+    company: 'Acilsatis',
     slug: 'acilsatis',
     logo: '/logos/acilsatis.png',
-    result: 'Hızlı bilinirlik, istikrarlı trafik.',
-    metric: '+%45 görünürlük'
+    result: 'Hizli bilinirlik ve daha istikrarli trafik.',
+    metric: '+%45 gorunurluk',
   },
   {
     company: 'Car Studio AI',
     slug: 'car-studio-ai',
     logo: '/logos/car-studio-ai.png',
-    result: 'Ekip büyütmeden yeni pazarlara açılma.',
-    metric: '3x pazar genişlemesi'
+    result: 'Ekip buyutmeden yeni pazarlara acilma.',
+    metric: '3x pazar genislemesi',
   },
   {
     company: 'Salevium',
     slug: 'salevium',
     logo: '/logos/salevium.png',
-    result: 'İçerik üretimi: saatlerden dakikalara.',
-    metric: '%90 zaman tasarrufu'
+    result: 'Icerik uretimi saatlerden dakikalara indi.',
+    metric: '%90 zaman tasarrufu',
   },
   {
     company: 'ERPA Teknoloji',
     slug: 'erpa-teknoloji',
     logo: '/logos/erpa-teknoloji.png',
-    result: 'Yapay zeka destekli stratejik Avrupa pazarı girişi.',
-    metric: 'İlk ayda meetingler'
+    result: 'Yapay zeka destekli stratejik Avrupa pazari girisi.',
+    metric: 'Ilk ayda meetingler',
   },
   {
     company: 'Cemkimsan',
     slug: 'cemkimsan',
     logo: '/logos/cemkimsan.png',
-    result: '20+ ülkede satış ve pazarlama kampanyaları.',
-    metric: '6 yeni fırsat'
+    result: '20+ ulkede satis ve pazarlama kampanyalari.',
+    metric: '6 yeni firsat',
   },
   {
     company: 'DKM Coach Bilge',
     slug: 'dkm-coach-bilge',
     logo: '/logos/dkm-coach-bilge.png',
-    result: 'Oyun formatında Lead Funnel ile yüzlerce ek Lead.',
-    metric: '+300 Lead'
-  }
+    result: 'Oyun formatinda lead funnel ile yuzlerce ek lead.',
+    metric: '+300 lead',
+  },
 ];
 ---
 
-<section class="py-32 lg:py-48 relative">
+<section class="relative py-32 lg:py-48">
   <div class="container mx-auto px-4">
     <div class="mx-auto mb-16 max-w-2xl text-center">
-      <h2 class="mb-4 text-3xl md:text-4xl tracking-tight font-bold text-[hsl(210,10%,90%)]">Başarı Hikayeleri</h2>
-      <p class="text-[hsl(215,16%,58%)] text-lg">
-        <a href="/vaka-calismalari/" class="text-[var(--color-primary)] hover:text-[var(--color-accent)] hover:underline transition-colors">Detaylı vaka çalışmalarımızı</a> inceleyin ve başarı hikayelerini keşfedin.
+      <h2 class="mb-4 text-3xl font-bold tracking-tight text-[hsl(210,10%,90%)] md:text-4xl">Basari Hikayeleri</h2>
+      <p class="text-lg text-[hsl(215,16%,58%)]">
+        <a href="/vaka-calismalari/" class="text-[var(--color-primary)] transition-colors hover:text-[var(--color-accent)] hover:underline">Detayli vaka calismalarimizi</a> inceleyin ve benzer sureclerin nasil donustugunu gorun.
       </p>
     </div>
+
     <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6">
       {cases.map((item) => (
-        <div class="neon-bleed-border rounded-2xl p-6 relative group overflow-hidden">
-          <div class="absolute inset-0 bg-gradient-to-br from-[var(--color-primary)]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
+        <div class="neon-bleed-border group relative overflow-hidden rounded-2xl p-6">
+          <div class="pointer-events-none absolute inset-0 bg-gradient-to-br from-[var(--color-primary)]/5 to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100"></div>
           <div class="relative z-10 space-y-4">
-          <div class="h-12 w-full rounded-lg flex items-center justify-center p-3">
-            <img 
-              src={item.logo} 
-              alt={`${item.company} Logo`}
-              width="120"
-              height="42"
-              loading="lazy"
-              decoding="async"
-              class="max-h-full max-w-full object-contain"
-              onerror="this.style.display='none';this.nextElementSibling.style.display='block'"
-            />
-            <span class="text-[hsl(215,16%,58%)] text-xs font-medium hidden">{item.company}</span>
-          </div>
-          <h3 class="text-lg font-semibold text-[hsl(210,10%,90%)] text-center">{item.company}</h3>
-          <p class="text-sm text-[hsl(215,16%,58%)]">{item.result}</p>
-          <div class="flex items-center justify-between">
-            <span class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-semibold bg-[var(--color-primary)]/10 text-[var(--color-primary)] border border-[var(--color-primary)]/20">
-              {item.metric}
-            </span>
-            <a href={`/vaka-calismalari/${item.slug}/`} class="text-sm font-medium text-[var(--color-primary)] hover:text-[var(--color-accent)] transition-colors hover:underline">
-              Detaylar
-            </a>
-          </div>
+            <div class="flex h-12 w-full items-center justify-center rounded-lg p-3">
+              <img
+                src={item.logo}
+                alt={`${item.company} Logo`}
+                width="120"
+                height="42"
+                loading="lazy"
+                decoding="async"
+                class="max-h-full max-w-full object-contain"
+                onerror="this.style.display='none';this.nextElementSibling.style.display='block'"
+              />
+              <span class="hidden text-xs font-medium text-[hsl(215,16%,58%)]">{item.company}</span>
+            </div>
+            <h3 class="text-center text-lg font-semibold text-[hsl(210,10%,90%)]">{item.company}</h3>
+            <p class="text-sm text-[hsl(215,16%,58%)]">{item.result}</p>
+            <div class="flex items-center justify-between">
+              <span class="inline-flex items-center rounded-full border border-[var(--color-primary)]/20 bg-[var(--color-primary)]/10 px-2.5 py-1 text-xs font-semibold text-[var(--color-primary)]">
+                {item.metric}
+              </span>
+              <a href={`/vaka-calismalari/${item.slug}/`} class="text-sm font-medium text-[var(--color-primary)] transition-colors hover:text-[var(--color-accent)] hover:underline">
+                Detaylar
+              </a>
+            </div>
           </div>
         </div>
       ))}
     </div>
   </div>
 </section>
-
-

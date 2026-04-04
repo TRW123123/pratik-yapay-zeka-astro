@@ -1,38 +1,56 @@
 ---
-/**
- * Hero.astro — 1:1 faithful port of lovable-original Hero.tsx
- * Exact same copy, exact same layout. No creative changes.
- */
+import { buildContactHref } from '../lib/contactHref';
+
+const primaryCtaHref = buildContactHref({
+  source: '/',
+  packageName: 'operasyon-haritasi',
+  area: 'other',
+  cta: 'home-hero-primary',
+});
 ---
 
-<section class="hero-section relative min-h-screen flex items-center justify-center" aria-label="Hero section">
-  <!-- World-Class Background Effects -->
-  <div class="absolute inset-0 flex items-center justify-center opacity-10 pointer-events-none mix-blend-screen" aria-hidden="true">
-    <div class="w-[60vw] h-[400px] bg-gradient-to-r from-[var(--color-primary)] to-[var(--color-accent)] blur-[140px] rounded-full"></div>
+<section class="hero-section relative flex min-h-screen items-center justify-center" aria-label="Hero section">
+  <div class="pointer-events-none absolute inset-0 flex items-center justify-center opacity-10 mix-blend-screen" aria-hidden="true">
+    <div class="h-[400px] w-[60vw] rounded-full bg-gradient-to-r from-[var(--color-primary)] to-[var(--color-accent)] blur-[140px]"></div>
   </div>
   <div class="absolute inset-0 bg-grid-pattern opacity-20" aria-hidden="true"></div>
-  
-  <!-- Content -->
-  <div class="relative z-10 container mx-auto px-6 text-center">
-    <div class="max-w-5xl mx-auto space-y-8">
-      <!-- Main Headlines -->
+
+  <div class="container relative z-10 mx-auto px-6 text-center">
+    <div class="mx-auto max-w-5xl space-y-8">
       <div class="space-y-4">
-        <h1 class="headline text-5xl md:text-7xl lg:text-[5rem] text-white">
-          <span class="block mb-4">Siz şirketi yönetin.</span>
-          <span class="block text-[var(--color-primary)] pb-2 relative inline-block hero-underline">
-            Biz sizin için 7/24 çalışan yapay zeka işçileri kuruyoruz.
+        <h1 class="headline text-5xl text-white md:text-7xl lg:text-[5rem]">
+          <span class="mb-4 block">Siz sirketi yonetin.</span>
+          <span class="hero-underline relative inline-block pb-2 text-[var(--color-primary)]">
+            Biz sizin icin 7/24 calisan yapay zeka iscileri kuruyoruz.
           </span>
         </h1>
+        <p class="mx-auto max-w-3xl text-lg leading-relaxed text-[var(--color-text-muted)] md:text-xl">
+          Satis, CRM, pazarlama, muhasebe ve operasyon tarafinda tekrar eden isleri sistemlestirip ekibinizin zamanini geri kazandiriyoruz.
+        </p>
       </div>
-      
-      <div class="pt-12">
+
+      <div class="flex flex-col items-center justify-center gap-4 pt-8 sm:flex-row">
+        <a
+          href={primaryCtaHref}
+          class="magnetic-glow-btn inline-flex min-h-[60px] items-center justify-center rounded-xl px-14 py-5 text-lg"
+        >
+          Ucretsiz analizi baslatin
+        </a>
         <a
           href="/cozumler/"
-          class="magnetic-glow-btn inline-flex items-center justify-center px-14 py-5 text-lg rounded-xl min-h-[60px]"
+          class="inline-flex min-h-[60px] items-center justify-center rounded-xl border border-[var(--color-border)] px-10 py-5 text-lg font-semibold text-[var(--color-text)] transition hover:border-[var(--color-primary)]/40 hover:text-[var(--color-primary-light)]"
         >
-          Şimdi ücretsiz başlayın
+          Cozumleri inceleyin
         </a>
       </div>
+
+      <p class="mx-auto max-w-2xl text-sm leading-relaxed text-[var(--color-text-muted)]">
+        Hemen gorusme istemiyorsaniz once
+        <a href="/ucretsiz-otomasyon-checklistesi/?kaynak=%2F" class="font-semibold text-[var(--color-primary-light)] transition hover:text-[var(--color-primary)]">
+          ucretsiz otomasyon oncelik checklistini
+        </a>
+        isteyebilirsiniz.
+      </p>
     </div>
   </div>
 </section>

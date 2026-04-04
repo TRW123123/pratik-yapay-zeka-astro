@@ -2,43 +2,43 @@
 import SolutionLayout from '../layouts/SolutionLayout.astro';
 ---
 <SolutionLayout
-  title="Kurumsal E-Posta Otomasyonu | Spam ve Karmaşaya Son"
-  description="İnfo@ mail kutunuzdaki karmaşayı bitirin. Gelen B2B e-postaları okuyup niyetini anlayan, sınıflandıran ve asla spam klasörüne düşmeyen yapay zeka çözümü."
-  heroTitle="Gelen Kutusu Karmaşasını Bitiren Otonom B2B E-Posta Yönetimi"
-  heroSubtitle="Satış ve info@ adreslerinize gelen yüzlerce e-postanın içinde kaybolan değerli siparişleri kurtarın. E-postaları anlayan, ilgili birime yönlendiren ve SPF/DKIM/DMARC sorunlarınızı çözerek asla spama düşmeyen otomasyon."
+  title="Kurumsal E-Posta Otomasyonu | Gelen Kutu Sınıflandırma ve Routing"
+  description="Kurumsal e-posta otomasyonu, info@ veya satış kutusuna gelen mailleri sadece filtrelemek değil; niyetine göre sınıflandırmak, yönlendirmek ve aksiyona bağlamaktır."
+  heroTitle="Kurumsal E-Postayı Sadece Gelen Kutu Değil, Operasyon Girişi Gibi Yönetin"
+  heroSubtitle="Info@ ve satış kutusuna düşen yüzlerce mailin içinde sipariş, teklif, destek, başvuru ve spam aynı yerde karışıyorsa sorun e-posta sayısı değil, akış eksikliğidir. Gelen kutuyu anlayan, sınıflandıran ve doğru yere yönlendiren otomasyon katmanları kuruyoruz."
   problems={[
-    "Gelen Kutusu Çöplüğü (Inbox Clutter): Fatura, spam, CV'ler ve milyon liralık B2B satış maillerinin aynı info@ havuzuna düşerek kaos yaratması.",
-    "B2B İletişimde Spam'e Düşmek (Kara Liste): Kötü yapılandırılmış kurumsal e-posta altyapısı (Eksik SPF, DMARC) yüzünden atılan resmi tekliflerin müşterinin çöp kutusuna (Spam) düşmesi.",
-    "Manuel Ticket ve Yönlendirme Hamallığı: Her gelen e-postanın yönetici tarafından okunup 'Veli Bey şu talebe, Ayşe Hanım şu iadeye baksın' diyerek saatlerce Forward veya CC yapılması."
+    "Aynı ortak gelen kutuya satış talepleri, destek mailleri, CV'ler, faturalar ve spam içeriklerin düşmesi nedeniyle değerli mesajların kaybolması.",
+    "Gelen e-postaların manuel okunup ilgili kişiye iletilmesi yüzünden gereksiz yönetim yükü ve gecikme oluşması.",
+    "Kurumsal e-posta akışının CRM, teklif veya destek sürecine bağlanmaması nedeniyle iletişimin görünür satış/değer üretmemesi."
   ]}
-  processTitle="Info@ Adresiniz Nasıl En Zeki Çalışanınız Olur?"
+  processTitle="Kurumsal E-Posta Akışı Nasıl Düzenleniyor?"
   processSteps={[
-    { title: "E-Posta Analizi ve Niyet Sınıflandırma", description: "Yapay zeka tüm info@ postalarını okur. 'Fiyat', 'Şikayet', 'Fatura', 'İş Başvurusu' gibi niyetleri %99 kesinlikle etiketler." },
-    { title: "Akıllı Yönlendirme (Routing)", description: "Şikayet içerikli ise doğrudan teknik servise, teklif içerikli ise satış ekibindeki boş yetkiliye hiç zaman kaybetmeden yönlendirir." },
-    { title: "Yapay Zeka Destekli Otomatik Taslak (Auto-Draft)", description: "Maili yönlendirirken boş yollamaz. Şirket veritabanınıza (Wiki) dayanarak en profesyonel cevap metnini 'Taslaklar' klasörüne kaydeder." },
-    { title: "Gelişmiş Teknolojik Kimlik (DMARC/SPF)", description: "E-posta pazarlamanız (Marketing) ile kurumsal iletişiminiz (Transactional) ayrı sunuculara (IP) taşınarak spam repütasyonunuz temizlenir." }
+    { title: "Gelen Kutu Analizi", description: "Hangi tür maillerin geldiğini, hangilerinin değerli olduğunu ve en çok nerede gecikme yaşandığını belirliyoruz." },
+    { title: "Sınıflandırma ve Routing Mantığı", description: "Mailin teklif, destek, fatura, başvuru veya bilgi talebi gibi niyetlere ayrılmasını sağlıyoruz." },
+    { title: "İlgili Sürece Bağlama", description: "Gerekli mailleri CRM, satış, teklif veya destek sürecine bağlayacak yönlendirme akışı kuruyoruz." },
+    { title: "Görünürlük ve Kontrol", description: "Kim neyi aldı, ne kadar hızlı döndü, hangi mailler kritik kaldı gibi konular raporlanabilir hale geliyor." }
   ]}
-  featuresTitle="E-Posta Yönetimini CRM İle Birleştiren Araçlar"
+  featuresTitle="Gelen Kutuyu Operasyon Katmanına Dönüştüren Yapı"
   features={[
-    { title: "Sese Çevirme ve Özetleme", description: "20 mailden oluşan uzun bir zinciri (Thread), satış temsilcisi yoldayken dinlesin diye 30 saniyelik net bir sese veya madde madde özete çevirir." },
-    { title: "VIP Müşteri Kalkanı", description: "Geçmiş cirosu yüksek bir kurumsal müşteriden mail geldiğinde, sistemi 'Acil' kırmızı kodla işaretleyip yöneticinin cep telefonuna SMS veya WhatsApp ile iletir." },
-    { title: "Satın Alma Niyeti (Scoring) Puanlama", description: "Gelen isteklerin dilinden 'Sadece fiyat araştırması mı yoksa ödeme yapmaya hazır sıcak müşteri mi?' ayrımını yaparak öncelik sıralaması oluşturur." },
-    { title: "Otomatik Ek (Attachment) İşleme", description: "Müşterilerden gelen ZIP veya PDF şeklindeki teknik şartnameleri indirir, okur ve kritik olan metinleri özetleyerek asıl mesajın içine yazar." }
+    { title: "Mail Niyeti Sınıflandırma", description: "Her mail aynı değildir; satış, destek, fatura veya spam gibi ayrımlar sistematik hale gelir." },
+    { title: "Akıllı Yönlendirme", description: "Doğru mail doğru kişiye veya doğru sürece yönlenir; ortak gelen kutu darboğaz olmaktan çıkar." },
+    { title: "CRM ve Satış Akışı Bağlantısı", description: "Değerli talepler sadece okunmuş mail olarak kalmaz; görünür satış veya takip kaydına dönüşebilir." },
+    { title: "Yönetim Görünürlüğü", description: "Hangi tür maillerin kaybolduğunu veya nerede beklediğini yönetim daha net görür." }
   ]}
-  benefitsTitle="Düzenli ve Güvenli İletişimin Kurumsal Çıktısı"
+  benefitsTitle="Gelen Kutunun İşe Etkisi"
   benefits={[
-    "%100", "Spam Koruması. Doğru SPF/DKIM mimarisi ile gönderilen şirket tekliflerinizin müşterilerin Spam klasörüne düşme oranı sıfırlanır.",
-    "0", "Kaybolan Lead'ler. Ortak bilgi kutusunda (info@) kimsenin üstlenmediği için cevapsız kalarak kaçan iş fırsatları tamamen biter.",
-    "Günde 2 Saat", "Sadece 'Gelip giden e-postaları sınıflandırmak ve ilgili kişilere Forwad etmek' için harcanan mesai tasarrufu."
+    "0", "Sahipsiz kalan kritik mail hedefi. Ortak kutuda kaybolan fırsat riski ciddi şekilde azalır.",
+    "2+ Saat", "Günlük manuel okuma ve yönlendirme yükünden kazanılan zaman.",
+    "%100", "Hangi mailin hangi sürece aktarıldığına dair daha net görünürlük."
   ]}
-  caseStudyDescription="Günde 400 info e-postası alan büyük bir endüstriyel üretici müşterimiz, talepleri satış ekibine manuel paylaştırmak için saatler harcıyordu. LLM tabanlı e-posta otomasyonu ile bu süre sıfırlandı ve sadece taslağı okuyup 'Gönder' demeleri sağlandı."
-  finalCtaTitle="Gelen Kutunuzu Bir Çöplükten Satış Makinesine Dönüştürün"
-  finalCtaSubtitle="Müşterileriniz beklemez. Gelen tüm mailleri saniyeler içinde anlayan ve sınıflandıran otonom posta asistanı edinin."
+  caseStudyDescription="Yoğun ortak gelen kutu kullanan bir ekip, mail sınıflandırma ve routing mantığı kurulduktan sonra hem iç yükü azalttı hem de satışa dönüşebilecek talepleri daha hızlı işlemeye başladı."
+  finalCtaTitle="Info@ Adresinizi Çöp Kutusu Değil, Çalışan Bir Giriş Kanalı Yapın"
+  finalCtaSubtitle="Mevcut e-posta akışınızı birlikte inceleyelim; hangi maillerin değer taşıdığını, hangilerinin yanlış elde kaldığını ve hangi otomasyon mantığının en çok faydayı getireceğini netleştirelim."
   sectorTheme="crm"
   faqs={[
-    { question: "Mevcut e-posta altyapımız (Google Workspace, Microsoft 365, Yandex) değişmek zorunda mı?", answer: "Hayır. Sistemimiz API ile mevcut kurumsal e-posta sağlayıcınıza bağlanarak üstüne zeki bir 'Filtre ve Routing' katmanı ekler." },
-    { question: "DMARC veya SPF kayıtları neden bu kadar önemli?", answer: "Çünkü dünya devi posta sunucuları (Gmail, Outlook vb.) artık bu kimlik doğrulamalarına sahip olmayan b2b e-postaları doğrudan reddetme (Reject) kararı aldı. Biz teknik SEO tarafında bunu çözüyoruz." },
-    { question: "Kurumsal sırlarımız olan e-postalar güvenlik sorunu yaşar mı?", answer: "Veri güvenliği (Privacy-First) ana kuralımızdır. Modele beslenen şirket mailleriniz açık LLM modellerini (Public AI) eğitmek için asla kullanılmaz ve uçtan uca şifrelidir." }
+    { question: "Bu sistem mevcut Google Workspace veya Microsoft 365 yapımızla çalışır mı?", answer: "Evet. Çoğu senaryoda mevcut e-posta altyapısının üstüne sınıflandırma ve yönlendirme katmanı eklenir; altyapıyı baştan kurmak gerekmez." },
+    { question: "Amaç spam teknik ayarları mı, yoksa operasyon mu?", answer: "Asıl odak operasyon akışıdır. Teknik teslimat tarafı önemli olabilir, ancak bu sayfanın ana değeri gelen mailin doğru sürece bağlanmasıdır." },
+    { question: "Kurumsal e-posta otomasyonu hangi ekiplerde en çok işe yarar?", answer: "Satış, teklif, destek veya info@ üzerinden yoğun gelen kutu yöneten ekiplerde en yüksek etki görülür. Özellikle ortak mailbox kullanan yapılarda çok faydalıdır." }
   ]}
   sectorName="Kurumsal E-Posta"
 />

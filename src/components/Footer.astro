@@ -1,118 +1,125 @@
 ---
+import { buildContactHref } from '../lib/contactHref';
+
+const pathname = Astro.url.pathname;
+const footerCtaHref = buildContactHref({
+  source: pathname,
+  packageName: 'operasyon-haritasi',
+  area: 'other',
+  cta: 'footer-primary',
+});
+const footerNavContactHref = buildContactHref({
+  source: pathname,
+  cta: 'footer-nav-contact',
+});
 ---
 
 <footer class="border-t border-[var(--color-border)] bg-[var(--color-surface-light)]">
   <div class="container mx-auto px-4 py-12 lg:px-6">
     <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-5">
-      <!-- Logo + Description -->
       <div class="space-y-4 lg:col-span-1">
-        <a href="/" class="flex items-center space-x-2">
-          <div class="h-8 w-8 rounded-lg bg-[var(--color-surface)] border border-[var(--color-border)] flex items-center justify-center">
-            <div class="w-4 h-4 bg-[var(--color-primary)] rounded-sm"></div>
+        <a href="/" class="flex items-center space-x-2" aria-label="Ana sayfa">
+          <div class="flex h-8 w-8 items-center justify-center rounded-lg border border-[var(--color-border)] bg-[var(--color-surface)]">
+            <div class="h-4 w-4 rounded-sm bg-[var(--color-primary)]"></div>
           </div>
         </a>
         <p class="text-sm text-[var(--color-text-muted)]">
-          Büyüyen işletmeler için yapay zeka destekli otomasyon.
+          Buyuyen isletmeler icin yapay zeka destekli otomasyon sistemleri.
         </p>
       </div>
 
-      <!-- Menu -->
       <div class="space-y-4 lg:col-span-1">
         <h3 class="text-sm font-semibold">Menu</h3>
         <ul class="space-y-2 text-sm">
-          <li><a href="/" class="text-[var(--color-text-muted)] hover:text-[var(--color-primary-light)] transition-colors">Ana Sayfa</a></li>
-          <li><a href="/cozumler/" class="text-[var(--color-text-muted)] hover:text-[var(--color-primary-light)] transition-colors">Çözümler</a></li>
-          <li><a href="/vaka-calismalari/" class="text-[var(--color-text-muted)] hover:text-[var(--color-primary-light)] transition-colors">Vaka Çalışmaları</a></li>
-          <li><a href="/hakkimizda/" class="text-[var(--color-text-muted)] hover:text-[var(--color-primary-light)] transition-colors">Hakkımızda</a></li>
+          <li><a href="/" class="transition-colors hover:text-[var(--color-primary-light)] text-[var(--color-text-muted)]">Ana Sayfa</a></li>
+          <li><a href="/cozumler/" class="transition-colors hover:text-[var(--color-primary-light)] text-[var(--color-text-muted)]">Cozumler</a></li>
+          <li><a href="/vaka-calismalari/" class="transition-colors hover:text-[var(--color-primary-light)] text-[var(--color-text-muted)]">Vaka Calismalari</a></li>
+          <li><a href={footerNavContactHref} class="transition-colors hover:text-[var(--color-primary-light)] text-[var(--color-text-muted)]">Iletisim</a></li>
+          <li><a href="/hakkimizda/" class="transition-colors hover:text-[var(--color-primary-light)] text-[var(--color-text-muted)]">Hakkimizda</a></li>
         </ul>
       </div>
 
-      <!-- Çözümler & Otonom Asistanlar -->
       <div class="space-y-4 lg:col-span-1">
-        <h3 class="text-sm font-semibold">Çözümler & Asistanlar</h3>
+        <h3 class="text-sm font-semibold">Cozumler ve Asistanlar</h3>
         <ul class="space-y-2 text-sm">
-          <li><a href="/crm-programi/" class="text-[var(--color-text-muted)] hover:text-[var(--color-primary-light)] transition-colors">Yapay Zeka CRM</a></li>
-          <li><a href="/on-muhasebe-ve-fatura/" class="text-[var(--color-text-muted)] hover:text-[var(--color-primary-light)] transition-colors">Ön Muhasebe Botu</a></li>
-          <li><a href="/e-fatura-kesme-programi/" class="text-[var(--color-text-muted)] hover:text-[var(--color-primary-light)] transition-colors">E-Fatura Otomasyonu</a></li>
-          <li><a href="/yapay-zeka-chatbot/" class="text-[var(--color-text-muted)] hover:text-[var(--color-primary-light)] transition-colors">Yapay Zeka Chatbot</a></li>
-          <li><a href="/whatsapp-ve-siparis-botlari/" class="text-[var(--color-text-muted)] hover:text-[var(--color-primary-light)] transition-colors">WhatsApp & Sipariş Botları</a></li>
-          <li><a href="/b2b-musteri-bulma/" class="text-[var(--color-text-muted)] hover:text-[var(--color-primary-light)] transition-colors">B2B Müşteri Bulma</a></li>
-          <li><a href="/b2b-musteri-takip-ve-plasiyer/" class="text-[var(--color-text-muted)] hover:text-[var(--color-primary-light)] transition-colors">B2B Takip & Plasiyer</a></li>
-          <li><a href="/marketing-otomasyonu/" class="text-[var(--color-text-muted)] hover:text-[var(--color-primary-light)] transition-colors">Marketing Otomasyonu</a></li>
-          <li><a href="/e-ticaret-ve-pazaryeri-otomasyonu/" class="text-[var(--color-text-muted)] hover:text-[var(--color-primary-light)] transition-colors">E-Ticaret Otomasyonu</a></li>
-          <li><a href="/stok-takibi-programi/" class="text-[var(--color-text-muted)] hover:text-[var(--color-primary-light)] transition-colors">Stok Takip Sistemi</a></li>
-          <li><a href="/teklif-hazirlama-programi/" class="text-[var(--color-text-muted)] hover:text-[var(--color-primary-light)] transition-colors">Teklif Hazırlama</a></li>
-          <li><a href="/kurumsal-e-posta-otomasyonu/" class="text-[var(--color-text-muted)] hover:text-[var(--color-primary-light)] transition-colors">Kurumsal E-Posta</a></li>
+          <li><a href="/crm-programi/" class="transition-colors hover:text-[var(--color-primary-light)] text-[var(--color-text-muted)]">Yapay Zeka CRM</a></li>
+          <li><a href="/on-muhasebe-ve-fatura/" class="transition-colors hover:text-[var(--color-primary-light)] text-[var(--color-text-muted)]">On Muhasebe Botu</a></li>
+          <li><a href="/e-fatura-kesme-programi/" class="transition-colors hover:text-[var(--color-primary-light)] text-[var(--color-text-muted)]">E-Fatura Otomasyonu</a></li>
+          <li><a href="/yapay-zeka-chatbot/" class="transition-colors hover:text-[var(--color-primary-light)] text-[var(--color-text-muted)]">Yapay Zeka Chatbot</a></li>
+          <li><a href="/whatsapp-ve-siparis-botlari/" class="transition-colors hover:text-[var(--color-primary-light)] text-[var(--color-text-muted)]">WhatsApp ve Siparis Botlari</a></li>
+          <li><a href="/b2b-musteri-bulma/" class="transition-colors hover:text-[var(--color-primary-light)] text-[var(--color-text-muted)]">B2B Musteri Bulma</a></li>
+          <li><a href="/b2b-musteri-takip-ve-plasiyer/" class="transition-colors hover:text-[var(--color-primary-light)] text-[var(--color-text-muted)]">B2B Takip ve Plasiyer</a></li>
+          <li><a href="/marketing-otomasyonu/" class="transition-colors hover:text-[var(--color-primary-light)] text-[var(--color-text-muted)]">Marketing Otomasyonu</a></li>
+          <li><a href="/e-ticaret-ve-pazaryeri-otomasyonu/" class="transition-colors hover:text-[var(--color-primary-light)] text-[var(--color-text-muted)]">E-Ticaret Otomasyonu</a></li>
+          <li><a href="/stok-takibi-programi/" class="transition-colors hover:text-[var(--color-primary-light)] text-[var(--color-text-muted)]">Stok Takip Sistemi</a></li>
+          <li><a href="/teklif-hazirlama-programi/" class="transition-colors hover:text-[var(--color-primary-light)] text-[var(--color-text-muted)]">Teklif Hazirlama</a></li>
+          <li><a href="/kurumsal-e-posta-otomasyonu/" class="transition-colors hover:text-[var(--color-primary-light)] text-[var(--color-text-muted)]">Kurumsal E-Posta</a></li>
         </ul>
       </div>
 
-      <!-- Muhasebe & Finans Araçları -->
       <div class="space-y-4 lg:col-span-1">
-        <h3 class="text-sm font-semibold">Finans & Hesaplama</h3>
+        <h3 class="text-sm font-semibold">Finans ve Hesaplama</h3>
         <ul class="space-y-2 text-sm">
-          <li><a href="/maas-hesaplama-motoru/" class="text-[var(--color-text-muted)] hover:text-[var(--color-primary-light)] transition-colors">Maaş Hesaplama</a></li>
-          <li><a href="/bordro-hesaplama/" class="text-[var(--color-text-muted)] hover:text-[var(--color-primary-light)] transition-colors">Bordro Hesaplama</a></li>
-          <li><a href="/kidem-tazminati-hesaplama/" class="text-[var(--color-text-muted)] hover:text-[var(--color-primary-light)] transition-colors">Kıdem Tazminatı</a></li>
-          <li><a href="/ihbar-tazminati-hesaplama/" class="text-[var(--color-text-muted)] hover:text-[var(--color-primary-light)] transition-colors">İhbar Tazminatı</a></li>
-          <li><a href="/isverene-maliyet-hesaplama/" class="text-[var(--color-text-muted)] hover:text-[var(--color-primary-light)] transition-colors">İşverene Maliyet</a></li>
-          <li><a href="/fazla-mesai-hesaplama/" class="text-[var(--color-text-muted)] hover:text-[var(--color-primary-light)] transition-colors">Fazla Mesai Hesaplama</a></li>
-          <li><a href="/yillik-izin-ucreti-hesaplama/" class="text-[var(--color-text-muted)] hover:text-[var(--color-primary-light)] transition-colors">Yıllık İzin Ücreti</a></li>
-          <li><a href="/gecikme-zammi-hesaplama/" class="text-[var(--color-text-muted)] hover:text-[var(--color-primary-light)] transition-colors">Gecikme Zammı</a></li>
-          <li><a href="/vergi-iadesi-hesaplama/" class="text-[var(--color-text-muted)] hover:text-[var(--color-primary-light)] transition-colors">Vergi İadesi</a></li>
-          <li><a href="/arac-deger-kaybi-hesaplama/" class="text-[var(--color-text-muted)] hover:text-[var(--color-primary-light)] transition-colors">Araç Değer Kaybı</a></li>
-          <li><a href="/kdv-hesaplama/" class="text-[var(--color-text-muted)] hover:text-[var(--color-primary-light)] transition-colors">KDV Hesaplama</a></li>
-          <li><a href="/brutten-nete/" class="text-[var(--color-text-muted)] hover:text-[var(--color-primary-light)] transition-colors">Brütten Nete</a></li>
-          <li><a href="/e-arsiv-portali/" class="text-[var(--color-text-muted)] hover:text-[var(--color-primary-light)] transition-colors">E-Arşiv Portalı</a></li>
-          <li><a href="/defter-beyan/" class="text-[var(--color-text-muted)] hover:text-[var(--color-primary-light)] transition-colors">Defter Beyan</a></li>
-          <li><a href="/e-beyanname/" class="text-[var(--color-text-muted)] hover:text-[var(--color-primary-light)] transition-colors">E-Beyanname</a></li>
-          <li><a href="/sgk-hizmet-dokumu/" class="text-[var(--color-text-muted)] hover:text-[var(--color-primary-light)] transition-colors">SGK Hizmet Dökümü</a></li>
-          <li><a href="/ticaret-sicil-gazetesi/" class="text-[var(--color-text-muted)] hover:text-[var(--color-primary-light)] transition-colors">Ticaret Sicil Gazetesi</a></li>
-          <li><a href="/acik-fatura-kapali-fatura/" class="text-[var(--color-text-muted)] hover:text-[var(--color-primary-light)] transition-colors">Açık & Kapalı Fatura</a></li>
-          <li><a href="/cari-hesap-ekstresi/" class="text-[var(--color-text-muted)] hover:text-[var(--color-primary-light)] transition-colors">Cari Hesap Ekstresi</a></li>
-          <li><a href="/mutabakat-mektubu/" class="text-[var(--color-text-muted)] hover:text-[var(--color-primary-light)] transition-colors">Mutabakat Mektubu</a></li>
+          <li><a href="/maas-hesaplama-motoru/" class="transition-colors hover:text-[var(--color-primary-light)] text-[var(--color-text-muted)]">Maas Hesaplama</a></li>
+          <li><a href="/bordro-hesaplama/" class="transition-colors hover:text-[var(--color-primary-light)] text-[var(--color-text-muted)]">Bordro Hesaplama</a></li>
+          <li><a href="/kidem-tazminati-hesaplama/" class="transition-colors hover:text-[var(--color-primary-light)] text-[var(--color-text-muted)]">Kidem Tazminati</a></li>
+          <li><a href="/ihbar-tazminati-hesaplama/" class="transition-colors hover:text-[var(--color-primary-light)] text-[var(--color-text-muted)]">Ihbar Tazminati</a></li>
+          <li><a href="/isverene-maliyet-hesaplama/" class="transition-colors hover:text-[var(--color-primary-light)] text-[var(--color-text-muted)]">Isverene Maliyet</a></li>
+          <li><a href="/fazla-mesai-hesaplama/" class="transition-colors hover:text-[var(--color-primary-light)] text-[var(--color-text-muted)]">Fazla Mesai</a></li>
+          <li><a href="/yillik-izin-ucreti-hesaplama/" class="transition-colors hover:text-[var(--color-primary-light)] text-[var(--color-text-muted)]">Yillik Izin Ucreti</a></li>
+          <li><a href="/gecikme-zammi-hesaplama/" class="transition-colors hover:text-[var(--color-primary-light)] text-[var(--color-text-muted)]">Gecikme Zammi</a></li>
+          <li><a href="/vergi-iadesi-hesaplama/" class="transition-colors hover:text-[var(--color-primary-light)] text-[var(--color-text-muted)]">Vergi Iadesi</a></li>
+          <li><a href="/arac-deger-kaybi-hesaplama/" class="transition-colors hover:text-[var(--color-primary-light)] text-[var(--color-text-muted)]">Arac Deger Kaybi</a></li>
+          <li><a href="/kdv-hesaplama/" class="transition-colors hover:text-[var(--color-primary-light)] text-[var(--color-text-muted)]">KDV Hesaplama</a></li>
+          <li><a href="/brutten-nete/" class="transition-colors hover:text-[var(--color-primary-light)] text-[var(--color-text-muted)]">Brutten Nete</a></li>
+          <li><a href="/e-arsiv-portali/" class="transition-colors hover:text-[var(--color-primary-light)] text-[var(--color-text-muted)]">E-Arsiv Portali</a></li>
+          <li><a href="/defter-beyan/" class="transition-colors hover:text-[var(--color-primary-light)] text-[var(--color-text-muted)]">Defter Beyan</a></li>
+          <li><a href="/e-beyanname/" class="transition-colors hover:text-[var(--color-primary-light)] text-[var(--color-text-muted)]">E-Beyanname</a></li>
+          <li><a href="/sgk-hizmet-dokumu/" class="transition-colors hover:text-[var(--color-primary-light)] text-[var(--color-text-muted)]">SGK Hizmet Dokumu</a></li>
+          <li><a href="/ticaret-sicil-gazetesi/" class="transition-colors hover:text-[var(--color-primary-light)] text-[var(--color-text-muted)]">Ticaret Sicil Gazetesi</a></li>
+          <li><a href="/acik-fatura-kapali-fatura/" class="transition-colors hover:text-[var(--color-primary-light)] text-[var(--color-text-muted)]">Acik ve Kapali Fatura</a></li>
+          <li><a href="/cari-hesap-ekstresi/" class="transition-colors hover:text-[var(--color-primary-light)] text-[var(--color-text-muted)]">Cari Hesap Ekstresi</a></li>
+          <li><a href="/mutabakat-mektubu/" class="transition-colors hover:text-[var(--color-primary-light)] text-[var(--color-text-muted)]">Mutabakat Mektubu</a></li>
         </ul>
       </div>
 
-      <!-- Contact -->
       <div class="space-y-4 lg:col-span-1">
-        <h3 class="text-sm font-semibold">İletişim</h3>
+        <h3 class="text-sm font-semibold">Iletisim</h3>
         <ul class="space-y-2 text-sm text-[var(--color-text-muted)]">
           <li class="font-medium text-[var(--color-text)]">ST-Automatisierung</li>
-          <li>Heidestraße 2<br/>58239 Schwerte, Deutschland</li>
-          <li><a href="mailto:s.tepecik@pratik-yapayzeka.com" class="hover:text-[var(--color-primary-light)] transition-colors">s.tepecik@pratik-yapayzeka.com</a></li>
-          <li><a href="tel:+491627246504" class="hover:text-[var(--color-primary-light)] transition-colors">+49 162 724 6504</a></li>
+          <li>Heidestrasse 2<br />58239 Schwerte, Deutschland</li>
+          <li><a href="mailto:s.tepecik@pratik-yapayzeka.com" class="transition-colors hover:text-[var(--color-primary-light)]">s.tepecik@pratik-yapayzeka.com</a></li>
+          <li><a href="tel:+491627246504" class="transition-colors hover:text-[var(--color-primary-light)]">+49 162 724 6504</a></li>
         </ul>
         <div class="flex space-x-3 pt-2">
-          <a href="https://www.youtube.com/@yapayzekapratik" target="_blank" rel="noopener noreferrer" class="text-[var(--color-text-muted)] hover:text-[var(--color-primary-light)] transition-colors" aria-label="YouTube">
-            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+          <a href="https://www.youtube.com/@yapayzekapratik" target="_blank" rel="noopener noreferrer" class="text-[var(--color-text-muted)] transition-colors hover:text-[var(--color-primary-light)]" aria-label="YouTube">
+            <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
           </a>
-          <a href="https://www.tiktok.com/@yapayzekapratik" target="_blank" rel="noopener noreferrer" class="text-[var(--color-text-muted)] hover:text-[var(--color-primary-light)] transition-colors" aria-label="TikTok">
-            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z"/></svg>
+          <a href="https://www.tiktok.com/@yapayzekapratik" target="_blank" rel="noopener noreferrer" class="text-[var(--color-text-muted)] transition-colors hover:text-[var(--color-primary-light)]" aria-label="TikTok">
+            <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z"/></svg>
           </a>
-          <a href="https://www.instagram.com/yapayzekapratik" target="_blank" rel="noopener noreferrer" class="text-[var(--color-text-muted)] hover:text-[var(--color-primary-light)] transition-colors" aria-label="Instagram">
-            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+          <a href="https://www.instagram.com/yapayzekapratik" target="_blank" rel="noopener noreferrer" class="text-[var(--color-text-muted)] transition-colors hover:text-[var(--color-primary-light)]" aria-label="Instagram">
+            <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
           </a>
         </div>
       </div>
     </div>
 
-    <!-- CTA -->
-    <div class="mt-8 pt-8 border-t border-[var(--color-border)]">
-      <div class="flex flex-col md:flex-row justify-between items-center gap-4">
-        <p class="text-sm text-[var(--color-text-muted)]">İşletmenizi dönüştürmeye hazır mısınız?</p>
-        <a href="/cozumler/" class="bg-[var(--color-primary)] hover:bg-[var(--color-primary-dark)] text-white font-medium px-6 py-2.5 rounded-lg transition-all duration-300 text-sm">
-          Ücretsiz Danışmanlık Alın
+    <div class="mt-8 border-t border-[var(--color-border)] pt-8">
+      <div class="flex flex-col items-center justify-between gap-4 md:flex-row">
+        <p class="text-sm text-[var(--color-text-muted)]">Isletmenizi donusturmeye hazir misiniz?</p>
+        <a href={footerCtaHref} class="rounded-lg bg-[var(--color-primary)] px-6 py-2.5 text-sm font-medium text-white transition-all duration-300 hover:bg-[var(--color-primary-dark)]">
+          Ucretsiz analiz alin
         </a>
       </div>
     </div>
 
-    <!-- Copyright -->
     <div class="mt-8 border-t border-[var(--color-border)] pt-8">
       <div class="flex flex-col items-center justify-between gap-4 md:flex-row">
-        <p class="text-sm text-[var(--color-text-muted)]">© {new Date().getFullYear()} Pratik Yapay Zeka. Tüm hakları saklıdır.</p>
+        <p class="text-sm text-[var(--color-text-muted)]">© {new Date().getFullYear()} Pratik Yapay Zeka. Tum haklari saklidir.</p>
         <div class="flex space-x-4">
-          <a href="/gizlilik/" class="text-sm text-[var(--color-text-muted)] hover:text-[var(--color-primary-light)] transition-colors">Gizlilik</a>
-          <a href="/kullanim-kosullari/" class="text-sm text-[var(--color-text-muted)] hover:text-[var(--color-primary-light)] transition-colors">Kullanım Koşulları</a>
+          <a href="/gizlilik/" class="text-sm text-[var(--color-text-muted)] transition-colors hover:text-[var(--color-primary-light)]">Gizlilik</a>
+          <a href="/kullanim-kosullari/" class="text-sm text-[var(--color-text-muted)] transition-colors hover:text-[var(--color-primary-light)]">Kullanim Kosullari</a>
         </div>
       </div>
     </div>

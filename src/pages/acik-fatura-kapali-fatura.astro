@@ -2,43 +2,43 @@
 import SolutionLayout from '../layouts/SolutionLayout.astro';
 ---
 <SolutionLayout
-  title="Açık Fatura Tahsilatında Yapay Zeka: Otomatik Tahsilat | Pratik Yapay Zeka"
-  description="Açık ve kapalı fatura takibini manuel yapmayın. ERP'nize bağlanan yapay zeka asistanı, vadesi geçen açık faturalar için müşterilerinize otomatik WhatsApp hatırlatması ve ödeme linki göndersin."
-  heroTitle="Açık Faturalarınız Tahsil Edilemiyor mu? Süreci Yapay Zekaya Devredin."
-  heroSubtitle="Muhasebede faturaların üzerine vurulan 'açık' ya da 'kapalı' kaşeleri dijitalleşiyor ama alacak takip süreci hala çağ dışı. ERP sisteminizi okuyup, müşterilere zamanında ve kibarca WhatsApp üzerinden hatırlatma yapan Otonom Tahsilat Asistanınızla tanışın."
+  title="Acik Fatura Kapali Fatura Farki | Tahsilat ve Cari Takip Akisi"
+  description="Acik fatura ile kapali fatura farkini ogrenmek tek basina yetmez. Asil kritik konu, odeme durumunu, tahsilat takibini ve cari hareketi ekip icinde dogru yonetebilmektir."
+  heroTitle="Acik Fatura ile Kapali Fatura Farkini Bilmek Yetmez, Sureci de Dogru Kurmak Gerekir"
+  heroSubtitle="Bu kavramlar muhasebe ve tahsilat akisinin temelidir. Ancak bircok ekipte asil sorun tanimi bilmemek degil; hangi belgenin odenmis sayildigi, hangi carinin takipte oldugu ve tahsilat adimlarinin kimin uzerinde kaldiginin daginik olmasidir."
   problems={[
-    "Şirketlerin nakit akışı döngüsünün, vadesinde ödenmeyen açık faturalar yüzünden bozulması ve şirketin içeride hapsolan sermayesi.",
-    "Satış veya muhasebe personelinin zamanını yeni müşteri bulmak yerine, sürekli 'Cari ödemeniz gecikti' demek için aramalarla harcaması.",
-    "Ödeme almak için aranan müşterilerle yaşanan gerilimin ve 'bana hatırlatılmadı' bahanelerinin yarattığı operasyonel pürüzler."
+    "Acik fatura ve kapali fatura mantigi bilinse bile odeme takibi hala Excel, WhatsApp ve kisi hafizasi uzerinden yurutulmesi.",
+    "Satis, muhasebe ve tahsilat ekiplerinin ayni cari hesap durumu hakkinda farkli bilgiye sahip olmasi.",
+    "Odeme alinmis, vadesi gecmis veya itirazli faturalarin ayri ayri izlenmemesi nedeniyle tahsilat surecinin gecikmesi."
   ]}
-  processTitle="Otonom Dunning (Tahsilat Yönetimi) Nasıl Çalışır?"
+  processTitle="Tahsilat ve Fatura Durumu Akisi Nasil Sistemlesir?"
   processSteps={[
-    { title: "ERP Entegrasyonu (Logo/Mikro/Netsis)", description: "Yapay zeka asistanımız muhasebe programınızı 7/24 izler ve kesilen tüm açık faturaların vadelerini ajandasına kaydeder." },
-    { title: "Proaktif İlk Hatırlatma (Vade Günü)", description: "Fatura vadesi geldiğinde, bot ilgili müşterinin WhatsApp hattına şirketinizi temsil eden son derece kurumsal ve nazik bir mesaj atar." },
-    { title: "Anında Ödeme Linki Ekleme", description: "Hatırlatma mesajının içinde iyzico, PayTR veya banka Sanal POS ödeme linkiniz hazır bulunur. Müşteri tek tuşla öder." },
-    { title: "Eskalasyon ve Aşama Yönetimi", description: "Ödeme 7 gün gecikirse daha formel bir mesaj atan bot, 30 gün gecikirse durumu direkt muhasebe müdürü ve avukata raporlar." }
+    { title: "Belge Tipi ve Odeme Durumu Ayrimi", description: "Hangi faturanin tahsil edilmis, hangisinin acik bakiye tasidigi ve hangisinin incelemede oldugu netlestirilir." },
+    { title: "Cari Hesap ve Hareket Gorunurlugu", description: "Fatura tek basina degil, ilgili cari hesap ve odeme hareketleriyle birlikte ele alinir." },
+    { title: "Hatirlatma ve Takip Senaryolari", description: "Vadesi gelen, geciken veya mutabakat bekleyen faturalar icin standart takip akislari kurulur." },
+    { title: "Tahsilat Sonrasi Kapanis", description: "Odeme alindiginda durumun sistemde kapanmasi, ilgili ekiplerin haberdar olmasi ve gereksiz takiplerin bitmesi saglanir." }
   ]}
-  featuresTitle="Sade Bir SMS Servisinden Çok Daha Fazlası"
+  featuresTitle="Bu Konunun Sadece Tanim Degil, Operasyon Tarafi"
   features={[
-    { title: "Duygu Analizi (Sentiment Analysis)", description: "WhatsApp'tan müşterinin verdiği 'Bugün değil, cuma hallediyorum' yanıtını anlar ve vadeyi kendi kendine cuma gününe öteleyip o gün tekrar yazar." },
-    { title: "Müşteriye Özel Tahsilat Tonu", description: "VIP müşterilere (A Grubu) daha esnek ve yumuşak uyarılar atarken, sürekli geç ödeyen B Grubu müşterilere daha kesin dilli bildirimler üretir." },
-    { title: "Çoklu Kanal (Omnichannel)", description: "Müşteri WhatsApp'a cevap vermiyorsa, sistemi otomatik olarak E-posta aşamasına veya sesli arama (VoiceBot) aşamasına kaydırabilir." },
-    { title: "Açık/Kapalı Fatura Otomatik Etiketleme", description: "Kredi kartından veya EFT ile gelen tahsilat ERP'ye işlendiği an yapay zeka haberdar olur ve tahsilat takibini kapatır, müşteriye teşekkür mesajı atar." }
+    { title: "Cari ve Fatura Baglantisi", description: "Fatura durumu yalnizca belge uzerinden degil, cari hareket ve tahsilat bilgisiyle birlikte gorulur." },
+    { title: "Takip Onceligi", description: "Ekip hangi faturada aksiyon almasi gerektigini daha erken ve daha net gorur." },
+    { title: "Self-Service Bilgi Akisi", description: "Bayi, musteri veya satis ekibi acik bakiye bilgisini muhasebeye sormadan gorebilir hale gelir." },
+    { title: "Tahsilat Operasyonu Uyumu", description: "Hatirlatma, mutabakat ve tahsilat adimlari birbirinden kopuk ilerlemez." }
   ]}
-  benefitsTitle="Nakit Akışında Yapay Zeka Standartları"
+  benefitsTitle="Acik ve Kapali Fatura Mantigini Dogru Kurmanin Kazanci"
   benefits={[
-    "%35", "Daha Hızlı Nakit Akışı. Dijital cüzdan entegrasyonu ve anlık WhatsApp mesajlarıyla ortalama tahsilat süresi hızlanır.",
-    "0 Gerilim", "Müşteri İlişkileri Korunur. Para istemek bir personel için zor olabilir; ancak nazik bir operasyon botunun sorması tamamen profesyonelcedir.",
-    "Personel", "Verimliliği. Muhasebe departmanınız 'ödemenizi çekemiyoruz' telefonları yapmak yerine bütçe yönetimine odaklanır."
+    "Daha Net Tahsilat Onceligi", "Hangi cari ve hangi belge icin aksiyon gerektigi ekip tarafinda daha görünür olur.",
+    "%100", "Durum seffafligi. Odenmis, bekleyen ve sorunlu faturalar daha temiz ayrisir.",
+    "Daha Az Ic Yazisma", "Satis, muhasebe ve finans ekipleri ayni durumu tekrar tekrar teyit etmek zorunda kalmaz."
   ]}
-  caseStudyDescription="Her ay yüzlerce toptan satış faturası kesen bir gıda distribütörü, açık faturalarının tamamını yapay zeka WhatsApp botumuza bağlayarak vadesi geçen alacak tutarını 3 ay içinde yarı yarıya düşürdü."
-  finalCtaTitle="Nakit Akışınızı Şansa Bırakmayın"
-  finalCtaSubtitle="Müşterilerinize saygılı bir şekilde alacaklarınızı hatırlatan yapay zeka tahsilat uzmanınızı bugün kuralım."
-  sectorTheme="finans"
+  caseStudyDescription="Cari takip ve tahsilat bilgisini farkli ekiplerde dağinik tutan bir sirket, fatura durumu ve bakiye gorunurlugunu tek akista topladiginda hem tahsilat onceliklerini daha net gormeye hem de ic ekip trafiklerini azaltmaya basladi."
+  finalCtaTitle="Fatura Durumunu Kavram Duzeyinden Operasyon Duzeyine Tasiyalim"
+  finalCtaSubtitle="Tahsilat akisinizi birlikte cikaralim; acik bakiye, odeme durumu ve takip adimlarinda hangi noktalarin dagildigini netlestirelim."
+  sectorTheme="muhasebe"
   faqs={[
-    { question: "Eski nesil muhasebe kullanıyoruz (fatura üzerine açık kaşesi vuruyoruz), nasıl faydalanırız?", answer: "Yapay zeka asistanlarımız fatura görselleri üzerinden veya temel bir Excel carisine bağlanarak da kimin borcu olduğunu sorunsuzca öğrenebilir." },
-    { question: "Müşteri ödemeye itiraz eder veya tutarı yanlış bulursa ne olur?", answer: "Bot bunu kelimelerden anında algılar. Müşteriye 'Hesap itirazınızı hemen finans ekibimize devrediyorum' der ve anlık olarak personelinizle müşteriyi canlı sohbete bağlar." },
-    { question: "Sanal pos veya kredi kartı ödeme altyapısı kurmak zorunda mıyız?", answer: "Zorunlu değil, bot sadece IBAN numaralarınızı da iletebilir. Ancak doğrudan kredi kartı tahsilat linki eklemek ödeme ihtimalini ciddi oranda artırır." }
+    { question: "Acik fatura ile kapali fatura arasindaki temel fark nedir?", answer: "Genel mantikla acik fatura tahsilati tamamlanmamis; kapali fatura ise odeme bilgisiyle birlikte kapanmis kabul edilen belge akisini ifade eder. Ancak pratikte bunu dogru yonetmek icin cari ve tahsilat akisini birlikte ele almak gerekir." },
+    { question: "Bu konu neden otomasyonla ilgili hale geliyor?", answer: "Cunku asil sorun kavram bilgisinden cok, hangi faturanin hangi durumda oldugunu ekip icinde guncel ve tutarli bicimde takip edebilmektir." },
+    { question: "Kimler icin daha kritik bir sayfadir?", answer: "B2B satis yapan, vade ile calisan, bayi agi bulunan veya tahsilat ve cari takipte ic ekip surtunmesi yasayan firmalar icin daha kritiktir." }
   ]}
-  sectorName="Akıllı İşletme Tahsilat Yönetimi"
+  sectorName="Tahsilat ve Cari Takip"
 />

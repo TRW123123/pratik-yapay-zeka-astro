@@ -1,41 +1,39 @@
 ---
 import CalculatorLayout from '../layouts/CalculatorLayout.astro';
 
+const title = 'Yillik Izin Ucreti Hesaplama | Izin Bakiye ve Cikis Akisi';
+const description = 'Yillik izin ucreti ihtiyaci cogu zaman tek hesap degil; izin bakiyesi, hak edis takibi, personel self-service ve cikis surecinin birlikte yonetilmesidir.';
+const keywords = 'yillik izin ucreti hesaplama, izin bakiyesi, hak edis takibi, izin yonetimi, cikista izin ucreti';
 
-const title = "Yıllık İzin Ücreti Hesaplama & Otonom İzin Asistanı | Pratik Yapay Zeka";
-const description = "Personelin kıdemine göre yıllık izin bakiyesini otomatik hesaplayan ve kullanılmayan izin ücretini fesih bordrosuna otonom ekleyen İK yapay zekası.";
-const keywords = "yıllık izin ücreti hesaplama, kıdeme göre yıllık izin süresi, kullanılmayan izin parası, net izin ücreti, izin onay sistemi";
-
-// FAQ Schema
 const faqData = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
     {
-      "@type": "Question",
-      "name": "İhbar süresi içinde yıllık izin kullandırılabilir mi?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Hayır, İş Kanununa göre ihbar süresi ile yıllık izin süreleri iç içe geçemez. Asistanımız bu hukuki kuralı bilerek çıkış formlarında otomatik uyarı verir."
-      }
+      '@type': 'Question',
+      name: 'Bu sayfa izin bakiyesi hesap makinesi mi?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Hayir. Bu sayfa, izin bakiyesi ve kullanilmayan izin ucretinin neden IK sureci, personel self-service ve cikis operasyonuyla birlikte ele alinmasi gerektigini anlatir.',
+      },
     },
     {
-      "@type": "Question",
-      "name": "Kıdem süresi 1 yıldan kısa olanlar için izin takip edilebilir mi?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Personel sisteme girdiği anda AI, 1. yılını dolduracağı günü takvime işler ve o gün geldiğinde İK'ya ve personele 'Yıllık izin hak edişi başlamıştır' bildirimi atar."
-      }
+      '@type': 'Question',
+      name: 'Asil problem hangi noktada ortaya cikar?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Asil problem genelde gun sayisini bilmekten cok, hak edis takibini, devreden izinleri ve cikista kullanilmayan izin etkisini duzenli izleyememektedir.',
+      },
     },
     {
-      "@type": "Question",
-      "name": "Maaş zamlandığında geçmiş yıllardan kalan izin ücreti nasıl hesaplanır?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Yapay zekamız yasal olarak 'kullanılmayan izin ücretinin, iş sözleşmesinin bittiği tarihteki son brüt ücret üzerinden ödenmesi' kuralını otomatik uygular."
-      }
-    }
-  ]
+      '@type': 'Question',
+      name: 'Kimler icin daha faydalidir?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Personel sorulari yogun olan, izin takibini hala daginik dosyalarda yapan ve cikis surecinde izin bakiyesiyle zorlanan IK ekipleri icin daha faydalidir.',
+      },
+    },
+  ],
 };
 ---
 
@@ -46,81 +44,82 @@ const faqData = {
   schema={JSON.stringify(faqData)}
 >
   <div class="space-y-12">
-    <!-- Hero Section -->
     <section>
-      <div class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-primary text-primary mb-4">HR Özlük & İzin Yönetimi</div>
-      <h1 class="text-4xl lg:text-5xl font-bold tracking-tight mb-6">Yıllık İzinleri Excel'de Tutmaya ve Hesaplamaya Son Verin</h1>
-      <p class="text-xl text-muted-foreground leading-relaxed mb-8">
-        Personelin kıdemine göre yıllık izinlerini güncelleyen, WhatsApp üzerinden izin formlarını onaylatan ve işten çıkışlarda "kullanılmayan izin ücretini" kuruşu kuruşuna otonom hesaplayan uçtan uca izin yönetimi yapay zekası.
+      <div class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold border-primary text-primary mb-4">Izin ve Ozluk Surecleri</div>
+      <h1 class="text-4xl lg:text-5xl font-bold tracking-tight mb-6">Yillik Izin Konusunu Bakiye Sorusu Olmaktan Cikarip Surec Haline Getirin</h1>
+      <p class="text-xl text-muted-foreground leading-relaxed max-w-4xl">
+        Yillik izin ucreti ve izin bakiyesi aramalari cogu zaman sadece gun hesabiyla ilgili degildir. Gercek sorun, kimin ne kadar hak ettigi, ne kadar devreden izni oldugu ve cikis aninda bunun nasil ele alinacaginin daginik ilerlemesidir.
       </p>
     </section>
 
-    <!-- The Pain Points -->
+    <section class="grid gap-6 lg:grid-cols-3">
+      <div class="rounded-2xl border border-border bg-card p-6">
+        <h2 class="text-xl font-semibold mb-3">Hak Edis</h2>
+        <p class="text-muted-foreground">Personelin ne zaman hak kazandigi ve hangi baremde ilerledigi her zaman gorunur olmayabilir.</p>
+      </div>
+      <div class="rounded-2xl border border-border bg-card p-6">
+        <h2 class="text-xl font-semibold mb-3">Kullanim ve Bakiye</h2>
+        <p class="text-muted-foreground">Kullanilan, devreden ve kalan izin bilgisi farkli yerlerde tutuluyorsa ekip zorlanir.</p>
+      </div>
+      <div class="rounded-2xl border border-border bg-card p-6">
+        <h2 class="text-xl font-semibold mb-3">Cikis Etkisi</h2>
+        <p class="text-muted-foreground">Personel ayrildiginda kullanilmayan izinlerin hesap ve tahakkuk tarafina yansimasi son dakika problemi olabilir.</p>
+      </div>
+    </section>
+
     <section class="bg-muted/30 p-8 rounded-2xl border border-border">
-      <h2 class="text-2xl font-semibold mb-6">Geleneksel İzin Takibi İK Departamentini Nasıl Kilitler?</h2>
+      <h2 class="text-2xl font-semibold mb-6">Yillik Izin Surecinin Dagildigi Tipik Noktalar</h2>
       <ul class="space-y-4">
         <li class="flex items-start gap-3">
-          <svg class="w-6 h-6 text-destructive flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path></svg>
-          <p><strong>Bitenmeyen "Kaç Gün Kaldı?" Soruları:</strong> Personelin kendi izin bakiyesini göremediği için İK departmanına her gün WhatsApp veya e-posta üzerinden onlarca soru atması.</p>
+          <span class="mt-1 h-2.5 w-2.5 rounded-full bg-primary"></span>
+          <p><strong>Personel sorularinda:</strong> Bakiye bilgisi self-service degilse IK tekrarlayan mesajlarla ugrasmaya baslar.</p>
         </li>
         <li class="flex items-start gap-3">
-          <svg class="w-6 h-6 text-destructive flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path></svg>
-          <p><strong>Hatalı Kıdem Baremleri:</strong> 1-5 yıl (14 gün), 5-15 yıl (20 gün) gibi kıdem eşiklerinin manuel Excel tablolarında unutulup personele eksik izin kullandırılması.</p>
+          <span class="mt-1 h-2.5 w-2.5 rounded-full bg-primary"></span>
+          <p><strong>Uzun sureli ekiplerde:</strong> Devreden ve parcali kullanilan izinler izlenmesi zor yapiya donusur.</p>
         </li>
         <li class="flex items-start gap-3">
-          <svg class="w-6 h-6 text-destructive flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path></svg>
-          <p><strong>İmzasız Formlar ve İşe İade Dosyaları:</strong> Ücretli veya ücretsiz izin formlarının yasal olarak imzalatılmaması durumunda mahkemede iptal edilmesi ve şirkete ceza çıkması.</p>
+          <span class="mt-1 h-2.5 w-2.5 rounded-full bg-primary"></span>
+          <p><strong>Cikis dosyalarinda:</strong> Kullanilmayan izin bilgisi tahakkuk surecine gec ya da eksik yansiyabilir.</p>
         </li>
       </ul>
     </section>
 
-    <!-- The Solution -->
     <section>
-      <h2 class="text-3xl font-bold mb-6">Excel Tablolarını Silin: 7/24 Dijital İzin Uzmanı</h2>
+      <h2 class="text-3xl font-bold mb-6">Bu Sayfanin Isaret Ettigi Asil Sistem</h2>
       <p class="text-lg text-muted-foreground mb-8">
-        Yıllık izin günlerini web üzerinden hesaplamak bir defalık bir işlemdir. Oysa Pratik Yapay Zeka, personelin işe girdiği ilk günden işten ayrıldığı son güne kadar izin bakiyesini canlı ve otonom tutar.
+        Yillik izin ucreti konusu bizim icin bir izin ve ozluk akisi problemidir. Deger, personelin bakiye sorularini azaltmakta, hak edis takibini gorunur kilmakta ve cikis aninda kullanilmayan izin etkisini duzenli yonetmekte ortaya cikar.
       </p>
-
       <div class="grid md:grid-cols-3 gap-6">
         <div class="bg-card p-6 rounded-xl border border-border">
-          <div class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4">
-            <span class="text-2xl">📱</span>
-          </div>
-          <h3 class="text-xl font-semibold mb-2">WhatsApp Self-Servis Sorgulama</h3>
-          <p class="text-sm text-muted-foreground">Personel bot'a "Yıllık izin bakiyem nedir?" yazar. Sistem anında: "14 gün devreden, 14 bu yılki hakkınız. Toplam: 28 Gün" diye kanıtlı yanıtlar.</p>
+          <h3 class="text-xl font-semibold mb-2">Hak Edis Takibi</h3>
+          <p class="text-sm text-muted-foreground">Personelin izin yolculugu daha net ve izlenebilir olur.</p>
         </div>
         <div class="bg-card p-6 rounded-xl border border-border">
-          <div class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4">
-            <span class="text-2xl">💰</span>
-          </div>
-          <h3 class="text-xl font-semibold mb-2">Otonom Çıkış (Offboarding) Hesaplaması</h3>
-          <p class="text-sm text-muted-foreground">Personel ayrıldığında sistem, personelin son brüt maaşını böler ve kullanılmayan 12 günün yasal izin ücretini (vergi kesintileri dahil) otomatik fesih tahakkukuna ekler.</p>
+          <h3 class="text-xl font-semibold mb-2">Self-Service Bilgi</h3>
+          <p class="text-sm text-muted-foreground">IK uzerindeki tekrar eden bakiye sorusu yuku azalir.</p>
         </div>
         <div class="bg-card p-6 rounded-xl border border-border">
-          <div class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4">
-            <span class="text-2xl">📜</span>
-          </div>
-          <h3 class="text-xl font-semibold mb-2">Dijital İzin Formu Arşivi</h3>
-          <p class="text-sm text-muted-foreground">İzin onaylandığında, yasal olarak zorunlu olan "Yıllık İzin Kullanım Formu" PDF olarak üretilir ve bordro programına dijital imza ile iletilir.</p>
+          <h3 class="text-xl font-semibold mb-2">Cikis Baglantisi</h3>
+          <p class="text-sm text-muted-foreground">Kullanilmayan izin etkisi bordro ve tahakkuk akisina daha temiz yansir.</p>
         </div>
       </div>
     </section>
 
-    <!-- FAQ -->
     <section class="max-w-3xl">
-      <h2 class="text-2xl font-bold mb-6">Sıkça Sorulan Sorular</h2>
+      <h2 class="text-2xl font-bold mb-6">Sikca Sorulan Sorular</h2>
       <div class="space-y-6">
         <div>
-          <h3 class="text-lg font-semibold mb-2">İhbar süresi içinde yıllık izin kullandırılabilir mi?</h3>
-          <p class="text-muted-foreground">Hayır, İş Kanununa göre ihbar süresi ile yıllık izin süreleri iç içe geçemez. Asistanımız bu hukuki kuralı bilerek çıkış formlarında otomatik uyarı verir.</p>
+          <h3 class="text-lg font-semibold mb-2">Bu sayfa izin bakiyesi hesap makinesi mi?</h3>
+          <p class="text-muted-foreground">Hayir. Bu sayfa, izin bakiyesi ve kullanilmayan izin ucretinin neden IK sureci ve cikis operasyonuyla birlikte ele alinmasi gerektigini anlatir.</p>
         </div>
         <div>
-          <h3 class="text-lg font-semibold mb-2">Kıdem süresi 1 yıldan kısa olanlar için izin takip edilebilir mi?</h3>
-          <p class="text-muted-foreground">Personel sisteme girdiği anda AI, 1. yılını dolduracağı günü takvime işler ve o gün geldiğinde İK'ya ve personele 'Yıllık izin hak edişi başlamıştır' bildirimi atar.</p>
+          <h3 class="text-lg font-semibold mb-2">Asil problem hangi noktada ortaya cikar?</h3>
+          <p class="text-muted-foreground">Asil problem genelde gun sayisini bilmekten cok, hak edis, devreden bakiye ve cikis etkisini duzenli izleyememektedir.</p>
         </div>
         <div>
-          <h3 class="text-lg font-semibold mb-2">Maaş zamlandığında geçmiş yıllardan kalan izin ücreti nasıl hesaplanır?</h3>
-          <p class="text-muted-foreground">Yapay zekamız yasal olarak 'kullanılmayan izin ücretinin, iş sözleşmesinin bittiği tarihteki son brüt ücret üzerinden ödenmesi' kuralını otomatik uygular.</p>
+          <h3 class="text-lg font-semibold mb-2">Kimler icin daha faydalidir?</h3>
+          <p class="text-muted-foreground">Personel sorulari yogun olan ve izin takibini daginik dosyalarda yapan IK ekipleri icin daha faydalidir.</p>
         </div>
       </div>
     </section>

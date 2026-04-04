@@ -1,0 +1,96 @@
+---
+interface LinkCard {
+  href: string;
+  title: string;
+  description: string;
+  badge?: string;
+}
+
+interface Props {
+  title?: string;
+  description?: string;
+  caseStudies: LinkCard[];
+  nextSteps: LinkCard[];
+  contactHref: string;
+}
+
+const {
+  title = 'Bir Sonraki Mantikli Adim',
+  description = 'Bu sayfadan sonra ziyaretciyi ya guvene ya da basvuruya tasiyan net bir yol gostermek gerekir.',
+  caseStudies,
+  nextSteps,
+  contactHref,
+} = Astro.props;
+---
+
+<section class="py-24 lg:py-28 relative z-10 border-t border-white/5 bg-[#0F151B]/35">
+  <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
+    <div class="max-w-3xl mb-14">
+      <p class="text-sm uppercase tracking-[0.2em] text-[var(--color-primary)] font-semibold mb-4">Lead yolu</p>
+      <h2 class="text-3xl md:text-5xl font-black tracking-tight text-white">{title}</h2>
+      <p class="mt-5 text-lg leading-relaxed text-gray-400">{description}</p>
+    </div>
+
+    <div class="grid gap-8 lg:grid-cols-[1fr_1fr_0.8fr]">
+      <div class="rounded-[2rem] border border-white/8 bg-white/[0.02] p-8 backdrop-blur-xl">
+        <div class="flex items-center justify-between gap-4 mb-6">
+          <h3 class="text-2xl font-black text-white">Guven icin vaka calismalari</h3>
+          <a href="/vaka-calismalari/" class="text-sm font-semibold text-[var(--color-primary)] hover:text-white transition-colors">
+            Tumunu gor
+          </a>
+        </div>
+
+        <div class="space-y-4">
+          {caseStudies.map((item) => (
+            <a href={item.href} class="block rounded-2xl border border-white/6 bg-black/20 p-5 transition-all duration-300 hover:border-[var(--color-primary)]/40 hover:-translate-y-0.5">
+              {item.badge && (
+                <div class="mb-3 inline-flex rounded-full border border-[var(--color-primary)]/20 bg-[var(--color-primary)]/10 px-3 py-1 text-xs font-semibold uppercase tracking-[0.16em] text-[var(--color-primary)]">
+                  {item.badge}
+                </div>
+              )}
+              <h4 class="text-lg font-bold text-white">{item.title}</h4>
+              <p class="mt-2 text-sm leading-relaxed text-gray-400">{item.description}</p>
+            </a>
+          ))}
+        </div>
+      </div>
+
+      <div class="rounded-[2rem] border border-white/8 bg-white/[0.02] p-8 backdrop-blur-xl">
+        <h3 class="text-2xl font-black text-white mb-6">Ilgili sonraki sayfalar</h3>
+        <div class="space-y-4">
+          {nextSteps.map((item) => (
+            <a href={item.href} class="block rounded-2xl border border-white/6 bg-black/20 p-5 transition-all duration-300 hover:border-[var(--color-primary)]/40 hover:-translate-y-0.5">
+              {item.badge && (
+                <div class="mb-3 inline-flex rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs font-semibold uppercase tracking-[0.16em] text-gray-300">
+                  {item.badge}
+                </div>
+              )}
+              <h4 class="text-lg font-bold text-white">{item.title}</h4>
+              <p class="mt-2 text-sm leading-relaxed text-gray-400">{item.description}</p>
+            </a>
+          ))}
+        </div>
+      </div>
+
+      <div class="rounded-[2rem] border border-[var(--color-primary)]/20 bg-[var(--color-primary)]/[0.06] p-8 backdrop-blur-xl">
+        <div class="inline-flex rounded-full border border-[var(--color-primary)]/30 bg-[var(--color-primary)]/10 px-3 py-1 text-xs font-semibold uppercase tracking-[0.16em] text-[var(--color-primary)]">
+          Donusum
+        </div>
+        <h3 class="mt-5 text-3xl font-black tracking-tight text-white">Hazirsaniz siradaki adim net.</h3>
+        <p class="mt-4 text-sm leading-relaxed text-gray-300">
+          Kisa bir on analiz ile hangi surecin en hizli geri donus getirecegini belirleyelim. Ne satmaya calistiginizi degil, neyin tikandigini anlattiginizda baslamak daha kolay olur.
+        </p>
+
+        <ul class="mt-6 space-y-3 text-sm text-gray-300">
+          <li>Sayfaya gore kaynak takibi</li>
+          <li>Operasyon odakli ilk donus</li>
+          <li>Size uygun senaryo onerisi</li>
+        </ul>
+
+        <a href={contactHref} class="mt-8 inline-flex w-full items-center justify-center rounded-2xl bg-[var(--color-primary)] px-5 py-4 text-center text-base font-black text-black transition hover:-translate-y-0.5 hover:bg-[var(--color-primary-light)]">
+          Ucretsiz analizi talep et
+        </a>
+      </div>
+    </div>
+  </div>
+</section>

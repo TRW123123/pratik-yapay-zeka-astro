@@ -1,41 +1,39 @@
 ---
 import CalculatorLayout from '../layouts/CalculatorLayout.astro';
 
+const title = 'Bordro Hesaplama | Puantaj, Kontrol ve Bordro Hazirlik Akisi';
+const description = 'Bordro hesaplama arayan ekipler icin asil darbogaz hesap degil; puantaj, kesinti, kontrol ve onay adimlarinin daginik ilerlemesidir.';
+const keywords = 'bordro hesaplama, puantaj otomasyonu, bordro kontrolu, bordro hazirlama, ik bordro sureci';
 
-const title = "Bordro Hesaplama & SGK Çarşaf Otomasyonu | Pratik Yapay Zeka";
-const description = "Puantaj verilerini okuyan, teşvik kanunlarını saniyeler içinde analiz eden ve binlerce personelin bordrosunu hatasız hazırlayan otonom IK yapay zekası.";
-const keywords = "bordro hesaplama, sgk bordro hesaplama, puantaj otomasyonu, bordro yazılımı, sgk teşvik hesaplama, çarşaf bordro";
-
-// FAQ Schema
 const faqData = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
     {
-      "@type": "Question",
-      "name": "Farklı puantaj sistemleriyle (PDKS) entegre çalışabilir mi?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Evet. İster biyometrik parmak izi okuyuculardan, ister kart basma sistemlerinden, isterseniz basit bir Excel tablosundan gelen puantaj verilerini NLP ve veri dönüştürücülerle otonom olarak okur."
-      }
+      '@type': 'Question',
+      name: 'Bordro hesaplama neden sadece matematik problemi degildir?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Cunku puantaj, yan hak, kesinti, onay ve dagitim adimlari birlikte ilerler. Sorunlar genelde rakamdan once veri ve akis tarafinda ortaya cikar.',
+      },
     },
     {
-      "@type": "Question",
-      "name": "Bordroda hata yapma ihtimali var mı?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Yapay zeka, matematiksel hesaplamaları ve kanun eşleştirmelerini %100 doğrulukla yapar. İnsan kaynaklı veri giriş hatalarını (örn: puantajda mantıksız saatler) tespit ettiğinde onaylamadan önce IK uzmanına 'Anomali Uyarısı' verir."
-      }
+      '@type': 'Question',
+      name: 'En buyuk darbogaz genelde nerededir?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Puantaj verisinin toplanmasi, anomalilerin bulunmasi, son dakika duzeltmeleri ve bordro oncesi kontrol listesinin daginik olmasi en buyuk darbogazlardan biridir.',
+      },
     },
     {
-      "@type": "Question",
-      "name": "Kanunlar değiştiğinde sistemi güncellemek gerekiyor mu?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Asgari ücret, gelir vergisi dilimleri, BES kesintileri ve güncel SGK teşvik kanunları sistemimizde bulut tabanlı olarak anlık güncellenir. Kanun değişikliğini takip etmenize gerek kalmaz."
-      }
-    }
-  ]
+      '@type': 'Question',
+      name: 'Bu sayfa kimi hedefler?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Duzenli bordro kapanisi yapan, puantaj ve kesinti akisinda tekrarlayan sorunlar yasayan IK ve finans ekiplerini hedefler.',
+      },
+    },
+  ],
 };
 ---
 
@@ -46,81 +44,88 @@ const faqData = {
   schema={JSON.stringify(faqData)}
 >
   <div class="space-y-12">
-    <!-- Hero Section -->
     <section>
-      <div class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-primary text-primary mb-4">IK & Personel Yönetimi</div>
-      <h1 class="text-4xl lg:text-5xl font-bold tracking-tight mb-6">Ay Sonu Bordro Krizlerine Son: Puantajı Verin, Çarşafı Alın</h1>
-      <p class="text-xl text-muted-foreground leading-relaxed mb-8">
-        İnsan Kaynakları departmanınızı veri giriş elemanı olmaktan kurtarın. Puantaj çizelgelerini okuyan, SGK teşviklerini analiz eden, kesintileri hesaplayan ve binlerce personelin bordrosunu tek tuşla hazırlayan otonom IK yapay zekası.
+      <div class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold border-primary text-primary mb-4">Bordro ve Puantaj Operasyonu</div>
+      <h1 class="text-4xl lg:text-5xl font-bold tracking-tight mb-6">Bordro Hesaplamayi Son Gun Isinden Cikarip Isleyen Bir Kapanis Surecine Donusturun</h1>
+      <p class="text-xl text-muted-foreground leading-relaxed max-w-4xl">
+        Bordro hesaplama cogu ekipte hesap tablosu problemi gibi gorunur. Oysa asil darbogaz puantaj verisinin toplanmasi, istisnalarin fark edilmesi, kesintilerin kontrolu ve son onay adimlarinin birbirine bagli olmamasidir.
       </p>
     </section>
 
-    <!-- The Pain Points -->
+    <section class="grid gap-6 lg:grid-cols-3">
+      <div class="rounded-2xl border border-border bg-card p-6">
+        <h2 class="text-xl font-semibold mb-3">Puantaj</h2>
+        <p class="text-muted-foreground">
+          Vardiya, mesai, eksik gun veya izin bilgisinin farkli dosya ve kisilerden toplanmasi bordro oncesi ilk darbogazdir.
+        </p>
+      </div>
+      <div class="rounded-2xl border border-border bg-card p-6">
+        <h2 class="text-xl font-semibold mb-3">Kontrol</h2>
+        <p class="text-muted-foreground">
+          Son dakika duzeltmeleri, supheli saatler, eksik belgeler ve manuel teyitler ayni takvime yigilir.
+        </p>
+      </div>
+      <div class="rounded-2xl border border-border bg-card p-6">
+        <h2 class="text-xl font-semibold mb-3">Onay ve Dagitim</h2>
+        <p class="text-muted-foreground">
+          Bordro hazir olduktan sonra kimin onay verecegi, ne zaman cikti alinacagi ve personele nasil iletilecegi net olmayabilir.
+        </p>
+      </div>
+    </section>
+
     <section class="bg-muted/30 p-8 rounded-2xl border border-border">
-      <h2 class="text-2xl font-semibold mb-6">Geleneksel Bordrolama Neden Şirketlere Zarar Verir?</h2>
+      <h2 class="text-2xl font-semibold mb-6">Bordro Hesaplama Ihtiyacinin Buyudugu Tipik Noktalar</h2>
       <ul class="space-y-4">
         <li class="flex items-start gap-3">
-          <svg class="w-6 h-6 text-destructive flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path></svg>
-          <p><strong>Aylık Operasyon Felci:</strong> Her ayın son haftası IK / Muhasebe departmanının tamamen kilitlenmesi, mesaiye kalınması ve diğer stratejik işlerin (işe alım, performans, kültür) durması.</p>
+          <span class="mt-1 h-2.5 w-2.5 rounded-full bg-primary"></span>
+          <p><strong>Coklu lokasyon ve vardiya:</strong> Veri tek yerde toplanmadiginda ay sonu kapanis yavaslar.</p>
         </li>
         <li class="flex items-start gap-3">
-          <svg class="w-6 h-6 text-destructive flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path></svg>
-          <p><strong>Kaçırılan SGK Teşvikleri:</strong> Manuel hesaplamalarda 7103, 6111 veya 27103 gibi karmaşık personelin durumlarına göre SGK teşviklerinin gözden kaçırılarak devlete fazladan vergi ödenmesi.</p>
+          <span class="mt-1 h-2.5 w-2.5 rounded-full bg-primary"></span>
+          <p><strong>Tekrarlayan istisnalar:</strong> Mesai, prim, avans ve farkli kesinti tipleri sureci zorlastirir.</p>
         </li>
         <li class="flex items-start gap-3">
-          <svg class="w-6 h-6 text-destructive flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path></svg>
-          <p><strong>Matematik ve Mahkeme Riskleri:</strong> Agi, Bes, Nafaka haczi veya icra kesintisi gibi kalemlerde yapılan küçük hesap hatalarının SGK cezalarına ve işveren / işçi davalarına dönüşmesi.</p>
+          <span class="mt-1 h-2.5 w-2.5 rounded-full bg-primary"></span>
+          <p><strong>Son gun yogunlugu:</strong> Kontrol listeleri ve onay surecleri gec olustugu icin ekip hep son asamada sıkışır.</p>
         </li>
       </ul>
     </section>
 
-    <!-- The Solution -->
     <section>
-      <h2 class="text-3xl font-bold mb-6">Maaşları Hesaplayan Değil, Operasyonu Yöneten Sistem</h2>
+      <h2 class="text-3xl font-bold mb-6">Bu Sayfanin Isaret Ettigi Asil Cozum</h2>
       <p class="text-lg text-muted-foreground mb-8">
-        Bordro hesaplama sadece bir dört işlem meselesi değildir; mevzuat uyumluluğu, personel iletişimi ve maliyet optimizasyonu meselesidir. Pratik AI Bordro Asistanı, Excel kopyala-yapıştır yükünü tamamen ortadan kaldırır.
+        Bordro hesaplama talebi bizim acimizdan puantaj verisinin temizlenmesi, kontrol akisi, onay ve dagitim surecinin birlikte ele alinmasi demektir. Yani tek bir hesap motorundan cok, bordro hazirlik katmanini sistemlestirme problemidir.
       </p>
-
       <div class="grid md:grid-cols-3 gap-6">
         <div class="bg-card p-6 rounded-xl border border-border">
-          <div class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4">
-            <span class="text-2xl">⚡</span>
-          </div>
-          <h3 class="text-xl font-semibold mb-2">Akıllı Puantaj Okuyucu</h3>
-          <p class="text-sm text-muted-foreground">PDKS (Personel Devam Kontrol Sistemi) cihazlarından veya karışık vardiya Excel'lerinden gelen mantıksız molaları veya eksik kart basımlarını bulur, anomalileri İK'ya raporlar.</p>
+          <h3 class="text-xl font-semibold mb-2">Veri Toplama Disiplini</h3>
+          <p class="text-sm text-muted-foreground">Puantaj ve ilgili bordro girdileri son gun degil, surec icinde daha duzenli toplanir.</p>
         </div>
         <div class="bg-card p-6 rounded-xl border border-border">
-          <div class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4">
-            <span class="text-2xl">💰</span>
-          </div>
-          <h3 class="text-xl font-semibold mb-2">Maksimum Teşvik Algoritması</h3>
-          <p class="text-sm text-muted-foreground">Mevcut 20'den fazla SGK teşvik kanunu personelin durumuna (yaş, cinsiyet, mezuniyet, önceki işsizlik süresi) göre saniyeler içinde simüle eder ve işverene en uygununu atar.</p>
+          <h3 class="text-xl font-semibold mb-2">Anomali Gorunurlugu</h3>
+          <p class="text-sm text-muted-foreground">Supheli saatler, eksik veri ve tekrar kontrol gerektiren noktalar daha erken fark edilir.</p>
         </div>
         <div class="bg-card p-6 rounded-xl border border-border">
-          <div class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4">
-            <span class="text-2xl">📱</span>
-          </div>
-          <h3 class="text-xl font-semibold mb-2">Dijital Dağıtım ve Onay</h3>
-          <p class="text-sm text-muted-foreground">Oluşan PDF bordroları personelin şirket e-postasına veya kişisel WhatsApp'ına (şifreli olarak) gönderir, personelin dijital onay vermesini sağlayarak hukuki süreçleri güvenceye alır.</p>
+          <h3 class="text-xl font-semibold mb-2">Kapanis Akisi</h3>
+          <p class="text-sm text-muted-foreground">Onay, dagitim ve sonraki adimlar kisi hafizasina degil surec mantigina baglanir.</p>
         </div>
       </div>
     </section>
 
-    <!-- FAQ -->
     <section class="max-w-3xl">
-      <h2 class="text-2xl font-bold mb-6">Sıkça Sorulan Sorular</h2>
+      <h2 class="text-2xl font-bold mb-6">Sikca Sorulan Sorular</h2>
       <div class="space-y-6">
         <div>
-          <h3 class="text-lg font-semibold mb-2">Farklı puantaj sistemleriyle (PDKS) entegre çalışabilir mi?</h3>
-          <p class="text-muted-foreground">Evet. İster biyometrik parmak izi okuyuculardan, ister kart basma sistemlerinden, isterseniz basit bir Excel tablosundan gelen puantaj verilerini NLP ve veri dönüştürücülerle otonom olarak okur.</p>
+          <h3 class="text-lg font-semibold mb-2">Bordro hesaplama neden sadece matematik problemi degildir?</h3>
+          <p class="text-muted-foreground">Cunku puantaj, yan hak, kesinti, onay ve dagitim adimlari birlikte ilerler. Sorunlar genelde rakamdan once veri ve akis tarafinda ortaya cikar.</p>
         </div>
         <div>
-          <h3 class="text-lg font-semibold mb-2">Bordroda hata yapma ihtimali var mı?</h3>
-          <p class="text-muted-foreground">Yapay zeka, matematiksel hesaplamaları ve kanun eşleştirmelerini %100 doğrulukla yapar. İnsan kaynaklı veri giriş hatalarını (örn: puantajda mantıksız saatler) tespit ettiğinde onaylamadan önce IK uzmanına 'Anomali Uyarısı' verir.</p>
+          <h3 class="text-lg font-semibold mb-2">En buyuk darbogaz genelde nerededir?</h3>
+          <p class="text-muted-foreground">Puantaj verisinin toplanmasi, anomalilerin bulunmasi, son dakika duzeltmeleri ve bordro oncesi kontrol listesinin daginik olmasi en buyuk darbogazlardan biridir.</p>
         </div>
         <div>
-          <h3 class="text-lg font-semibold mb-2">Kanunlar değiştiğinde sistemi güncellemek gerekiyor mu?</h3>
-          <p class="text-muted-foreground">Asgari ücret, gelir vergisi dilimleri, BES kesintileri ve güncel SGK teşvik kanunları sistemimizde bulut tabanlı olarak anlık güncellenir. Kanun değişikliğini takip etmenize gerek kalmaz.</p>
+          <h3 class="text-lg font-semibold mb-2">Bu sayfa kimi hedefler?</h3>
+          <p class="text-muted-foreground">Duzenli bordro kapanisi yapan, puantaj ve kesinti akisinda tekrarlayan sorunlar yasayan IK ve finans ekiplerini hedefler.</p>
         </div>
       </div>
     </section>

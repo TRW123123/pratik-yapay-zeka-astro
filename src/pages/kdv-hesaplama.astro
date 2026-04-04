@@ -1,44 +1,115 @@
 ---
-import SolutionLayout from '../layouts/SolutionLayout.astro';
+import CalculatorLayout from '../layouts/CalculatorLayout.astro';
+import VatCalculator from '../components/VatCalculator';
+
+const title = 'KDV Hesaplama | KDV Dahil ve Haric Tutar Hesaplama Araci';
+const description = 'KDV hesaplama araci ile net tutardan KDV dahil toplam fiyat bulun ya da KDV dahil tutardan matrah ve KDV payini aninda ayristirin.';
+const keywords = 'kdv hesaplama, kdv dahil hesaplama, kdv haric hesaplama, matrah hesaplama, kdv dahil fiyattan kdv ayirma';
+
+const faqData = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'KDV dahil tutardan KDV nasil ayristirilir?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'KDV dahil tutar, 1 arti KDV oranina bolunerek matrah bulunur. KDV tutari ise toplamdan matrahin cikartilmasiyla hesaplanir.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Ayni belgede farkli KDV oranlari varsa ne yapmak gerekir?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Her satiri kendi KDV oranina gore ayri hesaplamak gerekir. Tek bir toplam tutar uzerinden farkli oranli kalemleri saglikli ayristirmak dogru sonuc vermez.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Bu sayfa sadece hesap araci mi, yoksa hizmet de sunuyor musunuz?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Bu sayfa anlik KDV hesaplamasi icin pratik bir arac sunar. Teklif, fatura ve fiyat akisini surekli olarak manuel yurutuyorsaniz, bu sureci otomatiklestiren hizmetler de sunuyoruz.',
+      },
+    },
+  ],
+};
 ---
-<SolutionLayout
-  title="KDV Hesaplama Aracından Fazlası: Otomatik B2B Teklif Robotu | Pratik Yapay Zeka"
-  description="Manuel KDV dahil/hariç hesaplamalara veda edin. Yapay zeka, gelen talepleri saniyeler içinde resmi teklif PDF'ine dönüştürüp KDV'yi kendi hesaplar."
-  heroTitle="KDV Hesaplamayı Bırakın, Yapay Zeka Yerine Tüm Teklifleri Hazırlasın"
-  heroSubtitle="Müşterilerden gelen fiyat taleplerinde sürekli KDV oranlarıyla cebelleşmeye, excel'de formül düzeltmeye son. Sizi manuel hesaplamalardan kurtarıp, saniyeler içinde otomatik teklif sunan 'Dynamic Quoting' asistanıyla tanışın."
-  problems={[
-    "Birden farklı KDV oranlarına sahip ürün gruplarının manuel hesaplanmasının sürekli hesap hatası riski yaratması.",
-    "B2B müşterilerinin hızlı teklif beklemesi, ancak teklif hazırlama sürecinin hantal ilerleyişi.",
-    "Farklı müşterilere yapılan özel iskontoların ve KDV dahil/hariç matrahların takibinde yaşanan karmaşa."
-  ]}
-  processTitle="Otomatik Teklif ve Fiyatlandırma Asistanı Nasıl Çalışır?"
-  processSteps={[
-    { title: "Talebi Anlama", description: "Müşterinizin gönderdiği bir WhatsApp ses kaydı veya e-postayı (Örn: 'Bana 3 adet %20 KDV'li A ürünü fiyatı ver') yapay zeka hemen anlar." },
-    { title: "Dinamik KDV Matematiği", description: "Ürüne özel KDV, mevcut iskontolar ve bakiye durumu saniyeler içinde ERP programınızdan çekilir ve doğru şekilde hesaplanır." },
-    { title: "PDF Generasyonu", description: "Kurumsal kimliğinize uygun tasarlanmış, güncel vergi mevzuatına uygun profesyonel bir PDF taslağı saniyeler içinde oluşturulur." },
-    { title: "Tek Tuşla Onay ve Gönderim", description: "Size düşen yalnızca WhatsApp'a düşen PDF'i inceleyip 'Müşteriye Gönder' butonuna basmaktır." }
-  ]}
-  featuresTitle="Standart Bir KDV Hesap Makinesi Değil"
-  features={[
-    { title: "Çoklu KDV Kombinasyonları", description: "%1, %10 ve %20 ürünlerin aynı faturada/teklifte hatasız toplanması ve matrah dağılımının yapılması." },
-    { title: "Dinamik Kur Entegrasyonu", description: "Döviz bazlı hesaplamalarda TCMB veya serbest piyasa anlık kurlarıyla KDV matrahının oluşturulması." },
-    { title: "ERP Veri Senkronizasyonu", description: "Logo, Netsis veya Paraşüt'ten ürün stok durumu ve güncel fiyat kartlarının anlık çekilmesi." },
-    { title: "Döküman İçi Zeka", description: "Gelen bir ihale cetvelini (Excel) direkt olarak okuyup, her satırın KDV'sini hesaplayarak doldurması." }
-  ]}
-  benefitsTitle="Teklif Hızı = Satışa Dönüşme Oranı"
-  benefits={[
-    "%90", "Hızlanma. Müşteri ne kadar hızlı fiyat alırsa, rakibe gitme ihtimali o kadar düşer.",
-    "0", "Formül Hatası. Formülü bozulmuş Excel dosyalarından kaynaklı yanlış fiyat vermenin sonu.",
-    "7/24", "Erişilebilirlik. Satış personeliniz ofiste olmasa bile müşteri fiyat ve KDV hesaplamasına ulaşabilir."
-  ]}
-  caseStudyDescription="Hırdavat sektöründe faaliyet gösteren bir tedarikçi, binlerce kalemlik farklı KDV oranına sahip ürün tekliflerini yapay zeka botuna bırakarak, yanıt süresini 4 saatten 2 dakikaya indirdi."
-  finalCtaTitle="Teklif Hazırlama Zahmetini Yapay Zekaya Bırakın"
-  finalCtaSubtitle="Sadece bir hesap aracı değil, tüm satış sürecinizi otomatize edecek yapay zeka sisteminizi kuralım."
-  sectorTheme="satış"
-  faqs={[
-    { question: "Ürünlerimin KDV oranları sık değişiyor, sistem nasıl güncel kalır?", answer: "Yapay zeka doğrudan ticari programınızdaki (ERP/Ön Muhasebe) kartlara bağlı olduğu için, yazılımdaki KDV değişikliği anında tekliflere yansır." },
-    { question: "Müşterilere fiyatları direkt gönderiyor mu, yoksa önce ben mi onaylıyorum?", answer: "Sistemi isterseniz 'Onaya Tabi' modunda çalıştırabilirsiniz. Taslak oluşturulur, siz WhatsApp'tan onay vermeden PDF müşteriye iletilmez." },
-    { question: "Özel bayi indirimlerini hesaplayabilir mi?", answer: "Kesinlikle. Müşterinin numarasından ve vergi kimliğinden onun kim olduğunu anlar, ona atanmış iskonto dilimini kullanarak net fiyatı (ve ilgili KDV'yi) hesaplar." }
-  ]}
-  sectorName="Dinamik Fiyatlandırma ve KDV Hesaplama"
-/>
+
+<CalculatorLayout
+  title={title}
+  description={description}
+  keywords={keywords}
+  schema={JSON.stringify(faqData)}
+>
+  <div class="space-y-12">
+    <section>
+      <div class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold border-primary text-primary mb-4">Finans ve Teklif Operasyonu</div>
+      <h1 class="text-4xl lg:text-5xl font-bold tracking-tight mb-6">KDV Hesabini Hizlica Yapin, Sonra Sureci Sistemlestirin</h1>
+      <p class="text-xl text-muted-foreground leading-relaxed max-w-4xl">
+        KDV dahil ve haric tutarlar arasinda hizli gecis yapabilmek gunluk operasyon icin hala gerekli. Ama ekip surekli ayni hesaplari teklif, siparis ve fatura arasinda tekrar ediyorsa asil sorun hesap degil, surecin daginik olmasidir. Bu sayfa ikisini de ayiriyor: once pratik hesap, sonra operasyonel cozum.
+      </p>
+    </section>
+
+    <VatCalculator client:visible />
+
+    <section class="grid gap-6 lg:grid-cols-3">
+      <div class="rounded-2xl border border-border bg-card p-6">
+        <h2 class="text-xl font-semibold mb-3">Bu arac ne icin ideal?</h2>
+        <p class="text-muted-foreground">
+          Tek bir teklif kalemi, tek oranli bir hizmet bedeli ya da tek tutar uzerinden hizli matrah-KDV ayrimi yapmak icin idealdir.
+        </p>
+      </div>
+      <div class="rounded-2xl border border-border bg-card p-6">
+        <h2 class="text-xl font-semibold mb-3">Ne zaman yetmez?</h2>
+        <p class="text-muted-foreground">
+          Birden fazla urun satiri, farkli KDV oranlari, ozel iskonto kurallari veya ERP senkronu devreye giriyorsa tekil hesap araci yetmez; is akisinin duzenlenmesi gerekir.
+        </p>
+      </div>
+      <div class="rounded-2xl border border-border bg-card p-6">
+        <h2 class="text-xl font-semibold mb-3">Nerede hizmete doner?</h2>
+        <p class="text-muted-foreground">
+          Teklif, fiyat, fatura ve onay surecleri her gun tekrar ediyorsa bu sayfanin devam noktasi manuel hesap degil, fiyatlandirma ve belge otomasyonudur.
+        </p>
+      </div>
+    </section>
+
+    <section class="bg-muted/30 p-8 rounded-2xl border border-border">
+      <h2 class="text-2xl font-semibold mb-6">KDV Hesaplamasi Hangi Noktada Operasyon Sorununa Donusur?</h2>
+      <ul class="space-y-4">
+        <li class="flex items-start gap-3">
+          <span class="mt-1 h-2.5 w-2.5 rounded-full bg-primary"></span>
+          <p><strong>Teklif hazirlarken:</strong> Ekip, net ve KDV dahil fiyatlari her seferinde farkli Excel dosyalarinda yeniden uretir.</p>
+        </li>
+        <li class="flex items-start gap-3">
+          <span class="mt-1 h-2.5 w-2.5 rounded-full bg-primary"></span>
+          <p><strong>Fatura oncesinde:</strong> Siparis, iskonto ve belge tipi bilgileri farkli kisilerde oldugu icin son dakika kontrol ihtiyaci dogar.</p>
+        </li>
+        <li class="flex items-start gap-3">
+          <span class="mt-1 h-2.5 w-2.5 rounded-full bg-primary"></span>
+          <p><strong>ERP tarafinda:</strong> Matrah, KDV ve toplam tutar once hesaplanip sonra farkli sisteme tekrar girildiginde hata ve gecikme riski artar.</p>
+        </li>
+      </ul>
+    </section>
+
+    <section class="max-w-3xl">
+      <h2 class="text-2xl font-bold mb-6">Sikca Sorulan Sorular</h2>
+      <div class="space-y-6">
+        <div>
+          <h3 class="text-lg font-semibold mb-2">KDV dahil tutardan KDV nasil ayristirilir?</h3>
+          <p class="text-muted-foreground">Toplam tutari 1 arti KDV oranina bolerek matrahi bulabilirsiniz. KDV tutari ise toplam ile matrah arasindaki farktir.</p>
+        </div>
+        <div>
+          <h3 class="text-lg font-semibold mb-2">Ayni belgede farkli KDV oranlari varsa ne yapmak gerekir?</h3>
+          <p class="text-muted-foreground">Her satiri kendi oranina gore ayri hesaplamak gerekir. Tek bir toplam rakam uzerinden tum satirlari dogru ayristirmak saglikli sonuc vermez.</p>
+        </div>
+        <div>
+          <h3 class="text-lg font-semibold mb-2">Bu sayfa sadece hesap araci mi, yoksa hizmet de sunuyor musunuz?</h3>
+          <p class="text-muted-foreground">Bu sayfa once pratik hesaplama icin var. Ama KDV hesabi teklif, siparis ve fatura akisinizda surekli tekrar eden bir problemse bunu otomasyon projesine donusturebiliyoruz.</p>
+        </div>
+      </div>
+    </section>
+  </div>
+</CalculatorLayout>

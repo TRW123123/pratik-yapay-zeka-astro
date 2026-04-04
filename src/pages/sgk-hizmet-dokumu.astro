@@ -1,44 +1,127 @@
 ---
-import SolutionLayout from '../layouts/SolutionLayout.astro';
+import CalculatorLayout from '../layouts/CalculatorLayout.astro';
+
+const title = 'SGK Hizmet Dokumu | Belge Dogrulama ve Aday Kontrol Akisi';
+const description = 'SGK hizmet dokumu ihtiyaci cogu zaman belgeyi okumaktan cok, aday beyanini, calisma gecmisini ve dogrulama adimlarini daha duzenli yonetme ihtiyacidir.';
+const keywords = 'sgk hizmet dokumu, sgk dokumu kontrolu, aday dogrulama, background check, calisma gecmisi dogrulama';
+
+const faqData = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'Bu sayfa SGK dokumu indirme araci mi?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Hayir. Bu sayfa, SGK hizmet dokumunun IK, risk ve dogrulama surecinde nasil kullanildigini ve operasyonel olarak hangi noktada deger urettigini anlatir.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'En cok hangi ekipler icin kritiktir?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Aday dogrulama yapan IK ekipleri, sahada personel alan operasyonlar ve belge tabanli risk kontrolu yapan yapilar icin daha kritiktir.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Asil sorun belgeyi okumak mi, sureci yonetmek mi?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Cogu zaman asil sorun belgeyi acmak degil; calisma gecmisini, aday beyanini ve kontrol sonucunu duzenli bir karar akisina baglamaktir.',
+      },
+    },
+  ],
+};
 ---
-<SolutionLayout
-  title="SGK Hizmet Dökümü Analizi ve HR Yapay Zeka | Pratik Yapay Zeka"
-  description="İK departmanlarının SGK hizmet dökümü okuma ve doğrulama sürecini otomatize eden yapay zeka tabanlı CV ve arka plan (background check) analiz sistemi."
-  heroTitle="Personel Geçmişini Manuel Kontrol Etmeyin. SGK Dökümlerini Yapay Zeka Okusun"
-  heroSubtitle="İşe alım veya risk değerlendirme süreçlerinde adayların SGK (4A) Hizmet Dökümlerini sayfa sayfa okuyup sadakatlerini veya geçmişlerini tahmin etmeye çalışmayın. Yapay zeka saniyeler içinde fraud kontrolü yapsın ve net bir profil özetlesin."
-  problems={[
-    "İşe alım uzmanlarının veya kredi tahsis ekiplerinin, uzun barkodlu SGK pdf'leri içinde adayların çalıştığı gün sayılarını manuel hesaplaması.",
-    "Adayların sunduğu özgeçmişteki (CV) çalışma süreleri ile GİB/SGK kayıtlarındaki gerçek tarihlerin insan gözüyle kıyaslanmasının zorluğu.",
-    "Evrakta sahtecilik veya photoshop ile değiştirilmiş SGK hizmet dökümlerinin çıplak gözle tespit edilememesi."
-  ]}
-  processTitle="Otonom Özgeçmiş ve Güven Doğrulama Asistanı"
-  processSteps={[
-    { title: "Döküman Yükleme", description: "Banka müşterisi veya iş başvurusu yapan aday, e-Devlet üzerinden aldığı SGK barkodlu PDF dökümünü sisteme yükler." },
-    { title: "Sahtecilik (Fraud) Kontrolü", description: "Yapay zeka, belgenin meta verilerini ve barkod yapısını milisaniyeler içinde inceleyerek dijital manipülasyonları tespit eder." },
-    { title: "Anlamsal Analiz", description: "Belge içindeki düzensiz giriş çıkışlar, sık iş değiştirme (Job hopping) oranları ve prime esas kazanç gelişimleri okunur." },
-    { title: "Risk ve Yetenek Profili", description: "İnsan kaynakları veya Kredi onay ekibinin önüne şeffaf bir rapor düşer: 'Aday CV'sinde belirttiği tarihlerde çalışmamış, risk yüksek.'" }
-  ]}
-  featuresTitle="Hızlı Karar Almanızı Sağlayan Analiz Araçları"
-  features={[
-    { title: "CV & SGK Eşleştirme Motoru (Cross-Check)", description: "Adayın kendi beyanı olan özgeçmişi pdf olarak okur, bunu resmi SGK belgesiyle harf harf eşleştirip tutarsızlıkları listeler." },
-    { title: "Turnover (İşten Ayrılma) Tahmini", description: "Önceki işyerlerindeki çalışma senelerine bakarak, adayın ortalama sadakat süresini yapay zeka standart sapmalarla hesaplar." },
-    { title: "Ücret Gelişimi Takibi", description: "Prime esas kazanç (PEK) tutarlarına bakarak adayın geçmiş işlerindeki gerçek maaş gelişim çizgisini görselleştirir." },
-    { title: "Uygulama İçi Barkod Doğrulama", description: "E-devlet üzerinden e-Doğrulama adımlarını insan müdahalesine gerek kalmadan arka planda API ile kendisi yapar." }
-  ]}
-  benefitsTitle="Manuel Okumayı Bırakın, Analize Odaklanın"
-  benefits={[
-    "90 Saniye", "Karar Süresi Hızı. Bir personelin veya müşterinin mali geçmişini okumak sayfalarca PDF'e rağmen saniyelere düşer.",
-    "Sıfır", "Kandırma İhtimali. Şişirilmiş unvanlar ve abartılı çalışma süreleri matematiksel olarak anında yakalanır.",
-    "İnsan", "Kaynağı Tasarrufu. CV eleme ekipleriniz belge kontrolcüsü olmaktan çıkar, gerçek mülakat kalitesine odaklanır."
-  ]}
-  caseStudyDescription="Her gün 300 başvuru alan kurumsal bir saha satış şirketi, adayların e-devlet belgelerini yapay zeka ile otomatik filtreleyerek yanlış CV beyanı yapan 120 adayı mülakata çağırmadan eledi ve haftada 40 İK saati kazandı."
-  finalCtaTitle="Geçmiş Verilerin Gücünü Yapay Zekayla Açığa Çıkarın"
-  finalCtaSubtitle="Kurumsal şirketler ve finans kuruluşları için özel SGK doğrulama (Background Check) botunuzu inşa edelim."
-  sectorTheme="finans"
-  faqs={[
-    { question: "KVKK (Kişisel Verilerin Korunması) açısından güvenli mi?", answer: "Yapay zeka sistemi, veriyi adayın açık rıza ile yüklediği sistemden okur ve verileri tutmadan doğrudan İK/Analiz raporuna çevirip ham belgeyi imha edebilir." },
-    { question: "Bu sistem kredi veren finansman firmaları için de uygun mu?", answer: "Evet, özellikle araç kiralama (filo) veya senetli satış yapan yerlerde müşterinin istikrarını (kaç aydır bordrolu çalıştığını) manuel belge okumadan doğrular." },
-    { question: "Sistem, GİB veya SGK altyapısıyla canlı mı çalışıyor?", answer: "Adayın sisteme PDF olarak yüklemesi yeterlidir. Fakat yapay zeka, belgedeki barkodu kullanarak e-Devletin resmi portalından canlı doğrulama yeteneğine sahiptir." }
-  ]}
-  sectorName="Akıllı İK ve Background Check"
-/>
+
+<CalculatorLayout
+  title={title}
+  description={description}
+  keywords={keywords}
+  schema={JSON.stringify(faqData)}
+>
+  <div class="space-y-12">
+    <section>
+      <div class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold border-primary text-primary mb-4">Aday ve Risk Dogrulama</div>
+      <h1 class="text-4xl lg:text-5xl font-bold tracking-tight mb-6">SGK Hizmet Dokumunu Dosya Olarak Degil, Dogrulama Surecinin Bir Parcasi Olarak Kullanin</h1>
+      <p class="text-xl text-muted-foreground leading-relaxed max-w-4xl">
+        SGK hizmet dokumu aramasi yapan kullanici genelde sadece PDF okumak istemez. Asil ihtiyac, adayin veya calisanin beyan ettigi gecmisi kontrol etmek, supheli farklari gormek ve bu belgeyi IK kararina daha duzenli baglamaktir.
+      </p>
+    </section>
+
+    <section class="grid gap-6 lg:grid-cols-3">
+      <div class="rounded-2xl border border-border bg-card p-6">
+        <h2 class="text-xl font-semibold mb-3">Belgeyi Acmak</h2>
+        <p class="text-muted-foreground">Tek basina dokumu gormek kolaydir; zor olan calisma surelerini, kopukluklari ve beyanla iliskisini anlamaktir.</p>
+      </div>
+      <div class="rounded-2xl border border-border bg-card p-6">
+        <h2 class="text-xl font-semibold mb-3">Beyanla Karsilastirmak</h2>
+        <p class="text-muted-foreground">CV, basvuru formu ve resmi belge birbirinden farkli bilgi tasiyabilir; asil karar degeri bu farklarda ortaya cikar.</p>
+      </div>
+      <div class="rounded-2xl border border-border bg-card p-6">
+        <h2 class="text-xl font-semibold mb-3">Karara Baglamak</h2>
+        <p class="text-muted-foreground">Belge kontrolu sonucta bir evrak inceleme isi degil, ise alim ve risk degerlendirme karari destekleme isidir.</p>
+      </div>
+    </section>
+
+    <section class="bg-muted/30 p-8 rounded-2xl border border-border">
+      <h2 class="text-2xl font-semibold mb-6">SGK Hizmet Dokumu Hangi Noktada Operasyonel Soruna Donusur?</h2>
+      <ul class="space-y-4">
+        <li class="flex items-start gap-3">
+          <span class="mt-1 h-2.5 w-2.5 rounded-full bg-primary"></span>
+          <p><strong>Yuksek hacimli alimlarda:</strong> Cok sayida aday icin belge kontrolu manuel ilerlediginde surec yavaslar.</p>
+        </li>
+        <li class="flex items-start gap-3">
+          <span class="mt-1 h-2.5 w-2.5 rounded-full bg-primary"></span>
+          <p><strong>Sahadaki rollerde:</strong> Devamsizlik, sik is degistirme veya beyan farklari daha kritik hale gelir.</p>
+        </li>
+        <li class="flex items-start gap-3">
+          <span class="mt-1 h-2.5 w-2.5 rounded-full bg-primary"></span>
+          <p><strong>Belge agirlikli sureclerde:</strong> Kontrol sonucu notlara, e-postalara ve kisilerin hafizasina dagildiginda tekrar is artar.</p>
+        </li>
+      </ul>
+    </section>
+
+    <section>
+      <h2 class="text-3xl font-bold mb-6">Bu Sayfanin Asil Gittigi Cozum</h2>
+      <p class="text-lg text-muted-foreground mb-8">
+        Bu konu bizim icin bir dokuman okuma probleminden cok, aday ve personel dogrulama akisidir. SGK hizmet dokumu; belge alma, karsilastirma, not dusme ve karar destek adimlariyla birlikte ele alindiginda anlamli hale gelir.
+      </p>
+      <div class="grid md:grid-cols-3 gap-6">
+        <div class="bg-card p-6 rounded-xl border border-border">
+          <h3 class="text-xl font-semibold mb-2">Belge Okuma ve Ayiklama</h3>
+          <p class="text-sm text-muted-foreground">Sure ve kayit bilgileri daha okunabilir ciktiya donusturulur.</p>
+        </div>
+        <div class="bg-card p-6 rounded-xl border border-border">
+          <h3 class="text-xl font-semibold mb-2">Beyan Karsilastirma</h3>
+          <p class="text-sm text-muted-foreground">Adayin anlattigi gecmis ile resmi kayit arasindaki farklar gorunur hale gelir.</p>
+        </div>
+        <div class="bg-card p-6 rounded-xl border border-border">
+          <h3 class="text-xl font-semibold mb-2">Karar Takibi</h3>
+          <p class="text-sm text-muted-foreground">Kontrol sonucu ilgili IK ve operasyon akisina daha duzenli aktarilir.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="max-w-3xl">
+      <h2 class="text-2xl font-bold mb-6">Sikca Sorulan Sorular</h2>
+      <div class="space-y-6">
+        <div>
+          <h3 class="text-lg font-semibold mb-2">Bu sayfa SGK dokumu indirme araci mi?</h3>
+          <p class="text-muted-foreground">Hayir. Bu sayfa, SGK hizmet dokumunun IK ve risk kontrol surecinde nasil kullanildigini ve hangi noktada surec problemine donustugunu anlatir.</p>
+        </div>
+        <div>
+          <h3 class="text-lg font-semibold mb-2">En cok hangi ekipler icin kritiktir?</h3>
+          <p class="text-muted-foreground">Aday dogrulama yapan IK ekipleri, saha operasyonlari ve belge temelli risk kontrolu yapan yapilar icin daha kritiktir.</p>
+        </div>
+        <div>
+          <h3 class="text-lg font-semibold mb-2">Asil sorun belgeyi okumak mi, sureci yonetmek mi?</h3>
+          <p class="text-muted-foreground">Cogu durumda asil sorun belgeyi acmak degil; sonucu karar surecine duzenli baglamaktir.</p>
+        </div>
+      </div>
+    </section>
+  </div>
+</CalculatorLayout>

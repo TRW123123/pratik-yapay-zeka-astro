@@ -1,6 +1,8 @@
 ---
 import BaseLayout from './BaseLayout.astro';
 import ROICalculator from '../components/ROICalculator';
+import LeadPathways from '../components/LeadPathways.astro';
+import { buildContactHref } from '../lib/contactHref';
 
 interface Props {
   title: string;
@@ -10,26 +12,180 @@ interface Props {
   schema?: string;
 }
 
-const {
-  title,
-  description,
-  keywords,
-  ogImage,
-  schema
-} = Astro.props;
+const { title, description, keywords, ogImage, schema } = Astro.props;
 
 const pathname = Astro.url.pathname;
+const hrContactHref = (cta: string) => buildContactHref({ source: pathname, packageName: 'ik-surec-analizi', area: 'other', cta });
+const financeContactHref = (cta: string) => buildContactHref({ source: pathname, packageName: 'finans-operasyon-analizi', area: 'finance-accounting', cta });
+const commerceContactHref = (cta: string) => buildContactHref({ source: pathname, packageName: 'operasyon-haritasi', area: 'other', cta });
 const shortName = title.split('|')[0].trim();
 const breadcrumbs = [
   { name: 'Ana Sayfa', url: '/' },
-  { name: 'Hesaplama Araçları & Çözümler', url: '/cozumler/' },
+  { name: 'Hesaplama Araclari ve Cozumler', url: '/cozumler/' },
   { name: shortName, url: pathname },
 ];
+
+const hrSignals = [
+  '/maas-hesaplama-motoru/',
+  '/bordro-hesaplama/',
+  '/brutten-nete/',
+  '/sgk-hizmet-dokumu/',
+  '/kidem-tazminati-hesaplama/',
+  '/ihbar-tazminati-hesaplama/',
+  '/isverene-maliyet-hesaplama/',
+  '/fazla-mesai-hesaplama/',
+  '/yillik-izin-ucreti-hesaplama/',
+];
+
+const financeSignals = [
+  '/kdv-hesaplama/',
+  '/vergi-iadesi-hesaplama/',
+  '/e-beyanname/',
+  '/defter-beyan/',
+  '/e-arsiv-portali/',
+  '/mutabakat-mektubu/',
+  '/cari-hesap-ekstresi/',
+  '/acik-fatura-kapali-fatura/',
+];
+
+const hrNextSteps = [
+  {
+    href: '/brutten-nete/',
+    title: 'IK sureclerini yardim masasi gibi yonetin',
+    description: 'Brutten nete, personel sorulari ve tekrar eden IK islemlerini tek akista otomatiklestirin.',
+    badge: 'HR',
+  },
+  {
+    href: '/sgk-hizmet-dokumu/',
+    title: 'Aday ve personel dogrulama akislarini guclendirin',
+    description: 'Ozellikle ise alim ve risk kontrol sureclerinde belge tabanli otomasyonu derinlestirin.',
+    badge: 'Check',
+  },
+  {
+    href: hrContactHref('calculator-nextstep-contact'),
+    title: 'Kendi surecinize gore teknik analiz alin',
+    description: 'Hazir icerik yerine size uygun senaryo cizmek icin kisa bir on analiz talep edin.',
+    badge: 'Lead',
+  },
+];
+
+const financeNextSteps = [
+  {
+    href: '/on-muhasebe-ve-fatura/',
+    title: 'Muhasebe veri girisini merkezden azaltin',
+    description: 'Belge okumadan ERP kaydina kadar daha buyuk resmi kuran ana cozum sayfasi.',
+    badge: 'Finance',
+  },
+  {
+    href: '/e-beyanname/',
+    title: 'Beyanname ve kontrol akislarini ilerletin',
+    description: 'Ozellikle uyum ve dogrulama tarafinda daha net operasyonel akislar icin bakin.',
+    badge: 'Compliance',
+  },
+  {
+    href: '/mutabakat-mektubu/',
+    title: 'Takip ve mutabakat sureclerini birlestirin',
+    description: 'Yanitsiz e-postalar, tekrar eden follow-up ve ay sonu kapanis yukunu azaltin.',
+    badge: 'Follow-up',
+  },
+];
+
+const commerceNextSteps = [
+  {
+    href: '/teklif-hazirlama-programi/',
+    title: 'Teklif hazirlama surecini toparlayin',
+    description: 'Fiyat, kur ve teklif akisini daha kontrollu ve hizli hale getirin.',
+    badge: 'Quoting',
+  },
+  {
+    href: '/e-ticaret-ve-pazaryeri-otomasyonu/',
+    title: 'Siparis ve operasyon akisini sistemlestirin',
+    description: 'Pazaryeri, kargo ve fatura akisini daha buyuk bir operasyon mantigina baglayin.',
+    badge: 'Commerce',
+  },
+  {
+    href: '/stok-takibi-programi/',
+    title: 'Stok ve kanal senkronunu guclendirin',
+    description: 'Operasyon tarafinda elle takip yerine daha gercek zamanli bir yapi kurun.',
+    badge: 'Inventory',
+  },
+];
+
+const proofCases = [
+  {
+    href: '/vaka-calismalari/cemkimsan/',
+    title: 'Cemkimsan vaka calismasi',
+    description: 'Operasyonel yuk ve satis/pazarlama akislarinin otomasyonla nasil olceklendigini inceleyin.',
+    badge: 'Operations',
+  },
+  {
+    href: '/vaka-calismalari/erpa-teknoloji/',
+    title: 'ERPA Teknoloji vaka calismasi',
+    description: 'B2B arastirma, lead toplama ve sistematik akis tarafinda guven kuran bir ornek.',
+    badge: 'B2B',
+  },
+  {
+    href: '/vaka-calismalari/car-studio-ai/',
+    title: 'Car Studio AI vaka calismasi',
+    description: 'Kucuk ekiplerle daha olceklenebilir otomasyon mantiginin pratik sonucunu gorun.',
+    badge: 'Scale',
+  },
+];
+
+const currentTrack = hrSignals.some((signal) => pathname.startsWith(signal))
+  ? 'hr'
+  : financeSignals.some((signal) => pathname.startsWith(signal))
+    ? 'finance'
+    : 'commerce';
+
+const nextSteps = currentTrack === 'hr' ? hrNextSteps : currentTrack === 'finance' ? financeNextSteps : commerceNextSteps;
+const contactHref = (cta: string) => currentTrack === 'hr'
+  ? hrContactHref(cta)
+  : currentTrack === 'finance'
+    ? financeContactHref(cta)
+    : commerceContactHref(cta);
+
+const offerMap = {
+  hr: {
+    badge: 'IK analizi',
+    title: 'Bu sayfadan projeye gecis nasil olur?',
+    description: 'Tekil hesap yerine IK ekibinizde hangi tekrar eden sorularin ve hangi bordro adimlarinin surekli zaman yedigini cikaririz.',
+    bullets: [
+      'IK destek ve bordro akisinda tekrar eden taleplerin ayrimi',
+      'Puantaj, izin, cikis veya personel self-service icin ilk otomasyon dugumu',
+      'Size uygun ilk kurulum senaryosu',
+    ],
+    cta: 'IK surec analizini iste',
+  },
+  finance: {
+    badge: 'Finans analizi',
+    title: 'Bu sayfadan projeye gecis nasil olur?',
+    description: 'Belge, kayit, tahsilat ve kontrol akislarinda manuel tekrar nerede olusuyor birlikte netlestiririz.',
+    bullets: [
+      'Belge ve veri girisi darboagazlarinin tespiti',
+      'Tahsilat, mutabakat veya beyan akisinda kopus noktalarinin ayrimi',
+      'Finans operasyonu icin ilk otomasyon onerisi',
+    ],
+    cta: 'Finans analizini iste',
+  },
+  commerce: {
+    badge: 'Operasyon analizi',
+    title: 'Bu sayfadan projeye gecis nasil olur?',
+    description: 'Hesap ya da bilgi ihtiyacinin gercekte hangi operasyon akisina baglandigini belirler ve size uygun ilk sistemi tarif ederiz.',
+    bullets: [
+      'Tekrarlayan operasyon adimlarinin ayrimi',
+      'Siparis, teklif veya stok akisindaki tekrar isin tespiti',
+      'Hizli geri donus verecek ilk kurulum plani',
+    ],
+    cta: 'Operasyon analizini iste',
+  },
+};
+
+const currentOffer = offerMap[currentTrack];
 ---
 
 <BaseLayout title={title} description={description} ogImage={ogImage} breadcrumbs={breadcrumbs}>
   <main class="bg-[#0B0F14] text-white selection:bg-[#A3E635] selection:text-black">
-    <!-- Dynamic Theme Styles -->
     <style is:inline>
       .theme-text { color: #A3E635; }
       .theme-border { border-color: #A3E635; }
@@ -37,35 +193,70 @@ const breadcrumbs = [
       .theme-glow-bg { background: radial-gradient(circle, rgba(163, 230, 53, 0.15) 0%, transparent 70%); }
     </style>
 
-    <article class="pt-32 pb-16 lg:pt-40 lg:pb-24">
-      <div class="absolute top-1/4 left-1/2 -translate-x-1/2 w-[800px] h-[800px] rounded-full blur-[150px] pointer-events-none opacity-40 theme-glow-bg"></div>
-      
-      <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-5xl relative z-10 prose prose-invert prose-lg prose-headings:text-white prose-p:text-gray-400 prose-a:text-[#A3E635] hover:prose-a:text-[#84CC16] prose-strong:text-gray-200">
+    <article class="pb-16 pt-32 lg:pb-24 lg:pt-40">
+      <div class="theme-glow-bg pointer-events-none absolute left-1/2 top-1/4 h-[800px] w-[800px] -translate-x-1/2 rounded-full blur-[150px] opacity-40"></div>
+
+      <div class="container relative z-10 mx-auto max-w-5xl px-4 prose prose-invert prose-lg prose-headings:text-white prose-p:text-gray-400 prose-a:text-[#A3E635] hover:prose-a:text-[#84CC16] prose-strong:text-gray-200 sm:px-6 lg:px-8">
         <slot />
       </div>
     </article>
 
     <ROICalculator client:visible sectorName="Operasyon" />
 
-    <!-- FINAL CTA HOOK -->
-    <section class="py-24 lg:py-32 relative overflow-hidden">
-      <div class="absolute inset-0 theme-bg opacity-[0.02] pointer-events-none"></div>
-      
-      <div class="container mx-auto px-4 text-center max-w-5xl relative z-10">
-        <div class="bg-[#FFFFFF]/[0.02] backdrop-blur-2xl rounded-[3rem] p-12 lg:p-24 shadow-2xl border border-white/10 relative overflow-hidden group">
-          <div class="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-1000 pointer-events-none blur-3xl" style="background: radial-gradient(circle at center, rgba(163, 230, 53, 0.15) 0%, transparent 70%);"></div>
-          
-          <h2 class="text-3xl md:text-4xl lg:text-5xl font-black mb-8 text-white tracking-tight leading-[1.1] relative z-10">
-            Manuel Hesaplamaları ve Olası Cezaları Bitirin
+    <LeadPathways
+      title="Bu sayfayi bir cikmaz degil, gecis noktasi yapin"
+      description="Hesaplama niyetli ziyaretciler bile guven ve sonraki adim gormek ister. Bu nedenle ilgili cozumler ve proof katmani burada dogrudan gorunur olmali."
+      caseStudies={proofCases}
+      nextSteps={nextSteps}
+      contactHref={contactHref('calculator-lead-pathways')}
+    />
+
+    <section class="relative z-10 py-16 lg:py-20">
+      <div class="container mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+        <div class="rounded-[2rem] border border-white/10 bg-white/[0.02] p-8 backdrop-blur-xl lg:p-10">
+          <div class="flex flex-col gap-8 lg:flex-row lg:items-start lg:justify-between">
+            <div class="max-w-2xl">
+              <div class="inline-flex rounded-full border border-[#A3E635]/20 bg-[#A3E635]/10 px-3 py-1 text-xs font-semibold uppercase tracking-[0.16em] text-[#A3E635]">
+                {currentOffer.badge}
+              </div>
+              <h2 class="mt-5 text-3xl font-black tracking-tight text-white">{currentOffer.title}</h2>
+              <p class="mt-4 text-base leading-relaxed text-gray-400">{currentOffer.description}</p>
+            </div>
+
+            <a href={contactHref('calculator-offer-panel')} class="inline-flex items-center justify-center rounded-2xl bg-[#A3E635] px-6 py-4 text-center text-base font-black text-black transition hover:-translate-y-0.5 hover:bg-[#84CC16]">
+              {currentOffer.cta}
+            </a>
+          </div>
+
+          <div class="mt-8 grid gap-4 md:grid-cols-3">
+            {currentOffer.bullets.map((item) => (
+              <div class="rounded-2xl border border-white/8 bg-black/20 p-5 text-sm leading-relaxed text-gray-300">
+                {item}
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="relative overflow-hidden py-24 lg:py-32">
+      <div class="theme-bg pointer-events-none absolute inset-0 opacity-[0.02]"></div>
+
+      <div class="container relative z-10 mx-auto max-w-5xl px-4 text-center">
+        <div class="group relative overflow-hidden rounded-[3rem] border border-white/10 bg-[#FFFFFF]/[0.02] p-12 shadow-2xl backdrop-blur-2xl lg:p-24">
+          <div class="pointer-events-none absolute inset-0 opacity-0 blur-3xl transition-opacity duration-1000 group-hover:opacity-100" style="background: radial-gradient(circle at center, rgba(163, 230, 53, 0.15) 0%, transparent 70%);"></div>
+
+          <h2 class="relative z-10 mb-8 text-3xl font-black leading-[1.1] tracking-tight text-white md:text-4xl lg:text-5xl">
+            Manuel hesaplamalari ve olasi cezalari bitirin
           </h2>
-          <p class="text-lg md:text-xl text-gray-400 mb-12 max-w-3xl mx-auto font-medium leading-relaxed relative z-10">
-            Excel formülleriyle şirketinizi riske atmayın. Yasalara tam uyumlu, 7/24 çalışan ve sıfır hata ile operasyon yöneten yapay zeka asistanınızı kurmak için ücretsiz teknik analiz talep edin.
+          <p class="relative z-10 mx-auto mb-12 max-w-3xl text-lg font-medium leading-relaxed text-gray-400 md:text-xl">
+            Excel formulleriyle sirketinizi riske atmayin. Yasalara uyumlu, 7/24 calisan ve sifira yakin hata ile operasyon yoneten bir yapay zeka asistani kurmak icin ucretsiz teknik analiz talep edin.
           </p>
-          
-          <div class="flex flex-col sm:flex-row items-center justify-center gap-6 relative z-10">
-            <a href="/iletisim/" class="group relative px-12 py-6 font-black rounded-2xl transition-all duration-500 text-xl inline-flex items-center gap-3 text-black hover:-translate-y-1 theme-bg" style="box-shadow: 0 0 30px rgba(163, 230, 53, 0.15);">
-              Projeyi Başlat
-              <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+
+          <div class="relative z-10 flex flex-col items-center justify-center gap-6 sm:flex-row">
+            <a href={contactHref('calculator-final-cta')} class="theme-bg group relative inline-flex items-center gap-3 rounded-2xl px-12 py-6 text-xl font-black text-black transition-all duration-500 hover:-translate-y-1" style="box-shadow: 0 0 30px rgba(163, 230, 53, 0.15);">
+              Projeyi baslat
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 transition-transform group-hover:-translate-y-1 group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M13 5l7 7-7 7M5 5l7 7-7 7" />
               </svg>
             </a>
@@ -73,7 +264,6 @@ const breadcrumbs = [
         </div>
       </div>
     </section>
-
   </main>
 
   {schema && <script type="application/ld+json" set:html={schema} />}

@@ -1,9 +1,17 @@
 ---
 import BaseLayout from './BaseLayout.astro';
+import { buildContactHref } from '../lib/contactHref';
 
 interface Metric {
   value: string;
   label: string;
+}
+
+interface LinkCard {
+  href: string;
+  title: string;
+  description: string;
+  badge?: string;
 }
 
 interface Props {
@@ -18,55 +26,89 @@ interface Props {
   metrics: Metric[];
   quote?: string;
   quoteAuthor?: string;
+  relatedSolutions?: LinkCard[];
+  analysisPackage?: string;
+  analysisArea?: string;
+  analysisLabel?: string;
 }
 
-const { title, description, ogImage, companyName, industry, challenge, solution, results, metrics, quote, quoteAuthor } = Astro.props;
+const {
+  title,
+  description,
+  ogImage,
+  companyName,
+  industry,
+  challenge,
+  solution,
+  results,
+  metrics,
+  quote,
+  quoteAuthor,
+  relatedSolutions = [],
+  analysisPackage = 'lead-flow-audit',
+  analysisArea = 'marketing-leads',
+  analysisLabel = 'Benzer bir akisi kendi sirketinize uyarlayin',
+} = Astro.props;
 
 const breadcrumbs = [
   { name: 'Ana Sayfa', url: '/' },
-  { name: 'Vaka Çalışmaları', url: '/vaka-calismalari/' },
+  { name: 'Vaka Calismalari', url: '/vaka-calismalari/' },
   { name: companyName, url: Astro.url.pathname },
 ];
+
+const contactHref = buildContactHref({
+  source: Astro.url.pathname,
+  packageName: analysisPackage,
+  area: analysisArea,
+  cta: 'case-study-primary',
+});
 ---
 
 <BaseLayout title={title} description={description} ogImage={ogImage} breadcrumbs={breadcrumbs}>
   <section class="py-32 lg:py-48 relative overflow-hidden">
-    <!-- Ambient Glow Background -->
-    <div class="absolute top-[20%] left-1/2 -translate-x-1/2 w-[800px] h-[800px] bg-[var(--color-primary)]/5 rounded-full blur-[120px] pointer-events-none opacity-50"></div>
-    <div class="container mx-auto px-4 max-w-4xl relative z-10">
-      <a href="/vaka-calismalari/" class="text-sm text-[var(--color-text-muted)] hover:text-[var(--color-primary-light)] transition-colors mb-8 inline-block">← Tüm Vaka Çalışmaları</a>
-      <h1 class="text-3xl md:text-5xl font-bold mb-4">{companyName}</h1>
-      <p class="text-[var(--color-primary-light)] font-medium mb-8">{industry}</p>
+    <div class="absolute top-[20%] left-1/2 -translate-x-1/2 h-[800px] w-[800px] rounded-full bg-[var(--color-primary)]/5 blur-[120px] opacity-50 pointer-events-none"></div>
 
-      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-4 mb-12">
+    <div class="container mx-auto max-w-5xl px-4 relative z-10">
+      <a href="/vaka-calismalari/" class="mb-8 inline-block text-sm text-[var(--color-text-muted)] transition-colors hover:text-[var(--color-primary-light)]">
+        Tum vaka calismalari
+      </a>
+
+      <h1 class="mb-4 text-3xl font-bold md:text-5xl">{companyName}</h1>
+      <p class="mb-8 font-medium text-[var(--color-primary-light)]">{industry}</p>
+
+      <div class="mb-12 grid gap-4 md:grid-cols-2 lg:grid-cols-4">
         {metrics.map((m) => (
-          <div class="neon-bleed-border bg-[var(--color-surface-light)]/50 backdrop-blur-sm rounded-xl p-6 text-center group relative overflow-hidden">
-            <div class="absolute inset-0 bg-gradient-to-br from-[var(--color-primary)]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
-            <p class="text-3xl font-extrabold text-[var(--color-primary)] mb-1">{m.value}</p>
-            <p class="text-xs font-medium text-[var(--color-text-muted)] tracking-wider uppercase">{m.label}</p>
+          <div class="neon-bleed-border group relative overflow-hidden rounded-xl bg-[var(--color-surface-light)]/50 p-6 text-center backdrop-blur-sm">
+            <div class="absolute inset-0 bg-gradient-to-br from-[var(--color-primary)]/5 to-transparent opacity-0 transition-opacity duration-500 pointer-events-none group-hover:opacity-100"></div>
+            <p class="mb-1 text-3xl font-extrabold text-[var(--color-primary)]">{m.value}</p>
+            <p class="text-xs font-medium uppercase tracking-wider text-[var(--color-text-muted)]">{m.label}</p>
           </div>
         ))}
       </div>
 
       <div class="space-y-8">
-        <div class="neon-bleed-border bg-[var(--color-surface-light)]/50 backdrop-blur-sm rounded-2xl p-8 relative overflow-hidden group">
-          <div class="absolute top-0 left-0 w-1 h-full bg-[var(--color-primary)]/50"></div>
-          <h2 class="text-2xl font-semibold mb-4 text-[var(--color-text)]">Zorluk</h2>
-          <p class="text-[var(--color-text-muted)] text-lg leading-relaxed">{challenge}</p>
+        <div class="neon-bleed-border group relative overflow-hidden rounded-2xl bg-[var(--color-surface-light)]/50 p-8 backdrop-blur-sm">
+          <div class="absolute left-0 top-0 h-full w-1 bg-[var(--color-primary)]/50"></div>
+          <h2 class="mb-4 text-2xl font-semibold text-[var(--color-text)]">Zorluk</h2>
+          <p class="text-lg leading-relaxed text-[var(--color-text-muted)]">{challenge}</p>
         </div>
-        <div class="neon-bleed-border bg-[var(--color-surface-light)]/50 backdrop-blur-sm rounded-2xl p-8 relative overflow-hidden group">
-          <div class="absolute top-0 left-0 w-1 h-full bg-[var(--color-accent)]/50"></div>
-          <h2 class="text-2xl font-semibold mb-4 text-[var(--color-text)]">Çözüm</h2>
-          <p class="text-[var(--color-text-muted)] text-lg leading-relaxed">{solution}</p>
+
+        <div class="neon-bleed-border group relative overflow-hidden rounded-2xl bg-[var(--color-surface-light)]/50 p-8 backdrop-blur-sm">
+          <div class="absolute left-0 top-0 h-full w-1 bg-[var(--color-accent)]/50"></div>
+          <h2 class="mb-4 text-2xl font-semibold text-[var(--color-text)]">Cozum</h2>
+          <p class="text-lg leading-relaxed text-[var(--color-text-muted)]">{solution}</p>
         </div>
-        <div class="neon-bleed-border bg-[var(--color-surface-light)]/50 backdrop-blur-sm rounded-2xl p-8 relative overflow-hidden group">
-          <div class="absolute top-0 left-0 w-1 h-full bg-gradient-to-b from-[var(--color-primary)] to-[var(--color-accent)]"></div>
-          <h2 class="text-2xl font-semibold mb-4 text-[var(--color-text)]">Sonuçlar</h2>
+
+        <div class="neon-bleed-border group relative overflow-hidden rounded-2xl bg-[var(--color-surface-light)]/50 p-8 backdrop-blur-sm">
+          <div class="absolute left-0 top-0 h-full w-1 bg-gradient-to-b from-[var(--color-primary)] to-[var(--color-accent)]"></div>
+          <h2 class="mb-4 text-2xl font-semibold text-[var(--color-text)]">Sonuclar</h2>
           <ul class="space-y-2">
             {results.map((r) => (
               <li class="flex items-start gap-3">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-[var(--color-primary)] flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
-                <span class="text-[var(--color-text-muted)] text-lg">{r}</span>
+                <svg xmlns="http://www.w3.org/2000/svg" class="mt-0.5 h-6 w-6 shrink-0 text-[var(--color-primary)]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                </svg>
+                <span class="text-lg text-[var(--color-text-muted)]">{r}</span>
               </li>
             ))}
           </ul>
@@ -74,18 +116,56 @@ const breadcrumbs = [
       </div>
 
       {quote && (
-        <blockquote class="mt-16 border-l-4 border-[var(--color-primary)] pl-8 py-6 bg-[var(--color-primary)]/5 rounded-r-2xl relative">
-          <div class="absolute -left-3 -top-3 text-[var(--color-primary)]/20 text-6xl font-serif">"</div>
-          <p class="text-xl italic mb-4 text-[var(--color-text)] leading-relaxed relative z-10">"{quote}"</p>
-          {quoteAuthor && <cite class="text-sm font-semibold uppercase tracking-wider text-[var(--color-primary)]">— {quoteAuthor}</cite>}
+        <blockquote class="relative mt-16 rounded-r-2xl border-l-4 border-[var(--color-primary)] bg-[var(--color-primary)]/5 py-6 pl-8">
+          <div class="absolute -left-3 -top-3 font-serif text-6xl text-[var(--color-primary)]/20">"</div>
+          <p class="relative z-10 mb-4 text-xl italic leading-relaxed text-[var(--color-text)]">"{quote}"</p>
+          {quoteAuthor && <cite class="text-sm font-semibold uppercase tracking-wider text-[var(--color-primary)]">{quoteAuthor}</cite>}
         </blockquote>
       )}
 
-      <div class="mt-20 text-center">
-        <a href="/cozumler/" class="magnetic-glow-btn bg-[var(--color-primary)] hover:bg-[var(--color-primary-dark)] text-[#0B0F14] font-bold px-8 py-4 rounded-xl transition-all duration-300 text-lg inline-flex items-center gap-2">
-          <span>Ücretsiz Analiz Talep Et</span>
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" /></svg>
-        </a>
+      <div class="mt-20 grid gap-8 lg:grid-cols-[1.15fr_0.85fr]">
+        <div class="rounded-[2rem] border border-[var(--color-border)] bg-[var(--color-surface-light)]/60 p-8">
+          <div class="flex items-center justify-between gap-4">
+            <h2 class="text-2xl font-semibold text-[var(--color-text)]">Ilgili cozum sayfalari</h2>
+            <a href="/cozumler/" class="text-sm font-semibold text-[var(--color-primary)] transition-colors hover:text-[var(--color-primary-light)]">
+              Tum cozumler
+            </a>
+          </div>
+
+          <div class="mt-6 space-y-4">
+            {relatedSolutions.map((item) => (
+              <a href={item.href} class="block rounded-2xl border border-[var(--color-border)] bg-black/10 p-5 transition-all duration-300 hover:-translate-y-0.5 hover:border-[var(--color-primary)]/40">
+                {item.badge && (
+                  <div class="mb-3 inline-flex rounded-full border border-[var(--color-primary)]/20 bg-[var(--color-primary)]/10 px-3 py-1 text-xs font-semibold uppercase tracking-[0.16em] text-[var(--color-primary)]">
+                    {item.badge}
+                  </div>
+                )}
+                <h3 class="text-lg font-semibold text-[var(--color-text)]">{item.title}</h3>
+                <p class="mt-2 text-sm leading-relaxed text-[var(--color-text-muted)]">{item.description}</p>
+              </a>
+            ))}
+          </div>
+        </div>
+
+        <div class="rounded-[2rem] border border-[var(--color-primary)]/20 bg-[var(--color-primary)]/7 p-8">
+          <div class="inline-flex rounded-full border border-[var(--color-primary)]/25 bg-[var(--color-primary)]/10 px-3 py-1 text-xs font-semibold uppercase tracking-[0.16em] text-[var(--color-primary)]">
+            Sonraki adim
+          </div>
+          <h2 class="mt-5 text-3xl font-bold leading-tight text-[var(--color-text)]">{analysisLabel}</h2>
+          <p class="mt-4 text-sm leading-relaxed text-[var(--color-text-muted)]">
+            Bu vaka calismasi size tanidik geliyorsa, kendi surecinizde ayni darboagazlari ve ilk otomasyon firsatini birlikte cikaralim.
+          </p>
+
+          <ul class="mt-6 space-y-3 text-sm text-[var(--color-text-muted)]">
+            <li>Benzer sureclere gore analiz onceligi</li>
+            <li>Ekibinize uygun ilk otomasyon dugumu</li>
+            <li>Uygulanabilir sonraki adim plani</li>
+          </ul>
+
+          <a href={contactHref} class="mt-8 inline-flex w-full items-center justify-center rounded-2xl bg-[var(--color-primary)] px-5 py-4 text-center text-base font-bold text-[#0B0F14] transition hover:-translate-y-0.5 hover:bg-[var(--color-primary-dark)]">
+            Ucretsiz analizi talep et
+          </a>
+        </div>
       </div>
     </div>
   </section>

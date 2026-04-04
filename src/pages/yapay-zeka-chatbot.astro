@@ -2,43 +2,43 @@
 import SolutionLayout from '../layouts/SolutionLayout.astro';
 ---
 <SolutionLayout
-  title="Yapay Zeka Chatbot | Türkçe NLP Destekli Gerçek Satış Botu"
-  description="Kullanıcıyı çileden çıkaran aptal sekreter botlarını unutun. Türkçenin dil yapısını anlayan, ERP sisteminize entegre 7/24 yapay zeka chatbot asistanı."
-  heroTitle="Müşterilerinizi Çileden Çıkaran Değil, Satış Kapatan Chatbot"
-  heroSubtitle="Web sitenizi ziyaret edenleri sinirlendiren 'Lütfen 1'e basın' robotlarını unutun. Türkçe'nin karmaşık kelime eklerini (sondan eklemeli yapı) anlayan, ERP ve kargo sisteminize doğrudan bağlanıp operasyonel işlem yapan ve 7/24 uykusuz satış kapatan yapay zeka chatbot."
+  title="Yapay Zeka Chatbot | Türkçe Destek, Satış ve İnsan Devir Akışı"
+  description="Yapay zeka chatbot arıyorsanız sadece cevap üreten değil; Türkçe'yi doğru anlayan, destek ve satış akışında gerektiğinde insana devir yapan bir sistem kurmak gerekir."
+  heroTitle="Yapay Zeka Chatbot'u Menü Botu Gibi Değil, Destek ve Satış Katmanı Gibi Kurgulayın"
+  heroSubtitle="Web sitesi veya dijital kanallardaki sohbet deneyimini ezber cevaplardan çıkarıp gerçek destek akışına dönüştürün. Türkçe'yi daha iyi anlayan, bilgiye dayalı yanıt veren ve gerektiğinde insan temsilciye temiz şekilde devreden yapay zeka chatbot sistemleri kuruyoruz."
   problems={[
-    "Türkçe NLP Fiyaskosu: Türkiye pazarındaki ucuz botların 'yapamayacaklarımdanmışsınız' gibi Türkçe'nin sondan eklemeli yapısını anlayamayıp kilitlenmesi.",
-    "Müşteri Temsilcisine Bağlanma Çilesi: Kelimeleri bağlamından koparan botların kullanıcıyı sürekli yanlış yönlendirmesi sonucu markaya duyulan öfke.",
-    "Halüsinasyon ve Hatalı Bilgi Verme: ERP ve stok veritabanınıza bağlanmadan sadece web sitesi metinlerini kopyalayan botların müşteriye 'Stokta var' yalanı söylemesi."
+    "Kullanıcıyı yanlış yönlendiren, bağlamı kaçıran ve markaya zarar veren yüzeysel chatbot deneyimleri.",
+    "Sık sorulan destek ve satış sorularının canlı ekibi sürekli meşgul etmesi nedeniyle operasyonun yavaşlaması.",
+    "Botun neyi cevaplayacağı, ne zaman insan devreye gireceği ve hangi bilgi kaynağına dayanacağı net olmadığı için güven sorunu oluşması."
   ]}
-  processTitle="Gerçek (Agentic) Yapay Zeka Nasıl Çalışır?"
+  processTitle="Chatbot Sistemi Nasıl Sağlam Kurulur?"
   processSteps={[
-    { title: "Niyet ve Duygu Analizi (Sentiment)", description: "Müşterinin sadece ne yazdığını değil, hangi duyguyla (öfkeli, acil, memnun) yazdığını anlar. Şikayet varsa anında aksiyon alır." },
-    { title: "Veritabanı Okuma (RAG Mimarisi)", description: "Cevap uydurmaz (Halüsinasyon yapmaz). Soru geldiğinde doğrudan sizin ürün stoğunuzu, CRM kayıtlarınızı ve canlı kargo API'sini sorgular." },
-    { title: "Operasyonel Eylem (Agentic Flow)", description: "Müşteri 'Kargom nerede?' dediğinde sadece link atmaz. API'ye girer: 'Kargonuz Aras Kargo teslimat şubesinde. İade kodu oluşturmamı ister misiniz?' der ve o kodu üretir." },
-    { title: "Kesintisiz Canlı İnsan Devri", description: "Çok spesifik bir problem olursa, daha müşteri sinirlenmeden tüm konuşma geçmişini derleyip anında gerçek bir temsilciye aktarır." }
+    { title: "Kullanım Amacını Netleştirme", description: "Botun destek, satış, bilgi verme, lead toplama veya bunların hangilerinin birleşimi için çalışacağını netleştiriyoruz." },
+    { title: "Bilgi Kaynağı ve Yanıt Sınırları", description: "Botun hangi veri veya dokümanlara dayanacağını, hangi konularda cevap vermemesi gerektiğini belirliyoruz." },
+    { title: "Türkçe Akış ve İnsan Devir Kurgusu", description: "Soru anlaşılmadığında, itiraz yükseldiğinde veya hassas bir durum oluştuğunda insan devrini akıllı hale getiriyoruz." },
+    { title: "Raporlama ve Sürekli İyileştirme", description: "Hangi soruların çözüldüğünü, hangilerinin temsilciye düştüğünü ve nerede iyileştirme gerektiğini görünür yapıyoruz." }
   ]}
-  featuresTitle="Sitenizdeki Chat Balonunu Gerçek Bir Satışçıya Dönüştüren Araçlar"
+  featuresTitle="Cevap Üreten Değil, Destek Süreci Yöneten Chatbot Katmanı"
   features={[
-    { title: "Gelişmiş Türkçe Doğal Dil İşleme", description: "Deyimler, ironiler, argo kullanım ve yazım hataları... Modelimiz Türkçenin tüm konuşma dili zorluklarını anlayacak şekilde eğitildi." },
-    { title: "Lead Generation (Müşteri Bulma)", description: "Ziyaretçi sitenizde 3 dakika harcadığında proaktif olarak devreye girip 'Sizin sektörünüz için olan PDF rehberimizi WhatsApp'tan göndereyim mi?' diyerek numara toplar." },
-    { title: "Omnichannel Uyumluluk", description: "İster web sitenizdeki chat ekranında, ister Instagram DM'de, ister WhatsApp'ta olsun... Tek bir zeka her yerde çalışır." },
-    { title: "Sepet Terk Kurtarıcı", description: "Ödeme sayfasında takılan müşteriye özel indirim veya kargo avantajı sunarak satışı kapanmadan kurtarma hamleleri yapar." }
+    { title: "Türkçe Anlama ve Bağlam Takibi", description: "Soruları sadece kelime bazında değil, mümkün olduğunca niyet ve bağlam seviyesinde çözmeye odaklanıyoruz." },
+    { title: "Bilgiye Dayalı Yanıt Yapısı", description: "Botun hangi içerikten besleneceğini netleştirerek rastgele ve güvensiz cevap riskini azaltıyoruz." },
+    { title: "İnsan Temsilciye Akıllı Devir", description: "Botun çözmemesi gereken konular konuşma geçmişiyle birlikte doğru ekibe devredilir." },
+    { title: "Satış ve Destek Ayrımı", description: "Bot her şeyi aynı şekilde ele almaz; satın alma niyeti, bilgi ihtiyacı ve sorun bildirimi farklı akışlara ayrılabilir." }
   ]}
-  benefitsTitle="İnsan ve Bot Arasındaki Çizgiyi Kaldıran Verimlilik"
+  benefitsTitle="Chatbot Katmanının İş Etkisi"
   benefits={[
-    "%85", "Destek Taleplerinde (Ticket) Düşüş. Kargo, iade ve stok sorma işlemleri sıfır insan temasıyla anında çözülür.",
-    "%100", "Türkçe Dil Anlayışı. Hatalı bağlam yüzünden yaşanan iletişim problemleri ortadan kalkar.",
-    "7/24", "Kesintisiz satış ve destek. Pazar gecesi saat 04:00'te bile potansiyel B2B müşterisiyle toplantı tarihi ayarlar."
+    "%70+", "Tekrarlayan destek sorularında canlı ekip yükünü azaltma potansiyeli.",
+    "%100", "Hangi soruların botta çözüldüğü ve hangilerinin ekibe aktarıldığına dair görünür akış mantığı.",
+    "7/24", "Temel bilgi ve ilk karşılama katmanının mesai dışına bağımlı olmadan çalışması."
   ]}
-  caseStudyDescription="Yüksek trafikli bir e-ticaret müşterimizin çağrı merkezi her gün 'Kargom nerede?' sorularından kilitleniyordu. Agentic NLP Chatbot entegrasyonumuzdan sonra canlı desteğe düşen şikayet oranı %75 oranında azaldı, çünkü bot bizzat MNG Kargo API'sinden yanıt alıp müşteriye iletiyordu."
-  finalCtaTitle="Aptal Botları Kapatın, Yapay Zekaya Geçin"
-  finalCtaSubtitle="Müşterilerinizi kaçıran basit menü robotları yerine onlara saygı duyan bir iletişim ustası kurun."
+  caseStudyDescription="Tekrarlayan destek soruları yüzünden canlı ekibi yavaşlayan bir yapı, chatbot ile insan devir mantığını netleştirince hem ilk yanıt hızını artırdı hem de temsilcilerin daha karmaşık işlere odaklanmasını sağladı."
+  finalCtaTitle="Chatbot'u Sadece Konuşturan Değil, İşleten Mantığı Kuralım"
+  finalCtaSubtitle="Destek ve satış akışınızda botun neyi çözeceğini, neyi çözemeyeceğini ve hangi noktada insan devreye gireceğini birlikte tasarlayalım."
   sectorTheme="crm"
   faqs={[
-    { question: "Müşteri ile konuşurken sitenizdeki metinlerin dışına çıkıp yanlış bilgi verebilir mi?", answer: "Hayır. Agentic RAG mimarimiz, botu sadece onaylanmış veritabanınız (PDF'ler, stok API'leri, fiyat listeleri) ile sınırlar. Data yoksa uydurmak yerine gerçek temsilciye bağlar." },
-    { question: "Mevcut müşteri hizmetleri yazılımım (Zendesk, Intercom vb.) ile çalışır mı?", answer: "Evet, tüm popüler müşteri ilişkileri (CS) panellerine sorunsuz entegre olarak ilk karşılama (Tier 1) hattı olarak görev yapar." },
-    { question: "Kargo API ve Stok ERP bağlantıları nasıl sağlanıyor?", answer: "Yapay zeka asistanımız marka bağımsızdır. Açık kaynak araçları ve Make otomasyonu sayesinde Logo, Mikro, T-Soft, Trendyol gibi tüm platformlardaki verileri anlık olarak çekip müşteriye iletebilir." }
+    { question: "Yapay zeka chatbot ile WhatsApp botu aynı şey mi?", answer: "Hayır. WhatsApp botu bir kanal-özel kullanım olabilir. Chatbot ise web, destek ekranı veya farklı dijital temas noktalarında çalışan daha genel konuşma katmanını ifade eder." },
+    { question: "En büyük hata nerede yapılıyor?", answer: "Genellikle botun rolü belirsiz bırakılıyor. Her şeyi çözmeye çalışan botlar güven kaybına yol açar. Biz önce sınırları ve insan devir mantığını netleştiriyoruz." },
+    { question: "Bot her şeyi bilmek zorunda mı?", answer: "Hayır. İyi sistemlerde botun hangi bilgi kaynağından beslendiği ve hangi sorularda insan desteğine geçeceği açık şekilde tanımlanır." }
   ]}
   sectorName="Yapay Zeka Chatbot"
 />

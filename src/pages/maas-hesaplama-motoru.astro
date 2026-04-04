@@ -1,41 +1,39 @@
 ---
 import CalculatorLayout from '../layouts/CalculatorLayout.astro';
 
+const title = 'Maas Hesaplama Motoru | Brut-Net Senaryo ve Bordro Sureci';
+const description = 'Maas hesaplama motoru arayan ekipler icin asil sorun tek bir hesap degil; brut-net senaryolari, zam kararlarini ve bordro etkisini hizli gorebilmektir.';
+const keywords = 'maas hesaplama motoru, brutten nete, netten brute maas, maas senaryosu, bordro otomasyonu';
 
-const title = "Maaş Hesaplama Motoru (Brütten Nete, Netten Brüte) | Pratik Yapay Zeka";
-const description = "Güncel SGK tavanı, vergi dilimleri ve BES kesintileriyle 2026 yılı için sıfır hatayla brütten nete veya netten brüte maaş hesaplayan yapay zeka destekli İK aracı.";
-const keywords = "maaş hesaplama motoru, brütten nete hesaplama, netten brüte maaş hesaplama, agi hesaplama, sgk kesintisi";
-
-// FAQ Schema
 const faqData = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
     {
-      "@type": "Question",
-      "name": "Bes ve İcra kesintileri maaş hesaplamasına otomatik dahil edilebilir mi?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Evet, yapay zeka destekli otonom bordro sistemimiz personelin özlük dosyasındaki BES, nafaka veya icra gibi yasal kesintileri takip ederek net yatırılacak tutarı sıfır hatayla hesaplar."
-      }
+      '@type': 'Question',
+      name: 'Bu sayfa resmi bordro hesap makinesi mi?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Hayir. Bu sayfa maas hesaplama ihtiyacinin operasyon tarafini aciklar ve brut-net senaryolarinin neden surec sorunu haline geldigini anlatir.',
+      },
     },
     {
-      "@type": "Question",
-      "name": "Maaş hesaplama motorunuz güncel 2026 asgari ücret istisnasını hesaplıyor mu?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Kesinlikle. Her yıl güncellenen asgari ücret gelir vergisi istisnası, damga vergisi muafiyeti ve güncel SGK taban/tavan matrahları robotumuza otomatik olarak entegre edilir."
-      }
+      '@type': 'Question',
+      name: 'Ne zaman tekil hesap yetmez?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Birden fazla personel, farkli yan haklar, zam senaryolari veya bordro onay akisiniz varsa tekil hesap yeterli olmaz; surecin birlikte ele alinmasi gerekir.',
+      },
     },
     {
-      "@type": "Question",
-      "name": "Bu hesaplamaları bir bordro programına nasıl aktarabilirim?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Hesaplama motorumuz tekil işlemler için tasarlanmıştır. Ancak 'Finansal İK Yapay Zekası' çözümümüz ile Logo, Zirve veya Mikro gibi sistemlere entegre olarak yüzlerce personelin maaşını tek tıkla bordrolaştırabilirsiniz."
-      }
-    }
-  ]
+      '@type': 'Question',
+      name: 'Bu konu hangi ekipler icin kritik hale gelir?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'IK, finans ve yonetim ayni anda maas senaryolari, isveren maliyeti ve bordro etkisi gormek istediginde kritik hale gelir.',
+      },
+    },
+  ],
 };
 ---
 
@@ -46,81 +44,88 @@ const faqData = {
   schema={JSON.stringify(faqData)}
 >
   <div class="space-y-12">
-    <!-- Hero Section -->
     <section>
-      <div class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-primary text-primary mb-4">İK ve Finans Otomasyonu</div>
-      <h1 class="text-4xl lg:text-5xl font-bold tracking-tight mb-6">Maaş Hesaplamada Hata ve Manuel Giriş Riskini Sıfırlayın</h1>
-      <p class="text-xl text-muted-foreground leading-relaxed mb-8">
-        "Şu personelin net maaşı ne kadar olur? Vergi dilimine girerse maliyeti ne kadar artar?" soruları için Excel formülleriyle boğuşmaktan yoruldunuz mu? Sadece brütten nete maaş hesaplayan bir robot kullanmak yerine, hesaplamaları otonom yöneten ve bordro sisteminize entegre eden İK Yapay Zekası ile tanışın.
+      <div class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold border-primary text-primary mb-4">IK ve Bordro Operasyonu</div>
+      <h1 class="text-4xl lg:text-5xl font-bold tracking-tight mb-6">Maas Hesabini Tek Formulden Cikarip Karar Surecine Tasiyin</h1>
+      <p class="text-xl text-muted-foreground leading-relaxed max-w-4xl">
+        Maas hesaplama motoru arayan ekipler genelde tek bir rakam degil; zam, brut-net gecis, yeni ise alim ve bordro etkisini hizli anlamak ister. Sorun yalnizca hesap degil, ayni sorularin tekrar tekrar IK, finans ve yonetim arasinda dolasmasidir.
       </p>
     </section>
 
-    <!-- The Pain Points -->
+    <section class="grid gap-6 lg:grid-cols-3">
+      <div class="rounded-2xl border border-border bg-card p-6">
+        <h2 class="text-xl font-semibold mb-3">Ne oluyor?</h2>
+        <p class="text-muted-foreground">
+          Yoneticiler zam senaryosu soruyor, personel brut-net farkini merak ediyor, IK ise ayni hesaplari farkli dosyalarda tekrar yapiyor.
+        </p>
+      </div>
+      <div class="rounded-2xl border border-border bg-card p-6">
+        <h2 class="text-xl font-semibold mb-3">Neden buyuyor?</h2>
+        <p class="text-muted-foreground">
+          Maas sorulari tek kisilik bir hesap olmaktan cikiyor; yan hak, prim, donemsel degisim ve bordro takvimine baglaniyor.
+        </p>
+      </div>
+      <div class="rounded-2xl border border-border bg-card p-6">
+        <h2 class="text-xl font-semibold mb-3">Nereye donusur?</h2>
+        <p class="text-muted-foreground">
+          Eger ayni hesaplar surekli tekrarlaniyorsa konu artik hesap makinesi degil, IK-yardim masasi ve bordro operasyonu problemidir.
+        </p>
+      </div>
+    </section>
+
     <section class="bg-muted/30 p-8 rounded-2xl border border-border">
-      <h2 class="text-2xl font-semibold mb-6">Neden Geleneksel Maaş Hesaplamaları Şirketinize Zarar Verir?</h2>
+      <h2 class="text-2xl font-semibold mb-6">Maas Hesaplama Ihtiyaci Hangi Noktada Operasyon Yukune Donusur?</h2>
       <ul class="space-y-4">
         <li class="flex items-start gap-3">
-          <svg class="w-6 h-6 text-destructive flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path></svg>
-          <p><strong>Değişen Vergi Mevzuatı:</strong> SGK tavanları ve gelir vergisi dilimleri sürekli güncellenir. Excel'de formülü güncellemeyi unutmak, eksik vergi ödenmesine ve idari cezalara neden olur.</p>
+          <span class="mt-1 h-2.5 w-2.5 rounded-full bg-primary"></span>
+          <p><strong>Zam donemlerinde:</strong> Birden fazla senaryo ayni anda degerlendirilir ve ekipler hizli brut-net cevabi ister.</p>
         </li>
         <li class="flex items-start gap-3">
-          <svg class="w-6 h-6 text-destructive flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path></svg>
-          <p><strong>Cevaplanamayan Simülasyonlar:</strong> Şirket yöneticisi "Tüm ekibe %20 zam yaparsam Ekim ayındaki vergi maliyeti bütçemi ne kadar aşar?" diye sorduğunda, saatlerce manuel hesap yapmanız gerekir.</p>
+          <span class="mt-1 h-2.5 w-2.5 rounded-full bg-primary"></span>
+          <p><strong>Ise alim surecinde:</strong> Adaya teklif verirken net maas, toplam maliyet ve bordro etkisi ayni anda gormek gerekir.</p>
         </li>
         <li class="flex items-start gap-3">
-          <svg class="w-6 h-6 text-destructive flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path></svg>
-          <p><strong>Manuel Veri Aktarımı:</strong> Hesaplanan maaş verilerinin bordro onay sistemine kopyalanıp yapıştırılması her ay personel başına ekstra veri giriş eforu gerektirir.</p>
+          <span class="mt-1 h-2.5 w-2.5 rounded-full bg-primary"></span>
+          <p><strong>Personel sorularinda:</strong> Vergi dilimi, yan hak ve kesinti sorulari IK ekibi icin tekrar eden destek talebine donusur.</p>
         </li>
       </ul>
     </section>
 
-    <!-- The Solution -->
     <section>
-      <h2 class="text-3xl font-bold mb-6">Maaş Hesaplayan Değil, Bordro Sürecini Yöneten Otonom Zeka</h2>
+      <h2 class="text-3xl font-bold mb-6">Buradaki Asil Cozum Sayfasi Neye Isaret Ediyor?</h2>
       <p class="text-lg text-muted-foreground mb-8">
-        Pratik Yapay Zeka'nın "Finans ve İK Asistanı", basit bir hesap makinesi değildir. Doğrudan sizin ERP veya muhasebe veritabanınıza konuşan akıllı bir analiz katmanıdır.
+        Maas hesaplama motoru tek basina bir son urun degil. Bizim acimizdan bu sayfa, brut-net senaryo sorularini, personel destek yukunu ve bordroya giden veri akislarini daha sistemli hale getiren IK otomasyon katmanina acilan bir gecis noktasi.
       </p>
-
       <div class="grid md:grid-cols-3 gap-6">
         <div class="bg-card p-6 rounded-xl border border-border">
-          <div class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4">
-            <span class="text-2xl">🤖</span>
-          </div>
-          <h3 class="text-xl font-semibold mb-2">WhatsApp Maaş Simülatörü</h3>
-          <p class="text-sm text-muted-foreground">"Mehmet Bey'e 80.000 TL net maaş verirsek Ağustos ayı brütü ne olur?" sorusunu WhatsApp'tan yazın, AI size tabloyu hazırlayıp anında dönsün.</p>
+          <h3 class="text-xl font-semibold mb-2">Senaryo Hizlandirma</h3>
+          <p class="text-sm text-muted-foreground">Zam, teklif ve yeni ise alim senaryolari ayni mantikla daha hizli degerlendirilir.</p>
         </div>
         <div class="bg-card p-6 rounded-xl border border-border">
-          <div class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4">
-            <span class="text-2xl">⚡</span>
-          </div>
-          <h3 class="text-xl font-semibold mb-2">Sıfır Mevzuat Uyum Riski</h3>
-          <p class="text-sm text-muted-foreground">Yeni vergi dilimleri, asgari ücret istisnası veya BES kesinti kuralları değiştiğinde sistem kendini Resmi Gazete'den otonom günceller.</p>
+          <h3 class="text-xl font-semibold mb-2">IK Yardim Masasi</h3>
+          <p class="text-sm text-muted-foreground">Tekrar eden brut-net ve bordro sorulari kisilere degil, daha sistemli bir yardim akisine baglanir.</p>
         </div>
         <div class="bg-card p-6 rounded-xl border border-border">
-          <div class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4">
-            <span class="text-2xl">📊</span>
-          </div>
-          <h3 class="text-xl font-semibold mb-2">Oto-Bordro Entegrasyonu</h3>
-          <p class="text-sm text-muted-foreground">Maaş zamlarını ve hesaplamaları onayladığınız an, sistem bu verileri Logo, Zirve veya Mikro gibi sistemlere tek tıkla e-Bordro olarak gönderir.</p>
+          <h3 class="text-xl font-semibold mb-2">Bordroya Gecis</h3>
+          <p class="text-sm text-muted-foreground">Senaryo ve hesap tarafinda toplanan bilgiler bordro surecinden kopuk kalmaz.</p>
         </div>
       </div>
     </section>
 
-    <!-- FAQ -->
     <section class="max-w-3xl">
-      <h2 class="text-2xl font-bold mb-6">Sıkça Sorulan Sorular</h2>
+      <h2 class="text-2xl font-bold mb-6">Sikca Sorulan Sorular</h2>
       <div class="space-y-6">
         <div>
-          <h3 class="text-lg font-semibold mb-2">Bes ve İcra kesintileri maaş hesaplamasına otomatik dahil edilebilir mi?</h3>
-          <p class="text-muted-foreground">Evet, yapay zeka destekli otonom bordro sistemimiz personelin özlük dosyasındaki BES, nafaka veya icra gibi yasal kesintileri takip ederek net yatırılacak tutarı sıfır hatayla hesaplar.</p>
+          <h3 class="text-lg font-semibold mb-2">Bu sayfa resmi bordro hesap makinesi mi?</h3>
+          <p class="text-muted-foreground">Hayir. Bu sayfa maas hesaplama ihtiyacinin operasyon tarafini aciklar ve bu ihtiyacin neden IK ve bordro surecine baglandigini anlatir.</p>
         </div>
         <div>
-          <h3 class="text-lg font-semibold mb-2">Maaş hesaplama motorunuz güncel 2026 asgari ücret istisnasını hesaplıyor mu?</h3>
-          <p class="text-muted-foreground">Kesinlikle. Her yıl güncellenen asgari ücret gelir vergisi istisnası, damga vergisi muafiyeti ve güncel SGK taban/tavan matrahları robotumuza otomatik olarak entegre edilir.</p>
+          <h3 class="text-lg font-semibold mb-2">Ne zaman tekil hesap yetmez?</h3>
+          <p class="text-muted-foreground">Birden fazla personel, farkli yan haklar, zam senaryolari veya bordro onay akisiniz varsa tekil hesap yeterli olmaz; konu surec tasarimina doner.</p>
         </div>
         <div>
-          <h3 class="text-lg font-semibold mb-2">Bu hesaplamaları bir bordro programına nasıl aktarabilirim?</h3>
-          <p class="text-muted-foreground">Hesaplama motorumuz tekil işlemler için tasarlanmıştır. Ancak 'Finansal İK Yapay Zekası' çözümümüz ile Logo, Zirve veya Mikro gibi sistemlere entegre olarak yüzlerce personelin maaşını tek tıkla bordrolaştırabilirsiniz.</p>
+          <h3 class="text-lg font-semibold mb-2">Bu konu hangi ekipler icin kritik hale gelir?</h3>
+          <p class="text-muted-foreground">IK, finans ve yonetim ayni anda maas senaryolari, isveren maliyeti ve bordro etkisi gormek istediginde kritik hale gelir.</p>
         </div>
       </div>
     </section>

@@ -1,22 +1,17 @@
 ---
-/**
- * Blog Listing Page — SSR (not prerendered)
- * Fetches published posts from Supabase blog_posts table.
- * Paginated: 12 posts per page via ?page= query param.
- */
 export const prerender = false;
 
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import BlogCard from '../../components/BlogCard.astro';
 import { supabase } from '../../lib/supabase';
 import type { BlogPost } from '../../lib/supabase';
+import { buildContactHref } from '../../lib/contactHref';
 
 const pageSize = 12;
 const url = new URL(Astro.request.url);
 const currentPage = Math.max(1, Number(url.searchParams.get('page') ?? 1));
 const start = (currentPage - 1) * pageSize;
 
-// Get total count
 const { count } = await supabase
   .from('blog_posts')
   .select('*', { count: 'exact', head: true })
@@ -26,7 +21,6 @@ const { count } = await supabase
 const total = count || 0;
 const totalPages = Math.max(1, Math.ceil(total / pageSize));
 
-// Get paginated posts
 const { data: posts, error } = await supabase
   .from('blog_posts')
   .select('*')
@@ -40,34 +34,78 @@ if (error) {
 }
 
 const blogPosts = (posts || []) as BlogPost[];
+const blogPrimaryContactHref = buildContactHref({
+  source: '/blog/',
+  packageName: 'lead-flow-audit',
+  area: 'marketing-leads',
+  cta: 'blog-index-empty-state',
+});
+const blogFinalContactHref = buildContactHref({
+  source: '/blog/',
+  packageName: 'lead-flow-audit',
+  area: 'marketing-leads',
+  cta: 'blog-index-final-panel',
+});
 ---
 
 <BaseLayout
-  title="Blog – Pratik Yapay Zeka"
-  description="Yapay zeka, otomasyon ve dijital dönüşüm hakkında pratik rehberler ve vaka çalışmaları."
+  title="Blog | Pratik Yapay Zeka"
+  description="Yapay zeka, otomasyon ve buyume sistemleri hakkinda pratik rehberler, vaka calismalari ve operasyon odakli icerikler."
   breadcrumbs={[
     { name: 'Ana Sayfa', url: '/' },
     { name: 'Blog', url: '/blog/' },
   ]}
 >
-  <section class="py-32 lg:py-48 relative overflow-hidden bg-[#0B0F14]">
-    <div class="absolute inset-0 opacity-20 mix-blend-overlay pointer-events-none"></div>
-    <div class="absolute top-1/4 left-1/2 -translate-x-1/2 w-[800px] h-[800px] bg-[var(--color-primary)]/10 rounded-full blur-[150px] pointer-events-none opacity-60"></div>
-    <div class="container mx-auto px-4 max-w-6xl relative z-10">
-      <div class="text-center mb-16">
-        <h1 class="text-4xl md:text-6xl font-extrabold mb-6 tracking-tight text-[#FFFFFF] drop-shadow-lg">Blog</h1>
-        <p class="text-xl text-[var(--color-text-muted)] max-w-2xl mx-auto leading-relaxed">
-          Pratik yapay zeka destekli büyüme için içgörüler ve vaka çalışmaları.
+  <section class="relative overflow-hidden bg-[#0B0F14] py-32 lg:py-40">
+    <div class="absolute left-1/2 top-1/4 h-[800px] w-[800px] -translate-x-1/2 rounded-full bg-[var(--color-primary)]/10 blur-[150px] opacity-60 pointer-events-none"></div>
+
+    <div class="container mx-auto max-w-6xl px-4 relative z-10">
+      <div class="mx-auto max-w-3xl text-center">
+        <div class="inline-flex items-center rounded-full border border-[var(--color-primary)]/20 bg-[var(--color-primary)]/10 px-4 py-2 text-sm font-semibold uppercase tracking-[0.18em] text-[var(--color-primary)]">
+          Bilgi -> sistem -> lead
+        </div>
+        <h1 class="mt-6 text-4xl font-extrabold tracking-tight text-white md:text-6xl">Blog</h1>
+        <p class="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-[var(--color-text-muted)]">
+          Buradaki icerikler sadece bilgi vermek icin degil; hangi surecinizde otomasyon, chatbot, CRM veya operasyon iyilestirmesi gerektigini daha net gormeniz icin var.
         </p>
       </div>
 
+      <div class="mt-12 grid gap-4 md:grid-cols-3">
+        <div class="rounded-3xl border border-[var(--color-border)] bg-[var(--color-surface-light)]/60 p-6">
+          <p class="text-sm uppercase tracking-[0.16em] text-[var(--color-primary)]">Growth</p>
+          <h2 class="mt-3 text-xl font-semibold text-white">Lead ve talep akisi</h2>
+          <p class="mt-3 text-sm leading-relaxed text-[var(--color-text-muted)]">Marketing otomasyonu, B2B musteri bulma ve takip akislarini kapsayan icerikler.</p>
+        </div>
+        <div class="rounded-3xl border border-[var(--color-border)] bg-[var(--color-surface-light)]/60 p-6">
+          <p class="text-sm uppercase tracking-[0.16em] text-[var(--color-primary)]">Operations</p>
+          <h2 class="mt-3 text-xl font-semibold text-white">Muhasebe ve operasyon</h2>
+          <p class="mt-3 text-sm leading-relaxed text-[var(--color-text-muted)]">Belge, kayit, mutabakat ve tekrarlayan ekip islerini azaltan sistemler.</p>
+        </div>
+        <div class="rounded-3xl border border-[var(--color-border)] bg-[var(--color-surface-light)]/60 p-6">
+          <p class="text-sm uppercase tracking-[0.16em] text-[var(--color-primary)]">Automation</p>
+          <h2 class="mt-3 text-xl font-semibold text-white">Botlar ve workflowlar</h2>
+          <p class="mt-3 text-sm leading-relaxed text-[var(--color-text-muted)]">Chatbot, WhatsApp, CRM ve ekip ici workflow otomasyonu icin uygulamali yaklasimlar.</p>
+        </div>
+      </div>
+
       {blogPosts.length === 0 ? (
-        <p class="text-center text-[var(--color-text-muted)]">
-          Henüz blog yazısı yok.
-        </p>
+        <div class="mt-16 rounded-[2rem] border border-[var(--color-border)] bg-[var(--color-surface-light)]/50 p-10 text-center">
+          <h2 class="text-2xl font-bold text-white">Henuz yayinlanmis blog yazisi yok.</h2>
+          <p class="mx-auto mt-4 max-w-2xl text-[var(--color-text-muted)]">
+            Bu alani icerik motoru olarak kullanacagiz. O zamana kadar cozum sayfalarini ve vaka calismalarini inceleyebilir ya da dogrudan analiz talep edebilirsiniz.
+          </p>
+          <div class="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
+            <a href="/cozumler/" class="inline-flex items-center justify-center rounded-2xl border border-[var(--color-border)] px-6 py-4 font-semibold text-white transition hover:border-[var(--color-primary)]/40 hover:text-[var(--color-primary)]">
+              Cozumleri gor
+            </a>
+            <a href={blogPrimaryContactHref} class="inline-flex items-center justify-center rounded-2xl bg-[var(--color-primary)] px-6 py-4 font-black text-black transition hover:-translate-y-0.5 hover:bg-[var(--color-primary-light)]">
+              Ucretsiz analizi talep et
+            </a>
+          </div>
+        </div>
       ) : (
         <>
-          <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 xl:grid-cols-3">
+          <div class="mt-16 grid grid-cols-1 gap-6 sm:grid-cols-2 xl:grid-cols-3">
             {blogPosts.map((post) => (
               <BlogCard
                 slug={post.slug}
@@ -87,17 +125,17 @@ const blogPosts = (posts || []) as BlogPost[];
               {currentPage > 1 && (
                 <a
                   href={`/blog/?page=${currentPage - 1}`}
-                  class="px-4 py-2 border border-[var(--color-border)] rounded-lg text-sm hover:border-[var(--color-primary)]/50 transition-colors"
+                  class="rounded-lg border border-[var(--color-border)] px-4 py-2 text-sm transition-colors hover:border-[var(--color-primary)]/50"
                 >
-                  ← Önceki
+                  Onceki
                 </a>
               )}
               {Array.from({ length: totalPages }, (_, i) => i + 1).map((page) => (
                 <a
                   href={`/blog/?page=${page}`}
-                  class={`px-4 py-2 rounded-lg text-sm transition-colors ${
+                  class={`rounded-lg px-4 py-2 text-sm transition-colors ${
                     page === currentPage
-                      ? 'bg-[var(--color-primary)] text-white'
+                      ? 'bg-[var(--color-primary)] text-black'
                       : 'border border-[var(--color-border)] hover:border-[var(--color-primary)]/50'
                   }`}
                 >
@@ -107,9 +145,9 @@ const blogPosts = (posts || []) as BlogPost[];
               {currentPage < totalPages && (
                 <a
                   href={`/blog/?page=${currentPage + 1}`}
-                  class="px-4 py-2 border border-[var(--color-border)] rounded-lg text-sm hover:border-[var(--color-primary)]/50 transition-colors"
+                  class="rounded-lg border border-[var(--color-border)] px-4 py-2 text-sm transition-colors hover:border-[var(--color-primary)]/50"
                 >
-                  Sonraki →
+                  Sonraki
                 </a>
               )}
             </nav>
@@ -118,5 +156,41 @@ const blogPosts = (posts || []) as BlogPost[];
       )}
     </div>
   </section>
-  <!-- Background transition to next section could go here if needed -->
+
+  <section class="border-t border-[var(--color-border)] bg-[#0F151B] py-20">
+    <div class="container mx-auto max-w-6xl px-4">
+      <div class="grid gap-8 lg:grid-cols-[1.1fr_0.9fr]">
+        <div class="rounded-[2rem] border border-[var(--color-border)] bg-[var(--color-surface-light)]/60 p-8">
+          <p class="text-sm uppercase tracking-[0.18em] text-[var(--color-primary)]">Blogdan sonraki adim</p>
+          <h2 class="mt-4 text-3xl font-black tracking-tight text-white">Icerigi okuduktan sonra gercek soru sudur: hangi sureci once ele almak gerekir?</h2>
+          <p class="mt-4 max-w-2xl text-[var(--color-text-muted)]">
+            Size en hizli geri donus verecek otomasyon dugumunu birlikte secmek icin ister vaka calismalarina gecin, ister dogrudan analiz talep edin.
+          </p>
+        </div>
+
+        <div class="grid gap-4">
+          <a href="/vaka-calismalari/" class="rounded-3xl border border-[var(--color-border)] bg-[var(--color-surface-light)]/60 p-6 transition hover:-translate-y-0.5 hover:border-[var(--color-primary)]/40">
+            <p class="text-sm uppercase tracking-[0.16em] text-[var(--color-primary)]">Proof</p>
+            <h3 class="mt-3 text-xl font-semibold text-white">Vaka calismalarina gecin</h3>
+            <p class="mt-2 text-sm leading-relaxed text-[var(--color-text-muted)]">Benzer sirketlerde hangi sureclerin nasil donustugunu gorun.</p>
+          </a>
+          <a href="/cozumler/" class="rounded-3xl border border-[var(--color-border)] bg-[var(--color-surface-light)]/60 p-6 transition hover:-translate-y-0.5 hover:border-[var(--color-primary)]/40">
+            <p class="text-sm uppercase tracking-[0.16em] text-[var(--color-primary)]">Offers</p>
+            <h3 class="mt-3 text-xl font-semibold text-white">Cozum sayfalarini gezin</h3>
+            <p class="mt-2 text-sm leading-relaxed text-[var(--color-text-muted)]">CRM, marketing, muhasebe ve operasyon akislarini tek tek inceleyin.</p>
+          </a>
+          <a href="/ucretsiz-otomasyon-checklistesi/?kaynak=%2Fblog%2F" class="rounded-3xl border border-[var(--color-border)] bg-[var(--color-surface-light)]/60 p-6 transition hover:-translate-y-0.5 hover:border-[var(--color-primary)]/40">
+            <p class="text-sm uppercase tracking-[0.16em] text-[var(--color-primary)]">Resource</p>
+            <h3 class="mt-3 text-xl font-semibold text-white">Ucretsiz checklist alin</h3>
+            <p class="mt-2 text-sm leading-relaxed text-[var(--color-text-muted)]">Hangi sureci once otomatiklestirmek gerektigini daha kolay belirleyin.</p>
+          </a>
+          <a href={blogFinalContactHref} class="rounded-3xl border border-[var(--color-primary)]/20 bg-[var(--color-primary)]/8 p-6 transition hover:-translate-y-0.5">
+            <p class="text-sm uppercase tracking-[0.16em] text-[var(--color-primary)]">CTA</p>
+            <h3 class="mt-3 text-xl font-semibold text-white">Ucretsiz analizi talep edin</h3>
+            <p class="mt-2 text-sm leading-relaxed text-[var(--color-text-muted)]">Sitenize veya surecinize uygun ilk otomasyon firsatini birlikte cikaralim.</p>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
 </BaseLayout>

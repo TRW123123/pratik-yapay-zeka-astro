@@ -1,41 +1,39 @@
 ---
 import CalculatorLayout from '../layouts/CalculatorLayout.astro';
 
+const title = 'Kidem Tazminati Hesaplama | Offboarding ve Fesih Hazirlik Akisi';
+const description = 'Kidem tazminati ihtiyaci cogu zaman tek bir hesap degil; cikis karari, belge hazirligi, bordro etkisi ve hukuki surecin birlikte yonetilmesidir.';
+const keywords = 'kidem tazminati hesaplama, fesih sureci, offboarding, cikis hesaplamasi, ik cikis hazirligi';
 
-const title = "Kıdem Tazminatı Hesaplama & Otonom İK Asistanı | Pratik Yapay Zeka";
-const description = "Güncel SGK tavanına göre kıdem tazminatını sıfır hatayla hesaplayan, fesih ve ibraname evraklarını otonom hazırlayan yapay zeka destekli İK aracı.";
-const keywords = "kıdem tazminatı hesaplama, tazminat hesaplama robotu, kıdem tazminatı tavanı, fesih belgesi hazırlama";
-
-// FAQ Schema
 const faqData = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
     {
-      "@type": "Question",
-      "name": "Sistem, kıdem tazminatı tavanı güncellendiğinde kendini yeniliyor mu?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Evet, Resmi Gazete'de yayımlanan güncel SGK ve Maliye Bakanlığı kıdem tazminatı tavan verileri sisteme anında otonom olarak entegre edilir."
-      }
+      '@type': 'Question',
+      name: 'Bu sayfa resmi tazminat hesaplayici mi?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Hayir. Bu sayfa, kidem tazminati ihtiyacinin neden cikis sureci ve belge hazirligiyla birlikte ele alinmasi gerektigini anlatir.',
+      },
     },
     {
-      "@type": "Question",
-      "name": "Yan haklar (yemek, yol, prim) tazminata eklenebiliyor mu?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Yapay zeka, 'giydirilmiş brüt ücreti' maksimize edecek şekilde değil, hukuki sınırlara uygun şekilde tespit etmek için personelin tüm düzenli ödemelerini analiz eder."
-      }
+      '@type': 'Question',
+      name: 'Asil darbogaz nerede cikar?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Darbogaz cogu zaman rakamdan once, personel verisinin toparlanmasi, cikis tipinin netlestirilmesi ve ilgili belgelerin dogru akista ilerlemesinde cikar.',
+      },
     },
     {
-      "@type": "Question",
-      "name": "Sunduğunuz fesih belgeleri mahkemede geçerli mi?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Ürettiğimiz taslaklar, güncel İş Hukuku standartlarına uygun hazırlanır. Ancak nihai hukuki bağlayıcılık için sistem çıktısını şirket avukatınızın sistem onayı yapması tavsiye edilir."
-      }
-    }
-  ]
+      '@type': 'Question',
+      name: 'Kimler icin daha kritik bir sayfadir?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Duzenli personel cikisi yoneten, birden fazla onay ve belge adimi olan IK ve operasyon ekipleri icin daha kritiktir.',
+      },
+    },
+  ],
 };
 ---
 
@@ -46,81 +44,82 @@ const faqData = {
   schema={JSON.stringify(faqData)}
 >
   <div class="space-y-12">
-    <!-- Hero Section -->
     <section>
-      <div class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-primary text-primary mb-4">Legal HR Çözümleri</div>
-      <h1 class="text-4xl lg:text-5xl font-bold tracking-tight mb-6">Kıdem Tazminatı Hesaplamak Artık Risk Değil</h1>
-      <p class="text-xl text-muted-foreground leading-relaxed mb-8">
-        "Manuel tazminat hesaplamaları ve hatalı fesih belgeleri yüzünden açılan işe iade davalarından yoruldunuz mu? Yeni nesil yapay zeka sistemimiz, personelin SGK geçmişini analiz eder, tazminatı güncel tavan üzerinden hesaplar ve tüm hukuki belgeleri saniyeler içinde hazırlar.
+      <div class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold border-primary text-primary mb-4">Offboarding ve Cikis Hazirligi</div>
+      <h1 class="text-4xl lg:text-5xl font-bold tracking-tight mb-6">Kidem Tazminatini Tek Formul Gibi Degil, Cikis Surecinin Bir Parcasi Olarak Yonetin</h1>
+      <p class="text-xl text-muted-foreground leading-relaxed max-w-4xl">
+        Kidem tazminati sorusu ilk bakista tek bir rakam gibi gorunur. Oysa ekiplerin gercekte zorlandigi konu, cikis tipini netlestirmek, gerekli veriyi toparlamak, bordro etkisini gormek ve belge adimlarini zamaninda ilerletmektir.
       </p>
     </section>
 
-    <!-- The Pain Points -->
+    <section class="grid gap-6 lg:grid-cols-3">
+      <div class="rounded-2xl border border-border bg-card p-6">
+        <h2 class="text-xl font-semibold mb-3">Veri Toplama</h2>
+        <p class="text-muted-foreground">Calisma suresi, ucret yapisi, yan hak ve cikis tipi gibi bilgiler daginik kalabilir.</p>
+      </div>
+      <div class="rounded-2xl border border-border bg-card p-6">
+        <h2 class="text-xl font-semibold mb-3">Cikis Kurgusu</h2>
+        <p class="text-muted-foreground">Hangi senaryoda neyin hazirlanacagi, kimin onay verecegi ve hangi belgenin gerekli oldugu net olmayabilir.</p>
+      </div>
+      <div class="rounded-2xl border border-border bg-card p-6">
+        <h2 class="text-xl font-semibold mb-3">Bordro ve Belge</h2>
+        <p class="text-muted-foreground">Hesap bilgisi bordro, tahakkuk ve belge tarafina duzenli akmiyorsa son dakika riski artar.</p>
+      </div>
+    </section>
+
     <section class="bg-muted/30 p-8 rounded-2xl border border-border">
-      <h2 class="text-2xl font-semibold mb-6">Tazminat Sürecindeki Hangi Hatalar Şirketinize Dava Açtırır?</h2>
+      <h2 class="text-2xl font-semibold mb-6">Kidem Tazminati Ihtiyacinin Buyudugu Noktalar</h2>
       <ul class="space-y-4">
         <li class="flex items-start gap-3">
-          <svg class="w-6 h-6 text-destructive flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path></svg>
-          <p><strong>Giydirilmiş Ücret Hataları:</strong> Yan hakların (yemek, yol vb.) tazminata eksik yansıtılması, personelin direkt arabulucu veya mahkemeye başvurmasıyla sonuçlanır.</p>
+          <span class="mt-1 h-2.5 w-2.5 rounded-full bg-primary"></span>
+          <p><strong>Cok adimli cikislarda:</strong> IK, yonetici, finans ve gerekirse hukuk ayni dosya uzerinde ilerler.</p>
         </li>
         <li class="flex items-start gap-3">
-          <svg class="w-6 h-6 text-destructive flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path></svg>
-          <p><strong>Kusurlu İbraname ve Belgeler:</strong> Hesaplama doğru olsa bile matbu evraklarla alınan ibralar mahkemeler tarafından sıkça geçersiz sayılmaktadır.</p>
+          <span class="mt-1 h-2.5 w-2.5 rounded-full bg-primary"></span>
+          <p><strong>Son dakika cikis kararlarinda:</strong> Belgeler ve hesap bilgisi hizli hazirlanmak zorunda kalir.</p>
         </li>
         <li class="flex items-start gap-3">
-          <svg class="w-6 h-6 text-destructive flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path></svg>
-          <p><strong>Uzayan Bürokratik Süreçler:</strong> İK departmanının her çıkış sürecinde avukatlar ve mali müşavirler arasında günlerce zaman kaybetmesi, operasyonu yavaşlatır.</p>
+          <span class="mt-1 h-2.5 w-2.5 rounded-full bg-primary"></span>
+          <p><strong>Tekrarlayan dosyalarda:</strong> Ayni cikis adimlari her seferinde sifirdan koordine ediliyorsa ekip yipraniyor demektir.</p>
         </li>
       </ul>
     </section>
 
-    <!-- The Solution -->
     <section>
-      <h2 class="text-3xl font-bold mb-6">Sadece Hesaplamayan, Hukuki Bariyer Ören "Legal-HR" Asistanı</h2>
+      <h2 class="text-3xl font-bold mb-6">Bu Sayfanin Isaret Ettigi Asil Cozum</h2>
       <p class="text-lg text-muted-foreground mb-8">
-        Kıdem tazminatı hesaplamak işin sadece %1'i. Asıl risk, yanlış belgeler yüzünden kaybedilen davalardır. Otonom asistanımız tüm bu süreci güvence altına alır.
+        Kidem tazminati bizim icin yalnizca bir hesap degil, offboarding akisinin temel dugumlerinden biridir. Bu nedenle deger, cikis verisinin toparlanmasi, hesap bilgisinin gorunur hale gelmesi ve belge-bordro akisina dogru sekilde baglanmasinda ortaya cikar.
       </p>
-
       <div class="grid md:grid-cols-3 gap-6">
         <div class="bg-card p-6 rounded-xl border border-border">
-          <div class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4">
-            <span class="text-2xl">🧮</span>
-          </div>
-          <h3 class="text-xl font-semibold mb-2">Kusursuz Yasal Hesaplama</h3>
-          <p class="text-sm text-muted-foreground">Personelin brüt maaşı, yan hakları ve kıdemi girildiğinde sistem; güncel tavan üzerinden tazminatı kuruşu kuruşuna yapar.</p>
+          <h3 class="text-xl font-semibold mb-2">Cikis Checklisti</h3>
+          <p class="text-sm text-muted-foreground">Hangi bilgi ve belge olmadan dosyanin ilerlemeyecegi netlesir.</p>
         </div>
         <div class="bg-card p-6 rounded-xl border border-border">
-          <div class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4">
-            <span class="text-2xl">📄</span>
-          </div>
-          <h3 class="text-xl font-semibold mb-2">Otonom Belge Üretimi</h3>
-          <p class="text-sm text-muted-foreground">"04 Koduyla Çıkış" seçildiğinde AI, anında fesih bildirimini, tahakkuk pusulasını ve ibranameyi (PDF) İş Kanunu'na uygun formatta oluşturur.</p>
+          <h3 class="text-xl font-semibold mb-2">Tahakkuk Gorunurlugu</h3>
+          <p class="text-sm text-muted-foreground">Hesap bilgisi bordro ve odeme tarafina daha erken baglanir.</p>
         </div>
         <div class="bg-card p-6 rounded-xl border border-border">
-          <div class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4">
-            <span class="text-2xl">⚖️</span>
-          </div>
-          <h3 class="text-xl font-semibold mb-2">Dijital Arşiv & Arabulucu Hazırlığı</h3>
-          <p class="text-sm text-muted-foreground">Tüm dokümanlar şifrelenmiş olarak bulutta saklanır ve şirket avukatına veya arabulucuya anında bir özet rapor olarak iletilir.</p>
+          <h3 class="text-xl font-semibold mb-2">Belge Hazirligi</h3>
+          <p class="text-sm text-muted-foreground">Fesih ve cikis evraklari daha sistemli ilerleyen bir akis haline gelir.</p>
         </div>
       </div>
     </section>
 
-    <!-- FAQ -->
     <section class="max-w-3xl">
-      <h2 class="text-2xl font-bold mb-6">Sıkça Sorulan Sorular</h2>
+      <h2 class="text-2xl font-bold mb-6">Sikca Sorulan Sorular</h2>
       <div class="space-y-6">
         <div>
-          <h3 class="text-lg font-semibold mb-2">Sistem, kıdem tazminatı tavanı güncellendiğinde kendini yeniliyor mu?</h3>
-          <p class="text-muted-foreground">Evet, Resmi Gazete'de yayımlanan güncel SGK ve Maliye Bakanlığı kıdem tazminatı tavan verileri sisteme anında otonom olarak entegre edilir.</p>
+          <h3 class="text-lg font-semibold mb-2">Bu sayfa resmi tazminat hesaplayici mi?</h3>
+          <p class="text-muted-foreground">Hayir. Bu sayfa, kidem tazminati ihtiyacinin neden cikis sureci ve belge hazirligiyla birlikte ele alinmasi gerektigini anlatir.</p>
         </div>
         <div>
-          <h3 class="text-lg font-semibold mb-2">Yan haklar (yemek, yol, prim) tazminata eklenebiliyor mu?</h3>
-          <p class="text-muted-foreground">Yapay zeka, 'giydirilmiş brüt ücreti' maksimize edecek şekilde değil, hukuki sınırlara uygun şekilde tespit etmek için personelin tüm düzenli ödemelerini analiz eder.</p>
+          <h3 class="text-lg font-semibold mb-2">Asil darbogaz nerede cikar?</h3>
+          <p class="text-muted-foreground">Darbogaz cogu zaman rakamdan once, personel verisinin toparlanmasi ve belge akisinin dogru kurulmasinda cikar.</p>
         </div>
         <div>
-          <h3 class="text-lg font-semibold mb-2">Sunduğunuz fesih belgeleri mahkemede geçerli mi?</h3>
-          <p class="text-muted-foreground">Ürettiğimiz taslaklar, güncel İş Hukuku standartlarına uygun hazırlanır. Ancak nihai hukuki bağlayıcılık için sistem çıktısını şirket avukatınızın sistem onayı yapması tavsiye edilir.</p>
+          <h3 class="text-lg font-semibold mb-2">Kimler icin daha kritik bir sayfadir?</h3>
+          <p class="text-muted-foreground">Duzenli personel cikisi yoneten, birden fazla onay ve belge adimi olan IK ve operasyon ekipleri icin daha kritiktir.</p>
         </div>
       </div>
     </section>
