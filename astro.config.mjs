@@ -30,7 +30,13 @@ export default defineConfig({
 
   integrations: [
     // PITFALL #9 FIX: Generates /sitemap-index.xml (NOT /sitemap.xml)
-    sitemap(),
+    sitemap({
+      serialize(item) {
+        // Add lastmod to all sitemap entries for crawl prioritization
+        item.lastmod = new Date().toISOString();
+        return item;
+      },
+    }),
     // React islands for interactive-only components
     react(),
   ],
