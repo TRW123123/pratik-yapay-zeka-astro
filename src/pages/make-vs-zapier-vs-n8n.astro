@@ -1,0 +1,553 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { buildContactHref } from '../lib/contactHref';
+
+const contactHref = buildContactHref({
+  source: '/make-vs-zapier-vs-n8n/',
+  packageName: 'operasyon-haritasi',
+  area: 'other',
+  cta: 'blog-make-vs-zapier',
+});
+
+const breadcrumbs = [
+  { name: 'Ana Sayfa', url: '/' },
+  { name: 'Blog', url: '/blog/' },
+  { name: 'Make vs Zapier vs n8n', url: '/make-vs-zapier-vs-n8n/' },
+];
+
+const articleSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: 'Make vs Zapier vs n8n: Hangisini Secmeli? (2026 Karsilastirma)',
+  description: 'Make, Zapier ve n8n arasinda fiyat, ozellik, Turkiye uyumlulugu ve kullanim senaryolarina gore kapsamli karsilastirma. KOBIler icin pratik rehber.',
+  datePublished: '2026-04-05',
+  dateModified: '2026-04-05',
+  author: {
+    '@type': 'Person',
+    name: 'Safak Tepecik',
+    url: 'https://www.linkedin.com/in/safak-tepecik/',
+  },
+  publisher: {
+    '@type': 'Organization',
+    name: 'Pratik Yapay Zeka',
+    url: 'https://yapayzekapratik.com',
+    logo: { '@type': 'ImageObject', url: 'https://yapayzekapratik.com/apple-touch-icon.png' },
+  },
+  mainEntityOfPage: { '@type': 'WebPage', '@id': 'https://yapayzekapratik.com/make-vs-zapier-vs-n8n/' },
+  image: 'https://yapayzekapratik.com/og-homepage.jpg',
+  articleSection: 'Otomasyon Araclari',
+  inLanguage: 'tr-TR',
+  keywords: 'make vs zapier, n8n turkce, otomasyon araci karsilastirma, is otomasyonu, workflow automation',
+};
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'Make mi Zapier mi yoksa n8n mi daha ucuz?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Make ayda $9 ile 10.000 credit sunarken, Zapier ayda $19,99 ile sadece 750 task sunar. n8n Self-Hosted ise yazilim maliyeti sifirdir, yalnizca sunucu maliyeti (~30 EUR/ay) vardir. 10.000 islem bazinda n8n Self-Hosted en ucuz, Make en iyi bulut secenegidir.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Turkiye icin en uygun otomasyon araci hangisi?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'KVKK uyumlulugu acisindan n8n Self-Hosted en iyi secenektir cunku veriler Turkiye sinirlarinda kalir. Hicbir aracin Trendyol, Hepsiburada veya Logo Yazilim ile hazir entegrasyonu yoktur — hepsi API uzerinden baglanti gerektirir.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Yapay zeka entegrasyonu icin hangi arac daha iyi?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'n8n 70+ AI/LangChain node ile en derin yapay zeka entegrasyonunu sunar: AI Agent, RAG, vektor veritabanlari, coklu ajan orkestrasyonu ve kendi sunucunuzda LLM calistirma imkani. Make ikinci, Zapier ucuncu siradadir.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Zapier dan Make veya n8n ye gecis yapilabilir mi?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Otomatik workflow aktarimi yoktur. Migromat araci Zapier JSON dosyalarini n8n formatina AI ile cevirebilir. Manuel gecis workflow basina 1-3 saat surer. Profesyonel migrasyon hizmeti $500-4.000 arasindadir.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Teknik bilgisi olmayan ekipler icin hangisi uygundur?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Zapier en kolay giris imkani sunar — ilk otomasyon 3 dakikada kurulabilir. Make gorsel dusunebilen kullanicilarin 10-20 saatlik bir ogrenme sureciyle uretken olabilecegi bir arabirimi sunar. n8n ise gelistirici veya teknik bilgiye sahip bir ekip uyesi gerektirir.',
+      },
+    },
+  ],
+};
+---
+
+<BaseLayout
+  title="Make vs Zapier vs n8n: Hangisini Secmeli? (2026)"
+  description="Make, Zapier ve n8n arasinda fiyat, ozellik, Turkiye uyumlulugu ve kullanim senaryolarina gore kapsamli karsilastirma. KOBIler icin pratik rehber."
+  breadcrumbs={breadcrumbs}
+>
+  <article class="bg-[#0B0F14] py-24">
+    <div class="container mx-auto max-w-3xl px-4">
+      <a href="/blog/" class="mb-8 inline-block text-sm text-[var(--color-text-muted)] transition-colors hover:text-[var(--color-primary-light)]">
+        Tum blog yazilari
+      </a>
+
+      <h1 class="mb-4 text-3xl font-bold md:text-4xl text-white">
+        Make vs Zapier vs n8n: Turkiye'deki KOBIler Hangi Otomasyon Aracini Secmeli?
+      </h1>
+
+      <div class="mb-6 flex items-center gap-4 text-[var(--color-text-muted)]">
+        <span>Safak Tepecik</span>
+        <span>-</span>
+        <span>5 Nisan 2026</span>
+        <span>-</span>
+        <span>18 dk okuma</span>
+      </div>
+
+      <div class="mb-8 flex flex-wrap gap-2">
+        <span class="rounded-full border border-[var(--color-primary)]/30 px-3 py-1 text-sm text-[var(--color-primary-light)]">#otomasyon</span>
+        <span class="rounded-full border border-[var(--color-primary)]/30 px-3 py-1 text-sm text-[var(--color-primary-light)]">#make</span>
+        <span class="rounded-full border border-[var(--color-primary)]/30 px-3 py-1 text-sm text-[var(--color-primary-light)]">#zapier</span>
+        <span class="rounded-full border border-[var(--color-primary)]/30 px-3 py-1 text-sm text-[var(--color-primary-light)]">#n8n</span>
+        <span class="rounded-full border border-[var(--color-primary)]/30 px-3 py-1 text-sm text-[var(--color-primary-light)]">#workflow</span>
+      </div>
+
+      <div class="prose prose-invert prose-lg max-w-none prose-headings:text-white prose-headings:font-semibold prose-p:text-[var(--color-text-muted)] prose-a:text-[var(--color-primary-light)] prose-a:no-underline hover:prose-a:underline prose-strong:text-white prose-code:rounded prose-code:bg-[var(--color-surface-light)] prose-code:px-1.5 prose-code:py-0.5 prose-code:text-[var(--color-primary-light)] prose-li:text-[var(--color-text-muted)] prose-th:text-white prose-td:text-[var(--color-text-muted)] prose-table:border-collapse prose-th:border prose-th:border-[var(--color-border)] prose-th:px-4 prose-th:py-2 prose-th:bg-[var(--color-surface-light)] prose-td:border prose-td:border-[var(--color-border)] prose-td:px-4 prose-td:py-2">
+
+        <p>
+          <strong>Turkiye ve DACH bolgesindeki 5-50 calisanli KOBIler icin evrensel bir kazanan yok.</strong> Make gorsel dusunebilen power-user'lar icin en iyi fiyat/performans oranini sunar. Zapier basit otomasyonlar icin en hizli cozumdur. n8n ise AI agentlari, veri egemenligini ve sinir tanimayan olceklenmeyi isteyen teknik ekipler icin ustun platformdur.
+        </p>
+
+        <p>
+          Kritik nokta: Uc aracin hicbiri Trendyol, Hepsiburada veya Logo Yazilim ile hazir entegrasyon sunmuyor — hepsi API tabanli ozel baglanti gerektiriyor. Bu da arac seciminizi temelden etkiliyor.
+        </p>
+
+        <!-- SECTION 1: PRICING -->
+        <h2>1. Fiyatlandirma: Otomasyon Gercekte Ne Kadara Mal Oluyor?</h2>
+
+        <h3>Make — Credit Tabanli Model</h3>
+        <p>
+          Make, Agustos 2025'ten itibaren "Operations" yerine credit tabanli faturalandirmaya gecti (1:1 donusum). Standart islemler 1 credit, AI yogun moduller birden fazla credit tuketir.
+        </p>
+
+        <table>
+          <thead>
+            <tr><th>Plan</th><th>Aylik Fiyat (Yillik)</th><th>Credit/Ay</th><th>Min. Aralik</th><th>Ozellikler</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Free</td><td>$0</td><td>1.000</td><td>15 dk</td><td>2 aktif senaryo, 5 MB dosya</td></tr>
+            <tr><td>Core</td><td>$9</td><td>10.000</td><td>5 dk</td><td>Sinirsiz senaryo, API erisimi</td></tr>
+            <tr><td>Pro</td><td>$16</td><td>10.000</td><td>1 dk</td><td>Oncelikli calistirma, Custom Variables</td></tr>
+            <tr><td>Teams</td><td>$29/Kullanici</td><td>10.000/Kullanici</td><td>1 dk</td><td>Roller, paylasilan senaryolar</td></tr>
+            <tr><td>Enterprise</td><td>Ozel</td><td>Ozel</td><td>1 dk</td><td>SSO, Audit Log, 7/24 Destek</td></tr>
+          </tbody>
+        </table>
+
+        <p>
+          <strong>Gizli maliyetler:</strong> Veri transferi 10.000 credit basina 5 GB ile sinirlidir (Free: 512 MB). Polling trigger'lar yeni veri olmasa bile credit tuketir. Ekstra creditler baz fiyatin %25 uzerinden faturalandirilir. AI ozellikleri ek credit harcar.
+        </p>
+
+        <h3>Zapier — Task Tabanli Model</h3>
+
+        <table>
+          <thead>
+            <tr><th>Plan</th><th>Aylik Fiyat (Yillik)</th><th>Task/Ay</th><th>Polling</th><th>Ozellikler</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Free</td><td>$0</td><td>100</td><td>15 dk</td><td>Sadece 2 adimli Zap, Premium app yok</td></tr>
+            <tr><td>Professional</td><td>$19,99</td><td>750</td><td>2 dk</td><td>Multi-Step, Premium Apps, Webhooks</td></tr>
+            <tr><td>Team</td><td>$69</td><td>2.000</td><td>1 dk</td><td>25 kullanici, SAML SSO</td></tr>
+            <tr><td>Enterprise</td><td>Ozel</td><td>Ozel</td><td>1 dk</td><td>Sinirsiz kullanici, TAM, Audit Logs</td></tr>
+          </tbody>
+        </table>
+
+        <p>
+          <strong>Task nasil sayilir:</strong> Her basarili aksiyon = 1 task. Trigger sayilmaz. Filter, Formatter, Paths ve Delay de sayilmaz — bu onemli bir maliyet avantaji. 5 adimli bir Zap (Trigger + 4 aksiyon) calismada 4 task harcar.
+        </p>
+
+        <p>
+          <strong>Gizli maliyetler:</strong> ~70 Premium app (Salesforce, NetSuite) sadece ucretli planlarda. Chatbot eklentisi ayda $13,33'ten, Agents eklentisi ayda $33,33'ten baslar. MCP Tool cagrilari cagri basina 2 task harcar.
+        </p>
+
+        <h3>n8n — Execution Tabanli Model</h3>
+        <p>
+          Temel fark budur: n8n workflow calistirmasi basina faturalandirir, adim basina degil. 50 adimli bir workflow, 2 adimli bir workflow ile ayni maliyettedir — 1 execution.
+        </p>
+
+        <table>
+          <thead>
+            <tr><th>Plan</th><th>Aylik Fiyat (Yillik)</th><th>Execution/Ay</th><th>Ozellikler</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Community (Self-Hosted)</td><td>Ucretsiz</td><td>Sinirsiz</td><td>Tum node'lar, sinirsiz kullanici</td></tr>
+            <tr><td>Starter (Cloud)</td><td>20 EUR</td><td>2.500</td><td>5 esanli, 1 paylasilan proje</td></tr>
+            <tr><td>Pro (Cloud)</td><td>50 EUR</td><td>~10.000</td><td>20 esanli, 3 proje, workflow gecmisi</td></tr>
+            <tr><td>Business (Self-Hosted)</td><td>667 EUR</td><td>40.000</td><td>SSO/SAML, Git, Ortamlar</td></tr>
+            <tr><td>Enterprise</td><td>Ozel</td><td>Ozel</td><td>Ozel destek, SLA</td></tr>
+          </tbody>
+        </table>
+
+        <p>
+          <strong>Self-hosting maliyetleri:</strong> Community Edition tamamen ucretsiz. Uretim ortami icin VPS maliyeti ayda 20-50 EUR (Hetzner gibi) + PostgreSQL. Redis Queue Mode ile profesyonel kurulum ayda 100-200 EUR altyapi maliyeti.
+        </p>
+
+        <h3>Maliyet Karsilastirma Tablosu</h3>
+
+        <table>
+          <thead>
+            <tr><th>Senaryo</th><th>Make</th><th>Zapier</th><th>n8n Cloud</th><th>n8n Self-Hosted</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>En ucuz giris</td><td>$9/ay</td><td>$19,99/ay</td><td>20 EUR/ay</td><td>$0 (+ ~30 EUR hosting)</td></tr>
+            <tr><td>10.000 basit islem</td><td>$9</td><td>~$266</td><td>~80 EUR</td><td>~30 EUR (sadece hosting)</td></tr>
+            <tr><td>10.000 islem (5 adimli workflow)</td><td>$9</td><td>~$53</td><td>20 EUR</td><td>~30 EUR (sadece hosting)</td></tr>
+          </tbody>
+        </table>
+
+        <p>
+          <strong>Sonuc:</strong> Make bulut tarafinda acik maliyet lideri. n8n Self-Hosted teknik ekipler icin yenilmez. Zapier ayni otomasyon hacminde Make'e gore 30 kata kadar daha pahali olabilir — ancak en genis entegrasyon yelpazesini ve en dusuk giris engelini sunuyor.
+        </p>
+
+        <!-- SECTION 2: FEATURES -->
+        <h2>2. Ozellikler: Teknik Karsilastirma</h2>
+
+        <h3>Entegrasyonlar ve Gorsel Editoru</h3>
+        <p>
+          Zapier 8.000'den fazla entegrasyonla niceliksel olarak onde. Make 3.000+ ile takip ediyor ve n8n 400+ cekirdek node'a (+ 1.500+ topluluk node'u) sahip. Ancak uc aracin da HTTP/Webhook modulleri var — yani herhangi bir REST API baglanabilir. Asil soru "kac tane hazir entegrasyon?" degil, "ozel API baglantisi ne kadar kolay?" — ve burada Make ile n8n one cikiyor.
+        </p>
+
+        <h3>Hata Yonetimi: Make Acik Ara Onde</h3>
+        <p>
+          Make bes hata direktifi sunar (Rollback, Break, Resume, Ignore, Commit) + her modulde ozel hata isleme rotalari. Otomatik yeniden denemeler ustel geri cekilme kullanir ve basarisiz paketler elle islenmek uzere kuyruga alinir. Hata rotalari credit tuketmez.
+        </p>
+        <p>
+          n8n node basina hata dallari, ayri hata workflow'lari icin Error Trigger Node ve yapilandirmali Retry-on-Fail sunar. Zapier ise Autoreplay ve Custom Error Handler ile gelismis ancak Make ve n8n'in gerisinde kaliyor — gercek bir Try/Catch mekanizmasi yok.
+        </p>
+
+        <h3>AI/LLM Entegrasyonu: n8n Acik Teknoloji Lideri</h3>
+        <p>
+          n8n 70'ten fazla AI/LangChain node ile en derin AI entegrasyonuna sahip: AI Agent node'lari (tool-use), coklu ajan orkestrasyonu, kalici bellek (Redis, Postgres), tam RAG destegi, vektor veritabanlari (Pinecone, Qdrant, Supabase), Slack/Telegram uzerinden Human-in-the-Loop ve kendi sunucunuzdaki LLM'ler (Ollama) ile tam veri egemenligini saglama imkani. MCP (Model Context Protocol) destegi gelecege hazirlik sunar.
+        </p>
+        <p>
+          Make, Subat 2026'dan itibaren Yeni Nesil AI Agentlari sunuyor: gorsel reasoning panelleri, modul-arac konsepti ve MCP destegi. Zapier ise Copilot, Agents ve 450+ AI arac entegrasyonu ile genislik odakli bir yaklasim sergiliyor.
+        </p>
+
+        <h3>Ozellik Karsilastirma Matrisi</h3>
+
+        <table>
+          <thead>
+            <tr><th>Ozellik</th><th>Make</th><th>Zapier</th><th>n8n</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Entegrasyon Sayisi</td><td>3.000+</td><td>8.000+</td><td>400+ Core (+1.500 Topluluk)</td></tr>
+            <tr><td>Hata Yonetimi</td><td>Mukemmel (5 direktif)</td><td>Temel</td><td>Cok iyi</td></tr>
+            <tr><td>Dallanma/Mantik</td><td>Router, If-Else, Merge</td><td>Paths (max 10), Filter</td><td>IF, Switch, Merge, Filter</td></tr>
+            <tr><td>Ozel Kod</td><td>Sinirli (ozel sozdizimi)</td><td>JS/Python (1s sinir)</td><td>JS/Python (sinirsiz, npm/PyPI)</td></tr>
+            <tr><td>AI/LLM Derinligi</td><td>Cok iyi</td><td>Iyi</td><td>Mukemmel</td></tr>
+            <tr><td>Paralel Calistirma</td><td>Sirali</td><td>Sirali</td><td>Queue-Mode + Worker</td></tr>
+            <tr><td>Self-Hosting</td><td>Yok</td><td>Yok</td><td>Docker/K8s</td></tr>
+            <tr><td>Takim Isbirligi</td><td>Teams'ten itibaren ($29/kisi)</td><td>Team'den itibaren ($69/ay)</td><td>Sinirsiz kullanici (tum planlar)</td></tr>
+            <tr><td>Versiyon Kontrolu</td><td>Snapshot'lar (30-90 gun)</td><td>Zap Versions (1-12 ay)</td><td>Git entegrasyonu (Business+)</td></tr>
+            <tr><td>Zamanlama</td><td>1 dk (ucretli)</td><td>1 dk (Team)</td><td>Cron (her dakika, Self-Hosted)</td></tr>
+          </tbody>
+        </table>
+
+        <!-- SECTION 3: TURKEY -->
+        <h2>3. Turkiye Icin Uyumluluk: KVKK, Entegrasyonlar ve Topluluk</h2>
+
+        <h3>Turk Platformlariyla Hazir Entegrasyon Yok</h3>
+        <p>
+          Turk KOBIleri icin en kritik bulgu: Uc aracin hicbiri Trendyol, Hepsiburada, N11, Logo Yazilim, Mikro Yazilim, Netsis, Parasut, Dia veya GIB e-Fatura ile hazir entegrasyon sunmuyor. Tek istisna: ikas (e-ticaret platformu) — Zapier'da native entegrasyonu var.
+        </p>
+        <p>
+          Tum Turk platformlari HTTP/API modulleri uzerinden baglanmak zorunda. Trendyol kapsamli bir Marketplace API sunar (developers.trendyol.com), Hepsiburada'nin Developer Portal'i var, Logo Netsis 8.06 surumuyle REST API (NetOpenX) sagliyor. e-Fatura icin Sovos, DDD Invoices veya Nilvera gibi Ozel Entegratorlerin API'leri kullanilir.
+        </p>
+        <p>
+          Bu ozel baglantilar icin n8n esnek HTTP Request Node'u ve Custom Node gelistirme imkaniyla en uygun platform. Make gorsel HTTP modulleriyle ikinci sirada.
+        </p>
+
+        <h3>KVKK Uyumlulugu: n8n'in Belirleyici Avantaji</h3>
+
+        <table>
+          <thead>
+            <tr><th>Arac</th><th>Veri Konumu</th><th>KVKK Uygunlugu</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Make</td><td>AB (Frankfurt) veya ABD — secimli</td><td>AB hosting KVKK kapsaminda kabul edilebilir</td></tr>
+            <tr><td>Zapier</td><td>Sadece ABD (AWS)</td><td>Sorunlu — SCC ve ek guvenlik onlemleri gerektirir</td></tr>
+            <tr><td>n8n Cloud</td><td>AB (Frankfurt)</td><td>AB hosting KVKK kapsaminda kabul edilebilir</td></tr>
+            <tr><td>n8n Self-Hosted</td><td>Her yerde — Turkiye dahil</td><td>En iyi secenek — veriler Turkiye'den cikmaz</td></tr>
+          </tbody>
+        </table>
+
+        <p>
+          n8n Self-Hosted bir Turk sunucusunda (Turkcell, Radore gibi) KVKK kapsaminda tam veri egemenligini garanti eden tek cozumdur. 2026 KVKK cezalari ihlal basina 85.437 TL ile 17.092.242 TL arasindadir — ABD-only hosting kullanan Zapier icin ciddi bir risk.
+        </p>
+
+        <h3>Turkce Destek ve Topluluk</h3>
+        <p>
+          Hicbir aracin resmi Turkce dokumantasyonu veya destegi yok. Ancak dikkat cekici bir Turkce n8n ekosistemi olusmus: <strong>otomasyonevi.com</strong> Turkce aciklamali 7.000'den fazla template ve AI asistanli ilk Turkce n8n platformu. <strong>n8nkursu.com</strong> kapsamli Turkce n8n kurslari sunuyor. <strong>Batuhan Durmaz</strong> ucretli Make ve n8n kurslari veriyor. Zapier icin Turkce icerik cok sinirli.
+        </p>
+        <p>
+          Hicbir arac TL faturalandirma sunmuyor — hepsi USD veya EUR bazinda. Lira volatilitesinde n8n Self-Hosted en butce dostu secenektir cunku tek cari maliyet TL ile odenebilen sunucu altyapisidir.
+        </p>
+
+        <!-- SECTION 4: USE CASES -->
+        <h2>4. Kullanim Senaryolari: Hangi Arac Nerede Kazanir?</h2>
+
+        <h3>E-Ticaret Siparis Yonetimi — Kazanan: n8n</h3>
+        <p>
+          <strong>Senaryo:</strong> Trendyol/Hepsiburada siparisi → Muhasebe (Logo/Netsis) → Kargo takip
+        </p>
+        <p>
+          Hazir entegrasyon olmadigindan ozel API baglantisindaki esneklik belirleyici. n8n guclu HTTP Request Node, Custom Node gelistirme ve tam JavaScript/Python erisimi ile kazanir. Yuksek siparis hacminde (binlerce siparis/gun) Zapier'in task basina faturalandirmasi maliyeti asiri artirirken, n8n Self-Hosted sifir yazilim maliyetiyle calisir.
+        </p>
+
+        <h3>CRM Lead Yonlendirme — Kazanan: n8n</h3>
+        <p>
+          <strong>Senaryo:</strong> Web formu → CRM → WhatsApp bildirimi → Takip dizisi
+        </p>
+        <p>
+          WhatsApp Turkiye'de is iletisiminin %85'inden fazlasinda kullaniliyor — WhatsApp entegrasyonu kritik. n8n'in native WhatsApp Business Cloud Node'u Send-and-Wait-for-Response fonksiyonuyla AI Agent Node ile akilli lead nitelendirme icin ideal bir kombinasyon olusturuyor. Execution-tabanli fiyatlandirma, cok sayida mesajli WhatsApp workflow'larini cok daha ucuz kilar.
+        </p>
+
+        <h3>Muhasebe Otomasyonu — Kazanan: Make</h3>
+        <p>
+          <strong>Senaryo:</strong> Gelen faturalar (e-posta) → OCR → Muhasebe yazilimi → Odeme hatirlatma
+        </p>
+        <p>
+          Make en iyi gorsel hata yonetimi ile kazanir — hatali fatura isleminin tum ay sonu kapanis workflow'unu cokertmemesi kritik. Bes hata direktifi (ozellikle Break + otomatik retry) ve Incomplete Executions kuyruklari muhasebe workflow'lari icin ideal.
+        </p>
+
+        <h3>Icerik Pazarlamasi — Kazanan: Make</h3>
+        <p>
+          <strong>Senaryo:</strong> RSS → AI ozet → Sosyal medya paylasimlari → Analitik
+        </p>
+        <p>
+          Orta karmasiklikta, gorsel olarak iyi ifade edilebilen bu is akisi icin Make Scenario Builder ideal. RSS modulu → OpenAI modulu → Sosyal medya modulleri sezgisel olarak baglaniyor.
+        </p>
+
+        <h3>IK Onboarding — Kazanan: Zapier</h3>
+        <p>
+          <strong>Senaryo:</strong> Yeni calisan → Slack/Teams → Ekipman talebi → Kontrol listesi
+        </p>
+        <p>
+          Dogrusal bir trigger-action workflow'u — Zapier'in cekirdek yetenegi. 8.000+ entegrasyon en genis IK arac yelpazesini kapsiyor (BambooHR, Personio, Slack, Teams, Asana). Hazir sablonlar kurulumu dakikalara indiriyor. Dusuk islem hacmi (ayda birkac onboarding) Zapier'in task fiyatlandirmasini kabul edilebilir kiliyor.
+        </p>
+
+        <h3>WhatsApp Chatbot — Kazanan: n8n (belirgin)</h3>
+        <p>
+          <strong>Senaryo:</strong> WhatsApp mesaji → AI Agent → CRM guncelleme → Yanit
+        </p>
+        <p>
+          Konversasyonel AI chatbot'lar icin n8n tek ciddi secenektir. LangChain tabanli AI Agent Node: tool-use, konusmalar arasi kalici bellek (Redis/Postgres), bilgi tabanli yanitlar icin RAG destegi, coklu ajan orkestrasyonu ve Human-in-the-Loop sunuyor. Ne Make ne de Zapier benzer kalici bellek veya AI mimarisi derinligi sagliyor.
+        </p>
+
+        <!-- SECTION 5: PROS/CONS -->
+        <h2>5. Guclu ve Zayif Yanlar — Acimasiz Degerlendirme</h2>
+
+        <h3>Make: Gorsel Power-User'larin Isvicre Cakisi</h3>
+        <p><strong>En guclu 5 yan:</strong></p>
+        <ol>
+          <li><strong>Piyasanin en iyi gorsel editoru</strong> — Flowchart tarzi, gercek zamanli veri inceleme. Ajanslar 20 modullu karmasik lead-routing senaryolarini 30 dakikada kurabildiklerini bildiriyor.</li>
+          <li><strong>Zapier'a gore dramatik fiyat/performans</strong> — 10.000 credit icin $9/ay vs. 750 task icin $19,99. Ajanslar Zapier'den geciste ayda $242-400 tasarruf bildiriyor.</li>
+          <li><strong>Uretim sinifi hata yonetimi</strong> — 5 direktif, hata rotalari, Incomplete Executions kuyrugu. No-code dunyasinda essiz.</li>
+          <li><strong>Guclu satir ici veri donusumu</strong> — String, Math, Date ve Array fonksiyonlari dogrudan modul eslestirmesinde, ayri donusum adimlari gereksiz.</li>
+          <li><strong>HTTP modulu evrensel silah</strong> — Herhangi bir REST API hazir baglan olmadan erisilebilir. Nis araclarla cift yonlu senkronizasyon bir saatten kisa surede.</li>
+        </ol>
+
+        <p><strong>En zayif 5 yan:</strong></p>
+        <ol>
+          <li><strong>Dik ogrenme egrisi</strong> — Teknik olmayan kullanicilar uretkenlige ulasana kadar 10-20 saat. Ozel ifade sozdizimi (JavaScript/Python degil) otomatik tamamlama yok.</li>
+          <li><strong>Router dallari sirali calisir</strong> — 3 dal x 5 dakika = 15 dakika toplam sure. Tek cozum yolu mimari yeniden yapilandirma gerektirir.</li>
+          <li><strong>Gercek versiyon kontrolu yok</strong> — Sadece bellek tabanli snapshot'lar (30-90 gun). Dallanma, farklilastirma, dagitim hatti yok.</li>
+          <li><strong>Iterator'larda credit tuketimi</strong> — 100 dizi ogesi x 3 modul = calistirma basina 300 credit. Yuksek frekansta senaryolar sadece trigger kontrolleriyle ayda 2.880 credit tuketebilir.</li>
+          <li><strong>Tutarsiz musteri destegi</strong> — Birden fazla Trustpilot sikayeti: faturalandirma sorunlarinda bile haftalarca yanitsiz. Canli sohbet Teams/Enterprise'dan itibaren.</li>
+        </ol>
+
+        <h3>Zapier: En Genis Yelpaze, En Yuksek Fiyat</h3>
+        <p><strong>En guclu 5 yan:</strong></p>
+        <ol>
+          <li><strong>Erisilmez entegrasyon genisligi (8.000+)</strong> — Bir uygulama varsa, Zapier muhtemelen destekliyor. OAuth karmasikligi tamamen soyutlaniyor.</li>
+          <li><strong>En kolay otomasyon platformu</strong> — Ilk Zap 3 dakikada. Teknik olmayan ekipler bir saatten kisa surede uretken. G2 ve Capterra'da en yuksek kullanim kolayligi puanlari.</li>
+          <li><strong>Birlesik AI platformu</strong> — Zaps + Tables + Forms + Agents + Chatbots + MCP + Canvas + Copilot. 450+ AI entegrasyonu.</li>
+          <li><strong>Enterprise-seviye guvenlik</strong> — SOC 2/3, GDPR, AES-256, SSO/SAML. Fortune 1000'in %69'u Zapier kullaniyor.</li>
+          <li><strong>Ucretsiz araclar task olarak sayilmiyor</strong> — Filter, Formatter, Paths, Delay, Tables ve Forms task tuketmiyor.</li>
+        </ol>
+
+        <p><strong>En zayif 5 yan:</strong></p>
+        <ol>
+          <li><strong>Olceklendirmede yasak fiyatlar</strong> — Professional'da 750 task icin ayda $29,99. 5 adimli bir Zap ayda sadece 150 calistirmaya izin verir. Gercek karsilastirmalar 8.000 task/ay'da Make'e gore 15 kat daha fazla maliyet gosteriyor.</li>
+          <li><strong>Dongu/iterator yok</strong> — forEach yok, toplayici yok. Toplu isleme icin Sub-Zap cozumleri gerekiyor.</li>
+          <li><strong>Zayif hata yonetimi</strong> — Try/Catch yok. Error Handler cikis kapisi yaratir, gercek dallanma degil.</li>
+          <li><strong>Dogrusal workflow editoru</strong> — Make'in gorsel canvas'inin aksine Zapier sirasal. Coklu dal workflow debug'u her adimi tek tek tiklamak gerektiriyor.</li>
+          <li><strong>Kisitli Free Tier</strong> — Ayda 100 task, sadece 2 adimli Zap, Premium app yok. Kullanicilar Free Tier'i 4 gunde tukettigini bildiriyor.</li>
+        </ol>
+
+        <h3>n8n: Teknik Ekipler Icin Acik Kaynakli Guc Merkezi</h3>
+        <p><strong>En guclu 5 yan:</strong></p>
+        <ol>
+          <li><strong>Esine rastlanmayan esneklik (Kod + No-Code)</strong> — Gorsel editor ile tam JavaScript/Python erisimi birlikte. npm/PyPI import destegi. Zapier'de boyle insa etmesi imkansiz workflow'lar kurulabilir.</li>
+          <li><strong>Piyasanin en derin AI/LangChain entegrasyonu</strong> — 70+ AI node, coklu ajan, RAG, vektor store'lar, Human-in-the-Loop, kendi hostingiyle LLM. Tam veri egemeniligi.</li>
+          <li><strong>Self-Hosting ve veri kontrolu</strong> — Tek olgun self-hosting otomasyon platformu. Community Edition sinirsiz ve ucretsiz. Ayda ~30 EUR Hetzner VPS, ayni is icin $300+ Zapier yerine.</li>
+          <li><strong>Execution-tabanli fiyatlandirma</strong> — 50 adimli workflow = 1 execution. Zapier'da 49 task olurdu. Karmasik otomasyonlarda %75-80 daha ucuz.</li>
+          <li><strong>Patlayici topluluk buyumesi</strong> — 182.400 GitHub Stars (dunya genelinde ilk 50), 200.000+ topluluk uyesi, 9.049 sablon, $2,5 milyar degerleme ($180M Series C, Ekim 2025).</li>
+        </ol>
+
+        <p><strong>En zayif 5 yan:</strong></p>
+        <ol>
+          <li><strong>Gelistirici olmayanlar icin dik ogrenme egrisi</strong> — Degiskenler, ifadeler ve veri yapilari pazarlama ekiplerini hizla zorlayabilir.</li>
+          <li><strong>Daha az hazir entegrasyon</strong> — 400 cekirdek node vs. Zapier'in 8.000+. Nis araclar icin elle HTTP API yapilandirmasi gerekiyor.</li>
+          <li><strong>Self-hosting karmasikligi hafife aliniyor</strong> — Docker bilgisi, SSL yapilandirmasi, yedekleme yonetimi, guncelleme islemleri (kirici degisiklikler!) gerektirir.</li>
+          <li><strong>Enterprise ozellikleri ucretli duvarin arkasinda</strong> — SSO, Git entegrasyonu, klasor yapisi sadece Business/Enterprise planinda (ayda 667+ EUR).</li>
+          <li><strong>Sinirli destek</strong> — Community Edition sadece forum/Discord. Ozel destek Enterprise'dan itibaren. Dokumantasyon kenar durumlarda eksik.</li>
+        </ol>
+
+        <!-- SECTION 6: MIGRATION -->
+        <h2>6. Gecis ve Araclar Arasi Migrasyon</h2>
+        <p>
+          Otomatik workflow aktarimi yok — her platform kendine ozgu format kullaniyor. Workflow'lar temelde elle yeniden kurulmali. Bir istisna: <strong>Migromat</strong> (migromat.com) n8n toplulugunca gelistirildi ve AI ajanlari kullanarak Zapier workflow JSON'unu n8n formatina cevirir. Credential'lari tasimaz ancak yapi ve mantigi aktarir.
+        </p>
+        <p>
+          Tahmini migrasyon suresi workflow basina 1-3 saat. Make→n8n en kolay (benzer gorsel node kavramlari). Profesyonel migrasyon hizmeti $500-4.000 arasi. Fiverr'da freelancer'lar ~$60'dan basliyor.
+        </p>
+        <p>
+          <strong>Vendor Lock-in siralamasinda</strong> n8n en dusuk risk: workflow'lar duzyazi JSON, kaynak kod gorulebilir, self-hosting bagimsizlik garanti ediyor. Zapier en yuksek risk: workflow export'u sadece Team planinda, Cloud-only, tescilli ozellikler (Tables, Interfaces, Chatbots) rakiplerde karsiligi yok.
+        </p>
+
+        <!-- SECTION 7: FUTURE -->
+        <h2>7. Gelecek ve 2026 Yol Haritasi</h2>
+
+        <h3>n8n: Otomasyon Aracindan AI Orkestrasyon Platformuna</h3>
+        <p>
+          $180M Series C (Ekim 2025, $2,5 milyar degerleme) Nvidia NVentures, Sequoia ve Accel'den — stratejik yon: AI Agent orkestrasyonu icin standart platform. 10x YoY gelir buyumesi $40M ARR'in uzerinde. Planlanan ozellikler: Smart Triggers, AI ile otomatik debug, olceklenebilir Cloud v3.
+        </p>
+
+        <h3>Make: AI ile Gorsel Orkestrasyon</h3>
+        <p>
+          "Visual Orchestration" farklilastirma noktasi — AI agentlarini yapilandirmali otomasyonla gorsel arayuzde birlestirme. Yeni Nesil AI Agentlari (Subat 2026): coklu modali girdiler, paylasilabilir ajan kutuphaneleri, konusma gecmisi. "Maia by Make" (dogal dil otomasyon kurucu) bekleme listesinde.
+        </p>
+
+        <h3>Zapier: Savunma Pozisyonunda Agresif Yenilik</h3>
+        <p>
+          Stratejisi "Otomasyon Araci"ndan "AI Orkestrasyon Platformu"na kaydi. Copilot, MCP destegi ve Agents ile 8.000+ uygulamaya AI erisimi. 2025'te ~$400M projeksiyon gelir (%29 buyume). Looping, Functions, Sub-Zaps ile teknik kullanici kaybini durdurmaya calisiyor.
+        </p>
+
+        <!-- SECTION 8: COMMUNITY -->
+        <h2>8. Topluluk ve Ekosistem</h2>
+        <p>
+          n8n 9.049 resmi sablonla en buyuk marketyerine sahip, Make 7.000+ ile takip ediyor. Sertifika programlarinda Make Academy 36 ucretsiz interaktif kursla onde (Credly Digital Badge). n8n'in resmi sertifika programi yok ancak Nick Saraev, Cole Medin gibi icrik ureticiler kaliteli YouTube dersleri sunuyor.
+        </p>
+        <p>
+          Freelancer pazarinda Upwork'te 1.238 acik n8n isi listelenmis ($20-60/saat). Zapier en buyuk freelancer havuzuna sahip (2011'den beri piyasada). Migrasyon uzmanlari buyuyen bir nis: proje basina $500-4.000.
+        </p>
+        <p>
+          <strong>Turkiye icin:</strong> n8n en guclu ekosisteme sahip — otomasyonevi.com (7.000+ Turkce aciklamali sablon, AI asistan), n8nkursu.com (kapsamli Turkce kurslar) ve Batuhan Durmaz (ucretli Make/n8n kurslari). Zapier icin Turkce egitim kaynaklari karsilastirmali olarak cok sinirli.
+        </p>
+
+        <!-- CONCLUSION -->
+        <h2>Sonuc: Dogru Secim Ekibinize Baglidir, Araca Degil</h2>
+
+        <p>
+          Make, Zapier ve n8n arasindaki karar teknik degil — organizasyoneldir. Uc temel oneri:
+        </p>
+
+        <p>
+          <strong>Zapier secin:</strong> Ekibinizde gelistirici yoksa, 30 dakikada uretken olmak istiyorsaniz ve aylik otomasyon hacminiz 2.000 task'in altinda kaliyorsa. Fiyat yuksek ama giristeki zaman tasarrufu bunu haklilastirabiliyor.
+        </p>
+
+        <p>
+          <strong>Make secin:</strong> Ekibinizde 10-20 saat ogrenmeye hazir gorsel dusunebilen bir power-user varsa. 10.000 credit icin $9/ay ile bulut tarafindaki fiyat/performans yenilmez ve hata yonetimi piyasanin en iyisi.
+        </p>
+
+        <p>
+          <strong>n8n secin:</strong> Gelistiriniz veya teknik bilgili bir ekip uyeniz varsa, AI agentlari ve chatbot'lar stratejik rol oynuyorsa, Turk veri egemenligiyle KVKK uyumlulugu gerekiyorsa veya uzun vadede maksimum esneklikte minimum cari maliyeti hedefliyorsaniz. Community Edition sinirsiz workflow'lar ile ayda ~30 EUR altyapi maliyeti — maliyet odakli Turk KOBIleri icin en rasyonel giris noktasi.
+        </p>
+
+        <p>
+          <strong>Bu analizin belki de en onemli bulgusu:</strong> Uc aracin hicbiri hazir Turk entegrasyonu sunmadigindan, API baglantisindaki teknik derinlik orantisiz sekilde onemli kazaniyor. Turk e-ticaret ekosistemindeki (Trendyol, Hepsiburada, Logo) KOBIler icin ozel API baglantisi kurma yetkinligi asil farklilastirici unsur — ve burada n8n yapisal olarak onde.
+        </p>
+
+      </div>
+
+      <!-- FAQ Section -->
+      <div class="mt-16 rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface-light)] p-8">
+        <h2 class="mb-6 text-2xl font-semibold text-white">Sikca Sorulan Sorular</h2>
+        <div class="space-y-6">
+          <details class="group">
+            <summary class="cursor-pointer text-lg font-medium text-white">Make mi Zapier mi yoksa n8n mi daha ucuz?</summary>
+            <p class="mt-3 text-[var(--color-text-muted)]">Make ayda $9 ile 10.000 credit sunarken, Zapier ayda $19,99 ile sadece 750 task sunar. n8n Self-Hosted ise yazilim maliyeti sifirdir, yalnizca sunucu maliyeti (~30 EUR/ay) vardir. 10.000 islem bazinda n8n Self-Hosted en ucuz, Make en iyi bulut secenegidir.</p>
+          </details>
+          <details class="group">
+            <summary class="cursor-pointer text-lg font-medium text-white">Turkiye icin en uygun otomasyon araci hangisi?</summary>
+            <p class="mt-3 text-[var(--color-text-muted)]">KVKK uyumlulugu acisindan n8n Self-Hosted en iyi secenektir cunku veriler Turkiye sinirlarinda kalir. Hicbir aracin Trendyol, Hepsiburada veya Logo Yazilim ile hazir entegrasyonu yoktur — hepsi API uzerinden baglanti gerektirir.</p>
+          </details>
+          <details class="group">
+            <summary class="cursor-pointer text-lg font-medium text-white">Yapay zeka entegrasyonu icin hangi arac daha iyi?</summary>
+            <p class="mt-3 text-[var(--color-text-muted)]">n8n 70+ AI/LangChain node ile en derin yapay zeka entegrasyonunu sunar: AI Agent, RAG, vektor veritabanlari, coklu ajan orkestrasyonu ve kendi sunucunuzda LLM calistirma imkani. Make ikinci, Zapier ucuncu siradadir.</p>
+          </details>
+          <details class="group">
+            <summary class="cursor-pointer text-lg font-medium text-white">Zapier'dan Make veya n8n'e gecis yapilabilir mi?</summary>
+            <p class="mt-3 text-[var(--color-text-muted)]">Otomatik workflow aktarimi yoktur. Migromat araci Zapier JSON dosyalarini n8n formatina AI ile cevirebilir. Manuel gecis workflow basina 1-3 saat surer. Profesyonel migrasyon hizmeti $500-4.000 arasindadir.</p>
+          </details>
+          <details class="group">
+            <summary class="cursor-pointer text-lg font-medium text-white">Teknik bilgisi olmayan ekipler icin hangisi uygundur?</summary>
+            <p class="mt-3 text-[var(--color-text-muted)]">Zapier en kolay giris imkani sunar — ilk otomasyon 3 dakikada kurulabilir. Make gorsel dusunebilen kullanicilarin 10-20 saatlik bir ogrenme sureciyle uretken olabilecegi bir arabirimi sunar. n8n ise gelistirici veya teknik bilgiye sahip bir ekip uyesi gerektirir.</p>
+          </details>
+        </div>
+      </div>
+
+      <!-- CTA Section -->
+      <div class="mt-16 grid gap-8 lg:grid-cols-[1.05fr_0.95fr]">
+        <div class="rounded-[2rem] border border-[var(--color-border)] bg-[var(--color-surface-light)]/60 p-8">
+          <h2 class="text-2xl font-semibold text-white">Ilgili sayfalar</h2>
+          <div class="mt-6 space-y-4">
+            <a href="/crm-programi/" class="block rounded-2xl border border-[var(--color-border)] bg-black/10 p-5 transition hover:-translate-y-0.5 hover:border-[var(--color-primary)]/40">
+              <div class="mb-3 inline-flex rounded-full border border-[var(--color-primary)]/20 bg-[var(--color-primary)]/10 px-3 py-1 text-xs font-semibold uppercase tracking-[0.16em] text-[var(--color-primary)]">CRM</div>
+              <h3 class="text-lg font-semibold text-white">CRM Programi ve Musteri Takip Sistemi</h3>
+              <p class="mt-2 text-sm leading-relaxed text-[var(--color-text-muted)]">WhatsApp, e-posta ve formlardan gelen talepleri otomatik kaydeden bir CRM sistemi kurun.</p>
+            </a>
+            <a href="/whatsapp-ve-siparis-botlari/" class="block rounded-2xl border border-[var(--color-border)] bg-black/10 p-5 transition hover:-translate-y-0.5 hover:border-[var(--color-primary)]/40">
+              <div class="mb-3 inline-flex rounded-full border border-[var(--color-primary)]/20 bg-[var(--color-primary)]/10 px-3 py-1 text-xs font-semibold uppercase tracking-[0.16em] text-[var(--color-primary)]">WhatsApp</div>
+              <h3 class="text-lg font-semibold text-white">WhatsApp ve Siparis Botu</h3>
+              <p class="mt-2 text-sm leading-relaxed text-[var(--color-text-muted)]">Resmi Meta API ile satis, destek ve siparis akisini otomatiklestirin.</p>
+            </a>
+            <a href="/b2b-musteri-bulma/" class="block rounded-2xl border border-[var(--color-border)] bg-black/10 p-5 transition hover:-translate-y-0.5 hover:border-[var(--color-primary)]/40">
+              <div class="mb-3 inline-flex rounded-full border border-[var(--color-primary)]/20 bg-[var(--color-primary)]/10 px-3 py-1 text-xs font-semibold uppercase tracking-[0.16em] text-[var(--color-primary)]">Lead Gen</div>
+              <h3 class="text-lg font-semibold text-white">B2B Musteri Bulma</h3>
+              <p class="mt-2 text-sm leading-relaxed text-[var(--color-text-muted)]">Hedef hesap arastirmasi, sinyal takibi ve nitelikli outbound sistemi kurun.</p>
+            </a>
+          </div>
+        </div>
+
+        <div class="rounded-[2rem] border border-[var(--color-primary)]/20 bg-[var(--color-primary)]/8 p-8">
+          <div class="inline-flex rounded-full border border-[var(--color-primary)]/25 bg-[var(--color-primary)]/10 px-3 py-1 text-xs font-semibold uppercase tracking-[0.16em] text-[var(--color-primary)]">
+            Donusum
+          </div>
+          <h2 class="mt-5 text-3xl font-black tracking-tight text-white">Hangi otomasyon aracinin size uygun oldugunu birlikte belirleyelim</h2>
+          <p class="mt-4 text-sm leading-relaxed text-[var(--color-text-muted)]">
+            Kisa bir analiz ile is sureci, ekip yapisi ve butcenize gore en uygun otomasyon yaklasimini birlikte cikaralim.
+          </p>
+          <ul class="mt-6 space-y-3 text-sm text-[var(--color-text-muted)]">
+            <li>Surec analizi ve arac onerisi</li>
+            <li>KVKK uyumlu kurulum plani</li>
+            <li>Somut ilk adim yol haritasi</li>
+          </ul>
+          <a href={contactHref} class="mt-8 inline-flex w-full items-center justify-center rounded-2xl bg-[var(--color-primary)] px-5 py-4 text-center text-base font-black text-black transition hover:-translate-y-0.5 hover:bg-[var(--color-primary-light)]">
+            Ucretsiz analizi talep et
+          </a>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <script type="application/ld+json" set:html={JSON.stringify(articleSchema)} />
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+</BaseLayout>
