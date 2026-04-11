@@ -5,12 +5,8 @@
 [build.environment]
   NODE_VERSION = "22"
 
-# PITFALL #4 FIX: Disable Netlify's URL manipulation
-# Edge Function handles ALL URL normalization
+# URL normalization: Astro trailingSlash:'always' generates /page/index.html,
+# Netlify Pretty URLs rewrites /page → /page/ automatically.
+# NO Edge Function needed — Edge Functions caused 21-day redirect loops (ki-automatisieren Hard Rule).
 [build.processing.html]
-  pretty_urls = false
-
-# Edge Function for URL normalization (trailing slash, lowercase, .html stripping)
-[[edge_functions]]
-  path = "/*"
-  function = "url-normalize"
+  pretty_urls = true
