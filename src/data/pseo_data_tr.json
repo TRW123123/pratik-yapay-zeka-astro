@@ -158,5 +158,605 @@
         "answer": "Tam tersine! Yeni nesil botlar, 'Sepetinizde ürün kalmış, yardıma ihtiyacınız var mı?' diyerek destek odaklı yaklaşır ve kargo statüsünü saniyeler içinde verdiği için müşteri memnuniyetini katlar."
       }
     ]
+  },
+  {
+    "id": "saglik",
+    "branche": "Sağlık Sektörü",
+    "slug_branche": "saglik",
+    "slug_problem": "yapay-zeka-hasta-triaj-otomasyonu",
+    "seo_title": "Sağlık Sektörü İçin Yapay Zeka Otomasyonu | Pratik Yapay Zeka",
+    "seo_description": "Klinik ve hastaneler için KVKK uyumlu yapay zeka hasta triaj sistemi. Mesai dışı talepleri kaçırmayın, hastaları doğru birime yönlendirin.",
+    "keywords": [
+      "sağlık sektörü yapay zeka otomasyonu",
+      "hasta triaj sistemi yapay zeka",
+      "KVKK uyumlu sağlık chatbot",
+      "sağlık yapay zeka"
+    ],
+    "schmerzpunkte": [
+      "Mesai saatleri dışında gelen hasta taleplerinin %35'inin yanıtsız kalması ve rakip kliniklere kayması",
+      "Telefon hatlarının yoğun saatlerde kilitlenmesi sonucu acil olmayan hastaların acile yönelmesi ve operasyonel maliyet artışı",
+      "Gelen taleplerde aciliyet ayrımı yapılamadığı için uzman doktor saatlerinin düşük öncelikli vakalarla dolması"
+    ],
+    "hard_metrics": {
+      "lead_cost": "WhatsApp tabanlı ön triaj ile yanlış birime yönlendirmelerde %60 azalma ve hasta başına operasyonel maliyette düşüş",
+      "time_saved": "Hasta kabul (intake) sürecinde 25 dakikadan 8 dakikaya inen (%68) zaman tasarrufu, doktor başına günde 90+ dakika kazanım",
+      "conversion_rate": "7/24 yapay zeka yanıt sistemi ile mesai dışı hasta dönüşüm oranında %180 artış (randevu talebi → gerçek ziyaret)"
+    },
+    "loesung_titel": "Sağlık Kuruluşları İçin KVKK Uyumlu Hasta Triaj ve İletişim Sistemi",
+    "loesung_features": [
+      "WhatsApp Ön Triaj Botu: Hastaların semptomlarını yapılandırılmış sorularla değerlendirip aciliyet seviyesine göre doğru birime yönlendiren KVKK uyumlu sistem",
+      "Otomatik Randevu Koordinasyonu: Uygun uzman doktorun takvimine göre anlık randevu oluşturma ve hasta onayı alma",
+      "Sıfır Veri Tutma Mimarisi: Hasta verileri yalnızca triaj süreci boyunca işlenir, sonrasında otomatik silinir — tam KVKK uyumu"
+    ],
+    "faqs": [
+      {
+        "question": "Hasta verilerinin güvenliği nasıl sağlanıyor?",
+        "answer": "Tüm sağlık verileri KVKK ve kişisel sağlık verilerine ilişkin yönetmeliklere uygun şekilde işlenir. Bulut tabanlı genel yapay zeka yerine, izole sistemlerde çalışan sıfır veri tutma (Zero Data Retention) mimarisi kullanıyoruz."
+      },
+      {
+        "question": "Mevcut hastane bilgi sistemimizle (HBYS) uyumlu çalışır mı?",
+        "answer": "Evet. API desteği olan HBYS yazılımlarına (Probel, Fonet, Med-Data vb.) entegre olarak randevu, hasta kaydı ve triaj verilerini otomatik aktarıyoruz."
+      }
+    ]
+  },
+  {
+    "id": "egitim",
+    "branche": "Eğitim ve Kurs Merkezleri",
+    "slug_branche": "egitim",
+    "slug_problem": "yapay-zeka-ogrenci-kazanimi",
+    "seo_title": "Eğitim Sektörü İçin Yapay Zeka Çözümleri | Pratik Yapay Zeka",
+    "seo_description": "Kurs merkezleri ve eğitim kurumları için yapay zeka ile öğrenci kayıt otomasyonu. Başvurudan ödemeye kadar sıfır kayıp.",
+    "keywords": [
+      "eğitim sektörü yapay zeka otomasyonu",
+      "kurs merkezi öğrenci kazanımı",
+      "eğitim yapay zeka",
+      "online kurs kayıt otomasyonu"
+    ],
+    "schmerzpunkte": [
+      "Kurs başvurusu yapan adayların %40'ının ödeme adımına geçmeden kaybolması — her kayıp aday ortalama 2.500 TL gelir kaybı",
+      "Telefon ve WhatsApp üzerinden gelen bilgi taleplerinin mesai saatleriyle sınırlı kalması, akşam saatlerinde yanıtsız kalan potansiyel öğrenciler",
+      "Manuel takip süreçlerinde hangi adayın hangi aşamada olduğunun bilinmemesi ve tekrarlanan iletişim hataları"
+    ],
+    "hard_metrics": {
+      "lead_cost": "Otomatik WhatsApp kayıt akışı ile başvuru-ödeme dönüşümünde %35 artış ve aday başına takip maliyetinde %70 düşüş",
+      "time_saved": "Başvuru yanıt süresinin 48 saatten 4 dakikaya düşmesi ile sıcak aday kaybının sıfıra yaklaşması",
+      "conversion_rate": "Otomatik hatırlatma ve ödeme linki sekansları ile tamamlanmamış kayıtlarda %25-40 kurtarma oranı"
+    },
+    "loesung_titel": "Eğitim Kurumları İçin Uçtan Uca Öğrenci Kazanım Pipeline'ı",
+    "loesung_features": [
+      "Anlık Başvuru Yanıt Sistemi: Kurs bilgi talebi geldiğinde 60 saniye içinde WhatsApp üzerinden otomatik program detayı ve ödeme linki gönderimi",
+      "Kayıt Kurtarma Sekansı: Başvuru yapıp ödemeyi tamamlamayan adaylara 3 aşamalı hatırlatma akışı — SMS, WhatsApp ve e-posta kombinasyonu",
+      "Aday Takip Panosu: Her potansiyel öğrencinin hangi aşamada olduğunu gösteren otomatik CRM beslemesi ve danışman bildirim sistemi"
+    ],
+    "faqs": [
+      {
+        "question": "Hangi tür eğitim kurumları için uygun?",
+        "answer": "Özel kurs merkezleri, dil okulları, sertifika programları, online akademiler ve mesleki eğitim veren kuruluşlar için öğrenci kazanım süreçlerini otomatikleştiriyoruz. Devlet okulları için değil, özel sektör eğitim kurumları için tasarlandı."
+      },
+      {
+        "question": "Mevcut kurs yönetim panelimizle entegre çalışır mı?",
+        "answer": "API desteği olan tüm kurs platformları (Vedubox, Udemy Business, özel paneller) ile webhook veya doğrudan API entegrasyonu kuruyoruz. Öğrenci kaydı otomatik olarak platformunuza işlenir."
+      }
+    ]
+  },
+  {
+    "id": "restoran",
+    "branche": "Restoran ve Yeme-İçme",
+    "slug_branche": "restoran",
+    "slug_problem": "tedarik-ve-musteri-otomasyonu",
+    "seo_title": "Restoranlar İçin Yapay Zeka Otomasyonu | Pratik Yapay Zeka",
+    "seo_description": "Restoranlar için tedarikçi sipariş otomasyonu ve müşteri geri bildirim sistemi. Günlük operasyonu hafifletin, müşteri sadakatini artırın.",
+    "keywords": [
+      "restoran otomasyonu",
+      "restoran sipariş otomasyonu yapay zeka",
+      "yeme içme sektörü dijital dönüşüm",
+      "restoran tedarik yönetimi"
+    ],
+    "schmerzpunkte": [
+      "Günde 5+ tedarikçiye WhatsApp ve telefon üzerinden yapılan manuel siparişlerde ortalama %12 hata oranı ve kayıp takibi yapılamaması",
+      "Müşteri memnuniyet geri bildirimlerinin toplanamaması — kötü deneyim yaşayan müşterilerin %91'inin sessizce gidip bir daha dönmemesi",
+      "Günlük stok sayımı ve sipariş hesaplamasının 45-60 dakika mesai alması ve yoğun saatlerde aksayan operasyon"
+    ],
+    "hard_metrics": {
+      "lead_cost": "Otomatik müşteri geri bildirim sistemi ile olumsuz yorum oranında %40 düşüş ve Google puanında ortalama 0.6 puan artış",
+      "time_saved": "Tedarikçi sipariş sürecinin günlük 45 dakikadan 5 dakikaya düşmesi — ayda 20+ saat operasyonel kazanım",
+      "conversion_rate": "WhatsApp tabanlı sadakat programı ile tekrar ziyaret oranında %30 artış ve müşteri başına ortalama harcamada %18 yükseliş"
+    },
+    "loesung_titel": "Restoranlar İçin Tedarik Zinciri ve Müşteri Deneyimi Otomasyonu",
+    "loesung_features": [
+      "Otomatik Tedarikçi Sipariş Pipeline'ı: Günlük tüketim verilerine göre sipariş miktarlarını hesaplayıp tedarikçilere WhatsApp üzerinden otomatik sipariş gönderen sistem",
+      "Müşteri Deneyim Motoru: Yemek sonrası otomatik WhatsApp anketi, olumsuz puanda anlık mutfak müdürüne eskalasyon ve Google yorum yönlendirmesi",
+      "Akıllı Stok Takibi: Günlük satış verileriyle entegre çalışan, kritik malzeme seviyelerinde otomatik uyarı veren envanter izleme sistemi"
+    ],
+    "faqs": [
+      {
+        "question": "Birden fazla şubeli restoran zincirleri için uygun mu?",
+        "answer": "Evet. Merkezi bir panelden tüm şubelerin tedarikçi siparişlerini, stok durumlarını ve müşteri geri bildirimlerini takip edebilirsiniz. Her şube için ayrı otomasyon senaryoları kurulabilir."
+      },
+      {
+        "question": "Yemeksepeti, Getir gibi platformlarla entegre çalışır mı?",
+        "answer": "Sipariş platformlarının API'leri üzerinden gelen siparişleri otomatik olarak mutfak ekranınıza ve stok sisteminize aktarıyoruz. Manuel veri girişi tamamen ortadan kalkıyor."
+      }
+    ]
+  },
+  {
+    "id": "eczane",
+    "branche": "Eczane",
+    "slug_branche": "eczane",
+    "slug_problem": "stok-ve-recete-otomasyonu",
+    "seo_title": "Eczaneler İçin Yapay Zeka Stok Otomasyonu | Pratik Yapay Zeka",
+    "seo_description": "Eczaneler için ilaç stok yönetimi ve miad takip otomasyonu. Son kullanma kayıplarını önleyin, reçete süreçlerini hızlandırın.",
+    "keywords": [
+      "eczane otomasyonu",
+      "eczane stok takip sistemi yapay zeka",
+      "ilaç miad takibi otomasyonu",
+      "eczane dijital dönüşüm"
+    ],
+    "schmerzpunkte": [
+      "Eczanelerde ortalama %8-12 ilaç kaybının son kullanma tarihi geçen ürünlerden kaynaklanması ve yıllık onbinlerce TL zarar",
+      "Reçeteli ilaç siparişlerinin manuel olarak ecza deposuna bildirilmesi sırasında yaşanan gecikmeler ve yanlış miktar hataları",
+      "SGK provizyon ve ilaç etkileşim kontrollerinin eczacının zamanının %30'unu alması ve kuyrukta bekleme sürelerini artırması"
+    ],
+    "hard_metrics": {
+      "lead_cost": "Otomatik miad takip sistemi ile son kullanma tarihi kayıplarında %75 azalma ve yıllık ortalama 15.000-40.000 TL tasarruf",
+      "time_saved": "Reçete işleme ve depo sipariş süresinde %60 kısalma — eczacı başına günde 2+ saat kazanım, müşteri bekleme süresinde %40 düşüş",
+      "conversion_rate": "Kronik hasta takip otomasyonu ile tekrar ilaç alımlarında %35 artış ve hasta sadakatinde ölçülebilir iyileşme"
+    },
+    "loesung_titel": "Eczaneler İçin Akıllı Stok Yönetimi ve Reçete İşleme Sistemi",
+    "loesung_features": [
+      "Miad Erken Uyarı Sistemi: Son kullanma tarihine 90 gün kala otomatik uyarı, promosyon önerisi veya ecza deposuna iade süreci başlatma",
+      "Otomatik Depo Sipariş Pipeline'ı: Günlük satış verileri ve reçete trendlerine göre optimal sipariş miktarını hesaplayıp depoya otomatik bildirim",
+      "Kronik Hasta Hatırlatma Motoru: İlaç bitim tarihine göre hastaya WhatsApp üzerinden otomatik hatırlatma ve eczaneye yönlendirme"
+    ],
+    "faqs": [
+      {
+        "question": "Mevcut eczane otomasyon programımla (EczaPlus, Probel vb.) uyumlu mu?",
+        "answer": "Evet. API veya veritabanı entegrasyonu ile mevcut eczane yazılımınızdaki stok verilerini okuyarak miad takibi ve sipariş otomasyonunu üst katman olarak ekliyoruz. Mevcut sisteminizi değiştirmenize gerek yok."
+      },
+      {
+        "question": "SGK provizyon süreçlerini de otomatikleştirebilir misiniz?",
+        "answer": "Doğrudan SGK sistemine müdahale etmiyoruz, ancak provizyon öncesi ilaç etkileşim kontrolü ve dozaj doğrulaması gibi ön hazırlık adımlarını otomatikleştirerek eczacının SGK işlemlerini %40 daha hızlı tamamlamasını sağlıyoruz."
+      }
+    ]
+  },
+  {
+    "id": "chatbot",
+    "branche": "Chatbot Sistemleri",
+    "slug_branche": "chatbot",
+    "slug_problem": "kurumsal-chatbot-otomasyonu",
+    "seo_title": "Kurumsal Chatbot Otomasyonu — Kendi Verinizle | Pratik Yapay Zeka",
+    "seo_description": "Şirket verilerinizle eğitilmiş RAG tabanlı yapay zeka chatbot. Müşteri hizmetleri maliyetini %90 düşürün, 7/24 destek verin.",
+    "keywords": [
+      "chatbot otomasyonu",
+      "kurumsal yapay zeka chatbot",
+      "RAG chatbot Türkiye",
+      "yapay zeka müşteri hizmetleri botu"
+    ],
+    "schmerzpunkte": [
+      "Müşteri hizmetleri ekiplerinin zamanının %65'inin sürekli tekrarlanan aynı 20-30 soruya (kargo, iade, fiyat) harcanması",
+      "Genel amaçlı chatbotların (hazır çözümler) şirkete özel bilgileri bilmemesi ve müşterileri yanlış yönlendirmesi",
+      "Mesai dışı saatlerde gelen destek taleplerinin %100 kaybolması — 7/24 insan desteği ise KOBİ bütçesiyle karşılanamaz düzeyde"
+    ],
+    "hard_metrics": {
+      "lead_cost": "İlk seviye destek maliyetinde etkileşim başına 45 TL'den 4,5 TL'ye (%90) düşüş ve yıllık 6 haneli tasarruf",
+      "time_saved": "Tekrarlayan destek taleplerinin %70'inin tamamen otonom çözülmesi — destek ekibi yalnızca karmaşık vakalarla ilgilensin",
+      "conversion_rate": "7/24 anında yanıt ile müşteri memnuniyet puanında (CSAT) ortalama 2.1 puan artış ve destek kaynaklı churn'de %45 azalma"
+    },
+    "loesung_titel": "Şirket Verilerinizle Eğitilmiş RAG Tabanlı Akıllı Chatbot",
+    "loesung_features": [
+      "RAG Bilgi Tabanı Entegrasyonu: Ürün katalogları, SSS, fiyat listeleri ve süreç dokümanlarınızı yükleyin — chatbot şirketinizi bir çalışan gibi tanısın",
+      "Çok Kanallı Dağıtım: Aynı bilgi tabanıyla web sitesi widget'ı, WhatsApp Business ve Instagram DM üzerinden eş zamanlı destek",
+      "Akıllı Eskalasyon Motoru: Chatbotun yanıtlayamadığı karmaşık talepleri otomatik olarak doğru departmana ve kişiye yönlendirme, tam bağlam aktarımıyla"
+    ],
+    "faqs": [
+      {
+        "question": "Chatbot şirketimize özel bilgileri nereden öğreniyor?",
+        "answer": "PDF, Word, Excel, web sayfası veya bilgi tabanı dokümanlarınızı sisteme yüklüyorsunuz. RAG (Retrieval-Augmented Generation) mimarisi bu verileri vektör veritabanında indeksleyerek chatbotun her soruya şirketinizin gerçek bilgileriyle yanıt vermesini sağlıyor."
+      },
+      {
+        "question": "Chatbot yanlış bilgi verirse ne olur?",
+        "answer": "RAG mimarisi hallüsinasyonu minimize eder çünkü yanıtlar yalnızca yüklenen belgelerden üretilir. Ek olarak, güven skoru düşük yanıtlarda chatbot otomatik olarak 'Bu konuda sizi bir temsilciye bağlıyorum' diyerek insan desteğine yönlendirir."
+      }
+    ]
+  },
+  {
+    "id": "enerji",
+    "branche": "Enerji Sektörü",
+    "slug_branche": "enerji",
+    "slug_problem": "saha-ekibi-ve-ariza-otomasyonu",
+    "seo_title": "Enerji Sektörü İçin Yapay Zeka Otomasyonu | Pratik Yapay Zeka",
+    "seo_description": "Enerji şirketleri için saha ekibi koordinasyonu ve arıza bildirim otomasyonu. Müdahale süresini kısaltın, saha verimliliğini artırın.",
+    "keywords": [
+      "enerji sektörü otomasyonu",
+      "enerji şirketi dijital dönüşüm",
+      "saha ekibi yönetim otomasyonu",
+      "enerji arıza bildirim sistemi"
+    ],
+    "schmerzpunkte": [
+      "Arıza bildirimlerinin telefon ve e-posta karışıklığında kaybolması — ortalama müdahale süresinin 4.5 saatten 8+ saate çıkması",
+      "Saha teknisyenlerinin %30'unun yanlış lokasyona veya yanlış ekipmanla gönderilmesi sonucu tekrar ziyaret maliyetleri",
+      "Müşteri arıza durumu sorgulamalarının çağrı merkezini kilitlemesi ve operasyon ekibinin sahaya değil telefona zaman harcaması"
+    ],
+    "hard_metrics": {
+      "lead_cost": "Otomatik arıza sınıflandırma ve yönlendirme ile yanlış görevlendirmelerde %55 azalma ve tekrar ziyaret maliyetlerinde düşüş",
+      "time_saved": "Arıza bildiriminden teknisyen atamasına geçen sürede %70 kısalma — 4.5 saatten 45 dakikaya",
+      "conversion_rate": "Müşteri memnuniyet puanında (NPS) 15+ puan artış — otomatik durum güncellemesiyle çağrı merkezi yükünde %50 azalma"
+    },
+    "loesung_titel": "Enerji Şirketleri İçin Saha Operasyonu ve Arıza Yönetim Sistemi",
+    "loesung_features": [
+      "Akıllı Arıza Dağıtım Motoru: Gelen bildirimi otomatik sınıflandırıp en yakın ve uygun teknisyene GPS bazlı atama yapan sistem",
+      "Müşteri Durum Bildirimi: Arıza kaydından çözüme kadar her aşamada müşteriye otomatik WhatsApp güncelleme mesajları",
+      "Saha Rapor Otomasyonu: Teknisyenin mobil fotoğraf ve notlarını anında merkeze ileten ve iş emri kapatan dijital saha formu"
+    ],
+    "faqs": [
+      {
+        "question": "SCADA ve enerji yönetim sistemlerimizle entegre çalışır mı?",
+        "answer": "SCADA sistemlerinden gelen alarm verilerini webhook veya API üzerinden okuyarak otomatik arıza kaydı ve teknisyen ataması yapıyoruz. Mevcut altyapınızı değiştirmeden üst katman olarak entegre ediyoruz."
+      },
+      {
+        "question": "Güneş enerjisi (GES) sahaları için de uygun mu?",
+        "answer": "Evet. GES sahalarında inverter alarm takibi, periyodik bakım hatırlatmaları ve performans düşüşü uyarılarını otomatikleştiriyoruz. Özellikle çok sahaya dağılmış portföylerde merkezi izleme sağlıyoruz."
+      }
+    ]
+  },
+  {
+    "id": "whatsapp",
+    "branche": "WhatsApp İşletme Otomasyonu",
+    "slug_branche": "whatsapp",
+    "slug_problem": "yapay-zeka-isletme-otomasyonu",
+    "seo_title": "WhatsApp İşletme Otomasyonu ve Yapay Zeka | Pratik Yapay Zeka",
+    "seo_description": "WhatsApp Business API ile yapay zeka destekli müşteri iletişimi, sipariş takibi ve çok kanallı otomasyon. n8n entegrasyonu.",
+    "keywords": [
+      "whatsapp otomasyonu",
+      "whatsapp business api otomasyon",
+      "whatsapp yapay zeka chatbot",
+      "whatsapp işletme botu"
+    ],
+    "schmerzpunkte": [
+      "İşletmelerin %85'inin WhatsApp Web'i manuel kullandığı ve mesajların kişisel telefonlara bağlı kalarak kurumsal hafıza oluşturamadığı gerçeği",
+      "Gelen mesajların sipariş, şikayet, bilgi talebi ve spam olarak ayrıştırılamaması — her mesaja aynı kişinin yanıt vermek zorunda kalması",
+      "WhatsApp Business uygulamasının tek telefona bağlı olması ve ekip büyüdüğünde iletişim darboğazı yaratması"
+    ],
+    "hard_metrics": {
+      "lead_cost": "WhatsApp Business API geçişi ile mesaj açılma oranı %98 ve satış dönüşümünde %20-60 artış (e-postanın 5-8 katı)",
+      "time_saved": "Yapay zeka mesaj sınıflandırmasıyla gelen taleplerin %70'inin otomatik yanıtlanması — ekip yalnızca karmaşık konulara odaklansın",
+      "conversion_rate": "n8n + LangChain entegrasyonuyla bağlam hatırlayan akıllı bot sayesinde müşteri başına ortalama sipariş değerinde %25 artış"
+    },
+    "loesung_titel": "WhatsApp Business API × n8n ile Kurumsal İletişim Otomasyonu",
+    "loesung_features": [
+      "Yapay Zeka Mesaj Sınıflandırma: Gelen her WhatsApp mesajını otomatik olarak sipariş, şikayet, bilgi talebi veya acil olarak kategorize edip doğru ekibe yönlendirme",
+      "Bağlam Hatırlayan Akıllı Bot: n8n + LangChain + RAG mimarisiyle önceki konuşmaları hatırlayan, ürün kataloğunuzu bilen ve kişiselleştirilmiş yanıtlar veren sistem",
+      "Çok Kullanıcılı Kuyruk Yönetimi: WhatsApp Business API ile birden fazla ekip üyesinin aynı numaradan yanıt verebilmesi ve otomatik görev dağılımı"
+    ],
+    "faqs": [
+      {
+        "question": "WhatsApp Business API'ye geçiş ne kadar sürer?",
+        "answer": "Meta Business doğrulaması 2-5 iş günü, ardından teknik entegrasyon 3-5 iş günü sürer. Toplam 1-2 hafta içinde canlıya geçiyorsunuz. Mevcut numaranızı koruyabilirsiniz."
+      },
+      {
+        "question": "Normal WhatsApp Business uygulamasından farkı ne?",
+        "answer": "API versiyonu birden fazla cihaz ve kullanıcıyı destekler, n8n/Make gibi otomasyon araçlarıyla entegre çalışır, CRM'inize otomatik veri aktarır ve yapay zeka botları çalıştırabilir. Normal uygulama bunların hiçbirini yapamaz."
+      }
+    ]
+  },
+  {
+    "id": "klinik",
+    "branche": "Özel Klinikler",
+    "slug_branche": "klinik",
+    "slug_problem": "hasta-memnuniyet-otomasyonu",
+    "seo_title": "Klinikler İçin Hasta Memnuniyet Otomasyonu | Pratik Yapay Zeka",
+    "seo_description": "Özel klinikler için tedavi sonrası hasta takibi ve memnuniyet ölçümü otomasyonu. Hasta sadakatini artırın, olumsuz yorumları önleyin.",
+    "keywords": [
+      "klinik otomasyonu",
+      "hasta memnuniyet anketi otomasyonu",
+      "klinik hasta takip sistemi",
+      "özel klinik dijital dönüşüm"
+    ],
+    "schmerzpunkte": [
+      "Tedavi sonrası hasta takibinin yapılmaması — hastaların %60'ının bir daha aynı kliniğe dönmemesinin nedeninin bilinmemesi",
+      "Olumsuz deneyim yaşayan hastaların Google ve sosyal medyada kötü yorum bırakması fakat kliniğin bundan haberdar olamaması",
+      "Hasta memnuniyet anketlerinin kağıt üzerinde yapılması ve verilerin hiçbir zaman analiz edilmemesi"
+    ],
+    "hard_metrics": {
+      "lead_cost": "Otomatik tedavi sonrası takip ile hasta tekrar ziyaret oranında %35 artış ve hasta başına yaşam boyu değerde (LTV) %200+ yükseliş",
+      "time_saved": "Manuel anket ve takip süreçlerinin tamamen otomatikleşmesi — aylık 15+ saat idari zaman tasarrufu",
+      "conversion_rate": "Olumsuz deneyimlerin %80'inin Google yorumu öncesinde yakalanıp çözülmesi — klinik online puanında ortalama 0.8 puan artış"
+    },
+    "loesung_titel": "Özel Klinikler İçin Tedavi Sonrası Hasta Deneyim Motoru",
+    "loesung_features": [
+      "Otomatik Post-Tedavi Anketi: Tedaviden 24 saat sonra hastaya WhatsApp üzerinden kısa memnuniyet anketi gönderimi ve NPS ölçümü",
+      "Erken Uyarı Eskalasyonu: Düşük puan veren hastalara 1 saat içinde klinik yöneticisinden kişisel arama tetiklenmesi — sorun büyümeden çözüm",
+      "Google Yorum Yönlendirme: Yüksek puan veren memnun hastalara otomatik Google yorum linki gönderimi ile organik puan artışı"
+    ],
+    "faqs": [
+      {
+        "question": "Bu sistem tedavi sırasındaki süreçleri de otomatikleştirir mi?",
+        "answer": "Hayır, bu sistem tamamen tedavi sonrası hasta deneyimine odaklanır. Tedavi öncesi triaj için sağlık sektörü çözümümüze, dahili operasyonlar için hastane otomasyonumuza bakabilirsiniz."
+      },
+      {
+        "question": "Hastaların kişisel sağlık verileri anket sisteminde saklanır mı?",
+        "answer": "Anket yalnızca memnuniyet puanı ve genel geri bildirim toplar, tıbbi veri içermez. Yine de tüm veriler KVKK uyumlu şekilde işlenir ve belirlenen süre sonunda otomatik silinir."
+      }
+    ]
+  },
+  {
+    "id": "hastane",
+    "branche": "Hastaneler",
+    "slug_branche": "hastane",
+    "slug_problem": "dahili-operasyon-otomasyonu",
+    "seo_title": "Hastaneler İçin Dahili Operasyon Otomasyonu | Pratik Yapay Zeka",
+    "seo_description": "Hastaneler için malzeme talep akışı, vardiya koordinasyonu ve dahili iletişim otomasyonu. Operasyonel verimliliği artırın.",
+    "keywords": [
+      "hastane otomasyonu",
+      "hastane malzeme yönetim sistemi",
+      "hastane dahili süreç otomasyonu",
+      "sağlık kuruluşu operasyon yönetimi"
+    ],
+    "schmerzpunkte": [
+      "Departmanlar arası malzeme taleplerinin kağıt formlar ve telefon üzerinden yürütülmesi — talebin merkez depoya ulaşmasının ortalama 3-6 saat sürmesi",
+      "Vardiya değişimlerinde hasta durumu ve bekleyen görevlerin sözlü aktarılması sonucu kritik bilgilerin kaybolması",
+      "Ameliyathane, laboratuvar ve yatak servisi arasındaki koordinasyon eksikliğinin hasta bekleme sürelerini %40 artırması"
+    ],
+    "hard_metrics": {
+      "lead_cost": "Dijital malzeme talep sistemiyle yanlış veya eksik siparişlerde %65 azalma ve depo israfında yıllık 6 haneli tasarruf",
+      "time_saved": "Malzeme talep-onay-teslimat döngüsünün 3-6 saatten 30 dakikaya düşmesi — kritik malzeme beklemelerinin ortadan kalkması",
+      "conversion_rate": "Dijital vardiya devir teslim ile bilgi kayıp oranında %80 düşüş ve hasta güvenliği metriklerinde ölçülebilir iyileşme"
+    },
+    "loesung_titel": "Hastaneler İçin Dahili Operasyon ve Malzeme Akış Otomasyonu",
+    "loesung_features": [
+      "Dijital Malzeme Talep Pipeline'ı: Departman mobil cihazdan talep oluşturur, merkez depo otomatik bildirim alır, onay ve teslimat takibi tek panelde",
+      "Akıllı Vardiya Devir Teslim: Hemşire ve doktorların dijital formla hasta durumlarını, bekleyen görevleri ve kritik notları bir sonraki vardiyaya aktarması",
+      "Departmanlar Arası Koordinasyon Botu: Ameliyathane, laboratuvar ve servis arasında hasta taşıma, sonuç bildirimi ve yatak durumu güncellemelerini otomatikleştiren iç iletişim sistemi"
+    ],
+    "faqs": [
+      {
+        "question": "Mevcut HBYS (Hastane Bilgi Yönetim Sistemi) ile çakışır mı?",
+        "answer": "Hayır. Bu sistem HBYS'nin kapsamadığı operasyonel boşlukları (malzeme lojistiği, vardiya iletişimi, departmanlar arası koordinasyon) doldurur. HBYS'ye rakip değil, tamamlayıcıdır."
+      },
+      {
+        "question": "Küçük özel hastaneler için de uygun mu yoksa sadece büyük hastaneler mi?",
+        "answer": "50-200 yataklı özel hastaneler için en yüksek ROI'yi görüyoruz çünkü bu ölçekte hem operasyonel karmaşıklık var hem de dijital altyapı genellikle eksik. Modüler yapı sayesinde ihtiyacınız olan bileşenleri seçerek başlayabilirsiniz."
+      }
+    ]
+  },
+  {
+    "id": "doktor",
+    "branche": "Doktor ve Muayenehane",
+    "slug_branche": "doktor",
+    "slug_problem": "hasta-kazanimi-ve-randevu-otomasyonu",
+    "seo_title": "Doktorlar İçin Yapay Zeka ile Hasta Kazanımı | Pratik Yapay Zeka",
+    "seo_description": "Muayenehaneler için Google Business optimizasyonu, online randevu ve otomatik hasta kazanımı. Daha fazla hasta, daha az idari iş.",
+    "keywords": [
+      "doktor yapay zeka",
+      "muayenehane hasta kazanımı",
+      "doktor online randevu otomasyonu",
+      "muayenehane dijital pazarlama"
+    ],
+    "schmerzpunkte": [
+      "Muayenehane telefon hattının meşgul olduğu saatlerde potansiyel hastaların %45'inin rakip doktora gitmesi",
+      "Google My Business profilinin optimize edilmemesi — aynı semtte 4-5 yıldız puana sahip rakiplerin tüm yerel aramaları kapması",
+      "Randevu hatırlatmalarının yapılmaması nedeniyle hastaların %15-20'sinin gelmemesi (no-show) ve boşa geçen muayene saatleri"
+    ],
+    "hard_metrics": {
+      "lead_cost": "Google Business optimizasyonu ve otomatik yorum yönetimi ile yerel aramalardan gelen hasta taleplerinde %120 artış",
+      "time_saved": "Online randevu + otomatik hatırlatma sistemiyle no-show oranının %18'den %5'e düşmesi ve günde 2+ ek muayene kapasitesi",
+      "conversion_rate": "Tedavi sonrası otomatik yorum talebiyle Google puanında 3 ay içinde ortalama 0.7 puan artış ve bölgesel sıralamada yükseliş"
+    },
+    "loesung_titel": "Muayenehaneler İçin Hasta Kazanım ve Randevu Yönetim Sistemi",
+    "loesung_features": [
+      "Google Business Büyüme Motoru: Profil optimizasyonu, otomatik yorum talep akışı ve rakip analizi ile yerel aramalarda üst sıralara çıkma",
+      "7/24 Online Randevu Akışı: Web sitesi ve WhatsApp üzerinden hastanın doktorun müsait saatlerini görüp anında randevu alabilmesi",
+      "No-Show Önleme Sistemi: Randevudan 24 saat ve 2 saat önce otomatik WhatsApp hatırlatması, iptal durumunda bekleme listesindeki hastaya anlık bildirim"
+    ],
+    "faqs": [
+      {
+        "question": "Teknik bilgim yok, yine de kullanabilir miyim?",
+        "answer": "Kesinlikle. Tüm kurulumu biz yapıyoruz ve size sadece sonuçları gösteren basit bir panel veriyoruz. Teknik bakım ve güncelleme tamamen bizim sorumluluğumuzda."
+      },
+      {
+        "question": "Hangi branş doktorları için uygun?",
+        "answer": "Diş hekimi, göz doktoru, dermatolog, psikolog, fizyoterapist gibi randevulu çalışan tüm branşlar için uygundur. Özellikle rekabetin yoğun olduğu semtlerde hasta kazanımında en büyük farkı yaratıyor."
+      }
+    ]
+  },
+  {
+    "id": "hotel",
+    "branche": "Otel ve Konaklama",
+    "slug_branche": "hotel",
+    "slug_problem": "misafir-deneyimi-otomasyonu",
+    "seo_title": "Oteller İçin Misafir Deneyimi Otomasyonu | Pratik Yapay Zeka",
+    "seo_description": "Oteller için check-in, upsell, checkout ve yorum yönetimi otomasyonu. Misafir başına geliri artırın, operasyonel yükü azaltın.",
+    "keywords": [
+      "otel otomasyonu",
+      "otel misafir deneyimi yapay zeka",
+      "konaklama sektörü dijital dönüşüm",
+      "otel upsell otomasyonu"
+    ],
+    "schmerzpunkte": [
+      "Otel misafirlerinin %70'ine spa, oda yükseltme ve transfer gibi ek hizmetlerin hiç teklif edilmemesi — kaçırılan upsell gelirinin misafir başına ortalama 200-500 TL olması",
+      "Check-in sırasında oluşan kuyrukların misafir memnuniyetini düşürmesi ve olumsuz ilk izlenim yaratması",
+      "Checkout sonrası yorum talebi yapılmaması — memnun misafirin %95'inin sessizce giderken memnuniyetsiz olanın aktif olarak kötü yorum bırakması"
+    ],
+    "hard_metrics": {
+      "lead_cost": "Pre-stay WhatsApp upsell mesajlarıyla misafir başına ortalama gelirde (RevPAR) %15-25 artış ve ek hizmet satışında 3x yükseliş",
+      "time_saved": "Online pre-check-in ile resepsiyon bekleme süresinin 12 dakikadan 2 dakikaya düşmesi ve resepsiyon ekibinin operasyonel yükünde %40 azalma",
+      "conversion_rate": "Post-stay otomatik yorum akışıyla TripAdvisor ve Google puanında 6 ay içinde ortalama 0.5 puan artış"
+    },
+    "loesung_titel": "Oteller İçin Uçtan Uca Misafir Deneyimi ve Gelir Artırma Sistemi",
+    "loesung_features": [
+      "Pre-Stay Upsell Motoru: Rezervasyon onayından sonra misafire WhatsApp üzerinden kişiselleştirilmiş ek hizmet teklifleri (spa paketi, havalimanı transfer, oda upgrade)",
+      "Dijital Check-in Akışı: Misafirin varıştan önce kimlik ve ödeme bilgilerini tamamlaması — resepsiyonda sadece anahtar teslimi",
+      "Post-Stay Yorum Yönetimi: Checkout sonrası otomatik memnuniyet anketi, yüksek puan verene Google/TripAdvisor yorum linki, düşük puana anında müdür eskalasyonu"
+    ],
+    "faqs": [
+      {
+        "question": "Booking.com ve diğer OTA'lardan gelen rezervasyonlarda da çalışır mı?",
+        "answer": "Evet. Channel manager yazılımınız (SiteMinder, Cloudbeds vb.) üzerinden gelen tüm rezervasyonları otomatik olarak sisteme alıp misafire pre-stay mesajı gönderiyoruz. Rezervasyon kaynağı farketmeksizin çalışır."
+      },
+      {
+        "question": "Butik oteller ve apart oteller için de uygun mu?",
+        "answer": "Özellikle 20-100 odalı butik oteller ve apart oteller için yüksek ROI görüyoruz çünkü bu ölçekte kişiselleştirilmiş deneyim fark yaratırken personel sayısı sınırlı. Sistem tam da bu boşluğu dolduruyor."
+      }
+    ]
+  },
+  {
+    "id": "kurs",
+    "branche": "Kurs ve Akademi",
+    "slug_branche": "kurs",
+    "slug_problem": "ogrenci-devam-ve-odeme-otomasyonu",
+    "seo_title": "Kurs Merkezleri İçin Devam ve Ödeme Otomasyonu | Pratik Yapay Zeka",
+    "seo_description": "Kurs ve akademiler için öğrenci devam takibi ve ödeme otomasyonu. No-show'ları önleyin, ödeme gecikmeleri sorununu çözün.",
+    "keywords": [
+      "kurs otomasyonu",
+      "kurs merkezi öğrenci takip sistemi",
+      "kurs ödeme takip otomasyonu",
+      "eğitim kurumu devamsızlık yönetimi"
+    ],
+    "schmerzpunkte": [
+      "Kurs katılımcılarının %25'inin düzenli devamsızlık yapması ve kursun ortasında bırakması — kayıp gelirin geri alınamaması",
+      "Taksitli ödemelerde gecikmelerin manuel takip edilmesi — muhasebe ekibinin zamanının %40'ını ödeme hatırlatmalarına harcaması",
+      "Devamsızlık yapan öğrencilere zamanında müdahale edilmemesi nedeniyle sorunun büyümesi ve toplu kurs iptalleri"
+    ],
+    "hard_metrics": {
+      "lead_cost": "Otomatik ödeme hatırlatma sekanslarıyla gecikmiş tahsilatlarda %45 kurtarma oranı ve yıllık nakit akışında ölçülebilir iyileşme",
+      "time_saved": "Devam takibi ve ödeme hatırlatma süreçlerinin tamamen otomatikleşmesi — muhasebe ve admin ekibinde aylık 25+ saat kazanım",
+      "conversion_rate": "3 ardışık devamsızlıkta otomatik kursiye ulaşma ile kurs terk oranında %30 azalma ve tamamlama oranında artış"
+    },
+    "loesung_titel": "Kurs Merkezleri İçin Öğrenci Devam Takibi ve Ödeme Yönetim Sistemi",
+    "loesung_features": [
+      "Akıllı Devamsızlık Müdahale Sistemi: Öğrenci 2. kez devamsızlık yaptığında otomatik WhatsApp mesajı, 3. kez sonra kurs danışmanına eskalasyon ve telafi ders önerisi",
+      "Otomatik Ödeme Takip Sekansı: Taksit tarihi geçtiğinde 3 aşamalı hatırlatma (WhatsApp → SMS → Arama notu), isteğe bağlı taksit yeniden yapılandırma teklifi",
+      "Kurs Performans Panosu: Her öğrencinin devam durumu, ödeme geçmişi ve risk skoru tek ekranda — yöneticinin karar alması için hazır veri"
+    ],
+    "faqs": [
+      {
+        "question": "Online kurslar için mi yoksa yüz yüze kurslar için mi?",
+        "answer": "Her ikisi için de çalışır. Yüz yüze kurslarda yoklama entegrasyonu (QR kod veya manuel giriş), online kurslarda platform giriş verisi üzerinden devam takibi yapıyoruz."
+      },
+      {
+        "question": "Mevcut muhasebe yazılımımızla ödeme takibi entegre edilebilir mi?",
+        "answer": "Evet. Parasut, Logo, Kolaybi gibi muhasebe yazılımlarıyla API entegrasyonu kurarak ödeme durumlarını otomatik senkronize ediyoruz. Çift veri girişine gerek kalmıyor."
+      }
+    ]
+  },
+  {
+    "id": "email",
+    "branche": "E-Posta Pazarlama ve Outreach",
+    "slug_branche": "email",
+    "slug_problem": "sinyal-tabanli-outreach-otomasyonu",
+    "seo_title": "Yapay Zeka ile E-Posta Outreach Otomasyonu | Pratik Yapay Zeka",
+    "seo_description": "Sinyal tabanlı yapay zeka e-posta outreach. Rastgele değil, doğru zamanda doğru kişiye kişiselleştirilmiş mesaj. %3 → %15+ yanıt oranı.",
+    "keywords": [
+      "e-posta outreach otomasyonu",
+      "yapay zeka soğuk e-posta",
+      "B2B email otomasyonu",
+      "sinyal tabanlı outreach sistemi"
+    ],
+    "schmerzpunkte": [
+      "Geleneksel toplu e-posta kampanyalarının %97 oranında yanıtsız kalması — binlerce e-posta gönderip 3-5 yanıt almanın verimsizliği",
+      "Potansiyel müşterilere doğru zamanda ulaşılamaması — yatırım alan, büyüyen veya teknoloji değiştiren şirketlerin tespit edilememesi",
+      "Manuel kişiselleştirme çabasının ölçeklenememesi — her e-postayı araştırıp yazmak kişi başı 15-20 dakika alması"
+    ],
+    "hard_metrics": {
+      "lead_cost": "Sinyal bazlı yapay zeka outreach ile yanıt oranının sektörel %3'ten %15-25'e çıkması — aynı hacimde 5-8x daha fazla görüşme",
+      "time_saved": "Yapay zeka ile araştırma + kişiselleştirme süresinin kişi başı 15 dakikadan 30 saniyeye düşmesi — ayda 80+ saat tasarruf",
+      "conversion_rate": "Doğru zamanlama (funding, işe alım, teknoloji değişimi sinyalleri) ile toplantı dönüşüm oranında %200+ artış"
+    },
+    "loesung_titel": "Sinyal Tabanlı Yapay Zeka Outreach — Doğru Kişi, Doğru Zaman, Doğru Mesaj",
+    "loesung_features": [
+      "Sinyal Tespit Motoru: Clay ve n8n ile hedef şirketlerin yatırım alma, yeni pozisyon açma, teknoloji değişimi gibi alım sinyallerini otomatik takip",
+      "Yapay Zeka Kişiselleştirme: Her prospektin LinkedIn profili, şirket açıklaması ve sinyaline göre tamamen kişiselleştirilmiş Türkçe e-posta taslağı oluşturma",
+      "Çok Adımlı Takip Sekansı: İlk e-posta → 3 gün sonra farklı açıyla follow-up → 7 gün sonra değer önerili son mesaj — tüm akış otomatik"
+    ],
+    "faqs": [
+      {
+        "question": "Bu spam değil mi? Yasal sorun çıkar mı?",
+        "answer": "Sinyal tabanlı outreach toplu spam değildir. Her mesaj bireysel araştırmaya dayanır ve kişiselleştirilmiştir. Türkiye'de B2B soğuk e-posta, KVKK kapsamında meşru menfaat gerekçesiyle uygulanabilir. Her e-postada abonelikten çıkma linki bulunur."
+      },
+      {
+        "question": "Günde kaç e-posta gönderebiliyoruz?",
+        "answer": "Domain itibarını korumak için günde 30-50 kişiselleştirilmiş e-posta gönderiyoruz. Hacim değil kalite odaklıyız — 1000 spam yerine 40 hedefli e-posta ile daha fazla toplantı elde ediyorsunuz."
+      }
+    ]
+  },
+  {
+    "id": "finans",
+    "branche": "Finans Sektörü",
+    "slug_branche": "finans",
+    "slug_problem": "uyum-ve-risk-raporlama-otomasyonu",
+    "seo_title": "Finans Sektörü İçin Yapay Zeka Otomasyonu | Pratik Yapay Zeka",
+    "seo_description": "Finans kuruluşları için BDDK/SPK uyumlu risk raporlama ve anomali tespit otomasyonu. Regülasyon yükünü hafifletin.",
+    "keywords": [
+      "finans sektörü yapay zeka otomasyonu",
+      "finansal risk raporlama otomasyonu",
+      "BDDK uyum otomasyonu",
+      "finans dijital dönüşüm danışmanlığı"
+    ],
+    "schmerzpunkte": [
+      "BDDK ve SPK'ya sunulması gereken aylık uyum raporlarının hazırlanmasının 3-5 iş günü sürmesi ve insan hatasına açık olması",
+      "İşlem bazlı anomali tespitinin manuel yapılmasının pratik olarak imkansız olması — şüpheli işlemlerin ancak haftalık kontrolde fark edilmesi",
+      "Regülasyon değişikliklerinin takip edilmemesi ve uyumsuzluk durumunda ağır idari para cezalarıyla karşılaşılma riski"
+    ],
+    "hard_metrics": {
+      "lead_cost": "Otomatik anomali tespit sistemiyle şüpheli işlem yakalama süresinin haftalıktan anlık (real-time) takibe düşmesi",
+      "time_saved": "Aylık BDDK/SPK uyum raporu hazırlama süresinin 3-5 iş gününden 4 saate inmesi — %85+ zaman tasarrufu",
+      "conversion_rate": "Veri doğruluğunun %99.6'ya çıkması ile regülasyon denetimlerinde sıfır bulgu hedefi ve operasyonel ROI'de %400+ artış"
+    },
+    "loesung_titel": "Finans Kuruluşları İçin Regülasyon Uyumu ve Risk İzleme Sistemi",
+    "loesung_features": [
+      "Otomatik Uyum Rapor Motoru: BDDK ve SPK formatlarına uygun aylık raporları işlem verilerinden otomatik oluşturma — denetçiye hazır PDF çıktı",
+      "Gerçek Zamanlı Anomali Tespiti: Her işlemi davranış kalıplarıyla karşılaştırıp olağandışı aktiviteleri anında işaretleyen yapay zeka modeli",
+      "Regülasyon Değişiklik Takibi: Resmi Gazete ve düzenleyici kurumların güncellemelerini tarayıp ilgili departmana otomatik bildirim ve etki analizi"
+    ],
+    "faqs": [
+      {
+        "question": "Bankalar ve aracı kurumlar için mi yoksa fintech şirketleri için mi?",
+        "answer": "Her ikisi için de uygun. Bankalar ve aracı kurumlarda BDDK/SPK uyum raporlamasına, fintech şirketlerinde ise hızlı büyüme döneminde regülasyon altyapısını kurmaya odaklanıyoruz."
+      },
+      {
+        "question": "Mevcut core banking sistemimizle entegre çalışır mı?",
+        "answer": "API veya güvenli veri aktarım protokolleri üzerinden core banking sisteminizden işlem verilerini okuyarak çalışıyoruz. Mevcut sisteminize müdahale etmeden üst katman olarak entegre ediyoruz."
+      }
+    ]
+  },
+  {
+    "id": "mimarlik",
+    "branche": "Mimarlık ve Tasarım",
+    "slug_branche": "mimarlik",
+    "slug_problem": "teklif-ve-musteri-sunum-otomasyonu",
+    "seo_title": "Mimarlar İçin Yapay Zeka ile Teklif Otomasyonu | Pratik Yapay Zeka",
+    "seo_description": "Mimarlık ofisleri için proje teklif hazırlama ve müşteri sunum otomasyonu. Tasarıma odaklanın, idari işleri otomatikleştirin.",
+    "keywords": [
+      "mimarlık yapay zeka",
+      "mimarlık ofisi teklif otomasyonu",
+      "mimar müşteri kazanımı",
+      "mimarlık dijital dönüşüm"
+    ],
+    "schmerzpunkte": [
+      "Proje teklifi hazırlamanın mimar başına ortalama 8-12 saat sürmesi — bu sürenin %60'ının referans proje seçimi ve formatlamaya gitmesi",
+      "Tekliflerin standart bir şablondan yoksun olması ve her seferinde sıfırdan oluşturulması — tutarsız marka imajı ve profesyonellik kaybı",
+      "Potansiyel müşterilerle ilk temastan teklif sunumuna kadar geçen 2-3 haftalık sürede müşterinin rakip ofise gitmesi"
+    ],
+    "hard_metrics": {
+      "lead_cost": "Otomatik teklif hazırlama ile teklif başına sürenin 8 saatten 2 saate düşmesi — aylık 3-4 ek teklif kapasitesi ve daha fazla proje kazanımı",
+      "time_saved": "İlk temastan teklif sunumuna kadar geçen sürenin 2 haftadan 3 güne inmesi — müşteri kaybı riskinde %60 azalma",
+      "conversion_rate": "Profesyonel ve tutarlı teklif formatı ile teklif kabul oranında %25 artış ve müşteri güven algısında iyileşme"
+    },
+    "loesung_titel": "Mimarlık Ofisleri İçin Akıllı Teklif Hazırlama ve Müşteri Yönetim Sistemi",
+    "loesung_features": [
+      "Otomatik Teklif Oluşturucu: Müşteri brief'i girildikten sonra referans projeler, metraj bazlı fiyatlama ve zaman planını içeren profesyonel PDF teklif otomatik oluşturma",
+      "Referans Proje Eşleştirme: Portföyünüzdeki tamamlanmış projeleri müşterinin talebine göre otomatik eşleştirip teklife en uygun referansları seçme",
+      "Müşteri Takip Pipeline'ı: Teklif gönderiminden onaya kadar otomatik hatırlatma sekansı ve müşteri ile iletişim geçmişinin tek panelde takibi"
+    ],
+    "faqs": [
+      {
+        "question": "Mimari çizim veya 3D render otomasyonu da yapıyor musunuz?",
+        "answer": "Hayır. Bu sistem tasarım sürecine değil, iş geliştirme ve müşteri yönetimi süreçlerine odaklanır — teklif hazırlama, müşteri takibi ve sunum otomasyonu. Tasarım araçlarınıza (AutoCAD, Revit, SketchUp) dokunmuyoruz."
+      },
+      {
+        "question": "Küçük mimarlık ofisleri (2-5 kişi) için de faydalı mı?",
+        "answer": "Özellikle küçük ofisler için en yüksek fayda. 2-5 kişilik ofislerde herkes hem tasarım hem iş geliştirme yapıyor — teklif ve takip otomasyonu mimarların zamanının %40'ını tasarıma geri kazandırıyor."
+      }
+    ]
   }
 ]
