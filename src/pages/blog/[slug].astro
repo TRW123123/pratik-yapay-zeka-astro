@@ -197,7 +197,7 @@ const breadcrumbs = [
         <span class="text-[var(--color-text-muted)]">{post.read_time || 5} dakika okuma</span>
       </div>
 
-      <h1 class="mb-6 text-4xl font-extrabold md:text-5xl lg:text-6xl text-white leading-[1.04] tracking-tight">{post.title}</h1>
+      <h1 class="mb-6 text-4xl font-extrabold md:text-6xl lg:text-7xl xl:text-8xl text-white leading-[0.98] tracking-[-0.02em]">{post.title}</h1>
 
       {post.excerpt && (
         <p class="mb-10 text-xl text-[var(--color-text-muted)] md:text-2xl leading-[1.4]">{post.excerpt}</p>
@@ -282,7 +282,7 @@ const breadcrumbs = [
         .blog-hero-image,
         .blog-content img {
           display: block;
-          width: min(1400px, calc(100vw - 4rem));
+          width: min(1600px, calc(100vw - 4rem));
           max-width: none;
           position: relative;
           left: 50%;
@@ -307,13 +307,13 @@ const breadcrumbs = [
         .blog-content h2 {
           counter-increment: section;
           position: relative;
-          margin-top: 4rem !important;
+          margin-top: 4.5rem !important;
           margin-bottom: 1.5rem !important;
           padding-top: 2rem;
           padding-left: 0;
-          font-size: 2.25rem !important;
-          line-height: 1.15 !important;
-          letter-spacing: -0.02em;
+          font-size: 2.75rem !important;
+          line-height: 1.08 !important;
+          letter-spacing: -0.025em;
           border-top: 1px solid var(--color-border);
         }
         .blog-content h2::before {
@@ -335,13 +335,13 @@ const breadcrumbs = [
           color: white !important;
         }
 
-        /* First paragraph after H2 = lead — larger, brighter, italic-feel */
+        /* First paragraph after H2 = lead — larger, brighter */
         .blog-content h2 + p {
-          font-size: 1.25rem !important;
-          line-height: 1.5 !important;
-          color: rgba(229, 231, 235, 0.92) !important;
-          margin-top: 1rem !important;
-          margin-bottom: 1.75rem !important;
+          font-size: 1.5rem !important;
+          line-height: 1.45 !important;
+          color: rgba(229, 231, 235, 0.95) !important;
+          margin-top: 1.25rem !important;
+          margin-bottom: 2rem !important;
         }
         .blog-content h2 + p::first-letter {
           font-size: 1.45em;
@@ -462,11 +462,11 @@ const breadcrumbs = [
         }
         @media (max-width: 768px) {
           .blog-content h2 {
-            font-size: 1.75rem !important;
+            font-size: 2rem !important;
             margin-top: 3rem !important;
           }
           .blog-content h2 + p {
-            font-size: 1.1rem !important;
+            font-size: 1.2rem !important;
           }
           .blog-content blockquote {
             font-size: 1.05rem;
