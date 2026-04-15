@@ -173,11 +173,11 @@ const breadcrumbs = [
         <img
           src={post.cover_image_url}
           alt={post.cover_image_alt || post.title}
-          class="mb-8 h-auto w-full rounded-2xl"
+          class="blog-hero-image mb-12 h-auto rounded-2xl"
         />
       )}
 
-      <h1 class="mb-4 text-3xl font-bold md:text-4xl text-white">{post.title}</h1>
+      <h1 class="mb-4 text-4xl font-bold md:text-5xl lg:text-6xl text-white leading-[1.05] tracking-tight">{post.title}</h1>
 
       <div class="mb-6 flex items-center gap-4 text-[var(--color-text-muted)]">
         <span>{post.author}</span>
@@ -203,8 +203,10 @@ const breadcrumbs = [
       />
 
       <style is:global>
-        /* Full-bleed images inside blog article — viewport-relative breakout
-           from the 3xl text container. */
+        /* Full-bleed hero cover + inline article images — viewport-relative
+           breakout from the 3xl text container. Hero also hides H1 duplicate
+           via first-child rule in markdown. */
+        .blog-hero-image,
         .blog-content img {
           display: block;
           width: min(1400px, calc(100vw - 4rem));
@@ -217,7 +219,17 @@ const breadcrumbs = [
           border: 1px solid var(--color-border);
           border-radius: 16px;
         }
+        .blog-hero-image {
+          margin-top: 0;
+          margin-bottom: 3.5rem;
+        }
+        /* Hide the first H1 inside the markdown body if present, since the
+           template already renders post.title as H1. */
+        .blog-content > h1:first-child {
+          display: none;
+        }
         @media (max-width: 1100px) {
+          .blog-hero-image,
           .blog-content img {
             width: 100%;
             left: 0;
