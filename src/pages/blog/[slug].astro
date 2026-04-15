@@ -34,7 +34,25 @@ if (error || !data) {
 
 const post = data as BlogPost;
 const rawHtmlContent = await marked(post.content);
-const htmlContent = sanitizeHtml(rawHtmlContent);
+let htmlContent = sanitizeHtml(rawHtmlContent);
+
+// Add slug IDs to all H2 headings for ToC anchors
+function turkishSlug(s: string): string {
+  return s
+    .toLowerCase()
+    .replace(/ğ/g, 'g').replace(/ü/g, 'u').replace(/ş/g, 's')
+    .replace(/ı/g, 'i').replace(/İ/g, 'i').replace(/ö/g, 'o').replace(/ç/g, 'c')
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/^-+|-+$/g, '')
+    .substring(0, 60);
+}
+
+const tocItems: { id: string; text: string }[] = [];
+htmlContent = htmlContent.replace(/<h2>([^<]+)<\/h2>/g, (_, text: string) => {
+  const id = turkishSlug(text);
+  tocItems.push({ id, text });
+  return `<h2 id="${id}">${text}</h2>`;
+});
 const formattedDate = new Date(post.published_at || post.created_at || '').toLocaleDateString('tr-TR', {
   year: 'numeric',
   month: 'long',
@@ -163,38 +181,81 @@ const breadcrumbs = [
   ogType="article"
   breadcrumbs={breadcrumbs}
 >
-  <article class="bg-[#0B0F14] py-24">
+  {/* Reading Progress Bar — sticky top */}
+  <div id="reading-progress" class="fixed left-0 top-0 z-50 h-[3px] w-0 bg-[var(--color-primary)] shadow-[0_0_16px_rgba(163,230,53,0.6)] transition-[width] duration-150 ease-out"></div>
+
+  <article class="bg-[#0B0F14] py-16 lg:py-24">
     <div class="container mx-auto max-w-3xl px-4">
-      <a href="/blog/" class="mb-8 inline-block text-sm text-[var(--color-text-muted)] transition-colors hover:text-[var(--color-primary-light)]">
-        Tum blog yazilari
+      <a href="/blog/" class="mb-8 inline-flex items-center gap-2 text-sm font-medium text-[var(--color-text-muted)] transition-colors hover:text-[var(--color-primary-light)]">
+        <span aria-hidden="true">←</span> Tüm blog yazıları
       </a>
+
+      {/* Category + read-time eyebrow */}
+      <div class="mb-6 flex items-center gap-3 font-mono text-xs font-bold uppercase tracking-[0.18em] text-[var(--color-primary)]">
+        <span>{post.category || 'Rehber'}</span>
+        <span class="text-[var(--color-border)]">·</span>
+        <span class="text-[var(--color-text-muted)]">{post.read_time || 5} dakika okuma</span>
+      </div>
+
+      <h1 class="mb-6 text-4xl font-extrabold md:text-5xl lg:text-6xl text-white leading-[1.04] tracking-tight">{post.title}</h1>
+
+      {post.excerpt && (
+        <p class="mb-10 text-xl text-[var(--color-text-muted)] md:text-2xl leading-[1.4]">{post.excerpt}</p>
+      )}
+
+      {/* Author card row */}
+      <div class="mb-12 flex items-center gap-4 border-b border-[var(--color-border)]/60 pb-6">
+        <div class="flex h-12 w-12 items-center justify-center rounded-full border border-[var(--color-primary)]/40 bg-[var(--color-primary)]/10 text-lg font-extrabold text-[var(--color-primary)]">
+          {(post.author || 'P').charAt(0)}
+        </div>
+        <div class="flex-1">
+          <div class="text-base font-semibold text-white">{post.author}</div>
+          <div class="mt-0.5 text-sm text-[var(--color-text-muted)]">
+            {formattedDate} {post.author_bio ? `· ${post.author_bio.split('.')[0]}` : ''}
+          </div>
+        </div>
+        {(post.tags || []).length > 0 && (
+          <div class="hidden flex-wrap justify-end gap-1.5 md:flex">
+            {(post.tags || []).slice(0, 4).map((tag) => (
+              <span class="rounded-full border border-[var(--color-primary)]/25 px-2.5 py-0.5 text-xs font-medium text-[var(--color-primary-light)]">
+                #{tag}
+              </span>
+            ))}
+          </div>
+        )}
+      </div>
 
       {post.cover_image_url && (
         <img
           src={post.cover_image_url}
           alt={post.cover_image_alt || post.title}
-          class="blog-hero-image mb-12 h-auto rounded-2xl"
+          class="blog-hero-image mb-16 h-auto rounded-2xl"
         />
       )}
 
-      <h1 class="mb-4 text-4xl font-bold md:text-5xl lg:text-6xl text-white leading-[1.05] tracking-tight">{post.title}</h1>
-
-      <div class="mb-6 flex items-center gap-4 text-[var(--color-text-muted)]">
-        <span>{post.author}</span>
-        <span>•</span>
-        <span>{formattedDate}</span>
-        <span>•</span>
-        <span>{post.read_time || 5} dk</span>
-      </div>
-
-      {(post.tags || []).length > 0 && (
-        <div class="mb-8 flex flex-wrap gap-2">
-          {(post.tags || []).map((tag) => (
-            <span class="rounded-full border border-[var(--color-primary)]/30 px-3 py-1 text-sm text-[var(--color-primary-light)]">
-              #{tag}
-            </span>
-          ))}
-        </div>
+      {/* Sticky ToC sidebar (desktop only) */}
+      {tocItems.length > 2 && (
+        <nav aria-label="İçindekiler" class="blog-toc pointer-events-none fixed top-24 left-6 z-20 hidden w-64 xl:block">
+          <div class="pointer-events-auto rounded-xl border border-[var(--color-border)] bg-[var(--color-surface-light)]/80 p-5 backdrop-blur-md">
+            <div class="mb-3 font-mono text-[10px] font-bold uppercase tracking-[0.2em] text-[var(--color-primary)]">İçindekiler</div>
+            <ul class="space-y-2.5">
+              {tocItems.map((item, idx) => (
+                <li>
+                  <a
+                    href={`#${item.id}`}
+                    data-toc-target={item.id}
+                    class="toc-link group flex gap-2.5 text-sm text-[var(--color-text-muted)] transition-colors hover:text-white"
+                  >
+                    <span class="font-mono text-[11px] text-[var(--color-primary)]/60 group-hover:text-[var(--color-primary)]">
+                      {String(idx + 1).padStart(2, '0')}
+                    </span>
+                    <span class="leading-[1.35]">{item.text}</span>
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </nav>
       )}
 
       <div
@@ -203,9 +264,9 @@ const breadcrumbs = [
       />
 
       <style is:global>
-        /* Full-bleed hero cover + inline article images — viewport-relative
-           breakout from the 3xl text container. Hero also hides H1 duplicate
-           via first-child rule in markdown. */
+        /* ================ Blog Reading Experience ================ */
+
+        /* Full-bleed hero + inline images — viewport breakout */
         .blog-hero-image,
         .blog-content img {
           display: block;
@@ -214,20 +275,117 @@ const breadcrumbs = [
           position: relative;
           left: 50%;
           transform: translateX(-50%);
-          margin-top: 2.5rem;
-          margin-bottom: 2.5rem;
+          margin-top: 3rem;
+          margin-bottom: 3rem;
           border: 1px solid var(--color-border);
           border-radius: 16px;
         }
         .blog-hero-image {
           margin-top: 0;
-          margin-bottom: 3.5rem;
+          margin-bottom: 4rem;
         }
-        /* Hide the first H1 inside the markdown body if present, since the
-           template already renders post.title as H1. */
-        .blog-content > h1:first-child {
-          display: none;
+
+        /* Hide duplicate first-h1 in markdown body */
+        .blog-content > h1:first-child { display: none; }
+
+        /* H2 section headers — numbered, lime underline accent */
+        .blog-content {
+          counter-reset: section;
         }
+        .blog-content h2 {
+          counter-increment: section;
+          position: relative;
+          margin-top: 4rem !important;
+          margin-bottom: 1.5rem !important;
+          padding-top: 2rem;
+          padding-left: 0;
+          font-size: 2.25rem !important;
+          line-height: 1.15 !important;
+          letter-spacing: -0.02em;
+          border-top: 1px solid var(--color-border);
+        }
+        .blog-content h2::before {
+          content: counter(section, decimal-leading-zero);
+          display: block;
+          margin-bottom: 0.5rem;
+          font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+          font-size: 0.75rem;
+          font-weight: 700;
+          letter-spacing: 0.2em;
+          color: var(--color-primary);
+          text-transform: uppercase;
+        }
+
+        /* H3 sub-headings */
+        .blog-content h3 {
+          margin-top: 2.5rem !important;
+          font-size: 1.5rem !important;
+          color: white !important;
+        }
+
+        /* Blockquote → callout */
+        .blog-content blockquote {
+          position: relative;
+          margin: 2.5rem 0 !important;
+          padding: 1.5rem 1.5rem 1.5rem 2rem !important;
+          border-left: 4px solid var(--color-primary) !important;
+          border-radius: 0 12px 12px 0;
+          background: linear-gradient(90deg, rgba(163, 230, 53, 0.08) 0%, rgba(163, 230, 53, 0) 60%);
+          font-style: normal !important;
+          font-size: 1.15rem;
+          line-height: 1.55;
+          color: white !important;
+        }
+        .blog-content blockquote p {
+          color: white !important;
+        }
+
+        /* Horizontal rule as visual break */
+        .blog-content hr {
+          margin: 3.5rem auto !important;
+          width: 40%;
+          border: none;
+          border-top: 1px solid var(--color-border);
+          opacity: 0.5;
+        }
+
+        /* Lists spacing */
+        .blog-content ul li,
+        .blog-content ol li {
+          margin: 0.5rem 0 !important;
+          line-height: 1.65;
+        }
+
+        /* Strong emphasis */
+        .blog-content strong {
+          color: white !important;
+          font-weight: 700;
+        }
+
+        /* Link styling in content */
+        .blog-content a {
+          color: var(--color-primary-light) !important;
+          text-decoration: none !important;
+          border-bottom: 1px solid var(--color-primary)/30;
+          transition: all 0.15s;
+        }
+        .blog-content a:hover {
+          color: var(--color-primary) !important;
+          border-bottom-color: var(--color-primary);
+        }
+
+        /* Smooth scroll for ToC anchors */
+        html { scroll-behavior: smooth; scroll-padding-top: 6rem; }
+
+        /* Active ToC link */
+        .toc-link.is-active {
+          color: white !important;
+        }
+        .toc-link.is-active span:first-child {
+          color: var(--color-primary) !important;
+        }
+
+        /* Mobile adjustments */
         @media (max-width: 1100px) {
           .blog-hero-image,
           .blog-content img {
@@ -236,7 +394,71 @@ const breadcrumbs = [
             transform: none;
           }
         }
+        @media (max-width: 768px) {
+          .blog-content h2 {
+            font-size: 1.75rem !important;
+            margin-top: 3rem !important;
+          }
+          .blog-content blockquote {
+            font-size: 1.05rem;
+            padding: 1.25rem 1.25rem 1.25rem 1.5rem !important;
+          }
+        }
       </style>
+
+      {/* Final CTA Block after content */}
+      <div class="mt-20 overflow-hidden rounded-3xl border border-[var(--color-primary)]/30 bg-gradient-to-br from-[var(--color-primary)]/10 via-[var(--color-surface-light)] to-[var(--color-surface-light)] p-8 md:p-12">
+        <div class="mb-4 font-mono text-[11px] font-bold uppercase tracking-[0.2em] text-[var(--color-primary)]">
+          Sıradaki adım
+        </div>
+        <h3 class="mb-4 text-2xl font-extrabold text-white md:text-3xl leading-[1.15]">
+          Bu yazının içeriğini kendi şirketinize uyarlayalım.
+        </h3>
+        <p class="mb-8 max-w-2xl text-[var(--color-text-muted)] md:text-lg leading-[1.55]">
+          45 dakikalık ücretsiz görüşmede şirketinizdeki süreçleri birlikte haritalayıp, hangi otomasyonun size en hızlı geri dönüş sağlayacağını net söyleriz. Baskı yok — sadece sayısal bir analiz.
+        </p>
+        <div class="flex flex-wrap items-center gap-4">
+          <a href="/iletisim/" class="inline-flex items-center gap-2 rounded-full bg-[var(--color-primary)] px-6 py-3 text-base font-bold text-[#0B0F14] shadow-[0_0_32px_rgba(163,230,53,0.4)] transition hover:-translate-y-0.5">
+            Ücretsiz analizi talep et <span aria-hidden="true">→</span>
+          </a>
+          <div class="text-sm text-[var(--color-text-muted)]">
+            <span class="text-[var(--color-primary)] font-bold">%50 Geri İade Garantisi</span> · Hedef tutmazsa yarısı iade
+          </div>
+        </div>
+      </div>
+
+      {/* Reading progress + ToC scroll spy */}
+      <script is:inline>
+        (function () {
+          const progressEl = document.getElementById('reading-progress');
+          const article = document.querySelector('article');
+          const tocLinks = document.querySelectorAll('.toc-link');
+          const headings = document.querySelectorAll('.blog-content h2[id]');
+
+          function onScroll() {
+            if (article && progressEl) {
+              const rect = article.getBoundingClientRect();
+              const total = article.offsetHeight - window.innerHeight;
+              const scrolled = Math.min(Math.max(-rect.top, 0), total);
+              const pct = total > 0 ? (scrolled / total) * 100 : 0;
+              progressEl.style.width = pct + '%';
+            }
+            if (tocLinks.length && headings.length) {
+              let active = null;
+              headings.forEach((h) => {
+                const r = h.getBoundingClientRect();
+                if (r.top < 160) active = h.id;
+              });
+              tocLinks.forEach((l) => {
+                if (l.dataset.tocTarget === active) l.classList.add('is-active');
+                else l.classList.remove('is-active');
+              });
+            }
+          }
+          document.addEventListener('scroll', onScroll, { passive: true });
+          onScroll();
+        })();
+      </script>
 
       {post.author_bio && (
         <div class="mt-12 rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface-light)] p-6">
