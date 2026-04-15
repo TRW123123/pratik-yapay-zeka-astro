@@ -198,9 +198,31 @@ const breadcrumbs = [
       )}
 
       <div
-        class="prose prose-invert prose-lg max-w-none prose-headings:text-white prose-headings:font-semibold prose-p:text-[var(--color-text-muted)] prose-a:text-[var(--color-primary-light)] prose-a:no-underline hover:prose-a:underline prose-strong:text-white prose-code:rounded prose-code:bg-[var(--color-surface-light)] prose-code:px-1.5 prose-code:py-0.5 prose-code:text-[var(--color-primary-light)] prose-pre:rounded-xl prose-pre:border prose-pre:border-[var(--color-border)] prose-pre:bg-[var(--color-surface-light)] prose-blockquote:border-[var(--color-primary)] prose-blockquote:text-[var(--color-text-muted)] prose-li:text-[var(--color-text-muted)] prose-img:rounded-xl"
+        class="blog-content prose prose-invert prose-lg max-w-none prose-headings:text-white prose-headings:font-semibold prose-p:text-[var(--color-text-muted)] prose-a:text-[var(--color-primary-light)] prose-a:no-underline hover:prose-a:underline prose-strong:text-white prose-code:rounded prose-code:bg-[var(--color-surface-light)] prose-code:px-1.5 prose-code:py-0.5 prose-code:text-[var(--color-primary-light)] prose-pre:rounded-xl prose-pre:border prose-pre:border-[var(--color-border)] prose-pre:bg-[var(--color-surface-light)] prose-blockquote:border-[var(--color-primary)] prose-blockquote:text-[var(--color-text-muted)] prose-li:text-[var(--color-text-muted)] prose-img:rounded-xl"
         set:html={htmlContent}
       />
+
+      <style is:global>
+        /* Full-bleed images inside blog article — Markdown-generated <img> tags
+           extend beyond the 3xl prose container width when viewport allows. */
+        .blog-content img {
+          display: block;
+          width: calc(100% + 18rem);
+          max-width: 1400px;
+          margin-left: 50%;
+          transform: translateX(-50%);
+          margin-top: 2.5rem;
+          margin-bottom: 2.5rem;
+          border: 1px solid var(--color-border);
+        }
+        @media (max-width: 1100px) {
+          .blog-content img {
+            width: 100%;
+            margin-left: 0;
+            transform: none;
+          }
+        }
+      </style>
 
       {post.author_bio && (
         <div class="mt-12 rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface-light)] p-6">
