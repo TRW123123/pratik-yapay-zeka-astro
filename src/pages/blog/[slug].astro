@@ -185,7 +185,7 @@ const breadcrumbs = [
   <div id="reading-progress" class="fixed left-0 top-0 z-50 h-[3px] w-0 bg-[var(--color-primary)] shadow-[0_0_16px_rgba(163,230,53,0.6)] transition-[width] duration-150 ease-out"></div>
 
   <article class="bg-[#0B0F14] py-16 lg:py-24">
-    <div class="container mx-auto max-w-3xl px-4">
+    <div class="container mx-auto max-w-4xl px-4">
       <a href="/blog/" class="mb-8 inline-flex items-center gap-2 text-sm font-medium text-[var(--color-text-muted)] transition-colors hover:text-[var(--color-primary-light)]">
         <span aria-hidden="true">←</span> Tüm blog yazıları
       </a>
@@ -279,14 +279,12 @@ const breadcrumbs = [
         /* ================ Blog Reading Experience ================ */
 
         /* Full-bleed hero + inline images — viewport breakout */
+        /* Bilder = Container-Breite (Symmetrie mit Text) */
         .blog-hero-image,
         .blog-content img {
           display: block;
-          width: min(1600px, calc(100vw - 4rem));
-          max-width: none;
-          position: relative;
-          left: 50%;
-          transform: translateX(-50%);
+          width: 100%;
+          height: auto;
           margin-top: 3rem;
           margin-bottom: 3rem;
           border: 1px solid var(--color-border);
@@ -452,14 +450,6 @@ const breadcrumbs = [
         }
 
         /* Mobile adjustments */
-        @media (max-width: 1100px) {
-          .blog-hero-image,
-          .blog-content img {
-            width: 100%;
-            left: 0;
-            transform: none;
-          }
-        }
         @media (max-width: 768px) {
           .blog-content h2 {
             font-size: 2rem !important;
