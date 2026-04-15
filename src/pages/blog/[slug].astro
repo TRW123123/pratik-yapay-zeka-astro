@@ -203,21 +203,33 @@ const breadcrumbs = [
         <p class="mb-10 text-xl text-[var(--color-text-muted)] md:text-2xl leading-[1.4]">{post.excerpt}</p>
       )}
 
-      {/* Author card row */}
-      <div class="mb-12 flex items-center gap-4 border-b border-[var(--color-border)]/60 pb-6">
-        <div class="flex h-12 w-12 items-center justify-center rounded-full border border-[var(--color-primary)]/40 bg-[var(--color-primary)]/10 text-lg font-extrabold text-[var(--color-primary)]">
-          {(post.author || 'P').charAt(0)}
-        </div>
-        <div class="flex-1">
-          <div class="text-base font-semibold text-white">{post.author}</div>
-          <div class="mt-0.5 text-sm text-[var(--color-text-muted)]">
-            {formattedDate} {post.author_bio ? `· ${post.author_bio.split('.')[0]}` : ''}
+      {/* Author card row — premium SVG avatar with gradient + ring */}
+      <div class="author-row mb-12 flex flex-col gap-4 border-b border-[var(--color-border)]/60 pb-6 md:flex-row md:items-center">
+        <div class="flex items-center gap-4">
+          <div class="relative flex h-14 w-14 shrink-0 items-center justify-center">
+            <svg class="absolute inset-0 h-full w-full" viewBox="0 0 56 56">
+              <defs>
+                <linearGradient id="avGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stop-color="#a3e635" />
+                  <stop offset="100%" stop-color="#65a30d" />
+                </linearGradient>
+              </defs>
+              <circle cx="28" cy="28" r="27" fill="url(#avGrad)" />
+              <circle cx="28" cy="28" r="27" fill="none" stroke="#d9f99d" stroke-width="0.5" opacity="0.4" />
+            </svg>
+            <span class="relative text-xl font-black text-[#0B0F14] tracking-tight">{(post.author || 'P').charAt(0)}</span>
+          </div>
+          <div class="flex-1 min-w-0">
+            <div class="text-base font-semibold text-white">{post.author}</div>
+            <div class="mt-0.5 text-sm text-[var(--color-text-muted)] line-clamp-2">
+              {formattedDate} {post.author_bio ? `· ${post.author_bio.split('.')[0]}` : ''}
+            </div>
           </div>
         </div>
         {(post.tags || []).length > 0 && (
-          <div class="hidden flex-wrap justify-end gap-1.5 md:flex">
+          <div class="flex flex-wrap gap-1.5 md:ml-auto md:justify-end">
             {(post.tags || []).slice(0, 4).map((tag) => (
-              <span class="rounded-full border border-[var(--color-primary)]/25 px-2.5 py-0.5 text-xs font-medium text-[var(--color-primary-light)]">
+              <span class="tag-pill rounded-full border border-[var(--color-primary)]/25 px-2.5 py-0.5 text-xs font-medium text-[var(--color-primary-light)] transition-all">
                 #{tag}
               </span>
             ))}
@@ -323,6 +335,20 @@ const breadcrumbs = [
           color: white !important;
         }
 
+        /* First paragraph after H2 = lead — larger, brighter, italic-feel */
+        .blog-content h2 + p {
+          font-size: 1.25rem !important;
+          line-height: 1.5 !important;
+          color: rgba(229, 231, 235, 0.92) !important;
+          margin-top: 1rem !important;
+          margin-bottom: 1.75rem !important;
+        }
+        .blog-content h2 + p::first-letter {
+          font-size: 1.45em;
+          font-weight: 700;
+          color: var(--color-primary);
+        }
+
         /* Blockquote → callout */
         .blog-content blockquote {
           position: relative;
@@ -377,12 +403,52 @@ const breadcrumbs = [
         /* Smooth scroll for ToC anchors */
         html { scroll-behavior: smooth; scroll-padding-top: 6rem; }
 
-        /* Active ToC link */
+        /* ToC link hover micro-interaction */
+        .toc-link {
+          padding: 4px 0;
+          transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), color 0.15s;
+        }
+        .toc-link:hover {
+          transform: translateX(4px);
+        }
         .toc-link.is-active {
           color: white !important;
+          transform: translateX(2px);
         }
         .toc-link.is-active span:first-child {
           color: var(--color-primary) !important;
+          font-weight: 700;
+        }
+        .toc-link.is-active::before {
+          content: '';
+          position: absolute;
+          left: -16px;
+          top: 50%;
+          width: 8px;
+          height: 8px;
+          border-radius: 50%;
+          background: var(--color-primary);
+          box-shadow: 0 0 16px rgba(163, 230, 53, 0.7);
+          transform: translateY(-50%);
+        }
+        .toc-link {
+          position: relative;
+        }
+
+        /* Tag pill hover */
+        .tag-pill:hover {
+          background: rgba(163, 230, 53, 0.12);
+          border-color: var(--color-primary) !important;
+          color: var(--color-primary) !important;
+        }
+
+        /* CTA button glow + scale */
+        .cta-btn {
+          transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.2s;
+        }
+        .cta-btn:hover {
+          transform: translateY(-2px) scale(1.02);
+          box-shadow: 0 0 48px rgba(163, 230, 53, 0.55);
         }
 
         /* Mobile adjustments */
@@ -399,9 +465,17 @@ const breadcrumbs = [
             font-size: 1.75rem !important;
             margin-top: 3rem !important;
           }
+          .blog-content h2 + p {
+            font-size: 1.1rem !important;
+          }
           .blog-content blockquote {
             font-size: 1.05rem;
             padding: 1.25rem 1.25rem 1.25rem 1.5rem !important;
+          }
+          .blog-hero-image,
+          .blog-content img {
+            margin-top: 2rem;
+            margin-bottom: 2rem;
           }
         }
       </style>
@@ -418,7 +492,7 @@ const breadcrumbs = [
           45 dakikalık ücretsiz görüşmede şirketinizdeki süreçleri birlikte haritalayıp, hangi otomasyonun size en hızlı geri dönüş sağlayacağını net söyleriz. Baskı yok — sadece sayısal bir analiz.
         </p>
         <div class="flex flex-wrap items-center gap-4">
-          <a href="/iletisim/" class="inline-flex items-center gap-2 rounded-full bg-[var(--color-primary)] px-6 py-3 text-base font-bold text-[#0B0F14] shadow-[0_0_32px_rgba(163,230,53,0.4)] transition hover:-translate-y-0.5">
+          <a href="/iletisim/" class="cta-btn inline-flex items-center gap-2 rounded-full bg-[var(--color-primary)] px-7 py-3.5 text-base font-bold text-[#0B0F14] shadow-[0_0_32px_rgba(163,230,53,0.4)]">
             Ücretsiz analizi talep et <span aria-hidden="true">→</span>
           </a>
           <div class="text-sm text-[var(--color-text-muted)]">
