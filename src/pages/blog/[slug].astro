@@ -181,449 +181,499 @@ const breadcrumbs = [
   ogType="article"
   breadcrumbs={breadcrumbs}
 >
-  {/* Reading Progress — ultra-subtle 2px, no glow */}
-  <div id="reading-progress" class="fixed left-0 top-0 z-50 h-[2px] w-0 bg-[var(--color-primary)] transition-[width] duration-100 ease-out" style="opacity:0.85"></div>
+  {/* Reading Progress — 2px lime line */}
+  <div id="reading-progress" class="fixed left-0 top-0 z-50 h-[2px] w-0 bg-[var(--color-primary)] transition-[width] duration-75 ease-out" style="opacity:0.9"></div>
 
-  <article class="bg-gradient-to-b from-[#08090a] via-[#0a0c10] to-[#08090a] py-16 lg:py-24">
-    <div class="container mx-auto max-w-4xl px-6 lg:px-4">
+  <article class="bg-gradient-to-b from-[#08090a] via-[#0a0c10] to-[#08090a] pt-12 pb-24 lg:pt-16 lg:pb-32">
+    {/* ─── OUTER CONTAINER ─── */}
+    <div class="mx-auto max-w-[1400px] px-6 lg:px-10 xl:px-14">
+
+      {/* Back link */}
       <a href="/blog/" class="mb-10 inline-flex items-center gap-2 text-sm font-medium text-[#62666d] transition-colors hover:text-[var(--color-primary)]">
         <span aria-hidden="true">←</span> Tüm blog yazıları
       </a>
 
-      {/* === HERO SECTION — Split Grid Layout === */}
-      <div class={`mb-16 ${post.cover_image_url ? 'grid grid-cols-1 gap-10 lg:grid-cols-[1.1fr_1fr] lg:items-center' : ''}`}>
-        {/* Left: Text block */}
+      {/* ══════════════════════════════════════════
+          HERO — Split grid: text left, image right
+          ══════════════════════════════════════════ */}
+      <div class={`mb-14 ${post.cover_image_url ? 'grid grid-cols-1 items-center gap-12 lg:grid-cols-[1fr_480px] xl:grid-cols-[1fr_560px]' : ''}`}>
+
+        {/* Left: Text */}
         <div>
-          {/* Eyebrow */}
-          <div class="mb-5 inline-flex items-center gap-2 rounded-full border border-[var(--color-primary)]/20 bg-[var(--color-primary)]/[0.06] px-3.5 py-1">
-            <span class="h-1.5 w-1.5 rounded-full bg-[var(--color-primary)] animate-pulse"></span>
-            <span class="text-xs font-semibold tracking-wide text-[var(--color-primary)]">{post.category || 'Rehber'} · {post.read_time || 5} dk okuma</span>
+          {/* Eyebrow badge */}
+          <div class="mb-5 inline-flex items-center gap-2 rounded-full border border-[var(--color-primary)]/20 bg-[var(--color-primary)]/[0.06] px-3.5 py-1.5">
+            <span class="h-1.5 w-1.5 animate-pulse rounded-full bg-[var(--color-primary)]"></span>
+            <span class="text-xs font-semibold uppercase tracking-widest text-[var(--color-primary)]">
+              {post.category || 'Rehber'} · {post.read_time || 5} dk okuma
+            </span>
           </div>
 
-          <h1 class="mb-5 text-[2rem] font-bold md:text-[2.75rem] lg:text-[3.25rem] text-[#f7f8f8] leading-[1.08] tracking-[-0.03em]">{post.title}</h1>
+          <h1 class="mb-6 text-[2.25rem] font-extrabold leading-[1.07] tracking-[-0.04em] text-[#f7f8f8] md:text-[3rem] lg:text-[3.5rem]">
+            {post.title}
+          </h1>
 
           {post.excerpt && (
-            <p class="mb-8 text-base text-[#8a8f98] md:text-lg leading-[1.6]">{post.excerpt}</p>
+            <p class="mb-8 max-w-[52ch] text-base leading-[1.65] text-[#8a8f98] md:text-lg">
+              {post.excerpt}
+            </p>
           )}
 
-          {/* Author */}
-          <div class="mb-6 flex items-center gap-3">
-            <div class="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-white/[0.04] border border-white/[0.08]">
-              <span class="text-sm font-semibold text-[#f7f8f8]">{(post.author || 'P').charAt(0)}</span>
+          {/* Author row */}
+          <div class="mb-7 flex items-center gap-3">
+            <div class="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-white/[0.08] bg-white/[0.04]">
+              <span class="text-sm font-bold text-[#f7f8f8]">{(post.author || 'P').charAt(0)}</span>
             </div>
             <div>
-              <div class="text-sm font-semibold text-[#f7f8f8]">{post.author}</div>
+              <div class="text-sm font-semibold text-[#d0d6e0]">{post.author}</div>
               <div class="text-xs text-[#62666d]">{formattedDate}</div>
             </div>
           </div>
 
           {/* Trust badges */}
           <div class="flex flex-wrap gap-2">
-            <span class="inline-flex items-center gap-1.5 rounded-full border border-white/[0.06] bg-white/[0.02] px-3 py-1 text-[11px] text-[#8a8f98]">
-              <span class="text-[var(--color-primary)]">✓</span> KVKK uyumlu
-            </span>
-            <span class="inline-flex items-center gap-1.5 rounded-full border border-white/[0.06] bg-white/[0.02] px-3 py-1 text-[11px] text-[#8a8f98]">
-              <span class="text-[var(--color-primary)]">✓</span> %50 Geri İade
-            </span>
-            <span class="inline-flex items-center gap-1.5 rounded-full border border-white/[0.06] bg-white/[0.02] px-3 py-1 text-[11px] text-[#8a8f98]">
-              <span class="text-[var(--color-primary)]">✓</span> Self-Hosted
-            </span>
+            {['KVKK uyumlu', '%50 Geri İade', 'Self-Hosted'].map((badge) => (
+              <span class="inline-flex items-center gap-1.5 rounded-full border border-white/[0.07] bg-white/[0.025] px-3 py-1 text-[11px] font-medium text-[#8a8f98]">
+                <span class="text-[var(--color-primary)] text-[10px]">✓</span> {badge}
+              </span>
+            ))}
           </div>
         </div>
 
         {/* Right: Cover image */}
         {post.cover_image_url && (
-          <div class="relative">
+          <div class="relative mt-8 lg:mt-0">
             <img
               src={post.cover_image_url}
               alt={post.cover_image_alt || post.title}
-              class="blog-hero-image h-auto w-full rounded-2xl border border-white/[0.06] shadow-[0_8px_32px_rgba(0,0,0,0.4)]"
+              class="blog-hero-image h-auto w-full rounded-2xl border border-white/[0.07] shadow-[0_16px_64px_rgba(0,0,0,0.5)]"
             />
-            {/* Floating tag badges on image */}
+            {/* Floating tag pills */}
             {(post.tags || []).length > 0 && (
               <div class="absolute bottom-4 left-4 flex flex-wrap gap-1.5">
                 {(post.tags || []).slice(0, 3).map((tag) => (
-                  <span class="rounded-full bg-black/60 backdrop-blur-sm border border-white/10 px-2.5 py-0.5 text-[10px] font-medium text-white/80">
+                  <span class="rounded-full border border-white/[0.12] bg-black/65 px-2.5 py-0.5 text-[10px] font-medium text-white/80 backdrop-blur-sm">
                     #{tag}
                   </span>
                 ))}
               </div>
             )}
+            {/* Subtle glow behind image */}
+            <div class="absolute -bottom-8 left-1/2 -z-10 h-40 w-[70%] -translate-x-1/2 rounded-full bg-[var(--color-primary)]/10 blur-[60px] pointer-events-none"></div>
           </div>
         )}
       </div>
 
       {/* Divider */}
-      <div class="mb-14 h-px bg-white/[0.06]"></div>
+      <div class="mb-12 h-px bg-white/[0.06]"></div>
 
-      {/* Sticky ToC — glass card, subtle luminance */}
-      {tocItems.length > 2 && (
-        <nav aria-label="İçindekiler" class="blog-toc pointer-events-none fixed top-24 left-6 z-20 hidden w-56 2xl:block">
-          <div class="pointer-events-auto rounded-lg border border-white/[0.06] bg-[#0f1011]/90 p-4 backdrop-blur-sm">
-            <div class="mb-3 font-mono text-[10px] font-medium uppercase tracking-[0.18em] text-[#62666d]">İçindekiler</div>
-            <ul class="space-y-2.5">
-              {tocItems.map((item, idx) => (
-                <li>
-                  <a
-                    href={`#${item.id}`}
-                    data-toc-target={item.id}
-                    class="toc-link group flex gap-2.5 text-sm text-[var(--color-text-muted)] transition-colors hover:text-white"
-                  >
-                    <span class="font-mono text-[11px] text-[var(--color-primary)]/60 group-hover:text-[var(--color-primary)]">
-                      {String(idx + 1).padStart(2, '0')}
-                    </span>
-                    <span class="leading-[1.35]">{item.text}</span>
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
-        </nav>
-      )}
+      {/* ══════════════════════════════════════════
+          CONTENT + SIDEBAR  (2-column grid at xl+)
+          ══════════════════════════════════════════ */}
+      <div class="grid grid-cols-1 gap-x-16 xl:grid-cols-[minmax(0,1fr)_280px]">
 
-      <div
-        class="blog-content prose prose-invert max-w-none prose-headings:text-[#f7f8f8] prose-headings:font-semibold prose-p:text-[#8a8f98] prose-a:text-[var(--color-primary)] prose-a:no-underline hover:prose-a:opacity-75 prose-strong:text-[#f7f8f8] prose-strong:font-semibold prose-code:rounded prose-code:bg-white/[0.04] prose-code:px-1.5 prose-code:py-0.5 prose-code:text-[var(--color-primary-light)] prose-pre:rounded-lg prose-pre:border prose-pre:border-white/[0.06] prose-pre:bg-white/[0.02] prose-blockquote:border-white/[0.06] prose-blockquote:text-[#d0d6e0] prose-li:text-[#8a8f98] prose-img:rounded-lg prose-hr:border-white/[0.06] prose-table:text-[#8a8f98] prose-th:text-[#f7f8f8]"
-        set:html={htmlContent}
-      />
+        {/* ── Main prose column ── */}
+        <div class="min-w-0">
+          <div
+            class="blog-content prose prose-invert max-w-none
+              prose-headings:text-[#f7f8f8] prose-headings:font-bold
+              prose-p:text-[#8a8f98] prose-p:leading-[1.65]
+              prose-a:text-[var(--color-primary)] prose-a:no-underline hover:prose-a:opacity-75
+              prose-strong:text-[#f7f8f8] prose-strong:font-semibold
+              prose-code:rounded prose-code:bg-white/[0.04] prose-code:px-1.5 prose-code:py-0.5 prose-code:text-[var(--color-primary-light)]
+              prose-pre:rounded-xl prose-pre:border prose-pre:border-white/[0.06] prose-pre:bg-white/[0.02]
+              prose-blockquote:border-white/[0.06] prose-blockquote:text-[#d0d6e0]
+              prose-li:text-[#8a8f98] prose-li:leading-[1.6]
+              prose-img:rounded-xl prose-hr:border-white/[0.06]
+              prose-table:text-[#8a8f98] prose-th:text-[#f7f8f8]"
+            set:html={htmlContent}
+          />
 
-      <style is:global>
-        /* ===== Blog Reading — Linear-inspired, Lime-adapted ===== */
-
-        /* Motion tokens */
-        :root {
-          --spring-smooth: cubic-bezier(0.16, 1, 0.3, 1);
-          --spring-snap: cubic-bezier(0.2, 0.8, 0.2, 1);
-        }
-
-        html { scroll-behavior: smooth; scroll-padding-top: 5rem; }
-
-        /* Images — container-width, subtle border */
-        .blog-hero-image,
-        .blog-content img {
-          display: block;
-          width: 100%;
-          height: auto;
-          margin-top: 2.5rem;
-          margin-bottom: 2.5rem;
-          border: 1px solid rgba(255,255,255,0.06);
-          border-radius: 8px;
-        }
-        .blog-hero-image {
-          margin: 0;
-          border-radius: 16px;
-        }
-
-        /* First H1 in markdown = duplicate → hide */
-        .blog-content > h1:first-child { display: none; }
-
-        /* Section counter */
-        .blog-content { counter-reset: section; }
-
-        /* H2 — tight tracking, numbered, whisper border */
-        .blog-content h2 {
-          counter-increment: section;
-          position: relative;
-          margin-top: 5rem !important;
-          margin-bottom: 1.25rem !important;
-          padding-top: 2.5rem;
-          font-size: 2.375rem !important;
-          line-height: 1.08 !important;
-          letter-spacing: -0.03em;
-          color: #f7f8f8 !important;
-          font-weight: 700 !important;
-          border-top: 1px solid rgba(255,255,255,0.06);
-        }
-        .blog-content h2::before {
-          content: counter(section, decimal-leading-zero);
-          display: block;
-          margin-bottom: 0.75rem;
-          font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
-          font-size: 0.6875rem;
-          font-weight: 500;
-          letter-spacing: 0.18em;
-          color: #62666d;
-        }
-
-        /* H3 */
-        .blog-content h3 {
-          margin-top: 2.5rem !important;
-          font-size: 1.25rem !important;
-          font-weight: 600 !important;
-          letter-spacing: -0.01em;
-          color: #f7f8f8 !important;
-        }
-
-        /* Lead paragraph after H2 — slightly larger, brighter */
-        .blog-content h2 + p {
-          font-size: 1.125rem !important;
-          line-height: 1.6 !important;
-          color: #d0d6e0 !important;
-          margin-top: 0.75rem !important;
-          margin-bottom: 1.5rem !important;
-        }
-
-        /* Body text — Linear's silver-gray reading color */
-        .blog-content p {
-          color: #8a8f98 !important;
-          line-height: 1.65 !important;
-          font-size: 1rem !important;
-          letter-spacing: normal;
-        }
-
-        /* Blockquote — glass card with backdrop-blur */
-        .blog-content blockquote {
-          position: relative;
-          margin: 2.5rem 0 !important;
-          padding: 1.5rem 1.75rem !important;
-          border-left: none !important;
-          border: 1px solid rgba(255,255,255,0.08) !important;
-          border-radius: 12px;
-          background: rgba(255,255,255,0.03);
-          backdrop-filter: blur(8px);
-          -webkit-backdrop-filter: blur(8px);
-          font-style: normal !important;
-          font-size: 0.9375rem;
-          line-height: 1.65;
-        }
-        .blog-content blockquote p {
-          color: #d0d6e0 !important;
-          font-size: 0.9375rem !important;
-        }
-        .blog-content blockquote strong {
-          color: #f7f8f8 !important;
-        }
-
-        /* HR — ultra-subtle */
-        .blog-content hr {
-          margin: 4rem auto !important;
-          width: 100%;
-          border: none;
-          border-top: 1px solid rgba(255,255,255,0.06);
-        }
-
-        /* Lists */
-        .blog-content ul li,
-        .blog-content ol li {
-          margin: 0.4rem 0 !important;
-          line-height: 1.6;
-          color: #8a8f98 !important;
-          font-size: 1rem !important;
-        }
-
-        /* Strong */
-        .blog-content strong {
-          color: #f7f8f8 !important;
-          font-weight: 600;
-        }
-
-        /* Links */
-        .blog-content a {
-          color: var(--color-primary) !important;
-          text-decoration: none !important;
-          transition: opacity 0.15s;
-        }
-        .blog-content a:hover {
-          opacity: 0.75;
-        }
-
-        /* ToC — minimal, no glow */
-        .toc-link {
-          position: relative;
-          padding: 3px 0;
-          font-size: 13px;
-          transition: color 0.15s var(--spring-snap);
-        }
-        .toc-link:hover {
-          color: #d0d6e0 !important;
-        }
-        .toc-link.is-active {
-          color: #f7f8f8 !important;
-        }
-        .toc-link.is-active span:first-child {
-          color: var(--color-primary) !important;
-        }
-
-        /* Tag pills */
-        .tag-pill:hover {
-          background: rgba(255,255,255,0.04);
-          color: #d0d6e0 !important;
-        }
-
-        /* CTA button — hover lift + glow intensify */
-        .cta-btn {
-          transition: all 0.25s var(--spring-smooth);
-        }
-        .cta-btn:hover {
-          transform: translateY(-2px);
-          box-shadow: 0 0 40px rgba(163,230,53,0.45), 0 4px 16px rgba(0,0,0,0.3);
-        }
-
-        /* Section reveal animation */
-        .blog-content h2,
-        .blog-content blockquote,
-        .blog-content img {
-          opacity: 0;
-          transform: translateY(16px);
-          transition: opacity 0.6s var(--spring-smooth), transform 0.6s var(--spring-smooth);
-        }
-        .blog-content h2.revealed,
-        .blog-content blockquote.revealed,
-        .blog-content img.revealed {
-          opacity: 1;
-          transform: translateY(0);
-        }
-
-        /* Mobile */
-        @media (max-width: 768px) {
-          .blog-content h2 {
-            font-size: 1.5rem !important;
-            margin-top: 3.5rem !important;
-          }
-          .blog-content h2 + p {
-            font-size: 1rem !important;
-          }
-          .blog-content blockquote {
-            padding: 1rem 1.25rem !important;
-          }
-          .blog-hero-image,
-          .blog-content img {
-            margin-top: 1.75rem;
-            margin-bottom: 1.75rem;
-          }
-        }
-      </style>
-
-      {/* CTA Block — dominant, gradient accent */}
-      <div class="mt-20 relative overflow-hidden rounded-2xl border border-[var(--color-primary)]/20 bg-gradient-to-br from-[var(--color-primary)]/[0.08] via-white/[0.02] to-transparent p-8 md:p-12">
-        {/* Subtle glow */}
-        <div class="absolute -top-24 -right-24 h-48 w-48 rounded-full bg-[var(--color-primary)]/20 blur-[80px] pointer-events-none"></div>
-
-        <div class="relative">
-          <div class="mb-3 inline-flex items-center gap-2 rounded-full border border-[var(--color-primary)]/20 bg-[var(--color-primary)]/[0.06] px-3 py-1">
-            <span class="h-1.5 w-1.5 rounded-full bg-[var(--color-primary)]"></span>
-            <span class="text-xs font-semibold text-[var(--color-primary)]">Sıradaki adım</span>
-          </div>
-
-          <h3 class="mb-4 text-2xl font-bold text-[#f7f8f8] md:text-3xl leading-[1.15] tracking-[-0.02em]">
-            Bu konuyu kendi süreçlerinize uyarlayalım.
-          </h3>
-          <p class="mb-8 max-w-xl text-[#8a8f98] md:text-base leading-[1.65]">
-            45 dakikalık ücretsiz görüşmede hangi otomasyonun size en hızlı geri dönüş sağlayacağını net söyleriz. Baskı yok — sadece sayısal bir analiz.
-          </p>
-
-          <div class="flex flex-col gap-4 sm:flex-row sm:items-center">
-            <a href="/iletisim/" class="cta-btn inline-flex items-center justify-center gap-2 rounded-full bg-[var(--color-primary)] px-7 py-3.5 text-sm font-bold text-[#08090a] shadow-[0_0_24px_rgba(163,230,53,0.3)] transition-all">
-              Ücretsiz analizi talep et <span aria-hidden="true">→</span>
-            </a>
-            <a href="/iletisim/" class="inline-flex items-center justify-center gap-2 rounded-full border border-white/[0.08] bg-white/[0.02] px-6 py-3 text-sm font-medium text-[#d0d6e0] transition-all hover:bg-white/[0.04] hover:text-white">
-              Nasıl çalışıyoruz
-            </a>
-          </div>
-
-          <div class="mt-6 flex flex-wrap gap-4 text-xs text-[#62666d]">
-            <span class="flex items-center gap-1.5"><span class="text-[var(--color-primary)]">✓</span> %50 Geri İade Garantisi</span>
-            <span class="flex items-center gap-1.5"><span class="text-[var(--color-primary)]">✓</span> Hedef tutmazsa yarısı iade</span>
-            <span class="flex items-center gap-1.5"><span class="text-[var(--color-primary)]">✓</span> Self-Hosted altyapı</span>
+          {/* ── CTA Block ── */}
+          <div class="mt-20 relative overflow-hidden rounded-2xl border border-[var(--color-primary)]/20 bg-gradient-to-br from-[var(--color-primary)]/[0.09] via-white/[0.02] to-transparent p-8 md:p-10">
+            <div class="absolute -top-20 -right-20 h-48 w-48 rounded-full bg-[var(--color-primary)]/20 blur-[80px] pointer-events-none"></div>
+            <div class="relative">
+              <div class="mb-3 inline-flex items-center gap-2 rounded-full border border-[var(--color-primary)]/20 bg-[var(--color-primary)]/[0.08] px-3 py-1">
+                <span class="h-1.5 w-1.5 rounded-full bg-[var(--color-primary)]"></span>
+                <span class="text-xs font-semibold text-[var(--color-primary)]">Sıradaki adım</span>
+              </div>
+              <h3 class="mb-3 text-2xl font-bold leading-[1.15] tracking-[-0.025em] text-[#f7f8f8] md:text-3xl">
+                Bu konuyu kendi süreçlerinize uyarlayalım.
+              </h3>
+              <p class="mb-7 max-w-[52ch] text-[#8a8f98] leading-[1.65]">
+                45 dakikalık ücretsiz görüşmede hangi otomasyonun size en hızlı geri dönüş sağlayacağını net söyleriz.
+              </p>
+              <div class="flex flex-col gap-3 sm:flex-row sm:items-center">
+                <a href={contactHref} class="cta-btn inline-flex items-center justify-center gap-2 rounded-full bg-[var(--color-primary)] px-7 py-3.5 text-sm font-bold text-[#08090a] shadow-[0_0_28px_rgba(163,230,53,0.3)]">
+                  Ücretsiz analizi talep et <span aria-hidden="true">→</span>
+                </a>
+                <a href="/iletisim/" class="inline-flex items-center justify-center gap-2 rounded-full border border-white/[0.08] bg-white/[0.02] px-6 py-3 text-sm font-medium text-[#d0d6e0] transition-all hover:bg-white/[0.04] hover:text-white">
+                  Nasıl çalışıyoruz
+                </a>
+              </div>
+              <div class="mt-5 flex flex-wrap gap-4 text-xs text-[#62666d]">
+                {['%50 Geri İade Garantisi', 'Hedef tutmazsa yarısı iade', 'Self-Hosted altyapı'].map((item) => (
+                  <span class="flex items-center gap-1.5"><span class="text-[var(--color-primary)]">✓</span> {item}</span>
+                ))}
+              </div>
+            </div>
           </div>
         </div>
+
+        {/* ── Sticky Sidebar ── */}
+        <aside class="hidden xl:block">
+          <div class="sticky top-24 space-y-5">
+
+            {/* ToC card */}
+            {tocItems.length > 2 && (
+              <nav aria-label="İçindekiler" class="rounded-xl border border-white/[0.07] bg-[#0d0e10]/95 p-5 backdrop-blur-sm">
+                <div class="mb-4 font-mono text-[10px] font-medium uppercase tracking-[0.2em] text-[#62666d]">İçindekiler</div>
+                <ul class="space-y-1">
+                  {tocItems.map((item, idx) => (
+                    <li>
+                      <a
+                        href={`#${item.id}`}
+                        data-toc-target={item.id}
+                        class="toc-link group flex items-start gap-2.5 rounded-lg px-2 py-1.5 text-[13px] text-[#62666d] transition-all hover:bg-white/[0.03] hover:text-[#d0d6e0]"
+                      >
+                        <span class="mt-px font-mono text-[10px] shrink-0 text-[var(--color-primary)]/50 group-hover:text-[var(--color-primary)]">
+                          {String(idx + 1).padStart(2, '0')}
+                        </span>
+                        <span class="leading-[1.4]">{item.text}</span>
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </nav>
+            )}
+
+            {/* Mini CTA card */}
+            <div class="rounded-xl border border-[var(--color-primary)]/[0.18] bg-[var(--color-primary)]/[0.05] p-5">
+              <div class="mb-3 text-xs font-semibold uppercase tracking-[0.15em] text-[var(--color-primary)]">Ücretsiz analiz</div>
+              <p class="mb-4 text-sm leading-[1.55] text-[#8a8f98]">
+                Hangi süreçlerinizi otomasyona alacağınızı birlikte belirleyelim.
+              </p>
+              <a href={contactHref} class="block w-full rounded-full bg-[var(--color-primary)] py-2.5 text-center text-sm font-bold text-[#08090a] transition-all hover:-translate-y-0.5 hover:shadow-[0_0_24px_rgba(163,230,53,0.4)]">
+                Talep et →
+              </a>
+            </div>
+
+            {/* Reading stats */}
+            <div class="rounded-xl border border-white/[0.06] bg-white/[0.02] px-4 py-3 text-xs text-[#62666d]">
+              <div class="flex items-center justify-between">
+                <span>Okuma süresi</span>
+                <span class="font-semibold text-[#8a8f98]">{post.read_time || 5} dk</span>
+              </div>
+              <div class="mt-2 flex items-center justify-between">
+                <span>Kategori</span>
+                <span class="font-semibold text-[#8a8f98]">{post.category || 'Rehber'}</span>
+              </div>
+            </div>
+
+          </div>
+        </aside>
       </div>
 
-      {/* Reading progress + ToC scroll spy */}
-      <script is:inline>
-        (function () {
-          const progressEl = document.getElementById('reading-progress');
-          const article = document.querySelector('article');
-          const tocLinks = document.querySelectorAll('.toc-link');
-          const headings = document.querySelectorAll('.blog-content h2[id]');
-
-          function onScroll() {
-            if (article && progressEl) {
-              const rect = article.getBoundingClientRect();
-              const total = article.offsetHeight - window.innerHeight;
-              const scrolled = Math.min(Math.max(-rect.top, 0), total);
-              const pct = total > 0 ? (scrolled / total) * 100 : 0;
-              progressEl.style.width = pct + '%';
-            }
-            if (tocLinks.length && headings.length) {
-              let active = null;
-              headings.forEach((h) => {
-                const r = h.getBoundingClientRect();
-                if (r.top < 160) active = h.id;
-              });
-              tocLinks.forEach((l) => {
-                if (l.dataset.tocTarget === active) l.classList.add('is-active');
-                else l.classList.remove('is-active');
-              });
-            }
-          }
-          document.addEventListener('scroll', onScroll, { passive: true });
-          onScroll();
-
-          // Section reveal via IntersectionObserver
-          const revealTargets = document.querySelectorAll('.blog-content h2, .blog-content blockquote, .blog-content img');
-          if ('IntersectionObserver' in window) {
-            const revealObs = new IntersectionObserver(function(entries) {
-              entries.forEach(function(e) {
-                if (e.isIntersecting) {
-                  e.target.classList.add('revealed');
-                  revealObs.unobserve(e.target);
-                }
-              });
-            }, { rootMargin: '0px 0px -60px 0px', threshold: 0.1 });
-            revealTargets.forEach(function(el) { revealObs.observe(el); });
-          } else {
-            revealTargets.forEach(function(el) { el.classList.add('revealed'); });
-          }
-        })();
-      </script>
-
+      {/* ── Author bio ── */}
       {post.author_bio && (
-        <div class="mt-12 rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface-light)] p-6">
-          <h2 class="mb-2 text-lg font-semibold text-white">Yazar hakkinda</h2>
-          <p class="text-[var(--color-text-muted)]">{post.author_bio}</p>
+        <div class="mt-16 rounded-2xl border border-white/[0.06] bg-white/[0.02] p-6">
+          <h2 class="mb-2 text-lg font-semibold text-[#f7f8f8]">Yazar hakkında</h2>
+          <p class="text-[#8a8f98]">{post.author_bio}</p>
         </div>
       )}
 
-      <div class="mt-16 grid gap-8 lg:grid-cols-[1.05fr_0.95fr]">
-        <div class="rounded-[2rem] border border-[var(--color-border)] bg-[var(--color-surface-light)]/60 p-8">
-          <h2 class="text-2xl font-semibold text-white">Ilgili sonraki sayfalar</h2>
-          <div class="mt-6 space-y-4">
+      {/* ── Related solutions ── */}
+      <div class="mt-16 grid gap-6 lg:grid-cols-[1.1fr_0.9fr]">
+        <div class="rounded-2xl border border-white/[0.07] bg-white/[0.015] p-7">
+          <h2 class="text-xl font-bold text-[#f7f8f8]">İlgili sonraki sayfalar</h2>
+          <div class="mt-5 space-y-3">
             {relatedSolutions.map((item) => (
-              <a href={item.href} class="block rounded-2xl border border-[var(--color-border)] bg-black/10 p-5 transition hover:-translate-y-0.5 hover:border-[var(--color-primary)]/40">
+              <a href={item.href} class="group flex items-start gap-4 rounded-xl border border-white/[0.06] bg-black/10 p-4 transition hover:-translate-y-0.5 hover:border-[var(--color-primary)]/30">
                 {item.badge && (
-                  <div class="mb-3 inline-flex rounded-full border border-[var(--color-primary)]/20 bg-[var(--color-primary)]/10 px-3 py-1 text-xs font-semibold uppercase tracking-[0.16em] text-[var(--color-primary)]">
+                  <span class="mt-0.5 shrink-0 rounded-full border border-[var(--color-primary)]/20 bg-[var(--color-primary)]/10 px-2.5 py-0.5 text-[10px] font-bold uppercase tracking-wider text-[var(--color-primary)]">
                     {item.badge}
-                  </div>
+                  </span>
                 )}
-                <h3 class="text-lg font-semibold text-white">{item.title}</h3>
-                <p class="mt-2 text-sm leading-relaxed text-[var(--color-text-muted)]">{item.description}</p>
+                <div>
+                  <div class="text-sm font-semibold text-[#d0d6e0] group-hover:text-white transition-colors">{item.title}</div>
+                  <div class="mt-1 text-xs leading-[1.55] text-[#62666d]">{item.description}</div>
+                </div>
               </a>
             ))}
           </div>
         </div>
 
-        <div class="rounded-[2rem] border border-[var(--color-primary)]/20 bg-[var(--color-primary)]/8 p-8">
-          <div class="inline-flex rounded-full border border-[var(--color-primary)]/25 bg-[var(--color-primary)]/10 px-3 py-1 text-xs font-semibold uppercase tracking-[0.16em] text-[var(--color-primary)]">
-            Donusum
+        <div class="relative overflow-hidden rounded-2xl border border-[var(--color-primary)]/20 bg-[var(--color-primary)]/[0.07] p-7">
+          <div class="absolute -top-16 -right-16 h-40 w-40 rounded-full bg-[var(--color-primary)]/15 blur-[60px] pointer-events-none"></div>
+          <div class="relative">
+            <span class="inline-flex rounded-full border border-[var(--color-primary)]/25 bg-[var(--color-primary)]/10 px-3 py-1 text-[10px] font-bold uppercase tracking-[0.18em] text-[var(--color-primary)]">Dönüşüm</span>
+            <h2 class="mt-4 text-2xl font-extrabold leading-[1.15] tracking-tight text-[#f7f8f8]">
+              Bu konuyu kendi sürecinize uygulayın.
+            </h2>
+            <p class="mt-3 text-sm leading-[1.6] text-[#8a8f98]">
+              Kısa bir analizle bu yazıdaki fikrin sizin ekipte nerede en hızlı geri dönüş üreteceğini birlikte belirleriz.
+            </p>
+            <ul class="mt-5 space-y-2 text-sm text-[#62666d]">
+              {['Sayfaya göre kaynak takibi', 'Konuya uygun analiz paketi', 'Somut sonraki adım önerisi'].map((item) => (
+                <li class="flex items-center gap-2"><span class="text-[var(--color-primary)]">→</span> {item}</li>
+              ))}
+            </ul>
+            <a href={contactHref} class="mt-6 inline-flex w-full items-center justify-center rounded-full bg-[var(--color-primary)] py-3.5 text-sm font-bold text-[#08090a] transition hover:-translate-y-0.5 hover:shadow-[0_0_28px_rgba(163,230,53,0.4)]">
+              Ücretsiz analizi talep et
+            </a>
           </div>
-          <h2 class="mt-5 text-3xl font-black tracking-tight text-white">Bu konuyu kendi surecinize uygulamak ister misiniz?</h2>
-          <p class="mt-4 text-sm leading-relaxed text-[var(--color-text-muted)]">
-            Kisa bir analiz ile bu yazidaki fikrin sizin ekipte nerede en hizli geri donus uretecegini birlikte belirleyelim.
-          </p>
-
-          <ul class="mt-6 space-y-3 text-sm text-[var(--color-text-muted)]">
-            <li>Sayfaya gore kaynak takibi</li>
-            <li>Konuya uygun analiz paketi</li>
-            <li>Somut sonraki adim onerisi</li>
-          </ul>
-
-          <a href={contactHref} class="mt-8 inline-flex w-full items-center justify-center rounded-2xl bg-[var(--color-primary)] px-5 py-4 text-center text-base font-black text-black transition hover:-translate-y-0.5 hover:bg-[var(--color-primary-light)]">
-            Ucretsiz analizi talep et
-          </a>
         </div>
       </div>
-    </div>
+
+    </div>{/* /outer container */}
   </article>
+
+  {/* ════════════════════════════════
+      GLOBAL STYLES
+      ════════════════════════════════ */}
+  <style is:global>
+    /* Motion tokens */
+    :root {
+      --spring-smooth: cubic-bezier(0.16, 1, 0.3, 1);
+      --spring-snap: cubic-bezier(0.2, 0.8, 0.2, 1);
+    }
+
+    html { scroll-behavior: smooth; scroll-padding-top: 5rem; }
+
+    /* ── Hero image ── */
+    .blog-hero-image {
+      display: block;
+      width: 100%;
+      height: auto;
+      border-radius: 20px;
+    }
+
+    /* ── Blog content images ── */
+    .blog-content img {
+      display: block;
+      width: 100%;
+      height: auto;
+      margin-top: 2.25rem;
+      margin-bottom: 2.25rem;
+      border: 1px solid rgba(255,255,255,0.07);
+      border-radius: 12px;
+    }
+
+    /* Hide duplicate H1 from markdown */
+    .blog-content > h1:first-child { display: none; }
+
+    /* Section counter */
+    .blog-content { counter-reset: section; }
+
+    /* ── H2 — numbered, border top ── */
+    .blog-content h2 {
+      counter-increment: section;
+      position: relative;
+      margin-top: 4.5rem !important;
+      margin-bottom: 1rem !important;
+      padding-top: 2rem;
+      font-size: 1.75rem !important;
+      line-height: 1.12 !important;
+      letter-spacing: -0.025em;
+      color: #f7f8f8 !important;
+      font-weight: 700 !important;
+      border-top: 1px solid rgba(255,255,255,0.06);
+    }
+    .blog-content h2::before {
+      content: '§' counter(section);
+      display: block;
+      margin-bottom: 0.6rem;
+      font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+      font-size: 0.6875rem;
+      font-weight: 500;
+      letter-spacing: 0.18em;
+      color: #62666d;
+    }
+
+    /* ── H3 ── */
+    .blog-content h3 {
+      margin-top: 2rem !important;
+      font-size: 1.125rem !important;
+      font-weight: 600 !important;
+      letter-spacing: -0.01em;
+      color: #f7f8f8 !important;
+    }
+
+    /* ── Lead paragraph (first after H2) ── */
+    .blog-content h2 + p {
+      font-size: 1.0625rem !important;
+      line-height: 1.65 !important;
+      color: #c4cad4 !important;
+      margin-bottom: 1.25rem !important;
+    }
+
+    /* ── Body text ── */
+    .blog-content p {
+      color: #8a8f98 !important;
+      line-height: 1.7 !important;
+      font-size: 1rem !important;
+    }
+
+    /* ── Blockquote — glass card ── */
+    .blog-content blockquote {
+      position: relative;
+      margin: 2rem 0 !important;
+      padding: 1.375rem 1.625rem !important;
+      border-left: none !important;
+      border: 1px solid rgba(255,255,255,0.08) !important;
+      border-radius: 14px;
+      background: rgba(255,255,255,0.025);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      font-style: normal !important;
+    }
+    .blog-content blockquote::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      width: 3px;
+      border-radius: 99px;
+      background: linear-gradient(to bottom, var(--color-primary), transparent);
+    }
+    .blog-content blockquote p {
+      color: #c4cad4 !important;
+      font-size: 0.9375rem !important;
+      line-height: 1.65 !important;
+      margin: 0 !important;
+    }
+    .blog-content blockquote strong { color: #f7f8f8 !important; }
+
+    /* ── HR ── */
+    .blog-content hr {
+      margin: 3.5rem auto !important;
+      border: none;
+      border-top: 1px solid rgba(255,255,255,0.06);
+    }
+
+    /* ── Lists ── */
+    .blog-content ul li,
+    .blog-content ol li {
+      margin: 0.35rem 0 !important;
+      line-height: 1.65;
+      color: #8a8f98 !important;
+      font-size: 1rem !important;
+    }
+
+    /* ── Strong ── */
+    .blog-content strong {
+      color: #f7f8f8 !important;
+      font-weight: 600;
+    }
+
+    /* ── Links ── */
+    .blog-content a {
+      color: var(--color-primary) !important;
+      text-decoration: none !important;
+      transition: opacity 0.15s;
+    }
+    .blog-content a:hover { opacity: 0.75; }
+
+    /* ── ToC ── */
+    .toc-link {
+      position: relative;
+      transition: color 0.15s var(--spring-snap), background 0.15s;
+    }
+    .toc-link.is-active {
+      color: #f7f8f8 !important;
+      background: rgba(255,255,255,0.04);
+    }
+    .toc-link.is-active span:first-child {
+      color: var(--color-primary) !important;
+    }
+
+    /* ── CTA button ── */
+    .cta-btn {
+      transition: all 0.25s var(--spring-smooth);
+    }
+    .cta-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 0 40px rgba(163,230,53,0.45), 0 4px 16px rgba(0,0,0,0.3);
+    }
+
+    /* ── Section reveal ── */
+    .blog-content h2,
+    .blog-content blockquote,
+    .blog-content img {
+      opacity: 0;
+      transform: translateY(14px);
+      transition: opacity 0.55s var(--spring-smooth), transform 0.55s var(--spring-smooth);
+    }
+    .blog-content h2.revealed,
+    .blog-content blockquote.revealed,
+    .blog-content img.revealed {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ── Mobile overrides ── */
+    @media (max-width: 768px) {
+      .blog-content h2 {
+        font-size: 1.375rem !important;
+        margin-top: 3rem !important;
+        padding-top: 1.5rem;
+      }
+      .blog-content h2 + p { font-size: 1rem !important; }
+      .blog-content blockquote { padding: 1rem 1.25rem !important; }
+      .blog-content img { margin-top: 1.5rem; margin-bottom: 1.5rem; }
+    }
+  </style>
+
+  {/* ── Scroll spy + reveal ── */}
+  <script is:inline>
+    (function () {
+      const progressEl = document.getElementById('reading-progress');
+      const article = document.querySelector('article');
+      const tocLinks = document.querySelectorAll('.toc-link');
+      const headings = document.querySelectorAll('.blog-content h2[id]');
+
+      function onScroll() {
+        if (article && progressEl) {
+          const rect = article.getBoundingClientRect();
+          const total = article.offsetHeight - window.innerHeight;
+          const scrolled = Math.min(Math.max(-rect.top, 0), total);
+          const pct = total > 0 ? (scrolled / total) * 100 : 0;
+          progressEl.style.width = pct + '%';
+        }
+        if (tocLinks.length && headings.length) {
+          let active = null;
+          headings.forEach(function(h) {
+            const r = h.getBoundingClientRect();
+            if (r.top < 160) active = h.id;
+          });
+          tocLinks.forEach(function(l) {
+            if (l.dataset.tocTarget === active) l.classList.add('is-active');
+            else l.classList.remove('is-active');
+          });
+        }
+      }
+      document.addEventListener('scroll', onScroll, { passive: true });
+      onScroll();
+
+      // Reveal on scroll
+      const revealTargets = document.querySelectorAll(
+        '.blog-content h2, .blog-content blockquote, .blog-content img'
+      );
+      if ('IntersectionObserver' in window) {
+        const obs = new IntersectionObserver(function(entries) {
+          entries.forEach(function(e) {
+            if (e.isIntersecting) {
+              e.target.classList.add('revealed');
+              obs.unobserve(e.target);
+            }
+          });
+        }, { rootMargin: '0px 0px -40px 0px', threshold: 0.08 });
+        revealTargets.forEach(function(el) { obs.observe(el); });
+      } else {
+        revealTargets.forEach(function(el) { el.classList.add('revealed'); });
+      }
+    })();
+  </script>
 
   <script type="application/ld+json" set:html={JSON.stringify(articleSchema)} />
 </BaseLayout>
