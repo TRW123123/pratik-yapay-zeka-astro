@@ -186,54 +186,75 @@ const breadcrumbs = [
 
   <article class="bg-gradient-to-b from-[#08090a] via-[#0a0c10] to-[#08090a] py-16 lg:py-24">
     <div class="container mx-auto max-w-4xl px-6 lg:px-4">
-      <a href="/blog/" class="mb-8 inline-flex items-center gap-2 text-sm font-medium text-[var(--color-text-muted)] transition-colors hover:text-[var(--color-primary-light)]">
+      <a href="/blog/" class="mb-10 inline-flex items-center gap-2 text-sm font-medium text-[#62666d] transition-colors hover:text-[var(--color-primary)]">
         <span aria-hidden="true">←</span> Tüm blog yazıları
       </a>
 
-      {/* Category + read-time eyebrow */}
-      <div class="mb-6 flex items-center gap-3 font-mono text-xs font-bold uppercase tracking-[0.18em] text-[var(--color-primary)]">
-        <span>{post.category || 'Rehber'}</span>
-        <span class="text-[var(--color-border)]">·</span>
-        <span class="text-[var(--color-text-muted)]">{post.read_time || 5} dakika okuma</span>
-      </div>
-
-      <h1 class="mb-6 text-[2.25rem] font-bold md:text-[3.5rem] lg:text-[4.5rem] text-[#f7f8f8] leading-[1.0] tracking-[-0.04em]">{post.title}</h1>
-
-      {post.excerpt && (
-        <p class="mb-10 text-lg text-[#8a8f98] md:text-xl leading-[1.55] tracking-[-0.01em]">{post.excerpt}</p>
-      )}
-
-      {/* Author row — Linear-style: subtle, luminance-based */}
-      <div class="author-row mb-14 flex flex-col gap-4 border-b border-white/[0.06] pb-7 md:flex-row md:items-center">
-        <div class="flex items-center gap-3.5">
-          <div class="relative flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-white/[0.04] border border-white/[0.08]">
-            <span class="text-sm font-semibold text-[#f7f8f8] tracking-tight">{(post.author || 'P').charAt(0)}</span>
+      {/* === HERO SECTION — Split Grid Layout === */}
+      <div class={`mb-16 ${post.cover_image_url ? 'grid grid-cols-1 gap-10 lg:grid-cols-[1.1fr_1fr] lg:items-center' : ''}`}>
+        {/* Left: Text block */}
+        <div>
+          {/* Eyebrow */}
+          <div class="mb-5 inline-flex items-center gap-2 rounded-full border border-[var(--color-primary)]/20 bg-[var(--color-primary)]/[0.06] px-3.5 py-1">
+            <span class="h-1.5 w-1.5 rounded-full bg-[var(--color-primary)] animate-pulse"></span>
+            <span class="text-xs font-semibold tracking-wide text-[var(--color-primary)]">{post.category || 'Rehber'} · {post.read_time || 5} dk okuma</span>
           </div>
-          <div class="flex-1 min-w-0">
-            <div class="text-sm font-semibold text-[#f7f8f8]">{post.author}</div>
-            <div class="mt-0.5 text-xs text-[#62666d]">
-              {formattedDate} {post.author_bio ? `· ${post.author_bio.split('.')[0]}` : ''}
+
+          <h1 class="mb-5 text-[2rem] font-bold md:text-[2.75rem] lg:text-[3.25rem] text-[#f7f8f8] leading-[1.08] tracking-[-0.03em]">{post.title}</h1>
+
+          {post.excerpt && (
+            <p class="mb-8 text-base text-[#8a8f98] md:text-lg leading-[1.6]">{post.excerpt}</p>
+          )}
+
+          {/* Author */}
+          <div class="mb-6 flex items-center gap-3">
+            <div class="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-white/[0.04] border border-white/[0.08]">
+              <span class="text-sm font-semibold text-[#f7f8f8]">{(post.author || 'P').charAt(0)}</span>
+            </div>
+            <div>
+              <div class="text-sm font-semibold text-[#f7f8f8]">{post.author}</div>
+              <div class="text-xs text-[#62666d]">{formattedDate}</div>
             </div>
           </div>
+
+          {/* Trust badges */}
+          <div class="flex flex-wrap gap-2">
+            <span class="inline-flex items-center gap-1.5 rounded-full border border-white/[0.06] bg-white/[0.02] px-3 py-1 text-[11px] text-[#8a8f98]">
+              <span class="text-[var(--color-primary)]">✓</span> KVKK uyumlu
+            </span>
+            <span class="inline-flex items-center gap-1.5 rounded-full border border-white/[0.06] bg-white/[0.02] px-3 py-1 text-[11px] text-[#8a8f98]">
+              <span class="text-[var(--color-primary)]">✓</span> %50 Geri İade
+            </span>
+            <span class="inline-flex items-center gap-1.5 rounded-full border border-white/[0.06] bg-white/[0.02] px-3 py-1 text-[11px] text-[#8a8f98]">
+              <span class="text-[var(--color-primary)]">✓</span> Self-Hosted
+            </span>
+          </div>
         </div>
-        {(post.tags || []).length > 0 && (
-          <div class="flex flex-wrap gap-1.5 md:ml-auto md:justify-end">
-            {(post.tags || []).slice(0, 4).map((tag) => (
-              <span class="tag-pill rounded-full border border-white/[0.06] bg-white/[0.02] px-2.5 py-0.5 text-[11px] font-medium text-[#8a8f98] transition-all">
-                #{tag}
-              </span>
-            ))}
+
+        {/* Right: Cover image */}
+        {post.cover_image_url && (
+          <div class="relative">
+            <img
+              src={post.cover_image_url}
+              alt={post.cover_image_alt || post.title}
+              class="blog-hero-image h-auto w-full rounded-2xl border border-white/[0.06] shadow-[0_8px_32px_rgba(0,0,0,0.4)]"
+            />
+            {/* Floating tag badges on image */}
+            {(post.tags || []).length > 0 && (
+              <div class="absolute bottom-4 left-4 flex flex-wrap gap-1.5">
+                {(post.tags || []).slice(0, 3).map((tag) => (
+                  <span class="rounded-full bg-black/60 backdrop-blur-sm border border-white/10 px-2.5 py-0.5 text-[10px] font-medium text-white/80">
+                    #{tag}
+                  </span>
+                ))}
+              </div>
+            )}
           </div>
         )}
       </div>
 
-      {post.cover_image_url && (
-        <img
-          src={post.cover_image_url}
-          alt={post.cover_image_alt || post.title}
-          class="blog-hero-image mb-16 h-auto rounded-2xl"
-        />
-      )}
+      {/* Divider */}
+      <div class="mb-14 h-px bg-white/[0.06]"></div>
 
       {/* Sticky ToC — glass card, subtle luminance */}
       {tocItems.length > 2 && (
@@ -288,9 +309,8 @@ const breadcrumbs = [
           border-radius: 8px;
         }
         .blog-hero-image {
-          margin-top: 0;
-          margin-bottom: 3.5rem;
-          border-radius: 12px;
+          margin: 0;
+          border-radius: 16px;
         }
 
         /* First H1 in markdown = duplicate → hide */
@@ -429,13 +449,13 @@ const breadcrumbs = [
           color: #d0d6e0 !important;
         }
 
-        /* CTA button */
+        /* CTA button — hover lift + glow intensify */
         .cta-btn {
-          transition: all 0.2s var(--spring-smooth);
+          transition: all 0.25s var(--spring-smooth);
         }
         .cta-btn:hover {
-          filter: brightness(1.1);
-          box-shadow: 0 0 24px rgba(163,230,53,0.25);
+          transform: translateY(-2px);
+          box-shadow: 0 0 40px rgba(163,230,53,0.45), 0 4px 16px rgba(0,0,0,0.3);
         }
 
         /* Section reveal animation */
@@ -473,23 +493,37 @@ const breadcrumbs = [
         }
       </style>
 
-      {/* CTA Block — Linear-style subtle glass card */}
-      <div class="mt-24 rounded-xl border border-white/[0.06] bg-white/[0.02] p-8 md:p-10">
-        <div class="mb-3 font-mono text-[11px] font-medium uppercase tracking-[0.18em] text-[#62666d]">
-          Sıradaki adım
-        </div>
-        <h3 class="mb-4 text-xl font-semibold text-[#f7f8f8] md:text-2xl leading-[1.2] tracking-[-0.02em]">
-          Bu yazının içeriğini kendi şirketinize uyarlayalım.
-        </h3>
-        <p class="mb-8 max-w-2xl text-[#8a8f98] md:text-base leading-[1.6]">
-          45 dakikalık ücretsiz görüşmede şirketinizdeki süreçleri birlikte haritalayıp, hangi otomasyonun size en hızlı geri dönüş sağlayacağını net söyleriz.
-        </p>
-        <div class="flex flex-wrap items-center gap-4">
-          <a href="/iletisim/" class="cta-btn inline-flex items-center gap-2 rounded-md bg-[var(--color-primary)] px-5 py-2.5 text-sm font-semibold text-[#08090a]">
-            Ücretsiz analizi talep et <span aria-hidden="true">→</span>
-          </a>
-          <div class="text-xs text-[#62666d]">
-            <span class="text-[var(--color-primary)] font-semibold">%50 Geri İade Garantisi</span> · Hedef tutmazsa yarısı iade
+      {/* CTA Block — dominant, gradient accent */}
+      <div class="mt-20 relative overflow-hidden rounded-2xl border border-[var(--color-primary)]/20 bg-gradient-to-br from-[var(--color-primary)]/[0.08] via-white/[0.02] to-transparent p-8 md:p-12">
+        {/* Subtle glow */}
+        <div class="absolute -top-24 -right-24 h-48 w-48 rounded-full bg-[var(--color-primary)]/20 blur-[80px] pointer-events-none"></div>
+
+        <div class="relative">
+          <div class="mb-3 inline-flex items-center gap-2 rounded-full border border-[var(--color-primary)]/20 bg-[var(--color-primary)]/[0.06] px-3 py-1">
+            <span class="h-1.5 w-1.5 rounded-full bg-[var(--color-primary)]"></span>
+            <span class="text-xs font-semibold text-[var(--color-primary)]">Sıradaki adım</span>
+          </div>
+
+          <h3 class="mb-4 text-2xl font-bold text-[#f7f8f8] md:text-3xl leading-[1.15] tracking-[-0.02em]">
+            Bu konuyu kendi süreçlerinize uyarlayalım.
+          </h3>
+          <p class="mb-8 max-w-xl text-[#8a8f98] md:text-base leading-[1.65]">
+            45 dakikalık ücretsiz görüşmede hangi otomasyonun size en hızlı geri dönüş sağlayacağını net söyleriz. Baskı yok — sadece sayısal bir analiz.
+          </p>
+
+          <div class="flex flex-col gap-4 sm:flex-row sm:items-center">
+            <a href="/iletisim/" class="cta-btn inline-flex items-center justify-center gap-2 rounded-full bg-[var(--color-primary)] px-7 py-3.5 text-sm font-bold text-[#08090a] shadow-[0_0_24px_rgba(163,230,53,0.3)] transition-all">
+              Ücretsiz analizi talep et <span aria-hidden="true">→</span>
+            </a>
+            <a href="/iletisim/" class="inline-flex items-center justify-center gap-2 rounded-full border border-white/[0.08] bg-white/[0.02] px-6 py-3 text-sm font-medium text-[#d0d6e0] transition-all hover:bg-white/[0.04] hover:text-white">
+              Nasıl çalışıyoruz
+            </a>
+          </div>
+
+          <div class="mt-6 flex flex-wrap gap-4 text-xs text-[#62666d]">
+            <span class="flex items-center gap-1.5"><span class="text-[var(--color-primary)]">✓</span> %50 Geri İade Garantisi</span>
+            <span class="flex items-center gap-1.5"><span class="text-[var(--color-primary)]">✓</span> Hedef tutmazsa yarısı iade</span>
+            <span class="flex items-center gap-1.5"><span class="text-[var(--color-primary)]">✓</span> Self-Hosted altyapı</span>
           </div>
         </div>
       </div>
