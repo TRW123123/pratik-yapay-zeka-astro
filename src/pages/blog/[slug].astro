@@ -184,7 +184,7 @@ const breadcrumbs = [
   {/* Reading Progress — ultra-subtle 2px, no glow */}
   <div id="reading-progress" class="fixed left-0 top-0 z-50 h-[2px] w-0 bg-[var(--color-primary)] transition-[width] duration-100 ease-out" style="opacity:0.85"></div>
 
-  <article class="bg-[#08090a] py-16 lg:py-24">
+  <article class="bg-gradient-to-b from-[#08090a] via-[#0a0c10] to-[#08090a] py-16 lg:py-24">
     <div class="container mx-auto max-w-4xl px-6 lg:px-4">
       <a href="/blog/" class="mb-8 inline-flex items-center gap-2 text-sm font-medium text-[var(--color-text-muted)] transition-colors hover:text-[var(--color-primary-light)]">
         <span aria-hidden="true">←</span> Tüm blog yazıları
@@ -261,7 +261,7 @@ const breadcrumbs = [
       )}
 
       <div
-        class="blog-content prose prose-invert prose-lg max-w-none prose-headings:text-white prose-headings:font-semibold prose-p:text-[var(--color-text-muted)] prose-a:text-[var(--color-primary-light)] prose-a:no-underline hover:prose-a:underline prose-strong:text-white prose-code:rounded prose-code:bg-[var(--color-surface-light)] prose-code:px-1.5 prose-code:py-0.5 prose-code:text-[var(--color-primary-light)] prose-pre:rounded-xl prose-pre:border prose-pre:border-[var(--color-border)] prose-pre:bg-[var(--color-surface-light)] prose-blockquote:border-[var(--color-primary)] prose-blockquote:text-[var(--color-text-muted)] prose-li:text-[var(--color-text-muted)] prose-img:rounded-xl"
+        class="blog-content prose prose-invert max-w-none prose-headings:text-[#f7f8f8] prose-headings:font-semibold prose-p:text-[#8a8f98] prose-a:text-[var(--color-primary)] prose-a:no-underline hover:prose-a:opacity-75 prose-strong:text-[#f7f8f8] prose-strong:font-semibold prose-code:rounded prose-code:bg-white/[0.04] prose-code:px-1.5 prose-code:py-0.5 prose-code:text-[var(--color-primary-light)] prose-pre:rounded-lg prose-pre:border prose-pre:border-white/[0.06] prose-pre:bg-white/[0.02] prose-blockquote:border-white/[0.06] prose-blockquote:text-[#d0d6e0] prose-li:text-[#8a8f98] prose-img:rounded-lg prose-hr:border-white/[0.06] prose-table:text-[#8a8f98] prose-th:text-[#f7f8f8]"
         set:html={htmlContent}
       />
 
@@ -306,11 +306,11 @@ const breadcrumbs = [
           margin-top: 5rem !important;
           margin-bottom: 1.25rem !important;
           padding-top: 2.5rem;
-          font-size: 2rem !important;
-          line-height: 1.1 !important;
+          font-size: 2.375rem !important;
+          line-height: 1.08 !important;
           letter-spacing: -0.03em;
           color: #f7f8f8 !important;
-          font-weight: 600 !important;
+          font-weight: 700 !important;
           border-top: 1px solid rgba(255,255,255,0.06);
         }
         .blog-content h2::before {
@@ -350,18 +350,20 @@ const breadcrumbs = [
           letter-spacing: normal;
         }
 
-        /* Blockquote — glass card, no lime bar */
+        /* Blockquote — glass card with backdrop-blur */
         .blog-content blockquote {
           position: relative;
-          margin: 2rem 0 !important;
-          padding: 1.25rem 1.5rem !important;
+          margin: 2.5rem 0 !important;
+          padding: 1.5rem 1.75rem !important;
           border-left: none !important;
-          border: 1px solid rgba(255,255,255,0.06) !important;
-          border-radius: 8px;
-          background: rgba(255,255,255,0.02);
+          border: 1px solid rgba(255,255,255,0.08) !important;
+          border-radius: 12px;
+          background: rgba(255,255,255,0.03);
+          backdrop-filter: blur(8px);
+          -webkit-backdrop-filter: blur(8px);
           font-style: normal !important;
-          font-size: 1rem;
-          line-height: 1.6;
+          font-size: 0.9375rem;
+          line-height: 1.65;
         }
         .blog-content blockquote p {
           color: #d0d6e0 !important;
@@ -436,6 +438,21 @@ const breadcrumbs = [
           box-shadow: 0 0 24px rgba(163,230,53,0.25);
         }
 
+        /* Section reveal animation */
+        .blog-content h2,
+        .blog-content blockquote,
+        .blog-content img {
+          opacity: 0;
+          transform: translateY(16px);
+          transition: opacity 0.6s var(--spring-smooth), transform 0.6s var(--spring-smooth);
+        }
+        .blog-content h2.revealed,
+        .blog-content blockquote.revealed,
+        .blog-content img.revealed {
+          opacity: 1;
+          transform: translateY(0);
+        }
+
         /* Mobile */
         @media (max-width: 768px) {
           .blog-content h2 {
@@ -507,6 +524,22 @@ const breadcrumbs = [
           }
           document.addEventListener('scroll', onScroll, { passive: true });
           onScroll();
+
+          // Section reveal via IntersectionObserver
+          const revealTargets = document.querySelectorAll('.blog-content h2, .blog-content blockquote, .blog-content img');
+          if ('IntersectionObserver' in window) {
+            const revealObs = new IntersectionObserver(function(entries) {
+              entries.forEach(function(e) {
+                if (e.isIntersecting) {
+                  e.target.classList.add('revealed');
+                  revealObs.unobserve(e.target);
+                }
+              });
+            }, { rootMargin: '0px 0px -60px 0px', threshold: 0.1 });
+            revealTargets.forEach(function(el) { revealObs.observe(el); });
+          } else {
+            revealTargets.forEach(function(el) { el.classList.add('revealed'); });
+          }
         })();
       </script>
 
