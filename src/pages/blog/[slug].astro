@@ -181,11 +181,11 @@ const breadcrumbs = [
   ogType="article"
   breadcrumbs={breadcrumbs}
 >
-  {/* Reading Progress Bar — sticky top */}
-  <div id="reading-progress" class="fixed left-0 top-0 z-50 h-[3px] w-0 bg-[var(--color-primary)] shadow-[0_0_16px_rgba(163,230,53,0.6)] transition-[width] duration-150 ease-out"></div>
+  {/* Reading Progress — ultra-subtle 2px, no glow */}
+  <div id="reading-progress" class="fixed left-0 top-0 z-50 h-[2px] w-0 bg-[var(--color-primary)] transition-[width] duration-100 ease-out" style="opacity:0.85"></div>
 
-  <article class="bg-[#0B0F14] py-16 lg:py-24">
-    <div class="container mx-auto max-w-4xl px-4">
+  <article class="bg-[#08090a] py-16 lg:py-24">
+    <div class="container mx-auto max-w-4xl px-6 lg:px-4">
       <a href="/blog/" class="mb-8 inline-flex items-center gap-2 text-sm font-medium text-[var(--color-text-muted)] transition-colors hover:text-[var(--color-primary-light)]">
         <span aria-hidden="true">←</span> Tüm blog yazıları
       </a>
@@ -197,31 +197,21 @@ const breadcrumbs = [
         <span class="text-[var(--color-text-muted)]">{post.read_time || 5} dakika okuma</span>
       </div>
 
-      <h1 class="mb-6 text-4xl font-extrabold md:text-6xl lg:text-7xl xl:text-8xl text-white leading-[0.98] tracking-[-0.02em]">{post.title}</h1>
+      <h1 class="mb-6 text-[2.25rem] font-bold md:text-[3.5rem] lg:text-[4.5rem] text-[#f7f8f8] leading-[1.0] tracking-[-0.04em]">{post.title}</h1>
 
       {post.excerpt && (
-        <p class="mb-10 text-xl text-[var(--color-text-muted)] md:text-2xl leading-[1.4]">{post.excerpt}</p>
+        <p class="mb-10 text-lg text-[#8a8f98] md:text-xl leading-[1.55] tracking-[-0.01em]">{post.excerpt}</p>
       )}
 
-      {/* Author card row — premium SVG avatar with gradient + ring */}
-      <div class="author-row mb-12 flex flex-col gap-4 border-b border-[var(--color-border)]/60 pb-6 md:flex-row md:items-center">
-        <div class="flex items-center gap-4">
-          <div class="relative flex h-14 w-14 shrink-0 items-center justify-center">
-            <svg class="absolute inset-0 h-full w-full" viewBox="0 0 56 56">
-              <defs>
-                <linearGradient id="avGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                  <stop offset="0%" stop-color="#a3e635" />
-                  <stop offset="100%" stop-color="#65a30d" />
-                </linearGradient>
-              </defs>
-              <circle cx="28" cy="28" r="27" fill="url(#avGrad)" />
-              <circle cx="28" cy="28" r="27" fill="none" stroke="#d9f99d" stroke-width="0.5" opacity="0.4" />
-            </svg>
-            <span class="relative text-xl font-black text-[#0B0F14] tracking-tight">{(post.author || 'P').charAt(0)}</span>
+      {/* Author row — Linear-style: subtle, luminance-based */}
+      <div class="author-row mb-14 flex flex-col gap-4 border-b border-white/[0.06] pb-7 md:flex-row md:items-center">
+        <div class="flex items-center gap-3.5">
+          <div class="relative flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-white/[0.04] border border-white/[0.08]">
+            <span class="text-sm font-semibold text-[#f7f8f8] tracking-tight">{(post.author || 'P').charAt(0)}</span>
           </div>
           <div class="flex-1 min-w-0">
-            <div class="text-base font-semibold text-white">{post.author}</div>
-            <div class="mt-0.5 text-sm text-[var(--color-text-muted)] line-clamp-2">
+            <div class="text-sm font-semibold text-[#f7f8f8]">{post.author}</div>
+            <div class="mt-0.5 text-xs text-[#62666d]">
               {formattedDate} {post.author_bio ? `· ${post.author_bio.split('.')[0]}` : ''}
             </div>
           </div>
@@ -229,7 +219,7 @@ const breadcrumbs = [
         {(post.tags || []).length > 0 && (
           <div class="flex flex-wrap gap-1.5 md:ml-auto md:justify-end">
             {(post.tags || []).slice(0, 4).map((tag) => (
-              <span class="tag-pill rounded-full border border-[var(--color-primary)]/25 px-2.5 py-0.5 text-xs font-medium text-[var(--color-primary-light)] transition-all">
+              <span class="tag-pill rounded-full border border-white/[0.06] bg-white/[0.02] px-2.5 py-0.5 text-[11px] font-medium text-[#8a8f98] transition-all">
                 #{tag}
               </span>
             ))}
@@ -245,11 +235,11 @@ const breadcrumbs = [
         />
       )}
 
-      {/* Sticky ToC sidebar (desktop only) */}
+      {/* Sticky ToC — glass card, subtle luminance */}
       {tocItems.length > 2 && (
-        <nav aria-label="İçindekiler" class="blog-toc pointer-events-none fixed top-24 left-6 z-20 hidden w-64 xl:block">
-          <div class="pointer-events-auto rounded-xl border border-[var(--color-border)] bg-[var(--color-surface-light)]/80 p-5 backdrop-blur-md">
-            <div class="mb-3 font-mono text-[10px] font-bold uppercase tracking-[0.2em] text-[var(--color-primary)]">İçindekiler</div>
+        <nav aria-label="İçindekiler" class="blog-toc pointer-events-none fixed top-24 left-6 z-20 hidden w-56 2xl:block">
+          <div class="pointer-events-auto rounded-lg border border-white/[0.06] bg-[#0f1011]/90 p-4 backdrop-blur-sm">
+            <div class="mb-3 font-mono text-[10px] font-medium uppercase tracking-[0.18em] text-[#62666d]">İçindekiler</div>
             <ul class="space-y-2.5">
               {tocItems.map((item, idx) => (
                 <li>
@@ -276,217 +266,213 @@ const breadcrumbs = [
       />
 
       <style is:global>
-        /* ================ Blog Reading Experience ================ */
+        /* ===== Blog Reading — Linear-inspired, Lime-adapted ===== */
 
-        /* Full-bleed hero + inline images — viewport breakout */
-        /* Bilder = Container-Breite (Symmetrie mit Text) */
+        /* Motion tokens */
+        :root {
+          --spring-smooth: cubic-bezier(0.16, 1, 0.3, 1);
+          --spring-snap: cubic-bezier(0.2, 0.8, 0.2, 1);
+        }
+
+        html { scroll-behavior: smooth; scroll-padding-top: 5rem; }
+
+        /* Images — container-width, subtle border */
         .blog-hero-image,
         .blog-content img {
           display: block;
           width: 100%;
           height: auto;
-          margin-top: 3rem;
-          margin-bottom: 3rem;
-          border: 1px solid var(--color-border);
-          border-radius: 16px;
+          margin-top: 2.5rem;
+          margin-bottom: 2.5rem;
+          border: 1px solid rgba(255,255,255,0.06);
+          border-radius: 8px;
         }
         .blog-hero-image {
           margin-top: 0;
-          margin-bottom: 4rem;
+          margin-bottom: 3.5rem;
+          border-radius: 12px;
         }
 
-        /* Hide duplicate first-h1 in markdown body */
+        /* First H1 in markdown = duplicate → hide */
         .blog-content > h1:first-child { display: none; }
 
-        /* H2 section headers — numbered, lime underline accent */
-        .blog-content {
-          counter-reset: section;
-        }
+        /* Section counter */
+        .blog-content { counter-reset: section; }
+
+        /* H2 — tight tracking, numbered, whisper border */
         .blog-content h2 {
           counter-increment: section;
           position: relative;
-          margin-top: 4.5rem !important;
-          margin-bottom: 1.5rem !important;
-          padding-top: 2rem;
-          padding-left: 0;
-          font-size: 2.75rem !important;
-          line-height: 1.08 !important;
-          letter-spacing: -0.025em;
-          border-top: 1px solid var(--color-border);
+          margin-top: 5rem !important;
+          margin-bottom: 1.25rem !important;
+          padding-top: 2.5rem;
+          font-size: 2rem !important;
+          line-height: 1.1 !important;
+          letter-spacing: -0.03em;
+          color: #f7f8f8 !important;
+          font-weight: 600 !important;
+          border-top: 1px solid rgba(255,255,255,0.06);
         }
         .blog-content h2::before {
           content: counter(section, decimal-leading-zero);
           display: block;
-          margin-bottom: 0.5rem;
+          margin-bottom: 0.75rem;
           font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
-          font-size: 0.75rem;
-          font-weight: 700;
-          letter-spacing: 0.2em;
-          color: var(--color-primary);
-          text-transform: uppercase;
+          font-size: 0.6875rem;
+          font-weight: 500;
+          letter-spacing: 0.18em;
+          color: #62666d;
         }
 
-        /* H3 sub-headings */
+        /* H3 */
         .blog-content h3 {
           margin-top: 2.5rem !important;
-          font-size: 1.5rem !important;
-          color: white !important;
+          font-size: 1.25rem !important;
+          font-weight: 600 !important;
+          letter-spacing: -0.01em;
+          color: #f7f8f8 !important;
         }
 
-        /* First paragraph after H2 = lead — larger, brighter */
+        /* Lead paragraph after H2 — slightly larger, brighter */
         .blog-content h2 + p {
-          font-size: 1.5rem !important;
-          line-height: 1.45 !important;
-          color: rgba(229, 231, 235, 0.95) !important;
-          margin-top: 1.25rem !important;
-          margin-bottom: 2rem !important;
-        }
-        .blog-content h2 + p::first-letter {
-          font-size: 1.45em;
-          font-weight: 700;
-          color: var(--color-primary);
+          font-size: 1.125rem !important;
+          line-height: 1.6 !important;
+          color: #d0d6e0 !important;
+          margin-top: 0.75rem !important;
+          margin-bottom: 1.5rem !important;
         }
 
-        /* Blockquote → callout */
+        /* Body text — Linear's silver-gray reading color */
+        .blog-content p {
+          color: #8a8f98 !important;
+          line-height: 1.65 !important;
+          font-size: 1rem !important;
+          letter-spacing: normal;
+        }
+
+        /* Blockquote — glass card, no lime bar */
         .blog-content blockquote {
           position: relative;
-          margin: 2.5rem 0 !important;
-          padding: 1.5rem 1.5rem 1.5rem 2rem !important;
-          border-left: 4px solid var(--color-primary) !important;
-          border-radius: 0 12px 12px 0;
-          background: linear-gradient(90deg, rgba(163, 230, 53, 0.08) 0%, rgba(163, 230, 53, 0) 60%);
+          margin: 2rem 0 !important;
+          padding: 1.25rem 1.5rem !important;
+          border-left: none !important;
+          border: 1px solid rgba(255,255,255,0.06) !important;
+          border-radius: 8px;
+          background: rgba(255,255,255,0.02);
           font-style: normal !important;
-          font-size: 1.15rem;
-          line-height: 1.55;
-          color: white !important;
+          font-size: 1rem;
+          line-height: 1.6;
         }
         .blog-content blockquote p {
-          color: white !important;
+          color: #d0d6e0 !important;
+          font-size: 0.9375rem !important;
+        }
+        .blog-content blockquote strong {
+          color: #f7f8f8 !important;
         }
 
-        /* Horizontal rule as visual break */
+        /* HR — ultra-subtle */
         .blog-content hr {
-          margin: 3.5rem auto !important;
-          width: 40%;
+          margin: 4rem auto !important;
+          width: 100%;
           border: none;
-          border-top: 1px solid var(--color-border);
-          opacity: 0.5;
+          border-top: 1px solid rgba(255,255,255,0.06);
         }
 
-        /* Lists spacing */
+        /* Lists */
         .blog-content ul li,
         .blog-content ol li {
-          margin: 0.5rem 0 !important;
-          line-height: 1.65;
+          margin: 0.4rem 0 !important;
+          line-height: 1.6;
+          color: #8a8f98 !important;
+          font-size: 1rem !important;
         }
 
-        /* Strong emphasis */
+        /* Strong */
         .blog-content strong {
-          color: white !important;
-          font-weight: 700;
+          color: #f7f8f8 !important;
+          font-weight: 600;
         }
 
-        /* Link styling in content */
+        /* Links */
         .blog-content a {
-          color: var(--color-primary-light) !important;
+          color: var(--color-primary) !important;
           text-decoration: none !important;
-          border-bottom: 1px solid var(--color-primary)/30;
-          transition: all 0.15s;
+          transition: opacity 0.15s;
         }
         .blog-content a:hover {
-          color: var(--color-primary) !important;
-          border-bottom-color: var(--color-primary);
+          opacity: 0.75;
         }
 
-        /* Smooth scroll for ToC anchors */
-        html { scroll-behavior: smooth; scroll-padding-top: 6rem; }
-
-        /* ToC link hover micro-interaction */
+        /* ToC — minimal, no glow */
         .toc-link {
-          padding: 4px 0;
-          transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), color 0.15s;
+          position: relative;
+          padding: 3px 0;
+          font-size: 13px;
+          transition: color 0.15s var(--spring-snap);
         }
         .toc-link:hover {
-          transform: translateX(4px);
+          color: #d0d6e0 !important;
         }
         .toc-link.is-active {
-          color: white !important;
-          transform: translateX(2px);
+          color: #f7f8f8 !important;
         }
         .toc-link.is-active span:first-child {
           color: var(--color-primary) !important;
-          font-weight: 700;
-        }
-        .toc-link.is-active::before {
-          content: '';
-          position: absolute;
-          left: -16px;
-          top: 50%;
-          width: 8px;
-          height: 8px;
-          border-radius: 50%;
-          background: var(--color-primary);
-          box-shadow: 0 0 16px rgba(163, 230, 53, 0.7);
-          transform: translateY(-50%);
-        }
-        .toc-link {
-          position: relative;
         }
 
-        /* Tag pill hover */
+        /* Tag pills */
         .tag-pill:hover {
-          background: rgba(163, 230, 53, 0.12);
-          border-color: var(--color-primary) !important;
-          color: var(--color-primary) !important;
+          background: rgba(255,255,255,0.04);
+          color: #d0d6e0 !important;
         }
 
-        /* CTA button glow + scale */
+        /* CTA button */
         .cta-btn {
-          transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.2s;
+          transition: all 0.2s var(--spring-smooth);
         }
         .cta-btn:hover {
-          transform: translateY(-2px) scale(1.02);
-          box-shadow: 0 0 48px rgba(163, 230, 53, 0.55);
+          filter: brightness(1.1);
+          box-shadow: 0 0 24px rgba(163,230,53,0.25);
         }
 
-        /* Mobile adjustments */
+        /* Mobile */
         @media (max-width: 768px) {
           .blog-content h2 {
-            font-size: 2rem !important;
-            margin-top: 3rem !important;
+            font-size: 1.5rem !important;
+            margin-top: 3.5rem !important;
           }
           .blog-content h2 + p {
-            font-size: 1.2rem !important;
+            font-size: 1rem !important;
           }
           .blog-content blockquote {
-            font-size: 1.05rem;
-            padding: 1.25rem 1.25rem 1.25rem 1.5rem !important;
+            padding: 1rem 1.25rem !important;
           }
           .blog-hero-image,
           .blog-content img {
-            margin-top: 2rem;
-            margin-bottom: 2rem;
+            margin-top: 1.75rem;
+            margin-bottom: 1.75rem;
           }
         }
       </style>
 
-      {/* Final CTA Block after content */}
-      <div class="mt-20 overflow-hidden rounded-3xl border border-[var(--color-primary)]/30 bg-gradient-to-br from-[var(--color-primary)]/10 via-[var(--color-surface-light)] to-[var(--color-surface-light)] p-8 md:p-12">
-        <div class="mb-4 font-mono text-[11px] font-bold uppercase tracking-[0.2em] text-[var(--color-primary)]">
+      {/* CTA Block — Linear-style subtle glass card */}
+      <div class="mt-24 rounded-xl border border-white/[0.06] bg-white/[0.02] p-8 md:p-10">
+        <div class="mb-3 font-mono text-[11px] font-medium uppercase tracking-[0.18em] text-[#62666d]">
           Sıradaki adım
         </div>
-        <h3 class="mb-4 text-2xl font-extrabold text-white md:text-3xl leading-[1.15]">
+        <h3 class="mb-4 text-xl font-semibold text-[#f7f8f8] md:text-2xl leading-[1.2] tracking-[-0.02em]">
           Bu yazının içeriğini kendi şirketinize uyarlayalım.
         </h3>
-        <p class="mb-8 max-w-2xl text-[var(--color-text-muted)] md:text-lg leading-[1.55]">
-          45 dakikalık ücretsiz görüşmede şirketinizdeki süreçleri birlikte haritalayıp, hangi otomasyonun size en hızlı geri dönüş sağlayacağını net söyleriz. Baskı yok — sadece sayısal bir analiz.
+        <p class="mb-8 max-w-2xl text-[#8a8f98] md:text-base leading-[1.6]">
+          45 dakikalık ücretsiz görüşmede şirketinizdeki süreçleri birlikte haritalayıp, hangi otomasyonun size en hızlı geri dönüş sağlayacağını net söyleriz.
         </p>
         <div class="flex flex-wrap items-center gap-4">
-          <a href="/iletisim/" class="cta-btn inline-flex items-center gap-2 rounded-full bg-[var(--color-primary)] px-7 py-3.5 text-base font-bold text-[#0B0F14] shadow-[0_0_32px_rgba(163,230,53,0.4)]">
+          <a href="/iletisim/" class="cta-btn inline-flex items-center gap-2 rounded-md bg-[var(--color-primary)] px-5 py-2.5 text-sm font-semibold text-[#08090a]">
             Ücretsiz analizi talep et <span aria-hidden="true">→</span>
           </a>
-          <div class="text-sm text-[var(--color-text-muted)]">
-            <span class="text-[var(--color-primary)] font-bold">%50 Geri İade Garantisi</span> · Hedef tutmazsa yarısı iade
+          <div class="text-xs text-[#62666d]">
+            <span class="text-[var(--color-primary)] font-semibold">%50 Geri İade Garantisi</span> · Hedef tutmazsa yarısı iade
           </div>
         </div>
       </div>
