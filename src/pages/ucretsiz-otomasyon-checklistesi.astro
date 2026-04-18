@@ -5,13 +5,13 @@ const sourcePage = Astro.url.searchParams.get('kaynak') || '';
 
 const breadcrumbs = [
   { name: 'Ana Sayfa', url: '/' },
-  { name: 'Ucretsiz Checklist', url: '/ucretsiz-otomasyon-checklistesi/' },
+  { name: 'Ücretsiz Checklist', url: '/ucretsiz-otomasyon-checklistesi/' },
 ];
 ---
 
 <BaseLayout
-  title="Ucretsiz Otomasyon Oncelik Checklisti | Pratik Yapay Zeka"
-  description="Hangi surecinizde otomasyonun once ele alinmasi gerektigini gormek icin ucretsiz oncelik checklistini talep edin."
+  title="Ücretsiz Otomasyon Öncelik Checklisti | Pratik Yapay Zeka"
+  description="Hangi surecinizde otomasyonun önce ele alınması gerektiğini görmek için ücretsiz öncelik checklistini talep edin."
   breadcrumbs={breadcrumbs}
 >
   <section class="relative overflow-hidden py-32 lg:py-40">
@@ -26,38 +26,38 @@ const breadcrumbs = [
 
           <div class="space-y-5">
             <h1 class="text-4xl font-black tracking-tight text-[var(--color-text)] md:text-6xl">
-              Ucretsiz otomasyon oncelik checklisti alin.
+              Ücretsiz otomasyon öncelik checklisti alin.
             </h1>
             <p class="max-w-2xl text-lg leading-relaxed text-[var(--color-text-muted)] md:text-xl">
-              Bu checklist, ekibinizde hangi surecin en cok zaman yedigini, nerede tekrar is olustugunu ve hangi otomasyon adiminin once ele alinmasi gerektigini daha net gormenize yardim eder.
+              Bu checklist, ekibinizde hangi sürecin en çok zaman yedigini, nerede tekrar is olustugunu ve hangi otomasyon adiminin önce ele alınması gerektiğini daha net gormenize yardim eder.
             </p>
           </div>
 
           <div class="grid gap-4 md:grid-cols-3">
             <div class="rounded-3xl border border-[var(--color-border)] bg-[var(--color-surface-light)]/70 p-6">
               <p class="text-sm uppercase tracking-[0.16em] text-[var(--color-primary)]">1</p>
-              <h2 class="mt-3 text-xl font-semibold text-[var(--color-text)]">Sureci puanlayin</h2>
-              <p class="mt-3 text-sm leading-relaxed text-[var(--color-text-muted)]">Tekrar isi, gecikme, hata riski ve ekip bagimliligini hizli sekilde degerlendirin.</p>
+              <h2 class="mt-3 text-xl font-semibold text-[var(--color-text)]">Süreci puanlayin</h2>
+              <p class="mt-3 text-sm leading-relaxed text-[var(--color-text-muted)]">Tekrar isi, gecikme, hata riski ve ekip bagimliligini hızlı şekilde degerlendirin.</p>
             </div>
             <div class="rounded-3xl border border-[var(--color-border)] bg-[var(--color-surface-light)]/70 p-6">
               <p class="text-sm uppercase tracking-[0.16em] text-[var(--color-primary)]">2</p>
               <h2 class="mt-3 text-xl font-semibold text-[var(--color-text)]">Darbogazi bulun</h2>
-              <p class="mt-3 text-sm leading-relaxed text-[var(--color-text-muted)]">CRM, marketing, finans, WhatsApp veya ic operasyon tarafinda asil sikisani gorun.</p>
+              <p class="mt-3 text-sm leading-relaxed text-[var(--color-text-muted)]">CRM, marketing, finans, WhatsApp veya ic operasyon tarafinda asıl sikisani gorun.</p>
             </div>
             <div class="rounded-3xl border border-[var(--color-border)] bg-[var(--color-surface-light)]/70 p-6">
               <p class="text-sm uppercase tracking-[0.16em] text-[var(--color-primary)]">3</p>
-              <h2 class="mt-3 text-xl font-semibold text-[var(--color-text)]">Ilk adimi secin</h2>
-              <p class="mt-3 text-sm leading-relaxed text-[var(--color-text-muted)]">Tum isleri ayni anda degil, en hizli geri donus verecek ilk dugumu secin.</p>
+              <h2 class="mt-3 text-xl font-semibold text-[var(--color-text)]">Ilk adımı seçin</h2>
+              <p class="mt-3 text-sm leading-relaxed text-[var(--color-text-muted)]">Tüm isleri ayni anda değil, en hızlı geri dönüş verecek ilk dugumu seçin.</p>
             </div>
           </div>
 
           <div class="rounded-[2rem] border border-[var(--color-border)] bg-[var(--color-surface-light)]/60 p-8">
             <h2 class="text-2xl font-semibold text-[var(--color-text)]">Checklistte neler var?</h2>
             <ul class="mt-5 space-y-3 text-[var(--color-text-muted)]">
-              <li>Tekrar is ve darboagaz tespiti icin puanlama mantigi</li>
-              <li>Surec onceliklendirme matrisi</li>
-              <li>Hangi isler otomasyon icin uygun, hangileri degil ayrimi</li>
-              <li>Ilk 30 gunluk uygulama notlari</li>
+              <li>Tekrar is ve darboagaz tespiti için puanlama mantigi</li>
+              <li>Süreç onceliklendirme matrisi</li>
+              <li>Hangi isler otomasyon için uygun, hangileri değil ayrimi</li>
+              <li>Ilk 30 günlük uygulama notlari</li>
             </ul>
           </div>
         </div>
@@ -67,7 +67,7 @@ const breadcrumbs = [
             <p class="text-sm uppercase tracking-[0.2em] text-[var(--color-primary-light)]">Resource request</p>
             <h2 class="mt-3 text-3xl font-black tracking-tight text-[var(--color-text)]">Checklisti isteyin</h2>
             <p class="mt-3 leading-relaxed text-[var(--color-text-muted)]">
-              Kisa formu birakin. Checklisti size gonderelim ve isterseniz hangi satirin sizin icin en kritik oldugunu da birlikte netlestirelim.
+              Kısa formu bırakın. Checklisti size gonderelim ve isterseniz hangi satirin sizin için en kritik olduğunu da birlikte netlestirelim.
             </p>
           </div>
 
@@ -100,32 +100,32 @@ const breadcrumbs = [
 
             <div class="grid gap-5 sm:grid-cols-2">
               <label class="space-y-2">
-                <span class="text-sm font-medium text-[var(--color-text)]">Sirket</span>
+                <span class="text-sm font-medium text-[var(--color-text)]">Şirket</span>
                 <input class="w-full rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface)] px-4 py-3 text-[var(--color-text)] outline-none transition focus:border-[var(--color-primary)]" type="text" name="company" autocomplete="organization" />
               </label>
 
               <label class="space-y-2">
                 <span class="text-sm font-medium text-[var(--color-text)]">Rolunuz</span>
-                <input class="w-full rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface)] px-4 py-3 text-[var(--color-text)] outline-none transition focus:border-[var(--color-primary)]" type="text" name="role" placeholder="Kurucu, operasyon, satis..." />
+                <input class="w-full rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface)] px-4 py-3 text-[var(--color-text)] outline-none transition focus:border-[var(--color-primary)]" type="text" name="role" placeholder="Kurucu, operasyon, satış..." />
               </label>
             </div>
 
             <label class="space-y-2">
-              <span class="text-sm font-medium text-[var(--color-text)]">En cok zorlandiginiz alan</span>
+              <span class="text-sm font-medium text-[var(--color-text)]">En çok zorlandiginiz alan</span>
               <select class="w-full rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface)] px-4 py-3 text-[var(--color-text)] outline-none transition focus:border-[var(--color-primary)]" name="interest_area" required>
-                <option value="">Bir alan secin</option>
-                <option value="crm-sales">CRM ve satis operasyonu</option>
-                <option value="marketing-leads">Marketing ve lead yonetimi</option>
+                <option value="">Bir alan seçin</option>
+                <option value="crm-sales">CRM ve satış operasyonu</option>
+                <option value="marketing-leads">Marketing ve lead yönetimi</option>
                 <option value="finance-accounting">Finans ve muhasebe operasyonu</option>
                 <option value="whatsapp-chatbot">WhatsApp ve chatbot akislar</option>
                 <option value="ecommerce-ops">E-ticaret ve operasyon</option>
-                <option value="other">Diger</option>
+                <option value="other">Diğer</option>
               </select>
             </label>
 
             <label class="space-y-2">
-              <span class="text-sm font-medium text-[var(--color-text)]">Kisa not</span>
-              <textarea class="min-h-32 w-full rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface)] px-4 py-3 text-[var(--color-text)] outline-none transition focus:border-[var(--color-primary)]" name="message" placeholder="Ornek: teklifler dağinik, leadler geri donmeden kayboluyor, belge girisi cok manuel..."></textarea>
+              <span class="text-sm font-medium text-[var(--color-text)]">Kısa not</span>
+              <textarea class="min-h-32 w-full rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface)] px-4 py-3 text-[var(--color-text)] outline-none transition focus:border-[var(--color-primary)]" name="message" placeholder="Örnek: teklifler dağinik, leadler geri donmeden kayboluyor, belge girişi çok manuel..."></textarea>
             </label>
 
             <button type="submit" class="inline-flex w-full items-center justify-center rounded-2xl bg-[var(--color-primary)] px-6 py-4 text-lg font-black text-black transition hover:-translate-y-0.5 hover:bg-[var(--color-primary-light)]">
@@ -133,7 +133,7 @@ const breadcrumbs = [
             </button>
 
             <p class="text-sm leading-relaxed text-[var(--color-text-muted)]">
-              Bu form bir satis baskisi degil. Amacimiz once size yararli bir giris noktasi vermek ve isterseniz ondan sonra bir sonraki adimi konusmak.
+              Bu form bir satış baskisi değil. Amacimiz önce size yararli bir giriş noktasi vermek ve isterseniz ondan sonra bir sonraki adımı konusmak.
             </p>
           </form>
         </div>

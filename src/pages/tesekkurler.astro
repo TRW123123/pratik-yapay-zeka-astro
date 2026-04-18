@@ -4,7 +4,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 const submissionType = Astro.url.searchParams.get('tip') || '';
 const breadcrumbs = [
   { name: 'Ana Sayfa', url: '/' },
-  { name: 'Iletisim', url: '/iletisim/' },
+  { name: 'Iletişim', url: '/iletisim/' },
   { name: 'Tesekkurler', url: '/tesekkurler/' },
 ];
 
@@ -13,7 +13,7 @@ const isResourceRequest = submissionType === 'resource';
 
 <BaseLayout
   title="Tesekkurler | Pratik Yapay Zeka"
-  description="Talebiniz bize ulasti. Ekibiniz icin en uygun otomasyon alanlarini geri donmek uzere inceleyecegiz."
+  description="Talebiniz bize ulasti. Ekibiniz için en uygun otomasyon alanlarini geri donmek uzere inceleyecegiz."
   breadcrumbs={breadcrumbs}
   noindex={true}
 >
@@ -29,8 +29,8 @@ const isResourceRequest = submissionType === 'resource';
         <h1 class="mt-6 text-4xl font-black tracking-tight text-[var(--color-text)]">Talebiniz bize ulasti.</h1>
         <p class="mt-4 text-lg leading-relaxed text-[var(--color-text-muted)]">
           {isResourceRequest
-            ? 'Checklist talebiniz bize ulasti. Kaynagi ve sonraki yonlendirmeyi size en kisa surede paylasacagiz.'
-            : 'Gonderdiginiz bilgiler icin tesekkurler. Uygun otomasyon alanlarini ve en mantikli ilk adimi degerlendirip size geri donecegiz.'}
+            ? 'Checklist talebiniz bize ulasti. Kaynagi ve sonraki yonlendirmeyi size en kısa sürede paylasacagiz.'
+            : 'Gonderdiginiz bilgiler için tesekkurler. Uygun otomasyon alanlarini ve en mantikli ilk adımı degerlendirip size geri donecegiz.'}
         </p>
 
         <div class="mt-8 grid gap-4 text-left md:grid-cols-2">
@@ -38,15 +38,15 @@ const isResourceRequest = submissionType === 'resource';
             <h2 class="text-lg font-semibold text-[var(--color-text)]">{isResourceRequest ? 'Bu sirada ne oluyor?' : 'Bu sirada ne oluyor?'}</h2>
             <p class="mt-3 text-sm leading-relaxed text-[var(--color-text-muted)]">
               {isResourceRequest
-                ? 'Talebinizi kaydedip size checklisti ve isterseniz uygun sonraki adimi iletecek sekilde hazirliyoruz.'
-                : 'Talebinizi sayfa kaynagi ve ihtiyac alanina gore inceleyip size uygun bir sonraki adimi hazirliyoruz.'}
+                ? 'Talebinizi kaydedip size checklisti ve isterseniz uygun sonraki adımı iletecek şekilde hazirliyoruz.'
+                : 'Talebinizi sayfa kaynagi ve ihtiyac alanina gore inceleyip size uygun bir sonraki adımı hazirliyoruz.'}
             </p>
           </div>
           <div class="rounded-3xl border border-[var(--color-border)] bg-[var(--color-surface)]/80 p-6">
             <h2 class="text-lg font-semibold text-[var(--color-text)]">Ne yapabilirsiniz?</h2>
             <p class="mt-3 text-sm leading-relaxed text-[var(--color-text-muted)]">
               {isResourceRequest
-                ? 'Bu arada cozum sayfalarimizi veya vaka calismalarimizi inceleyerek hangi alana daha yakin oldugunuzu gorebilirsiniz.'
+                ? 'Bu arada çözüm sayfalarimizi veya vaka calismalarimizi inceleyerek hangi alana daha yakin oldugunuzu gorebilirsiniz.'
                 : 'Bu arada vaka calismalarimizi inceleyebilir veya bize dogrudan e-posta gonderebilirsiniz.'}
             </p>
           </div>
@@ -54,10 +54,10 @@ const isResourceRequest = submissionType === 'resource';
 
         <div class="mt-10 flex flex-col justify-center gap-4 sm:flex-row">
           <a href={isResourceRequest ? '/cozumler/' : '/vaka-calismalari/'} class="inline-flex items-center justify-center rounded-2xl border border-[var(--color-border)] px-6 py-3 font-semibold text-[var(--color-text)] transition hover:border-[var(--color-primary)] hover:text-[var(--color-primary-light)]">
-            {isResourceRequest ? 'Cozum sayfalarini incele' : 'Vaka calismalarini incele'}
+            {isResourceRequest ? 'Çözüm sayfalarini incele' : 'Vaka calismalarini incele'}
           </a>
           <a href="mailto:s.tepecik@pratik-yapayzeka.com" class="inline-flex items-center justify-center rounded-2xl bg-[var(--color-primary)] px-6 py-3 font-semibold text-black transition hover:bg-[var(--color-primary-light)]">
-            E-posta gonder
+            E-posta gönder
           </a>
         </div>
       </div>

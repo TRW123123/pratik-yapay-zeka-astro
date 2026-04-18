@@ -4,19 +4,19 @@ import { buildContactHref } from '../lib/contactHref';
 
 const navItems = [
   { href: '/', label: 'Ana Sayfa' },
-  { href: '/cozumler/', label: 'Cozumler' },
-  { href: '/vaka-calismalari/', label: 'Vaka Calismalari' },
+  { href: '/cozumler/', label: 'Çözümler' },
+  { href: '/vaka-calismalari/', label: 'Vaka Çalışmaları' },
   { href: '/blog/', label: 'Blog' },
-  { href: buildContactHref({ source: pathname, cta: 'nav-primary-contact' }), label: 'Iletisim' },
+  { href: buildContactHref({ source: pathname, cta: 'nav-primary-contact' }), label: 'Iletişim' },
 ];
 
 const solutionItems = [
-  { href: '/crm-programi/', label: 'CRM ve Musteri Takibi' },
+  { href: '/crm-programi/', label: 'CRM ve Müşteri Takibi' },
   { href: '/marketing-otomasyonu/', label: 'Lead ve Marketing Otomasyonu' },
-  { href: '/whatsapp-ve-siparis-botlari/', label: 'WhatsApp ve Siparis Akisi' },
-  { href: '/on-muhasebe-ve-fatura/', label: 'On Muhasebe ve Fatura' },
-  { href: '/teklif-hazirlama-programi/', label: 'Teklif ve Onay Akisi' },
-  { href: '/b2b-musteri-bulma/', label: 'B2B Arastirma ve Outreach' },
+  { href: '/whatsapp-ve-siparis-botlari/', label: 'WhatsApp ve Sipariş Akışı' },
+  { href: '/on-muhasebe-ve-fatura/', label: 'Ön Muhasebe ve Fatura' },
+  { href: '/teklif-hazirlama-programi/', label: 'Teklif ve Onay Akışı' },
+  { href: '/b2b-musteri-bulma/', label: 'B2B Araştırma ve Outreach' },
 ];
 
 function isActive(href: string): boolean {
@@ -58,7 +58,7 @@ function isActive(href: string): boolean {
               pathname.includes('/cozumler') ? 'text-[var(--color-primary-light)]' : 'text-[var(--color-text)] hover:text-[var(--color-primary-light)]',
             ]}
           >
-            Kisa Yollar
+            Kısa Yollar
             <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 transition-transform group-hover:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
           </button>
 
@@ -71,7 +71,7 @@ function isActive(href: string): boolean {
               ))}
               <div class="mt-1 border-t border-[var(--color-border)] pt-1">
                 <a href="/cozumler/" class="block px-4 py-2.5 text-sm font-semibold text-[var(--color-text)] transition-colors hover:text-[var(--color-primary-light)]">
-                  Tum Cozumler ->
+                  Tüm Çözümler ->
                 </a>
               </div>
             </div>
@@ -93,7 +93,7 @@ function isActive(href: string): boolean {
         </a>
       ))}
       <div class="mt-2 border-t border-[var(--color-border)] pt-2">
-        <span class="px-3 text-xs uppercase tracking-wider text-[var(--color-text-muted)]">Kisa Yollar</span>
+        <span class="px-3 text-xs uppercase tracking-wider text-[var(--color-text-muted)]">Kısa Yollar</span>
         {solutionItems.map((item) => (
           <a href={item.href} class="block rounded-md px-3 py-2 text-sm text-[var(--color-text)] transition-colors hover:bg-[var(--color-border)]/30">
             {item.label}

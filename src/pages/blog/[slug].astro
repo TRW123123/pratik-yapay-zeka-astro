@@ -77,16 +77,16 @@ const topicalText = [post.title, post.excerpt, post.category, ...(post.tags || [
   .join(' ')
   .toLowerCase();
 
-const isGrowth = /(lead|marketing|pazarlama|linkedin|outbound|email|crm|satis|musteri)/.test(topicalText);
+const isGrowth = /(lead|marketing|pazarlama|linkedin|outbound|email|crm|satış|müşteri)/.test(topicalText);
 const isFinance = /(muhasebe|fatura|tahsilat|finans|beyan|kdv|vergi|mutabakat|cari)/.test(topicalText);
-const isHr = /(ik|insan kaynak|bordro|maas|sgk|izin|mesai|tazminat)/.test(topicalText);
+const isHr = /(ik|insan kaynak|bordro|maaş|sgk|izin|mesai|tazminat)/.test(topicalText);
 
 const relatedSolutions: LinkCard[] = isFinance
   ? [
       {
         href: '/on-muhasebe-ve-fatura/',
-        title: 'On muhasebe ve fatura otomasyonu',
-        description: 'Belge, veri girisi ve kontrol akislarini daha sistemli hale getirin.',
+        title: 'Ön muhasebe ve fatura otomasyonu',
+        description: 'Belge, veri girişi ve kontrol akislarini daha sistemli hale getirin.',
         badge: 'Finance',
       },
       {
@@ -107,19 +107,19 @@ const relatedSolutions: LinkCard[] = isFinance
         {
           href: '/maas-hesaplama-motoru/',
           title: 'IK ve bordro akislarini toparlayin',
-          description: 'Tekil hesaplardan ekip ici surec otomasyonuna gecis icin ana giris sayfasi.',
+          description: 'Tekil hesaplardan ekip ici süreç otomasyonuna geçiş için ana giriş sayfasi.',
           badge: 'HR',
         },
         {
           href: '/bordro-hesaplama/',
           title: 'Bordro destek akislarini sadeletin',
-          description: 'Tekrarlayan maas, puantaj ve personel taleplerini duzenli yonetin.',
+          description: 'Tekrarlayan maaş, puantaj ve personel taleplerini düzenli yönetin.',
           badge: 'Payroll',
         },
         {
           href: '/sgk-hizmet-dokumu/',
           title: 'Belge ve personel dogrulama akislarini iyilestirin',
-          description: 'IK ekiplerinde belge tabanli tekrar isi azaltmak icin.',
+          description: 'IK ekiplerinde belge tabanlı tekrar isi azaltmak için.',
           badge: 'Ops',
         },
       ]
@@ -127,26 +127,26 @@ const relatedSolutions: LinkCard[] = isFinance
         {
           href: '/marketing-otomasyonu/',
           title: 'Marketing otomasyonu',
-          description: 'Form, icerik, outbound ve lead takip akislarini tek sistem mantiginda ele alin.',
+          description: 'Form, içerik, outbound ve lead takip akislarini tek sistem mantiginda ele alin.',
           badge: 'Growth',
         },
         {
           href: '/crm-programi/',
-          title: 'CRM programi',
-          description: 'Gorusme, takip ve pipeline kayiplarini azaltan merkez sayfa.',
+          title: 'CRM programı',
+          description: 'Görüşme, takip ve pipeline kayiplarini azaltan merkez sayfa.',
           badge: 'CRM',
         },
         {
           href: '/b2b-musteri-bulma/',
-          title: 'B2B musteri bulma',
-          description: 'Arastirma, hedef hesap secimi ve nitelikli outbound tarafini guclendirin.',
+          title: 'B2B müşteri bulma',
+          description: 'Araştırma, hedef hesap seçimi ve nitelikli outbound tarafini guclendirin.',
           badge: 'Outbound',
         },
       ];
 
 const contactPackage = isFinance ? 'finans-operasyon-analizi' : isHr ? 'ik-surec-analizi' : 'lead-flow-audit';
 const contactArea = isFinance ? 'finance-accounting' : isHr ? 'other' : 'marketing-leads';
-const contactHref = `/iletisim/?kaynak=${encodeURIComponent(`/blog/${post.slug}/`)}&paket=${contactPackage}&alan=${contactArea}`;
+const contactHref = `/iletişim/?kaynak=${encodeURIComponent(`/blog/${post.slug}/`)}&paket=${contactPackage}&alan=${contactArea}`;
 
 const articleSchema = {
   '@context': 'https://schema.org',
