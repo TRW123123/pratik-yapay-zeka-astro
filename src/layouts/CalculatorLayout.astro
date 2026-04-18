@@ -21,7 +21,7 @@ const commerceContactHref = (cta: string) => buildContactHref({ source: pathname
 const shortName = title.split('|')[0].trim();
 const breadcrumbs = [
   { name: 'Ana Sayfa', url: '/' },
-  { name: 'Hesaplama Araclari ve Cozumler', url: '/cozumler/' },
+  { name: 'Hesaplama Araclari ve Çözümler', url: '/cozumler/' },
   { name: shortName, url: pathname },
 ];
 
@@ -51,20 +51,20 @@ const financeSignals = [
 const hrNextSteps = [
   {
     href: '/brutten-nete/',
-    title: 'IK sureclerini yardim masasi gibi yonetin',
-    description: 'Brutten nete, personel sorulari ve tekrar eden IK islemlerini tek akista otomatiklestirin.',
+    title: 'IK süreçlerini yardim masasi gibi yönetin',
+    description: 'Brütten nete, personel sorulari ve tekrar eden IK islemlerini tek akista otomatikleştirin.',
     badge: 'HR',
   },
   {
     href: '/sgk-hizmet-dokumu/',
     title: 'Aday ve personel dogrulama akislarini guclendirin',
-    description: 'Ozellikle ise alim ve risk kontrol sureclerinde belge tabanli otomasyonu derinlestirin.',
+    description: 'Özellikle ise alim ve risk kontrol sureclerinde belge tabanli otomasyonu derinlestirin.',
     badge: 'Check',
   },
   {
     href: hrContactHref('calculator-nextstep-contact'),
     title: 'Kendi surecinize gore teknik analiz alin',
-    description: 'Hazir icerik yerine size uygun senaryo cizmek icin kisa bir on analiz talep edin.',
+    description: 'Hazir içerik yerine size uygun senaryo cizmek için kısa bir on analiz talep edin.',
     badge: 'Lead',
   },
 ];
@@ -73,19 +73,19 @@ const financeNextSteps = [
   {
     href: '/on-muhasebe-ve-fatura/',
     title: 'Muhasebe veri girisini merkezden azaltin',
-    description: 'Belge okumadan ERP kaydina kadar daha buyuk resmi kuran ana cozum sayfasi.',
+    description: 'Belge okumadan ERP kaydina kadar daha büyük resmi kuran ana çözüm sayfasi.',
     badge: 'Finance',
   },
   {
     href: '/e-beyanname/',
     title: 'Beyanname ve kontrol akislarini ilerletin',
-    description: 'Ozellikle uyum ve dogrulama tarafinda daha net operasyonel akislar icin bakin.',
+    description: 'Özellikle uyum ve dogrulama tarafinda daha net operasyonel akislar için bakin.',
     badge: 'Compliance',
   },
   {
     href: '/mutabakat-mektubu/',
-    title: 'Takip ve mutabakat sureclerini birlestirin',
-    description: 'Yanitsiz e-postalar, tekrar eden follow-up ve ay sonu kapanis yukunu azaltin.',
+    title: 'Takip ve mutabakat süreçlerini birlestirin',
+    description: 'Yanıtsız e-postalar, tekrar eden follow-up ve ay sonu kapanis yukunu azaltin.',
     badge: 'Follow-up',
   },
 ];
@@ -93,20 +93,20 @@ const financeNextSteps = [
 const commerceNextSteps = [
   {
     href: '/teklif-hazirlama-programi/',
-    title: 'Teklif hazirlama surecini toparlayin',
-    description: 'Fiyat, kur ve teklif akisini daha kontrollu ve hizli hale getirin.',
+    title: 'Teklif hazırlama surecini toparlayin',
+    description: 'Fiyat, kur ve teklif akisini daha kontrollu ve hızlı hale getirin.',
     badge: 'Quoting',
   },
   {
     href: '/e-ticaret-ve-pazaryeri-otomasyonu/',
-    title: 'Siparis ve operasyon akisini sistemlestirin',
-    description: 'Pazaryeri, kargo ve fatura akisini daha buyuk bir operasyon mantigina baglayin.',
+    title: 'Sipariş ve operasyon akisini sistemlestirin',
+    description: 'Pazaryeri, kargo ve fatura akisini daha büyük bir operasyon mantigina baglayin.',
     badge: 'Commerce',
   },
   {
     href: '/stok-takibi-programi/',
     title: 'Stok ve kanal senkronunu guclendirin',
-    description: 'Operasyon tarafinda elle takip yerine daha gercek zamanli bir yapi kurun.',
+    description: 'Operasyon tarafinda elle takip yerine daha gerçek zamanli bir yapı kurun.',
     badge: 'Inventory',
   },
 ];
@@ -115,19 +115,19 @@ const proofCases = [
   {
     href: '/vaka-calismalari/cemkimsan/',
     title: 'Cemkimsan vaka calismasi',
-    description: 'Operasyonel yuk ve satis/pazarlama akislarinin otomasyonla nasil olceklendigini inceleyin.',
+    description: 'Operasyonel yuk ve satış/pazarlama akislarinin otomasyonla nasil olceklendigini inceleyin.',
     badge: 'Operations',
   },
   {
     href: '/vaka-calismalari/erpa-teknoloji/',
     title: 'ERPA Teknoloji vaka calismasi',
-    description: 'B2B arastirma, lead toplama ve sistematik akis tarafinda guven kuran bir ornek.',
+    description: 'B2B arastirma, lead toplama ve sistematik akış tarafinda guven kuran bir ornek.',
     badge: 'B2B',
   },
   {
     href: '/vaka-calismalari/car-studio-ai/',
     title: 'Car Studio AI vaka calismasi',
-    description: 'Kucuk ekiplerle daha olceklenebilir otomasyon mantiginin pratik sonucunu gorun.',
+    description: 'Küçük ekiplerle daha olceklenebilir otomasyon mantiginin pratik sonucunu gorun.',
     badge: 'Scale',
   },
 ];
@@ -148,34 +148,34 @@ const contactHref = (cta: string) => currentTrack === 'hr'
 const offerMap = {
   hr: {
     badge: 'IK analizi',
-    title: 'Bu sayfadan projeye gecis nasil olur?',
-    description: 'Tekil hesap yerine IK ekibinizde hangi tekrar eden sorularin ve hangi bordro adimlarinin surekli zaman yedigini cikaririz.',
+    title: 'Bu sayfadan projeye geçiş nasil olur?',
+    description: 'Tekil hesap yerine IK ekibinizde hangi tekrar eden sorularin ve hangi bordro adimlarinin sürekli zaman yedigini cikaririz.',
     bullets: [
-      'IK destek ve bordro akisinda tekrar eden taleplerin ayrimi',
-      'Puantaj, izin, cikis veya personel self-service icin ilk otomasyon dugumu',
+      'IK destek ve bordro akışında tekrar eden taleplerin ayrimi',
+      'Puantaj, izin, çıkış veya personel self-service için ilk otomasyon dugumu',
       'Size uygun ilk kurulum senaryosu',
     ],
-    cta: 'IK surec analizini iste',
+    cta: 'IK süreç analizini iste',
   },
   finance: {
     badge: 'Finans analizi',
-    title: 'Bu sayfadan projeye gecis nasil olur?',
+    title: 'Bu sayfadan projeye geçiş nasil olur?',
     description: 'Belge, kayit, tahsilat ve kontrol akislarinda manuel tekrar nerede olusuyor birlikte netlestiririz.',
     bullets: [
       'Belge ve veri girisi darboagazlarinin tespiti',
-      'Tahsilat, mutabakat veya beyan akisinda kopus noktalarinin ayrimi',
-      'Finans operasyonu icin ilk otomasyon onerisi',
+      'Tahsilat, mutabakat veya beyan akışında kopus noktalarinin ayrimi',
+      'Finans operasyonu için ilk otomasyon önerisi',
     ],
     cta: 'Finans analizini iste',
   },
   commerce: {
     badge: 'Operasyon analizi',
-    title: 'Bu sayfadan projeye gecis nasil olur?',
-    description: 'Hesap ya da bilgi ihtiyacinin gercekte hangi operasyon akisina baglandigini belirler ve size uygun ilk sistemi tarif ederiz.',
+    title: 'Bu sayfadan projeye geçiş nasil olur?',
+    description: 'Hesap ya da bilgi ihtiyacının gercekte hangi operasyon akisina baglandigini belirler ve size uygun ilk sistemi tarif ederiz.',
     bullets: [
       'Tekrarlayan operasyon adimlarinin ayrimi',
-      'Siparis, teklif veya stok akisindaki tekrar isin tespiti',
-      'Hizli geri donus verecek ilk kurulum plani',
+      'Sipariş, teklif veya stok akisindaki tekrar isin tespiti',
+      'Hızlı geri donus verecek ilk kurulum plani',
     ],
     cta: 'Operasyon analizini iste',
   },
@@ -204,8 +204,8 @@ const currentOffer = offerMap[currentTrack];
     <ROICalculator client:visible sectorName="Operasyon" />
 
     <LeadPathways
-      title="Bu sayfayi bir cikmaz degil, gecis noktasi yapin"
-      description="Hesaplama niyetli ziyaretciler bile guven ve sonraki adim gormek ister. Bu nedenle ilgili cozumler ve proof katmani burada dogrudan gorunur olmali."
+      title="Bu sayfayi bir cikmaz değil, geçiş noktasi yapin"
+      description="Hesaplama niyetli ziyaretciler bile guven ve sonraki adım görmek ister. Bu nedenle ilgili çözümler ve proof katmani burada dogrudan görünür olmali."
       caseStudies={proofCases}
       nextSteps={nextSteps}
       contactHref={contactHref('calculator-lead-pathways')}
@@ -250,12 +250,12 @@ const currentOffer = offerMap[currentTrack];
             Manuel hesaplamalari ve olasi cezalari bitirin
           </h2>
           <p class="relative z-10 mx-auto mb-12 max-w-3xl text-lg font-medium leading-relaxed text-gray-400 md:text-xl">
-            Excel formulleriyle sirketinizi riske atmayin. Yasalara uyumlu, 7/24 calisan ve sifira yakin hata ile operasyon yoneten bir yapay zeka asistani kurmak icin ucretsiz teknik analiz talep edin.
+            Excel formulleriyle sirketinizi riske atmayin. Yasalara uyumlu, 7/24 çalışan ve sifira yakin hata ile operasyon yöneten bir yapay zeka asistani kurmak için ücretsiz teknik analiz talep edin.
           </p>
 
           <div class="relative z-10 flex flex-col items-center justify-center gap-6 sm:flex-row">
             <a href={contactHref('calculator-final-cta')} class="theme-bg group relative inline-flex items-center gap-3 rounded-2xl px-12 py-6 text-xl font-black text-black transition-all duration-500 hover:-translate-y-1" style="box-shadow: 0 0 30px rgba(163, 230, 53, 0.15);">
-              Projeyi baslat
+              Projeyi başlat
               <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 transition-transform group-hover:-translate-y-1 group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M13 5l7 7-7 7M5 5l7 7-7 7" />
               </svg>

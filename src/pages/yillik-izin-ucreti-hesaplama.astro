@@ -1,9 +1,9 @@
 ---
 import CalculatorLayout from '../layouts/CalculatorLayout.astro';
 
-const title = 'Yillik Izin Ucreti Hesaplama | Izin Bakiye ve Cikis Akisi';
-const description = 'Yillik izin ucreti ihtiyaci cogu zaman tek hesap degil; izin bakiyesi, hak edis takibi, personel self-service ve cikis surecinin birlikte yonetilmesidir.';
-const keywords = 'yillik izin ucreti hesaplama, izin bakiyesi, hak edis takibi, izin yonetimi, cikista izin ucreti';
+const title = 'Yıllık Izin Ücreti Hesaplama | Izin Bakiye ve Çıkış Akışı';
+const description = 'Yıllık izin ücreti ihtiyacı çoğu zaman tek hesap değil; izin bakiyesi, hak edis takibi, personel self-service ve çıkış sürecinin birlikte yonetilmesidir.';
+const keywords = 'yıllık izin ücreti hesaplama, izin bakiyesi, hak edis takibi, izin yönetimi, cikista izin ücreti';
 
 const faqData = {
   '@context': 'https://schema.org',
@@ -14,23 +14,23 @@ const faqData = {
       name: 'Bu sayfa izin bakiyesi hesap makinesi mi?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Hayir. Bu sayfa, izin bakiyesi ve kullanilmayan izin ucretinin neden IK sureci, personel self-service ve cikis operasyonuyla birlikte ele alinmasi gerektigini anlatir.',
+        text: 'Hayır. Bu sayfa, izin bakiyesi ve kullanilmayan izin ucretinin neden IK süreci, personel self-service ve çıkış operasyonuyla birlikte ele alınması gerektiğini anlatır.',
       },
     },
     {
       '@type': 'Question',
-      name: 'Asil problem hangi noktada ortaya cikar?',
+      name: 'Asıl problem hangi noktada ortaya çıkar?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Asil problem genelde gun sayisini bilmekten cok, hak edis takibini, devreden izinleri ve cikista kullanilmayan izin etkisini duzenli izleyememektedir.',
+        text: 'Asıl problem genelde gün sayisini bilmekten çok, hak edis takibini, devreden izinleri ve cikista kullanilmayan izin etkisini düzenli izleyememektedir.',
       },
     },
     {
       '@type': 'Question',
-      name: 'Kimler icin daha faydalidir?',
+      name: 'Kimler için daha faydalidir?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Personel sorulari yogun olan, izin takibini hala daginik dosyalarda yapan ve cikis surecinde izin bakiyesiyle zorlanan IK ekipleri icin daha faydalidir.',
+        text: 'Personel sorulari yogun olan, izin takibini hala dağınık dosyalarda yapan ve çıkış sürecinde izin bakiyesiyle zorlanan IK ekipleri için daha faydalidir.',
       },
     },
   ],
@@ -45,34 +45,34 @@ const faqData = {
 >
   <div class="space-y-12">
     <section>
-      <div class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold border-primary text-primary mb-4">Izin ve Ozluk Surecleri</div>
-      <h1 class="text-4xl lg:text-5xl font-bold tracking-tight mb-6">Yillik Izin Konusunu Bakiye Sorusu Olmaktan Cikarip Surec Haline Getirin</h1>
+      <div class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold border-primary text-primary mb-4">Izin ve Ozluk Süreçleri</div>
+      <h1 class="text-4xl lg:text-5xl font-bold tracking-tight mb-6">Yıllık Izin Konusunu Bakiye Sorusu Olmaktan Cikarip Süreç Haline Getirin</h1>
       <p class="text-xl text-muted-foreground leading-relaxed max-w-4xl">
-        Yillik izin ucreti ve izin bakiyesi aramalari cogu zaman sadece gun hesabiyla ilgili degildir. Gercek sorun, kimin ne kadar hak ettigi, ne kadar devreden izni oldugu ve cikis aninda bunun nasil ele alinacaginin daginik ilerlemesidir.
+        Yıllık izin ücreti ve izin bakiyesi aramalari çoğu zaman sadece gün hesabiyla ilgili değildir. Gerçek sorun, kimin ne kadar hak ettigi, ne kadar devreden izni oldugu ve çıkış aninda bunun nasil ele alinacaginin dağınık ilerlemesidir.
       </p>
     </section>
 
     <section class="grid gap-6 lg:grid-cols-3">
       <div class="rounded-2xl border border-border bg-card p-6">
         <h2 class="text-xl font-semibold mb-3">Hak Edis</h2>
-        <p class="text-muted-foreground">Personelin ne zaman hak kazandigi ve hangi baremde ilerledigi her zaman gorunur olmayabilir.</p>
+        <p class="text-muted-foreground">Personelin ne zaman hak kazandığı ve hangi baremde ilerledigi her zaman görünür olmayabilir.</p>
       </div>
       <div class="rounded-2xl border border-border bg-card p-6">
         <h2 class="text-xl font-semibold mb-3">Kullanim ve Bakiye</h2>
-        <p class="text-muted-foreground">Kullanilan, devreden ve kalan izin bilgisi farkli yerlerde tutuluyorsa ekip zorlanir.</p>
+        <p class="text-muted-foreground">Kullanilan, devreden ve kalan izin bilgisi farklı yerlerde tutuluyorsa ekip zorlanir.</p>
       </div>
       <div class="rounded-2xl border border-border bg-card p-6">
-        <h2 class="text-xl font-semibold mb-3">Cikis Etkisi</h2>
+        <h2 class="text-xl font-semibold mb-3">Çıkış Etkisi</h2>
         <p class="text-muted-foreground">Personel ayrildiginda kullanilmayan izinlerin hesap ve tahakkuk tarafina yansimasi son dakika problemi olabilir.</p>
       </div>
     </section>
 
     <section class="bg-muted/30 p-8 rounded-2xl border border-border">
-      <h2 class="text-2xl font-semibold mb-6">Yillik Izin Surecinin Dagildigi Tipik Noktalar</h2>
+      <h2 class="text-2xl font-semibold mb-6">Yıllık Izin Sürecinin Dagildigi Tipik Noktalar</h2>
       <ul class="space-y-4">
         <li class="flex items-start gap-3">
           <span class="mt-1 h-2.5 w-2.5 rounded-full bg-primary"></span>
-          <p><strong>Personel sorularinda:</strong> Bakiye bilgisi self-service degilse IK tekrarlayan mesajlarla ugrasmaya baslar.</p>
+          <p><strong>Personel sorularinda:</strong> Bakiye bilgisi self-service degilse IK tekrarlayan mesajlarla ugrasmaya başlar.</p>
         </li>
         <li class="flex items-start gap-3">
           <span class="mt-1 h-2.5 w-2.5 rounded-full bg-primary"></span>
@@ -80,15 +80,15 @@ const faqData = {
         </li>
         <li class="flex items-start gap-3">
           <span class="mt-1 h-2.5 w-2.5 rounded-full bg-primary"></span>
-          <p><strong>Cikis dosyalarinda:</strong> Kullanilmayan izin bilgisi tahakkuk surecine gec ya da eksik yansiyabilir.</p>
+          <p><strong>Çıkış dosyalarinda:</strong> Kullanilmayan izin bilgisi tahakkuk sürecine gec ya da eksik yansiyabilir.</p>
         </li>
       </ul>
     </section>
 
     <section>
-      <h2 class="text-3xl font-bold mb-6">Bu Sayfanin Isaret Ettigi Asil Sistem</h2>
+      <h2 class="text-3xl font-bold mb-6">Bu Sayfanin Isaret Ettigi Asıl Sistem</h2>
       <p class="text-lg text-muted-foreground mb-8">
-        Yillik izin ucreti konusu bizim icin bir izin ve ozluk akisi problemidir. Deger, personelin bakiye sorularini azaltmakta, hak edis takibini gorunur kilmakta ve cikis aninda kullanilmayan izin etkisini duzenli yonetmekte ortaya cikar.
+        Yıllık izin ücreti konusu bizim için bir izin ve ozluk akışı problemidir. Değer, personelin bakiye sorularini azaltmakta, hak edis takibini görünür kilmakta ve çıkış aninda kullanilmayan izin etkisini düzenli yonetmekte ortaya çıkar.
       </p>
       <div class="grid md:grid-cols-3 gap-6">
         <div class="bg-card p-6 rounded-xl border border-border">
@@ -100,7 +100,7 @@ const faqData = {
           <p class="text-sm text-muted-foreground">IK uzerindeki tekrar eden bakiye sorusu yuku azalir.</p>
         </div>
         <div class="bg-card p-6 rounded-xl border border-border">
-          <h3 class="text-xl font-semibold mb-2">Cikis Baglantisi</h3>
+          <h3 class="text-xl font-semibold mb-2">Çıkış Bağlantısı</h3>
           <p class="text-sm text-muted-foreground">Kullanilmayan izin etkisi bordro ve tahakkuk akisina daha temiz yansir.</p>
         </div>
       </div>
@@ -111,15 +111,15 @@ const faqData = {
       <div class="space-y-6">
         <div>
           <h3 class="text-lg font-semibold mb-2">Bu sayfa izin bakiyesi hesap makinesi mi?</h3>
-          <p class="text-muted-foreground">Hayir. Bu sayfa, izin bakiyesi ve kullanilmayan izin ucretinin neden IK sureci ve cikis operasyonuyla birlikte ele alinmasi gerektigini anlatir.</p>
+          <p class="text-muted-foreground">Hayır. Bu sayfa, izin bakiyesi ve kullanilmayan izin ucretinin neden IK süreci ve çıkış operasyonuyla birlikte ele alınması gerektiğini anlatır.</p>
         </div>
         <div>
-          <h3 class="text-lg font-semibold mb-2">Asil problem hangi noktada ortaya cikar?</h3>
-          <p class="text-muted-foreground">Asil problem genelde gun sayisini bilmekten cok, hak edis, devreden bakiye ve cikis etkisini duzenli izleyememektedir.</p>
+          <h3 class="text-lg font-semibold mb-2">Asıl problem hangi noktada ortaya çıkar?</h3>
+          <p class="text-muted-foreground">Asıl problem genelde gün sayisini bilmekten çok, hak edis, devreden bakiye ve çıkış etkisini düzenli izleyememektedir.</p>
         </div>
         <div>
-          <h3 class="text-lg font-semibold mb-2">Kimler icin daha faydalidir?</h3>
-          <p class="text-muted-foreground">Personel sorulari yogun olan ve izin takibini daginik dosyalarda yapan IK ekipleri icin daha faydalidir.</p>
+          <h3 class="text-lg font-semibold mb-2">Kimler için daha faydalidir?</h3>
+          <p class="text-muted-foreground">Personel sorulari yogun olan ve izin takibini dağınık dosyalarda yapan IK ekipleri için daha faydalidir.</p>
         </div>
       </div>
     </section>

@@ -1,9 +1,9 @@
 ---
 import CalculatorLayout from '../layouts/CalculatorLayout.astro';
 
-const title = 'SGK Hizmet Dokumu | Belge Dogrulama ve Aday Kontrol Akisi';
-const description = 'SGK hizmet dokumu ihtiyaci cogu zaman belgeyi okumaktan cok, aday beyanini, calisma gecmisini ve dogrulama adimlarini daha duzenli yonetme ihtiyacidir.';
-const keywords = 'sgk hizmet dokumu, sgk dokumu kontrolu, aday dogrulama, background check, calisma gecmisi dogrulama';
+const title = 'SGK Hizmet Dökümü | Belge Dogrulama ve Aday Kontrol Akışı';
+const description = 'SGK hizmet dökümü ihtiyacı çoğu zaman belgeyi okumaktan çok, aday beyanini, çalışma gecmisini ve dogrulama adımlarını daha düzenli yönetme ihtiyacidir.';
+const keywords = 'sgk hizmet dökümü, sgk dökümü kontrolu, aday dogrulama, background check, çalışma gecmisi dogrulama';
 
 const faqData = {
   '@context': 'https://schema.org',
@@ -11,26 +11,26 @@ const faqData = {
   mainEntity: [
     {
       '@type': 'Question',
-      name: 'Bu sayfa SGK dokumu indirme araci mi?',
+      name: 'Bu sayfa SGK dökümü indirme araci mi?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Hayir. Bu sayfa, SGK hizmet dokumunun IK, risk ve dogrulama surecinde nasil kullanildigini ve operasyonel olarak hangi noktada deger urettigini anlatir.',
+        text: 'Hayır. Bu sayfa, SGK hizmet dokumunun IK, risk ve dogrulama sürecinde nasil kullanildigini ve operasyonel olarak hangi noktada değer urettigini anlatır.',
       },
     },
     {
       '@type': 'Question',
-      name: 'En cok hangi ekipler icin kritiktir?',
+      name: 'En çok hangi ekipler için kritiktir?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Aday dogrulama yapan IK ekipleri, sahada personel alan operasyonlar ve belge tabanli risk kontrolu yapan yapilar icin daha kritiktir.',
+        text: 'Aday dogrulama yapan IK ekipleri, sahada personel alan operasyonlar ve belge tabanli risk kontrolu yapan yapilar için daha kritiktir.',
       },
     },
     {
       '@type': 'Question',
-      name: 'Asil sorun belgeyi okumak mi, sureci yonetmek mi?',
+      name: 'Asıl sorun belgeyi okumak mi, süreci yonetmek mi?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Cogu zaman asil sorun belgeyi acmak degil; calisma gecmisini, aday beyanini ve kontrol sonucunu duzenli bir karar akisina baglamaktir.',
+        text: 'Çoğu zaman asıl sorun belgeyi acmak değil; çalışma gecmisini, aday beyanini ve kontrol sonucunu düzenli bir karar akisina baglamaktir.',
       },
     },
   ],
@@ -46,33 +46,33 @@ const faqData = {
   <div class="space-y-12">
     <section>
       <div class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold border-primary text-primary mb-4">Aday ve Risk Dogrulama</div>
-      <h1 class="text-4xl lg:text-5xl font-bold tracking-tight mb-6">SGK Hizmet Dokumunu Dosya Olarak Degil, Dogrulama Surecinin Bir Parcasi Olarak Kullanin</h1>
+      <h1 class="text-4xl lg:text-5xl font-bold tracking-tight mb-6">SGK Hizmet Dokumunu Dosya Olarak Değil, Dogrulama Sürecinin Bir Parçası Olarak Kullanin</h1>
       <p class="text-xl text-muted-foreground leading-relaxed max-w-4xl">
-        SGK hizmet dokumu aramasi yapan kullanici genelde sadece PDF okumak istemez. Asil ihtiyac, adayin veya calisanin beyan ettigi gecmisi kontrol etmek, supheli farklari gormek ve bu belgeyi IK kararina daha duzenli baglamaktir.
+        SGK hizmet dökümü aramasi yapan kullanici genelde sadece PDF okumak istemez. Asıl ihtiyac, adayin veya calisanin beyan ettigi gecmisi kontrol etmek, supheli farklari görmek ve bu belgeyi IK kararina daha düzenli baglamaktir.
       </p>
     </section>
 
     <section class="grid gap-6 lg:grid-cols-3">
       <div class="rounded-2xl border border-border bg-card p-6">
         <h2 class="text-xl font-semibold mb-3">Belgeyi Acmak</h2>
-        <p class="text-muted-foreground">Tek basina dokumu gormek kolaydir; zor olan calisma surelerini, kopukluklari ve beyanla iliskisini anlamaktir.</p>
+        <p class="text-muted-foreground">Tek basina dökümü görmek kolaydir; zor olan çalışma surelerini, kopukluklari ve beyanla iliskisini anlamaktir.</p>
       </div>
       <div class="rounded-2xl border border-border bg-card p-6">
         <h2 class="text-xl font-semibold mb-3">Beyanla Karsilastirmak</h2>
-        <p class="text-muted-foreground">CV, basvuru formu ve resmi belge birbirinden farkli bilgi tasiyabilir; asil karar degeri bu farklarda ortaya cikar.</p>
+        <p class="text-muted-foreground">CV, basvuru formu ve resmi belge birbirinden farklı bilgi tasiyabilir; asıl karar değeri bu farklarda ortaya çıkar.</p>
       </div>
       <div class="rounded-2xl border border-border bg-card p-6">
         <h2 class="text-xl font-semibold mb-3">Karara Baglamak</h2>
-        <p class="text-muted-foreground">Belge kontrolu sonucta bir evrak inceleme isi degil, ise alim ve risk degerlendirme karari destekleme isidir.</p>
+        <p class="text-muted-foreground">Belge kontrolu sonucta bir evrak inceleme isi değil, ise alim ve risk değerlendirme karari destekleme isidir.</p>
       </div>
     </section>
 
     <section class="bg-muted/30 p-8 rounded-2xl border border-border">
-      <h2 class="text-2xl font-semibold mb-6">SGK Hizmet Dokumu Hangi Noktada Operasyonel Soruna Donusur?</h2>
+      <h2 class="text-2xl font-semibold mb-6">SGK Hizmet Dökümü Hangi Noktada Operasyonel Soruna Donusur?</h2>
       <ul class="space-y-4">
         <li class="flex items-start gap-3">
           <span class="mt-1 h-2.5 w-2.5 rounded-full bg-primary"></span>
-          <p><strong>Yuksek hacimli alimlarda:</strong> Cok sayida aday icin belge kontrolu manuel ilerlediginde surec yavaslar.</p>
+          <p><strong>Yüksek hacimli alimlarda:</strong> Çok sayida aday için belge kontrolu manuel ilerlediginde süreç yavaslar.</p>
         </li>
         <li class="flex items-start gap-3">
           <span class="mt-1 h-2.5 w-2.5 rounded-full bg-primary"></span>
@@ -86,22 +86,22 @@ const faqData = {
     </section>
 
     <section>
-      <h2 class="text-3xl font-bold mb-6">Bu Sayfanin Asil Gittigi Cozum</h2>
+      <h2 class="text-3xl font-bold mb-6">Bu Sayfanin Asıl Gittigi Çözüm</h2>
       <p class="text-lg text-muted-foreground mb-8">
-        Bu konu bizim icin bir dokuman okuma probleminden cok, aday ve personel dogrulama akisidir. SGK hizmet dokumu; belge alma, karsilastirma, not dusme ve karar destek adimlariyla birlikte ele alindiginda anlamli hale gelir.
+        Bu konu bizim için bir dokuman okuma probleminden çok, aday ve personel dogrulama akisidir. SGK hizmet dökümü; belge alma, kârşılaştırma, not dusme ve karar destek adimlariyla birlikte ele alindiginda anlamli hale gelir.
       </p>
       <div class="grid md:grid-cols-3 gap-6">
         <div class="bg-card p-6 rounded-xl border border-border">
           <h3 class="text-xl font-semibold mb-2">Belge Okuma ve Ayiklama</h3>
-          <p class="text-sm text-muted-foreground">Sure ve kayit bilgileri daha okunabilir ciktiya donusturulur.</p>
+          <p class="text-sm text-muted-foreground">Süre ve kayit bilgileri daha okunabilir ciktiya donusturulur.</p>
         </div>
         <div class="bg-card p-6 rounded-xl border border-border">
-          <h3 class="text-xl font-semibold mb-2">Beyan Karsilastirma</h3>
-          <p class="text-sm text-muted-foreground">Adayin anlattigi gecmis ile resmi kayit arasindaki farklar gorunur hale gelir.</p>
+          <h3 class="text-xl font-semibold mb-2">Beyan Kârşılaştırma</h3>
+          <p class="text-sm text-muted-foreground">Adayin anlattigi geçmiş ile resmi kayit arasindaki farklar görünür hale gelir.</p>
         </div>
         <div class="bg-card p-6 rounded-xl border border-border">
           <h3 class="text-xl font-semibold mb-2">Karar Takibi</h3>
-          <p class="text-sm text-muted-foreground">Kontrol sonucu ilgili IK ve operasyon akisina daha duzenli aktarilir.</p>
+          <p class="text-sm text-muted-foreground">Kontrol sonucu ilgili IK ve operasyon akisina daha düzenli aktarilir.</p>
         </div>
       </div>
     </section>
@@ -110,16 +110,16 @@ const faqData = {
       <h2 class="text-2xl font-bold mb-6">Sikca Sorulan Sorular</h2>
       <div class="space-y-6">
         <div>
-          <h3 class="text-lg font-semibold mb-2">Bu sayfa SGK dokumu indirme araci mi?</h3>
-          <p class="text-muted-foreground">Hayir. Bu sayfa, SGK hizmet dokumunun IK ve risk kontrol surecinde nasil kullanildigini ve hangi noktada surec problemine donustugunu anlatir.</p>
+          <h3 class="text-lg font-semibold mb-2">Bu sayfa SGK dökümü indirme araci mi?</h3>
+          <p class="text-muted-foreground">Hayır. Bu sayfa, SGK hizmet dokumunun IK ve risk kontrol sürecinde nasil kullanildigini ve hangi noktada süreç problemine donustugunu anlatır.</p>
         </div>
         <div>
-          <h3 class="text-lg font-semibold mb-2">En cok hangi ekipler icin kritiktir?</h3>
-          <p class="text-muted-foreground">Aday dogrulama yapan IK ekipleri, saha operasyonlari ve belge temelli risk kontrolu yapan yapilar icin daha kritiktir.</p>
+          <h3 class="text-lg font-semibold mb-2">En çok hangi ekipler için kritiktir?</h3>
+          <p class="text-muted-foreground">Aday dogrulama yapan IK ekipleri, saha operasyonlari ve belge temelli risk kontrolu yapan yapilar için daha kritiktir.</p>
         </div>
         <div>
-          <h3 class="text-lg font-semibold mb-2">Asil sorun belgeyi okumak mi, sureci yonetmek mi?</h3>
-          <p class="text-muted-foreground">Cogu durumda asil sorun belgeyi acmak degil; sonucu karar surecine duzenli baglamaktir.</p>
+          <h3 class="text-lg font-semibold mb-2">Asıl sorun belgeyi okumak mi, süreci yonetmek mi?</h3>
+          <p class="text-muted-foreground">Çoğu durumda asıl sorun belgeyi acmak değil; sonucu karar sürecine düzenli baglamaktir.</p>
         </div>
       </div>
     </section>

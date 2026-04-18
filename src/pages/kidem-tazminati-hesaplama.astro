@@ -1,9 +1,9 @@
 ---
 import CalculatorLayout from '../layouts/CalculatorLayout.astro';
 
-const title = 'Kidem Tazminati Hesaplama | Offboarding ve Fesih Hazirlik Akisi';
-const description = 'Kidem tazminati ihtiyaci cogu zaman tek bir hesap degil; cikis karari, belge hazirligi, bordro etkisi ve hukuki surecin birlikte yonetilmesidir.';
-const keywords = 'kidem tazminati hesaplama, fesih sureci, offboarding, cikis hesaplamasi, ik cikis hazirligi';
+const title = 'Kıdem Tazminatı Hesaplama | Offboarding ve Fesih Hazırlık Akışı';
+const description = 'Kıdem tazminatı ihtiyacı çoğu zaman tek bir hesap değil; çıkış karari, belge hazırlığı, bordro etkisi ve hukuki sürecin birlikte yonetilmesidir.';
+const keywords = 'kıdem tazminatı hesaplama, fesih süreci, offboarding, çıkış hesaplamasi, ik çıkış hazırlığı';
 
 const faqData = {
   '@context': 'https://schema.org',
@@ -14,23 +14,23 @@ const faqData = {
       name: 'Bu sayfa resmi tazminat hesaplayici mi?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Hayir. Bu sayfa, kidem tazminati ihtiyacinin neden cikis sureci ve belge hazirligiyla birlikte ele alinmasi gerektigini anlatir.',
+        text: 'Hayır. Bu sayfa, kıdem tazminatı ihtiyacının neden çıkış süreci ve belge hazirligiyla birlikte ele alınması gerektiğini anlatır.',
       },
     },
     {
       '@type': 'Question',
-      name: 'Asil darbogaz nerede cikar?',
+      name: 'Asıl darboğaz nerede çıkar?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Darbogaz cogu zaman rakamdan once, personel verisinin toparlanmasi, cikis tipinin netlestirilmesi ve ilgili belgelerin dogru akista ilerlemesinde cikar.',
+        text: 'Darboğaz çoğu zaman rakamdan önce, personel verisinin toparlanması, çıkış tipinin netleştirilmesi ve ilgili belgelerin doğru akista ilerlemesinde çıkar.',
       },
     },
     {
       '@type': 'Question',
-      name: 'Kimler icin daha kritik bir sayfadir?',
+      name: 'Kimler için daha kritik bir sayfadir?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Duzenli personel cikisi yoneten, birden fazla onay ve belge adimi olan IK ve operasyon ekipleri icin daha kritiktir.',
+        text: 'Düzenli personel çıkışı yöneten, birden fazla onay ve belge adımı olan IK ve operasyon ekipleri için daha kritiktir.',
       },
     },
   ],
@@ -45,63 +45,63 @@ const faqData = {
 >
   <div class="space-y-12">
     <section>
-      <div class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold border-primary text-primary mb-4">Offboarding ve Cikis Hazirligi</div>
-      <h1 class="text-4xl lg:text-5xl font-bold tracking-tight mb-6">Kidem Tazminatini Tek Formul Gibi Degil, Cikis Surecinin Bir Parcasi Olarak Yonetin</h1>
+      <div class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold border-primary text-primary mb-4">Offboarding ve Çıkış Hazırlığı</div>
+      <h1 class="text-4xl lg:text-5xl font-bold tracking-tight mb-6">Kıdem Tazminatini Tek Formül Gibi Değil, Çıkış Sürecinin Bir Parçası Olarak Yönetin</h1>
       <p class="text-xl text-muted-foreground leading-relaxed max-w-4xl">
-        Kidem tazminati sorusu ilk bakista tek bir rakam gibi gorunur. Oysa ekiplerin gercekte zorlandigi konu, cikis tipini netlestirmek, gerekli veriyi toparlamak, bordro etkisini gormek ve belge adimlarini zamaninda ilerletmektir.
+        Kıdem tazminatı sorusu ilk bakista tek bir rakam gibi görünür. Oysa ekiplerin gercekte zorlandığı konu, çıkış tipini netleştirmek, gerekli veriyi toparlamak, bordro etkisini görmek ve belge adımlarını zamanında ilerletmektir.
       </p>
     </section>
 
     <section class="grid gap-6 lg:grid-cols-3">
       <div class="rounded-2xl border border-border bg-card p-6">
         <h2 class="text-xl font-semibold mb-3">Veri Toplama</h2>
-        <p class="text-muted-foreground">Calisma suresi, ucret yapisi, yan hak ve cikis tipi gibi bilgiler daginik kalabilir.</p>
+        <p class="text-muted-foreground">Çalışma süresi, ücret yapısı, yan hak ve çıkış tipi gibi bilgiler dağınık kalabilir.</p>
       </div>
       <div class="rounded-2xl border border-border bg-card p-6">
-        <h2 class="text-xl font-semibold mb-3">Cikis Kurgusu</h2>
-        <p class="text-muted-foreground">Hangi senaryoda neyin hazirlanacagi, kimin onay verecegi ve hangi belgenin gerekli oldugu net olmayabilir.</p>
+        <h2 class="text-xl font-semibold mb-3">Çıkış Kurgusu</h2>
+        <p class="text-muted-foreground">Hangi senaryoda neyin hazırlanacağı, kimin onay vereceği ve hangi belgenin gerekli oldugu net olmayabilir.</p>
       </div>
       <div class="rounded-2xl border border-border bg-card p-6">
         <h2 class="text-xl font-semibold mb-3">Bordro ve Belge</h2>
-        <p class="text-muted-foreground">Hesap bilgisi bordro, tahakkuk ve belge tarafina duzenli akmiyorsa son dakika riski artar.</p>
+        <p class="text-muted-foreground">Hesap bilgisi bordro, tahakkuk ve belge tarafina düzenli akmıyorsa son dakika riski artar.</p>
       </div>
     </section>
 
     <section class="bg-muted/30 p-8 rounded-2xl border border-border">
-      <h2 class="text-2xl font-semibold mb-6">Kidem Tazminati Ihtiyacinin Buyudugu Noktalar</h2>
+      <h2 class="text-2xl font-semibold mb-6">Kıdem Tazminatı Ihtiyacının Buyudugu Noktalar</h2>
       <ul class="space-y-4">
         <li class="flex items-start gap-3">
           <span class="mt-1 h-2.5 w-2.5 rounded-full bg-primary"></span>
-          <p><strong>Cok adimli cikislarda:</strong> IK, yonetici, finans ve gerekirse hukuk ayni dosya uzerinde ilerler.</p>
+          <p><strong>Çok adimli cikislarda:</strong> IK, yönetici, finans ve gerekirse hukuk ayni dosya üzerinde ilerler.</p>
         </li>
         <li class="flex items-start gap-3">
           <span class="mt-1 h-2.5 w-2.5 rounded-full bg-primary"></span>
-          <p><strong>Son dakika cikis kararlarinda:</strong> Belgeler ve hesap bilgisi hizli hazirlanmak zorunda kalir.</p>
+          <p><strong>Son dakika çıkış kararlarinda:</strong> Belgeler ve hesap bilgisi hızlı hazırlanmak zorunda kalir.</p>
         </li>
         <li class="flex items-start gap-3">
           <span class="mt-1 h-2.5 w-2.5 rounded-full bg-primary"></span>
-          <p><strong>Tekrarlayan dosyalarda:</strong> Ayni cikis adimlari her seferinde sifirdan koordine ediliyorsa ekip yipraniyor demektir.</p>
+          <p><strong>Tekrarlayan dosyalarda:</strong> Ayni çıkış adımları her seferinde sıfırdan koordine ediliyorsa ekip yıpranıyor demektir.</p>
         </li>
       </ul>
     </section>
 
     <section>
-      <h2 class="text-3xl font-bold mb-6">Bu Sayfanin Isaret Ettigi Asil Cozum</h2>
+      <h2 class="text-3xl font-bold mb-6">Bu Sayfanin Isaret Ettigi Asıl Çözüm</h2>
       <p class="text-lg text-muted-foreground mb-8">
-        Kidem tazminati bizim icin yalnizca bir hesap degil, offboarding akisinin temel dugumlerinden biridir. Bu nedenle deger, cikis verisinin toparlanmasi, hesap bilgisinin gorunur hale gelmesi ve belge-bordro akisina dogru sekilde baglanmasinda ortaya cikar.
+        Kıdem tazminatı bizim için yalnizca bir hesap değil, offboarding akisinin temel dugumlerinden biridir. Bu nedenle değer, çıkış verisinin toparlanması, hesap bilgisinin görünür hale gelmesi ve belge-bordro akisina doğru şekilde baglanmasinda ortaya çıkar.
       </p>
       <div class="grid md:grid-cols-3 gap-6">
         <div class="bg-card p-6 rounded-xl border border-border">
-          <h3 class="text-xl font-semibold mb-2">Cikis Checklisti</h3>
-          <p class="text-sm text-muted-foreground">Hangi bilgi ve belge olmadan dosyanin ilerlemeyecegi netlesir.</p>
+          <h3 class="text-xl font-semibold mb-2">Çıkış Checklisti</h3>
+          <p class="text-sm text-muted-foreground">Hangi bilgi ve belge olmadan dosyanin ilerlemeyecegi netleşir.</p>
         </div>
         <div class="bg-card p-6 rounded-xl border border-border">
-          <h3 class="text-xl font-semibold mb-2">Tahakkuk Gorunurlugu</h3>
-          <p class="text-sm text-muted-foreground">Hesap bilgisi bordro ve odeme tarafina daha erken baglanir.</p>
+          <h3 class="text-xl font-semibold mb-2">Tahakkuk Görünürlüğü</h3>
+          <p class="text-sm text-muted-foreground">Hesap bilgisi bordro ve ödeme tarafina daha erken baglanir.</p>
         </div>
         <div class="bg-card p-6 rounded-xl border border-border">
-          <h3 class="text-xl font-semibold mb-2">Belge Hazirligi</h3>
-          <p class="text-sm text-muted-foreground">Fesih ve cikis evraklari daha sistemli ilerleyen bir akis haline gelir.</p>
+          <h3 class="text-xl font-semibold mb-2">Belge Hazırlığı</h3>
+          <p class="text-sm text-muted-foreground">Fesih ve çıkış evrakları daha sistemli ilerleyen bir akış haline gelir.</p>
         </div>
       </div>
     </section>
@@ -111,15 +111,15 @@ const faqData = {
       <div class="space-y-6">
         <div>
           <h3 class="text-lg font-semibold mb-2">Bu sayfa resmi tazminat hesaplayici mi?</h3>
-          <p class="text-muted-foreground">Hayir. Bu sayfa, kidem tazminati ihtiyacinin neden cikis sureci ve belge hazirligiyla birlikte ele alinmasi gerektigini anlatir.</p>
+          <p class="text-muted-foreground">Hayır. Bu sayfa, kıdem tazminatı ihtiyacının neden çıkış süreci ve belge hazirligiyla birlikte ele alınması gerektiğini anlatır.</p>
         </div>
         <div>
-          <h3 class="text-lg font-semibold mb-2">Asil darbogaz nerede cikar?</h3>
-          <p class="text-muted-foreground">Darbogaz cogu zaman rakamdan once, personel verisinin toparlanmasi ve belge akisinin dogru kurulmasinda cikar.</p>
+          <h3 class="text-lg font-semibold mb-2">Asıl darboğaz nerede çıkar?</h3>
+          <p class="text-muted-foreground">Darboğaz çoğu zaman rakamdan önce, personel verisinin toparlanması ve belge akisinin doğru kurulmasinda çıkar.</p>
         </div>
         <div>
-          <h3 class="text-lg font-semibold mb-2">Kimler icin daha kritik bir sayfadir?</h3>
-          <p class="text-muted-foreground">Duzenli personel cikisi yoneten, birden fazla onay ve belge adimi olan IK ve operasyon ekipleri icin daha kritiktir.</p>
+          <h3 class="text-lg font-semibold mb-2">Kimler için daha kritik bir sayfadir?</h3>
+          <p class="text-muted-foreground">Düzenli personel çıkışı yöneten, birden fazla onay ve belge adımı olan IK ve operasyon ekipleri için daha kritiktir.</p>
         </div>
       </div>
     </section>

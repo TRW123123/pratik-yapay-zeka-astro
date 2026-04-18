@@ -1,9 +1,9 @@
 ---
 import CalculatorLayout from '../layouts/CalculatorLayout.astro';
 
-const title = 'Ihbar Tazminati Hesaplama | Bildirim ve Offboarding Takip Akisi';
-const description = 'Ihbar tazminati ihtiyaci genelde tek hesap degil; bildirim suresi, cikis takvimi, ekip koordinasyonu ve personel iletisiminin birlikte yonetilmesidir.';
-const keywords = 'ihbar tazminati hesaplama, ihbar suresi, cikis takvimi, offboarding takibi, personel cikisi';
+const title = 'Ihbar Tazminatı Hesaplama | Bildirim ve Offboarding Takip Akışı';
+const description = 'Ihbar tazminatı ihtiyacı genelde tek hesap değil; bildirim süresi, çıkış takvimi, ekip koordinasyonu ve personel iletisiminin birlikte yonetilmesidir.';
+const keywords = 'ihbar tazminatı hesaplama, ihbar süresi, çıkış takvimi, offboarding takibi, personel çıkışı';
 
 const faqData = {
   '@context': 'https://schema.org',
@@ -11,26 +11,26 @@ const faqData = {
   mainEntity: [
     {
       '@type': 'Question',
-      name: 'Bu sayfa ihbar suresi hesap makinesi mi?',
+      name: 'Bu sayfa ihbar süresi hesap makinesi mi?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Hayir. Bu sayfa, ihbar ve cikis surecinin neden sadece sure hesabindan ibaret olmadigini ve operasyonel olarak nasil ele alinmasi gerektigini anlatir.',
+        text: 'Hayır. Bu sayfa, ihbar ve çıkış sürecinin neden sadece süre hesabindan ibaret olmadigini ve operasyonel olarak nasil ele alınması gerektiğini anlatır.',
       },
     },
     {
       '@type': 'Question',
-      name: 'Asil sorun hangi noktada cikar?',
+      name: 'Asıl sorun hangi noktada çıkar?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Asil sorun cogu zaman sureyi bilmekten cok, bildirim takvimi, personel iletisim adimlari ve ilgili belge-onay akislarini koordine etmektedir.',
+        text: 'Asıl sorun çoğu zaman sureyi bilmekten çok, bildirim takvimi, personel iletişim adımları ve ilgili belge-onay akislarini koordine etmektedir.',
       },
     },
     {
       '@type': 'Question',
-      name: 'Kimler icin daha onemlidir?',
+      name: 'Kimler için daha onemlidir?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Yuksek personel sirkulasyonu olan, birden fazla lokasyonda calisan veya cikis sureci daginik ilerleyen ekipler icin daha onemlidir.',
+        text: 'Yüksek personel sirkulasyonu olan, birden fazla lokasyonda çalışan veya çıkış süreci dağınık ilerleyen ekipler için daha onemlidir.',
       },
     },
   ],
@@ -45,42 +45,42 @@ const faqData = {
 >
   <div class="space-y-12">
     <section>
-      <div class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold border-primary text-primary mb-4">Bildirim ve Cikis Takibi</div>
+      <div class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold border-primary text-primary mb-4">Bildirim ve Çıkış Takibi</div>
       <h1 class="text-4xl lg:text-5xl font-bold tracking-tight mb-6">Ihbar Surecini Takvim ve Belge Isine Donusturmeyin</h1>
       <p class="text-xl text-muted-foreground leading-relaxed max-w-4xl">
-        Ihbar tazminati ve ihbar suresi konularinda ekipler genelde sureyi biliyor olur. Asil zorluk, personel cikisinin hangi takvimle ilerleyecegi, hangi adimda kimin devreye girecegi ve bunun belge ile bordro tarafina nasil yansiyacagidir.
+        Ihbar tazminatı ve ihbar süresi konularinda ekipler genelde sureyi biliyor olur. Asıl zorluk, personel cikisinin hangi takvimle ilerleyecegi, hangi adimda kimin devreye girecegi ve bunun belge ile bordro tarafina nasil yansiyacagidir.
       </p>
     </section>
 
     <section class="grid gap-6 lg:grid-cols-3">
       <div class="rounded-2xl border border-border bg-card p-6">
         <h2 class="text-xl font-semibold mb-3">Takvim</h2>
-        <p class="text-muted-foreground">Bildirim, son gun, teslim ve devir gibi tarihler tek yerde gorunmuyor olabilir.</p>
+        <p class="text-muted-foreground">Bildirim, son gün, teslim ve devir gibi tarihler tek yerde gorunmuyor olabilir.</p>
       </div>
       <div class="rounded-2xl border border-border bg-card p-6">
-        <h2 class="text-xl font-semibold mb-3">Iletisim</h2>
-        <p class="text-muted-foreground">Personelle hangi bilginin ne zaman paylasilacagi ve hangi formun gerekecegi daginik ilerleyebilir.</p>
+        <h2 class="text-xl font-semibold mb-3">Iletişim</h2>
+        <p class="text-muted-foreground">Personelle hangi bilginin ne zaman paylasilacagi ve hangi formun gerekecegi dağınık ilerleyebilir.</p>
       </div>
       <div class="rounded-2xl border border-border bg-card p-6">
-        <h2 class="text-xl font-semibold mb-3">Cikis Senaryosu</h2>
-        <p class="text-muted-foreground">Bildirim sureci kullanilacak mi, tazminat odemesi mi olacak, hangi dosya neye gore ilerleyecek net olmayabilir.</p>
+        <h2 class="text-xl font-semibold mb-3">Çıkış Senaryosu</h2>
+        <p class="text-muted-foreground">Bildirim süreci kullanilacak mi, tazminat ödemesi mi olacak, hangi dosya neye gore ilerleyecek net olmayabilir.</p>
       </div>
     </section>
 
     <section class="bg-muted/30 p-8 rounded-2xl border border-border">
-      <h2 class="text-2xl font-semibold mb-6">Ihbar Surecinin Dagildigi Tipik Noktalar</h2>
+      <h2 class="text-2xl font-semibold mb-6">Ihbar Sürecinin Dagildigi Tipik Noktalar</h2>
       <ul class="space-y-4">
         <li class="flex items-start gap-3">
           <span class="mt-1 h-2.5 w-2.5 rounded-full bg-primary"></span>
-          <p><strong>Coklu rol ve lokasyonlarda:</strong> Bildirim takibi kisilere dagildiginda surec kopuyor.</p>
+          <p><strong>Çoklu rol ve lokasyonlarda:</strong> Bildirim takibi kisilere dagildiginda süreç kopuyor.</p>
         </li>
         <li class="flex items-start gap-3">
           <span class="mt-1 h-2.5 w-2.5 rounded-full bg-primary"></span>
-          <p><strong>Hizli cikis kararlarinda:</strong> Ekip takvim, bordro ve personel iletisimini ayni anda yonetmek zorunda kaliyor.</p>
+          <p><strong>Hızlı çıkış kararlarinda:</strong> Ekip takvim, bordro ve personel iletisimini ayni anda yonetmek zorunda kaliyor.</p>
         </li>
         <li class="flex items-start gap-3">
           <span class="mt-1 h-2.5 w-2.5 rounded-full bg-primary"></span>
-          <p><strong>Tekrarlayan sureclerde:</strong> Ayni bildirim ve cikis adimlari her dosyada yeniden kuruluyor.</p>
+          <p><strong>Tekrarlayan sureclerde:</strong> Ayni bildirim ve çıkış adımları her dosyada yeniden kuruluyor.</p>
         </li>
       </ul>
     </section>
@@ -88,20 +88,20 @@ const faqData = {
     <section>
       <h2 class="text-3xl font-bold mb-6">Bu Sayfanin Isaret Ettigi Sistem</h2>
       <p class="text-lg text-muted-foreground mb-8">
-        Ihbar tazminati ihtiyaci bizim icin bir offboarding takip problemidir. Deger, sureyi tek basina gormekten ziyade takvimi, iletisimi, bordro etkisini ve sonraki adimlari tek akis halinde yonetebilmekte ortaya cikar.
+        Ihbar tazminatı ihtiyacı bizim için bir offboarding takip problemidir. Değer, sureyi tek basina gormekten ziyade takvimi, iletisimi, bordro etkisini ve sonraki adımları tek akış halinde yonetebilmekte ortaya çıkar.
       </p>
       <div class="grid md:grid-cols-3 gap-6">
         <div class="bg-card p-6 rounded-xl border border-border">
           <h3 class="text-xl font-semibold mb-2">Bildirim Takvimi</h3>
-          <p class="text-sm text-muted-foreground">Hangi tarihin ne ifade ettigi ve kimde aksiyon oldugu netlesir.</p>
+          <p class="text-sm text-muted-foreground">Hangi tarihin ne ifade ettigi ve kimde aksiyon oldugu netleşir.</p>
         </div>
         <div class="bg-card p-6 rounded-xl border border-border">
-          <h3 class="text-xl font-semibold mb-2">Personel Akisi</h3>
-          <p class="text-sm text-muted-foreground">Iletisim ve form gereksinimleri daha duzenli ilerler.</p>
+          <h3 class="text-xl font-semibold mb-2">Personel Akışı</h3>
+          <p class="text-sm text-muted-foreground">Iletişim ve form gereksinimleri daha düzenli ilerler.</p>
         </div>
         <div class="bg-card p-6 rounded-xl border border-border">
-          <h3 class="text-xl font-semibold mb-2">Tahakkuk Baglantisi</h3>
-          <p class="text-sm text-muted-foreground">Surec sonucu bordro ve cikis hesaplarina daha tutarli yansir.</p>
+          <h3 class="text-xl font-semibold mb-2">Tahakkuk Bağlantısı</h3>
+          <p class="text-sm text-muted-foreground">Süreç sonucu bordro ve çıkış hesaplarina daha tutarlı yansir.</p>
         </div>
       </div>
     </section>
@@ -110,16 +110,16 @@ const faqData = {
       <h2 class="text-2xl font-bold mb-6">Sikca Sorulan Sorular</h2>
       <div class="space-y-6">
         <div>
-          <h3 class="text-lg font-semibold mb-2">Bu sayfa ihbar suresi hesap makinesi mi?</h3>
-          <p class="text-muted-foreground">Hayir. Bu sayfa, ihbar surecinin neden sadece sure hesabindan ibaret olmadigini ve operasyonel olarak nasil ele alinmasi gerektigini anlatir.</p>
+          <h3 class="text-lg font-semibold mb-2">Bu sayfa ihbar süresi hesap makinesi mi?</h3>
+          <p class="text-muted-foreground">Hayır. Bu sayfa, ihbar sürecinin neden sadece süre hesabindan ibaret olmadigini ve operasyonel olarak nasil ele alınması gerektiğini anlatır.</p>
         </div>
         <div>
-          <h3 class="text-lg font-semibold mb-2">Asil sorun hangi noktada cikar?</h3>
-          <p class="text-muted-foreground">Asil sorun sureyi bilmekten cok, takvim, bildirim ve cikis akislarini birlikte koordine etmektedir.</p>
+          <h3 class="text-lg font-semibold mb-2">Asıl sorun hangi noktada çıkar?</h3>
+          <p class="text-muted-foreground">Asıl sorun sureyi bilmekten çok, takvim, bildirim ve çıkış akislarini birlikte koordine etmektedir.</p>
         </div>
         <div>
-          <h3 class="text-lg font-semibold mb-2">Kimler icin daha onemlidir?</h3>
-          <p class="text-muted-foreground">Yuksek personel sirkulasyonu olan veya cikis sureci daginik ilerleyen ekipler icin daha onemlidir.</p>
+          <h3 class="text-lg font-semibold mb-2">Kimler için daha onemlidir?</h3>
+          <p class="text-muted-foreground">Yüksek personel sirkulasyonu olan veya çıkış süreci dağınık ilerleyen ekipler için daha onemlidir.</p>
         </div>
       </div>
     </section>

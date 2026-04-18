@@ -1,9 +1,9 @@
 ---
 import CalculatorLayout from '../layouts/CalculatorLayout.astro';
 
-const title = 'Fazla Mesai Hesaplama | Puantaj, Onay ve Bordroya Aktarma Akisi';
-const description = 'Fazla mesai ihtiyaci cogu ekipte hesap probleminden cok veri toplama, amir onayi ve bordroya dogru aktarma problemine donusur.';
-const keywords = 'fazla mesai hesaplama, puantaj, mesai onayi, vardiya takibi, bordroya aktarma';
+const title = 'Fazla Mesai Hesaplama | Puantaj, Onay ve Bordroya Aktarma Akışı';
+const description = 'Fazla mesai ihtiyacı çoğu ekipte hesap probleminden çok veri toplama, amir onayı ve bordroya doğru aktarma problemine donusur.';
+const keywords = 'fazla mesai hesaplama, puantaj, mesai onayı, vardiya takibi, bordroya aktarma';
 
 const faqData = {
   '@context': 'https://schema.org',
@@ -14,23 +14,23 @@ const faqData = {
       name: 'Bu sayfa resmi mesai hesap makinesi mi?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Hayir. Bu sayfa, fazla mesai ihtiyacinin neden sahadan veri toplama, onay ve bordro aktarimi problemi oldugunu anlatir.',
+        text: 'Hayır. Bu sayfa, fazla mesai ihtiyacının neden sahadan veri toplama, onay ve bordro aktarımı problemi oldugunu anlatır.',
       },
     },
     {
       '@type': 'Question',
-      name: 'Asil darboğaz genelde nerede olur?',
+      name: 'Asıl darboğaz genelde nerede olur?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Asil darboğaz genelde mesai saatinin bulunmasinda degil; kimin ne kadar calistigi bilgisinin daginik gelmesi ve amir onayi beklemesinde olur.',
+        text: 'Asıl darboğaz genelde mesai saatinin bulunmasinda değil; kimin ne kadar çalıştığı bilgisinin dağınık gelmesi ve amir onayı beklemesinde olur.',
       },
     },
     {
       '@type': 'Question',
-      name: 'Kimler icin daha degerlidir?',
+      name: 'Kimler için daha degerlidir?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Vardiyali, saha veya mavi yaka agirlikli yapilarda puantaj akisi karmasiklastikca bu sayfa daha degerli hale gelir.',
+        text: 'Vardiyali, saha veya mavi yaka agirlikli yapilarda puantaj akışı karmasiklastikca bu sayfa daha degerli hale gelir.',
       },
     },
   ],
@@ -46,29 +46,29 @@ const faqData = {
   <div class="space-y-12">
     <section>
       <div class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold border-primary text-primary mb-4">Puantaj ve Saha Operasyonu</div>
-      <h1 class="text-4xl lg:text-5xl font-bold tracking-tight mb-6">Fazla Mesaiyi Formulle Degil, Sahadan Bordroya Giden Akisla Yonetin</h1>
+      <h1 class="text-4xl lg:text-5xl font-bold tracking-tight mb-6">Fazla Mesaiyi Formulle Değil, Sahadan Bordroya Giden Akisla Yönetin</h1>
       <p class="text-xl text-muted-foreground leading-relaxed max-w-4xl">
-        Fazla mesai konusu cogu sirket icin matematikten once veri toplama problemidir. Saatler farkli vardiya listelerinden, amir notlarindan ve son dakika duzeltmelerinden geliyorsa asil sorun hesap degil, puantaj akisidir.
+        Fazla mesai konusu çoğu şirket için matematikten önce veri toplama problemidir. Saatler farklı vardiya listelerinden, amir notlarindan ve son dakika duzeltmelerinden geliyorsa asıl sorun hesap değil, puantaj akisidir.
       </p>
     </section>
 
     <section class="grid gap-6 lg:grid-cols-3">
       <div class="rounded-2xl border border-border bg-card p-6">
         <h2 class="text-xl font-semibold mb-3">Sahadan Veri</h2>
-        <p class="text-muted-foreground">Mesai bilgisi cogu zaman tek sistemden degil, farkli kaynaklardan gelir.</p>
+        <p class="text-muted-foreground">Mesai bilgisi çoğu zaman tek sistemden değil, farklı kaynaklardan gelir.</p>
       </div>
       <div class="rounded-2xl border border-border bg-card p-6">
-        <h2 class="text-xl font-semibold mb-3">Amir Onayi</h2>
-        <p class="text-muted-foreground">Hangi mesainin onaylandigi ve hangisinin duzeltme bekledigi gec gorunur olabilir.</p>
+        <h2 class="text-xl font-semibold mb-3">Amir Onayı</h2>
+        <p class="text-muted-foreground">Hangi mesainin onaylandigi ve hangisinin düzeltme bekledigi gec görünür olabilir.</p>
       </div>
       <div class="rounded-2xl border border-border bg-card p-6">
-        <h2 class="text-xl font-semibold mb-3">Bordro Aktarimi</h2>
-        <p class="text-muted-foreground">Onayli bilgi bordroya gec aktariliyorsa itiraz, tekrar kontrol ve zaman kaybi artar.</p>
+        <h2 class="text-xl font-semibold mb-3">Bordro Aktarımı</h2>
+        <p class="text-muted-foreground">Onayli bilgi bordroya gec aktariliyorsa itiraz, tekrar kontrol ve zaman kaybı artar.</p>
       </div>
     </section>
 
     <section class="bg-muted/30 p-8 rounded-2xl border border-border">
-      <h2 class="text-2xl font-semibold mb-6">Fazla Mesai Surecinin Zorlastigi Tipik Alanlar</h2>
+      <h2 class="text-2xl font-semibold mb-6">Fazla Mesai Sürecinin Zorlastigi Tipik Alanlar</h2>
       <ul class="space-y-4">
         <li class="flex items-start gap-3">
           <span class="mt-1 h-2.5 w-2.5 rounded-full bg-primary"></span>
@@ -76,32 +76,32 @@ const faqData = {
         </li>
         <li class="flex items-start gap-3">
           <span class="mt-1 h-2.5 w-2.5 rounded-full bg-primary"></span>
-          <p><strong>Saha ekipleri:</strong> Yazili olmayan bildirimler ve sonradan gelen teyitler sureci zorlastiriyor.</p>
+          <p><strong>Saha ekipleri:</strong> Yazili olmayan bildirimler ve sonradan gelen teyitler süreci zorlastiriyor.</p>
         </li>
         <li class="flex items-start gap-3">
           <span class="mt-1 h-2.5 w-2.5 rounded-full bg-primary"></span>
-          <p><strong>Ay sonu kapanisi:</strong> Tum duzeltmeler son anda geliyorsa bordro ve IK ayni anda sikisiyor.</p>
+          <p><strong>Ay sonu kapanisi:</strong> Tüm duzeltmeler son anda geliyorsa bordro ve IK ayni anda sikisiyor.</p>
         </li>
       </ul>
     </section>
 
     <section>
-      <h2 class="text-3xl font-bold mb-6">Bu Sayfanin Asil Gittigi Cozum</h2>
+      <h2 class="text-3xl font-bold mb-6">Bu Sayfanin Asıl Gittigi Çözüm</h2>
       <p class="text-lg text-muted-foreground mb-8">
-        Fazla mesai aramasi bizim icin bir puantaj ve onay akisi sinyalidir. Deger, saatlik hesabi gostermekten cok mesai verisini toplamak, amir onayini netlestirmek ve sonucu bordroya daha temiz aktarmakta ortaya cikar.
+        Fazla mesai aramasi bizim için bir puantaj ve onay akışı sinyalidir. Değer, saatlik hesabı gostermekten çok mesai verisini toplamak, amir onayini netleştirmek ve sonucu bordroya daha temiz aktarmakta ortaya çıkar.
       </p>
       <div class="grid md:grid-cols-3 gap-6">
         <div class="bg-card p-6 rounded-xl border border-border">
           <h3 class="text-xl font-semibold mb-2">Veri Toplama Disiplini</h3>
-          <p class="text-sm text-muted-foreground">Mesai bilgisi farkli kanallardan gelse bile ortak akista toplanir.</p>
+          <p class="text-sm text-muted-foreground">Mesai bilgisi farklı kanallardan gelse bile ortak akista toplanir.</p>
         </div>
         <div class="bg-card p-6 rounded-xl border border-border">
-          <h3 class="text-xl font-semibold mb-2">Onay Gorunurlugu</h3>
+          <h3 class="text-xl font-semibold mb-2">Onay Görünürlüğü</h3>
           <p class="text-sm text-muted-foreground">Hangi kaydin onayli, hangisinin beklemede oldugu daha net gorulur.</p>
         </div>
         <div class="bg-card p-6 rounded-xl border border-border">
-          <h3 class="text-xl font-semibold mb-2">Bordro Gecisi</h3>
-          <p class="text-sm text-muted-foreground">Sonuc son dakika kopyala-yapistir isine degil, daha temiz veri akisina doner.</p>
+          <h3 class="text-xl font-semibold mb-2">Bordro Geçişi</h3>
+          <p class="text-sm text-muted-foreground">Sonuç son dakika kopyala-yapistir isine değil, daha temiz veri akisina doner.</p>
         </div>
       </div>
     </section>
@@ -111,14 +111,14 @@ const faqData = {
       <div class="space-y-6">
         <div>
           <h3 class="text-lg font-semibold mb-2">Bu sayfa resmi mesai hesap makinesi mi?</h3>
-          <p class="text-muted-foreground">Hayir. Bu sayfa, fazla mesai ihtiyacinin neden sahadan veri toplama, onay ve bordro aktarimi problemi oldugunu anlatir.</p>
+          <p class="text-muted-foreground">Hayır. Bu sayfa, fazla mesai ihtiyacının neden sahadan veri toplama, onay ve bordro aktarımı problemi oldugunu anlatır.</p>
         </div>
         <div>
-          <h3 class="text-lg font-semibold mb-2">Asil darboğaz genelde nerede olur?</h3>
-          <p class="text-muted-foreground">Asil darboğaz cogu zaman mesainin miktarindan once, verinin daginik gelmesi ve amir onayinin gecikmesinde olur.</p>
+          <h3 class="text-lg font-semibold mb-2">Asıl darboğaz genelde nerede olur?</h3>
+          <p class="text-muted-foreground">Asıl darboğaz çoğu zaman mesainin miktarindan önce, verinin dağınık gelmesi ve amir onayinin gecikmesinde olur.</p>
         </div>
         <div>
-          <h3 class="text-lg font-semibold mb-2">Kimler icin daha degerlidir?</h3>
+          <h3 class="text-lg font-semibold mb-2">Kimler için daha degerlidir?</h3>
           <p class="text-muted-foreground">Vardiyali, saha veya mavi yaka agirlikli yapilarda puantaj karmasiklastikca daha degerli hale gelir.</p>
         </div>
       </div>

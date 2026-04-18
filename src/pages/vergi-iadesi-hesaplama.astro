@@ -1,9 +1,9 @@
 ---
 import CalculatorLayout from '../layouts/CalculatorLayout.astro';
 
-const title = 'Vergi Iadesi Hesaplama | Iade Hazirlik ve Evrak Akisi';
-const description = 'Vergi iadesi ihtiyaci cogu zaman tek bir rakam hesaplamak degil; gerekli liste, belge, mutabakat ve YMM/vergi dairesi hazirligini daha duzenli yonetmektir.';
-const keywords = 'vergi iadesi hesaplama, kdv iadesi, iade hazirligi, yuklenilen kdv, ymm evrak akisi';
+const title = 'Vergi Iadesi Hesaplama | Iade Hazırlık ve Evrak Akışı';
+const description = 'Vergi iadesi ihtiyacı çoğu zaman tek bir rakam hesaplamak değil; gerekli liste, belge, mutabakat ve YMM/vergi dairesi hazirligini daha düzenli yonetmektir.';
+const keywords = 'vergi iadesi hesaplama, kdv iadesi, iade hazırlığı, yuklenilen kdv, ymm evrak akışı';
 
 const faqData = {
   '@context': 'https://schema.org',
@@ -14,23 +14,23 @@ const faqData = {
       name: 'Bu sayfa resmi vergi iadesi hesap makinesi mi?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Hayir. Bu sayfa, vergi iadesi surecinin neden liste ve evrak hazirligi odakli oldugunu ve operasyonel darbogazlari anlatir.',
+        text: 'Hayır. Bu sayfa, vergi iadesi sürecinin neden liste ve evrak hazırlığı odakli oldugunu ve operasyonel darbogazlari anlatır.',
       },
     },
     {
       '@type': 'Question',
-      name: 'Asil sorun nerede birikir?',
+      name: 'Asıl sorun nerede birikir?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Asil sorun genelde son rakamdan once, ilgili belge ve listelerin toparlanmasi, uyumsuzluklarin bulunmasi ve YMM ya da vergi dairesine hazir cikti uretilmesinde birikir.',
+        text: 'Asıl sorun genelde son rakamdan önce, ilgili belge ve listelerin toparlanması, uyumsuzluklarin bulunmasi ve YMM ya da vergi dairesine hazir çıktı uretilmesinde birikir.',
       },
     },
     {
       '@type': 'Question',
-      name: 'Kimler icin daha kritik hale gelir?',
+      name: 'Kimler için daha kritik hale gelir?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Duzenli iade sureci yuruten, cok sayida belge ve liste hazirlayan finans ekipleri icin daha kritik hale gelir.',
+        text: 'Düzenli iade süreci yuruten, çok sayida belge ve liste hazirlayan finans ekipleri için daha kritik hale gelir.',
       },
     },
   ],
@@ -45,38 +45,38 @@ const faqData = {
 >
   <div class="space-y-12">
     <section>
-      <div class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold border-primary text-primary mb-4">Iade ve Evrak Hazirligi</div>
-      <h1 class="text-4xl lg:text-5xl font-bold tracking-tight mb-6">Vergi Iadesini Sonuctan Once Hazirlik Sureci Olarak Ele Alin</h1>
+      <div class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold border-primary text-primary mb-4">Iade ve Evrak Hazırlığı</div>
+      <h1 class="text-4xl lg:text-5xl font-bold tracking-tight mb-6">Vergi Iadesini Sonuctan Önce Hazırlık Süreci Olarak Ele Alin</h1>
       <p class="text-xl text-muted-foreground leading-relaxed max-w-4xl">
-        Vergi iadesi konusu cogu ekipte hesap problemi gibi algilanir. Oysa gercekte zorlayan sey, ilgili liste ve belgeleri toparlamak, uyumsuzluklari erken gormek ve sureci YMM ya da vergi dairesine hazir hale getirmektir.
+        Vergi iadesi konusu çoğu ekipte hesap problemi gibi algilanir. Oysa gercekte zorlayan sey, ilgili liste ve belgeleri toparlamak, uyumsuzluklari erken görmek ve süreci YMM ya da vergi dairesine hazir hale getirmektir.
       </p>
     </section>
 
     <section class="grid gap-6 lg:grid-cols-3">
       <div class="rounded-2xl border border-border bg-card p-6">
         <h2 class="text-xl font-semibold mb-3">Belge Toplama</h2>
-        <p class="text-muted-foreground">Farkli kaynaklardan gelen belgeler ve listeler tek akista toplanmiyorsa surec uzar.</p>
+        <p class="text-muted-foreground">Farklı kaynaklardan gelen belgeler ve listeler tek akista toplanmiyorsa süreç uzar.</p>
       </div>
       <div class="rounded-2xl border border-border bg-card p-6">
         <h2 class="text-xl font-semibold mb-3">Uyum Kontrolu</h2>
-        <p class="text-muted-foreground">Hangi listedeki hangi kalemin sorunlu oldugu gec fark edilirse tum dosya yavaslar.</p>
+        <p class="text-muted-foreground">Hangi listedeki hangi kalemin sorunlu oldugu gec fark edilirse tüm dosya yavaslar.</p>
       </div>
       <div class="rounded-2xl border border-border bg-card p-6">
-        <h2 class="text-xl font-semibold mb-3">Dis Paydas Hazirligi</h2>
+        <h2 class="text-xl font-semibold mb-3">Dis Paydas Hazırlığı</h2>
         <p class="text-muted-foreground">YMM veya resmi kurumlara giden dosyanin temiz ve izlenebilir ciktiya donusmesi kritik hale gelir.</p>
       </div>
     </section>
 
     <section class="bg-muted/30 p-8 rounded-2xl border border-border">
-      <h2 class="text-2xl font-semibold mb-6">Vergi Iadesi Surecinin Daraldigi Tipik Noktalar</h2>
+      <h2 class="text-2xl font-semibold mb-6">Vergi Iadesi Sürecinin Daraldigi Tipik Noktalar</h2>
       <ul class="space-y-4">
         <li class="flex items-start gap-3">
           <span class="mt-1 h-2.5 w-2.5 rounded-full bg-primary"></span>
-          <p><strong>Cok belgeli dosyalarda:</strong> Liste ve evraklar sonradan birlestirildigi icin tekrar is artar.</p>
+          <p><strong>Çok belgeli dosyalarda:</strong> Liste ve evraklar sonradan birlestirildigi için tekrar is artar.</p>
         </li>
         <li class="flex items-start gap-3">
           <span class="mt-1 h-2.5 w-2.5 rounded-full bg-primary"></span>
-          <p><strong>YMM ile calisirken:</strong> Veri isteme, eksik belge ve duzeltme turlari uzadiginda ekip yorulur.</p>
+          <p><strong>YMM ile calisirken:</strong> Veri isteme, eksik belge ve düzeltme turlari uzadiginda ekip yorulur.</p>
         </li>
         <li class="flex items-start gap-3">
           <span class="mt-1 h-2.5 w-2.5 rounded-full bg-primary"></span>
@@ -86,21 +86,21 @@ const faqData = {
     </section>
 
     <section>
-      <h2 class="text-3xl font-bold mb-6">Bu Sayfanin Isaret Ettigi Asil Cozum</h2>
+      <h2 class="text-3xl font-bold mb-6">Bu Sayfanin Isaret Ettigi Asıl Çözüm</h2>
       <p class="text-lg text-muted-foreground mb-8">
-        Vergi iadesi konusu bizim acimizdan bir hazirlik ve dosya duzenleme problemidir. Deger, tekil rakam vermekten cok gerekli liste, belge ve kontrol adimlarini daha izlenebilir hale getirip dis paydas akisina duzenli sekilde baglamaktir.
+        Vergi iadesi konusu bizim acimizdan bir hazırlık ve dosya düzenleme problemidir. Değer, tekil rakam vermekten çok gerekli liste, belge ve kontrol adımlarını daha izlenebilir hale getirip dis paydas akisina düzenli şekilde baglamaktir.
       </p>
       <div class="grid md:grid-cols-3 gap-6">
         <div class="bg-card p-6 rounded-xl border border-border">
-          <h3 class="text-xl font-semibold mb-2">Liste Hazirligi</h3>
-          <p class="text-sm text-muted-foreground">Gerekli evrak ve veri setleri daha duzenli toparlanir.</p>
+          <h3 class="text-xl font-semibold mb-2">Liste Hazırlığı</h3>
+          <p class="text-sm text-muted-foreground">Gerekli evrak ve veri setleri daha düzenli toparlanir.</p>
         </div>
         <div class="bg-card p-6 rounded-xl border border-border">
-          <h3 class="text-xl font-semibold mb-2">Uyumsuzluk Gorunurlugu</h3>
-          <p class="text-sm text-muted-foreground">Sorunlu kalemler daha erken fark edilir ve ayri ele alinir.</p>
+          <h3 class="text-xl font-semibold mb-2">Uyumsuzluk Görünürlüğü</h3>
+          <p class="text-sm text-muted-foreground">Sorunlu kalemler daha erken fark edilir ve ayri ele alınır.</p>
         </div>
         <div class="bg-card p-6 rounded-xl border border-border">
-          <h3 class="text-xl font-semibold mb-2">Dis Paydas Akisi</h3>
+          <h3 class="text-xl font-semibold mb-2">Dis Paydas Akışı</h3>
           <p class="text-sm text-muted-foreground">YMM veya resmi tarafla veri paylasimi daha temiz ve daha kontrollu ilerler.</p>
         </div>
       </div>
@@ -111,15 +111,15 @@ const faqData = {
       <div class="space-y-6">
         <div>
           <h3 class="text-lg font-semibold mb-2">Bu sayfa resmi vergi iadesi hesap makinesi mi?</h3>
-          <p class="text-muted-foreground">Hayir. Bu sayfa, vergi iadesi surecinin neden liste ve evrak hazirligi odakli oldugunu ve operasyonel darbogazlari anlatir.</p>
+          <p class="text-muted-foreground">Hayır. Bu sayfa, vergi iadesi sürecinin neden liste ve evrak hazırlığı odakli oldugunu ve operasyonel darbogazlari anlatır.</p>
         </div>
         <div>
-          <h3 class="text-lg font-semibold mb-2">Asil sorun nerede birikir?</h3>
-          <p class="text-muted-foreground">Asil sorun son rakamdan once, ilgili liste ve belgelerin toparlanmasi, uyumsuzluklarin bulunmasi ve dis paydasa hazir cikti uretilmesinde birikir.</p>
+          <h3 class="text-lg font-semibold mb-2">Asıl sorun nerede birikir?</h3>
+          <p class="text-muted-foreground">Asıl sorun son rakamdan önce, ilgili liste ve belgelerin toparlanması, uyumsuzluklarin bulunmasi ve dis paydasa hazir çıktı uretilmesinde birikir.</p>
         </div>
         <div>
-          <h3 class="text-lg font-semibold mb-2">Kimler icin daha kritik hale gelir?</h3>
-          <p class="text-muted-foreground">Duzenli iade sureci yuruten, cok sayida belge ve liste hazirlayan finans ekipleri icin daha kritik hale gelir.</p>
+          <h3 class="text-lg font-semibold mb-2">Kimler için daha kritik hale gelir?</h3>
+          <p class="text-muted-foreground">Düzenli iade süreci yuruten, çok sayida belge ve liste hazirlayan finans ekipleri için daha kritik hale gelir.</p>
         </div>
       </div>
     </section>

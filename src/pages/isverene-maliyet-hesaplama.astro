@@ -1,9 +1,9 @@
 ---
 import CalculatorLayout from '../layouts/CalculatorLayout.astro';
 
-const title = 'Isverene Maliyet Hesaplama | Personel Butce ve Senaryo Plani';
-const description = 'Isverene maliyet hesaplama arayan ekipler icin asil ihtiyac tek bir rakam degil; ise alim, zam ve ekip buyume kararlarinin toplam butce etkisini hizli gormektir.';
-const keywords = 'isverene maliyet hesaplama, personel maliyeti, brut maas maliyeti, ik butce plani, ise alim senaryosu';
+const title = 'Işverene Maliyet Hesaplama | Personel Bütçe ve Senaryo Plani';
+const description = 'Işverene maliyet hesaplama arayan ekipler için asıl ihtiyac tek bir rakam değil; ise alim, zam ve ekip büyüme kararlarinin toplam bütçe etkisini hızlı gormektir.';
+const keywords = 'işverene maliyet hesaplama, personel maliyeti, brüt maaş maliyeti, ik bütçe plani, ise alim senaryosu';
 
 const faqData = {
   '@context': 'https://schema.org',
@@ -11,26 +11,26 @@ const faqData = {
   mainEntity: [
     {
       '@type': 'Question',
-      name: 'Isverene maliyet neden tekil hesapla bitmez?',
+      name: 'Işverene maliyet neden tekil hesapla bitmez?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Cunku yeni ise alim, zam, ekip buyume, yan hak ve farkli personel gruplari birlikte degerlendirilir. Karar etkisi tek kisilik hesabin otesine gecer.',
+        text: 'Cunku yeni ise alim, zam, ekip büyüme, yan hak ve farklı personel gruplari birlikte degerlendirilir. Karar etkisi tek kisilik hesabin otesine gecer.',
       },
     },
     {
       '@type': 'Question',
-      name: 'Bu sayfa hangi ihtiyaci hedefler?',
+      name: 'Bu sayfa hangi ihtiyacı hedefler?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'IK, finans ve yonetim ekiplerinin personel kararlarini daha hizli butce senaryosuna donusturme ihtiyacini hedefler.',
+        text: 'IK, finans ve yönetim ekiplerinin personel kararlarini daha hızlı bütçe senaryosuna donusturme ihtiyacini hedefler.',
       },
     },
     {
       '@type': 'Question',
-      name: 'En cok hangi yapilarda kritik hale gelir?',
+      name: 'En çok hangi yapilarda kritik hale gelir?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Aktif ise alim yapan, ekibini buyuten ya da duzenli zam ve teklif karari veren sirketlerde daha kritik hale gelir.',
+        text: 'Aktif ise alim yapan, ekibini buyuten ya da düzenli zam ve teklif karari veren sirketlerde daha kritik hale gelir.',
       },
     },
   ],
@@ -45,10 +45,10 @@ const faqData = {
 >
   <div class="space-y-12">
     <section>
-      <div class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold border-primary text-primary mb-4">IK, Finans ve Butce Plani</div>
-      <h1 class="text-4xl lg:text-5xl font-bold tracking-tight mb-6">Isverene Maliyet Hesabini Yalnizca Formul Olarak Degil, Karar Araci Olarak Ele Alin</h1>
+      <div class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold border-primary text-primary mb-4">IK, Finans ve Bütçe Plani</div>
+      <h1 class="text-4xl lg:text-5xl font-bold tracking-tight mb-6">Işverene Maliyet Hesabini Yalnizca Formül Olarak Değil, Karar Araci Olarak Ele Alin</h1>
       <p class="text-xl text-muted-foreground leading-relaxed max-w-4xl">
-        Bir personelin maliyetini bilmek tek basina yeterli olmaz. Asil ihtiyac, ise alim, zam, ekip buyume ve departman bazli degisikliklerin toplam butce etkisini hizla gorebilmektir. Bu sayfa o ihtiyaci teknik olarak nereye baglamak gerektigini aciklar.
+        Bir personelin maliyetini bilmek tek basina yeterli olmaz. Asıl ihtiyac, ise alim, zam, ekip büyüme ve departman bazli degisikliklerin toplam bütçe etkisini hizla gorebilmektir. Bu sayfa o ihtiyacı teknik olarak nereye baglamak gerektiğini aciklar.
       </p>
     </section>
 
@@ -56,37 +56,37 @@ const faqData = {
       <div class="rounded-2xl border border-border bg-card p-6">
         <h2 class="text-xl font-semibold mb-3">Ise Alim Karari</h2>
         <p class="text-muted-foreground">
-          Adaya teklif verirken yalnizca net ucret degil, toplam isveren etkisi ve butceye yansimasi gorulmek istenir.
+          Adaya teklif verirken yalnizca net ücret değil, toplam işveren etkisi ve bütçeye yansimasi gorulmek istenir.
         </p>
       </div>
       <div class="rounded-2xl border border-border bg-card p-6">
         <h2 class="text-xl font-semibold mb-3">Zam Senaryosu</h2>
         <p class="text-muted-foreground">
-          Tek bir zam karari bile ekip geneline yayildiginda toplam maliyeti hizli gorebilmek gerekir.
+          Tek bir zam karari bile ekip geneline yayildiginda toplam maliyeti hızlı gorebilmek gerekir.
         </p>
       </div>
       <div class="rounded-2xl border border-border bg-card p-6">
-        <h2 class="text-xl font-semibold mb-3">Ekip Buyume Plani</h2>
+        <h2 class="text-xl font-semibold mb-3">Ekip Büyüme Plani</h2>
         <p class="text-muted-foreground">
-          Yonetim yeni rol, yeni lokasyon veya farkli unvan gruplari icin toplam maliyet projeksiyonu ister.
+          Yönetim yeni rol, yeni lokasyon veya farklı unvan gruplari için toplam maliyet projeksiyonu ister.
         </p>
       </div>
     </section>
 
     <section class="bg-muted/30 p-8 rounded-2xl border border-border">
-      <h2 class="text-2xl font-semibold mb-6">Isverene Maliyet Hesabi Ne Zaman Excel Sorununa Donusur?</h2>
+      <h2 class="text-2xl font-semibold mb-6">Işverene Maliyet Hesabı Ne Zaman Excel Sorununa Donusur?</h2>
       <ul class="space-y-4">
         <li class="flex items-start gap-3">
           <span class="mt-1 h-2.5 w-2.5 rounded-full bg-primary"></span>
-          <p><strong>Teklif ve ise alim surecinde:</strong> Ayni rolde birden fazla aday ve farkli teklif senaryosu ayni anda degerlendirilir.</p>
+          <p><strong>Teklif ve ise alim sürecinde:</strong> Ayni rolde birden fazla aday ve farklı teklif senaryosu ayni anda degerlendirilir.</p>
         </li>
         <li class="flex items-start gap-3">
           <span class="mt-1 h-2.5 w-2.5 rounded-full bg-primary"></span>
-          <p><strong>Butce toplantilarinda:</strong> Yonetim tek bir rakam degil, ekip ve departman seviyesinde etkileri gormek ister.</p>
+          <p><strong>Bütçe toplantilarinda:</strong> Yönetim tek bir rakam değil, ekip ve departman seviyesinde etkileri görmek ister.</p>
         </li>
         <li class="flex items-start gap-3">
           <span class="mt-1 h-2.5 w-2.5 rounded-full bg-primary"></span>
-          <p><strong>Zam ve terfi donemlerinde:</strong> Hesaplar farkli dosyalarda tekrar uretildigi icin hiz ve tutarlilik kaybolur.</p>
+          <p><strong>Zam ve terfi donemlerinde:</strong> Hesaplar farklı dosyalarda tekrar uretildigi için hiz ve tutarlilik kaybolur.</p>
         </li>
       </ul>
     </section>
@@ -94,20 +94,20 @@ const faqData = {
     <section>
       <h2 class="text-3xl font-bold mb-6">Bu Ihtiyac Hangi Sisteme Aciliyor?</h2>
       <p class="text-lg text-muted-foreground mb-8">
-        Isverene maliyet hesaplama sayfasini bizim icin degerli yapan sey, personel butce kararlarini daha hizli ve daha gorunur hale getirmesidir. Bu nedenle sayfanin arkasindaki asil fikir, IK, finans ve yonetim ekipleri icin ortak bir senaryo ve karar destek katmani kurmaktir.
+        Işverene maliyet hesaplama sayfasini bizim için degerli yapan sey, personel bütçe kararlarini daha hızlı ve daha görünür hale getirmesidir. Bu nedenle sayfanin arkasindaki asıl fikir, IK, finans ve yönetim ekipleri için ortak bir senaryo ve karar destek katmani kurmaktir.
       </p>
       <div class="grid md:grid-cols-3 gap-6">
         <div class="bg-card p-6 rounded-xl border border-border">
           <h3 class="text-xl font-semibold mb-2">Senaryo Katmani</h3>
-          <p class="text-sm text-muted-foreground">Ise alim, zam ve ekip buyume kararlarini tek bir karar akisi gibi gormeyi saglar.</p>
+          <p class="text-sm text-muted-foreground">Ise alim, zam ve ekip büyüme kararlarini tek bir karar akışı gibi gormeyi sağlar.</p>
         </div>
         <div class="bg-card p-6 rounded-xl border border-border">
-          <h3 class="text-xl font-semibold mb-2">Butce Gorunurlugu</h3>
-          <p class="text-sm text-muted-foreground">Departman, rol ve zaman bazli etkiler daha erken gorulmeye baslar.</p>
+          <h3 class="text-xl font-semibold mb-2">Bütçe Görünürlüğü</h3>
+          <p class="text-sm text-muted-foreground">Departman, rol ve zaman bazli etkiler daha erken gorulmeye başlar.</p>
         </div>
         <div class="bg-card p-6 rounded-xl border border-border">
           <h3 class="text-xl font-semibold mb-2">IK-Finans Uyumu</h3>
-          <p class="text-sm text-muted-foreground">Karar sureci farkli dosyalarda degil, ayni mantik ve ayni dil uzerinden ilerler.</p>
+          <p class="text-sm text-muted-foreground">Karar süreci farklı dosyalarda değil, ayni mantik ve ayni dil üzerinden ilerler.</p>
         </div>
       </div>
     </section>
@@ -116,16 +116,16 @@ const faqData = {
       <h2 class="text-2xl font-bold mb-6">Sikca Sorulan Sorular</h2>
       <div class="space-y-6">
         <div>
-          <h3 class="text-lg font-semibold mb-2">Isverene maliyet neden tekil hesapla bitmez?</h3>
-          <p class="text-muted-foreground">Cunku yeni ise alim, zam, ekip buyume, yan hak ve farkli personel gruplari birlikte degerlendirilir. Karar etkisi tek kisilik hesabin otesine gecer.</p>
+          <h3 class="text-lg font-semibold mb-2">Işverene maliyet neden tekil hesapla bitmez?</h3>
+          <p class="text-muted-foreground">Cunku yeni ise alim, zam, ekip büyüme, yan hak ve farklı personel gruplari birlikte degerlendirilir. Karar etkisi tek kisilik hesabin otesine gecer.</p>
         </div>
         <div>
-          <h3 class="text-lg font-semibold mb-2">Bu sayfa hangi ihtiyaci hedefler?</h3>
-          <p class="text-muted-foreground">IK, finans ve yonetim ekiplerinin personel kararlarini daha hizli butce senaryosuna donusturme ihtiyacini hedefler.</p>
+          <h3 class="text-lg font-semibold mb-2">Bu sayfa hangi ihtiyacı hedefler?</h3>
+          <p class="text-muted-foreground">IK, finans ve yönetim ekiplerinin personel kararlarini daha hızlı bütçe senaryosuna donusturme ihtiyacini hedefler.</p>
         </div>
         <div>
-          <h3 class="text-lg font-semibold mb-2">En cok hangi yapilarda kritik hale gelir?</h3>
-          <p class="text-muted-foreground">Aktif ise alim yapan, ekibini buyuten ya da duzenli zam ve teklif karari veren sirketlerde daha kritik hale gelir.</p>
+          <h3 class="text-lg font-semibold mb-2">En çok hangi yapilarda kritik hale gelir?</h3>
+          <p class="text-muted-foreground">Aktif ise alim yapan, ekibini buyuten ya da düzenli zam ve teklif karari veren sirketlerde daha kritik hale gelir.</p>
         </div>
       </div>
     </section>

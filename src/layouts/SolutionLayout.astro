@@ -67,7 +67,7 @@ const {
 const pathname = Astro.url.pathname;
 const breadcrumbs = [
   { name: 'Ana Sayfa', url: '/' },
-  { name: 'Cozumler', url: '/cozumler/' },
+  { name: 'Çözümler', url: '/cozumler/' },
   { name: heroTitle, url: pathname },
 ];
 
@@ -84,8 +84,8 @@ const proofCaseMap = {
     {
       href: '/vaka-calismalari/acilsatis/',
       title: 'Acilsatis vaka calismasi',
-      description: 'Operasyon ve gorunurluk tarafinda otomasyonla daha hizli ivme kazanilan akisi inceleyin.',
-      badge: 'Lead akis',
+      description: 'Operasyon ve görünürlük tarafinda otomasyonla daha hızlı ivme kazanilan akışı inceleyin.',
+      badge: 'Lead akış',
     },
     {
       href: '/vaka-calismalari/dkm-coach-bilge/',
@@ -96,15 +96,15 @@ const proofCaseMap = {
     {
       href: '/vaka-calismalari/salevium/',
       title: 'Salevium vaka calismasi',
-      description: 'Icerik ve dagitim otomasyonunun zaman kazancini nasil carpana cevirdigine bakin.',
-      badge: 'Icerik',
+      description: 'Içerik ve dagitim otomasyonunun zaman kazancini nasil carpana cevirdigine bakin.',
+      badge: 'Içerik',
     },
   ],
   operations: [
     {
       href: '/vaka-calismalari/cemkimsan/',
       title: 'Cemkimsan vaka calismasi',
-      description: 'Cok ulkeli satis ve pazarlama operasyonunda otomasyonun nasil olceklendigini inceleyin.',
+      description: 'Çok ulkeli satış ve pazarlama operasyonunda otomasyonun nasil olceklendigini inceleyin.',
       badge: 'Operasyon',
     },
     {
@@ -116,7 +116,7 @@ const proofCaseMap = {
     {
       href: '/vaka-calismalari/car-studio-ai/',
       title: 'Car Studio AI vaka calismasi',
-      description: 'Kucuk ekiple daha fazla pazar ve daha hizli akis kurmanin mantigini gorun.',
+      description: 'Küçük ekiple daha fazla pazar ve daha hızlı akış kurmanin mantigini gorun.',
       badge: 'Olcek',
     },
   ],
@@ -126,8 +126,8 @@ const nextStepMap = {
   growth: [
     {
       href: '/crm-programi/',
-      title: 'CRM ve musteri takibini guclendirin',
-      description: 'Talep, mesaj ve gorusmeleri manuel veri girisi olmadan toplayan temel ticari yapi.',
+      title: 'CRM ve müşteri takibini guclendirin',
+      description: 'Talep, mesaj ve gorusmeleri manuel veri girisi olmadan toplayan temel ticari yapı.',
       badge: 'Commercial',
     },
     {
@@ -138,28 +138,28 @@ const nextStepMap = {
     },
     {
       href: '/whatsapp-ve-siparis-botlari/',
-      title: 'WhatsApp uzerinden donusumu artirin',
-      description: 'Mesajlasma tabanli satis veya destek akislarinda daha hizli cevap yapisi kurun.',
+      title: 'WhatsApp üzerinden dönüşümü artırın',
+      description: 'Mesajlasma tabanli satış veya destek akislarinda daha hızlı cevap yapısı kurun.',
       badge: 'Conversation',
     },
   ],
   operations: [
     {
       href: '/on-muhasebe-ve-fatura/',
-      title: 'Muhasebe ve fatura akislarini otomatiklestirin',
+      title: 'Muhasebe ve fatura akislarini otomatikleştirin',
       description: 'Belge okuma, kayit ve aktarim tarafindaki manuel yukleri azaltan merkez sayfa.',
       badge: 'Finance',
     },
     {
       href: '/teklif-hazirlama-programi/',
       title: 'Teklif surecini hizlandirin',
-      description: 'Excel tabanli teklif ve fiyatlama sureclerini daha kontrollu hale getirin.',
+      description: 'Excel tabanli teklif ve fiyatlama süreçlerini daha kontrollu hale getirin.',
       badge: 'Quoting',
     },
     {
       href: '/e-ticaret-ve-pazaryeri-otomasyonu/',
       title: 'E-ticaret operasyonunu toparlayin',
-      description: 'Siparis, fatura, kargo ve kanal akisini tek sistem mantigiyla ele alin.',
+      description: 'Sipariş, fatura, kargo ve kanal akisini tek sistem mantigiyla ele alin.',
       badge: 'Commerce',
     },
   ],
@@ -186,22 +186,22 @@ const offerMap = {
   growth: {
     badge: 'Lead audit',
     title: 'Ilk gorusmede ne alirsiniz?',
-    description: 'Talep akisinin nerede koptugunu, hangi kanalin gercekten is urettigini ve hangi otomasyon adiminin en hizli geri donus saglayacagini cikaririz.',
+    description: 'Talep akisinin nerede koptugunu, hangi kanalin gerçekten is urettigini ve hangi otomasyon adiminin en hızlı geri donus saglayacagini cikaririz.',
     bullets: [
       'Lead kaynagi ve ilk temas hizi analizi',
-      'CRM, form, WhatsApp ve takip akisinda kopus noktalarinin tespiti',
+      'CRM, form, WhatsApp ve takip akışında kopus noktalarinin tespiti',
       'Size uygun ilk otomasyon senaryosu',
     ],
-    cta: 'Lead akis analizini iste',
+    cta: 'Lead akış analizini iste',
   },
   operations: {
     badge: 'Operasyon analizi',
     title: 'Ilk gorusmede ne alirsiniz?',
     description: 'Manuel veri girisinin, onay beklemelerinin ve ekipler arasi tekrar isin nerede olustugunu netlestirir; ilk otomasyon dugumunu birlikte seceriz.',
     bullets: [
-      'Surec haritasi ve darboagaz tespiti',
-      'Belge, onay ve takip akisinda tekrar eden adimlarin ayrimi',
-      'En hizli geri donus verecek ilk kurulum onerisi',
+      'Süreç haritasi ve darboagaz tespiti',
+      'Belge, onay ve takip akışında tekrar eden adimlarin ayrimi',
+      'En hızlı geri donus verecek ilk kurulum önerisi',
     ],
     cta: 'Operasyon analizini iste',
   },
@@ -269,7 +269,7 @@ const serviceSchema = {
           <div class="mb-8 inline-flex items-center gap-3 rounded-full border border-white/10 bg-white/5 px-5 py-2.5 backdrop-blur-md">
             <span class="theme-bg h-2.5 w-2.5 animate-pulse rounded-full shadow-[0_0_10px_var(--themePrimary)]"></span>
             <span class="text-sm font-bold uppercase tracking-[0.2em] text-[#E2E8F0]">
-              {sectorTheme !== 'default' ? `${sectorTheme.split('-').join(' ')} cozumu` : 'Yapay Zeka Otomasyonu'}
+              {sectorTheme !== 'default' ? `${sectorTheme.split('-').join(' ')} çözümü` : 'Yapay Zeka Otomasyonu'}
             </span>
           </div>
 
@@ -300,7 +300,7 @@ const serviceSchema = {
               {benefitsTitle || 'Olculebilir operasyonel kazanimlar'}
             </h2>
             <p class="max-w-2xl text-lg font-medium text-gray-400">
-              B2B sureclerinize entegre edilen yapay zekanin gercek dunya sonuclari.
+              B2B sureclerinize entegre edilen yapay zekanin gerçek dünya sonuçları.
             </p>
           </div>
 
@@ -363,7 +363,7 @@ const serviceSchema = {
         <div class="container relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div class="mb-20 text-center">
             <h2 class="mb-4 bg-gradient-to-r from-white to-gray-400 bg-clip-text text-3xl font-black tracking-tight text-transparent md:text-5xl">{processTitle}</h2>
-            <p class="mx-auto max-w-2xl text-lg font-medium text-gray-400">Tahmine degil, veriye dayali mimari kurulum sureci.</p>
+            <p class="mx-auto max-w-2xl text-lg font-medium text-gray-400">Tahmine değil, veriye dayali mimari kurulum süreci.</p>
           </div>
 
           <div class="relative grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4 lg:gap-4">
@@ -430,7 +430,7 @@ const serviceSchema = {
 
       <LeadPathways
         title="Bu sayfadan sonra ziyaretciyi kaybetmeyin"
-        description="Sorunu anlayan biri genelde iki seye bakar: buna dair gercek proof var mi ve bir sonraki mantikli sayfa hangisi. Bu blok o gecisi kolaylastirir."
+        description="Sorunu anlayan biri genelde iki seye bakar: buna dair gerçek proof var mi ve bir sonraki mantikli sayfa hangisi. Bu blok o geçişi kolaylastirir."
         caseStudies={proofCases}
         nextSteps={nextSteps}
         contactHref={contactHref('solution-lead-pathways')}
@@ -476,7 +476,7 @@ const serviceSchema = {
 
             <div class="relative z-10 flex flex-col items-center justify-center gap-6 sm:flex-row">
               <a href={contactHref('solution-final-cta')} class="theme-bg group relative inline-flex items-center gap-3 rounded-2xl px-12 py-6 text-xl font-black text-black transition-all duration-500 hover:-translate-y-1" style="box-shadow: 0 0 30px var(--themeGlow);">
-                Projeyi baslat
+                Projeyi başlat
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 transition-transform group-hover:-translate-y-1 group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                   <path stroke-linecap="round" stroke-linejoin="round" d="M13 5l7 7-7 7M5 5l7 7-7 7" />
                 </svg>

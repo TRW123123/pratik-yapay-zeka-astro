@@ -4,43 +4,43 @@ import pseoData from '../../data/pseo_data_tr.json';
 import { buildContactHref } from '../../lib/contactHref';
 
 const sectorSolutions = pseoData.map((data) => ({
-  href: `/cozumler/${data.slug_branche}/${data.slug_problem}/`,
+  href: `/çözümler/${data.slug_branche}/${data.slug_problem}/`,
   title: data.branche,
   description: data.seo_description,
   metric: data.hard_metrics.conversion_rate.split(' ').slice(0, 4).join(' ') + '...',
 }));
 
 const coreOffers = [
-  { href: '/crm-programi/', title: 'CRM ve Musteri Takibi', desc: 'Musteri, firsat ve takip akisini daha gorunur ve daha sistemli hale getiren ana satis operasyon katmani.' },
-  { href: '/marketing-otomasyonu/', title: 'Lead ve Marketing Otomasyonu', desc: 'Lead toplama, nurturing, segmentasyon ve satisa devir akislarini sistemlestiren yapi.' },
-  { href: '/whatsapp-ve-siparis-botlari/', title: 'WhatsApp ve Siparis Akisi', desc: 'WhatsApp uzerinden siparis, destek ve operasyon adimlarini daha hizli yurutmeye yarayan sistemler.' },
-  { href: '/on-muhasebe-ve-fatura/', title: 'On Muhasebe ve Fatura', desc: 'Belge toplama, fatura, mutabakat ve finans operasyonundaki manuel yukleri azaltan ana cozum.' },
-  { href: '/yapay-zeka-chatbot/', title: 'Yapay Zeka Chatbot', desc: 'Destek, bilgi erisimi ve ilk temas konularinda surekli tekrar eden isleri hafifleten sohbet katmani.' },
+  { href: '/crm-programi/', title: 'CRM ve Müşteri Takibi', desc: 'Müşteri, firsat ve takip akisini daha görünür ve daha sistemli hale getiren ana satış operasyon katmani.' },
+  { href: '/marketing-otomasyonu/', title: 'Lead ve Marketing Otomasyonu', desc: 'Lead toplama, nurturing, segmentasyon ve satisa devir akislarini sistemlestiren yapı.' },
+  { href: '/whatsapp-ve-siparis-botlari/', title: 'WhatsApp ve Sipariş Akışı', desc: 'WhatsApp üzerinden sipariş, destek ve operasyon adımlarını daha hızlı yurutmeye yarayan sistemler.' },
+  { href: '/on-muhasebe-ve-fatura/', title: 'Ön Muhasebe ve Fatura', desc: 'Belge toplama, fatura, mutabakat ve finans operasyonundaki manuel yukleri azaltan ana çözüm.' },
+  { href: '/yapay-zeka-chatbot/', title: 'Yapay Zeka Chatbot', desc: 'Destek, bilgi erisimi ve ilk temas konularinda sürekli tekrar eden isleri hafifleten sohbet katmani.' },
   { href: '/b2b-musteri-bulma/', title: 'B2B Arastirma ve Outreach', desc: 'Hedef hesap arastirmasi, sinyal bulma ve ilk temas kalitesini guclendiren B2B sistemler.' },
 ];
 
 const workflowPages = [
-  { href: '/teklif-hazirlama-programi/', title: 'Teklif ve Onay Akisi', desc: 'Teklif hazirlama, fiyat mantigi, onay ve follow-up surecini duzenleme.' },
-  { href: '/kurumsal-e-posta-otomasyonu/', title: 'Kurumsal E-Posta Operasyonu', desc: 'Gelen kutusu, yanit sureleri ve tekrar eden kurumsal e-posta operasyonlarini hafifletme.' },
-  { href: '/e-ticaret-ve-pazaryeri-otomasyonu/', title: 'E-Ticaret ve Pazaryeri Akisi', desc: 'Siparis, stok, kanal senkronu ve operasyon akislarini toparlama.' },
-  { href: '/stok-takibi-programi/', title: 'Stok ve Kanal Senkronu', desc: 'Stok gorunurlugu ve kanal bazli operasyon takibini daha sistemli hale getirme.' },
-  { href: '/b2b-musteri-takip-ve-plasiyer/', title: 'Plasiyer ve Saha Takibi', desc: 'Saha notlari, siparis sinyalleri ve uyuyan carileri tek B2B takip mantiginda toplama.' },
-  { href: '/ticaret-sicil-gazetesi/', title: 'Firma Sinyal ve Sicil Takibi', desc: 'Ticaret Sicil Gazetesi verilerini satis, veri guncelleme ve risk akislarina baglama.' },
+  { href: '/teklif-hazirlama-programi/', title: 'Teklif ve Onay Akışı', desc: 'Teklif hazırlama, fiyat mantigi, onay ve follow-up surecini düzenleme.' },
+  { href: '/kurumsal-e-posta-otomasyonu/', title: 'Kurumsal E-Posta Operasyonu', desc: 'Gelen kutusu, yanıt sureleri ve tekrar eden kurumsal e-posta operasyonlarini hafifletme.' },
+  { href: '/e-ticaret-ve-pazaryeri-otomasyonu/', title: 'E-Ticaret ve Pazaryeri Akışı', desc: 'Sipariş, stok, kanal senkronu ve operasyon akislarini toparlama.' },
+  { href: '/stok-takibi-programi/', title: 'Stok ve Kanal Senkronu', desc: 'Stok görünürlüğü ve kanal bazli operasyon takibini daha sistemli hale getirme.' },
+  { href: '/b2b-musteri-takip-ve-plasiyer/', title: 'Plasiyer ve Saha Takibi', desc: 'Saha notlari, sipariş sinyalleri ve uyuyan carileri tek B2B takip mantiginda toplama.' },
+  { href: '/ticaret-sicil-gazetesi/', title: 'Firma Sinyal ve Sicil Takibi', desc: 'Ticaret Sicil Gazetesi verilerini satış, veri güncelleme ve risk akislarina baglama.' },
 ];
 
 const utilityPages = [
-  { href: '/kdv-hesaplama/', title: 'KDV Hesaplama', desc: 'Net ve KDV dahil tutarlar icin pratik arac; daha buyuk fiyatlandirma akislarina giris noktasi.' },
-  { href: '/maas-hesaplama-motoru/', title: 'Maas Senaryo ve Bordro Girisi', desc: 'Brut-net ve maas senaryolarinin neden IK surecine baglandigini anlatan giris sayfasi.' },
-  { href: '/bordro-hesaplama/', title: 'Bordro Hazirlik Akisi', desc: 'Puantaj, kontrol ve bordro kapanisini daha duzenli ele alan sayfa.' },
-  { href: '/isverene-maliyet-hesaplama/', title: 'Isveren Maliyet ve Butce Senaryolari', desc: 'Ise alim ve ekip buyume kararlarini personel butce akisina baglayan sayfa.' },
-  { href: '/kidem-tazminati-hesaplama/', title: 'Kidem Tazminati ve Cikis Hazirligi', desc: 'Offboarding surecinde tahakkuk ve belge akisina odaklanan giris noktasi.' },
-  { href: '/ihbar-tazminati-hesaplama/', title: 'Ihbar Takvimi ve Cikis Takibi', desc: 'Bildirim, cikis tarihi ve personel akislarini birlikte ele alan sayfa.' },
-  { href: '/fazla-mesai-hesaplama/', title: 'Fazla Mesai ve Puantaj', desc: 'Sahadan veri toplama, amir onayi ve bordro aktarimina odaklanan sayfa.' },
-  { href: '/yillik-izin-ucreti-hesaplama/', title: 'Yillik Izin Bakiye ve Cikis', desc: 'Izin bakiyesi, hak edis ve cikis etkisini IK akisina baglayan sayfa.' },
-  { href: '/vergi-iadesi-hesaplama/', title: 'Vergi Iadesi ve Evrak Hazirligi', desc: 'Iade surecinde liste, belge ve YMM akislarini duzenli hale getiren sayfa.' },
-  { href: '/gecikme-zammi-hesaplama/', title: 'Gecikme Zammi ve Tahsilat Takibi', desc: 'Vadesi gecmis alacaklari, takip ritmini ve kapanis akislarini ele alan sayfa.' },
-  { href: '/acik-fatura-kapali-fatura/', title: 'Acik ve Kapali Fatura Takibi', desc: 'Cari hesap, odeme durumu ve tahsilat akisina bagli operasyon mantigini anlatir.' },
-  { href: '/cari-hesap-ekstresi/', title: 'Cari Ekstre ve Self-Service Bakiye', desc: 'Bayi, musteri ve satis ekiplerinin bakiye bilgisine daha hizli erismesini hedefler.' },
+  { href: '/kdv-hesaplama/', title: 'KDV Hesaplama', desc: 'Net ve KDV dahil tutarlar için pratik araç; daha büyük fiyatlandirma akislarina giris noktasi.' },
+  { href: '/maas-hesaplama-motoru/', title: 'Maaş Senaryo ve Bordro Girisi', desc: 'Brüt-net ve maaş senaryolarinin neden IK sürecine baglandigini anlatan giris sayfasi.' },
+  { href: '/bordro-hesaplama/', title: 'Bordro Hazırlık Akışı', desc: 'Puantaj, kontrol ve bordro kapanisini daha düzenli ele alan sayfa.' },
+  { href: '/isverene-maliyet-hesaplama/', title: 'Işveren Maliyet ve Bütçe Senaryolari', desc: 'Ise alim ve ekip büyüme kararlarini personel bütçe akisina baglayan sayfa.' },
+  { href: '/kidem-tazminati-hesaplama/', title: 'Kıdem Tazminatı ve Çıkış Hazırlığı', desc: 'Offboarding sürecinde tahakkuk ve belge akisina odaklanan giris noktasi.' },
+  { href: '/ihbar-tazminati-hesaplama/', title: 'Ihbar Takvimi ve Çıkış Takibi', desc: 'Bildirim, çıkış tarihi ve personel akislarini birlikte ele alan sayfa.' },
+  { href: '/fazla-mesai-hesaplama/', title: 'Fazla Mesai ve Puantaj', desc: 'Sahadan veri toplama, amir onayı ve bordro aktarimina odaklanan sayfa.' },
+  { href: '/yillik-izin-ucreti-hesaplama/', title: 'Yıllık Izin Bakiye ve Çıkış', desc: 'Izin bakiyesi, hak edis ve çıkış etkisini IK akisina baglayan sayfa.' },
+  { href: '/vergi-iadesi-hesaplama/', title: 'Vergi Iadesi ve Evrak Hazırlığı', desc: 'Iade sürecinde liste, belge ve YMM akislarini düzenli hale getiren sayfa.' },
+  { href: '/gecikme-zammi-hesaplama/', title: 'Gecikme Zammı ve Tahsilat Takibi', desc: 'Vadesi geçmiş alacaklari, takip ritmini ve kapanis akislarini ele alan sayfa.' },
+  { href: '/acik-fatura-kapali-fatura/', title: 'Açık ve Kapalı Fatura Takibi', desc: 'Cari hesap, ödeme durumu ve tahsilat akisina bagli operasyon mantigini anlatır.' },
+  { href: '/cari-hesap-ekstresi/', title: 'Cari Ekstre ve Self-Service Bakiye', desc: 'Bayi, müşteri ve satış ekiplerinin bakiye bilgisine daha hızlı erismesini hedefler.' },
 ];
 
 const solutionsContactHref = buildContactHref({
@@ -52,15 +52,15 @@ const solutionsContactHref = buildContactHref({
 ---
 
 <BaseLayout
-  title="Yapay Zeka Cozumleri | CRM, Otomasyon, Finans Araclari"
-  description="CRM, marketing otomasyonu, muhasebe, WhatsApp botu ve sektor odakli yapay zeka cozumleri. Isletmenize uygun otomasyon alanini kesfedip hemen baslatin."
+  title="Yapay Zeka Çözümleri | CRM, Otomasyon, Finans Araclari"
+  description="CRM, marketing otomasyonu, muhasebe, WhatsApp botu ve sektor odakli yapay zeka çözümleri. Isletmenize uygun otomasyon alanini kesfedip hemen baslatin."
 >
   <section class="relative overflow-hidden bg-[#0B0F14] py-32 lg:py-44">
     <div class="pointer-events-none absolute left-1/2 top-1/4 h-[900px] w-[900px] -translate-x-1/2 rounded-full bg-[var(--color-primary)]/10 blur-[180px] opacity-60"></div>
     <div class="container relative z-10 mx-auto max-w-4xl px-4 text-center">
-      <h1 class="mb-6 text-4xl font-extrabold tracking-tight text-[#FFFFFF] md:text-6xl">Tum Cozumler ve Giris Noktalari</h1>
+      <h1 class="mb-6 text-4xl font-extrabold tracking-tight text-[#FFFFFF] md:text-6xl">Tüm Çözümler ve Giris Noktalari</h1>
       <p class="mx-auto max-w-3xl text-xl leading-relaxed text-[var(--color-text-muted)]">
-        Bu sayfa tek bir uzun liste degil. Ana teklifleri, operasyonel workflow sayfalarini, utility giris noktalarini ve sektor odakli cozumleri daha net ayirmak icin yeniden duzenlendi.
+        Bu sayfa tek bir uzun liste değil. Ana teklifleri, operasyonel workflow sayfalarini, utility giris noktalarini ve sektor odakli çözümleri daha net ayirmak için yeniden duzenlendi.
       </p>
     </div>
   </section>
@@ -68,7 +68,7 @@ const solutionsContactHref = buildContactHref({
   <section class="relative z-10 py-16">
     <div class="container mx-auto max-w-6xl px-4">
       <h2 class="mb-3 text-2xl font-bold text-[var(--color-text)]">Ana Teklifler</h2>
-      <p class="mb-8 max-w-3xl text-[var(--color-text-muted)]">Bu alanlar, dogrudan hizmet ve operasyon tasarimi tarafinda en guclu ticari sayfalarimizi toplar.</p>
+      <p class="mb-8 max-w-3xl text-[var(--color-text-muted)]">Bu alanlar, dogrudan hizmet ve operasyon tasarımı tarafinda en güçlü ticari sayfalarimizi toplar.</p>
       <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
         {coreOffers.map((item) => (
           <a href={item.href} class="group block rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface-light)]/40 p-6 backdrop-blur-sm transition-all duration-500 hover:border-[var(--color-primary)]/30 hover:bg-[var(--color-surface-light)]/60">
@@ -83,7 +83,7 @@ const solutionsContactHref = buildContactHref({
   <section class="relative z-10 py-16">
     <div class="container mx-auto max-w-6xl px-4">
       <h2 class="mb-3 text-2xl font-bold text-[var(--color-text)]">Operasyonel Workflow Sayfalari</h2>
-      <p class="mb-8 max-w-3xl text-[var(--color-text-muted)]">Bunlar, ana teklifleri destekleyen daha spesifik akislari ve operasyon problemlerini aciklar.</p>
+      <p class="mb-8 max-w-3xl text-[var(--color-text-muted)]">Bunlar, ana teklifleri destekleyen daha spesifik akışları ve operasyon problemlerini aciklar.</p>
       <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
         {workflowPages.map((item) => (
           <a href={item.href} class="group block rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface-light)]/40 p-6 backdrop-blur-sm transition-all duration-500 hover:border-[var(--color-primary)]/30 hover:bg-[var(--color-surface-light)]/60">
@@ -98,7 +98,7 @@ const solutionsContactHref = buildContactHref({
   <section class="relative z-10 py-16">
     <div class="container mx-auto max-w-6xl px-4">
       <h2 class="mb-3 text-2xl font-bold text-[var(--color-text)]">Utility ve Bilgi Giris Noktalari</h2>
-      <p class="mb-8 max-w-3xl text-[var(--color-text-muted)]">Bu sayfalarin amaci dogrudan her seyi hesaplamak degil; kullaniciyi probleme, akisa ve ilgili cozum katmanina tasimaktir.</p>
+      <p class="mb-8 max-w-3xl text-[var(--color-text-muted)]">Bu sayfalarin amaci dogrudan her seyi hesaplamak değil; kullaniciyi probleme, akisa ve ilgili çözüm katmanina tasimaktir.</p>
       <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
         {utilityPages.map((item) => (
           <a href={item.href} class="group block rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface-light)]/40 p-6 backdrop-blur-sm transition-all duration-500 hover:border-[var(--color-primary)]/30 hover:bg-[var(--color-surface-light)]/60">
@@ -112,7 +112,7 @@ const solutionsContactHref = buildContactHref({
 
   <section class="relative z-10 py-16">
     <div class="container mx-auto max-w-6xl px-4">
-      <h2 class="mb-3 text-2xl font-bold text-[var(--color-text)]">Sektorel Cozumler</h2>
+      <h2 class="mb-3 text-2xl font-bold text-[var(--color-text)]">Sektorel Çözümler</h2>
       <p class="mb-8 max-w-3xl text-[var(--color-text-muted)]">Brans ve problem bazli giris sayfalari, sektor ozeline inen pSEO katmanimizi olusturur.</p>
       <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
         {sectorSolutions.map((sol) => (
@@ -134,19 +134,19 @@ const solutionsContactHref = buildContactHref({
       <div class="grid gap-4 md:grid-cols-2">
         <a href="/ucretsiz-otomasyon-checklistesi/?kaynak=%2Fcozumler%2F" class="rounded-[2rem] border border-[var(--color-border)] bg-[var(--color-surface-light)]/60 p-8 transition hover:-translate-y-0.5 hover:border-[var(--color-primary)]/40">
           <p class="text-sm uppercase tracking-[0.18em] text-[var(--color-primary)]">Resource</p>
-          <h2 class="mt-4 text-3xl font-black tracking-tight text-white">Once kendi surecinizi puanlayin</h2>
+          <h2 class="mt-4 text-3xl font-black tracking-tight text-white">Önce kendi surecinizi puanlayin</h2>
           <p class="mt-4 text-[var(--color-text-muted)]">
-            Hemen gorusme istemiyorsaniz, oncelik checklisti ile hangi akisi once ele almaniz gerektigini daha net gorun.
+            Hemen görüşme istemiyorsaniz, öncelik checklisti ile hangi akışı önce ele almaniz gerektiğini daha net gorun.
           </p>
         </a>
         <div class="rounded-[2rem] border border-[var(--color-primary)]/20 bg-[var(--color-primary)]/8 p-8 text-center">
-          <p class="text-sm uppercase tracking-[0.18em] text-[var(--color-primary)]">Sonraki adim</p>
-          <h2 class="mt-4 text-3xl font-black tracking-tight text-white">Dogru sureci birlikte secin</h2>
+          <p class="text-sm uppercase tracking-[0.18em] text-[var(--color-primary)]">Sonraki adım</p>
+          <h2 class="mt-4 text-3xl font-black tracking-tight text-white">Doğru süreci birlikte secin</h2>
           <p class="mx-auto mt-4 max-w-2xl text-[var(--color-text-muted)]">
-            Hangi akisin once ele alinmasi gerektigini, hangi cozumun size daha hizli geri donus getirecegini birlikte cikaralim.
+            Hangi akışın önce ele alınması gerektiğini, hangi cozumun size daha hızlı geri donus getirecegini birlikte cikaralim.
           </p>
           <a href={solutionsContactHref} class="mt-8 inline-flex items-center justify-center rounded-2xl bg-[var(--color-primary)] px-6 py-4 text-base font-black text-black transition hover:-translate-y-0.5 hover:bg-[var(--color-primary-light)]">
-            Ucretsiz analiz talep et
+            Ücretsiz analiz talep et
           </a>
         </div>
       </div>
