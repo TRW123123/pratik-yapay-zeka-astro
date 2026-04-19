@@ -3,27 +3,32 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 ---
 
 <BaseLayout title="Kullanım Koşulları | Pratik Yapay Zeka" description="Pratik Yapay Zeka web sitesi kullanım koşulları.">
-  <section class="py-32 lg:py-48 relative overflow-hidden bg-[var(--color-void-ink-deep)]">
-    <div class="absolute inset-0 opacity-20 mix-blend-overlay pointer-events-none"></div>
-    <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[800px] bg-[var(--color-primary)]/5 rounded-full blur-[150px] pointer-events-none opacity-50"></div>
-    <div class="container mx-auto px-4 max-w-4xl relative z-10">
-      <div class="text-center mb-16">
-        <h1 class="text-4xl md:text-5xl font-extrabold tracking-tight text-[#FFFFFF] drop-shadow-lg">Kullanım Koşulları</h1>
+  <section data-santral-reveal class="relative overflow-hidden pt-28 pb-16 md:pt-36">
+    <div class="container mx-auto max-w-4xl px-6 lg:px-10">
+      <div class="flex items-center gap-4 mb-10">
+        <span class="h-[1px] w-10 bg-[var(--color-patina-copper-bright)]"></span>
+        <span class="santral-overline">Hukuk · Kullanım</span>
       </div>
-      <div class="neon-bleed-border bg-[var(--color-surface-light)]/40 backdrop-blur-md rounded-3xl p-8 md:p-12 lg:p-16 shadow-2xl">
-        <div class="prose prose-lg prose-invert max-w-none text-[var(--color-text-muted)] prose-headings:text-[var(--color-text)] prose-a:text-[var(--color-primary)] hover:prose-a:text-[var(--color-primary-light)]">
-          <p class="lead">Bu web sitesini kullanarak aşağıdaki kullanım koşullarını kabul etmiş olursunuz.</p>
-          <hr class="border-[var(--color-border)] my-8" />
-          
-          <h2>Hizmet Kapsamı</h2>
-          <p>Pratik Yapay Zeka, yapay zeka ve otomasyon danışmanlık hizmetleri sunar. Sunulan bilgiler genel bilgilendirme amaçlıdır.</p>
-          
-          <h2>Fikri Mülkiyet</h2>
-          <p>Bu web sitesindeki tüm içerik, metin, grafik ve logolar <strong>ST-Automatisierung</strong>'un fikri mülkiyetidir ve izinsiz kullanılamaz veya çoğaltılamaz.</p>
-          
-          <h2>Sorumluluk Reddi</h2>
-          <p>Web sitesinde yer alan bilgilerin doğruluğu ve güncelliği hakkında garanti verilmemektedir. İçeriklerin kullanımından doğacak doğrudan veya dolaylı zararlardan sorumlu tutulamayız.</p>
-        </div>
+      <h1 class="santral-display text-4xl md:text-6xl leading-[1.05]" style="font-weight:400;text-wrap:balance">
+        Kullanım <em class="santral-italic">Koşulları</em>
+      </h1>
+    </div>
+  </section>
+
+  <section data-santral-reveal class="relative border-t border-[var(--color-hairline)] py-16 md:py-24">
+    <div class="container mx-auto max-w-3xl px-6 lg:px-10">
+      <div class="santral-calc-prose prose prose-lg max-w-none text-[var(--color-paper-ecru-dim)] prose-headings:text-[var(--color-paper-ecru)] prose-a:text-[var(--color-patina-copper-bright)] hover:prose-a:text-[var(--color-paper-ecru)] prose-strong:text-[var(--color-paper-ecru)]">
+        <p class="lead text-lg">Bu web sitesini kullanarak aşağıdaki kullanım koşullarını kabul etmiş olursunuz.</p>
+        <hr />
+
+        <h2>Hizmet Kapsamı</h2>
+        <p>Pratik Yapay Zeka, yapay zeka ve otomasyon danışmanlık hizmetleri sunar. Sunulan bilgiler genel bilgilendirme amaçlıdır.</p>
+
+        <h2>Fikri Mülkiyet</h2>
+        <p>Bu web sitesindeki tüm içerik, metin, grafik ve logolar <strong>ST-Automatisierung</strong>'un fikri mülkiyetidir ve izinsiz kullanılamaz veya çoğaltılamaz.</p>
+
+        <h2>Sorumluluk Reddi</h2>
+        <p>Web sitesinde yer alan bilgilerin doğruluğu ve güncelliği hakkında garanti verilmemektedir. İçeriklerin kullanımından doğacak doğrudan veya dolaylı zararlardan sorumlu tutulamayız.</p>
       </div>
     </div>
   </section>

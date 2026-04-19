@@ -93,50 +93,65 @@ const caseStudySchema = {
 ---
 
 <BaseLayout title={title} description={description} ogImage={ogImage} breadcrumbs={breadcrumbs}>
-  <section class="py-32 lg:py-48 relative overflow-hidden">
-    <div class="absolute top-[20%] left-1/2 -translate-x-1/2 h-[800px] w-[800px] rounded-sm bg-[var(--color-primary)]/5 blur-[120px] opacity-50 pointer-events-none"></div>
+  <section data-santral-reveal class="relative overflow-hidden pt-24 pb-14 md:pt-32">
+    <div class="pointer-events-none absolute -top-32 left-[-10%] h-[420px] w-[520px] rounded-full opacity-[0.12] blur-[160px]" style="background: radial-gradient(circle, var(--color-patina-copper-bright) 0%, transparent 70%);" aria-hidden="true"></div>
 
-    <div class="container mx-auto max-w-5xl px-4 relative z-10">
-      <a href="/vaka-calismalari/" class="mb-8 inline-block text-sm text-[var(--color-text-muted)] transition-colors hover:text-[var(--color-primary-light)]">
-        Tüm vaka çalışmaları
+    <div class="container mx-auto max-w-6xl px-6 lg:px-10 relative z-10">
+      <a href="/vaka-calismalari/" class="mb-8 inline-flex items-center gap-2 font-mono text-[0.72rem] tracking-[0.14em] uppercase text-[var(--color-paper-ecru-mute)] transition-colors hover:text-[var(--color-patina-copper-bright)]">
+        ← Tüm vaka çalışmaları
       </a>
 
-      <h1 class="mb-4 text-3xl font-bold md:text-5xl">{companyName}</h1>
-      <p class="mb-8 font-medium text-[var(--color-primary-light)]">{industry}</p>
+      <div class="flex flex-col gap-10 md:flex-row md:items-start md:gap-16">
+        <aside class="md:w-[240px] md:shrink-0 md:pt-2">
+          <span class="santral-overline block">Kayıt · {industry}</span>
+          <div class="mt-4 flex items-center gap-3" aria-hidden="true">
+            <span class="h-[1px] w-10 bg-[var(--color-patina-copper-bright)]"></span>
+            <span class="h-[6px] w-[6px] rounded-full bg-[var(--color-patina-copper-bright)]"></span>
+            <span class="h-[1px] flex-1 bg-[var(--color-hairline-strong)]"></span>
+          </div>
+          <p class="mt-5 font-mono text-[0.72rem] leading-relaxed tracking-[0.14em] uppercase text-[var(--color-paper-ecru-mute)]">
+            Sektör · {industry}<br/>
+            Durum · Canlı
+          </p>
+        </aside>
+        <div class="flex-1 max-w-3xl">
+          <h1 class="santral-display text-4xl leading-[1.05] md:text-6xl lg:text-[4.25rem]" style="font-weight:400;text-wrap:balance;">
+            {companyName}
+          </h1>
+          <p class="mt-6 font-mono text-[0.82rem] tracking-[0.08em] text-[var(--color-patina-copper-bright)]">{industry}</p>
+        </div>
+      </div>
 
-      <div class="mb-12 grid gap-4 md:grid-cols-2 lg:grid-cols-4">
+      <div class="mt-14 grid gap-4 md:grid-cols-2 lg:grid-cols-4">
         {metrics.map((m) => (
-          <div class="neon-bleed-border group relative overflow-hidden rounded-sm bg-[var(--color-surface-light)]/50 p-6 text-center backdrop-blur-sm">
-            <div class="absolute inset-0 bg-gradient-to-br from-[var(--color-primary)]/5 to-transparent opacity-0 transition-opacity duration-500 pointer-events-none group-hover:opacity-100"></div>
-            <p class="mb-1 text-3xl font-extrabold text-[var(--color-primary)]">{m.value}</p>
-            <p class="text-xs font-medium uppercase tracking-wider text-[var(--color-text-muted)]">{m.label}</p>
+          <div class="santral-hat p-6 text-center">
+            <p class="mb-2 santral-display text-3xl font-mono text-[var(--color-patina-copper-bright)]" style="font-weight:500">{m.value}</p>
+            <p class="santral-label">{m.label}</p>
           </div>
         ))}
       </div>
 
       <div class="space-y-8">
-        <div class="neon-bleed-border group relative overflow-hidden rounded-sm bg-[var(--color-surface-light)]/50 p-8 backdrop-blur-sm">
-          <div class="absolute left-0 top-0 h-full w-1 bg-[var(--color-primary)]/50"></div>
-          <h2 class="mb-4 text-2xl font-semibold text-[var(--color-text)]">Zorluk</h2>
-          <p class="text-lg leading-relaxed text-[var(--color-text-muted)]">{challenge}</p>
+        <div class="santral-hat p-8 md:p-10" style="border-left: 3px solid var(--color-ink-bleed)">
+          <span class="santral-overline block mb-4">Zorluk · 01</span>
+          <h2 class="santral-display text-2xl md:text-3xl mb-4" style="font-weight:500">Zorluk</h2>
+          <p class="santral-body text-lg leading-relaxed">{challenge}</p>
         </div>
 
-        <div class="neon-bleed-border group relative overflow-hidden rounded-sm bg-[var(--color-surface-light)]/50 p-8 backdrop-blur-sm">
-          <div class="absolute left-0 top-0 h-full w-1 bg-[var(--color-accent)]/50"></div>
-          <h2 class="mb-4 text-2xl font-semibold text-[var(--color-text)]">Çözüm</h2>
-          <p class="text-lg leading-relaxed text-[var(--color-text-muted)]">{solution}</p>
+        <div class="santral-hat p-8 md:p-10" style="border-left: 3px solid var(--color-oxide-teal-bright)">
+          <span class="santral-overline block mb-4">Çözüm · 02</span>
+          <h2 class="santral-display text-2xl md:text-3xl mb-4" style="font-weight:500">Çözüm</h2>
+          <p class="santral-body text-lg leading-relaxed">{solution}</p>
         </div>
 
-        <div class="neon-bleed-border group relative overflow-hidden rounded-sm bg-[var(--color-surface-light)]/50 p-8 backdrop-blur-sm">
-          <div class="absolute left-0 top-0 h-full w-1 bg-gradient-to-b from-[var(--color-primary)] to-[var(--color-accent)]"></div>
-          <h2 class="mb-4 text-2xl font-semibold text-[var(--color-text)]">Sonuçlar</h2>
-          <ul class="space-y-2">
+        <div class="santral-hat p-8 md:p-10" style="border-left: 3px solid var(--color-patina-copper-bright)">
+          <span class="santral-overline block mb-4">Sonuçlar · 03</span>
+          <h2 class="santral-display text-2xl md:text-3xl mb-4" style="font-weight:500">Sonuçlar</h2>
+          <ul class="space-y-3">
             {results.map((r) => (
               <li class="flex items-start gap-3">
-                <svg xmlns="http://www.w3.org/2000/svg" class="mt-0.5 h-6 w-6 shrink-0 text-[var(--color-primary)]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-                </svg>
-                <span class="text-lg text-[var(--color-text-muted)]">{r}</span>
+                <span class="mt-2 shrink-0 h-[6px] w-[6px] rounded-full bg-[var(--color-patina-copper-bright)]"></span>
+                <span class="text-[0.98rem] leading-[1.68] text-[var(--color-paper-ecru-dim)]">{r}</span>
               </li>
             ))}
           </ul>
@@ -144,10 +159,10 @@ const caseStudySchema = {
       </div>
 
       {quote && (
-        <blockquote class="relative mt-16 rounded-r-2xl border-l-4 border-[var(--color-primary)] bg-[var(--color-primary)]/5 py-6 pl-8">
-          <div class="absolute -left-3 -top-3 font-serif text-6xl text-[var(--color-primary)]/20">"</div>
-          <p class="relative z-10 mb-4 text-xl italic leading-relaxed text-[var(--color-text)]">"{quote}"</p>
-          {quoteAuthor && <cite class="text-sm font-semibold uppercase tracking-wider text-[var(--color-primary)]">{quoteAuthor}</cite>}
+        <blockquote class="relative mt-16 border-l-[3px] border-[var(--color-patina-copper-bright)] bg-[var(--color-void-ink)]/55 py-6 pl-8 pr-8" style="border-radius:0 2px 2px 0">
+          <div class="absolute -left-3 -top-5 santral-display text-6xl text-[var(--color-patina-copper-bright)] opacity-60" style="font-weight:400">"</div>
+          <p class="relative z-10 mb-4 santral-display text-xl italic md:text-2xl leading-[1.35] text-[var(--color-paper-ecru)]" style="font-weight:400">{quote}</p>
+          {quoteAuthor && <cite class="font-mono text-[0.78rem] tracking-[0.14em] uppercase text-[var(--color-patina-copper-bright)] not-italic">— {quoteAuthor}</cite>}
         </blockquote>
       )}
 

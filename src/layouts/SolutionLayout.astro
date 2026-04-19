@@ -262,33 +262,45 @@ const serviceSchema = {
     style={`--themePrimary: ${currentTheme.primary}; --themeAccent: ${currentTheme.accent}; --themeGlow: ${currentTheme.glow}; --color-primary: ${currentTheme.primary}; --color-primary-dark: ${currentTheme.accent};`}
   >
     <article>
-      <section class="relative overflow-hidden py-32 lg:py-48">
-        <div class="theme-glow-bg pointer-events-none absolute left-1/2 top-1/4 h-[1000px] w-[1000px] -translate-x-1/2 rounded-sm blur-[160px] opacity-50"></div>
+      <section data-santral-reveal class="relative overflow-hidden pt-28 pb-16 md:pt-36 md:pb-24">
+        <div class="pointer-events-none absolute -top-32 right-[-10%] h-[420px] w-[520px] rounded-full opacity-[0.14] blur-[160px]" style="background: radial-gradient(circle, var(--color-patina-copper-bright) 0%, transparent 70%);" aria-hidden="true"></div>
 
-        <div class="container relative z-10 mx-auto max-w-5xl px-4 text-center sm:px-6 lg:px-8">
-          <div class="mb-8 inline-flex items-center gap-3 rounded-sm border border-[var(--color-hairline-strong)] bg-white/5 px-5 py-2.5 backdrop-blur-md">
-            <span class="theme-bg h-2.5 w-2.5 animate-pulse rounded-sm shadow-[0_0_10px_var(--themePrimary)]"></span>
-            <span class="text-sm font-bold uppercase tracking-[0.2em] text-[var(--color-paper-ecru)]">
-              {sectorTheme !== 'default' ? `${sectorTheme.split('-').join(' ')} çözümü` : 'Yapay Zeka Otomasyonu'}
-            </span>
-          </div>
-
-          <h1 class="mb-8 bg-gradient-to-br from-white via-gray-200 to-gray-500 bg-clip-text text-3xl font-black leading-[1.1] tracking-tight text-transparent md:text-5xl lg:text-5xl xl:text-5xl">
-            {heroTitle}
-          </h1>
-          <p class="mx-auto mb-12 max-w-3xl text-base font-medium leading-relaxed text-[var(--color-paper-ecru-dim)] md:text-lg lg:text-xl">
-            {heroSubtitle}
-          </p>
-
-          <div class="flex flex-col items-center justify-center gap-6 sm:flex-row">
-            <a href={contactHref('solution-hero-cta')} class="theme-bg group relative overflow-hidden rounded-sm px-10 py-5 font-bold transition-all duration-300 hover:-translate-y-1" style="box-shadow: 0 0 25px var(--themeGlow);">
-              <span class="relative z-10 flex items-center justify-center gap-3 text-lg text-[var(--color-void-ink-deep)]">
-                Sistemi kurun
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                </svg>
+        <div class="container relative z-10 mx-auto max-w-6xl px-6 lg:px-10">
+          <div class="flex flex-col gap-10 md:flex-row md:items-start md:gap-16">
+            <aside class="md:w-[260px] md:shrink-0 md:pt-3">
+              <span class="santral-overline block">
+                {sectorTheme !== 'default' ? `${sectorTheme.split('-').join(' ')} · Modül` : 'Çözüm · Modül'}
               </span>
-            </a>
+              <div class="mt-4 flex items-center gap-3" aria-hidden="true">
+                <span class="h-[1px] w-10 bg-[var(--color-patina-copper-bright)]"></span>
+                <span class="h-[6px] w-[6px] rounded-full bg-[var(--color-patina-copper-bright)]" style="animation: morse-pulse 2.6s ease-in-out infinite"></span>
+                <span class="h-[1px] flex-1 bg-[var(--color-hairline-strong)]"></span>
+              </div>
+              <p class="mt-5 font-mono text-[0.72rem] leading-relaxed tracking-[0.14em] uppercase text-[var(--color-paper-ecru-mute)]">
+                HAT · AÇIK<br/>
+                KURULUM · Hızlı<br/>
+                GARANTİ · %50
+              </p>
+            </aside>
+            <div class="flex-1 max-w-3xl">
+              <h1 class="santral-display text-4xl leading-[1.05] md:text-6xl lg:text-[3.8rem]" style="font-weight:400;text-wrap:balance;">
+                {heroTitle}
+              </h1>
+              <p class="mt-8 santral-body text-lg md:text-xl max-w-2xl">
+                {heroSubtitle}
+              </p>
+              <div class="mt-10 flex flex-col items-start gap-4 sm:flex-row sm:items-center">
+                <a href={contactHref('solution-hero-cta')} class="santral-salter santral-salter-copper">
+                  Sistemi kurun
+                  <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M5 12h14"/><path d="m13 6 6 6-6 6"/>
+                  </svg>
+                </a>
+                <a href="/vaka-calismalari/" class="santral-salter">
+                  Vaka çalışmalarını gör
+                </a>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -296,7 +308,7 @@ const serviceSchema = {
       <section class="relative z-10 py-24">
         <div class="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div class="mb-16 flex flex-col items-center text-center">
-            <h2 class="mb-4 bg-gradient-to-r from-white to-gray-400 bg-clip-text text-3xl font-black tracking-tight text-transparent md:text-5xl">
+            <h2 class="mb-4 santral-display text-3xl md:text-5xl">
               {benefitsTitle || 'Olculebilir operasyonel kazanimlar'}
             </h2>
             <p class="max-w-2xl text-lg font-medium text-[var(--color-paper-ecru-dim)]">
@@ -362,7 +374,7 @@ const serviceSchema = {
       <section class="relative z-10 py-32">
         <div class="container relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div class="mb-20 text-center">
-            <h2 class="mb-4 bg-gradient-to-r from-white to-gray-400 bg-clip-text text-3xl font-black tracking-tight text-transparent md:text-5xl">{processTitle}</h2>
+            <h2 class="mb-4 santral-display text-3xl md:text-5xl">{processTitle}</h2>
             <p class="mx-auto max-w-2xl text-lg font-medium text-[var(--color-paper-ecru-dim)]">Tahmine değil, veriye dayali mimari kurulum süreci.</p>
           </div>
 

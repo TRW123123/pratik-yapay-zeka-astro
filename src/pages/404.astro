@@ -2,15 +2,24 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 ---
 
-<BaseLayout title="404 – Sayfa Bulunamadı | Pratik Yapay Zeka" description="Aradığınız sayfa bulunamadı." noindex={true}>
-  <section class="min-h-screen flex items-center justify-center">
-    <div class="text-center max-w-md mx-auto px-4">
-      <p class="text-8xl font-bold bg-gradient-to-r from-[var(--color-primary)] to-[var(--color-accent)] bg-clip-text text-transparent mb-4">404</p>
-      <h1 class="text-2xl font-bold mb-4">Sayfa Bulunamadı</h1>
-      <p class="text-[var(--color-text-muted)] mb-8">Aradığınız sayfa taşınmış veya silinmiş olabilir.</p>
-      <a href="/" class="inline-flex items-center gap-2 bg-[var(--color-primary)] hover:bg-[var(--color-primary-dark)] text-[var(--color-paper-ecru)] font-semibold px-6 py-3 rounded-sm transition-all duration-300">
-        Ana Sayfaya Dön
-      </a>
+<BaseLayout title="404 — Sayfa Bulunamadı | Pratik Yapay Zeka" description="Aradığınız sayfa bulunamadı." noindex={true}>
+  <section class="min-h-screen flex items-center justify-center py-24">
+    <div class="text-center max-w-xl mx-auto px-6">
+      <div class="mx-auto flex items-center justify-center gap-3 mb-8">
+        <span class="inline-block h-[8px] w-[8px] rounded-full bg-[var(--color-ink-bleed)]" style="animation: morse-pulse 1.4s ease-in-out infinite"></span>
+        <span class="font-mono text-[0.72rem] tracking-[0.18em] uppercase text-[var(--color-ink-bleed)]">Hat · Kesik</span>
+      </div>
+      <p class="santral-display text-[10rem] leading-[0.9] text-[var(--color-patina-copper-bright)]" style="font-weight:400;letter-spacing:-0.04em">404</p>
+      <h1 class="santral-display text-3xl md:text-4xl mt-8" style="font-weight:500">Sayfa <em class="santral-italic">bulunamadı</em></h1>
+      <p class="santral-body mt-6">Aradığınız sayfa taşınmış veya silinmiş olabilir. Ana hatta geri dönün.</p>
+      <div class="mt-10 flex justify-center">
+        <a href="/" class="santral-salter santral-salter-copper">
+          Ana sayfaya dön
+          <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M5 12h14"/><path d="m13 6 6 6-6 6"/>
+          </svg>
+        </a>
+      </div>
     </div>
   </section>
 </BaseLayout>

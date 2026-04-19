@@ -1,27 +1,52 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+
+const modules = [
+  {
+    idx: '01',
+    title: 'Prompt Mühendisliği',
+    text: "Doğru soruyu sormak, doğru cevabı almak demektir. ChatGPT'den en iyi sonuçları almak için spesifik, bağlam verilen ve rol atanmış promptlar kullanın.",
+  },
+  {
+    idx: '02',
+    title: 'İş Kullanım Alanları',
+    text: 'E-posta yazımı, müşteri hizmeti scriptleri, içerik oluşturma, veri analizi, rapor hazırlama ve daha fazlası.',
+  },
+  {
+    idx: '03',
+    title: 'Otomasyon ile Birleştirme',
+    text: "ChatGPT'nin API'sini Make.com veya n8n gibi otomasyon araçları ile birleştirerek iş akışlarınızı otomatikleştirin.",
+  },
+];
 ---
 
 <BaseLayout title="ChatGPT Kullanım Rehberi | Pratik Yapay Zeka" description="ChatGPT'yi etkili kullanmak için pratik rehber ve ipuçları." noindex={true}>
-  <section class="py-24">
-    <div class="container mx-auto px-4 max-w-4xl text-center">
-      <h1 class="text-3xl md:text-5xl font-bold mb-6">ChatGPT Kullanım Rehberi</h1>
-      <p class="text-lg text-[var(--color-text-muted)] mb-8 max-w-2xl mx-auto">ChatGPT'yi iş süreçlerinizde etkili kullanmanız için pratik ipuçları ve örnekler.</p>
+
+  <section data-santral-reveal class="relative overflow-hidden pt-28 pb-16 md:pt-36">
+    <div class="container mx-auto max-w-6xl px-6 lg:px-10">
+      <div class="flex items-center gap-4 mb-10">
+        <span class="h-[1px] w-10 bg-[var(--color-patina-copper-bright)]"></span>
+        <span class="santral-overline">Rehber · ChatGPT</span>
+      </div>
+      <h1 class="santral-display text-4xl md:text-6xl leading-[1.05] max-w-3xl" style="font-weight:400;text-wrap:balance">
+        ChatGPT Kullanım <em class="santral-italic">Rehberi</em>
+      </h1>
+      <p class="mt-6 santral-body text-lg md:text-xl max-w-2xl">
+        ChatGPT'yi iş süreçlerinizde etkili kullanmanız için pratik ipuçları ve örnekler.
+      </p>
     </div>
   </section>
-  <section class="pb-24">
-    <div class="container mx-auto px-4 max-w-3xl space-y-8">
-      <div class="bg-[var(--color-surface-light)] border border-[var(--color-border)] rounded-sm p-6">
-        <h2 class="text-xl font-semibold mb-3">📝 Prompt Mühendisliği</h2>
-        <p class="text-[var(--color-text-muted)]">Doğru soruyu sormak, doğru cevabı almak demektir. ChatGPT'den en iyi sonuçları almak için spesifik, bağlam verilen ve rol atanmış promptlar kullanın.</p>
-      </div>
-      <div class="bg-[var(--color-surface-light)] border border-[var(--color-border)] rounded-sm p-6">
-        <h2 class="text-xl font-semibold mb-3">🏢 İş Kullanım Alanları</h2>
-        <p class="text-[var(--color-text-muted)]">E-posta yazımı, müşteri hizmeti scriptleri, içerik oluşturma, veri analizi, rapor hazırlama ve daha fazlası.</p>
-      </div>
-      <div class="bg-[var(--color-surface-light)] border border-[var(--color-border)] rounded-sm p-6">
-        <h2 class="text-xl font-semibold mb-3">⚡ Otomasyon ile Birleştirme</h2>
-        <p class="text-[var(--color-text-muted)]">ChatGPT'nin API'sini Make.com veya n8n gibi otomasyon araçları ile birleştirerek iş akışlarınızı otomatikleştirin.</p>
+
+  <section data-santral-reveal class="relative border-t border-[var(--color-hairline)] py-20 md:py-28">
+    <div class="container mx-auto max-w-5xl px-6 lg:px-10">
+      <div class="grid gap-5 md:grid-cols-3">
+        {modules.map((m) => (
+          <article class="santral-hat p-8">
+            <span class="font-mono text-[0.68rem] tracking-[0.18em] uppercase text-[var(--color-paper-ecru-mute)]">Modül · {m.idx}</span>
+            <h2 class="mt-4 santral-display text-xl md:text-[1.35rem]" style="font-weight:500">{m.title}</h2>
+            <p class="mt-4 santral-body text-[0.95rem] leading-[1.65]">{m.text}</p>
+          </article>
+        ))}
       </div>
     </div>
   </section>

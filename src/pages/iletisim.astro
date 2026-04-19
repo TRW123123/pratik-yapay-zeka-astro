@@ -35,71 +35,72 @@ const breadcrumbs = [
   breadcrumbs={breadcrumbs}
   schemaType="ContactPage"
 >
-  <section class="pt-32 pb-20 lg:pt-40 lg:pb-28">
-    <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl">
+  <section data-santral-reveal class="pt-28 pb-16 md:pt-36 md:pb-24">
+    <div class="container mx-auto max-w-6xl px-6 lg:px-10">
+      <div class="flex items-center gap-4 mb-10">
+        <span class="h-[1px] w-10 bg-[var(--color-patina-copper-bright)]"></span>
+        <span class="santral-overline">İletişim · Ücretsiz Ön Analiz</span>
+      </div>
       <div class="grid gap-10 lg:grid-cols-[1.1fr_0.9fr]">
         <div class="space-y-8">
-          <div class="inline-flex items-center rounded-full border border-[var(--color-primary)]/25 bg-[var(--color-surface-light)]/60 px-4 py-2 text-sm text-[var(--color-primary-light)]">
-            Ücretsiz on analiz
-          </div>
-
           <div class="space-y-5">
-            <h1 class="text-4xl md:text-6xl font-black tracking-tight leading-[1.05] text-[var(--color-text)]">
-              Isletmenize özel yapay zeka otomasyonunu birlikte cikaralim.
+            <h1 class="santral-display text-4xl md:text-6xl leading-[1.05]" style="font-weight:400;text-wrap:balance">
+              İşletmenize özel yapay zeka otomasyonunu <em class="santral-italic">birlikte</em> çıkaralım.
             </h1>
-            <p class="max-w-2xl text-lg md:text-xl text-[var(--color-text-muted)] leading-relaxed">
-              Satış, pazarlama, muhasebe, WhatsApp, CRM veya operasyon tarafinda size en hızlı geri dönüş getirecek otomasyon alanlarini belirleyelim. Formu doldurun, size uygun senaryolari net bir şekilde geri donelim.
+            <p class="max-w-2xl santral-body text-lg md:text-xl">
+              Satış, pazarlama, muhasebe, WhatsApp, CRM veya operasyon tarafında size en hızlı geri dönüş getirecek otomasyon alanlarını belirleyelim. Formu doldurun, size uygun senaryoları net bir şekilde geri dönelim.
             </p>
           </div>
 
           {selectedPackage && (
-            <div class="rounded-3xl border border-[var(--color-primary)]/20 bg-[var(--color-primary)]/10 px-5 py-4 max-w-xl">
-              <p class="text-xs uppercase tracking-[0.2em] text-[var(--color-primary-light)]">Seçilen analiz</p>
-              <p class="mt-2 text-lg font-semibold text-[var(--color-text)]">{selectedPackage}</p>
+            <div class="santral-hat px-5 py-4 max-w-xl" style="border-color: rgba(224, 150, 84, 0.3)">
+              <p class="santral-overline">Seçilen Analiz</p>
+              <p class="mt-2 santral-display text-lg" style="font-weight:500">{selectedPackage}</p>
             </div>
           )}
 
           <div class="grid gap-4 md:grid-cols-3">
-            <div class="rounded-3xl border border-[var(--color-border)] bg-[var(--color-surface-light)]/70 p-6">
-              <p class="text-sm uppercase tracking-[0.2em] text-[var(--color-primary-light)]">1</p>
-              <h2 class="mt-3 text-xl font-semibold">Süreci anlariz</h2>
-              <p class="mt-3 text-sm leading-relaxed text-[var(--color-text-muted)]">
-                Darboğaz yaratan adımı, manuel isleri ve kacirilan firsatlari netlestiririz.
+            <div class="santral-hat p-6">
+              <p class="font-mono text-[0.68rem] tracking-[0.18em] uppercase text-[var(--color-paper-ecru-mute)]">Adım · 01</p>
+              <h2 class="mt-3 santral-display text-xl" style="font-weight:500">Süreci anlarız</h2>
+              <p class="mt-3 text-sm leading-relaxed text-[var(--color-paper-ecru-dim)]">
+                Darboğaz yaratan adımı, manuel işleri ve kaçırılan fırsatları netleştiririz.
               </p>
             </div>
-            <div class="rounded-3xl border border-[var(--color-border)] bg-[var(--color-surface-light)]/70 p-6">
-              <p class="text-sm uppercase tracking-[0.2em] text-[var(--color-primary-light)]">2</p>
-              <h2 class="mt-3 text-xl font-semibold">Uygun senaryo kurariz</h2>
-              <p class="mt-3 text-sm leading-relaxed text-[var(--color-text-muted)]">
-                Hangi entegrasyonun, botun veya agent yapisinin size uydugunu belirleriz.
+            <div class="santral-hat p-6">
+              <p class="font-mono text-[0.68rem] tracking-[0.18em] uppercase text-[var(--color-paper-ecru-mute)]">Adım · 02</p>
+              <h2 class="mt-3 santral-display text-xl" style="font-weight:500">Uygun senaryo kurarız</h2>
+              <p class="mt-3 text-sm leading-relaxed text-[var(--color-paper-ecru-dim)]">
+                Hangi entegrasyonun, botun veya agent yapısının size uyduğunu belirleriz.
               </p>
             </div>
-            <div class="rounded-3xl border border-[var(--color-border)] bg-[var(--color-surface-light)]/70 p-6">
-              <p class="text-sm uppercase tracking-[0.2em] text-[var(--color-primary-light)]">3</p>
-              <h2 class="mt-3 text-xl font-semibold">Net sonraki adım veririz</h2>
-              <p class="mt-3 text-sm leading-relaxed text-[var(--color-text-muted)]">
-                Soyut fikir değil, uygulanabilir bir yol haritası ve ilk kurulum önerisi alirsiniz.
+            <div class="santral-hat p-6">
+              <p class="font-mono text-[0.68rem] tracking-[0.18em] uppercase text-[var(--color-paper-ecru-mute)]">Adım · 03</p>
+              <h2 class="mt-3 santral-display text-xl" style="font-weight:500">Net sonraki adım veririz</h2>
+              <p class="mt-3 text-sm leading-relaxed text-[var(--color-paper-ecru-dim)]">
+                Soyut fikir değil, uygulanabilir bir yol haritası ve ilk kurulum önerisi alırsınız.
               </p>
             </div>
           </div>
 
-          <div class="rounded-3xl border border-[var(--color-border)] bg-[var(--color-surface-light)]/60 p-8">
-            <h2 class="text-2xl font-semibold text-[var(--color-text)]">Bu analiz kimler için ideal?</h2>
-            <ul class="mt-5 space-y-3 text-[var(--color-text-muted)]">
-              <li>WhatsApp, e-posta veya formlardan gelen talepleri hızlı yonetemeyen ekipler</li>
-              <li>CRM, teklif, muhasebe veya satış operasyonunda manuel veri girişi yasayan şirketler</li>
-              <li>Organik ya da reklam trafigini lead'e cevirmekte zorlanan ekipler</li>
-              <li>E-ticaret, finans, muhasebe, HR veya B2B operasyonlarini otomatiklestirmek isteyenler</li>
+          <div class="santral-hat p-8">
+            <span class="santral-overline block mb-4">İdeal Profil · 04</span>
+            <h2 class="santral-display text-2xl" style="font-weight:500">Bu analiz kimler için ideal?</h2>
+            <ul class="mt-5 space-y-3 text-[var(--color-paper-ecru-dim)]">
+              <li class="flex items-start gap-3"><span class="mt-2 h-[6px] w-[6px] rounded-full bg-[var(--color-patina-copper-bright)] shrink-0"></span><span>WhatsApp, e-posta veya formlardan gelen talepleri hızlı yönetemeyen ekipler</span></li>
+              <li class="flex items-start gap-3"><span class="mt-2 h-[6px] w-[6px] rounded-full bg-[var(--color-patina-copper-bright)] shrink-0"></span><span>CRM, teklif, muhasebe veya satış operasyonunda manuel veri girişi yaşayan şirketler</span></li>
+              <li class="flex items-start gap-3"><span class="mt-2 h-[6px] w-[6px] rounded-full bg-[var(--color-patina-copper-bright)] shrink-0"></span><span>Organik ya da reklam trafiğini lead'e çevirmekte zorlanan ekipler</span></li>
+              <li class="flex items-start gap-3"><span class="mt-2 h-[6px] w-[6px] rounded-full bg-[var(--color-patina-copper-bright)] shrink-0"></span><span>E-ticaret, finans, muhasebe, HR veya B2B operasyonlarını otomatikleştirmek isteyenler</span></li>
             </ul>
           </div>
         </div>
 
-        <div class="rounded-sm border border-[var(--color-border)] bg-[var(--color-surface-light)]/80 p-8 shadow-2xl">
+        <div class="santral-hat p-8">
           <div class="mb-6">
-            <p class="text-sm uppercase tracking-[0.2em] text-[var(--color-primary-light)]">Lead formu</p>
-            <h2 class="mt-3 text-3xl font-black tracking-tight">Kısa bilgileri bırakın</h2>
-            <p class="mt-3 text-[var(--color-text-muted)] leading-relaxed">
-              Genelde ilk geri donusu 1 is günü içinde yapiyoruz. Ne kadar somut yazarsaniz, donusumuz o kadar faydali olur.
+            <span class="santral-overline block">Lead Formu · 05</span>
+            <h2 class="mt-3 santral-display text-3xl" style="font-weight:500">Kısa bilgileri <em class="santral-italic">bırakın</em></h2>
+            <p class="mt-3 santral-body leading-relaxed">
+              Genelde ilk geri dönüşü 1 iş günü içinde yapıyoruz. Ne kadar somut yazarsanız, dönüşümüz o kadar faydalı olur.
             </p>
           </div>
 

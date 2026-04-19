@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import { buildContactHref } from '../lib/contactHref';
 
 const aboutPageSchema = {
   '@context': 'https://schema.org',
@@ -17,36 +18,100 @@ const aboutPageSchema = {
     ],
   },
 };
+
+const ctaHref = buildContactHref({ source: '/hakkimizda/', cta: 'about-final-cta' });
 ---
 
-<BaseLayout title="Hakkımızda – KOBİ'lerin yapay zeka ile büyümesine yardımcı oluyoruz" description="Pratik Yapay Zeka, Almanya ve Türkiye'deki küçük ve orta ölçekli işletmelerin yapay zeka ve otomasyon ile potansiyellerini gerçekleştirmesine yardımcı olur." schemaType="AboutPage">
-  <section class="py-32 lg:py-48 relative overflow-hidden bg-[var(--color-void-ink-deep)]">
-    <div class="absolute inset-0 opacity-20 mix-blend-overlay pointer-events-none"></div>
-    <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[800px] bg-[var(--color-primary)]/5 rounded-full blur-[150px] pointer-events-none opacity-50"></div>
-    <div class="container mx-auto px-4 max-w-4xl relative z-10">
-      <div class="text-center mb-16">
-        <h1 class="text-4xl md:text-6xl font-extrabold mb-6 tracking-tight text-[#FFFFFF] drop-shadow-lg">Hakkımızda</h1>
+<BaseLayout title="Hakkımızda — KOBİ'lerin yapay zeka ile büyümesine yardımcı oluyoruz" description="Pratik Yapay Zeka, Almanya ve Türkiye'deki küçük ve orta ölçekli işletmelerin yapay zeka ve otomasyon ile potansiyellerini gerçekleştirmesine yardımcı olur." schemaType="AboutPage">
+
+  {/* Hero */}
+  <section data-santral-reveal class="relative overflow-hidden pt-28 pb-16 md:pt-36 md:pb-24">
+    <div class="pointer-events-none absolute -top-32 right-[-10%] h-[420px] w-[520px] rounded-full opacity-[0.14] blur-[160px]" style="background: radial-gradient(circle, var(--color-patina-copper-bright) 0%, transparent 70%);" aria-hidden="true"></div>
+    <div class="container mx-auto max-w-6xl px-6 lg:px-10">
+      <div class="flex flex-col gap-10 md:flex-row md:items-start md:gap-16">
+        <aside class="md:w-[260px] md:shrink-0 md:pt-3">
+          <span class="santral-overline block">Kurucu · 01</span>
+          <div class="mt-4 flex items-center gap-3" aria-hidden="true">
+            <span class="h-[1px] w-10 bg-[var(--color-patina-copper-bright)]"></span>
+            <span class="h-[6px] w-[6px] rounded-full bg-[var(--color-patina-copper-bright)]"></span>
+            <span class="h-[1px] flex-1 bg-[var(--color-hairline-strong)]"></span>
+          </div>
+          <dl class="mt-6 space-y-3">
+            <div>
+              <dt class="santral-label block">Merkez</dt>
+              <dd class="mt-1 text-sm text-[var(--color-paper-ecru-dim)]">Schwerte · DE</dd>
+            </div>
+            <div>
+              <dt class="santral-label block">Bağlı</dt>
+              <dd class="mt-1 text-sm text-[var(--color-paper-ecru-dim)]">Türkiye · Almanya</dd>
+            </div>
+            <div>
+              <dt class="santral-label block">Tecrübe</dt>
+              <dd class="mt-1 text-sm text-[var(--color-paper-ecru-dim)]">8+ yıl B2B</dd>
+            </div>
+          </dl>
+        </aside>
+        <div class="flex-1 max-w-3xl">
+          <h1 class="santral-display text-4xl leading-[1.05] md:text-6xl" style="font-weight:400;text-wrap:balance;">
+            KOBİ'lerin yapay zeka ile <em class="santral-italic">büyümesine</em> yardımcı oluyoruz.
+          </h1>
+          <p class="mt-8 santral-body text-lg md:text-xl">
+            Pratik Yapay Zeka, Almanya ve Türkiye'deki KOBİ'lerin yapay zeka ve otomasyon ile büyümesine yardımcı olan butik bir teknoloji danışmanlığı firmasıdır.
+          </p>
+        </div>
       </div>
-      <div class="neon-bleed-border bg-[var(--color-surface-light)]/40 backdrop-blur-md rounded-3xl p-8 md:p-12 lg:p-16 shadow-2xl">
-        <div class="prose prose-lg prose-invert max-w-none text-[var(--color-text-muted)] prose-headings:text-[var(--color-text)] prose-a:text-[var(--color-primary)] hover:prose-a:text-[var(--color-primary-light)]">
-          <p class="lead text-xl text-[var(--color-text)]">Pratik Yapay Zeka, Almanya ve Türkiye'deki KOBİ'lerin yapay zeka ve otomasyon ile büyümesine yardımcı olan butik bir teknoloji danışmanlığı firmasıdır.</p>
-          <p>Misyonumuz, küçük ve orta ölçekli işletmelerin dijital dönüşüm süreçlerini hızlandırmak ve büyük kurumsal firmaların sahip olduğu üst düzey yapay zeka avantajlarını çevik bir şekilde herkes için erişilebilir kılmaktır.</p>
-          <hr class="border-[var(--color-border)] my-10" />
-          <div class="bg-[var(--color-surface)] border border-[var(--color-primary)]/20 shadow-[0_0_30px_rgba(163,230,53,0.05)] rounded-sm p-8 relative overflow-hidden">
-            <div class="absolute top-0 right-0 w-32 h-32 bg-[var(--color-primary)]/10 blur-[50px] pointer-events-none"></div>
-            <h2 class="text-2xl font-extrabold text-[#FFFFFF] mb-2 relative z-10 mt-0">Şafak Tepecik</h2>
-            <p class="text-[var(--color-primary)] font-semibold mb-6 relative z-10">Kurucu & Yapay Zeka Stratejisti</p>
-            <p class="relative z-10">8 yıllık yoğun Almanya ve Avrupa B2B satış tecrübesi. Bu derin pazar bilgisi, son teknoloji yapay zeka ve otomasyon uygulamalarıyla birleşerek sahada gerçek sonuçlar veren sistemlere dönüşüyor.</p>
-            <div class="pt-6 mt-6 border-t border-[var(--color-border)] relative z-10">
-              <p class="m-0 text-sm">
-                <strong class="text-[var(--color-text)]">ST-Automatisierung</strong><br/>
-                Heidestraße 2, 58239 Schwerte, Deutschland
-              </p>
+    </div>
+  </section>
+
+  {/* Founder Card */}
+  <section data-santral-reveal class="relative border-t border-[var(--color-hairline)] py-20 md:py-28">
+    <div class="container mx-auto max-w-4xl px-6 lg:px-10">
+      <div class="mb-12 flex items-center gap-4">
+        <span class="h-[1px] w-10 bg-[var(--color-hairline-strong)]"></span>
+        <span class="santral-overline">Kadro · 001</span>
+      </div>
+      <div class="santral-hat p-10 md:p-14">
+        <div class="flex items-start gap-8 flex-col md:flex-row">
+          <div class="shrink-0 flex h-24 w-24 items-center justify-center border border-[var(--color-hairline-strong)] bg-[var(--color-void-ink-deep)] font-mono text-3xl text-[var(--color-patina-copper-bright)]" style="border-radius:2px">ŞT</div>
+          <div class="flex-1">
+            <h2 class="santral-display text-3xl md:text-4xl" style="font-weight:500">Şafak Tepecik</h2>
+            <p class="mt-2 font-mono text-[0.82rem] tracking-[0.1em] text-[var(--color-patina-copper-bright)]">Kurucu · Yapay Zeka Stratejisti</p>
+            <p class="mt-6 santral-body text-base md:text-lg">
+              8 yıllık yoğun Almanya ve Avrupa B2B satış tecrübesi. Bu derin pazar bilgisi, son teknoloji yapay zeka ve otomasyon uygulamalarıyla birleşerek sahada gerçek sonuçlar veren sistemlere dönüşüyor.
+            </p>
+            <p class="mt-4 santral-body text-base md:text-lg">
+              Misyonumuz, küçük ve orta ölçekli işletmelerin dijital dönüşüm süreçlerini hızlandırmak ve büyük kurumsal firmaların sahip olduğu üst düzey yapay zeka avantajlarını çevik bir şekilde herkes için erişilebilir kılmaktır.
+            </p>
+            <div class="mt-8 pt-6 border-t border-[var(--color-hairline)] font-mono text-sm text-[var(--color-paper-ecru-dim)]">
+              <strong class="text-[var(--color-paper-ecru)]">ST-Automatisierung</strong><br/>
+              Heidestraße 2, 58239 Schwerte, Deutschland
             </div>
           </div>
         </div>
       </div>
     </div>
   </section>
+
+  {/* Final CTA */}
+  <section data-santral-reveal class="relative border-t border-[var(--color-hairline)] py-20 md:py-28">
+    <div class="container mx-auto max-w-4xl px-6 lg:px-10 text-center">
+      <span class="santral-overline block mb-6">Sonraki Adım · 02</span>
+      <h2 class="santral-display text-3xl md:text-5xl" style="font-weight:400;text-wrap:balance">
+        Sizinle <em class="santral-italic">tanışalım</em>.
+      </h2>
+      <p class="mt-6 santral-body max-w-xl mx-auto">
+        Kısa bir ön analiz ile hangi sürecin en hızlı geri dönüş getireceğini birlikte çıkaralım.
+      </p>
+      <div class="mt-8 flex justify-center">
+        <a href={ctaHref} class="santral-salter santral-salter-copper">
+          Ücretsiz analiz alın
+          <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M5 12h14"/><path d="m13 6 6 6-6 6"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
   <script type="application/ld+json" set:html={JSON.stringify(aboutPageSchema)} />
 </BaseLayout>

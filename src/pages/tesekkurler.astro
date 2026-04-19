@@ -4,59 +4,62 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 const submissionType = Astro.url.searchParams.get('tip') || '';
 const breadcrumbs = [
   { name: 'Ana Sayfa', url: '/' },
-  { name: 'Iletişim', url: '/iletisim/' },
-  { name: 'Tesekkurler', url: '/tesekkurler/' },
+  { name: 'İletişim', url: '/iletisim/' },
+  { name: 'Teşekkürler', url: '/tesekkurler/' },
 ];
 
 const isResourceRequest = submissionType === 'resource';
 ---
 
 <BaseLayout
-  title="Tesekkurler | Pratik Yapay Zeka"
-  description="Talebiniz bize ulasti. Ekibiniz için en uygun otomasyon alanlarini geri donmek uzere inceleyecegiz."
+  title="Teşekkürler | Pratik Yapay Zeka"
+  description="Talebiniz bize ulaştı. Ekibiniz için en uygun otomasyon alanlarını geri dönmek üzere inceleyeceğiz."
   breadcrumbs={breadcrumbs}
   noindex={true}
 >
-  <section class="flex min-h-[70vh] items-center py-24">
-    <div class="container mx-auto max-w-3xl px-4 text-center">
-      <div class="rounded-sm border border-[var(--color-border)] bg-[var(--color-surface-light)]/80 p-10 md:p-14 shadow-2xl">
-        <div class="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-[var(--color-primary)] text-black">
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
-          </svg>
+  <section data-santral-reveal class="flex min-h-[70vh] items-center py-24">
+    <div class="container mx-auto max-w-3xl px-6 lg:px-10 text-center">
+      <div class="santral-hat p-10 md:p-14">
+        <div class="mx-auto flex items-center justify-center gap-3 mb-8">
+          <span class="inline-block h-[8px] w-[8px] rounded-full bg-[var(--color-patina-copper-bright)]" style="animation: morse-pulse 2.2s ease-in-out infinite"></span>
+          <span class="font-mono text-[0.72rem] tracking-[0.18em] uppercase text-[var(--color-patina-copper-bright)]">Bağlantı · Kuruldu</span>
         </div>
 
-        <h1 class="mt-6 text-4xl font-black tracking-tight text-[var(--color-text)]">Talebiniz bize ulasti.</h1>
-        <p class="mt-4 text-lg leading-relaxed text-[var(--color-text-muted)]">
+        <h1 class="santral-display text-4xl md:text-5xl" style="font-weight:400;text-wrap:balance">
+          Talebiniz bize <em class="santral-italic">ulaştı</em>.
+        </h1>
+        <p class="mt-6 santral-body text-lg md:text-xl max-w-xl mx-auto">
           {isResourceRequest
-            ? 'Checklist talebiniz bize ulasti. Kaynagi ve sonraki yonlendirmeyi size en kısa sürede paylasacagiz.'
-            : 'Gonderdiginiz bilgiler için tesekkurler. Uygun otomasyon alanlarini ve en mantikli ilk adımı degerlendirip size geri donecegiz.'}
+            ? 'Checklist talebiniz bize ulaştı. Kaynağı ve sonraki yönlendirmeyi size en kısa sürede paylaşacağız.'
+            : 'Gönderdiğiniz bilgiler için teşekkürler. Uygun otomasyon alanlarını ve en mantıklı ilk adımı değerlendirip size geri döneceğiz.'}
         </p>
 
-        <div class="mt-8 grid gap-4 text-left md:grid-cols-2">
-          <div class="rounded-3xl border border-[var(--color-border)] bg-[var(--color-surface)]/80 p-6">
-            <h2 class="text-lg font-semibold text-[var(--color-text)]">{isResourceRequest ? 'Bu sirada ne oluyor?' : 'Bu sirada ne oluyor?'}</h2>
-            <p class="mt-3 text-sm leading-relaxed text-[var(--color-text-muted)]">
+        <div class="mt-10 grid gap-4 text-left md:grid-cols-2">
+          <div class="border border-[var(--color-hairline)] bg-[var(--color-void-ink-deep)]/55 p-6" style="border-radius:2px">
+            <span class="santral-overline block mb-3">Bu sırada · 01</span>
+            <h2 class="santral-display text-lg" style="font-weight:500">Ne oluyor?</h2>
+            <p class="mt-3 text-sm leading-relaxed text-[var(--color-paper-ecru-dim)]">
               {isResourceRequest
-                ? 'Talebinizi kaydedip size checklisti ve isterseniz uygun sonraki adımı iletecek şekilde hazirliyoruz.'
-                : 'Talebinizi sayfa kaynagi ve ihtiyac alanina gore inceleyip size uygun bir sonraki adımı hazirliyoruz.'}
+                ? 'Talebinizi kaydedip size checklisti ve isterseniz uygun sonraki adımı iletecek şekilde hazırlıyoruz.'
+                : 'Talebinizi sayfa kaynağı ve ihtiyaç alanına göre inceleyip size uygun bir sonraki adımı hazırlıyoruz.'}
             </p>
           </div>
-          <div class="rounded-3xl border border-[var(--color-border)] bg-[var(--color-surface)]/80 p-6">
-            <h2 class="text-lg font-semibold text-[var(--color-text)]">Ne yapabilirsiniz?</h2>
-            <p class="mt-3 text-sm leading-relaxed text-[var(--color-text-muted)]">
+          <div class="border border-[var(--color-hairline)] bg-[var(--color-void-ink-deep)]/55 p-6" style="border-radius:2px">
+            <span class="santral-overline block mb-3">Bu sırada · 02</span>
+            <h2 class="santral-display text-lg" style="font-weight:500">Ne yapabilirsiniz?</h2>
+            <p class="mt-3 text-sm leading-relaxed text-[var(--color-paper-ecru-dim)]">
               {isResourceRequest
-                ? 'Bu arada çözüm sayfalarimizi veya vaka calismalarimizi inceleyerek hangi alana daha yakin oldugunuzu gorebilirsiniz.'
-                : 'Bu arada vaka calismalarimizi inceleyebilir veya bize dogrudan e-posta gonderebilirsiniz.'}
+                ? 'Bu arada çözüm sayfalarımızı veya vaka çalışmalarımızı inceleyerek hangi alana daha yakın olduğunuzu görebilirsiniz.'
+                : 'Bu arada vaka çalışmalarımızı inceleyebilir veya bize doğrudan e-posta gönderebilirsiniz.'}
             </p>
           </div>
         </div>
 
-        <div class="mt-10 flex flex-col justify-center gap-4 sm:flex-row">
-          <a href={isResourceRequest ? '/cozumler/' : '/vaka-calismalari/'} class="inline-flex items-center justify-center rounded-sm border border-[var(--color-border)] px-6 py-3 font-semibold text-[var(--color-text)] transition hover:border-[var(--color-primary)] hover:text-[var(--color-primary-light)]">
-            {isResourceRequest ? 'Çözüm sayfalarini incele' : 'Vaka calismalarini incele'}
+        <div class="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
+          <a href={isResourceRequest ? '/cozumler/' : '/vaka-calismalari/'} class="santral-salter">
+            {isResourceRequest ? 'Çözüm sayfalarını incele' : 'Vaka çalışmalarını incele'}
           </a>
-          <a href="mailto:s.tepecik@pratik-yapayzeka.com" class="inline-flex items-center justify-center rounded-sm bg-[var(--color-primary)] px-6 py-3 font-semibold text-black transition hover:bg-[var(--color-primary-light)]">
+          <a href="mailto:s.tepecik@pratik-yapayzeka.com" class="santral-salter santral-salter-copper">
             E-posta gönder
           </a>
         </div>
