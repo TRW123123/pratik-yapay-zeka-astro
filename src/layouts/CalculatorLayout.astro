@@ -193,11 +193,17 @@ const currentOffer = offerMap[currentTrack];
       .theme-glow-bg { background: radial-gradient(circle, rgba(224, 150, 84, 0.15) 0%, transparent 70%); }
     </style>
 
-    <article class="pb-16 pt-32 lg:pb-24 lg:pt-40">
-      <div class="theme-glow-bg pointer-events-none absolute left-1/2 top-1/4 h-[800px] w-[800px] -translate-x-1/2 rounded-sm blur-[150px] opacity-40"></div>
+    <article data-santral-reveal class="relative pb-16 pt-28 md:pt-36 lg:pb-24">
+      <div class="pointer-events-none absolute -top-32 right-[-10%] h-[420px] w-[520px] rounded-full opacity-[0.14] blur-[160px]" style="background: radial-gradient(circle, var(--color-patina-copper-bright) 0%, transparent 70%);" aria-hidden="true"></div>
 
-      <div class="container relative z-10 mx-auto max-w-5xl px-4 prose prose-invert prose-lg prose-headings:text-[var(--color-paper-ecru)] prose-p:text-[var(--color-paper-ecru-dim)] prose-a:text-[var(--color-patina-copper-bright)] hover:prose-a:text-[var(--color-patina-copper)] prose-strong:text-[var(--color-paper-ecru)] sm:px-6 lg:px-8">
-        <slot />
+      <div class="container relative z-10 mx-auto max-w-4xl px-6 lg:px-10">
+        <div class="flex items-center gap-4 mb-10">
+          <span class="h-[1px] w-10 bg-[var(--color-patina-copper-bright)]"></span>
+          <span class="santral-overline">Hesaplama · Rehber</span>
+        </div>
+        <div class="santral-calc-prose prose prose-lg max-w-none text-[var(--color-paper-ecru-dim)] prose-headings:text-[var(--color-paper-ecru)] prose-a:text-[var(--color-patina-copper-bright)] hover:prose-a:text-[var(--color-paper-ecru)] prose-strong:text-[var(--color-paper-ecru)]">
+          <slot />
+        </div>
       </div>
     </article>
 
@@ -211,27 +217,28 @@ const currentOffer = offerMap[currentTrack];
       contactHref={contactHref('calculator-lead-pathways')}
     />
 
-    <section class="relative z-10 py-16 lg:py-20">
-      <div class="container mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
-        <div class="rounded-sm border border-[var(--color-hairline-strong)] bg-white/[0.02] p-8 backdrop-blur-xl lg:p-10">
+    <section data-santral-reveal class="relative border-t border-[var(--color-hairline)] py-20">
+      <div class="container mx-auto max-w-6xl px-6 lg:px-10">
+        <div class="santral-hat p-8 md:p-10" style="border-color: rgba(224, 150, 84, 0.28)">
           <div class="flex flex-col gap-8 lg:flex-row lg:items-start lg:justify-between">
             <div class="max-w-2xl">
-              <div class="inline-flex rounded-sm border border-[var(--color-patina-copper-bright)]/20 bg-[var(--color-patina-copper-bright)]/10 px-3 py-1 text-xs font-semibold uppercase tracking-[0.16em] text-[var(--color-patina-copper-bright)]">
-                {currentOffer.badge}
-              </div>
-              <h2 class="mt-5 text-3xl font-black tracking-tight text-[var(--color-paper-ecru)]">{currentOffer.title}</h2>
-              <p class="mt-4 text-base leading-relaxed text-[var(--color-paper-ecru-dim)]">{currentOffer.description}</p>
+              <span class="santral-overline block" style="color: var(--color-patina-copper-bright)">{currentOffer.badge}</span>
+              <h2 class="mt-4 santral-display text-3xl md:text-4xl" style="font-weight:500;text-wrap:balance">{currentOffer.title}</h2>
+              <p class="mt-4 santral-body text-base md:text-lg">{currentOffer.description}</p>
             </div>
-
-            <a href={contactHref('calculator-offer-panel')} class="inline-flex items-center justify-center rounded-sm bg-[var(--color-patina-copper-bright)] px-6 py-4 text-center text-base font-black text-[var(--color-void-ink-deep)] transition hover:-translate-y-0.5 hover:bg-[var(--color-patina-copper)]">
+            <a href={contactHref('calculator-offer-panel')} class="santral-salter santral-salter-copper shrink-0">
               {currentOffer.cta}
+              <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M5 12h14"/><path d="m13 6 6 6-6 6"/>
+              </svg>
             </a>
           </div>
 
-          <div class="mt-8 grid gap-4 md:grid-cols-3">
-            {currentOffer.bullets.map((item) => (
-              <div class="rounded-sm border border-[var(--color-hairline-strong)] bg-black/20 p-5 text-sm leading-relaxed text-[var(--color-paper-ecru-dim)]">
-                {item}
+          <div class="mt-8 grid gap-4 md:grid-cols-3 pt-6 border-t border-[var(--color-hairline)]">
+            {currentOffer.bullets.map((item, i) => (
+              <div class="flex items-start gap-3">
+                <span class="font-mono text-[0.72rem] tracking-[0.14em] text-[var(--color-patina-copper-bright)] pt-[3px]">{String(i + 1).padStart(2, '0')}</span>
+                <p class="text-sm leading-[1.6] text-[var(--color-paper-ecru-dim)]">{item}</p>
               </div>
             ))}
           </div>
@@ -239,28 +246,26 @@ const currentOffer = offerMap[currentTrack];
       </div>
     </section>
 
-    <section class="relative overflow-hidden py-24 lg:py-32">
-      <div class="theme-bg pointer-events-none absolute inset-0 opacity-[0.02]"></div>
-
-      <div class="container relative z-10 mx-auto max-w-5xl px-4 text-center">
-        <div class="group relative overflow-hidden rounded-sm border border-[var(--color-hairline-strong)] bg-[#FFFFFF]/[0.02] p-12 shadow-2xl backdrop-blur-2xl lg:p-24">
-          <div class="pointer-events-none absolute inset-0 opacity-0 blur-3xl transition-opacity duration-1000 group-hover:opacity-100" style="background: radial-gradient(circle at center, rgba(224, 150, 84, 0.15) 0%, transparent 70%);"></div>
-
-          <h2 class="relative z-10 mb-8 text-3xl font-black leading-[1.1] tracking-tight text-[var(--color-paper-ecru)] md:text-4xl lg:text-5xl">
-            Manuel hesaplamalari ve olasi cezalari bitirin
-          </h2>
-          <p class="relative z-10 mx-auto mb-12 max-w-3xl text-lg font-medium leading-relaxed text-[var(--color-paper-ecru-dim)] md:text-xl">
-            Excel formulleriyle sirketinizi riske atmayin. Yasalara uyumlu, 7/24 çalışan ve sifira yakin hata ile operasyon yöneten bir yapay zeka asistani kurmak için ücretsiz teknik analiz talep edin.
-          </p>
-
-          <div class="relative z-10 flex flex-col items-center justify-center gap-6 sm:flex-row">
-            <a href={contactHref('calculator-final-cta')} class="theme-bg group relative inline-flex items-center gap-3 rounded-sm px-12 py-6 text-xl font-black text-[var(--color-void-ink-deep)] transition-all duration-500 hover:-translate-y-1" style="box-shadow: 0 0 30px rgba(224, 150, 84, 0.15);">
-              Projeyi başlat
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 transition-transform group-hover:-translate-y-1 group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M13 5l7 7-7 7M5 5l7 7-7 7" />
-              </svg>
-            </a>
-          </div>
+    <section data-santral-reveal class="relative border-t border-[var(--color-hairline)] py-24 md:py-32">
+      <div class="container mx-auto max-w-4xl px-6 lg:px-10 text-center">
+        <div class="mb-8 flex items-center justify-center gap-4">
+          <span class="h-[1px] w-10 bg-[var(--color-hairline-strong)]"></span>
+          <span class="santral-overline">Başlatma · Sonraki Adım</span>
+          <span class="h-[1px] w-10 bg-[var(--color-hairline-strong)]"></span>
+        </div>
+        <h2 class="santral-display text-3xl md:text-5xl leading-[1.1]" style="font-weight:400;text-wrap:balance">
+          Manuel hesaplamaları ve olası <em class="santral-italic">cezaları</em> bitirin
+        </h2>
+        <p class="mt-6 santral-body max-w-2xl mx-auto">
+          Excel formülleriyle şirketinizi riske atmayın. Yasalara uyumlu, 7/24 çalışan ve sıfıra yakın hata ile operasyon yöneten bir yapay zeka asistanı kurmak için ücretsiz teknik analiz talep edin.
+        </p>
+        <div class="mt-10 flex justify-center">
+          <a href={contactHref('calculator-final-cta')} class="santral-salter santral-salter-copper">
+            Projeyi başlat
+            <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M5 12h14"/><path d="m13 6 6 6-6 6"/>
+            </svg>
+          </a>
         </div>
       </div>
     </section>

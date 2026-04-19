@@ -305,18 +305,22 @@ const serviceSchema = {
         </div>
       </section>
 
-      <section class="relative z-10 py-24">
-        <div class="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div class="mb-16 flex flex-col items-center text-center">
-            <h2 class="mb-4 santral-display text-3xl md:text-5xl">
-              {benefitsTitle || 'Olculebilir operasyonel kazanimlar'}
+      <section data-santral-reveal class="relative border-t border-[var(--color-hairline)] py-24 md:py-32">
+        <div class="container mx-auto max-w-6xl px-6 lg:px-10">
+          <div class="mb-12 flex items-center gap-4">
+            <span class="h-[1px] w-10 bg-[var(--color-hairline-strong)]"></span>
+            <span class="santral-overline">Kazanım · 01 — Ölçülebilir</span>
+          </div>
+          <div class="mb-14 max-w-3xl">
+            <h2 class="santral-display text-3xl md:text-5xl leading-[1.1]" style="font-weight:400;text-wrap:balance">
+              {benefitsTitle || 'Ölçülebilir operasyonel kazanımlar'}
             </h2>
-            <p class="max-w-2xl text-lg font-medium text-[var(--color-paper-ecru-dim)]">
-              B2B sureclerinize entegre edilen yapay zekanin gerçek dünya sonuçları.
+            <p class="mt-5 santral-body text-lg">
+              B2B süreçlerinize entegre edilen yapay zekanın gerçek dünya sonuçları.
             </p>
           </div>
 
-          <div class="grid auto-rows-fr grid-cols-1 gap-6 md:grid-cols-3">
+          <div class="grid auto-rows-fr grid-cols-1 gap-5 md:grid-cols-3">
             {benefits.map((benefit, i) => {
               const safeBenefit = benefit ? benefit.toString() : '';
               const metricValueMatch = safeBenefit.match(/(\d+\/\d+|\+?%\d+(?:\.\d+)?|\d+x|\d+\+? saat|\d+ dakika|\d+\+?)/i);
@@ -324,113 +328,139 @@ const serviceSchema = {
               const remainingText = safeBenefit.replace(massiveMetric, '').trim();
 
               return (
-                <div class="group relative flex h-full flex-col overflow-hidden rounded-sm border border-white/[0.05] bg-[#FFFFFF]/[0.02] p-8 backdrop-blur-[24px] saturate-[150%] transition-all duration-500 hover:-translate-y-1 hover:border-white/[0.1] hover:bg-[#FFFFFF]/[0.04] lg:p-10">
-                  <div class="pointer-events-none absolute -inset-px opacity-0 blur-2xl transition-opacity duration-1000 group-hover:opacity-100" style="background: radial-gradient(circle at top right, var(--themeGlow) 0%, transparent 60%);"></div>
-
-                  <div class="relative z-10 flex h-full flex-col">
-                    <div class="theme-text relative mb-6 flex h-14 w-14 items-center justify-center rounded-sm border border-[var(--color-hairline-strong)] bg-black/50 shadow-lg">
-                      {i % 3 === 0 && <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" /></svg>}
-                      {i % 3 === 1 && <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>}
-                      {i % 3 === 2 && <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" /></svg>}
-                    </div>
-
-                    {massiveMetric ? (
-                      <>
-                        <div class="theme-text mb-4 text-4xl font-black tracking-tighter md:text-5xl lg:text-6xl">{massiveMetric}</div>
-                        <p class="flex-grow text-base font-medium leading-relaxed text-[var(--color-paper-ecru-dim)] lg:text-lg">{remainingText}</p>
-                      </>
-                    ) : (
-                      <p class="flex-grow text-base font-medium leading-relaxed text-[var(--color-paper-ecru-dim)] lg:text-lg" set:html={safeBenefit.replace(/(\d+\/\d+|\+?%\d+(?:'[a-z]+|\.\d+)?|\d+x|\d+\+? saat|\d+ dakika|\d+\+?|%[0-9.]+)/gi, '<strong class="theme-text text-3xl font-black block mb-2">$1</strong>')} />
-                    )}
-                  </div>
-                </div>
+                <article class="santral-hat flex h-full flex-col p-7 lg:p-8">
+                  <span class="font-mono text-[0.68rem] tracking-[0.18em] uppercase text-[var(--color-paper-ecru-mute)]">
+                    Kazanım · {String(i + 1).padStart(2, '0')}
+                  </span>
+                  {massiveMetric ? (
+                    <>
+                      <div class="mt-5 santral-display text-4xl md:text-5xl lg:text-[3.5rem] text-[var(--color-patina-copper-bright)]" style="font-weight:500;letter-spacing:-0.02em">{massiveMetric}</div>
+                      <p class="mt-4 flex-grow santral-body text-[0.98rem] leading-[1.65]">{remainingText}</p>
+                    </>
+                  ) : (
+                    <p class="mt-5 flex-grow santral-body text-[0.98rem] leading-[1.65]" set:html={safeBenefit.replace(/(\d+\/\d+|\+?%\d+(?:'[a-z]+|\.\d+)?|\d+x|\d+\+? saat|\d+ dakika|\d+\+?|%[0-9.]+)/gi, '<strong class="santral-display text-2xl md:text-3xl block mb-2 text-[var(--color-patina-copper-bright)]" style="font-weight:500">$1</strong>')} />
+                  )}
+                </article>
               );
             })}
           </div>
         </div>
       </section>
 
-      <section class="relative z-10 border-y border-[var(--color-hairline)] bg-[var(--color-void-ink)]/50 py-24">
-        <div class="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <h2 class="mb-16 text-center text-3xl font-black tracking-tight text-[var(--color-paper-ecru)] md:text-5xl">Mevcut sistemdeki kanama noktalari</h2>
+      <section data-santral-reveal class="relative border-t border-[var(--color-hairline)] py-24 md:py-32">
+        <div class="container mx-auto max-w-6xl px-6 lg:px-10">
+          <div class="mb-12 flex items-center gap-4">
+            <span class="h-[1px] w-10 bg-[var(--color-ink-bleed)]"></span>
+            <span class="santral-overline" style="color: var(--color-ink-bleed)">Tanı · 02 — Kanama Noktaları</span>
+          </div>
+          <div class="mb-14 max-w-3xl">
+            <h2 class="santral-display text-3xl md:text-5xl leading-[1.1]" style="font-weight:400;text-wrap:balance">
+              Mevcut sistemdeki <em class="santral-italic" style="color: var(--color-ink-bleed)">kanama noktaları</em>
+            </h2>
+          </div>
 
-          <div class="grid auto-rows-fr grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
-            {problems.map((problem) => (
-              <div class="group relative flex flex-col items-start justify-start gap-4 overflow-hidden rounded-sm border border-red-900/30 bg-[#1F1214]/60 p-8 backdrop-blur-md transition-colors hover:border-red-800/50">
-                <div class="absolute right-0 top-0 p-6 text-red-500 opacity-[0.05] transition-opacity group-hover:opacity-10">
-                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" class="h-32 w-32" fill="currentColor"><path d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm0,192a88,88,0,1,1,88-88A88.1,88.1,0,0,1,128,216Zm-8-80V80a8,8,0,0,1,16,0v56a8,8,0,0,1-16,0Zm20,36a12,12,0,1,1-12-12A12,12,0,0,1,140,172Z"></path></svg>
+          <div class="grid auto-rows-fr grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3">
+            {problems.map((problem, i) => (
+              <article class="santral-hat p-7 lg:p-8" style="border-left: 3px solid var(--color-ink-bleed)">
+                <div class="flex items-center justify-between mb-5">
+                  <span class="inline-flex items-center gap-2 font-mono text-[0.68rem] tracking-[0.18em] uppercase text-[var(--color-ink-bleed)]">
+                    <span class="inline-block h-[5px] w-[5px] rounded-full bg-[var(--color-ink-bleed)]" style="animation: morse-pulse 2.4s ease-in-out infinite"></span>
+                    Hata · {String(i + 1).padStart(2, '0')}
+                  </span>
                 </div>
-
-                <div class="relative z-10 flex shrink-0 items-center justify-center rounded-sm border border-red-500/20 bg-red-500/10 p-3 text-red-500">
-                  <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" /></svg>
-                </div>
-                <p class="relative z-10 text-lg font-medium leading-relaxed text-[var(--color-paper-ecru-dim)]">{problem}</p>
-              </div>
+                <p class="santral-body text-base md:text-lg leading-[1.65]">{problem}</p>
+              </article>
             ))}
           </div>
         </div>
       </section>
 
-      <section class="relative z-10 py-32">
-        <div class="container relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div class="mb-20 text-center">
-            <h2 class="mb-4 santral-display text-3xl md:text-5xl">{processTitle}</h2>
-            <p class="mx-auto max-w-2xl text-lg font-medium text-[var(--color-paper-ecru-dim)]">Tahmine değil, veriye dayali mimari kurulum süreci.</p>
+      <section data-santral-reveal class="relative border-t border-[var(--color-hairline)] py-24 md:py-32">
+        <div class="container mx-auto max-w-6xl px-6 lg:px-10">
+          <div class="mb-12 flex items-center gap-4">
+            <span class="h-[1px] w-10 bg-[var(--color-hairline-strong)]"></span>
+            <span class="santral-overline">Süreç · 03 — Kurulum</span>
+          </div>
+          <div class="mb-16 max-w-3xl">
+            <h2 class="santral-display text-3xl md:text-5xl leading-[1.1]" style="font-weight:400;text-wrap:balance">{processTitle}</h2>
+            <p class="mt-5 santral-body text-lg">Tahmine değil, veriye dayalı mimari kurulum süreci.</p>
           </div>
 
-          <div class="relative grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4 lg:gap-4">
-            <div class="absolute left-[12%] right-[12%] top-[28px] hidden h-[2px] bg-gradient-to-r from-transparent via-white/10 to-transparent lg:block"></div>
-
+          <div class="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-4">
             {processSteps.map((step, i) => (
-              <div class="group relative flex h-full flex-col items-start border-l-2 border-[var(--color-hairline)] pl-8 pt-8 text-left lg:items-center lg:border-l-0 lg:pl-0 lg:pt-0 lg:text-center">
-                <div class="absolute left-[-2px] z-10 lg:relative lg:left-auto lg:top-[-4px] lg:mb-8">
-                  <div class="relative flex h-14 w-14 items-center justify-center overflow-hidden rounded-sm border-2 border-[var(--color-hairline-strong)] bg-[var(--color-void-ink-deep)] text-xl font-black text-[var(--color-paper-ecru)] shadow-lg transition-all duration-500 group-hover:-translate-y-1 group-hover:border-[var(--themePrimary)] group-hover:shadow-[0_0_20px_var(--themeGlow)]">
-                    <div class="absolute inset-0 opacity-0 transition-opacity group-hover:opacity-20" style="background-color: var(--themePrimary);"></div>
-                    <span class="relative z-10">{i + 1}</span>
+              <article class="santral-hat group relative flex h-full flex-col p-7 lg:p-8">
+                <div class="mb-6 flex items-start justify-between">
+                  <div class="flex h-12 w-12 items-center justify-center border border-[var(--color-hairline-strong)] bg-[var(--color-void-ink-deep)] santral-display text-xl text-[var(--color-patina-copper-bright)] transition-all group-hover:border-[var(--color-patina-copper-bright)]" style="font-weight:500;border-radius:2px">
+                    {i + 1}
                   </div>
+                  <span class="font-mono text-[0.68rem] tracking-[0.18em] uppercase text-[var(--color-paper-ecru-mute)]">Adım</span>
                 </div>
-
-                <h3 class="mb-3 text-2xl font-black text-[var(--color-paper-ecru)]">{step.title}</h3>
-                <p class="font-medium leading-relaxed text-[var(--color-paper-ecru-dim)]">{step.description}</p>
-              </div>
+                <h3 class="santral-display text-xl md:text-[1.35rem]" style="font-weight:500;letter-spacing:-0.01em">{step.title}</h3>
+                <p class="mt-3 text-[0.9rem] leading-[1.6] text-[var(--color-paper-ecru-dim)]">{step.description}</p>
+              </article>
             ))}
           </div>
         </div>
       </section>
 
-      <section class="relative z-10 border-t border-[var(--color-hairline)] bg-[var(--color-void-ink)]/30 py-24">
-        <div class="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <h2 class="mb-16 text-center text-3xl font-black tracking-tight text-[var(--color-paper-ecru)] drop-shadow-md md:text-5xl">{featuresTitle}</h2>
+      <section data-santral-reveal class="relative border-t border-[var(--color-hairline)] py-24 md:py-32">
+        <div class="container mx-auto max-w-6xl px-6 lg:px-10">
+          <div class="mb-12 flex items-center gap-4">
+            <span class="h-[1px] w-10 bg-[var(--color-hairline-strong)]"></span>
+            <span class="santral-overline">Özellik · 04 — Bento</span>
+          </div>
+          <div class="mb-14 max-w-3xl">
+            <h2 class="santral-display text-3xl md:text-5xl leading-[1.1]" style="font-weight:400;text-wrap:balance">{featuresTitle}</h2>
+          </div>
 
-          <div class="grid auto-rows-fr grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
+          <div class="grid auto-rows-fr grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3">
             {features.map((feature, index) => (
-              <div class={`group relative flex h-full flex-col overflow-hidden rounded-sm border border-[var(--color-hairline)] bg-[#FFFFFF]/[0.02] p-8 backdrop-blur-md transition-all duration-500 hover:border-[var(--color-hairline-strong)] lg:p-10 ${index === 0 ? 'md:col-span-2' : ''} ${index === 3 && features.length > 3 ? 'md:col-span-2 lg:col-span-1' : ''}`}>
-                <div class="absolute left-0 top-0 h-1 w-full opacity-0 transition-opacity group-hover:opacity-100" style="background-color: var(--themePrimary);"></div>
-
-                <div class="mb-6 flex h-12 w-12 items-center justify-center rounded-sm border border-[var(--color-hairline)] bg-white/5 transition-colors group-hover:bg-white/10" style="color: var(--themePrimary);">
-                  <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="currentColor" viewBox="0 0 256 256"><path d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm45.66,85.66-56,56a8,8,0,0,1-11.32,0l-24-24a8,8,0,0,1,11.32-11.32L112,148.69l50.34-50.35a8,8,0,0,1,11.32,11.32Z"></path></svg>
+              <article class={`santral-hat group flex h-full flex-col p-7 lg:p-8 ${index === 0 ? 'md:col-span-2' : ''} ${index === 3 && features.length > 3 ? 'md:col-span-2 lg:col-span-1' : ''}`}>
+                <div class="mb-5 flex items-center justify-between">
+                  <div class="flex h-11 w-11 items-center justify-center border border-[var(--color-hairline-strong)] bg-[var(--color-void-ink-deep)] text-[var(--color-patina-copper-bright)]" style="border-radius:2px">
+                    <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 256 256"><path d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm45.66,85.66-56,56a8,8,0,0,1-11.32,0l-24-24a8,8,0,0,1,11.32-11.32L112,148.69l50.34-50.35a8,8,0,0,1,11.32,11.32Z"></path></svg>
+                  </div>
+                  <span class="font-mono text-[0.68rem] tracking-[0.18em] uppercase text-[var(--color-paper-ecru-mute)]">
+                    Modül · {String(index + 1).padStart(2, '0')}
+                  </span>
                 </div>
-
-                <h3 class="mb-4 text-2xl font-black text-[var(--color-paper-ecru)]">{feature.title}</h3>
-                <p class="text-lg font-medium leading-relaxed text-[var(--color-paper-ecru-dim)]">{feature.description}</p>
-              </div>
+                <h3 class="santral-display text-xl md:text-[1.35rem]" style="font-weight:500;letter-spacing:-0.01em">{feature.title}</h3>
+                <p class="mt-3 santral-body text-base leading-[1.65]">{feature.description}</p>
+              </article>
             ))}
           </div>
         </div>
       </section>
 
       {faqs.length > 0 && (
-        <section class="relative z-10 border-t border-[var(--color-hairline)] bg-[var(--color-void-ink)]/30 py-24">
-          <div class="container mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
-            <h2 class="mb-16 text-center text-3xl font-black tracking-tight text-[var(--color-paper-ecru)] md:text-5xl">Sikca sorulan sorular</h2>
-            <div class="space-y-4">
-              {faqs.map((faq) => (
-                <details class="group overflow-hidden rounded-sm border border-[var(--color-hairline)] bg-[#FFFFFF]/[0.02] backdrop-blur-md transition-colors hover:border-[var(--color-hairline-strong)]">
-                  <summary class="flex cursor-pointer items-center justify-between p-6 text-lg font-bold text-[var(--color-paper-ecru)] transition-colors group-open:text-[var(--themePrimary)]">
-                    {faq.question}
-                    <svg xmlns="http://www.w3.org/2000/svg" class="ml-4 h-5 w-5 shrink-0 transition-transform group-open:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" /></svg>
+        <section data-santral-reveal class="relative border-t border-[var(--color-hairline)] py-24 md:py-32">
+          <div class="container mx-auto max-w-5xl px-6 lg:px-10">
+            <div class="mb-12 flex items-center gap-4">
+              <span class="h-[1px] w-10 bg-[var(--color-hairline-strong)]"></span>
+              <span class="santral-overline">Talimatname · 06 — Sık Sorulanlar</span>
+            </div>
+            <h2 class="mb-12 santral-display text-3xl md:text-5xl leading-[1.1]" style="font-weight:400;text-wrap:balance">
+              Sıkça Sorulan <em class="santral-italic">Sorular</em>
+            </h2>
+            <div class="space-y-3">
+              {faqs.map((faq, i) => (
+                <details class="santral-hat group overflow-hidden">
+                  <summary class="flex cursor-pointer items-start justify-between gap-4 p-6 transition-colors list-none">
+                    <span class="flex items-start gap-4">
+                      <span class="font-mono text-[0.72rem] tracking-[0.14em] text-[var(--color-paper-ecru-mute)] pt-1 shrink-0">
+                        {String(i + 1).padStart(2, '0')}
+                      </span>
+                      <span class="santral-display text-base md:text-lg text-[var(--color-paper-ecru)] group-open:text-[var(--color-patina-copper-bright)] transition-colors" style="font-weight:500">
+                        {faq.question}
+                      </span>
+                    </span>
+                    <svg class="h-5 w-5 shrink-0 text-[var(--color-paper-ecru-mute)] transition-transform group-open:rotate-45" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m-8-8h16" />
+                    </svg>
                   </summary>
-                  <div class="px-6 pb-6 text-base leading-relaxed text-[var(--color-paper-ecru-dim)]">{faq.answer}</div>
+                  <div class="px-6 pb-6 pl-16 text-[0.95rem] leading-[1.72] text-[var(--color-paper-ecru-dim)]">
+                    {faq.answer}
+                  </div>
                 </details>
               ))}
             </div>
@@ -448,27 +478,29 @@ const serviceSchema = {
         contactHref={contactHref('solution-lead-pathways')}
       />
 
-      <section class="relative z-10 py-16 lg:py-20">
-        <div class="container mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
-          <div class="rounded-sm border border-[var(--color-hairline-strong)] bg-white/[0.02] p-8 backdrop-blur-xl lg:p-10">
+      <section data-santral-reveal class="relative border-t border-[var(--color-hairline)] py-20 md:py-24">
+        <div class="container mx-auto max-w-6xl px-6 lg:px-10">
+          <div class="santral-hat p-8 md:p-10" style="border-color: rgba(224, 150, 84, 0.28)">
             <div class="flex flex-col gap-8 lg:flex-row lg:items-start lg:justify-between">
               <div class="max-w-2xl">
-                <div class="inline-flex rounded-sm border border-[var(--themePrimary)]/20 bg-[var(--themePrimary)]/10 px-3 py-1 text-xs font-semibold uppercase tracking-[0.16em] text-[var(--themePrimary)]">
-                  {currentOffer.badge}
-                </div>
-                <h2 class="mt-5 text-3xl font-black tracking-tight text-[var(--color-paper-ecru)]">{currentOffer.title}</h2>
-                <p class="mt-4 text-base leading-relaxed text-[var(--color-paper-ecru-dim)]">{currentOffer.description}</p>
+                <span class="santral-overline block" style="color: var(--color-patina-copper-bright)">{currentOffer.badge}</span>
+                <h2 class="mt-4 santral-display text-3xl md:text-4xl" style="font-weight:500;text-wrap:balance">{currentOffer.title}</h2>
+                <p class="mt-4 santral-body text-base md:text-lg">{currentOffer.description}</p>
               </div>
 
-              <a href={contactHref('solution-offer-panel')} class="inline-flex items-center justify-center rounded-sm bg-[var(--themePrimary)] px-6 py-4 text-center text-base font-black text-[var(--color-void-ink-deep)] transition hover:-translate-y-0.5 hover:bg-[var(--themeAccent)]">
+              <a href={contactHref('solution-offer-panel')} class="santral-salter santral-salter-copper shrink-0">
                 {currentOffer.cta}
+                <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M5 12h14"/><path d="m13 6 6 6-6 6"/>
+                </svg>
               </a>
             </div>
 
-            <div class="mt-8 grid gap-4 md:grid-cols-3">
-              {currentOffer.bullets.map((item) => (
-                <div class="rounded-sm border border-[var(--color-hairline-strong)] bg-black/20 p-5 text-sm leading-relaxed text-[var(--color-paper-ecru-dim)]">
-                  {item}
+            <div class="mt-8 grid gap-4 md:grid-cols-3 pt-6 border-t border-[var(--color-hairline)]">
+              {currentOffer.bullets.map((item, i) => (
+                <div class="flex items-start gap-3">
+                  <span class="font-mono text-[0.72rem] tracking-[0.14em] text-[var(--color-patina-copper-bright)] pt-[3px]">{String(i + 1).padStart(2, '0')}</span>
+                  <p class="text-sm leading-[1.6] text-[var(--color-paper-ecru-dim)]">{item}</p>
                 </div>
               ))}
             </div>
@@ -476,24 +508,24 @@ const serviceSchema = {
         </div>
       </section>
 
-      <section class="relative overflow-hidden py-32">
-        <div class="theme-bg pointer-events-none absolute inset-0 opacity-[0.02]"></div>
+      <section data-santral-reveal class="relative border-t border-[var(--color-hairline)] py-24 md:py-32">
+        <div class="container relative z-10 mx-auto max-w-4xl px-6 lg:px-10 text-center">
+          <div class="mb-8 flex items-center justify-center gap-4">
+            <span class="h-[1px] w-10 bg-[var(--color-hairline-strong)]"></span>
+            <span class="santral-overline">Başlatma · Sonraki Adım</span>
+            <span class="h-[1px] w-10 bg-[var(--color-hairline-strong)]"></span>
+          </div>
 
-        <div class="container relative z-10 mx-auto max-w-5xl px-4 text-center">
-          <div class="group relative overflow-hidden rounded-sm border border-[var(--color-hairline-strong)] bg-[#FFFFFF]/[0.02] p-12 shadow-2xl backdrop-blur-2xl lg:p-24">
-            <div class="pointer-events-none absolute inset-0 opacity-0 blur-3xl transition-opacity duration-1000 group-hover:opacity-100" style="background: radial-gradient(circle at center, var(--themeGlow) 0%, transparent 70%);"></div>
+          <h2 class="santral-display text-3xl md:text-5xl leading-[1.1]" style="font-weight:400;text-wrap:balance">{finalCtaTitle}</h2>
+          <p class="mt-6 santral-body max-w-2xl mx-auto">{finalCtaSubtitle}</p>
 
-            <h2 class="relative z-10 mb-8 text-3xl font-black leading-[1.1] tracking-tight text-[var(--color-paper-ecru)] md:text-4xl lg:text-5xl">{finalCtaTitle}</h2>
-            <p class="relative z-10 mx-auto mb-12 max-w-3xl text-lg font-medium leading-relaxed text-[var(--color-paper-ecru-dim)] md:text-xl">{finalCtaSubtitle}</p>
-
-            <div class="relative z-10 flex flex-col items-center justify-center gap-6 sm:flex-row">
-              <a href={contactHref('solution-final-cta')} class="theme-bg group relative inline-flex items-center gap-3 rounded-sm px-12 py-6 text-xl font-black text-[var(--color-void-ink-deep)] transition-all duration-500 hover:-translate-y-1" style="box-shadow: 0 0 30px var(--themeGlow);">
-                Projeyi başlat
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 transition-transform group-hover:-translate-y-1 group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M13 5l7 7-7 7M5 5l7 7-7 7" />
-                </svg>
-              </a>
-            </div>
+          <div class="mt-10 flex justify-center">
+            <a href={contactHref('solution-final-cta')} class="santral-salter santral-salter-copper">
+              Projeyi başlat
+              <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M5 12h14"/><path d="m13 6 6 6-6 6"/>
+              </svg>
+            </a>
           </div>
         </div>
       </section>
