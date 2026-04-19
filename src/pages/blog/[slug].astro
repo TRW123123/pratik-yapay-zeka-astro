@@ -248,8 +248,9 @@ const breadcrumbs = [
           {/* Trust badges */}
           <div class="flex flex-wrap gap-2">
             {['KVKK uyumlu', '%50 Geri İade', 'Self-Hosted'].map((badge) => (
-              <span class="inline-flex items-center gap-1.5 rounded-full border border-white/[0.07] bg-white/[0.025] px-3 py-1 text-[11px] font-medium text-[var(--color-paper-ecru-dim)]">
-                <span class="text-[var(--color-primary)] text-[10px]">✓</span> {badge}
+              <span class="santral-pill" style="font-size:0.68rem;padding:0.3rem 0.7rem">
+                <span class="inline-block h-[5px] w-[5px] rounded-full bg-[var(--color-patina-copper-bright)]"></span>
+                {badge}
               </span>
             ))}
           </div>

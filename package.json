@@ -35,6 +35,9 @@
     "typescript": "^5.9.3"
   },
   "devDependencies": {
-    "pdf-parse": "^2.4.5"
+    "@fontsource/fraunces": "^5.2.9",
+    "@resvg/resvg-js": "^2.6.2",
+    "pdf-parse": "^2.4.5",
+    "satori": "^0.26.0"
   }
 }
