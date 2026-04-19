@@ -93,33 +93,38 @@ const faqSchema = {
   description="Make, Zapier ve n8n arasinda fiyat, özellik, Türkiye uyumluluğu ve kullanim senaryolarina gore kapsamli kârşılaştırma. KOBIler için pratik rehber."
   breadcrumbs={breadcrumbs}
 >
-  <article class="bg-[var(--color-void-ink-deep)] py-24">
-    <div class="container mx-auto max-w-3xl px-4">
-      <a href="/blog/" class="mb-8 inline-block text-sm text-[var(--color-text-muted)] transition-colors hover:text-[var(--color-primary-light)]">
-        Tüm blog yazilari
+  <article class="py-20 md:py-24">
+    <div class="container mx-auto max-w-3xl px-6 lg:px-10">
+      <a href="/blog/" class="mb-10 inline-flex items-center gap-2 font-mono text-[0.72rem] tracking-[0.14em] uppercase text-[var(--color-paper-ecru-mute)] transition-colors hover:text-[var(--color-patina-copper-bright)]">
+        ← Tüm blog yazıları
       </a>
 
-      <h1 class="mb-4 text-3xl font-bold md:text-4xl text-[var(--color-paper-ecru)]">
-        Make vs Zapier vs n8n: Türkiye'deki KOBIler Hangi Otomasyon Aracini Secmeli?
+      <div class="flex items-center gap-4 mb-8">
+        <span class="h-[1px] w-10 bg-[var(--color-patina-copper-bright)]"></span>
+        <span class="santral-overline">Kârşılaştırma · Cluster E</span>
+      </div>
+
+      <h1 class="santral-display text-4xl md:text-5xl leading-[1.08]" style="font-weight:400;text-wrap:balance">
+        Make vs Zapier vs n8n: Türkiye'deki KOBİler Hangi Otomasyon Aracını <em class="santral-italic">Seçmeli</em>?
       </h1>
 
-      <div class="mb-6 flex items-center gap-4 text-[var(--color-text-muted)]">
-        <span>Safak Tepecik</span>
-        <span>-</span>
+      <div class="mt-8 mb-8 flex items-center gap-3 font-mono text-[0.78rem] tracking-[0.08em] text-[var(--color-paper-ecru-mute)]">
+        <span>Şafak Tepecik</span>
+        <span class="text-[var(--color-patina-copper-bright)]">·</span>
         <span>5 Nisan 2026</span>
-        <span>-</span>
+        <span class="text-[var(--color-patina-copper-bright)]">·</span>
         <span>18 dk okuma</span>
       </div>
 
-      <div class="mb-8 flex flex-wrap gap-2">
-        <span class="rounded-full border border-[var(--color-primary)]/30 px-3 py-1 text-sm text-[var(--color-primary-light)]">#otomasyon</span>
-        <span class="rounded-full border border-[var(--color-primary)]/30 px-3 py-1 text-sm text-[var(--color-primary-light)]">#make</span>
-        <span class="rounded-full border border-[var(--color-primary)]/30 px-3 py-1 text-sm text-[var(--color-primary-light)]">#zapier</span>
-        <span class="rounded-full border border-[var(--color-primary)]/30 px-3 py-1 text-sm text-[var(--color-primary-light)]">#n8n</span>
-        <span class="rounded-full border border-[var(--color-primary)]/30 px-3 py-1 text-sm text-[var(--color-primary-light)]">#workflow</span>
+      <div class="mb-10 flex flex-wrap gap-2">
+        <span class="santral-pill">#otomasyon</span>
+        <span class="santral-pill">#make</span>
+        <span class="santral-pill">#zapier</span>
+        <span class="santral-pill">#n8n</span>
+        <span class="santral-pill">#workflow</span>
       </div>
 
-      <div class="prose prose-invert prose-lg max-w-none prose-headings:text-[var(--color-paper-ecru)] prose-headings:font-semibold prose-p:text-[var(--color-text-muted)] prose-a:text-[var(--color-primary-light)] prose-a:no-underline hover:prose-a:underline prose-strong:text-[var(--color-paper-ecru)] prose-code:rounded prose-code:bg-[var(--color-surface-light)] prose-code:px-1.5 prose-code:py-0.5 prose-code:text-[var(--color-primary-light)] prose-li:text-[var(--color-text-muted)] prose-th:text-[var(--color-paper-ecru)] prose-td:text-[var(--color-text-muted)] prose-table:border-collapse prose-th:border prose-th:border-[var(--color-border)] prose-th:px-4 prose-th:py-2 prose-th:bg-[var(--color-surface-light)] prose-td:border prose-td:border-[var(--color-border)] prose-td:px-4 prose-td:py-2">
+      <div class="santral-calc-prose prose prose-lg max-w-none text-[var(--color-paper-ecru-dim)] prose-headings:text-[var(--color-paper-ecru)] prose-headings:font-[var(--font-display)] prose-a:text-[var(--color-patina-copper-bright)] prose-a:no-underline hover:prose-a:underline prose-strong:text-[var(--color-paper-ecru)] prose-code:rounded prose-code:bg-[var(--color-void-ink-soft)] prose-code:px-1.5 prose-code:py-0.5 prose-code:text-[var(--color-patina-copper-bright)] prose-li:text-[var(--color-paper-ecru-dim)] prose-th:text-[var(--color-paper-ecru)] prose-td:text-[var(--color-paper-ecru-dim)] prose-table:border-collapse prose-th:border prose-th:border-[var(--color-hairline-strong)] prose-th:px-4 prose-th:py-2 prose-th:bg-[var(--color-void-ink)] prose-td:border prose-td:border-[var(--color-hairline)] prose-td:px-4 prose-td:py-2">
 
         <p>
           <strong>Türkiye ve DACH bolgesindeki 5-50 calisanli KOBIler için evrensel bir kazanan yok.</strong> Make görsel düşünebilen power-user'lar için en iyi fiyat/performans oranini sunar. Zapier basit otomasyonlar için en hızlı cozumdur. n8n ise AI agentlari, veri egemenligini ve sınır tanimayan olceklenmeyi isteyen teknik ekipler için üstün platformdur.
@@ -478,70 +483,86 @@ const faqSchema = {
       </div>
 
       <!-- FAQ Section -->
-      <div class="mt-16 rounded-sm border border-[var(--color-border)] bg-[var(--color-surface-light)] p-8">
-        <h2 class="mb-6 text-2xl font-semibold text-[var(--color-paper-ecru)]">Sikca Sorulan Sorular</h2>
-        <div class="space-y-6">
-          <details class="group">
-            <summary class="cursor-pointer text-lg font-medium text-[var(--color-paper-ecru)]">Make mi Zapier mi yoksa n8n mi daha ucuz?</summary>
-            <p class="mt-3 text-[var(--color-text-muted)]">Make ayda $9 ile 10.000 credit sunarken, Zapier ayda $19,99 ile sadece 750 task sunar. n8n Self-Hosted ise yazılım maliyeti sifirdir, yalnizca sunucu maliyeti (~30 EUR/ay) vardir. 10.000 işlem bazinda n8n Self-Hosted en ucuz, Make en iyi bulut secenegidir.</p>
-          </details>
-          <details class="group">
-            <summary class="cursor-pointer text-lg font-medium text-[var(--color-paper-ecru)]">Türkiye için en uygun otomasyon araci hangisi?</summary>
-            <p class="mt-3 text-[var(--color-text-muted)]">KVKK uyumluluğu açısından n8n Self-Hosted en iyi seçenektir çünkü veriler Türkiye sınırlarında kalır. Hiçbir aracın Trendyol, Hepsiburada veya Logo Yazılım ile hazır entegrasyonu yoktur — hepsi API üzerinden bağlantı gerektirir.</p>
-          </details>
-          <details class="group">
-            <summary class="cursor-pointer text-lg font-medium text-[var(--color-paper-ecru)]">Yapay zeka entegrasyonu için hangi araç daha iyi?</summary>
-            <p class="mt-3 text-[var(--color-text-muted)]">n8n 70+ AI/LangChain node ile en derin yapay zeka entegrasyonunu sunar: AI Agent, RAG, vektor veritabanlari, çoklu ajan orkestrasyonu ve kendi sunucunuzda LLM calistirma imkani. Make ikinci, Zapier ucuncu siradadir.</p>
-          </details>
-          <details class="group">
-            <summary class="cursor-pointer text-lg font-medium text-[var(--color-paper-ecru)]">Zapier'dan Make veya n8n'e geçiş yapılabilir mi?</summary>
-            <p class="mt-3 text-[var(--color-text-muted)]">Otomatik workflow aktarımı yoktur. Migromat araci Zapier JSON dosyalarini n8n formatina AI ile cevirebilir. Manuel geçiş workflow basina 1-3 saat sürer. Profesyonel migrasyon hizmeti $500-4.000 arasindadir.</p>
-          </details>
-          <details class="group">
-            <summary class="cursor-pointer text-lg font-medium text-[var(--color-paper-ecru)]">Teknik bilgisi olmayan ekipler için hangisi uygundur?</summary>
-            <p class="mt-3 text-[var(--color-text-muted)]">Zapier en kolay giriş imkani sunar — ilk otomasyon 3 dakikada kurulabilir. Make görsel düşünebilen kullanicilarin 10-20 saatlik bir öğrenme sureciyle üretken olabilecegi bir arabirimi sunar. n8n ise geliştirici veya teknik bilgiye sahip bir ekip üyesi gerektirir.</p>
-          </details>
+      <div class="mt-16 santral-hat p-8">
+        <div class="flex items-center gap-4 mb-6">
+          <span class="h-[1px] w-8 bg-[var(--color-patina-copper-bright)]"></span>
+          <span class="santral-overline">Talimatname · Sık Sorulanlar</span>
+        </div>
+        <h2 class="santral-display text-2xl md:text-3xl mb-6" style="font-weight:500">Sıkça Sorulan <em class="santral-italic">Sorular</em></h2>
+        <div class="space-y-3">
+          {[
+            { q: 'Make mi Zapier mi yoksa n8n mi daha ucuz?', a: 'Make ayda $9 ile 10.000 credit sunarken, Zapier ayda $19,99 ile sadece 750 task sunar. n8n Self-Hosted ise yazılım maliyeti sıfırdır, yalnızca sunucu maliyeti (~30 EUR/ay) vardır. 10.000 işlem bazında n8n Self-Hosted en ucuz, Make en iyi bulut seçeneğidir.' },
+            { q: 'Türkiye için en uygun otomasyon aracı hangisi?', a: 'KVKK uyumluluğu açısından n8n Self-Hosted en iyi seçenektir çünkü veriler Türkiye sınırlarında kalır. Hiçbir aracın Trendyol, Hepsiburada veya Logo Yazılım ile hazır entegrasyonu yoktur — hepsi API üzerinden bağlantı gerektirir.' },
+            { q: 'Yapay zeka entegrasyonu için hangi araç daha iyi?', a: 'n8n 70+ AI/LangChain node ile en derin yapay zeka entegrasyonunu sunar: AI Agent, RAG, vektör veritabanları, çoklu ajan orkestrasyonu ve kendi sunucunuzda LLM çalıştırma imkanı. Make ikinci, Zapier üçüncü sıradadır.' },
+            { q: "Zapier'dan Make veya n8n'e geçiş yapılabilir mi?", a: 'Otomatik workflow aktarımı yoktur. Migromat aracı Zapier JSON dosyalarını n8n formatına AI ile çevirebilir. Manuel geçiş workflow başına 1-3 saat sürer. Profesyonel migrasyon hizmeti $500-4.000 arasındadır.' },
+            { q: 'Teknik bilgisi olmayan ekipler için hangisi uygundur?', a: 'Zapier en kolay giriş imkanı sunar — ilk otomasyon 3 dakikada kurulabilir. Make görsel düşünebilen kullanıcıların 10-20 saatlik bir öğrenme süreciyle üretken olabileceği bir arabirimi sunar. n8n ise geliştirici veya teknik bilgiye sahip bir ekip üyesi gerektirir.' },
+          ].map((faq, i) => (
+            <details class="group overflow-hidden border border-[var(--color-hairline)] bg-[var(--color-void-ink-deep)]/55" style="border-radius:2px">
+              <summary class="flex cursor-pointer items-start justify-between gap-4 p-5 list-none">
+                <span class="flex items-start gap-4">
+                  <span class="font-mono text-[0.72rem] tracking-[0.14em] text-[var(--color-paper-ecru-mute)] pt-1 shrink-0">{String(i + 1).padStart(2, '0')}</span>
+                  <span class="santral-display text-base md:text-lg text-[var(--color-paper-ecru)] group-open:text-[var(--color-patina-copper-bright)] transition-colors" style="font-weight:500">{faq.q}</span>
+                </span>
+                <svg class="h-5 w-5 shrink-0 text-[var(--color-paper-ecru-mute)] transition-transform group-open:rotate-45" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m-8-8h16" />
+                </svg>
+              </summary>
+              <p class="px-5 pb-5 pl-16 text-[0.92rem] leading-[1.7] text-[var(--color-paper-ecru-dim)]">{faq.a}</p>
+            </details>
+          ))}
         </div>
       </div>
 
-      <!-- CTA Section -->
-      <div class="mt-16 grid gap-8 lg:grid-cols-[1.05fr_0.95fr]">
-        <div class="rounded-sm border border-[var(--color-border)] bg-[var(--color-surface-light)]/60 p-8">
-          <h2 class="text-2xl font-semibold text-[var(--color-paper-ecru)]">Ilgili sayfalar</h2>
-          <div class="mt-6 space-y-4">
-            <a href="/crm-programi/" class="block rounded-sm border border-[var(--color-border)] bg-black/10 p-5 transition hover:-translate-y-0.5 hover:border-[var(--color-primary)]/40">
-              <div class="mb-3 inline-flex rounded-full border border-[var(--color-primary)]/20 bg-[var(--color-primary)]/10 px-3 py-1 text-xs font-semibold uppercase tracking-[0.16em] text-[var(--color-primary)]">CRM</div>
-              <h3 class="text-lg font-semibold text-[var(--color-paper-ecru)]">CRM Programı ve Müşteri Takip Sistemi</h3>
-              <p class="mt-2 text-sm leading-relaxed text-[var(--color-text-muted)]">WhatsApp, e-posta ve formlardan gelen talepleri otomatik kaydeden bir CRM sistemi kurun.</p>
+      <!-- Related + CTA -->
+      <div class="mt-12 grid gap-5 lg:grid-cols-[1.05fr_0.95fr]">
+        <div class="santral-hat p-7 lg:p-8">
+          <div class="flex items-center justify-between gap-4 mb-6">
+            <span class="santral-overline">İlgili · 04</span>
+            <a href="/cozumler/" class="font-mono text-[0.72rem] tracking-[0.14em] uppercase text-[var(--color-patina-copper-bright)] transition hover:text-[var(--color-paper-ecru)]">
+              Tüm çözümler →
             </a>
-            <a href="/whatsapp-ve-siparis-botlari/" class="block rounded-sm border border-[var(--color-border)] bg-black/10 p-5 transition hover:-translate-y-0.5 hover:border-[var(--color-primary)]/40">
-              <div class="mb-3 inline-flex rounded-full border border-[var(--color-primary)]/20 bg-[var(--color-primary)]/10 px-3 py-1 text-xs font-semibold uppercase tracking-[0.16em] text-[var(--color-primary)]">WhatsApp</div>
-              <h3 class="text-lg font-semibold text-[var(--color-paper-ecru)]">WhatsApp ve Sipariş Botu</h3>
-              <p class="mt-2 text-sm leading-relaxed text-[var(--color-text-muted)]">Resmi Meta API ile satış, destek ve sipariş akisini otomatikleştirin.</p>
+          </div>
+          <h2 class="santral-display text-2xl md:text-3xl mb-6" style="font-weight:500">İlgili sayfalar</h2>
+          <div class="space-y-3">
+            <a href="/crm-programi/" class="block border border-[var(--color-hairline)] bg-[var(--color-void-ink-deep)]/55 p-5 transition-all hover:border-[var(--color-patina-copper)] hover:-translate-y-0.5" style="border-radius:2px">
+              <span class="santral-label block mb-2">CRM</span>
+              <h3 class="santral-display text-base md:text-lg" style="font-weight:500">CRM Programı ve Müşteri Takip Sistemi</h3>
+              <p class="mt-2 text-[0.85rem] leading-[1.55] text-[var(--color-paper-ecru-dim)]">WhatsApp, e-posta ve formlardan gelen talepleri otomatik kaydeden bir CRM sistemi kurun.</p>
             </a>
-            <a href="/b2b-musteri-bulma/" class="block rounded-sm border border-[var(--color-border)] bg-black/10 p-5 transition hover:-translate-y-0.5 hover:border-[var(--color-primary)]/40">
-              <div class="mb-3 inline-flex rounded-full border border-[var(--color-primary)]/20 bg-[var(--color-primary)]/10 px-3 py-1 text-xs font-semibold uppercase tracking-[0.16em] text-[var(--color-primary)]">Lead Gen</div>
-              <h3 class="text-lg font-semibold text-[var(--color-paper-ecru)]">B2B Müşteri Bulma</h3>
-              <p class="mt-2 text-sm leading-relaxed text-[var(--color-text-muted)]">Hedef hesap araştırması, sinyal takibi ve nitelikli outbound sistemi kurun.</p>
+            <a href="/whatsapp-ve-siparis-botlari/" class="block border border-[var(--color-hairline)] bg-[var(--color-void-ink-deep)]/55 p-5 transition-all hover:border-[var(--color-patina-copper)] hover:-translate-y-0.5" style="border-radius:2px">
+              <span class="santral-label block mb-2">WhatsApp</span>
+              <h3 class="santral-display text-base md:text-lg" style="font-weight:500">WhatsApp ve Sipariş Botu</h3>
+              <p class="mt-2 text-[0.85rem] leading-[1.55] text-[var(--color-paper-ecru-dim)]">Resmi Meta API ile satış, destek ve sipariş akışını otomatikleştirin.</p>
+            </a>
+            <a href="/b2b-musteri-bulma/" class="block border border-[var(--color-hairline)] bg-[var(--color-void-ink-deep)]/55 p-5 transition-all hover:border-[var(--color-patina-copper)] hover:-translate-y-0.5" style="border-radius:2px">
+              <span class="santral-label block mb-2">Lead Gen</span>
+              <h3 class="santral-display text-base md:text-lg" style="font-weight:500">B2B Müşteri Bulma</h3>
+              <p class="mt-2 text-[0.85rem] leading-[1.55] text-[var(--color-paper-ecru-dim)]">Hedef hesap araştırması, sinyal takibi ve nitelikli outbound sistemi kurun.</p>
             </a>
           </div>
         </div>
 
-        <div class="rounded-sm border border-[var(--color-primary)]/20 bg-[var(--color-primary)]/8 p-8">
-          <div class="inline-flex rounded-full border border-[var(--color-primary)]/25 bg-[var(--color-primary)]/10 px-3 py-1 text-xs font-semibold uppercase tracking-[0.16em] text-[var(--color-primary)]">
-            Dönüşüm
+        <div class="santral-hat p-7 lg:p-8 flex flex-col" style="border-color: rgba(224, 150, 84, 0.28)">
+          <div class="flex items-center gap-2 mb-6">
+            <span class="inline-block h-[6px] w-[6px] rounded-full bg-[var(--color-patina-copper-bright)]" style="animation: morse-pulse 2.6s ease-in-out infinite"></span>
+            <span class="santral-overline">Dönüşüm · Sonraki Adım</span>
           </div>
-          <h2 class="mt-5 text-3xl font-black tracking-tight text-[var(--color-paper-ecru)]">Hangi otomasyon aracinin size uygun olduğunu birlikte belirleyelim</h2>
-          <p class="mt-4 text-sm leading-relaxed text-[var(--color-text-muted)]">
-            Kısa bir analiz ile is süreci, ekip yapısı ve butcenize gore en uygun otomasyon yaklasimini birlikte cikaralim.
+          <h2 class="santral-display text-2xl md:text-3xl" style="font-weight:400;line-height:1.15;text-wrap:balance">
+            Hangi otomasyon aracının size uygun olduğunu <em class="santral-italic">birlikte</em> belirleyelim
+          </h2>
+          <p class="mt-5 text-[0.9rem] leading-[1.65] text-[var(--color-paper-ecru-dim)]">
+            Kısa bir analiz ile iş süreci, ekip yapısı ve bütçenize göre en uygun otomasyon yaklaşımını birlikte çıkaralım.
           </p>
-          <ul class="mt-6 space-y-3 text-sm text-[var(--color-text-muted)]">
-            <li>Süreç analizi ve araç önerisi</li>
-            <li>KVKK uyumlu kurulum plani</li>
-            <li>Somut ilk adım yol haritası</li>
+          <ul class="mt-6 space-y-2 text-[0.85rem] text-[var(--color-paper-ecru-dim)]">
+            <li class="flex items-start gap-2"><span class="text-[var(--color-patina-copper-bright)] mt-[4px]">·</span> Süreç analizi ve araç önerisi</li>
+            <li class="flex items-start gap-2"><span class="text-[var(--color-patina-copper-bright)] mt-[4px]">·</span> KVKK uyumlu kurulum planı</li>
+            <li class="flex items-start gap-2"><span class="text-[var(--color-patina-copper-bright)] mt-[4px]">·</span> Somut ilk adım yol haritası</li>
           </ul>
-          <a href={contactHref} class="mt-8 inline-flex w-full items-center justify-center rounded-sm bg-[var(--color-primary)] px-5 py-4 text-center text-base font-black text-black transition hover:-translate-y-0.5 hover:bg-[var(--color-primary-light)]">
+          <a href={contactHref} class="santral-salter santral-salter-copper mt-auto pt-5 justify-center">
             Ücretsiz analizi talep et
+            <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M5 12h14"/><path d="m13 6 6 6-6 6"/>
+            </svg>
           </a>
         </div>
       </div>
