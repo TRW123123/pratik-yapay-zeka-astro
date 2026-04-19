@@ -4,7 +4,7 @@ import pseoData from '../../data/pseo_data_tr.json';
 import { buildContactHref } from '../../lib/contactHref';
 
 const sectorSolutions = pseoData.map((data) => ({
-  href: `/çözümler/${data.slug_branche}/${data.slug_problem}/`,
+  href: `/cozumler/${data.slug_branche}/${data.slug_problem}/`,
   title: data.branche,
   description: data.seo_description,
   metric: data.hard_metrics.conversion_rate.split(' ').slice(0, 4).join(' ') + '...',
@@ -55,19 +55,25 @@ const solutionsContactHref = buildContactHref({
   title="Yapay Zeka Çözümleri | CRM, Otomasyon, Finans Araclari"
   description="CRM, marketing otomasyonu, muhasebe, WhatsApp botu ve sektor odakli yapay zeka çözümleri. Isletmenize uygun otomasyon alanini kesfedip hemen baslatin."
 >
-  <section class="relative overflow-hidden bg-[var(--color-void-ink-deep)] py-32 lg:py-44">
-    <div class="pointer-events-none absolute left-1/2 top-1/4 h-[900px] w-[900px] -translate-x-1/2 rounded-full bg-[var(--color-primary)]/10 blur-[180px] opacity-60"></div>
-    <div class="container relative z-10 mx-auto max-w-4xl px-4 text-center">
-      <h1 class="mb-6 text-4xl font-extrabold tracking-tight text-[#FFFFFF] md:text-6xl">Tüm Çözümler ve Giriş Noktalari</h1>
-      <p class="mx-auto max-w-3xl text-xl leading-relaxed text-[var(--color-text-muted)]">
-        Bu sayfa tek bir uzun liste değil. Ana teklifleri, operasyonel workflow sayfalarini, utility giriş noktalarini ve sektor odakli çözümleri daha net ayirmak için yeniden duzenlendi.
+  <section data-santral-reveal class="relative overflow-hidden pt-28 pb-16 md:pt-36">
+    <div class="pointer-events-none absolute -top-32 right-[-10%] h-[460px] w-[560px] rounded-full opacity-[0.14] blur-[160px]" style="background: radial-gradient(circle, var(--color-patina-copper-bright) 0%, transparent 70%);" aria-hidden="true"></div>
+    <div class="container relative z-10 mx-auto max-w-6xl px-6 lg:px-10">
+      <div class="flex items-center gap-4 mb-10">
+        <span class="h-[1px] w-10 bg-[var(--color-patina-copper-bright)]"></span>
+        <span class="santral-overline">Katalog · Çözümler</span>
+      </div>
+      <h1 class="santral-display text-4xl md:text-6xl leading-[1.05] max-w-4xl" style="font-weight:400;text-wrap:balance">
+        Tüm Çözümler ve <em class="santral-italic">Giriş Noktaları</em>
+      </h1>
+      <p class="mt-8 santral-body text-lg md:text-xl max-w-3xl">
+        Bu sayfa tek bir uzun liste değil. Ana teklifleri, operasyonel workflow sayfalarını, utility giriş noktalarını ve sektör odaklı çözümleri daha net ayırmak için yeniden düzenlendi.
       </p>
     </div>
   </section>
 
-  <section class="relative z-10 py-16">
+  <section data-santral-reveal class="relative border-t border-[var(--color-hairline)] py-16 md:py-20">
     <div class="container mx-auto max-w-6xl px-4">
-      <h2 class="mb-3 text-2xl font-bold text-[var(--color-text)]">Ana Teklifler</h2>
+      <div class="mb-8 flex items-center gap-4"><span class="h-[1px] w-10 bg-[var(--color-hairline-strong)]"></span><span class="santral-overline">Grup · 01 — Ana Teklifler</span></div><h2 class="mb-3 santral-display text-3xl md:text-4xl" style="font-weight:500">Ana Teklifler</h2>
       <p class="mb-8 max-w-3xl text-[var(--color-text-muted)]">Bu alanlar, dogrudan hizmet ve operasyon tasarımı tarafinda en güçlü ticari sayfalarimizi toplar.</p>
       <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
         {coreOffers.map((item) => (
@@ -80,9 +86,9 @@ const solutionsContactHref = buildContactHref({
     </div>
   </section>
 
-  <section class="relative z-10 py-16">
+  <section data-santral-reveal class="relative border-t border-[var(--color-hairline)] py-16 md:py-20">
     <div class="container mx-auto max-w-6xl px-4">
-      <h2 class="mb-3 text-2xl font-bold text-[var(--color-text)]">Operasyonel Workflow Sayfalari</h2>
+      <div class="mb-8 flex items-center gap-4"><span class="h-[1px] w-10 bg-[var(--color-hairline-strong)]"></span><span class="santral-overline">Grup · 02 — Workflow</span></div><h2 class="mb-3 santral-display text-3xl md:text-4xl" style="font-weight:500">Operasyonel Workflow Sayfaları</h2>
       <p class="mb-8 max-w-3xl text-[var(--color-text-muted)]">Bunlar, ana teklifleri destekleyen daha spesifik akışları ve operasyon problemlerini aciklar.</p>
       <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
         {workflowPages.map((item) => (
@@ -95,9 +101,9 @@ const solutionsContactHref = buildContactHref({
     </div>
   </section>
 
-  <section class="relative z-10 py-16">
+  <section data-santral-reveal class="relative border-t border-[var(--color-hairline)] py-16 md:py-20">
     <div class="container mx-auto max-w-6xl px-4">
-      <h2 class="mb-3 text-2xl font-bold text-[var(--color-text)]">Utility ve Bilgi Giriş Noktalari</h2>
+      <div class="mb-8 flex items-center gap-4"><span class="h-[1px] w-10 bg-[var(--color-hairline-strong)]"></span><span class="santral-overline">Grup · 03 — Utility</span></div><h2 class="mb-3 santral-display text-3xl md:text-4xl" style="font-weight:500">Utility ve Bilgi Giriş Noktaları</h2>
       <p class="mb-8 max-w-3xl text-[var(--color-text-muted)]">Bu sayfalarin amaci dogrudan her seyi hesaplamak değil; kullaniciyi probleme, akisa ve ilgili çözüm katmanina tasimaktir.</p>
       <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
         {utilityPages.map((item) => (
@@ -110,7 +116,7 @@ const solutionsContactHref = buildContactHref({
     </div>
   </section>
 
-  <section class="relative z-10 py-16">
+  <section data-santral-reveal class="relative border-t border-[var(--color-hairline)] py-16 md:py-20">
     <div class="container mx-auto max-w-6xl px-4">
       <h2 class="mb-3 text-2xl font-bold text-[var(--color-text)]">Sektorel Çözümler</h2>
       <p class="mb-8 max-w-3xl text-[var(--color-text-muted)]">Brans ve problem bazli giriş sayfalari, sektor ozeline inen pSEO katmanimizi olusturur.</p>
