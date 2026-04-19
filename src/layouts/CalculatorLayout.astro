@@ -185,18 +185,18 @@ const currentOffer = offerMap[currentTrack];
 ---
 
 <BaseLayout title={title} description={description} ogImage={ogImage} breadcrumbs={breadcrumbs}>
-  <main class="bg-[#0B0F14] text-white selection:bg-[#A3E635] selection:text-black">
+  <main class="bg-[var(--color-void-ink-deep)] text-[var(--color-paper-ecru)] selection:bg-[var(--color-patina-copper-bright)] selection:text-[var(--color-void-ink-deep)]">
     <style is:inline>
-      .theme-text { color: #A3E635; }
-      .theme-border { border-color: #A3E635; }
-      .theme-bg { background-color: #A3E635; color: #0B0F14 !important; }
-      .theme-glow-bg { background: radial-gradient(circle, rgba(163, 230, 53, 0.15) 0%, transparent 70%); }
+      .theme-text { color: var(--color-patina-copper-bright); }
+      .theme-border { border-color: var(--color-patina-copper-bright); }
+      .theme-bg { background-color: var(--color-patina-copper-bright); color: var(--color-void-ink-deep) !important; }
+      .theme-glow-bg { background: radial-gradient(circle, rgba(224, 150, 84, 0.15) 0%, transparent 70%); }
     </style>
 
     <article class="pb-16 pt-32 lg:pb-24 lg:pt-40">
-      <div class="theme-glow-bg pointer-events-none absolute left-1/2 top-1/4 h-[800px] w-[800px] -translate-x-1/2 rounded-full blur-[150px] opacity-40"></div>
+      <div class="theme-glow-bg pointer-events-none absolute left-1/2 top-1/4 h-[800px] w-[800px] -translate-x-1/2 rounded-sm blur-[150px] opacity-40"></div>
 
-      <div class="container relative z-10 mx-auto max-w-5xl px-4 prose prose-invert prose-lg prose-headings:text-white prose-p:text-gray-400 prose-a:text-[#A3E635] hover:prose-a:text-[#84CC16] prose-strong:text-gray-200 sm:px-6 lg:px-8">
+      <div class="container relative z-10 mx-auto max-w-5xl px-4 prose prose-invert prose-lg prose-headings:text-[var(--color-paper-ecru)] prose-p:text-[var(--color-paper-ecru-dim)] prose-a:text-[var(--color-patina-copper-bright)] hover:prose-a:text-[var(--color-patina-copper)] prose-strong:text-[var(--color-paper-ecru)] sm:px-6 lg:px-8">
         <slot />
       </div>
     </article>
@@ -213,24 +213,24 @@ const currentOffer = offerMap[currentTrack];
 
     <section class="relative z-10 py-16 lg:py-20">
       <div class="container mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
-        <div class="rounded-[2rem] border border-white/10 bg-white/[0.02] p-8 backdrop-blur-xl lg:p-10">
+        <div class="rounded-sm border border-[var(--color-hairline-strong)] bg-white/[0.02] p-8 backdrop-blur-xl lg:p-10">
           <div class="flex flex-col gap-8 lg:flex-row lg:items-start lg:justify-between">
             <div class="max-w-2xl">
-              <div class="inline-flex rounded-full border border-[#A3E635]/20 bg-[#A3E635]/10 px-3 py-1 text-xs font-semibold uppercase tracking-[0.16em] text-[#A3E635]">
+              <div class="inline-flex rounded-sm border border-[var(--color-patina-copper-bright)]/20 bg-[var(--color-patina-copper-bright)]/10 px-3 py-1 text-xs font-semibold uppercase tracking-[0.16em] text-[var(--color-patina-copper-bright)]">
                 {currentOffer.badge}
               </div>
-              <h2 class="mt-5 text-3xl font-black tracking-tight text-white">{currentOffer.title}</h2>
-              <p class="mt-4 text-base leading-relaxed text-gray-400">{currentOffer.description}</p>
+              <h2 class="mt-5 text-3xl font-black tracking-tight text-[var(--color-paper-ecru)]">{currentOffer.title}</h2>
+              <p class="mt-4 text-base leading-relaxed text-[var(--color-paper-ecru-dim)]">{currentOffer.description}</p>
             </div>
 
-            <a href={contactHref('calculator-offer-panel')} class="inline-flex items-center justify-center rounded-2xl bg-[#A3E635] px-6 py-4 text-center text-base font-black text-black transition hover:-translate-y-0.5 hover:bg-[#84CC16]">
+            <a href={contactHref('calculator-offer-panel')} class="inline-flex items-center justify-center rounded-sm bg-[var(--color-patina-copper-bright)] px-6 py-4 text-center text-base font-black text-[var(--color-void-ink-deep)] transition hover:-translate-y-0.5 hover:bg-[var(--color-patina-copper)]">
               {currentOffer.cta}
             </a>
           </div>
 
           <div class="mt-8 grid gap-4 md:grid-cols-3">
             {currentOffer.bullets.map((item) => (
-              <div class="rounded-2xl border border-white/8 bg-black/20 p-5 text-sm leading-relaxed text-gray-300">
+              <div class="rounded-sm border border-[var(--color-hairline-strong)] bg-black/20 p-5 text-sm leading-relaxed text-[var(--color-paper-ecru-dim)]">
                 {item}
               </div>
             ))}
@@ -243,18 +243,18 @@ const currentOffer = offerMap[currentTrack];
       <div class="theme-bg pointer-events-none absolute inset-0 opacity-[0.02]"></div>
 
       <div class="container relative z-10 mx-auto max-w-5xl px-4 text-center">
-        <div class="group relative overflow-hidden rounded-[3rem] border border-white/10 bg-[#FFFFFF]/[0.02] p-12 shadow-2xl backdrop-blur-2xl lg:p-24">
-          <div class="pointer-events-none absolute inset-0 opacity-0 blur-3xl transition-opacity duration-1000 group-hover:opacity-100" style="background: radial-gradient(circle at center, rgba(163, 230, 53, 0.15) 0%, transparent 70%);"></div>
+        <div class="group relative overflow-hidden rounded-sm border border-[var(--color-hairline-strong)] bg-[#FFFFFF]/[0.02] p-12 shadow-2xl backdrop-blur-2xl lg:p-24">
+          <div class="pointer-events-none absolute inset-0 opacity-0 blur-3xl transition-opacity duration-1000 group-hover:opacity-100" style="background: radial-gradient(circle at center, rgba(224, 150, 84, 0.15) 0%, transparent 70%);"></div>
 
-          <h2 class="relative z-10 mb-8 text-3xl font-black leading-[1.1] tracking-tight text-white md:text-4xl lg:text-5xl">
+          <h2 class="relative z-10 mb-8 text-3xl font-black leading-[1.1] tracking-tight text-[var(--color-paper-ecru)] md:text-4xl lg:text-5xl">
             Manuel hesaplamalari ve olasi cezalari bitirin
           </h2>
-          <p class="relative z-10 mx-auto mb-12 max-w-3xl text-lg font-medium leading-relaxed text-gray-400 md:text-xl">
+          <p class="relative z-10 mx-auto mb-12 max-w-3xl text-lg font-medium leading-relaxed text-[var(--color-paper-ecru-dim)] md:text-xl">
             Excel formulleriyle sirketinizi riske atmayin. Yasalara uyumlu, 7/24 çalışan ve sifira yakin hata ile operasyon yöneten bir yapay zeka asistani kurmak için ücretsiz teknik analiz talep edin.
           </p>
 
           <div class="relative z-10 flex flex-col items-center justify-center gap-6 sm:flex-row">
-            <a href={contactHref('calculator-final-cta')} class="theme-bg group relative inline-flex items-center gap-3 rounded-2xl px-12 py-6 text-xl font-black text-black transition-all duration-500 hover:-translate-y-1" style="box-shadow: 0 0 30px rgba(163, 230, 53, 0.15);">
+            <a href={contactHref('calculator-final-cta')} class="theme-bg group relative inline-flex items-center gap-3 rounded-sm px-12 py-6 text-xl font-black text-[var(--color-void-ink-deep)] transition-all duration-500 hover:-translate-y-1" style="box-shadow: 0 0 30px rgba(224, 150, 84, 0.15);">
               Projeyi başlat
               <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 transition-transform group-hover:-translate-y-1 group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M13 5l7 7-7 7M5 5l7 7-7 7" />

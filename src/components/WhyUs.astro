@@ -1,68 +1,65 @@
 ---
 /**
- * WhyUs.astro — 1:1 faithful port of lovable-original SolutionSection.tsx
- * "Sizinle beraber koşacak bir maratoncu arıyorsanız… neden bizi seçin?"
- * 4 GlowCards in 2x2 grid. Exact original copy.
+ * WhyUs.astro — Santral edition
+ * 4 paper-card "Kadrolu Neden"-cards with copper indexes.
  */
+
+const reasons = [
+  {
+    idx: '01',
+    title: 'Tecrübe ve Kültür',
+    text: "10 yıllık satış tecrübem ile Türk şirketlerindeki masadaki çayı da gördüm, Avrupa şirketlerinin toplantı odalarının soğuk camlarını da.",
+    svg: '<path stroke-linecap="round" stroke-linejoin="round" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />',
+  },
+  {
+    idx: '02',
+    title: 'Yapay Zeka Uygulamaları',
+    text: 'Son 1,5 senedir kesintisiz olarak yapay zeka danışmanlık şirketimle tıkır tıkır işleyen makineler gibi, yorulmadan çalışan sistemler kuruyorum.',
+    svg: '<path stroke-linecap="round" stroke-linejoin="round" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z" />',
+  },
+  {
+    idx: '03',
+    title: 'Kanıtı şimdiden paylaşıyorum',
+    text: "Türkiye'nin en büyük 2.000 şirketini araştırdım ve sizinle paylaşıyorum. Yapay zeka ile reklam üretmek için hazırladığım prompt kütüphanem de elinizin altında.",
+    svg: '<path stroke-linecap="round" stroke-linejoin="round" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />',
+  },
+  {
+    idx: '04',
+    title: 'Riski ben alıyorum',
+    text: "Projeden sonuç çıkmazsa ödediğiniz ücretin %50'sini geri alıyorsunuz. Risk sizin omzunuzda değil ben taşıyorum.",
+    svg: '<path stroke-linecap="round" stroke-linejoin="round" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />',
+  },
+];
 ---
 
-<section class="relative py-32 lg:py-48">
-  <div class="container mx-auto px-4">
-    <div class="mx-auto max-w-4xl text-center mb-12">
-      <h2 class="headline text-3xl md:text-4xl tracking-tight text-[hsl(210,10%,90%)] mb-6">
-        Sizinle beraber koşacak bir maratoncu arıyorsanız… neden bizi seçin?
+<section data-santral-reveal class="relative border-t border-[var(--color-hairline)] py-24 md:py-32">
+  <div class="container mx-auto max-w-6xl px-6 lg:px-10">
+    <div class="mb-14 flex items-center gap-4">
+      <span class="h-[1px] w-10 bg-[var(--color-hairline-strong)]"></span>
+      <span class="santral-overline">Güven · 03 — 4 Neden</span>
+    </div>
+
+    <div class="mx-auto max-w-4xl mb-14">
+      <h2 class="santral-display text-3xl leading-[1.1] md:text-5xl" style="font-weight:400;text-wrap:balance;">
+        Sizinle beraber <em class="santral-italic">koşacak</em> bir maratoncu arıyorsanız… neden bizi seçin?
       </h2>
     </div>
 
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-      <!-- Card 1: Tecrübe ve Kültür -->
-      <div class="neon-bleed-border rounded-[20px] p-10 flex flex-col items-center text-center gap-6 relative group overflow-hidden">
-        <div class="absolute inset-0 bg-gradient-to-br from-[var(--color-primary)]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
-        <svg class="w-12 h-12 text-[#A3E635]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-          <path stroke-linecap="round" stroke-linejoin="round" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
-        </svg>
-        <h3 class="text-xl font-bold text-[hsl(210,10%,90%)]">Tecrübe ve Kültür</h3>
-        <p class="text-sm text-[hsl(215,16%,58%)] leading-relaxed">
-          10 yıllık satış tecrübem ile Türk şirketlerindeki masadaki çayı da gördüm, Avrupa şirketlerinin toplantı odalarının soğuk camlarını da.
-        </p>
-      </div>
-
-      <!-- Card 2: Yapay Zeka Uygulamaları -->
-      <div class="neon-bleed-border rounded-[20px] p-10 flex flex-col items-center text-center gap-6 relative group overflow-hidden">
-        <div class="absolute inset-0 bg-gradient-to-br from-[var(--color-primary)]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
-        <svg class="w-12 h-12 text-[#A3E635]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-          <path stroke-linecap="round" stroke-linejoin="round" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z" />
-        </svg>
-        <h3 class="text-xl font-bold text-[hsl(210,10%,90%)]">Yapay Zeka Uygulamaları</h3>
-        <p class="text-sm text-[hsl(215,16%,58%)] leading-relaxed">
-          Son 1,5 senedir kesintisiz olarak yapay zeka danışmanlık şirketimle tıkır tıkır işleyen makineler gibi, yorulmadan çalışan sistemler kuruyorum.
-        </p>
-      </div>
-
-      <!-- Card 3: Kanıtı şimdiden paylaşıyorum -->
-      <div class="neon-bleed-border rounded-[20px] p-10 flex flex-col items-center text-center gap-6 relative group overflow-hidden">
-        <div class="absolute inset-0 bg-gradient-to-br from-[var(--color-primary)]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
-        <svg class="w-12 h-12 text-[#A3E635]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-          <path stroke-linecap="round" stroke-linejoin="round" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-        </svg>
-        <h3 class="text-xl font-bold text-[hsl(210,10%,90%)]">Kanıtı şimdiden paylaşıyorum</h3>
-        <p class="text-sm text-[hsl(215,16%,58%)] leading-relaxed">
-          Türkiye'nin en büyük 2.000 şirketini araştırdım ve sizinle paylaşıyorum. Yapay zeka ile reklam üretmek için hazırladığım prompt kütüphanem de elinizin altında.
-        </p>
-      </div>
-
-      <!-- Card 4: Riski ben alıyorum -->
-      <div class="neon-bleed-border rounded-[20px] p-10 flex flex-col items-center text-center gap-6 relative group overflow-hidden">
-        <div class="absolute inset-0 bg-gradient-to-br from-[var(--color-primary)]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
-        <svg class="w-12 h-12 text-[#A3E635]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-          <path stroke-linecap="round" stroke-linejoin="round" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
-        </svg>
-        <h3 class="text-xl font-bold text-[hsl(210,10%,90%)]">Riski ben alıyorum</h3>
-        <p class="text-sm text-[hsl(215,16%,58%)] leading-relaxed">
-          Projeden sonuç çıkmazsa ödediğiniz ücretin %50'sini geri alıyorsunuz. Risk sizin omzunuzda değil ben taşıyorum.
-        </p>
-      </div>
+    <div class="grid gap-5 md:grid-cols-2 max-w-5xl mx-auto">
+      {reasons.map((r) => (
+        <article class="santral-hat p-8 md:p-10">
+          <div class="flex items-start justify-between mb-6">
+            <svg class="h-8 w-8 text-[var(--color-patina-copper-bright)]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.6" set:html={r.svg} aria-hidden="true"></svg>
+            <span class="font-mono text-[0.68rem] tracking-[0.16em] uppercase text-[var(--color-paper-ecru-mute)]">Neden · {r.idx}</span>
+          </div>
+          <h3 class="santral-display text-xl md:text-[1.35rem] text-[var(--color-paper-ecru)]" style="font-weight:500;letter-spacing:-0.01em;">
+            {r.title}
+          </h3>
+          <p class="mt-4 santral-body text-[0.95rem] leading-[1.65]">
+            {r.text}
+          </p>
+        </article>
+      ))}
     </div>
   </div>
 </section>
-

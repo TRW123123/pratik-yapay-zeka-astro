@@ -14,22 +14,53 @@ const footerNavContactHref = buildContactHref({
 });
 ---
 
-<footer class="border-t border-[var(--color-border)] bg-[var(--color-surface-light)]">
-  <div class="container mx-auto px-4 py-12 lg:px-6">
-    <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-5">
-      <div class="space-y-4 lg:col-span-1">
-        <a href="/" class="flex items-center space-x-2" aria-label="Ana sayfa">
-          <div class="flex h-8 w-8 items-center justify-center rounded-lg border border-[var(--color-border)] bg-[var(--color-surface)]">
-            <div class="h-4 w-4 rounded-sm bg-[var(--color-primary)]"></div>
-          </div>
+<footer class="relative border-t border-[var(--color-hairline-strong)] bg-[var(--color-void-ink)] mt-24">
+  {/* Pre-footer CTA band */}
+  <div class="border-b border-[var(--color-hairline)]">
+    <div class="container mx-auto max-w-5xl px-6 py-14 lg:px-10 text-center">
+      <span class="santral-overline block mb-6">Sonraki Adım · No.09</span>
+      <h2 class="santral-display text-3xl leading-[1.1] md:text-5xl" style="font-weight:400;text-wrap:balance;">
+        İşletmenizi <em class="santral-italic">dönüştürmeye</em> hazır mısınız?
+      </h2>
+      <p class="mt-6 santral-body max-w-2xl mx-auto">
+        Hangi sürecinizin otomatikleşmeye en uygun olduğunu birlikte çıkaralım — ücretsiz, baskısız, 30 dakika.
+      </p>
+      <div class="mt-8 flex justify-center">
+        <a href={footerCtaHref} class="santral-salter santral-salter-copper">
+          Ücretsiz analiz alın
+          <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M5 12h14"/><path d="m13 6 6 6-6 6"/>
+          </svg>
         </a>
-        <p class="text-sm text-[var(--color-text-muted)]">
+      </div>
+    </div>
+  </div>
+
+  <div class="container mx-auto px-4 py-14 lg:px-6">
+    <div class="grid gap-10 md:grid-cols-2 lg:grid-cols-5">
+      <div class="space-y-5 lg:col-span-1">
+        <a href="/" class="flex items-center gap-3" aria-label="Ana sayfa">
+          <div class="flex h-9 w-9 items-center justify-center border border-[var(--color-hairline-strong)] bg-[var(--color-void-ink-deep)]" style="border-radius:2px">
+            <svg viewBox="0 0 24 24" class="h-5 w-5" aria-hidden="true">
+              <circle cx="12" cy="9" r="2.5" fill="none" stroke="currentColor" stroke-width="1.2" class="text-[var(--color-patina-copper-bright)]"/>
+              <path d="M12 11.5 L12 18 M8 18 L16 18" stroke="currentColor" stroke-width="1.2" class="text-[var(--color-patina-copper-bright)]" stroke-linecap="round"/>
+              <circle cx="8" cy="7" r="0.8" fill="currentColor" class="text-[var(--color-patina-copper-bright)]"/>
+              <circle cx="16" cy="7" r="0.8" fill="currentColor" class="text-[var(--color-patina-copper-bright)]"/>
+            </svg>
+          </div>
+          <span class="font-mono text-[0.72rem] tracking-[0.18em] uppercase text-[var(--color-paper-ecru-dim)]">Pratik · YZ</span>
+        </a>
+        <p class="text-sm text-[var(--color-paper-ecru-dim)] leading-relaxed">
           Büyüyen işletmeler için yapay zeka destekli otomasyon sistemleri.
         </p>
+        <div class="flex items-center gap-2 pt-2">
+          <span class="inline-block h-[6px] w-[6px] rounded-full bg-[var(--color-patina-copper-bright)]" style="animation: morse-pulse 2.6s ease-in-out infinite"></span>
+          <span class="font-mono text-[0.65rem] tracking-[0.16em] uppercase text-[var(--color-paper-ecru-mute)]">Hat · Açık</span>
+        </div>
       </div>
 
       <div class="space-y-4 lg:col-span-1">
-        <h3 class="text-sm font-semibold">Menu</h3>
+        <h3 class="santral-overline block">Menu</h3>
         <ul class="space-y-2 text-sm">
           <li><a href="/" class="transition-colors hover:text-[var(--color-primary-light)] text-[var(--color-text-muted)]">Ana Sayfa</a></li>
           <li><a href="/cozumler/" class="transition-colors hover:text-[var(--color-primary-light)] text-[var(--color-text-muted)]">Çözümler</a></li>
@@ -42,7 +73,7 @@ const footerNavContactHref = buildContactHref({
       </div>
 
       <div class="space-y-4 lg:col-span-1">
-        <h3 class="text-sm font-semibold">Çözümler ve Asistanlar</h3>
+        <h3 class="santral-overline block">Çözümler ve Asistanlar</h3>
         <ul class="space-y-2 text-sm">
           <li><a href="/crm-programi/" class="transition-colors hover:text-[var(--color-primary-light)] text-[var(--color-text-muted)]">Yapay Zeka CRM</a></li>
           <li><a href="/on-muhasebe-ve-fatura/" class="transition-colors hover:text-[var(--color-primary-light)] text-[var(--color-text-muted)]">Ön Muhasebe Botu</a></li>
@@ -60,7 +91,7 @@ const footerNavContactHref = buildContactHref({
       </div>
 
       <div class="space-y-4 lg:col-span-1">
-        <h3 class="text-sm font-semibold">Finans ve Hesaplama</h3>
+        <h3 class="santral-overline block">Finans ve Hesaplama</h3>
         <ul class="space-y-2 text-sm">
           <li><a href="/maas-hesaplama-motoru/" class="transition-colors hover:text-[var(--color-primary-light)] text-[var(--color-text-muted)]">Maaş Hesaplama</a></li>
           <li><a href="/bordro-hesaplama/" class="transition-colors hover:text-[var(--color-primary-light)] text-[var(--color-text-muted)]">Bordro Hesaplama</a></li>
@@ -86,7 +117,7 @@ const footerNavContactHref = buildContactHref({
       </div>
 
       <div class="space-y-4 lg:col-span-1">
-        <h3 class="text-sm font-semibold">Iletişim</h3>
+        <h3 class="santral-overline block">Iletişim</h3>
         <ul class="space-y-2 text-sm text-[var(--color-text-muted)]">
           <li class="font-medium text-[var(--color-text)]">ST-Automatisierung</li>
           <li>Heidestrasse 2<br />58239 Schwerte, Deutschland</li>
@@ -107,21 +138,12 @@ const footerNavContactHref = buildContactHref({
       </div>
     </div>
 
-    <div class="mt-8 border-t border-[var(--color-border)] pt-8">
-      <div class="flex flex-col items-center justify-between gap-4 md:flex-row">
-        <p class="text-sm text-[var(--color-text-muted)]">Işletmenizi dönüştürmeye hazır mısınız?</p>
-        <a href={footerCtaHref} class="rounded-lg bg-[var(--color-primary)] px-6 py-2.5 text-sm font-medium text-white transition-all duration-300 hover:bg-[var(--color-primary-dark)]">
-          Ücretsiz analiz alin
-        </a>
-      </div>
-    </div>
-
-    <div class="mt-8 border-t border-[var(--color-border)] pt-8">
-      <div class="flex flex-col items-center justify-between gap-4 md:flex-row">
-        <p class="text-sm text-[var(--color-text-muted)]">© {new Date().getFullYear()} Pratik Yapay Zeka. Tüm haklari saklidir.</p>
-        <div class="flex space-x-4">
-          <a href="/gizlilik/" class="text-sm text-[var(--color-text-muted)] transition-colors hover:text-[var(--color-primary-light)]">Gizlilik</a>
-          <a href="/kullanim-kosullari/" class="text-sm text-[var(--color-text-muted)] transition-colors hover:text-[var(--color-primary-light)]">Kullanim Kosullari</a>
+    <div class="mt-10 border-t border-[var(--color-hairline)] pt-6">
+      <div class="flex flex-col items-center justify-between gap-3 md:flex-row">
+        <p class="font-mono text-[0.72rem] tracking-[0.1em] text-[var(--color-paper-ecru-mute)]">© {new Date().getFullYear()} Pratik Yapay Zeka · ST-Automatisierung · Tüm hakları saklıdır</p>
+        <div class="flex gap-5">
+          <a href="/gizlilik/" class="font-mono text-[0.72rem] tracking-[0.1em] text-[var(--color-paper-ecru-mute)] transition-colors hover:text-[var(--color-patina-copper-bright)]">Gizlilik</a>
+          <a href="/kullanim-kosullari/" class="font-mono text-[0.72rem] tracking-[0.1em] text-[var(--color-paper-ecru-mute)] transition-colors hover:text-[var(--color-patina-copper-bright)]">Kullanım Koşulları</a>
         </div>
       </div>
     </div>

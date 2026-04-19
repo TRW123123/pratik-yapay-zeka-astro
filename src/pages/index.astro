@@ -7,11 +7,11 @@ import Timeline from '../components/Timeline.astro';
 import MiniCases from '../components/MiniCases.astro';
 
 const faqItems = [
-  { question: 'Kurulum ne kadar sürer?', answer: 'Genellikle birkaç gün ile birkaç hafta arasinda degisir. Basit akışları hızlı, çok sistemli kurulumlari daha aşamalı ilerletiyoruz.' },
-  { question: 'Veri guvenligi nasıl sağlanır?', answer: 'Müşteri verileri yalnizca gerekli akislar için kullanilir. Yetki, erişim ve veri akışı proje yapisina gore sinirlandirilir.' },
-  { question: 'Teknik ekip gerekiyor mu?', answer: 'Hayır. Teknik koordinasyonu biz ustlenebiliriz. Sizden asıl gereken, sürecin nasıl isledigini ve nerede tıkandığını gostermenizdir.' },
-  { question: 'Sadece satış ve pazarlama mi yapiyorsunuz?', answer: 'Hayır. Satış ve pazarlama güçlü alanlarimizdan biri olsa da CRM, finans, belge akışı, destek, IK ve operasyon sureclerinde de calisiyoruz.' },
-  { question: 'Fiyat nasıl belirlenir?', answer: 'Fiyat, sorunun buyuklugune, temas edilen sistem sayisina ve ne kadar özel akisa ihtiyac olduguna gore belirlenir.' },
+  { question: 'Kurulum ne kadar sürer?', answer: 'Genellikle birkaç gün ile birkaç hafta arasında değişir. Basit akışları hızlı, çok sistemli kurulumları daha aşamalı ilerletiyoruz.' },
+  { question: 'Veri güvenliği nasıl sağlanır?', answer: 'Müşteri verileri yalnızca gerekli akışlar için kullanılır. Yetki, erişim ve veri akışı proje yapısına göre sınırlandırılır.' },
+  { question: 'Teknik ekip gerekiyor mu?', answer: 'Hayır. Teknik koordinasyonu biz üstlenebiliriz. Sizden asıl gereken, sürecin nasıl işlediğini ve nerede tıkandığını göstermenizdir.' },
+  { question: 'Sadece satış ve pazarlama mı yapıyorsunuz?', answer: 'Hayır. Satış ve pazarlama güçlü alanlarımızdan biri olsa da CRM, finans, belge akışı, destek, İK ve operasyon süreçlerinde de çalışıyoruz.' },
+  { question: 'Fiyat nasıl belirlenir?', answer: 'Fiyat, sorunun büyüklüğüne, temas edilen sistem sayısına ve ne kadar özel akışa ihtiyaç olduğuna göre belirlenir.' },
 ];
 
 const faqSchema = {
@@ -29,18 +29,34 @@ const faqSchema = {
 ---
 
 <BaseLayout
-  title="Pratik Yapay Zeka - Is Otomasyonu ve Yapay Zeka Sistemleri"
-  description="Satış, pazarlama, CRM, finans ve operasyon süreçlerini yapay zeka destekli akislara donusturen otomasyon sistemleri kuruyoruz."
+  title="Pratik Yapay Zeka — İş Otomasyonu ve Yapay Zeka Sistemleri"
+  description="Satış, pazarlama, CRM, finans ve operasyon süreçlerini yapay zeka destekli akışlara dönüştüren otomasyon sistemleri kuruyoruz."
   ogImage="/og-homepage.jpg"
 >
   <Hero />
 
-  <section class="relative z-10 border-b border-[var(--color-border)] py-16">
-    <div class="container mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
-      <h2 class="mb-6 text-2xl font-extrabold tracking-tight text-[var(--color-text)] md:text-3xl">Yapay Zeka ile Is Otomasyonu Nedir?</h2>
-      <div class="space-y-4 text-base leading-relaxed text-[var(--color-text-muted)] md:text-lg">
-        <p>Yapay zeka ile is otomasyonu, işletmelerin satış, pazarlama, CRM, finans, destek ve operasyon sureclerindeki tekrar eden adımları daha akıllı sistemlerle yurutmesidir. Bu sistemler; lead araştırması, teklif ve takip akışları, belge okuma, fatura ve mutabakat süreçleri, personel destek soruları ve sohbet tabanlı operasyon gibi alanlarda insan üzerindeki tekrar yukunu azaltır.</p>
-        <p>Pratik Yapay Zeka olarak, Türkiye ve Almanya'daki KOBI'lere n8n, Make ve özel yapay zeka ajanlari ile uctan uca otomasyon sistemleri kuruyoruz. Odagimiz tek bir kanal değil; hangi sürecin tekrarlı, dağınık ve kisilere bagli kaldigini bulup onu daha görünür, daha hızlı ve daha olceklenebilir hale getirmektir.</p>
+  <section data-santral-reveal class="relative border-t border-[var(--color-hairline)] py-20 md:py-28">
+    <div class="container mx-auto max-w-6xl px-6 lg:px-10">
+      <div class="flex flex-col gap-10 md:flex-row md:gap-16">
+        <aside class="md:w-[260px] md:shrink-0 md:pt-2">
+          <span class="santral-overline block">Tanım · 01</span>
+          <div class="mt-4 flex items-center gap-3" aria-hidden="true">
+            <span class="h-[1px] w-10 bg-[var(--color-patina-copper-bright)]"></span>
+            <span class="h-[1px] flex-1 bg-[var(--color-hairline-strong)]"></span>
+          </div>
+          <p class="mt-5 font-mono text-[0.72rem] leading-relaxed tracking-[0.14em] uppercase text-[var(--color-paper-ecru-mute)]">
+            Nedir · Kime · Neden
+          </p>
+        </aside>
+        <div class="flex-1 max-w-3xl">
+          <h2 class="santral-display text-3xl leading-[1.1] md:text-5xl" style="font-weight:400;text-wrap:balance;">
+            Yapay Zeka ile <em class="santral-italic">İş Otomasyonu</em> Nedir?
+          </h2>
+          <div class="mt-8 space-y-5 santral-body text-base md:text-lg">
+            <p>Yapay zeka ile iş otomasyonu, işletmelerin satış, pazarlama, CRM, finans, destek ve operasyon süreçlerindeki tekrar eden adımları daha akıllı sistemlerle yürütmesidir. Bu sistemler; lead araştırması, teklif ve takip akışları, belge okuma, fatura ve mutabakat süreçleri, personel destek soruları ve sohbet tabanlı operasyon gibi alanlarda insan üzerindeki tekrar yükünü azaltır.</p>
+            <p>Pratik Yapay Zeka olarak, Türkiye ve Almanya'daki KOBİ'lere n8n, Make ve özel yapay zeka ajanları ile uçtan uca otomasyon sistemleri kuruyoruz. Odağımız tek bir kanal değil; hangi sürecin tekrarlı, dağınık ve kişilere bağlı kaldığını bulup onu daha görünür, daha hızlı ve daha ölçeklenebilir hale getirmektir.</p>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -50,17 +66,32 @@ const faqSchema = {
   <Timeline />
   <MiniCases />
 
-  <section class="relative z-10 border-t border-[var(--color-border)] bg-[#0F151B]/30 py-24">
-    <div class="container mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
-      <h2 class="mb-16 text-center text-3xl font-extrabold tracking-tight text-[var(--color-text)] md:text-5xl">Sikca Sorulan Sorular</h2>
-      <div class="space-y-4">
-        {faqItems.map((faq) => (
-          <details class="group overflow-hidden rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface-light)]/40 backdrop-blur-md transition-colors hover:border-[var(--color-primary)]/30">
-            <summary class="flex cursor-pointer items-center justify-between p-6 text-lg font-bold text-[var(--color-text)] transition-colors group-open:text-[var(--color-primary-light)]">
-              {faq.question}
-              <svg xmlns="http://www.w3.org/2000/svg" class="ml-4 h-5 w-5 shrink-0 text-[var(--color-text-muted)] transition-transform group-open:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" /></svg>
+  <section data-santral-reveal class="relative border-t border-[var(--color-hairline)] py-24 md:py-32">
+    <div class="container mx-auto max-w-5xl px-6 lg:px-10">
+      <div class="mb-12 flex items-center gap-4">
+        <span class="h-[1px] w-10 bg-[var(--color-hairline-strong)]"></span>
+        <span class="santral-overline">Talimatname · 06 — Sık Sorulanlar</span>
+      </div>
+      <h2 class="mb-12 santral-display text-3xl leading-[1.1] md:text-5xl" style="font-weight:400;text-wrap:balance;">
+        Sıkça Sorulan <em class="santral-italic">Sorular</em>
+      </h2>
+      <div class="space-y-3">
+        {faqItems.map((faq, i) => (
+          <details class="santral-hat group overflow-hidden">
+            <summary class="flex cursor-pointer items-start justify-between gap-4 p-6 transition-colors list-none">
+              <span class="flex items-start gap-4">
+                <span class="font-mono text-[0.72rem] tracking-[0.14em] text-[var(--color-paper-ecru-mute)] pt-1 shrink-0">
+                  {String(i + 1).padStart(2, '0')}
+                </span>
+                <span class="santral-display text-base md:text-lg text-[var(--color-paper-ecru)] group-open:text-[var(--color-patina-copper-bright)] transition-colors" style="font-weight:500">
+                  {faq.question}
+                </span>
+              </span>
+              <svg class="h-5 w-5 shrink-0 text-[var(--color-paper-ecru-mute)] transition-transform group-open:rotate-45" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m-8-8h16" />
+              </svg>
             </summary>
-            <div class="px-6 pb-6 text-base leading-relaxed text-[var(--color-text-muted)]">
+            <div class="px-6 pb-6 pl-16 text-[0.95rem] leading-[1.72] text-[var(--color-paper-ecru-dim)]">
               {faq.answer}
             </div>
           </details>

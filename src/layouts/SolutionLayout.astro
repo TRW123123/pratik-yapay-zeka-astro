@@ -72,7 +72,7 @@ const breadcrumbs = [
 ];
 
 const themeColors: Record<string, { primary: string; accent: string; glow: string }> = {
-  default: { primary: '#A3E635', accent: '#84CC16', glow: 'rgba(163, 230, 53, 0.15)' },
+  default: { primary: 'var(--color-patina-copper-bright)', accent: 'var(--color-patina-copper)', glow: 'rgba(224, 150, 84, 0.15)' },
 };
 
 const currentTheme = themeColors[sectorTheme] || themeColors.default;
@@ -246,9 +246,9 @@ const serviceSchema = {
   <style is:inline>
     .theme-text { color: var(--themePrimary); }
     .theme-border { border-color: var(--themePrimary); }
-    .theme-bg { background-color: var(--themePrimary); color: #0B0F14 !important; }
+    .theme-bg { background-color: var(--themePrimary); color: var(--color-void-ink-deep) !important; }
     .theme-glow-bg { background: radial-gradient(circle, var(--themeGlow) 0%, transparent 70%); }
-    .theme-btn { background-color: var(--themePrimary); color: #0B0F14; }
+    .theme-btn { background-color: var(--themePrimary); color: var(--color-void-ink-deep); }
     .theme-btn:hover { background-color: var(--themeAccent); box-shadow: 0 0 25px var(--themeGlow); }
 
     body {
@@ -258,17 +258,17 @@ const serviceSchema = {
   </style>
 
   <main
-    class="relative overflow-hidden bg-[#0B0F14] text-white selection:bg-[var(--themePrimary)] selection:text-black"
+    class="relative overflow-hidden bg-[var(--color-void-ink-deep)] text-[var(--color-paper-ecru)] selection:bg-[var(--themePrimary)] selection:text-[var(--color-void-ink-deep)]"
     style={`--themePrimary: ${currentTheme.primary}; --themeAccent: ${currentTheme.accent}; --themeGlow: ${currentTheme.glow}; --color-primary: ${currentTheme.primary}; --color-primary-dark: ${currentTheme.accent};`}
   >
     <article>
       <section class="relative overflow-hidden py-32 lg:py-48">
-        <div class="theme-glow-bg pointer-events-none absolute left-1/2 top-1/4 h-[1000px] w-[1000px] -translate-x-1/2 rounded-full blur-[160px] opacity-50"></div>
+        <div class="theme-glow-bg pointer-events-none absolute left-1/2 top-1/4 h-[1000px] w-[1000px] -translate-x-1/2 rounded-sm blur-[160px] opacity-50"></div>
 
         <div class="container relative z-10 mx-auto max-w-5xl px-4 text-center sm:px-6 lg:px-8">
-          <div class="mb-8 inline-flex items-center gap-3 rounded-full border border-white/10 bg-white/5 px-5 py-2.5 backdrop-blur-md">
-            <span class="theme-bg h-2.5 w-2.5 animate-pulse rounded-full shadow-[0_0_10px_var(--themePrimary)]"></span>
-            <span class="text-sm font-bold uppercase tracking-[0.2em] text-[#E2E8F0]">
+          <div class="mb-8 inline-flex items-center gap-3 rounded-sm border border-[var(--color-hairline-strong)] bg-white/5 px-5 py-2.5 backdrop-blur-md">
+            <span class="theme-bg h-2.5 w-2.5 animate-pulse rounded-sm shadow-[0_0_10px_var(--themePrimary)]"></span>
+            <span class="text-sm font-bold uppercase tracking-[0.2em] text-[var(--color-paper-ecru)]">
               {sectorTheme !== 'default' ? `${sectorTheme.split('-').join(' ')} çözümü` : 'Yapay Zeka Otomasyonu'}
             </span>
           </div>
@@ -276,13 +276,13 @@ const serviceSchema = {
           <h1 class="mb-8 bg-gradient-to-br from-white via-gray-200 to-gray-500 bg-clip-text text-3xl font-black leading-[1.1] tracking-tight text-transparent md:text-5xl lg:text-5xl xl:text-5xl">
             {heroTitle}
           </h1>
-          <p class="mx-auto mb-12 max-w-3xl text-base font-medium leading-relaxed text-gray-400 md:text-lg lg:text-xl">
+          <p class="mx-auto mb-12 max-w-3xl text-base font-medium leading-relaxed text-[var(--color-paper-ecru-dim)] md:text-lg lg:text-xl">
             {heroSubtitle}
           </p>
 
           <div class="flex flex-col items-center justify-center gap-6 sm:flex-row">
-            <a href={contactHref('solution-hero-cta')} class="theme-bg group relative overflow-hidden rounded-2xl px-10 py-5 font-bold transition-all duration-300 hover:-translate-y-1" style="box-shadow: 0 0 25px var(--themeGlow);">
-              <span class="relative z-10 flex items-center justify-center gap-3 text-lg text-black">
+            <a href={contactHref('solution-hero-cta')} class="theme-bg group relative overflow-hidden rounded-sm px-10 py-5 font-bold transition-all duration-300 hover:-translate-y-1" style="box-shadow: 0 0 25px var(--themeGlow);">
+              <span class="relative z-10 flex items-center justify-center gap-3 text-lg text-[var(--color-void-ink-deep)]">
                 Sistemi kurun
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                   <path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
@@ -299,7 +299,7 @@ const serviceSchema = {
             <h2 class="mb-4 bg-gradient-to-r from-white to-gray-400 bg-clip-text text-3xl font-black tracking-tight text-transparent md:text-5xl">
               {benefitsTitle || 'Olculebilir operasyonel kazanimlar'}
             </h2>
-            <p class="max-w-2xl text-lg font-medium text-gray-400">
+            <p class="max-w-2xl text-lg font-medium text-[var(--color-paper-ecru-dim)]">
               B2B sureclerinize entegre edilen yapay zekanin gerçek dünya sonuçları.
             </p>
           </div>
@@ -312,11 +312,11 @@ const serviceSchema = {
               const remainingText = safeBenefit.replace(massiveMetric, '').trim();
 
               return (
-                <div class="group relative flex h-full flex-col overflow-hidden rounded-[2rem] border border-white/[0.05] bg-[#FFFFFF]/[0.02] p-8 backdrop-blur-[24px] saturate-[150%] transition-all duration-500 hover:-translate-y-1 hover:border-white/[0.1] hover:bg-[#FFFFFF]/[0.04] lg:p-10">
+                <div class="group relative flex h-full flex-col overflow-hidden rounded-sm border border-white/[0.05] bg-[#FFFFFF]/[0.02] p-8 backdrop-blur-[24px] saturate-[150%] transition-all duration-500 hover:-translate-y-1 hover:border-white/[0.1] hover:bg-[#FFFFFF]/[0.04] lg:p-10">
                   <div class="pointer-events-none absolute -inset-px opacity-0 blur-2xl transition-opacity duration-1000 group-hover:opacity-100" style="background: radial-gradient(circle at top right, var(--themeGlow) 0%, transparent 60%);"></div>
 
                   <div class="relative z-10 flex h-full flex-col">
-                    <div class="theme-text relative mb-6 flex h-14 w-14 items-center justify-center rounded-2xl border border-white/10 bg-black/50 shadow-lg">
+                    <div class="theme-text relative mb-6 flex h-14 w-14 items-center justify-center rounded-sm border border-[var(--color-hairline-strong)] bg-black/50 shadow-lg">
                       {i % 3 === 0 && <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" /></svg>}
                       {i % 3 === 1 && <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>}
                       {i % 3 === 2 && <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" /></svg>}
@@ -325,10 +325,10 @@ const serviceSchema = {
                     {massiveMetric ? (
                       <>
                         <div class="theme-text mb-4 text-4xl font-black tracking-tighter md:text-5xl lg:text-6xl">{massiveMetric}</div>
-                        <p class="flex-grow text-base font-medium leading-relaxed text-gray-300 lg:text-lg">{remainingText}</p>
+                        <p class="flex-grow text-base font-medium leading-relaxed text-[var(--color-paper-ecru-dim)] lg:text-lg">{remainingText}</p>
                       </>
                     ) : (
-                      <p class="flex-grow text-base font-medium leading-relaxed text-gray-300 lg:text-lg" set:html={safeBenefit.replace(/(\d+\/\d+|\+?%\d+(?:'[a-z]+|\.\d+)?|\d+x|\d+\+? saat|\d+ dakika|\d+\+?|%[0-9.]+)/gi, '<strong class="theme-text text-3xl font-black block mb-2">$1</strong>')} />
+                      <p class="flex-grow text-base font-medium leading-relaxed text-[var(--color-paper-ecru-dim)] lg:text-lg" set:html={safeBenefit.replace(/(\d+\/\d+|\+?%\d+(?:'[a-z]+|\.\d+)?|\d+x|\d+\+? saat|\d+ dakika|\d+\+?|%[0-9.]+)/gi, '<strong class="theme-text text-3xl font-black block mb-2">$1</strong>')} />
                     )}
                   </div>
                 </div>
@@ -338,21 +338,21 @@ const serviceSchema = {
         </div>
       </section>
 
-      <section class="relative z-10 border-y border-white/5 bg-[#0F151B]/50 py-24">
+      <section class="relative z-10 border-y border-[var(--color-hairline)] bg-[var(--color-void-ink)]/50 py-24">
         <div class="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <h2 class="mb-16 text-center text-3xl font-black tracking-tight text-white md:text-5xl">Mevcut sistemdeki kanama noktalari</h2>
+          <h2 class="mb-16 text-center text-3xl font-black tracking-tight text-[var(--color-paper-ecru)] md:text-5xl">Mevcut sistemdeki kanama noktalari</h2>
 
           <div class="grid auto-rows-fr grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
             {problems.map((problem) => (
-              <div class="group relative flex flex-col items-start justify-start gap-4 overflow-hidden rounded-2xl border border-red-900/30 bg-[#170505]/60 p-8 backdrop-blur-md transition-colors hover:border-red-800/50">
+              <div class="group relative flex flex-col items-start justify-start gap-4 overflow-hidden rounded-sm border border-red-900/30 bg-[#1F1214]/60 p-8 backdrop-blur-md transition-colors hover:border-red-800/50">
                 <div class="absolute right-0 top-0 p-6 text-red-500 opacity-[0.05] transition-opacity group-hover:opacity-10">
                   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" class="h-32 w-32" fill="currentColor"><path d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm0,192a88,88,0,1,1,88-88A88.1,88.1,0,0,1,128,216Zm-8-80V80a8,8,0,0,1,16,0v56a8,8,0,0,1-16,0Zm20,36a12,12,0,1,1-12-12A12,12,0,0,1,140,172Z"></path></svg>
                 </div>
 
-                <div class="relative z-10 flex shrink-0 items-center justify-center rounded-xl border border-red-500/20 bg-red-500/10 p-3 text-red-500">
+                <div class="relative z-10 flex shrink-0 items-center justify-center rounded-sm border border-red-500/20 bg-red-500/10 p-3 text-red-500">
                   <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" /></svg>
                 </div>
-                <p class="relative z-10 text-lg font-medium leading-relaxed text-gray-300">{problem}</p>
+                <p class="relative z-10 text-lg font-medium leading-relaxed text-[var(--color-paper-ecru-dim)]">{problem}</p>
               </div>
             ))}
           </div>
@@ -363,44 +363,44 @@ const serviceSchema = {
         <div class="container relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div class="mb-20 text-center">
             <h2 class="mb-4 bg-gradient-to-r from-white to-gray-400 bg-clip-text text-3xl font-black tracking-tight text-transparent md:text-5xl">{processTitle}</h2>
-            <p class="mx-auto max-w-2xl text-lg font-medium text-gray-400">Tahmine değil, veriye dayali mimari kurulum süreci.</p>
+            <p class="mx-auto max-w-2xl text-lg font-medium text-[var(--color-paper-ecru-dim)]">Tahmine değil, veriye dayali mimari kurulum süreci.</p>
           </div>
 
           <div class="relative grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4 lg:gap-4">
             <div class="absolute left-[12%] right-[12%] top-[28px] hidden h-[2px] bg-gradient-to-r from-transparent via-white/10 to-transparent lg:block"></div>
 
             {processSteps.map((step, i) => (
-              <div class="group relative flex h-full flex-col items-start border-l-2 border-white/5 pl-8 pt-8 text-left lg:items-center lg:border-l-0 lg:pl-0 lg:pt-0 lg:text-center">
+              <div class="group relative flex h-full flex-col items-start border-l-2 border-[var(--color-hairline)] pl-8 pt-8 text-left lg:items-center lg:border-l-0 lg:pl-0 lg:pt-0 lg:text-center">
                 <div class="absolute left-[-2px] z-10 lg:relative lg:left-auto lg:top-[-4px] lg:mb-8">
-                  <div class="relative flex h-14 w-14 items-center justify-center overflow-hidden rounded-full border-2 border-white/10 bg-[#0B0F14] text-xl font-black text-white shadow-lg transition-all duration-500 group-hover:-translate-y-1 group-hover:border-[var(--themePrimary)] group-hover:shadow-[0_0_20px_var(--themeGlow)]">
+                  <div class="relative flex h-14 w-14 items-center justify-center overflow-hidden rounded-sm border-2 border-[var(--color-hairline-strong)] bg-[var(--color-void-ink-deep)] text-xl font-black text-[var(--color-paper-ecru)] shadow-lg transition-all duration-500 group-hover:-translate-y-1 group-hover:border-[var(--themePrimary)] group-hover:shadow-[0_0_20px_var(--themeGlow)]">
                     <div class="absolute inset-0 opacity-0 transition-opacity group-hover:opacity-20" style="background-color: var(--themePrimary);"></div>
                     <span class="relative z-10">{i + 1}</span>
                   </div>
                 </div>
 
-                <h3 class="mb-3 text-2xl font-black text-white">{step.title}</h3>
-                <p class="font-medium leading-relaxed text-gray-400">{step.description}</p>
+                <h3 class="mb-3 text-2xl font-black text-[var(--color-paper-ecru)]">{step.title}</h3>
+                <p class="font-medium leading-relaxed text-[var(--color-paper-ecru-dim)]">{step.description}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      <section class="relative z-10 border-t border-white/5 bg-[#0F151B]/30 py-24">
+      <section class="relative z-10 border-t border-[var(--color-hairline)] bg-[var(--color-void-ink)]/30 py-24">
         <div class="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <h2 class="mb-16 text-center text-3xl font-black tracking-tight text-white drop-shadow-md md:text-5xl">{featuresTitle}</h2>
+          <h2 class="mb-16 text-center text-3xl font-black tracking-tight text-[var(--color-paper-ecru)] drop-shadow-md md:text-5xl">{featuresTitle}</h2>
 
           <div class="grid auto-rows-fr grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
             {features.map((feature, index) => (
-              <div class={`group relative flex h-full flex-col overflow-hidden rounded-[2rem] border border-white/5 bg-[#FFFFFF]/[0.02] p-8 backdrop-blur-md transition-all duration-500 hover:border-white/10 lg:p-10 ${index === 0 ? 'md:col-span-2' : ''} ${index === 3 && features.length > 3 ? 'md:col-span-2 lg:col-span-1' : ''}`}>
+              <div class={`group relative flex h-full flex-col overflow-hidden rounded-sm border border-[var(--color-hairline)] bg-[#FFFFFF]/[0.02] p-8 backdrop-blur-md transition-all duration-500 hover:border-[var(--color-hairline-strong)] lg:p-10 ${index === 0 ? 'md:col-span-2' : ''} ${index === 3 && features.length > 3 ? 'md:col-span-2 lg:col-span-1' : ''}`}>
                 <div class="absolute left-0 top-0 h-1 w-full opacity-0 transition-opacity group-hover:opacity-100" style="background-color: var(--themePrimary);"></div>
 
-                <div class="mb-6 flex h-12 w-12 items-center justify-center rounded-xl border border-white/5 bg-white/5 transition-colors group-hover:bg-white/10" style="color: var(--themePrimary);">
+                <div class="mb-6 flex h-12 w-12 items-center justify-center rounded-sm border border-[var(--color-hairline)] bg-white/5 transition-colors group-hover:bg-white/10" style="color: var(--themePrimary);">
                   <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="currentColor" viewBox="0 0 256 256"><path d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm45.66,85.66-56,56a8,8,0,0,1-11.32,0l-24-24a8,8,0,0,1,11.32-11.32L112,148.69l50.34-50.35a8,8,0,0,1,11.32,11.32Z"></path></svg>
                 </div>
 
-                <h3 class="mb-4 text-2xl font-black text-white">{feature.title}</h3>
-                <p class="text-lg font-medium leading-relaxed text-gray-400">{feature.description}</p>
+                <h3 class="mb-4 text-2xl font-black text-[var(--color-paper-ecru)]">{feature.title}</h3>
+                <p class="text-lg font-medium leading-relaxed text-[var(--color-paper-ecru-dim)]">{feature.description}</p>
               </div>
             ))}
           </div>
@@ -408,17 +408,17 @@ const serviceSchema = {
       </section>
 
       {faqs.length > 0 && (
-        <section class="relative z-10 border-t border-white/5 bg-[#0F151B]/30 py-24">
+        <section class="relative z-10 border-t border-[var(--color-hairline)] bg-[var(--color-void-ink)]/30 py-24">
           <div class="container mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
-            <h2 class="mb-16 text-center text-3xl font-black tracking-tight text-white md:text-5xl">Sikca sorulan sorular</h2>
+            <h2 class="mb-16 text-center text-3xl font-black tracking-tight text-[var(--color-paper-ecru)] md:text-5xl">Sikca sorulan sorular</h2>
             <div class="space-y-4">
               {faqs.map((faq) => (
-                <details class="group overflow-hidden rounded-2xl border border-white/5 bg-[#FFFFFF]/[0.02] backdrop-blur-md transition-colors hover:border-white/10">
-                  <summary class="flex cursor-pointer items-center justify-between p-6 text-lg font-bold text-white transition-colors group-open:text-[var(--themePrimary)]">
+                <details class="group overflow-hidden rounded-sm border border-[var(--color-hairline)] bg-[#FFFFFF]/[0.02] backdrop-blur-md transition-colors hover:border-[var(--color-hairline-strong)]">
+                  <summary class="flex cursor-pointer items-center justify-between p-6 text-lg font-bold text-[var(--color-paper-ecru)] transition-colors group-open:text-[var(--themePrimary)]">
                     {faq.question}
                     <svg xmlns="http://www.w3.org/2000/svg" class="ml-4 h-5 w-5 shrink-0 transition-transform group-open:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" /></svg>
                   </summary>
-                  <div class="px-6 pb-6 text-base leading-relaxed text-gray-400">{faq.answer}</div>
+                  <div class="px-6 pb-6 text-base leading-relaxed text-[var(--color-paper-ecru-dim)]">{faq.answer}</div>
                 </details>
               ))}
             </div>
@@ -438,24 +438,24 @@ const serviceSchema = {
 
       <section class="relative z-10 py-16 lg:py-20">
         <div class="container mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
-          <div class="rounded-[2rem] border border-white/10 bg-white/[0.02] p-8 backdrop-blur-xl lg:p-10">
+          <div class="rounded-sm border border-[var(--color-hairline-strong)] bg-white/[0.02] p-8 backdrop-blur-xl lg:p-10">
             <div class="flex flex-col gap-8 lg:flex-row lg:items-start lg:justify-between">
               <div class="max-w-2xl">
-                <div class="inline-flex rounded-full border border-[var(--themePrimary)]/20 bg-[var(--themePrimary)]/10 px-3 py-1 text-xs font-semibold uppercase tracking-[0.16em] text-[var(--themePrimary)]">
+                <div class="inline-flex rounded-sm border border-[var(--themePrimary)]/20 bg-[var(--themePrimary)]/10 px-3 py-1 text-xs font-semibold uppercase tracking-[0.16em] text-[var(--themePrimary)]">
                   {currentOffer.badge}
                 </div>
-                <h2 class="mt-5 text-3xl font-black tracking-tight text-white">{currentOffer.title}</h2>
-                <p class="mt-4 text-base leading-relaxed text-gray-400">{currentOffer.description}</p>
+                <h2 class="mt-5 text-3xl font-black tracking-tight text-[var(--color-paper-ecru)]">{currentOffer.title}</h2>
+                <p class="mt-4 text-base leading-relaxed text-[var(--color-paper-ecru-dim)]">{currentOffer.description}</p>
               </div>
 
-              <a href={contactHref('solution-offer-panel')} class="inline-flex items-center justify-center rounded-2xl bg-[var(--themePrimary)] px-6 py-4 text-center text-base font-black text-black transition hover:-translate-y-0.5 hover:bg-[var(--themeAccent)]">
+              <a href={contactHref('solution-offer-panel')} class="inline-flex items-center justify-center rounded-sm bg-[var(--themePrimary)] px-6 py-4 text-center text-base font-black text-[var(--color-void-ink-deep)] transition hover:-translate-y-0.5 hover:bg-[var(--themeAccent)]">
                 {currentOffer.cta}
               </a>
             </div>
 
             <div class="mt-8 grid gap-4 md:grid-cols-3">
               {currentOffer.bullets.map((item) => (
-                <div class="rounded-2xl border border-white/8 bg-black/20 p-5 text-sm leading-relaxed text-gray-300">
+                <div class="rounded-sm border border-[var(--color-hairline-strong)] bg-black/20 p-5 text-sm leading-relaxed text-[var(--color-paper-ecru-dim)]">
                   {item}
                 </div>
               ))}
@@ -468,14 +468,14 @@ const serviceSchema = {
         <div class="theme-bg pointer-events-none absolute inset-0 opacity-[0.02]"></div>
 
         <div class="container relative z-10 mx-auto max-w-5xl px-4 text-center">
-          <div class="group relative overflow-hidden rounded-[3rem] border border-white/10 bg-[#FFFFFF]/[0.02] p-12 shadow-2xl backdrop-blur-2xl lg:p-24">
+          <div class="group relative overflow-hidden rounded-sm border border-[var(--color-hairline-strong)] bg-[#FFFFFF]/[0.02] p-12 shadow-2xl backdrop-blur-2xl lg:p-24">
             <div class="pointer-events-none absolute inset-0 opacity-0 blur-3xl transition-opacity duration-1000 group-hover:opacity-100" style="background: radial-gradient(circle at center, var(--themeGlow) 0%, transparent 70%);"></div>
 
-            <h2 class="relative z-10 mb-8 text-3xl font-black leading-[1.1] tracking-tight text-white md:text-4xl lg:text-5xl">{finalCtaTitle}</h2>
-            <p class="relative z-10 mx-auto mb-12 max-w-3xl text-lg font-medium leading-relaxed text-gray-400 md:text-xl">{finalCtaSubtitle}</p>
+            <h2 class="relative z-10 mb-8 text-3xl font-black leading-[1.1] tracking-tight text-[var(--color-paper-ecru)] md:text-4xl lg:text-5xl">{finalCtaTitle}</h2>
+            <p class="relative z-10 mx-auto mb-12 max-w-3xl text-lg font-medium leading-relaxed text-[var(--color-paper-ecru-dim)] md:text-xl">{finalCtaSubtitle}</p>
 
             <div class="relative z-10 flex flex-col items-center justify-center gap-6 sm:flex-row">
-              <a href={contactHref('solution-final-cta')} class="theme-bg group relative inline-flex items-center gap-3 rounded-2xl px-12 py-6 text-xl font-black text-black transition-all duration-500 hover:-translate-y-1" style="box-shadow: 0 0 30px var(--themeGlow);">
+              <a href={contactHref('solution-final-cta')} class="theme-bg group relative inline-flex items-center gap-3 rounded-sm px-12 py-6 text-xl font-black text-[var(--color-void-ink-deep)] transition-all duration-500 hover:-translate-y-1" style="box-shadow: 0 0 30px var(--themeGlow);">
                 Projeyi başlat
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 transition-transform group-hover:-translate-y-1 group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                   <path stroke-linecap="round" stroke-linejoin="round" d="M13 5l7 7-7 7M5 5l7 7-7 7" />

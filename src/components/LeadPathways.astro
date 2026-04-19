@@ -15,80 +15,87 @@ interface Props {
 }
 
 const {
-  title = 'Bir Sonraki Mantikli Adım',
-  description = 'Bu sayfadan sonra ziyaretciyi ya guvene ya da basvuruya tasiyan net bir yol gostermek gerekir.',
+  title = 'Bir Sonraki Mantıklı Adım',
+  description = 'Bu sayfadan sonra ziyaretçiyi ya güvene ya da başvuruya taşıyan net bir yol göstermek gerekir.',
   caseStudies,
   nextSteps,
   contactHref,
 } = Astro.props;
 ---
 
-<section class="py-24 lg:py-28 relative z-10 border-t border-white/5 bg-[#0F151B]/35">
-  <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
+<section data-santral-reveal class="relative border-t border-[var(--color-hairline)] py-24 md:py-32">
+  <div class="container mx-auto max-w-6xl px-6 lg:px-10">
+    <div class="mb-12 flex items-center gap-4">
+      <span class="h-[1px] w-10 bg-[var(--color-hairline-strong)]"></span>
+      <span class="santral-overline">Lead · 07 — Sonraki Adım</span>
+    </div>
     <div class="max-w-3xl mb-14">
-      <p class="text-sm uppercase tracking-[0.2em] text-[var(--color-primary)] font-semibold mb-4">Lead yolu</p>
-      <h2 class="text-3xl md:text-5xl font-black tracking-tight text-white">{title}</h2>
-      <p class="mt-5 text-lg leading-relaxed text-gray-400">{description}</p>
+      <h2 class="santral-display text-3xl leading-[1.1] md:text-5xl" style="font-weight:400;text-wrap:balance;">{title}</h2>
+      <p class="mt-6 santral-body text-lg">{description}</p>
     </div>
 
-    <div class="grid gap-8 lg:grid-cols-[1fr_1fr_0.8fr]">
-      <div class="rounded-[2rem] border border-white/8 bg-white/[0.02] p-8 backdrop-blur-xl">
+    <div class="grid gap-5 lg:grid-cols-3">
+      {/* Col 1 — Güven · Vaka */}
+      <div class="santral-hat p-7 lg:p-8">
         <div class="flex items-center justify-between gap-4 mb-6">
-          <h3 class="text-2xl font-black text-white">Guven için vaka çalışmaları</h3>
-          <a href="/vaka-calismalari/" class="text-sm font-semibold text-[var(--color-primary)] hover:text-white transition-colors">
-            Tümünü gor
+          <span class="santral-overline">Güven · Vaka</span>
+          <a href="/vaka-calismalari/" class="font-mono text-[0.72rem] tracking-[0.14em] uppercase text-[var(--color-patina-copper-bright)] transition hover:text-[var(--color-paper-ecru)]">
+            Tümünü gör →
           </a>
         </div>
-
-        <div class="space-y-4">
+        <div class="space-y-3">
           {caseStudies.map((item) => (
-            <a href={item.href} class="block rounded-2xl border border-white/6 bg-black/20 p-5 transition-all duration-300 hover:border-[var(--color-primary)]/40 hover:-translate-y-0.5">
+            <a href={item.href} class="block border border-[var(--color-hairline)] bg-[var(--color-void-ink-deep)]/55 p-5 transition-all hover:border-[var(--color-patina-copper)] hover:-translate-y-0.5" style="border-radius:2px">
               {item.badge && (
-                <div class="mb-3 inline-flex rounded-full border border-[var(--color-primary)]/20 bg-[var(--color-primary)]/10 px-3 py-1 text-xs font-semibold uppercase tracking-[0.16em] text-[var(--color-primary)]">
-                  {item.badge}
-                </div>
+                <span class="santral-label block mb-2">{item.badge}</span>
               )}
-              <h4 class="text-lg font-bold text-white">{item.title}</h4>
-              <p class="mt-2 text-sm leading-relaxed text-gray-400">{item.description}</p>
+              <h4 class="santral-display text-base md:text-lg" style="font-weight:500">{item.title}</h4>
+              <p class="mt-2 text-[0.85rem] leading-[1.55] text-[var(--color-paper-ecru-dim)]">{item.description}</p>
             </a>
           ))}
         </div>
       </div>
 
-      <div class="rounded-[2rem] border border-white/8 bg-white/[0.02] p-8 backdrop-blur-xl">
-        <h3 class="text-2xl font-black text-white mb-6">Ilgili sonraki sayfalar</h3>
-        <div class="space-y-4">
+      {/* Col 2 — Akış · Sonraki */}
+      <div class="santral-hat p-7 lg:p-8">
+        <div class="mb-6">
+          <span class="santral-overline">Akış · Sonraki</span>
+        </div>
+        <div class="space-y-3">
           {nextSteps.map((item) => (
-            <a href={item.href} class="block rounded-2xl border border-white/6 bg-black/20 p-5 transition-all duration-300 hover:border-[var(--color-primary)]/40 hover:-translate-y-0.5">
+            <a href={item.href} class="block border border-[var(--color-hairline)] bg-[var(--color-void-ink-deep)]/55 p-5 transition-all hover:border-[var(--color-patina-copper)] hover:-translate-y-0.5" style="border-radius:2px">
               {item.badge && (
-                <div class="mb-3 inline-flex rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs font-semibold uppercase tracking-[0.16em] text-gray-300">
-                  {item.badge}
-                </div>
+                <span class="santral-label block mb-2">{item.badge}</span>
               )}
-              <h4 class="text-lg font-bold text-white">{item.title}</h4>
-              <p class="mt-2 text-sm leading-relaxed text-gray-400">{item.description}</p>
+              <h4 class="santral-display text-base md:text-lg" style="font-weight:500">{item.title}</h4>
+              <p class="mt-2 text-[0.85rem] leading-[1.55] text-[var(--color-paper-ecru-dim)]">{item.description}</p>
             </a>
           ))}
         </div>
       </div>
 
-      <div class="rounded-[2rem] border border-[var(--color-primary)]/20 bg-[var(--color-primary)]/[0.06] p-8 backdrop-blur-xl">
-        <div class="inline-flex rounded-full border border-[var(--color-primary)]/30 bg-[var(--color-primary)]/10 px-3 py-1 text-xs font-semibold uppercase tracking-[0.16em] text-[var(--color-primary)]">
-          Dönüşüm
+      {/* Col 3 — Dönüşüm CTA */}
+      <div class="santral-hat p-7 lg:p-8 flex flex-col" style="border-color: rgba(224, 150, 84, 0.28)">
+        <div class="flex items-center gap-2 mb-6">
+          <span class="inline-block h-[6px] w-[6px] rounded-full bg-[var(--color-patina-copper-bright)]" style="animation: morse-pulse 2.6s ease-in-out infinite"></span>
+          <span class="santral-overline">Dönüşüm · Hazır</span>
         </div>
-        <h3 class="mt-5 text-3xl font-black tracking-tight text-white">Hazirsaniz siradaki adım net.</h3>
-        <p class="mt-4 text-sm leading-relaxed text-gray-300">
-          Kısa bir on analiz ile hangi sürecin en hızlı geri dönüş getirecegini belirleyelim. Ne satmaya calistiginizi değil, neyin tıkandığını anlattığınızda başlamak daha kolay olur.
+        <h3 class="santral-display text-2xl md:text-3xl" style="font-weight:400;line-height:1.1">
+          Hazırsanız sıradaki <em class="santral-italic">adım</em> net.
+        </h3>
+        <p class="mt-5 text-[0.9rem] leading-[1.65] text-[var(--color-paper-ecru-dim)]">
+          Kısa bir ön analiz ile hangi sürecin en hızlı geri dönüş getireceğini belirleyelim. Ne satmaya çalıştığınızı değil, neyin tıkandığını anlattığınızda başlamak daha kolay olur.
         </p>
-
-        <ul class="mt-6 space-y-3 text-sm text-gray-300">
-          <li>Sayfaya gore kaynak takibi</li>
-          <li>Operasyon odakli ilk dönüş</li>
-          <li>Size uygun senaryo önerisi</li>
+        <ul class="mt-6 space-y-2 text-[0.85rem] text-[var(--color-paper-ecru-dim)]">
+          <li class="flex items-start gap-2"><span class="text-[var(--color-patina-copper-bright)] mt-[4px]">·</span> Sayfaya göre kaynak takibi</li>
+          <li class="flex items-start gap-2"><span class="text-[var(--color-patina-copper-bright)] mt-[4px]">·</span> Operasyon odaklı ilk dönüş</li>
+          <li class="flex items-start gap-2"><span class="text-[var(--color-patina-copper-bright)] mt-[4px]">·</span> Size uygun senaryo önerisi</li>
         </ul>
-
-        <a href={contactHref} class="mt-8 inline-flex w-full items-center justify-center rounded-2xl bg-[var(--color-primary)] px-5 py-4 text-center text-base font-black text-black transition hover:-translate-y-0.5 hover:bg-[var(--color-primary-light)]">
+        <a href={contactHref} class="santral-salter santral-salter-copper mt-auto pt-5 justify-center">
           Ücretsiz analizi talep et
+          <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M5 12h14"/><path d="m13 6 6 6-6 6"/>
+          </svg>
         </a>
       </div>
     </div>

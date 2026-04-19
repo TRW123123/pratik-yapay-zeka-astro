@@ -261,13 +261,13 @@ const breadcrumbs = [
             <img
               src={post.cover_image_url}
               alt={post.cover_image_alt || post.title}
-              class="blog-hero-image h-auto w-full rounded-2xl border border-white/[0.08] shadow-[0_24px_80px_rgba(0,0,0,0.6),0_0_0_1px_rgba(163,230,53,0.04)]"
+              class="blog-hero-image h-auto w-full rounded-sm border border-white/[0.08] shadow-[0_24px_80px_rgba(0,0,0,0.6),0_0_0_1px_rgba(163,230,53,0.04)]"
             />
             {/* Floating tag pills */}
             {(post.tags || []).length > 0 && (
               <div class="absolute bottom-4 left-4 z-10 flex flex-wrap gap-1.5">
                 {(post.tags || []).slice(0, 3).map((tag) => (
-                  <span class="rounded-full border border-white/[0.15] bg-black/70 px-2.5 py-0.5 text-[10px] font-semibold text-white/85 backdrop-blur-md">
+                  <span class="rounded-full border border-white/[0.15] bg-black/70 px-2.5 py-0.5 text-[10px] font-semibold text-[var(--color-paper-ecru)]/85 backdrop-blur-md">
                     #{tag}
                   </span>
                 ))}
@@ -297,16 +297,16 @@ const breadcrumbs = [
               prose-a:text-[var(--color-primary)] prose-a:no-underline hover:prose-a:opacity-75
               prose-strong:text-[#f7f8f8] prose-strong:font-semibold
               prose-code:rounded prose-code:bg-white/[0.04] prose-code:px-1.5 prose-code:py-0.5 prose-code:text-[var(--color-primary-light)]
-              prose-pre:rounded-xl prose-pre:border prose-pre:border-white/[0.06] prose-pre:bg-white/[0.02]
+              prose-pre:rounded-sm prose-pre:border prose-pre:border-white/[0.06] prose-pre:bg-white/[0.02]
               prose-blockquote:border-white/[0.06] prose-blockquote:text-[#d0d6e0]
               prose-li:text-[#8a8f98] prose-li:leading-[1.6]
-              prose-img:rounded-xl prose-hr:border-white/[0.06]
+              prose-img:rounded-sm prose-hr:border-white/[0.06]
               prose-table:text-[#8a8f98] prose-th:text-[#f7f8f8]"
             set:html={htmlContent}
           />
 
           {/* ── CTA Block ── */}
-          <div class="mt-20 relative overflow-hidden rounded-2xl border border-[var(--color-primary)]/20 bg-gradient-to-br from-[var(--color-primary)]/[0.09] via-white/[0.02] to-transparent p-8 md:p-10">
+          <div class="mt-20 relative overflow-hidden rounded-sm border border-[var(--color-primary)]/20 bg-gradient-to-br from-[var(--color-primary)]/[0.09] via-white/[0.02] to-transparent p-8 md:p-10">
             <div class="absolute -top-20 -right-20 h-48 w-48 rounded-full bg-[var(--color-primary)]/20 blur-[80px] pointer-events-none"></div>
             <div class="relative">
               <div class="mb-3 inline-flex items-center gap-2 rounded-full border border-[var(--color-primary)]/20 bg-[var(--color-primary)]/[0.08] px-3 py-1">
@@ -323,7 +323,7 @@ const breadcrumbs = [
                 <a href={contactHref} class="cta-btn inline-flex items-center justify-center gap-2 rounded-full bg-[var(--color-primary)] px-7 py-3.5 text-sm font-bold text-[#08090a] shadow-[0_0_28px_rgba(163,230,53,0.3)]">
                   Ücretsiz analizi talep et <span aria-hidden="true">→</span>
                 </a>
-                <a href="/iletisim/" class="inline-flex items-center justify-center gap-2 rounded-full border border-white/[0.08] bg-white/[0.02] px-6 py-3 text-sm font-medium text-[#d0d6e0] transition-all hover:bg-white/[0.04] hover:text-white">
+                <a href="/iletisim/" class="inline-flex items-center justify-center gap-2 rounded-full border border-white/[0.08] bg-white/[0.02] px-6 py-3 text-sm font-medium text-[#d0d6e0] transition-all hover:bg-white/[0.04] hover:text-[var(--color-paper-ecru)]">
                   Nasıl çalışıyoruz
                 </a>
               </div>
@@ -342,7 +342,7 @@ const breadcrumbs = [
 
             {/* ToC card */}
             {tocItems.length > 2 && (
-              <nav aria-label="İçindekiler" class="rounded-xl border border-white/[0.07] bg-[#0d0e10]/95 p-5 backdrop-blur-sm">
+              <nav aria-label="İçindekiler" class="rounded-sm border border-white/[0.07] bg-[#0d0e10]/95 p-5 backdrop-blur-sm">
                 <div class="mb-4 font-mono text-[10px] font-medium uppercase tracking-[0.2em] text-[#62666d]">İçindekiler</div>
                 <ul class="space-y-1">
                   {tocItems.map((item, idx) => (
@@ -364,7 +364,7 @@ const breadcrumbs = [
             )}
 
             {/* Mini CTA card */}
-            <div class="rounded-xl border border-[var(--color-primary)]/[0.18] bg-[var(--color-primary)]/[0.05] p-5">
+            <div class="rounded-sm border border-[var(--color-primary)]/[0.18] bg-[var(--color-primary)]/[0.05] p-5">
               <div class="mb-3 text-xs font-semibold uppercase tracking-[0.15em] text-[var(--color-primary)]">Ücretsiz analiz</div>
               <p class="mb-4 text-sm leading-[1.55] text-[#8a8f98]">
                 Hangi süreçlerinizi otomasyona alacağınızı birlikte belirleyelim.
@@ -375,7 +375,7 @@ const breadcrumbs = [
             </div>
 
             {/* Reading stats */}
-            <div class="rounded-xl border border-white/[0.06] bg-white/[0.02] px-4 py-3 text-xs text-[#62666d]">
+            <div class="rounded-sm border border-white/[0.06] bg-white/[0.02] px-4 py-3 text-xs text-[#62666d]">
               <div class="flex items-center justify-between">
                 <span>Okuma süresi</span>
                 <span class="font-semibold text-[#8a8f98]">{post.read_time || 5} dk</span>
@@ -392,7 +392,7 @@ const breadcrumbs = [
 
       {/* ── Author bio ── */}
       {post.author_bio && (
-        <div class="mt-16 rounded-2xl border border-white/[0.06] bg-white/[0.02] p-6">
+        <div class="mt-16 rounded-sm border border-white/[0.06] bg-white/[0.02] p-6">
           <h2 class="mb-2 text-lg font-semibold text-[#f7f8f8]">Yazar hakkında</h2>
           <p class="text-[#8a8f98]">{post.author_bio}</p>
         </div>
@@ -400,18 +400,18 @@ const breadcrumbs = [
 
       {/* ── Related solutions ── */}
       <div class="mt-16 grid gap-6 lg:grid-cols-[1.1fr_0.9fr]">
-        <div class="rounded-2xl border border-white/[0.07] bg-white/[0.015] p-7">
+        <div class="rounded-sm border border-white/[0.07] bg-white/[0.015] p-7">
           <h2 class="text-xl font-bold text-[#f7f8f8]">İlgili sonraki sayfalar</h2>
           <div class="mt-5 space-y-3">
             {relatedSolutions.map((item) => (
-              <a href={item.href} class="group flex items-start gap-4 rounded-xl border border-white/[0.06] bg-black/10 p-4 transition hover:-translate-y-0.5 hover:border-[var(--color-primary)]/30">
+              <a href={item.href} class="group flex items-start gap-4 rounded-sm border border-white/[0.06] bg-black/10 p-4 transition hover:-translate-y-0.5 hover:border-[var(--color-primary)]/30">
                 {item.badge && (
                   <span class="mt-0.5 shrink-0 rounded-full border border-[var(--color-primary)]/20 bg-[var(--color-primary)]/10 px-2.5 py-0.5 text-[10px] font-bold uppercase tracking-wider text-[var(--color-primary)]">
                     {item.badge}
                   </span>
                 )}
                 <div>
-                  <div class="text-sm font-semibold text-[#d0d6e0] group-hover:text-white transition-colors">{item.title}</div>
+                  <div class="text-sm font-semibold text-[#d0d6e0] group-hover:text-[var(--color-paper-ecru)] transition-colors">{item.title}</div>
                   <div class="mt-1 text-xs leading-[1.55] text-[#62666d]">{item.description}</div>
                 </div>
               </a>
@@ -419,7 +419,7 @@ const breadcrumbs = [
           </div>
         </div>
 
-        <div class="relative overflow-hidden rounded-2xl border border-[var(--color-primary)]/20 bg-[var(--color-primary)]/[0.07] p-7">
+        <div class="relative overflow-hidden rounded-sm border border-[var(--color-primary)]/20 bg-[var(--color-primary)]/[0.07] p-7">
           <div class="absolute -top-16 -right-16 h-40 w-40 rounded-full bg-[var(--color-primary)]/15 blur-[60px] pointer-events-none"></div>
           <div class="relative">
             <span class="inline-flex rounded-full border border-[var(--color-primary)]/25 bg-[var(--color-primary)]/10 px-3 py-1 text-[10px] font-bold uppercase tracking-[0.18em] text-[var(--color-primary)]">Dönüşüm</span>

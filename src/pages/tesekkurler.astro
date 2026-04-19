@@ -19,7 +19,7 @@ const isResourceRequest = submissionType === 'resource';
 >
   <section class="flex min-h-[70vh] items-center py-24">
     <div class="container mx-auto max-w-3xl px-4 text-center">
-      <div class="rounded-[2rem] border border-[var(--color-border)] bg-[var(--color-surface-light)]/80 p-10 md:p-14 shadow-2xl">
+      <div class="rounded-sm border border-[var(--color-border)] bg-[var(--color-surface-light)]/80 p-10 md:p-14 shadow-2xl">
         <div class="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-[var(--color-primary)] text-black">
           <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
             <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
@@ -53,10 +53,10 @@ const isResourceRequest = submissionType === 'resource';
         </div>
 
         <div class="mt-10 flex flex-col justify-center gap-4 sm:flex-row">
-          <a href={isResourceRequest ? '/cozumler/' : '/vaka-calismalari/'} class="inline-flex items-center justify-center rounded-2xl border border-[var(--color-border)] px-6 py-3 font-semibold text-[var(--color-text)] transition hover:border-[var(--color-primary)] hover:text-[var(--color-primary-light)]">
+          <a href={isResourceRequest ? '/cozumler/' : '/vaka-calismalari/'} class="inline-flex items-center justify-center rounded-sm border border-[var(--color-border)] px-6 py-3 font-semibold text-[var(--color-text)] transition hover:border-[var(--color-primary)] hover:text-[var(--color-primary-light)]">
             {isResourceRequest ? 'Çözüm sayfalarini incele' : 'Vaka calismalarini incele'}
           </a>
-          <a href="mailto:s.tepecik@pratik-yapayzeka.com" class="inline-flex items-center justify-center rounded-2xl bg-[var(--color-primary)] px-6 py-3 font-semibold text-black transition hover:bg-[var(--color-primary-light)]">
+          <a href="mailto:s.tepecik@pratik-yapayzeka.com" class="inline-flex items-center justify-center rounded-sm bg-[var(--color-primary)] px-6 py-3 font-semibold text-black transition hover:bg-[var(--color-primary-light)]">
             E-posta gönder
           </a>
         </div>

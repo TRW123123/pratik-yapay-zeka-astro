@@ -56,7 +56,7 @@ const blogFinalContactHref = buildContactHref({
     { name: 'Blog', url: '/blog/' },
   ]}
 >
-  <section class="relative overflow-hidden bg-[#0B0F14] py-32 lg:py-40">
+  <section class="relative overflow-hidden bg-[var(--color-void-ink-deep)] py-32 lg:py-40">
     <div class="absolute left-1/2 top-1/4 h-[800px] w-[800px] -translate-x-1/2 rounded-full bg-[var(--color-primary)]/10 blur-[150px] opacity-60 pointer-events-none"></div>
 
     <div class="container mx-auto max-w-6xl px-4 relative z-10">
@@ -64,7 +64,7 @@ const blogFinalContactHref = buildContactHref({
         <div class="inline-flex items-center rounded-full border border-[var(--color-primary)]/20 bg-[var(--color-primary)]/10 px-4 py-2 text-sm font-semibold uppercase tracking-[0.18em] text-[var(--color-primary)]">
           Bilgi -> sistem -> lead
         </div>
-        <h1 class="mt-6 text-4xl font-extrabold tracking-tight text-white md:text-6xl">Blog</h1>
+        <h1 class="mt-6 text-4xl font-extrabold tracking-tight text-[var(--color-paper-ecru)] md:text-6xl">Blog</h1>
         <p class="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-[var(--color-text-muted)]">
           Buradaki icerikler sadece bilgi vermek için değil; hangi surecinizde otomasyon, chatbot, CRM veya operasyon iyilestirmesi gerektiğini daha net gormeniz için var.
         </p>
@@ -73,32 +73,32 @@ const blogFinalContactHref = buildContactHref({
       <div class="mt-12 grid gap-4 md:grid-cols-3">
         <div class="rounded-3xl border border-[var(--color-border)] bg-[var(--color-surface-light)]/60 p-6">
           <p class="text-sm uppercase tracking-[0.16em] text-[var(--color-primary)]">Growth</p>
-          <h2 class="mt-3 text-xl font-semibold text-white">Lead ve talep akışı</h2>
+          <h2 class="mt-3 text-xl font-semibold text-[var(--color-paper-ecru)]">Lead ve talep akışı</h2>
           <p class="mt-3 text-sm leading-relaxed text-[var(--color-text-muted)]">Marketing otomasyonu, B2B müşteri bulma ve takip akislarini kapsayan icerikler.</p>
         </div>
         <div class="rounded-3xl border border-[var(--color-border)] bg-[var(--color-surface-light)]/60 p-6">
           <p class="text-sm uppercase tracking-[0.16em] text-[var(--color-primary)]">Operations</p>
-          <h2 class="mt-3 text-xl font-semibold text-white">Muhasebe ve operasyon</h2>
+          <h2 class="mt-3 text-xl font-semibold text-[var(--color-paper-ecru)]">Muhasebe ve operasyon</h2>
           <p class="mt-3 text-sm leading-relaxed text-[var(--color-text-muted)]">Belge, kayit, mutabakat ve tekrarlayan ekip islerini azaltan sistemler.</p>
         </div>
         <div class="rounded-3xl border border-[var(--color-border)] bg-[var(--color-surface-light)]/60 p-6">
           <p class="text-sm uppercase tracking-[0.16em] text-[var(--color-primary)]">Automation</p>
-          <h2 class="mt-3 text-xl font-semibold text-white">Botlar ve workflowlar</h2>
+          <h2 class="mt-3 text-xl font-semibold text-[var(--color-paper-ecru)]">Botlar ve workflowlar</h2>
           <p class="mt-3 text-sm leading-relaxed text-[var(--color-text-muted)]">Chatbot, WhatsApp, CRM ve ekip ici workflow otomasyonu için uygulamali yaklasimlar.</p>
         </div>
       </div>
 
       {blogPosts.length === 0 ? (
-        <div class="mt-16 rounded-[2rem] border border-[var(--color-border)] bg-[var(--color-surface-light)]/50 p-10 text-center">
-          <h2 class="text-2xl font-bold text-white">Henuz yayinlanmis blog yazisi yok.</h2>
+        <div class="mt-16 rounded-sm border border-[var(--color-border)] bg-[var(--color-surface-light)]/50 p-10 text-center">
+          <h2 class="text-2xl font-bold text-[var(--color-paper-ecru)]">Henuz yayinlanmis blog yazisi yok.</h2>
           <p class="mx-auto mt-4 max-w-2xl text-[var(--color-text-muted)]">
             Bu alani içerik motoru olarak kullanacagiz. O zamana kadar çözüm sayfalarini ve vaka calismalarini inceleyebilir ya da dogrudan analiz talep edebilirsiniz.
           </p>
           <div class="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
-            <a href="/cozumler/" class="inline-flex items-center justify-center rounded-2xl border border-[var(--color-border)] px-6 py-4 font-semibold text-white transition hover:border-[var(--color-primary)]/40 hover:text-[var(--color-primary)]">
+            <a href="/cozumler/" class="inline-flex items-center justify-center rounded-sm border border-[var(--color-border)] px-6 py-4 font-semibold text-[var(--color-paper-ecru)] transition hover:border-[var(--color-primary)]/40 hover:text-[var(--color-primary)]">
               Çözümleri gor
             </a>
-            <a href={blogPrimaryContactHref} class="inline-flex items-center justify-center rounded-2xl bg-[var(--color-primary)] px-6 py-4 font-black text-black transition hover:-translate-y-0.5 hover:bg-[var(--color-primary-light)]">
+            <a href={blogPrimaryContactHref} class="inline-flex items-center justify-center rounded-sm bg-[var(--color-primary)] px-6 py-4 font-black text-black transition hover:-translate-y-0.5 hover:bg-[var(--color-primary-light)]">
               Ücretsiz analizi talep et
             </a>
           </div>
@@ -157,12 +157,12 @@ const blogFinalContactHref = buildContactHref({
     </div>
   </section>
 
-  <section class="border-t border-[var(--color-border)] bg-[#0F151B] py-20">
+  <section class="border-t border-[var(--color-border)] bg-[var(--color-void-ink)] py-20">
     <div class="container mx-auto max-w-6xl px-4">
       <div class="grid gap-8 lg:grid-cols-[1.1fr_0.9fr]">
-        <div class="rounded-[2rem] border border-[var(--color-border)] bg-[var(--color-surface-light)]/60 p-8">
+        <div class="rounded-sm border border-[var(--color-border)] bg-[var(--color-surface-light)]/60 p-8">
           <p class="text-sm uppercase tracking-[0.18em] text-[var(--color-primary)]">Blogdan sonraki adım</p>
-          <h2 class="mt-4 text-3xl font-black tracking-tight text-white">Içeriği okuduktan sonra gerçek soru sudur: hangi süreci önce ele almak gerekir?</h2>
+          <h2 class="mt-4 text-3xl font-black tracking-tight text-[var(--color-paper-ecru)]">Içeriği okuduktan sonra gerçek soru sudur: hangi süreci önce ele almak gerekir?</h2>
           <p class="mt-4 max-w-2xl text-[var(--color-text-muted)]">
             Size en hızlı geri dönüş verecek otomasyon dugumunu birlikte secmek için ister vaka calismalarina gecin, ister dogrudan analiz talep edin.
           </p>
@@ -171,22 +171,22 @@ const blogFinalContactHref = buildContactHref({
         <div class="grid gap-4">
           <a href="/vaka-calismalari/" class="rounded-3xl border border-[var(--color-border)] bg-[var(--color-surface-light)]/60 p-6 transition hover:-translate-y-0.5 hover:border-[var(--color-primary)]/40">
             <p class="text-sm uppercase tracking-[0.16em] text-[var(--color-primary)]">Proof</p>
-            <h3 class="mt-3 text-xl font-semibold text-white">Vaka calismalarina gecin</h3>
+            <h3 class="mt-3 text-xl font-semibold text-[var(--color-paper-ecru)]">Vaka calismalarina gecin</h3>
             <p class="mt-2 text-sm leading-relaxed text-[var(--color-text-muted)]">Benzer sirketlerde hangi sureclerin nasıl donustugunu gorun.</p>
           </a>
           <a href="/cozumler/" class="rounded-3xl border border-[var(--color-border)] bg-[var(--color-surface-light)]/60 p-6 transition hover:-translate-y-0.5 hover:border-[var(--color-primary)]/40">
             <p class="text-sm uppercase tracking-[0.16em] text-[var(--color-primary)]">Offers</p>
-            <h3 class="mt-3 text-xl font-semibold text-white">Çözüm sayfalarini gezin</h3>
+            <h3 class="mt-3 text-xl font-semibold text-[var(--color-paper-ecru)]">Çözüm sayfalarini gezin</h3>
             <p class="mt-2 text-sm leading-relaxed text-[var(--color-text-muted)]">CRM, marketing, muhasebe ve operasyon akislarini tek tek inceleyin.</p>
           </a>
           <a href="/ucretsiz-otomasyon-checklistesi/?kaynak=%2Fblog%2F" class="rounded-3xl border border-[var(--color-border)] bg-[var(--color-surface-light)]/60 p-6 transition hover:-translate-y-0.5 hover:border-[var(--color-primary)]/40">
             <p class="text-sm uppercase tracking-[0.16em] text-[var(--color-primary)]">Resource</p>
-            <h3 class="mt-3 text-xl font-semibold text-white">Ücretsiz checklist alin</h3>
+            <h3 class="mt-3 text-xl font-semibold text-[var(--color-paper-ecru)]">Ücretsiz checklist alin</h3>
             <p class="mt-2 text-sm leading-relaxed text-[var(--color-text-muted)]">Hangi süreci önce otomatiklestirmek gerektiğini daha kolay belirleyin.</p>
           </a>
           <a href={blogFinalContactHref} class="rounded-3xl border border-[var(--color-primary)]/20 bg-[var(--color-primary)]/8 p-6 transition hover:-translate-y-0.5">
             <p class="text-sm uppercase tracking-[0.16em] text-[var(--color-primary)]">CTA</p>
-            <h3 class="mt-3 text-xl font-semibold text-white">Ücretsiz analizi talep edin</h3>
+            <h3 class="mt-3 text-xl font-semibold text-[var(--color-paper-ecru)]">Ücretsiz analizi talep edin</h3>
             <p class="mt-2 text-sm leading-relaxed text-[var(--color-text-muted)]">Sitenize veya surecinize uygun ilk otomasyon firsatini birlikte cikaralim.</p>
           </a>
         </div>

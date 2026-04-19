@@ -25,13 +25,19 @@ function isActive(href: string): boolean {
 }
 ---
 
-<nav class="sticky top-0 z-50 w-full border-b border-[var(--color-border)]/30 bg-[var(--color-surface)]/40 shadow-[0_1px_20px_rgba(163,230,53,0.03)] backdrop-blur-xl" aria-label="Main navigation">
+<nav class="sticky top-0 z-50 w-full border-b border-[var(--color-hairline-strong)] bg-[var(--color-void-ink-deep)]/80 backdrop-blur-xl" aria-label="Main navigation">
   <div class="container mx-auto px-4 lg:px-6">
     <div class="flex h-16 items-center justify-between">
-      <a href="/" class="group flex items-center space-x-3" aria-label="Homepage">
-        <div class="flex h-8 w-8 items-center justify-center rounded-lg border border-white/5 bg-[var(--color-surface-light)] shadow-[0_0_15px_rgba(163,230,53,0)] transition-all duration-300 group-hover:border-[var(--color-primary)]/40 group-hover:shadow-[0_0_15px_rgba(163,230,53,0.15)]">
-          <div class="h-4 w-4 rounded-sm bg-gradient-to-br from-[var(--color-primary)] to-[var(--color-accent)]"></div>
+      <a href="/" class="group flex items-center gap-3" aria-label="Pratik Yapay Zeka">
+        <div class="flex h-9 w-9 items-center justify-center border border-[var(--color-hairline-strong)] bg-[var(--color-void-ink)] transition-all duration-300 group-hover:border-[var(--color-patina-copper-bright)]" style="border-radius:2px">
+          <svg viewBox="0 0 24 24" class="h-5 w-5" aria-hidden="true">
+            <circle cx="12" cy="9" r="2.5" fill="none" stroke="currentColor" stroke-width="1.2" class="text-[var(--color-patina-copper-bright)]"/>
+            <path d="M12 11.5 L12 18 M8 18 L16 18" stroke="currentColor" stroke-width="1.2" class="text-[var(--color-patina-copper-bright)]" stroke-linecap="round"/>
+            <circle cx="8" cy="7" r="0.8" fill="currentColor" class="text-[var(--color-patina-copper-bright)]"/>
+            <circle cx="16" cy="7" r="0.8" fill="currentColor" class="text-[var(--color-patina-copper-bright)]"/>
+          </svg>
         </div>
+        <span class="hidden sm:inline-block font-mono text-[0.72rem] tracking-[0.18em] uppercase text-[var(--color-paper-ecru-dim)]">Pratik · YZ</span>
       </a>
 
       <div class="hidden md:flex md:items-center md:space-x-8">
@@ -62,7 +68,7 @@ function isActive(href: string): boolean {
             <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 transition-transform group-hover:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
           </button>
 
-          <div id="solutions-dropdown-panel" role="menu" class="invisible absolute left-0 top-full z-[60] mt-2 w-72 rounded-xl border border-[var(--color-border)] bg-[var(--color-surface-light)] opacity-0 shadow-xl transition-all duration-200 group-hover:visible group-hover:opacity-100">
+          <div id="solutions-dropdown-panel" role="menu" class="invisible absolute left-0 top-full z-[60] mt-2 w-72 rounded-sm border border-[var(--color-border)] bg-[var(--color-surface-light)] opacity-0 shadow-xl transition-all duration-200 group-hover:visible group-hover:opacity-100">
             <div class="py-2">
               {solutionItems.map((item) => (
                 <a href={item.href} role="menuitem" class="block px-4 py-2.5 text-sm text-[var(--color-text-muted)] transition-colors hover:bg-[var(--color-surface)]/50 hover:text-[var(--color-primary-light)]">

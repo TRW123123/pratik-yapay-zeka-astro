@@ -10,15 +10,17 @@ import agencyImage from '../assets/agitate-agency.webp';
 import { Image } from 'astro:assets';
 ---
 
-<section class="relative py-32 lg:py-48">
-  <!-- Subtle top separator glow -->
-  <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-3xl h-[1px] bg-gradient-to-r from-transparent via-[var(--color-border)] to-transparent"></div>
-  <div class="container mx-auto px-4 relative z-10">
-    <div class="mx-auto max-w-4xl text-center mb-16 md:mb-24">
-      <h2 class="headline text-3xl md:text-4xl tracking-tight text-[hsl(210,10%,90%)] mb-4">
-        Yapay zekayı doğru şekilde şirketinize nasıl entegre edebilirsiniz?
+<section data-santral-reveal class="relative border-t border-[var(--color-hairline)] py-24 md:py-32">
+  <div class="container mx-auto max-w-6xl px-6 lg:px-10 relative z-10">
+    <div class="mb-16 flex items-center gap-4">
+      <span class="h-[1px] w-10 bg-[var(--color-hairline-strong)]"></span>
+      <span class="santral-overline">Tanı · 02 — 3 Seçenek</span>
+    </div>
+    <div class="mx-auto max-w-4xl mb-16 md:mb-20">
+      <h2 class="santral-display text-3xl leading-[1.1] md:text-5xl" style="font-weight:400;text-wrap:balance;">
+        Yapay zekayı <em class="santral-italic">doğru şekilde</em> şirketinize nasıl entegre edebilirsiniz?
       </h2>
-      <p class="text-lg md:text-xl text-[hsl(215,16%,58%)] leading-relaxed">
+      <p class="mt-6 santral-body text-lg md:text-xl max-w-3xl">
         Farklı yöntemler var… ama çoğu ayakkabınızın içindeki taş gibi: her adımda rahatsız eder.
       </p>
     </div>
@@ -46,7 +48,7 @@ import { Image } from 'astro:assets';
         <div class="agitate-panel active" data-panel="0">
           <div class="grid md:grid-cols-2 gap-8 items-center">
             <div>
-              <p class="text-[hsl(215,16%,58%)] leading-relaxed text-base">
+              <p class="text-[var(--color-paper-ecru-dim)] leading-relaxed text-base">
                 Bu, insanlığın şimdiye kadar geliştirdiği en büyük teknoloji. Onu şirketinize doğru şekilde entegre etmek için aylarca odak ve ciddi zaman gerekir. Kendi yoğunluğunuz içinde buna vakit ayırabilir mısınız?
               </p>
             </div>
@@ -61,13 +63,13 @@ import { Image } from 'astro:assets';
         <div class="agitate-panel" data-panel="1">
           <div class="grid md:grid-cols-2 gap-8 items-center">
             <div class="space-y-4">
-              <p class="text-[hsl(215,16%,58%)] leading-relaxed text-base">
+              <p class="text-[var(--color-paper-ecru-dim)] leading-relaxed text-base">
                 İçeriden birini görevlendirmek: Zaten dolu masasına bir dosya daha. Şirketinizi dönüştürecek teknolojiyi yan iş olarak mı önem vermek istiyorsunuz?
               </p>
-              <p class="text-[hsl(215,16%,58%)] leading-relaxed text-base">
+              <p class="text-[var(--color-paper-ecru-dim)] leading-relaxed text-base">
                 Yeni eleman almak: Bu teknoloji çok yeni, çoğu kişi daha yolun başında. Tecrübeli uzmanlar çok pahalı.
               </p>
-              <p class="text-[hsl(215,16%,58%)] leading-relaxed text-base">
+              <p class="text-[var(--color-paper-ecru-dim)] leading-relaxed text-base">
                 İşe alım süreci bitmeyen kuyruk gibi: Hep beklersiniz, bir türlü ilerlemez.
               </p>
             </div>
@@ -82,13 +84,13 @@ import { Image } from 'astro:assets';
         <div class="agitate-panel" data-panel="2">
           <div class="grid md:grid-cols-2 gap-8 items-center">
             <div class="space-y-4">
-              <p class="text-[hsl(215,16%,58%)] leading-relaxed text-base">
+              <p class="text-[var(--color-paper-ecru-dim)] leading-relaxed text-base">
                 Seneye bütçe ayarlanır, o zaman yaparız. Ama her geçen ay kaybolan fırsatlar ve kaçan müşteriler demek.
               </p>
-              <p class="text-[hsl(215,16%,58%)] leading-relaxed text-base">
+              <p class="text-[var(--color-paper-ecru-dim)] leading-relaxed text-base">
                 Gerçek şu: 3 yıl önce dev yazılım şirketi DocuSign, bugün yapay zeka ile 2 günde kopyalanabiliyor.
               </p>
-              <p class="text-[hsl(215,16%,58%)] leading-relaxed text-base">
+              <p class="text-[var(--color-paper-ecru-dim)] leading-relaxed text-base">
                 Peki sizin iş modelinizin kopyalanması ne kadar sürer?
               </p>
             </div>
@@ -119,14 +121,14 @@ import { Image } from 'astro:assets';
     white-space: nowrap;
   }
   .agitate-tab:hover {
-    border-color: rgba(163, 230, 53, 0.3);
+    border-color: rgba(224, 150, 84, 0.3);
     color: var(--color-text);
   }
   .agitate-tab.active {
-    background: rgba(163, 230, 53, 0.08);
+    background: rgba(224, 150, 84, 0.08);
     border-color: var(--color-primary);
     color: var(--color-primary);
-    box-shadow: 0 0 20px rgba(163, 230, 53, 0.1);
+    box-shadow: 0 0 20px rgba(224, 150, 84, 0.1);
   }
   .agitate-panel {
     display: none;

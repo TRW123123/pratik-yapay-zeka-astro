@@ -94,7 +94,7 @@ const breadcrumbs = [
           </div>
         </div>
 
-        <div class="rounded-[2rem] border border-[var(--color-border)] bg-[var(--color-surface-light)]/80 p-8 shadow-2xl">
+        <div class="rounded-sm border border-[var(--color-border)] bg-[var(--color-surface-light)]/80 p-8 shadow-2xl">
           <div class="mb-6">
             <p class="text-sm uppercase tracking-[0.2em] text-[var(--color-primary-light)]">Lead formu</p>
             <h2 class="mt-3 text-3xl font-black tracking-tight">Kısa bilgileri bırakın</h2>
@@ -123,30 +123,30 @@ const breadcrumbs = [
             <div class="grid gap-5 sm:grid-cols-2">
               <label class="space-y-2">
                 <span class="text-sm font-medium text-[var(--color-text)]">Ad Soyad</span>
-                <input class="w-full rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface)] px-4 py-3 text-[var(--color-text)] outline-none transition focus:border-[var(--color-primary)]" type="text" name="name" autocomplete="name" required />
+                <input class="w-full rounded-sm border border-[var(--color-border)] bg-[var(--color-surface)] px-4 py-3 text-[var(--color-text)] outline-none transition focus:border-[var(--color-primary)]" type="text" name="name" autocomplete="name" required />
               </label>
 
               <label class="space-y-2">
                 <span class="text-sm font-medium text-[var(--color-text)]">E-posta</span>
-                <input class="w-full rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface)] px-4 py-3 text-[var(--color-text)] outline-none transition focus:border-[var(--color-primary)]" type="email" name="email" autocomplete="email" required />
+                <input class="w-full rounded-sm border border-[var(--color-border)] bg-[var(--color-surface)] px-4 py-3 text-[var(--color-text)] outline-none transition focus:border-[var(--color-primary)]" type="email" name="email" autocomplete="email" required />
               </label>
             </div>
 
             <div class="grid gap-5 sm:grid-cols-2">
               <label class="space-y-2">
                 <span class="text-sm font-medium text-[var(--color-text)]">Şirket</span>
-                <input class="w-full rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface)] px-4 py-3 text-[var(--color-text)] outline-none transition focus:border-[var(--color-primary)]" type="text" name="company" autocomplete="organization" required />
+                <input class="w-full rounded-sm border border-[var(--color-border)] bg-[var(--color-surface)] px-4 py-3 text-[var(--color-text)] outline-none transition focus:border-[var(--color-primary)]" type="text" name="company" autocomplete="organization" required />
               </label>
 
               <label class="space-y-2">
                 <span class="text-sm font-medium text-[var(--color-text)]">Telefon / WhatsApp</span>
-                <input class="w-full rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface)] px-4 py-3 text-[var(--color-text)] outline-none transition focus:border-[var(--color-primary)]" type="tel" name="phone" autocomplete="tel" />
+                <input class="w-full rounded-sm border border-[var(--color-border)] bg-[var(--color-surface)] px-4 py-3 text-[var(--color-text)] outline-none transition focus:border-[var(--color-primary)]" type="tel" name="phone" autocomplete="tel" />
               </label>
             </div>
 
             <label class="space-y-2">
               <span class="text-sm font-medium text-[var(--color-text)]">En çok ilgilendiginiz alan</span>
-              <select class="w-full rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface)] px-4 py-3 text-[var(--color-text)] outline-none transition focus:border-[var(--color-primary)]" name="interest_area" required>
+              <select class="w-full rounded-sm border border-[var(--color-border)] bg-[var(--color-surface)] px-4 py-3 text-[var(--color-text)] outline-none transition focus:border-[var(--color-primary)]" name="interest_area" required>
                 <option value="" selected={!areaParam}>Bir alan seçin</option>
                 <option value="crm-sales" selected={areaParam === 'crm-sales'}>CRM ve satış otomasyonu</option>
                 <option value="marketing-leads" selected={areaParam === 'marketing-leads'}>Pazarlama ve lead yönetimi</option>
@@ -159,7 +159,7 @@ const breadcrumbs = [
 
             <label class="space-y-2">
               <span class="text-sm font-medium text-[var(--color-text)]">Bu gorusmeden ne bekliyorsunuz?</span>
-              <select class="w-full rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface)] px-4 py-3 text-[var(--color-text)] outline-none transition focus:border-[var(--color-primary)]" name="request_goal" data-request-goal>
+              <select class="w-full rounded-sm border border-[var(--color-border)] bg-[var(--color-surface)] px-4 py-3 text-[var(--color-text)] outline-none transition focus:border-[var(--color-primary)]" name="request_goal" data-request-goal>
                 <option value="" selected={!selectedGoal}>Bir hedef seçin</option>
                 <option value="quick-win" selected={selectedGoal === 'quick-win'}>En hızlı geri dönüş verecek ilk otomasyon</option>
                 <option value="full-roadmap" selected={selectedGoal === 'full-roadmap'}>Tam süreç haritası ve yol haritası</option>
@@ -170,10 +170,10 @@ const breadcrumbs = [
 
             <label class="space-y-2">
               <span class="text-sm font-medium text-[var(--color-text)]">Hangi süreci otomatiklestirmek istiyorsunuz?</span>
-              <textarea class="min-h-40 w-full rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface)] px-4 py-3 text-[var(--color-text)] outline-none transition focus:border-[var(--color-primary)]" name="message" placeholder="Örnek: WhatsApp'tan gelen talepleri CRM'e dusurmek, teklif olusturmayi hizlandirmak, muhasebede veri girisini azaltmak..." required></textarea>
+              <textarea class="min-h-40 w-full rounded-sm border border-[var(--color-border)] bg-[var(--color-surface)] px-4 py-3 text-[var(--color-text)] outline-none transition focus:border-[var(--color-primary)]" name="message" placeholder="Örnek: WhatsApp'tan gelen talepleri CRM'e dusurmek, teklif olusturmayi hizlandirmak, muhasebede veri girisini azaltmak..." required></textarea>
             </label>
 
-            <button type="submit" class="inline-flex w-full items-center justify-center rounded-2xl bg-[var(--color-primary)] px-6 py-4 text-lg font-black text-black transition hover:-translate-y-0.5 hover:bg-[var(--color-primary-light)]">
+            <button type="submit" class="inline-flex w-full items-center justify-center rounded-sm bg-[var(--color-primary)] px-6 py-4 text-lg font-black text-black transition hover:-translate-y-0.5 hover:bg-[var(--color-primary-light)]">
               Ücretsiz analizi talep et
             </button>
 

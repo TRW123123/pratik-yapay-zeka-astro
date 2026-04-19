@@ -55,7 +55,7 @@ const solutionsContactHref = buildContactHref({
   title="Yapay Zeka Çözümleri | CRM, Otomasyon, Finans Araclari"
   description="CRM, marketing otomasyonu, muhasebe, WhatsApp botu ve sektor odakli yapay zeka çözümleri. Isletmenize uygun otomasyon alanini kesfedip hemen baslatin."
 >
-  <section class="relative overflow-hidden bg-[#0B0F14] py-32 lg:py-44">
+  <section class="relative overflow-hidden bg-[var(--color-void-ink-deep)] py-32 lg:py-44">
     <div class="pointer-events-none absolute left-1/2 top-1/4 h-[900px] w-[900px] -translate-x-1/2 rounded-full bg-[var(--color-primary)]/10 blur-[180px] opacity-60"></div>
     <div class="container relative z-10 mx-auto max-w-4xl px-4 text-center">
       <h1 class="mb-6 text-4xl font-extrabold tracking-tight text-[#FFFFFF] md:text-6xl">Tüm Çözümler ve Giriş Noktalari</h1>
@@ -71,7 +71,7 @@ const solutionsContactHref = buildContactHref({
       <p class="mb-8 max-w-3xl text-[var(--color-text-muted)]">Bu alanlar, dogrudan hizmet ve operasyon tasarımı tarafinda en güçlü ticari sayfalarimizi toplar.</p>
       <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
         {coreOffers.map((item) => (
-          <a href={item.href} class="group block rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface-light)]/40 p-6 backdrop-blur-sm transition-all duration-500 hover:border-[var(--color-primary)]/30 hover:bg-[var(--color-surface-light)]/60">
+          <a href={item.href} class="group block rounded-sm border border-[var(--color-border)] bg-[var(--color-surface-light)]/40 p-6 backdrop-blur-sm transition-all duration-500 hover:border-[var(--color-primary)]/30 hover:bg-[var(--color-surface-light)]/60">
             <h3 class="mb-2 text-lg font-bold text-[var(--color-text)] transition-colors group-hover:text-[var(--color-primary)]">{item.title}</h3>
             <p class="text-sm leading-relaxed text-[var(--color-text-muted)]">{item.desc}</p>
           </a>
@@ -86,7 +86,7 @@ const solutionsContactHref = buildContactHref({
       <p class="mb-8 max-w-3xl text-[var(--color-text-muted)]">Bunlar, ana teklifleri destekleyen daha spesifik akışları ve operasyon problemlerini aciklar.</p>
       <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
         {workflowPages.map((item) => (
-          <a href={item.href} class="group block rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface-light)]/40 p-6 backdrop-blur-sm transition-all duration-500 hover:border-[var(--color-primary)]/30 hover:bg-[var(--color-surface-light)]/60">
+          <a href={item.href} class="group block rounded-sm border border-[var(--color-border)] bg-[var(--color-surface-light)]/40 p-6 backdrop-blur-sm transition-all duration-500 hover:border-[var(--color-primary)]/30 hover:bg-[var(--color-surface-light)]/60">
             <h3 class="mb-2 text-lg font-bold text-[var(--color-text)] transition-colors group-hover:text-[var(--color-primary)]">{item.title}</h3>
             <p class="text-sm leading-relaxed text-[var(--color-text-muted)]">{item.desc}</p>
           </a>
@@ -101,7 +101,7 @@ const solutionsContactHref = buildContactHref({
       <p class="mb-8 max-w-3xl text-[var(--color-text-muted)]">Bu sayfalarin amaci dogrudan her seyi hesaplamak değil; kullaniciyi probleme, akisa ve ilgili çözüm katmanina tasimaktir.</p>
       <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
         {utilityPages.map((item) => (
-          <a href={item.href} class="group block rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface-light)]/40 p-6 backdrop-blur-sm transition-all duration-500 hover:border-[var(--color-primary)]/30 hover:bg-[var(--color-surface-light)]/60">
+          <a href={item.href} class="group block rounded-sm border border-[var(--color-border)] bg-[var(--color-surface-light)]/40 p-6 backdrop-blur-sm transition-all duration-500 hover:border-[var(--color-primary)]/30 hover:bg-[var(--color-surface-light)]/60">
             <h3 class="mb-2 text-lg font-bold text-[var(--color-text)] transition-colors group-hover:text-[var(--color-primary)]">{item.title}</h3>
             <p class="text-sm leading-relaxed text-[var(--color-text-muted)]">{item.desc}</p>
           </a>
@@ -116,7 +116,7 @@ const solutionsContactHref = buildContactHref({
       <p class="mb-8 max-w-3xl text-[var(--color-text-muted)]">Brans ve problem bazli giriş sayfalari, sektor ozeline inen pSEO katmanimizi olusturur.</p>
       <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
         {sectorSolutions.map((sol) => (
-          <a href={sol.href} class="group neon-bleed-border relative block overflow-hidden rounded-2xl bg-[var(--color-surface-light)]/40 p-8 backdrop-blur-sm transition-all duration-500 hover:bg-[var(--color-surface-light)]/60">
+          <a href={sol.href} class="group neon-bleed-border relative block overflow-hidden rounded-sm bg-[var(--color-surface-light)]/40 p-8 backdrop-blur-sm transition-all duration-500 hover:bg-[var(--color-surface-light)]/60">
             <div class="pointer-events-none absolute inset-0 bg-gradient-to-br from-[var(--color-primary)]/5 to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100"></div>
             <h3 class="relative z-10 mb-3 text-lg font-bold text-[var(--color-text)] transition-colors group-hover:text-[var(--color-primary)]">{sol.title}</h3>
             <p class="relative z-10 mb-4 text-sm leading-relaxed text-[var(--color-text-muted)]">{sol.description}</p>
@@ -132,20 +132,20 @@ const solutionsContactHref = buildContactHref({
   <section class="relative z-10 pb-32 pt-8">
     <div class="container mx-auto max-w-4xl px-4">
       <div class="grid gap-4 md:grid-cols-2">
-        <a href="/ucretsiz-otomasyon-checklistesi/?kaynak=%2Fcozumler%2F" class="rounded-[2rem] border border-[var(--color-border)] bg-[var(--color-surface-light)]/60 p-8 transition hover:-translate-y-0.5 hover:border-[var(--color-primary)]/40">
+        <a href="/ucretsiz-otomasyon-checklistesi/?kaynak=%2Fcozumler%2F" class="rounded-sm border border-[var(--color-border)] bg-[var(--color-surface-light)]/60 p-8 transition hover:-translate-y-0.5 hover:border-[var(--color-primary)]/40">
           <p class="text-sm uppercase tracking-[0.18em] text-[var(--color-primary)]">Resource</p>
-          <h2 class="mt-4 text-3xl font-black tracking-tight text-white">Önce kendi surecinizi puanlayin</h2>
+          <h2 class="mt-4 text-3xl font-black tracking-tight text-[var(--color-paper-ecru)]">Önce kendi surecinizi puanlayin</h2>
           <p class="mt-4 text-[var(--color-text-muted)]">
             Hemen görüşme istemiyorsaniz, öncelik checklisti ile hangi akışı önce ele almaniz gerektiğini daha net gorun.
           </p>
         </a>
-        <div class="rounded-[2rem] border border-[var(--color-primary)]/20 bg-[var(--color-primary)]/8 p-8 text-center">
+        <div class="rounded-sm border border-[var(--color-primary)]/20 bg-[var(--color-primary)]/8 p-8 text-center">
           <p class="text-sm uppercase tracking-[0.18em] text-[var(--color-primary)]">Sonraki adım</p>
-          <h2 class="mt-4 text-3xl font-black tracking-tight text-white">Doğru süreci birlikte seçin</h2>
+          <h2 class="mt-4 text-3xl font-black tracking-tight text-[var(--color-paper-ecru)]">Doğru süreci birlikte seçin</h2>
           <p class="mx-auto mt-4 max-w-2xl text-[var(--color-text-muted)]">
             Hangi akışın önce ele alınması gerektiğini, hangi cozumun size daha hızlı geri dönüş getirecegini birlikte cikaralim.
           </p>
-          <a href={solutionsContactHref} class="mt-8 inline-flex items-center justify-center rounded-2xl bg-[var(--color-primary)] px-6 py-4 text-base font-black text-black transition hover:-translate-y-0.5 hover:bg-[var(--color-primary-light)]">
+          <a href={solutionsContactHref} class="mt-8 inline-flex items-center justify-center rounded-sm bg-[var(--color-primary)] px-6 py-4 text-base font-black text-black transition hover:-translate-y-0.5 hover:bg-[var(--color-primary-light)]">
             Ücretsiz analiz talep et
           </a>
         </div>

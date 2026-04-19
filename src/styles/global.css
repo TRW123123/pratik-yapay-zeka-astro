@@ -1,156 +1,458 @@
-/* PITFALL #5 FIX: Local fonts — NO Google Fonts CDN (DSGVO) */
-/* Reduced from 6 weights to 3 essential: 400 (body), 600 (semi-bold), 700 (bold) */
-@import '@fontsource/poppins/400.css';
-@import '@fontsource/poppins/600.css';
-@import '@fontsource/poppins/700.css';
+/* =============================================
+   Santral Design System
+   Patina · Papier · Kupfer · Tinte
+   ============================================= */
+
+/* Local fonts — DSGVO-safe, no CDN */
+@import '@fontsource-variable/fraunces';
+@import '@fontsource/ibm-plex-sans/400.css';
+@import '@fontsource/ibm-plex-sans/500.css';
+@import '@fontsource/ibm-plex-sans/600.css';
+@import '@fontsource/ibm-plex-mono/400.css';
+@import '@fontsource/ibm-plex-mono/500.css';
 
 @import 'tailwindcss';
 @plugin '@tailwindcss/typography';
 
-/* =============================================
-   Carbon Mono + Lime Pop Design System
-   Faithful port of lovable-original/index.css
-   ============================================= */
-
 @theme {
-  --font-sans: 'Poppins', ui-sans-serif, system-ui, sans-serif;
+  /* Fonts */
+  --font-sans: 'IBM Plex Sans', ui-sans-serif, system-ui, sans-serif;
+  --font-display: 'Fraunces Variable', 'Fraunces', Georgia, serif;
+  --font-mono: 'IBM Plex Mono', ui-monospace, Menlo, monospace;
 
-  /* Carbon Mono + Lime Design Tokens */
-  --color-primary: #A3E635;
-  --color-primary-light: #D9F99D;
-  --color-primary-dark: #65A30D;
-  --color-accent: #34D399;
-  --color-surface: #0B0F14;
-  --color-surface-light: #0F172A;
-  --color-surface-lighter: #111827;
-  --color-text: #E5E7EB;
-  --color-text-muted: #94A3B8;
-  --color-border: #1F2937;
+  /* ============ Santral Palette ============ */
+  /* Void Ink — near-black, warm (paper shadow side) */
+  --color-void-ink-deep: #0E1216;
+  --color-void-ink: #141A20;
+  --color-void-ink-soft: #1B2228;
+
+  /* Patina Copper — oxidized copper wire, warm */
+  --color-patina-copper: #B87A3D;
+  --color-patina-copper-bright: #E09654;
+  --color-patina-copper-dim: #8C5A2C;
+
+  /* Oxide Teal — patina green, cold contrast */
+  --color-oxide-teal: #4F8A8B;
+  --color-oxide-teal-bright: #68B0B2;
+
+  /* Paper Ecru — warm off-white (archive paper) */
+  --color-paper-ecru: #EDE3D2;
+  --color-paper-ecru-dim: #C5BCAB;
+  --color-paper-ecru-mute: #8A8271;
+
+  /* Ink Bleed — deep wine-red for warning/agitate */
+  --color-ink-bleed: #8C2D2D;
+
+  /* Hairline — near-invisible borders */
+  --color-hairline: rgba(237, 227, 210, 0.08);
+  --color-hairline-strong: rgba(237, 227, 210, 0.18);
+
+  /* ============ Legacy Variable Bridge ============ */
+  /* Existing components reference these — remap to Santral */
+  --color-primary: #E09654;           /* patina-copper-bright */
+  --color-primary-light: #F2BA86;
+  --color-primary-dark: #8C5A2C;
+  --color-accent: #68B0B2;            /* oxide-teal-bright */
+  --color-surface: #0E1216;           /* void-ink-deep */
+  --color-surface-light: #141A20;
+  --color-surface-lighter: #1B2228;
+  --color-text: #EDE3D2;              /* paper-ecru */
+  --color-text-muted: #C5BCAB;        /* paper-ecru-dim */
+  --color-border: rgba(237, 227, 210, 0.12);
 }
 
-/* Global styles */
+/* ============ Base ============ */
 html {
   scroll-behavior: smooth;
   font-family: var(--font-sans);
 }
 
 body {
-  background-color: var(--color-surface);
-  color: var(--color-text);
+  background-color: var(--color-void-ink-deep);
+  color: var(--color-paper-ecru);
   min-height: 100vh;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  /* World-Class Carbon Depth Background */
-  background: 
-    radial-gradient(circle at 50% 0%, rgba(163, 230, 53, 0.05) 0%, transparent 50%),
-    radial-gradient(circle at 100% 100%, rgba(52, 211, 153, 0.03) 0%, transparent 50%),
-    var(--color-surface);
+  /* Paper-grain warm background */
+  background:
+    radial-gradient(ellipse 120% 60% at 50% 0%, rgba(224, 150, 84, 0.06) 0%, transparent 55%),
+    radial-gradient(ellipse 80% 50% at 100% 100%, rgba(104, 176, 178, 0.035) 0%, transparent 60%),
+    var(--color-void-ink-deep);
   background-attachment: fixed;
+  letter-spacing: 0.005em;
 }
 
-/* World-class grid overlay with center mask fade */
+/* Subtle paper-texture grid — hairline ruled lines */
 body::before {
   content: '';
   position: fixed;
   inset: 0;
-  background-image: 
-    linear-gradient(to right, rgba(255,255,255,0.015) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(255,255,255,0.015) 1px, transparent 1px);
-  background-size: 80px 80px;
-  mask-image: radial-gradient(ellipse at 50% 30%, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 80%);
-  -webkit-mask-image: radial-gradient(ellipse at 50% 30%, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 80%);
+  background-image:
+    linear-gradient(to bottom, rgba(237, 227, 210, 0.018) 1px, transparent 1px);
+  background-size: 100% 36px;
+  mask-image: radial-gradient(ellipse at 50% 30%, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0) 80%);
+  -webkit-mask-image: radial-gradient(ellipse at 50% 30%, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0) 80%);
   pointer-events: none;
   z-index: -1;
 }
 
-/* Selection style */
 ::selection {
-  background-color: var(--color-primary);
-  color: #0B0F14;
+  background-color: var(--color-patina-copper-bright);
+  color: var(--color-void-ink-deep);
 }
 
-/* Typography (from original) */
-.headline {
+/* Default heading/body treatment — Fraunces for display, Plex for everything else */
+h1, h2, h3, h4 {
+  font-family: var(--font-display);
+  font-weight: 400;
+  letter-spacing: -0.015em;
+  line-height: 1.08;
+  color: var(--color-paper-ecru);
+}
+h1 { font-weight: 400; }
+h2 { font-weight: 500; }
+h3, h4 { font-weight: 500; }
+
+p, li, dd, blockquote, figcaption {
   font-family: var(--font-sans);
-  font-weight: 800;
-  letter-spacing: -0.04em; /* Tightened for World-Class tension */
-  line-height: 1.1; /* Straffer line-height */
 }
 
-.body-text {
-  font-size: 1.125rem;
-  line-height: 1.6;
+code, pre, kbd, samp {
+  font-family: var(--font-mono);
 }
 
-/* Card base (from original) */
-.carbon-card {
-  background: hsl(220 13% 9%);
-  border: 1px solid hsl(220 13% 18%);
-  border-radius: 0.75rem;
-  box-shadow: 0 8px 32px rgba(0,0,0,0.25);
+/* ============ Santral Utility Classes ============ */
+
+.santral-display {
+  font-family: var(--font-display);
+  font-weight: 400;
+  letter-spacing: -0.02em;
+  line-height: 1.05;
+  color: var(--color-paper-ecru);
 }
 
-/* World-Class Gradients & Glows */
+.santral-italic {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-weight: 400;
+  color: var(--color-patina-copper-bright);
+}
+
+.santral-body {
+  font-family: var(--font-sans);
+  font-weight: 400;
+  line-height: 1.65;
+  color: var(--color-paper-ecru-dim);
+}
+
+.santral-overline {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--color-paper-ecru-mute);
+  display: inline-block;
+}
+
+.santral-label {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 400;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-paper-ecru-mute);
+}
+
+.santral-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.35rem 0.75rem;
+  border: 1px solid var(--color-hairline-strong);
+  background: rgba(14, 18, 22, 0.55);
+  border-radius: 2px;
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-paper-ecru-dim);
+}
+
+/* Salter — primary CTA, looks like a switch/lever */
+.santral-salter {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.85rem 1.4rem;
+  font-family: var(--font-sans);
+  font-weight: 500;
+  font-size: 0.95rem;
+  letter-spacing: 0.005em;
+  border-radius: 2px;
+  border: 1px solid var(--color-hairline-strong);
+  background: rgba(237, 227, 210, 0.04);
+  color: var(--color-paper-ecru);
+  transition: all 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+  text-decoration: none;
+  cursor: pointer;
+}
+.santral-salter:hover {
+  background: rgba(237, 227, 210, 0.08);
+  border-color: var(--color-patina-copper);
+  transform: translateY(-1px);
+}
+
+.santral-salter-copper {
+  background: linear-gradient(180deg, var(--color-patina-copper-bright) 0%, var(--color-patina-copper) 100%);
+  color: var(--color-void-ink-deep);
+  border-color: var(--color-patina-copper-dim);
+  font-weight: 600;
+}
+.santral-salter-copper:hover {
+  background: linear-gradient(180deg, #F2BA86 0%, var(--color-patina-copper-bright) 100%);
+  box-shadow: 0 10px 30px -8px rgba(224, 150, 84, 0.35);
+  transform: translateY(-1px);
+}
+
+.santral-ghost {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.85rem 1.4rem;
+  font-family: var(--font-sans);
+  font-weight: 400;
+  font-size: 0.95rem;
+  border-radius: 2px;
+  border: 1px solid var(--color-hairline);
+  background: transparent;
+  color: var(--color-paper-ecru-dim);
+  transition: all 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+  text-decoration: none;
+}
+.santral-ghost:hover {
+  border-color: var(--color-hairline-strong);
+  color: var(--color-paper-ecru);
+}
+
+/* Hat — paper-card surface, hairline border with copper accent edge */
+.santral-hat {
+  position: relative;
+  background: rgba(20, 26, 32, 0.72);
+  border: 1px solid var(--color-hairline-strong);
+  border-radius: 2px;
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  overflow: hidden;
+}
+.santral-hat::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 1px;
+  width: 32px;
+  background: linear-gradient(90deg, var(--color-patina-copper-bright) 0%, transparent 100%);
+}
+.santral-hat:hover {
+  border-color: rgba(224, 150, 84, 0.35);
+  background: rgba(27, 34, 40, 0.82);
+  transform: translateY(-1px);
+}
+
+/* ============ Scroll Reveal ============ */
+[data-santral-reveal] {
+  opacity: 0;
+  transform: translateY(14px);
+  transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+[data-santral-reveal].is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ============ Scroll Rail (right edge) ============ */
+.santral-rail {
+  position: fixed;
+  right: 14px;
+  top: 0;
+  bottom: 0;
+  width: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+  z-index: 30;
+}
+@media (max-width: 768px) { .santral-rail { display: none; } }
+.santral-rail-inner {
+  position: relative;
+  height: 60vh;
+  width: 18px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.santral-rail-spine {
+  position: absolute;
+  top: 20px;
+  bottom: 20px;
+  width: 1px;
+  background: var(--color-hairline);
+}
+.santral-rail-fill {
+  position: absolute;
+  top: 20px;
+  width: 1px;
+  background: var(--color-patina-copper-bright);
+  height: 0%;
+  transition: height 0.15s linear;
+}
+.santral-rail-cap {
+  position: absolute;
+  font-family: var(--font-mono);
+  font-size: 0.55rem;
+  letter-spacing: 0.08em;
+  color: var(--color-paper-ecru-mute);
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+}
+.santral-rail-top { top: 0; }
+.santral-rail-bot { bottom: 0; color: var(--color-patina-copper-bright); }
+
+/* ============ Morse pulse (status dot) ============ */
+@keyframes morse-pulse {
+  0%, 100% { opacity: 1; }
+  40% { opacity: 0.35; }
+  50% { opacity: 1; }
+  60% { opacity: 0.35; }
+}
+
+/* ============ Legacy Class Remaps (preserve existing markup) ============ */
+
+/* Replace lime-heavy legacy classes with Santral copper */
 .text-gradient-lime {
-  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-accent) 100%);
+  background: linear-gradient(135deg, var(--color-patina-copper-bright) 0%, var(--color-patina-copper) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
 
 .magnetic-glow-btn {
-  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-accent) 100%);
-  color: var(--color-surface);
+  background: linear-gradient(180deg, var(--color-patina-copper-bright) 0%, var(--color-patina-copper) 100%);
+  color: var(--color-void-ink-deep);
   font-weight: 600;
+  font-family: var(--font-sans);
   position: relative;
-  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-  box-shadow: 0 0 0 rgba(163, 230, 53, 0);
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  border-radius: 2px;
 }
-
 .magnetic-glow-btn:hover {
-  box-shadow: 0 10px 40px -10px rgba(163, 230, 53, 0.4),
-              0 0 20px rgba(52, 211, 153, 0.2);
+  box-shadow: 0 12px 34px -10px rgba(224, 150, 84, 0.45),
+              0 0 22px rgba(104, 176, 178, 0.15);
   transform: translateY(-2px);
 }
 
-/* Neon Bleed Border for Bento Cards */
 .neon-bleed-border {
-  border: 1px solid rgba(255, 255, 255, 0.05);
-  background: rgba(17, 24, 39, 0.3); /* Surface Lighter mit Opacity */
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  border: 1px solid var(--color-hairline-strong);
+  background: rgba(20, 26, 32, 0.42);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
 }
-
 .neon-bleed-border:hover {
-  border-color: rgba(163, 230, 53, 0.3);
-  box-shadow: 0 0 30px rgba(163, 230, 53, 0.05) inset,
-              0 0 30px rgba(163, 230, 53, 0.1);
+  border-color: rgba(224, 150, 84, 0.35);
+  box-shadow: 0 0 32px rgba(224, 150, 84, 0.04) inset,
+              0 8px 28px rgba(14, 18, 22, 0.4);
   transform: translateY(-2px);
 }
 
-/* Legacy Utilities */
 .lime-glow {
-  box-shadow: 0 0 20px rgba(163,230,53,0.3);
+  box-shadow: 0 0 22px rgba(224, 150, 84, 0.25);
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
-
 .hover-glow:hover {
-  box-shadow: 0 0 20px rgba(163,230,53,0.4);
+  box-shadow: 0 0 22px rgba(224, 150, 84, 0.35);
 }
 
-/* Slide-up animation */
+.carbon-card {
+  background: rgba(20, 26, 32, 0.72);
+  border: 1px solid var(--color-hairline-strong);
+  border-radius: 2px;
+  box-shadow: 0 8px 28px rgba(0,0,0,0.28);
+}
+
+.headline {
+  font-family: var(--font-display);
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  line-height: 1.08;
+}
+.body-text {
+  font-family: var(--font-sans);
+  font-size: 1.0625rem;
+  line-height: 1.65;
+}
+
+/* Slide-up legacy animation (kept for backward-compat) */
 @keyframes slideUpMasked {
-  from {
-    transform: translateY(16px);
-    opacity: 0;
-  }
-  to {
-    transform: translateY(0);
-    opacity: 1;
-  }
+  from { transform: translateY(16px); opacity: 0; }
+  to   { transform: translateY(0);     opacity: 1; }
 }
-
 .animate-slide-up {
   animation: slideUpMasked 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Tailwind prose overrides for santral-flavored prose blocks */
+.santral-calc-prose h2 {
+  font-family: var(--font-display);
+  font-weight: 500;
+  color: var(--color-paper-ecru);
+  margin-top: 2.4em;
+  margin-bottom: 0.6em;
+}
+.santral-calc-prose h3 {
+  font-family: var(--font-display);
+  font-weight: 500;
+  color: var(--color-paper-ecru);
+  margin-top: 1.8em;
+  margin-bottom: 0.5em;
+}
+.santral-calc-prose p {
+  color: var(--color-paper-ecru-dim);
+  line-height: 1.72;
+}
+.santral-calc-prose blockquote {
+  border-left: 2px solid var(--color-patina-copper-bright);
+  background: rgba(20, 26, 32, 0.52);
+  padding: 1rem 1.25rem;
+  margin: 1.5rem 0;
+  font-family: var(--font-display);
+  font-style: italic;
+  color: var(--color-paper-ecru);
+}
+.santral-calc-prose hr {
+  border: none;
+  text-align: center;
+  margin: 2rem 0;
+  color: var(--color-paper-ecru-mute);
+}
+.santral-calc-prose hr::after {
+  content: '···';
+  letter-spacing: 0.5em;
+  color: var(--color-patina-copper-bright);
+  font-family: var(--font-mono);
+}
+.santral-calc-prose ol, .santral-calc-prose ul {
+  padding-left: 1.8rem;
+}
+.santral-calc-prose li {
+  color: var(--color-paper-ecru-dim);
+  line-height: 1.7;
+  margin-bottom: 0.5em;
+}
+.santral-calc-prose li::marker {
+  color: var(--color-patina-copper-bright);
+  font-family: var(--font-mono);
 }

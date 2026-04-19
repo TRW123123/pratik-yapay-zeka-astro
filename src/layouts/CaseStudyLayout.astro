@@ -94,7 +94,7 @@ const caseStudySchema = {
 
 <BaseLayout title={title} description={description} ogImage={ogImage} breadcrumbs={breadcrumbs}>
   <section class="py-32 lg:py-48 relative overflow-hidden">
-    <div class="absolute top-[20%] left-1/2 -translate-x-1/2 h-[800px] w-[800px] rounded-full bg-[var(--color-primary)]/5 blur-[120px] opacity-50 pointer-events-none"></div>
+    <div class="absolute top-[20%] left-1/2 -translate-x-1/2 h-[800px] w-[800px] rounded-sm bg-[var(--color-primary)]/5 blur-[120px] opacity-50 pointer-events-none"></div>
 
     <div class="container mx-auto max-w-5xl px-4 relative z-10">
       <a href="/vaka-calismalari/" class="mb-8 inline-block text-sm text-[var(--color-text-muted)] transition-colors hover:text-[var(--color-primary-light)]">
@@ -106,7 +106,7 @@ const caseStudySchema = {
 
       <div class="mb-12 grid gap-4 md:grid-cols-2 lg:grid-cols-4">
         {metrics.map((m) => (
-          <div class="neon-bleed-border group relative overflow-hidden rounded-xl bg-[var(--color-surface-light)]/50 p-6 text-center backdrop-blur-sm">
+          <div class="neon-bleed-border group relative overflow-hidden rounded-sm bg-[var(--color-surface-light)]/50 p-6 text-center backdrop-blur-sm">
             <div class="absolute inset-0 bg-gradient-to-br from-[var(--color-primary)]/5 to-transparent opacity-0 transition-opacity duration-500 pointer-events-none group-hover:opacity-100"></div>
             <p class="mb-1 text-3xl font-extrabold text-[var(--color-primary)]">{m.value}</p>
             <p class="text-xs font-medium uppercase tracking-wider text-[var(--color-text-muted)]">{m.label}</p>
@@ -115,19 +115,19 @@ const caseStudySchema = {
       </div>
 
       <div class="space-y-8">
-        <div class="neon-bleed-border group relative overflow-hidden rounded-2xl bg-[var(--color-surface-light)]/50 p-8 backdrop-blur-sm">
+        <div class="neon-bleed-border group relative overflow-hidden rounded-sm bg-[var(--color-surface-light)]/50 p-8 backdrop-blur-sm">
           <div class="absolute left-0 top-0 h-full w-1 bg-[var(--color-primary)]/50"></div>
           <h2 class="mb-4 text-2xl font-semibold text-[var(--color-text)]">Zorluk</h2>
           <p class="text-lg leading-relaxed text-[var(--color-text-muted)]">{challenge}</p>
         </div>
 
-        <div class="neon-bleed-border group relative overflow-hidden rounded-2xl bg-[var(--color-surface-light)]/50 p-8 backdrop-blur-sm">
+        <div class="neon-bleed-border group relative overflow-hidden rounded-sm bg-[var(--color-surface-light)]/50 p-8 backdrop-blur-sm">
           <div class="absolute left-0 top-0 h-full w-1 bg-[var(--color-accent)]/50"></div>
           <h2 class="mb-4 text-2xl font-semibold text-[var(--color-text)]">Çözüm</h2>
           <p class="text-lg leading-relaxed text-[var(--color-text-muted)]">{solution}</p>
         </div>
 
-        <div class="neon-bleed-border group relative overflow-hidden rounded-2xl bg-[var(--color-surface-light)]/50 p-8 backdrop-blur-sm">
+        <div class="neon-bleed-border group relative overflow-hidden rounded-sm bg-[var(--color-surface-light)]/50 p-8 backdrop-blur-sm">
           <div class="absolute left-0 top-0 h-full w-1 bg-gradient-to-b from-[var(--color-primary)] to-[var(--color-accent)]"></div>
           <h2 class="mb-4 text-2xl font-semibold text-[var(--color-text)]">Sonuçlar</h2>
           <ul class="space-y-2">
@@ -152,7 +152,7 @@ const caseStudySchema = {
       )}
 
       <div class="mt-20 grid gap-8 lg:grid-cols-[1.15fr_0.85fr]">
-        <div class="rounded-[2rem] border border-[var(--color-border)] bg-[var(--color-surface-light)]/60 p-8">
+        <div class="rounded-sm border border-[var(--color-border)] bg-[var(--color-surface-light)]/60 p-8">
           <div class="flex items-center justify-between gap-4">
             <h2 class="text-2xl font-semibold text-[var(--color-text)]">Ilgili çözüm sayfalari</h2>
             <a href="/cozumler/" class="text-sm font-semibold text-[var(--color-primary)] transition-colors hover:text-[var(--color-primary-light)]">
@@ -162,9 +162,9 @@ const caseStudySchema = {
 
           <div class="mt-6 space-y-4">
             {relatedSolutions.map((item) => (
-              <a href={item.href} class="block rounded-2xl border border-[var(--color-border)] bg-black/10 p-5 transition-all duration-300 hover:-translate-y-0.5 hover:border-[var(--color-primary)]/40">
+              <a href={item.href} class="block rounded-sm border border-[var(--color-border)] bg-black/10 p-5 transition-all duration-300 hover:-translate-y-0.5 hover:border-[var(--color-primary)]/40">
                 {item.badge && (
-                  <div class="mb-3 inline-flex rounded-full border border-[var(--color-primary)]/20 bg-[var(--color-primary)]/10 px-3 py-1 text-xs font-semibold uppercase tracking-[0.16em] text-[var(--color-primary)]">
+                  <div class="mb-3 inline-flex rounded-sm border border-[var(--color-primary)]/20 bg-[var(--color-primary)]/10 px-3 py-1 text-xs font-semibold uppercase tracking-[0.16em] text-[var(--color-primary)]">
                     {item.badge}
                   </div>
                 )}
@@ -175,8 +175,8 @@ const caseStudySchema = {
           </div>
         </div>
 
-        <div class="rounded-[2rem] border border-[var(--color-primary)]/20 bg-[var(--color-primary)]/7 p-8">
-          <div class="inline-flex rounded-full border border-[var(--color-primary)]/25 bg-[var(--color-primary)]/10 px-3 py-1 text-xs font-semibold uppercase tracking-[0.16em] text-[var(--color-primary)]">
+        <div class="rounded-sm border border-[var(--color-primary)]/20 bg-[var(--color-primary)]/7 p-8">
+          <div class="inline-flex rounded-sm border border-[var(--color-primary)]/25 bg-[var(--color-primary)]/10 px-3 py-1 text-xs font-semibold uppercase tracking-[0.16em] text-[var(--color-primary)]">
             Sonraki adım
           </div>
           <h2 class="mt-5 text-3xl font-bold leading-tight text-[var(--color-text)]">{analysisLabel}</h2>
@@ -190,7 +190,7 @@ const caseStudySchema = {
             <li>Uygulanabilir sonraki adım plani</li>
           </ul>
 
-          <a href={contactHref} class="mt-8 inline-flex w-full items-center justify-center rounded-2xl bg-[var(--color-primary)] px-5 py-4 text-center text-base font-bold text-[#0B0F14] transition hover:-translate-y-0.5 hover:bg-[var(--color-primary-dark)]">
+          <a href={contactHref} class="mt-8 inline-flex w-full items-center justify-center rounded-sm bg-[var(--color-primary)] px-5 py-4 text-center text-base font-bold text-[var(--color-void-ink-deep)] transition hover:-translate-y-0.5 hover:bg-[var(--color-primary-dark)]">
             Ücretsiz analizi talep et
           </a>
         </div>

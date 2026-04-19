@@ -9,70 +9,76 @@ const primaryCtaHref = buildContactHref({
 });
 ---
 
-<section class="hero-section relative flex min-h-screen items-center justify-center" aria-label="Hero section">
-  <div class="pointer-events-none absolute inset-0 flex items-center justify-center opacity-10 mix-blend-screen" aria-hidden="true">
-    <div class="h-[400px] w-[60vw] rounded-full bg-gradient-to-r from-[var(--color-primary)] to-[var(--color-accent)] blur-[140px]"></div>
-  </div>
-  <div class="absolute inset-0 bg-grid-pattern opacity-20" aria-hidden="true"></div>
+<section data-santral-reveal class="hero-section relative overflow-hidden pt-28 pb-16 md:pt-36 md:pb-24" aria-label="Hero section">
+  {/* Ambient copper glow, top-right */}
+  <div class="pointer-events-none absolute -top-32 right-[-10%] h-[520px] w-[620px] rounded-full opacity-[0.16] blur-[160px]" style="background: radial-gradient(circle, var(--color-patina-copper-bright) 0%, transparent 70%);" aria-hidden="true"></div>
 
-  <div class="container relative z-10 mx-auto px-6 text-center">
-    <div class="mx-auto max-w-5xl space-y-8">
-      <div class="space-y-4">
-        <h1 class="headline text-5xl text-white md:text-7xl lg:text-[5rem]">
-          <span class="mb-4 block">Siz şirketi yönetin.</span>
-          <span class="hero-underline relative inline-block pb-2 text-[var(--color-primary)]">
-            Biz sizin için 7/24 çalışan yapay zeka işçileri kuruyoruz.
-          </span>
-        </h1>
-        <p class="mx-auto max-w-3xl text-lg leading-relaxed text-[var(--color-text-muted)] md:text-xl">
-          Satış, CRM, pazarlama, muhasebe ve operasyon tarafinda tekrar eden isleri sistemlestirip ekibinizin zamanini geri kazandiriyoruz.
+  <div class="container relative z-10 mx-auto max-w-6xl px-6 lg:px-10">
+    <div class="flex flex-col gap-12 md:flex-row md:items-start md:gap-16">
+      {/* Left: Aside — mark + ana santral label */}
+      <aside class="md:w-[260px] md:shrink-0 md:pt-3">
+        <span class="santral-overline block">Ana Santral · No.07</span>
+        <div class="mt-4 flex items-center gap-3" aria-hidden="true">
+          <span class="h-[1px] w-12 bg-[var(--color-patina-copper-bright)]"></span>
+          <span class="h-[6px] w-[6px] rounded-full bg-[var(--color-patina-copper-bright)]" style="animation: morse-pulse 2.4s ease-in-out infinite"></span>
+          <span class="h-[1px] flex-1 bg-[var(--color-hairline-strong)]"></span>
+        </div>
+        <p class="mt-5 font-mono text-[0.72rem] leading-relaxed tracking-[0.14em] uppercase text-[var(--color-paper-ecru-mute)]">
+          TX · 2.4ms<br/>
+          HAT · AÇIK<br/>
+          YÜK · Normal
         </p>
-      </div>
+      </aside>
 
-      <div class="flex flex-col items-center justify-center gap-4 pt-8 sm:flex-row">
-        <a
-          href={primaryCtaHref}
-          class="magnetic-glow-btn inline-flex min-h-[60px] items-center justify-center rounded-xl px-14 py-5 text-lg"
-        >
-          Ücretsiz analizi baslatin
-        </a>
-        <a
-          href="/cozumler/"
-          class="inline-flex min-h-[60px] items-center justify-center rounded-xl border border-[var(--color-border)] px-10 py-5 text-lg font-semibold text-[var(--color-text)] transition hover:border-[var(--color-primary)]/40 hover:text-[var(--color-primary-light)]"
-        >
-          Çözümleri inceleyin
-        </a>
-      </div>
+      {/* Right: Content */}
+      <div class="flex-1 max-w-3xl">
+        <h1 class="santral-display text-4xl leading-[1.05] md:text-6xl lg:text-[4.25rem]" style="font-weight:400;text-wrap:balance;">
+          Siz şirketi yönetin.
+          <br/>
+          <em class="santral-italic">Biz</em> sizin için 7/24 çalışan yapay zeka işçileri kuruyoruz.
+        </h1>
+        <p class="mt-8 santral-body text-lg md:text-xl max-w-2xl">
+          Satış, CRM, pazarlama, muhasebe ve operasyon tarafında tekrar eden işleri sistemleştirip ekibinizin zamanını geri kazandırıyoruz.
+        </p>
 
-      <p class="mx-auto max-w-2xl text-sm leading-relaxed text-[var(--color-text-muted)]">
-        Hemen görüşme istemiyorsaniz önce
-        <a href="/ucretsiz-otomasyon-checklistesi/?kaynak=%2F" class="font-semibold text-[var(--color-primary-light)] transition hover:text-[var(--color-primary)]">
-          ücretsiz otomasyon öncelik checklistini
-        </a>
-        isteyebilirsiniz.
-      </p>
+        <div class="mt-10 flex flex-col items-start gap-4 sm:flex-row sm:items-center">
+          <a href={primaryCtaHref} class="santral-salter santral-salter-copper">
+            Ücretsiz analiz başlatın
+            <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M5 12h14"/><path d="m13 6 6 6-6 6"/>
+            </svg>
+          </a>
+          <a href="/cozumler/" class="santral-salter">
+            Çözümleri inceleyin
+          </a>
+        </div>
+
+        <p class="mt-8 max-w-2xl text-sm leading-relaxed text-[var(--color-paper-ecru-mute)]">
+          Hemen görüşme istemiyorsanız önce
+          <a href="/ucretsiz-otomasyon-checklistesi/?kaynak=%2F" class="border-b border-[var(--color-patina-copper-bright)] text-[var(--color-patina-copper-bright)] transition hover:text-[var(--color-paper-ecru)]">
+            ücretsiz otomasyon öncelik checklistini
+          </a>
+          isteyebilirsiniz.
+        </p>
+
+        {/* Trust strip */}
+        <div class="mt-14 border-t border-[var(--color-hairline)] pt-6">
+          <span class="santral-label block mb-3">KAYITLI MÜŞTERİLER · 001 — 006</span>
+          <div class="flex flex-wrap items-center gap-x-6 gap-y-2 text-[0.8rem] font-mono tracking-[0.08em] text-[var(--color-paper-ecru-dim)]">
+            <span>Acilsatis</span>
+            <span class="text-[var(--color-paper-ecru-mute)]">·</span>
+            <span>Salevium</span>
+            <span class="text-[var(--color-paper-ecru-mute)]">·</span>
+            <span>ERPA Teknoloji</span>
+            <span class="text-[var(--color-paper-ecru-mute)]">·</span>
+            <span>Cemkimsan</span>
+            <span class="text-[var(--color-paper-ecru-mute)]">·</span>
+            <span>Car Studio AI</span>
+            <span class="text-[var(--color-paper-ecru-mute)]">·</span>
+            <span>Coach Bilge</span>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
-
-<style>
-  .hero-underline {
-    position: relative;
-  }
-  .hero-underline::after {
-    content: '';
-    position: absolute;
-    bottom: -4px;
-    left: 0;
-    width: 100%;
-    height: 3px;
-    background: linear-gradient(to right, var(--color-primary), var(--color-accent));
-    transform: scaleX(0);
-    transform-origin: right;
-    transition: transform 1s cubic-bezier(0.16, 1, 0.3, 1);
-  }
-  .hero-section:hover .hero-underline::after {
-    transform: scaleX(1);
-    transform-origin: left;
-  }
-</style>
