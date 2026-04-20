@@ -19,7 +19,9 @@ export default defineConfig({
   output: 'static',
 
   // Netlify adapter for SSR pages (blog listing + blog detail)
-  adapter: netlify(),
+  // edgeMiddleware:true → middleware runs as Netlify Edge Function (before url-normalize),
+  // allowing it to redirect /blog → /blog/ before the edge function returns 404.
+  adapter: netlify({ edgeMiddleware: true }),
 
   // Performance: Prefetch links on hover for instant navigation
   prefetch: true,
