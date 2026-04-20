@@ -24,6 +24,11 @@ https://www.yapayzekapratik.com/* https://yapayzekapratik.com/:splat 301!
 # Legacy Wix Blog Redirects (Map old /post to new /blog)
 /post/*          /blog/ 301!
 
+# SSR trailing-slash fix: /blog and /blog/slug without slash → with slash
+# Netlify pretty_urls doesn't auto-redirect SSR routes — explicit rules needed
+/blog            /blog/           301!
+/blog/:slug      /blog/:slug/     301!
+
 # SPRINT 1 FIX: Legacy hardcoded solution pages → dynamic /cozumler/ hub
 /cozumler/lead-generation/              /cozumler/ 301!
 /cozumler/satis-otomasyonu/             /cozumler/ 301!
